@@ -309,6 +309,42 @@ public class AutonomousContainerDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
+        private Float availableCpus;
+
+        public Builder availableCpus(Float availableCpus) {
+            this.availableCpus = availableCpus;
+            this.__explicitlySet__.add("availableCpus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
+        private Integer totalCpus;
+
+        public Builder totalCpus(Integer totalCpus) {
+            this.totalCpus = totalCpus;
+            this.__explicitlySet__.add("totalCpus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
+        private Float reclaimableCpus;
+
+        public Builder reclaimableCpus(Float reclaimableCpus) {
+            this.reclaimableCpus = reclaimableCpus;
+            this.__explicitlySet__.add("reclaimableCpus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
+        private java.util.List<Float> provisionableCpus;
+
+        public Builder provisionableCpus(java.util.List<Float> provisionableCpus) {
+            this.provisionableCpus = provisionableCpus;
+            this.__explicitlySet__.add("provisionableCpus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -345,7 +381,11 @@ public class AutonomousContainerDatabaseSummary {
                             backupConfig,
                             keyStoreId,
                             keyStoreWalletName,
-                            memoryPerOracleComputeUnitInGBs);
+                            memoryPerOracleComputeUnitInGBs,
+                            availableCpus,
+                            totalCpus,
+                            reclaimableCpus,
+                            provisionableCpus);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -384,8 +424,11 @@ public class AutonomousContainerDatabaseSummary {
                             .backupConfig(o.getBackupConfig())
                             .keyStoreId(o.getKeyStoreId())
                             .keyStoreWalletName(o.getKeyStoreWalletName())
-                            .memoryPerOracleComputeUnitInGBs(
-                                    o.getMemoryPerOracleComputeUnitInGBs());
+                            .memoryPerOracleComputeUnitInGBs(o.getMemoryPerOracleComputeUnitInGBs())
+                            .availableCpus(o.getAvailableCpus())
+                            .totalCpus(o.getTotalCpus())
+                            .reclaimableCpus(o.getReclaimableCpus())
+                            .provisionableCpus(o.getProvisionableCpus());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -826,6 +869,30 @@ public class AutonomousContainerDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     Integer memoryPerOracleComputeUnitInGBs;
+
+    /**
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
+    Float availableCpus;
+
+    /**
+     * The number of CPU cores allocated to the Autonomous VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
+    Integer totalCpus;
+
+    /**
+     * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
+    Float reclaimableCpus;
+
+    /**
+     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
+    java.util.List<Float> provisionableCpus;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

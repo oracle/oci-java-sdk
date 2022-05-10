@@ -49,6 +49,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "ORACLE_ATP_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateConnectionFromBIP.class,
+        name = "BIP_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateConnectionFromAdwc.class,
         name = "ORACLE_ADWC_CONNECTION"
     ),
@@ -124,6 +128,7 @@ public class CreateConnectionDetails {
         GenericJdbcConnection("GENERIC_JDBC_CONNECTION"),
         BiccConnection("BICC_CONNECTION"),
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
+        BipConnection("BIP_CONNECTION"),
         ;
 
         private final String value;

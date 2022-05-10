@@ -47,6 +47,10 @@ public class BmcGenericRetrier {
             @NonNull final REQUEST requestToUse,
             @NonNull final Function<REQUEST, RESPONSE> functionCall) {
         MutableObject<BmcException> lastKnownException = new MutableObject<>();
+        LOG.debug(
+                "Retry policy to use: {MaximumNumberAttempts={}, MinSleepBetween=0, MaxSleepBetween={}ms, ExponentialBackoffBase=2}",
+                RetryConfiguration.DEFAULT_MAX_RETRY_ATTEMPTS,
+                RetryConfiguration.DEFAULT_MAX_WAIT_TIME);
         final Optional<RESPONSE> response =
                 waiter.execute(
                         Suppliers.ofInstance(requestToUse),
@@ -54,13 +58,20 @@ public class BmcGenericRetrier {
                             if (lastKnownException.getValue() != null) {
                                 // we know there was a previous exception, so this must be a retry
                                 LOG.debug(
-                                        "Retrying: {}", lastKnownException.getValue().getMessage());
+                                        "Http Status Code: {}, Error Code: {}, Retrying: {}",
+                                        lastKnownException.getValue().getStatusCode(),
+                                        lastKnownException.getValue().getServiceCode(),
+                                        lastKnownException.getValue().getMessage());
                             }
                             try {
                                 return doFunctionCall(request, functionCall);
                             } catch (BmcException e) {
                                 if (!retryCondition.shouldBeRetried(e)) {
-                                    LOG.debug("Not retrying, not retriable: {}", e.getMessage());
+                                    LOG.debug(
+                                            "Http Status Code: {}, Error Code: {}, Not retrying, not retriable: {}",
+                                            e.getStatusCode(),
+                                            e.getServiceCode(),
+                                            e.getMessage());
                                     throw e;
                                 }
                                 lastKnownException.setValue(e);

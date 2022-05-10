@@ -127,6 +127,7 @@ public class AutonomousDatabaseStandbySummary {
         RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
         Upgrading("UPGRADING"),
         Inaccessible("INACCESSIBLE"),
+        Standby("STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

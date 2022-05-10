@@ -50,6 +50,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "INPUT_PORT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConditionalOutputPort.class,
+        name = "CONDITIONAL_OUTPUT_PORT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ProxyField.class,
         name = "PROXY_FIELD"
     ),
@@ -64,6 +68,10 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Parameter.class,
         name = "PARAMETER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PivotField.class,
+        name = "PIVOT_FIELD"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OutputField.class,
@@ -139,6 +147,9 @@ public class TypedObject {
         DynamicInputField("DYNAMIC_INPUT_FIELD"),
         ProxyField("PROXY_FIELD"),
         Parameter("PARAMETER"),
+        PivotField("PIVOT_FIELD"),
+        MacroPivotField("MACRO_PIVOT_FIELD"),
+        ConditionalOutputPort("CONDITIONAL_OUTPUT_PORT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

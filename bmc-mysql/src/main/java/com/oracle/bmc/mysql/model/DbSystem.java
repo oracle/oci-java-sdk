@@ -458,8 +458,7 @@ public class DbSystem {
     String subnetId;
 
     /**
-     * If the policy is to enable high availability of the instance, by
-     * maintaining secondary/failover capacity as necessary.
+     * Specifies if the DB System is highly available.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")

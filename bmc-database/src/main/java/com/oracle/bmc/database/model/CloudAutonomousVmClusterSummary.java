@@ -271,6 +271,79 @@ public class CloudAutonomousVmClusterSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
+        private Float availableCpus;
+
+        public Builder availableCpus(Float availableCpus) {
+            this.availableCpus = availableCpus;
+            this.__explicitlySet__.add("availableCpus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
+        private Float reclaimableCpus;
+
+        public Builder reclaimableCpus(Float reclaimableCpus) {
+            this.reclaimableCpus = reclaimableCpus;
+            this.__explicitlySet__.add("reclaimableCpus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableContainerDatabases")
+        private Integer availableContainerDatabases;
+
+        public Builder availableContainerDatabases(Integer availableContainerDatabases) {
+            this.availableContainerDatabases = availableContainerDatabases;
+            this.__explicitlySet__.add("availableContainerDatabases");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+        private Integer totalContainerDatabases;
+
+        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
+            this.totalContainerDatabases = totalContainerDatabases;
+            this.__explicitlySet__.add("totalContainerDatabases");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
+        private Double availableAutonomousDataStorageSizeInTBs;
+
+        public Builder availableAutonomousDataStorageSizeInTBs(
+                Double availableAutonomousDataStorageSizeInTBs) {
+            this.availableAutonomousDataStorageSizeInTBs = availableAutonomousDataStorageSizeInTBs;
+            this.__explicitlySet__.add("availableAutonomousDataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+        private Double autonomousDataStorageSizeInTBs;
+
+        public Builder autonomousDataStorageSizeInTBs(Double autonomousDataStorageSizeInTBs) {
+            this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+            this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+        private Integer dbNodeStorageSizeInGBs;
+
+        public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
+            this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+            this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+        private Integer memoryPerOracleComputeUnitInGBs;
+
+        public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
+            this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -303,7 +376,15 @@ public class CloudAutonomousVmClusterSummary {
                             lastMaintenanceRunId,
                             nextMaintenanceRunId,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            availableCpus,
+                            reclaimableCpus,
+                            availableContainerDatabases,
+                            totalContainerDatabases,
+                            availableAutonomousDataStorageSizeInTBs,
+                            autonomousDataStorageSizeInTBs,
+                            dbNodeStorageSizeInGBs,
+                            memoryPerOracleComputeUnitInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -337,7 +418,17 @@ public class CloudAutonomousVmClusterSummary {
                             .lastMaintenanceRunId(o.getLastMaintenanceRunId())
                             .nextMaintenanceRunId(o.getNextMaintenanceRunId())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .availableCpus(o.getAvailableCpus())
+                            .reclaimableCpus(o.getReclaimableCpus())
+                            .availableContainerDatabases(o.getAvailableContainerDatabases())
+                            .totalContainerDatabases(o.getTotalContainerDatabases())
+                            .availableAutonomousDataStorageSizeInTBs(
+                                    o.getAvailableAutonomousDataStorageSizeInTBs())
+                            .autonomousDataStorageSizeInTBs(o.getAutonomousDataStorageSizeInTBs())
+                            .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
+                            .memoryPerOracleComputeUnitInGBs(
+                                    o.getMemoryPerOracleComputeUnitInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -634,6 +725,54 @@ public class CloudAutonomousVmClusterSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * CPU cores available for allocation to Autonomous Databases.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
+    Float availableCpus;
+
+    /**
+     * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
+    Float reclaimableCpus;
+
+    /**
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableContainerDatabases")
+    Integer availableContainerDatabases;
+
+    /**
+     * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+    Integer totalContainerDatabases;
+
+    /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
+    Double availableAutonomousDataStorageSizeInTBs;
+
+    /**
+     * The data disk group size allocated for Autonomous Databases, in TBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+    Double autonomousDataStorageSizeInTBs;
+
+    /**
+     * The local node storage allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+    Integer dbNodeStorageSizeInGBs;
+
+    /**
+     * The amount of memory (in GBs) enabled per each OCPU core.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+    Integer memoryPerOracleComputeUnitInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

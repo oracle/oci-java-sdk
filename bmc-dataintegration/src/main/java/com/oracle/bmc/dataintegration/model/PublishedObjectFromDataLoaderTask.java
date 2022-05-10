@@ -158,6 +158,34 @@ public class PublishedObjectFromDataLoaderTask extends PublishedObject {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("conditionalCompositeFieldMap")
+        private ConditionalCompositeFieldMap conditionalCompositeFieldMap;
+
+        public Builder conditionalCompositeFieldMap(
+                ConditionalCompositeFieldMap conditionalCompositeFieldMap) {
+            this.conditionalCompositeFieldMap = conditionalCompositeFieldMap;
+            this.__explicitlySet__.add("conditionalCompositeFieldMap");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isSingleLoad")
+        private Boolean isSingleLoad;
+
+        public Builder isSingleLoad(Boolean isSingleLoad) {
+            this.isSingleLoad = isSingleLoad;
+            this.__explicitlySet__.add("isSingleLoad");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parallelLoadLimit")
+        private Integer parallelLoadLimit;
+
+        public Builder parallelLoadLimit(Integer parallelLoadLimit) {
+            this.parallelLoadLimit = parallelLoadLimit;
+            this.__explicitlySet__.add("parallelLoadLimit");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -177,7 +205,10 @@ public class PublishedObjectFromDataLoaderTask extends PublishedObject {
                             parameters,
                             opConfigValues,
                             configProviderDelegate,
-                            dataFlow);
+                            dataFlow,
+                            conditionalCompositeFieldMap,
+                            isSingleLoad,
+                            parallelLoadLimit);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -198,7 +229,10 @@ public class PublishedObjectFromDataLoaderTask extends PublishedObject {
                             .parameters(o.getParameters())
                             .opConfigValues(o.getOpConfigValues())
                             .configProviderDelegate(o.getConfigProviderDelegate())
-                            .dataFlow(o.getDataFlow());
+                            .dataFlow(o.getDataFlow())
+                            .conditionalCompositeFieldMap(o.getConditionalCompositeFieldMap())
+                            .isSingleLoad(o.getIsSingleLoad())
+                            .parallelLoadLimit(o.getParallelLoadLimit());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -227,7 +261,10 @@ public class PublishedObjectFromDataLoaderTask extends PublishedObject {
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             ConfigProvider configProviderDelegate,
-            DataFlow dataFlow) {
+            DataFlow dataFlow,
+            ConditionalCompositeFieldMap conditionalCompositeFieldMap,
+            Boolean isSingleLoad,
+            Integer parallelLoadLimit) {
         super(
                 key,
                 modelVersion,
@@ -243,6 +280,9 @@ public class PublishedObjectFromDataLoaderTask extends PublishedObject {
         this.opConfigValues = opConfigValues;
         this.configProviderDelegate = configProviderDelegate;
         this.dataFlow = dataFlow;
+        this.conditionalCompositeFieldMap = conditionalCompositeFieldMap;
+        this.isSingleLoad = isSingleLoad;
+        this.parallelLoadLimit = parallelLoadLimit;
     }
 
     /**
@@ -271,6 +311,21 @@ public class PublishedObjectFromDataLoaderTask extends PublishedObject {
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataFlow")
     DataFlow dataFlow;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("conditionalCompositeFieldMap")
+    ConditionalCompositeFieldMap conditionalCompositeFieldMap;
+
+    /**
+     * If true, defines a singular load.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSingleLoad")
+    Boolean isSingleLoad;
+
+    /**
+     * If not a singular load, this defines the number of entities being loaded in parallel at a time for a Data Loader task.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parallelLoadLimit")
+    Integer parallelLoadLimit;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

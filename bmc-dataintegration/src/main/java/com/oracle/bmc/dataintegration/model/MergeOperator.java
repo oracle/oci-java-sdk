@@ -94,9 +94,9 @@ public class MergeOperator extends Operator {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
-        private java.util.List<OutputPort> outputPorts;
+        private java.util.List<TypedObject> outputPorts;
 
-        public Builder outputPorts(java.util.List<OutputPort> outputPorts) {
+        public Builder outputPorts(java.util.List<TypedObject> outputPorts) {
             this.outputPorts = outputPorts;
             this.__explicitlySet__.add("outputPorts");
             return this;
@@ -208,7 +208,7 @@ public class MergeOperator extends Operator {
             String description,
             Integer objectVersion,
             java.util.List<InputPort> inputPorts,
-            java.util.List<OutputPort> outputPorts,
+            java.util.List<TypedObject> outputPorts,
             Integer objectStatus,
             String identifier,
             java.util.List<Parameter> parameters,

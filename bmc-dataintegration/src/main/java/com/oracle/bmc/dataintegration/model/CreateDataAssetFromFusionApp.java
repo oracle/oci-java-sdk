@@ -123,11 +123,38 @@ public class CreateDataAssetFromFusionApp extends CreateDataAssetDetails {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
-        private CreateConnectionFromBICC defaultConnection;
+        private CreateConnectionDetails defaultConnection;
 
-        public Builder defaultConnection(CreateConnectionFromBICC defaultConnection) {
+        public Builder defaultConnection(CreateConnectionDetails defaultConnection) {
             this.defaultConnection = defaultConnection;
             this.__explicitlySet__.add("defaultConnection");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("stagingDataAsset")
+        private DataAssetSummaryFromObjectStorage stagingDataAsset;
+
+        public Builder stagingDataAsset(DataAssetSummaryFromObjectStorage stagingDataAsset) {
+            this.stagingDataAsset = stagingDataAsset;
+            this.__explicitlySet__.add("stagingDataAsset");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("stagingConnection")
+        private ConnectionSummaryFromObjectStorage stagingConnection;
+
+        public Builder stagingConnection(ConnectionSummaryFromObjectStorage stagingConnection) {
+            this.stagingConnection = stagingConnection;
+            this.__explicitlySet__.add("stagingConnection");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketSchema")
+        private Schema bucketSchema;
+
+        public Builder bucketSchema(Schema bucketSchema) {
+            this.bucketSchema = bucketSchema;
+            this.__explicitlySet__.add("bucketSchema");
             return this;
         }
 
@@ -147,7 +174,10 @@ public class CreateDataAssetFromFusionApp extends CreateDataAssetDetails {
                             assetProperties,
                             registryMetadata,
                             serviceUrl,
-                            defaultConnection);
+                            defaultConnection,
+                            stagingDataAsset,
+                            stagingConnection,
+                            bucketSchema);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -165,7 +195,10 @@ public class CreateDataAssetFromFusionApp extends CreateDataAssetDetails {
                             .assetProperties(o.getAssetProperties())
                             .registryMetadata(o.getRegistryMetadata())
                             .serviceUrl(o.getServiceUrl())
-                            .defaultConnection(o.getDefaultConnection());
+                            .defaultConnection(o.getDefaultConnection())
+                            .stagingDataAsset(o.getStagingDataAsset())
+                            .stagingConnection(o.getStagingConnection())
+                            .bucketSchema(o.getBucketSchema());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -191,7 +224,10 @@ public class CreateDataAssetFromFusionApp extends CreateDataAssetDetails {
             java.util.Map<String, String> assetProperties,
             RegistryMetadata registryMetadata,
             String serviceUrl,
-            CreateConnectionFromBICC defaultConnection) {
+            CreateConnectionDetails defaultConnection,
+            DataAssetSummaryFromObjectStorage stagingDataAsset,
+            ConnectionSummaryFromObjectStorage stagingConnection,
+            Schema bucketSchema) {
         super(
                 key,
                 modelVersion,
@@ -204,6 +240,9 @@ public class CreateDataAssetFromFusionApp extends CreateDataAssetDetails {
                 registryMetadata);
         this.serviceUrl = serviceUrl;
         this.defaultConnection = defaultConnection;
+        this.stagingDataAsset = stagingDataAsset;
+        this.stagingConnection = stagingConnection;
+        this.bucketSchema = bucketSchema;
     }
 
     /**
@@ -213,7 +252,16 @@ public class CreateDataAssetFromFusionApp extends CreateDataAssetDetails {
     String serviceUrl;
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
-    CreateConnectionFromBICC defaultConnection;
+    CreateConnectionDetails defaultConnection;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("stagingDataAsset")
+    DataAssetSummaryFromObjectStorage stagingDataAsset;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("stagingConnection")
+    ConnectionSummaryFromObjectStorage stagingConnection;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketSchema")
+    Schema bucketSchema;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
