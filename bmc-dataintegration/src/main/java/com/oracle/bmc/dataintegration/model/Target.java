@@ -94,9 +94,9 @@ public class Target extends Operator {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
-        private java.util.List<OutputPort> outputPorts;
+        private java.util.List<TypedObject> outputPorts;
 
-        public Builder outputPorts(java.util.List<OutputPort> outputPorts) {
+        public Builder outputPorts(java.util.List<TypedObject> outputPorts) {
             this.outputPorts = outputPorts;
             this.__explicitlySet__.add("outputPorts");
             return this;
@@ -174,6 +174,33 @@ public class Target extends Operator {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isUseSameSourceName")
+        private Boolean isUseSameSourceName;
+
+        public Builder isUseSameSourceName(Boolean isUseSameSourceName) {
+            this.isUseSameSourceName = isUseSameSourceName;
+            this.__explicitlySet__.add("isUseSameSourceName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNamePrefix")
+        private String targetEntityNamePrefix;
+
+        public Builder targetEntityNamePrefix(String targetEntityNamePrefix) {
+            this.targetEntityNamePrefix = targetEntityNamePrefix;
+            this.__explicitlySet__.add("targetEntityNamePrefix");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNameSuffix")
+        private String targetEntityNameSuffix;
+
+        public Builder targetEntityNameSuffix(String targetEntityNameSuffix) {
+            this.targetEntityNameSuffix = targetEntityNameSuffix;
+            this.__explicitlySet__.add("targetEntityNameSuffix");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataProperty")
         private DataProperty dataProperty;
 
@@ -210,6 +237,15 @@ public class Target extends Operator {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loadOrder")
+        private Integer loadOrder;
+
+        public Builder loadOrder(Integer loadOrder) {
+            this.loadOrder = loadOrder;
+            this.__explicitlySet__.add("loadOrder");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -232,10 +268,14 @@ public class Target extends Operator {
                             isReadAccess,
                             isCopyFields,
                             isPredefinedShape,
+                            isUseSameSourceName,
+                            targetEntityNamePrefix,
+                            targetEntityNameSuffix,
                             dataProperty,
                             schemaDriftConfig,
                             fixedDataShape,
-                            writeOperationConfig);
+                            writeOperationConfig,
+                            loadOrder);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -259,10 +299,14 @@ public class Target extends Operator {
                             .isReadAccess(o.getIsReadAccess())
                             .isCopyFields(o.getIsCopyFields())
                             .isPredefinedShape(o.getIsPredefinedShape())
+                            .isUseSameSourceName(o.getIsUseSameSourceName())
+                            .targetEntityNamePrefix(o.getTargetEntityNamePrefix())
+                            .targetEntityNameSuffix(o.getTargetEntityNameSuffix())
                             .dataProperty(o.getDataProperty())
                             .schemaDriftConfig(o.getSchemaDriftConfig())
                             .fixedDataShape(o.getFixedDataShape())
-                            .writeOperationConfig(o.getWriteOperationConfig());
+                            .writeOperationConfig(o.getWriteOperationConfig())
+                            .loadOrder(o.getLoadOrder());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -285,7 +329,7 @@ public class Target extends Operator {
             String description,
             Integer objectVersion,
             java.util.List<InputPort> inputPorts,
-            java.util.List<OutputPort> outputPorts,
+            java.util.List<TypedObject> outputPorts,
             Integer objectStatus,
             String identifier,
             java.util.List<Parameter> parameters,
@@ -294,10 +338,14 @@ public class Target extends Operator {
             Boolean isReadAccess,
             Boolean isCopyFields,
             Boolean isPredefinedShape,
+            Boolean isUseSameSourceName,
+            String targetEntityNamePrefix,
+            String targetEntityNameSuffix,
             DataProperty dataProperty,
             SchemaDriftConfig schemaDriftConfig,
             Shape fixedDataShape,
-            WriteOperationConfig writeOperationConfig) {
+            WriteOperationConfig writeOperationConfig,
+            Integer loadOrder) {
         super(
                 key,
                 modelVersion,
@@ -315,10 +363,14 @@ public class Target extends Operator {
         this.isReadAccess = isReadAccess;
         this.isCopyFields = isCopyFields;
         this.isPredefinedShape = isPredefinedShape;
+        this.isUseSameSourceName = isUseSameSourceName;
+        this.targetEntityNamePrefix = targetEntityNamePrefix;
+        this.targetEntityNameSuffix = targetEntityNameSuffix;
         this.dataProperty = dataProperty;
         this.schemaDriftConfig = schemaDriftConfig;
         this.fixedDataShape = fixedDataShape;
         this.writeOperationConfig = writeOperationConfig;
+        this.loadOrder = loadOrder;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("entity")
@@ -341,6 +393,24 @@ public class Target extends Operator {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
     Boolean isPredefinedShape;
+
+    /**
+     * Specifies if entity name is the same as source.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUseSameSourceName")
+    Boolean isUseSameSourceName;
+
+    /**
+     * Prefix for the entity Name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNamePrefix")
+    String targetEntityNamePrefix;
+
+    /**
+     * Suffix for the entity Name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNameSuffix")
+    String targetEntityNameSuffix;
     /**
      * Specifies the data property.
      **/
@@ -405,6 +475,12 @@ public class Target extends Operator {
 
     @com.fasterxml.jackson.annotation.JsonProperty("writeOperationConfig")
     WriteOperationConfig writeOperationConfig;
+
+    /**
+     * A numeric loading order number for the target.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loadOrder")
+    Integer loadOrder;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -41,6 +41,21 @@ package com.oracle.bmc.dataintegration.model;
 public class AbstractDataOperationConfig {
 
     /**
+     * This map is used for passing extra metatdata configuration that is required by read / write operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("metadataConfigProperties")
+    java.util.Map<String, String> metadataConfigProperties;
+
+    /**
+     * this map is used for passing BIP report parameter values.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("derivedAttributes")
+    java.util.Map<String, String> derivedAttributes;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("callAttribute")
+    BipCallAttribute callAttribute;
+
+    /**
      * The type of data operation.
      **/
     public enum ModelType {

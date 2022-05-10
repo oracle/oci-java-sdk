@@ -37,6 +37,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "TASK_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Flatten.class,
+        name = "FLATTEN_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Aggregator.class,
         name = "AGGREGATOR_OPERATOR"
     ),
@@ -65,6 +69,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "EXPRESSION_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Function.class,
+        name = "FUNCTION_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Intersect.class,
         name = "INTERSECT_OPERATOR"
     ),
@@ -85,12 +93,20 @@ package com.oracle.bmc.dataintegration.model;
         name = "LOOKUP_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Pivot.class,
+        name = "PIVOT_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = StartOperator.class,
         name = "START_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = MergeOperator.class,
         name = "MERGE_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Split.class,
+        name = "SPLIT_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Minus.class,
@@ -143,7 +159,7 @@ public class Operator {
      * An array of output ports.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
-    java.util.List<OutputPort> outputPorts;
+    java.util.List<TypedObject> outputPorts;
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -177,18 +193,22 @@ public class Operator {
         AggregatorOperator("AGGREGATOR_OPERATOR"),
         ProjectionOperator("PROJECTION_OPERATOR"),
         TargetOperator("TARGET_OPERATOR"),
+        FlattenOperator("FLATTEN_OPERATOR"),
         DistinctOperator("DISTINCT_OPERATOR"),
         SortOperator("SORT_OPERATOR"),
         UnionOperator("UNION_OPERATOR"),
         IntersectOperator("INTERSECT_OPERATOR"),
         MinusOperator("MINUS_OPERATOR"),
         MergeOperator("MERGE_OPERATOR"),
+        FunctionOperator("FUNCTION_OPERATOR"),
+        SplitOperator("SPLIT_OPERATOR"),
         StartOperator("START_OPERATOR"),
         EndOperator("END_OPERATOR"),
         PipelineOperator("PIPELINE_OPERATOR"),
         TaskOperator("TASK_OPERATOR"),
         ExpressionOperator("EXPRESSION_OPERATOR"),
         LookupOperator("LOOKUP_OPERATOR"),
+        PivotOperator("PIVOT_OPERATOR"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

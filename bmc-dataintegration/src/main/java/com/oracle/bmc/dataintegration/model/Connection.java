@@ -49,6 +49,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "AMAZON_S3_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConnectionFromBIP.class,
+        name = "BIP_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConnectionFromMySQL.class,
         name = "MYSQL_CONNECTION"
     ),
@@ -146,6 +150,7 @@ public class Connection {
         GenericJdbcConnection("GENERIC_JDBC_CONNECTION"),
         BiccConnection("BICC_CONNECTION"),
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
+        BipConnection("BIP_CONNECTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

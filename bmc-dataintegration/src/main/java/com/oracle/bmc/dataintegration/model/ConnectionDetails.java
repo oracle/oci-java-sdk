@@ -59,6 +59,10 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConnectionFromOracleDetails.class,
         name = "ORACLEDB_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConnectionFromBipDetails.class,
+        name = "BIP_CONNECTION"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -139,6 +143,7 @@ public class ConnectionDetails {
         GenericJdbcConnection("GENERIC_JDBC_CONNECTION"),
         BiccConnection("BICC_CONNECTION"),
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
+        BipConnection("BIP_CONNECTION"),
         ;
 
         private final String value;

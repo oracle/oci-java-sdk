@@ -195,6 +195,15 @@ public class TaskRunSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("inputs")
+        private java.util.Map<String, ParameterValue> inputs;
+
+        public Builder inputs(java.util.Map<String, ParameterValue> inputs) {
+            this.inputs = inputs;
+            this.__explicitlySet__.add("inputs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private ObjectMetadata metadata;
 
@@ -229,6 +238,7 @@ public class TaskRunSummary {
                             refTaskRunId,
                             reRunType,
                             stepId,
+                            inputs,
                             metadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -256,6 +266,7 @@ public class TaskRunSummary {
                             .refTaskRunId(o.getRefTaskRunId())
                             .reRunType(o.getReRunType())
                             .stepId(o.getStepId())
+                            .inputs(o.getInputs())
                             .metadata(o.getMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -525,6 +536,12 @@ public class TaskRunSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     String stepId;
+
+    /**
+     * A map of the configuration provider input bindings of the run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("inputs")
+    java.util.Map<String, ParameterValue> inputs;
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     ObjectMetadata metadata;

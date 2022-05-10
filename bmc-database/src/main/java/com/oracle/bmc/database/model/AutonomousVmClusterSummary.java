@@ -280,6 +280,34 @@ public class AutonomousVmClusterSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
+        private Integer reclaimableCpus;
+
+        public Builder reclaimableCpus(Integer reclaimableCpus) {
+            this.reclaimableCpus = reclaimableCpus;
+            this.__explicitlySet__.add("reclaimableCpus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableContainerDatabases")
+        private Integer availableContainerDatabases;
+
+        public Builder availableContainerDatabases(Integer availableContainerDatabases) {
+            this.availableContainerDatabases = availableContainerDatabases;
+            this.__explicitlySet__.add("availableContainerDatabases");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
+        private Double availableAutonomousDataStorageSizeInTBs;
+
+        public Builder availableAutonomousDataStorageSizeInTBs(
+                Double availableAutonomousDataStorageSizeInTBs) {
+            this.availableAutonomousDataStorageSizeInTBs = availableAutonomousDataStorageSizeInTBs;
+            this.__explicitlySet__.add("availableAutonomousDataStorageSizeInTBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -313,7 +341,10 @@ public class AutonomousVmClusterSummary {
                             availableDataStorageSizeInTBs,
                             licenseModel,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            reclaimableCpus,
+                            availableContainerDatabases,
+                            availableAutonomousDataStorageSizeInTBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -348,7 +379,11 @@ public class AutonomousVmClusterSummary {
                             .availableDataStorageSizeInTBs(o.getAvailableDataStorageSizeInTBs())
                             .licenseModel(o.getLicenseModel())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .reclaimableCpus(o.getReclaimableCpus())
+                            .availableContainerDatabases(o.getAvailableContainerDatabases())
+                            .availableAutonomousDataStorageSizeInTBs(
+                                    o.getAvailableAutonomousDataStorageSizeInTBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -555,7 +590,8 @@ public class AutonomousVmClusterSummary {
     Double dataStorageSizeInGBs;
 
     /**
-     * The data storage available in TBs
+     * **Deprecated.** Use {@code availableAutonomousDataStorageSizeInTBs} for Autonomous Databases data storage available, in TBs.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDataStorageSizeInTBs")
     Double availableDataStorageSizeInTBs;
@@ -630,6 +666,24 @@ public class AutonomousVmClusterSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
+    Integer reclaimableCpus;
+
+    /**
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableContainerDatabases")
+    Integer availableContainerDatabases;
+
+    /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
+    Double availableAutonomousDataStorageSizeInTBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

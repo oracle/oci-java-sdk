@@ -8,6 +8,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.base.Supplier;
+import com.oracle.bmc.ServiceDetails;
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
 import lombok.RequiredArgsConstructor;
@@ -54,11 +55,16 @@ public class GenericWaiter {
             LOG.debug("Invoking function call");
             r = functionCall.apply(requestSupplier.get());
             if (terminationPredicate.apply(r)) {
+                LOG.debug(
+                        "Total Latency for {} API call is: {}ms",
+                        ServiceDetails.getOperationName(),
+                        (context.getCurrentTime() - context.getStartTime()));
                 return Optional.of(r);
             }
             context.incrementAttempts();
             context.setCurrentTime(System.currentTimeMillis());
 
+            LOG.debug("Retry attempt: {}", context.getAttemptsMade());
             if (waiterConfiguration.getTerminationStrategy().shouldTerminate(context)) {
                 LOG.debug("Termination strategy decided to terminate with context at: {}", context);
                 break;
@@ -74,7 +80,10 @@ public class GenericWaiter {
                 return Optional.absent();
             }
         }
-
+        LOG.debug(
+                "Total Latency for {} API call is: {}ms",
+                ServiceDetails.getOperationName(),
+                (context.getCurrentTime() - context.getStartTime()));
         return Optional.absent();
     }
 }

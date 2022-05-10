@@ -33,12 +33,24 @@ package com.oracle.bmc.dataintegration.model;
         name = "RULE_BASED_FIELD_MAP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RuleBasedEntityMap.class,
+        name = "RULE_BASED_ENTITY_MAP"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = NamedEntityMap.class,
+        name = "NAMED_ENTITY_MAP"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DirectFieldMap.class,
         name = "DIRECT_FIELD_MAP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CompositeFieldMap.class,
         name = "COMPOSITE_FIELD_MAP"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConditionalCompositeFieldMap.class,
+        name = "CONDITIONAL_COMPOSITE_FIELD_MAP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DirectNamedFieldMap.class,
@@ -63,6 +75,9 @@ public class FieldMap {
         CompositeFieldMap("COMPOSITE_FIELD_MAP"),
         DirectFieldMap("DIRECT_FIELD_MAP"),
         RuleBasedFieldMap("RULE_BASED_FIELD_MAP"),
+        ConditionalCompositeFieldMap("CONDITIONAL_COMPOSITE_FIELD_MAP"),
+        NamedEntityMap("NAMED_ENTITY_MAP"),
+        RuleBasedEntityMap("RULE_BASED_ENTITY_MAP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

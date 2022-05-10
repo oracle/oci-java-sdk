@@ -183,6 +183,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
+        private java.util.List<Float> provisionableCpus;
+
+        public Builder provisionableCpus(java.util.List<Float> provisionableCpus) {
+            this.provisionableCpus = provisionableCpus;
+            this.__explicitlySet__.add("provisionableCpus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
         private Integer dataStorageSizeInTBs;
 
@@ -822,6 +831,7 @@ public class AutonomousDatabase {
                             keyHistoryEntry,
                             cpuCoreCount,
                             ocpuCount,
+                            provisionableCpus,
                             dataStorageSizeInTBs,
                             memoryPerOracleComputeUnitInGBs,
                             dataStorageSizeInGBs,
@@ -916,6 +926,7 @@ public class AutonomousDatabase {
                             .keyHistoryEntry(o.getKeyHistoryEntry())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .ocpuCount(o.getOcpuCount())
+                            .provisionableCpus(o.getProvisionableCpus())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .memoryPerOracleComputeUnitInGBs(o.getMemoryPerOracleComputeUnitInGBs())
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
@@ -1034,6 +1045,7 @@ public class AutonomousDatabase {
         RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
         Upgrading("UPGRADING"),
         Inaccessible("INACCESSIBLE"),
+        Standby("STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1177,6 +1189,12 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     Float ocpuCount;
+
+    /**
+     * An array of CPU values that an Autonomous Database can be scaled to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
+    java.util.List<Float> provisionableCpus;
 
     /**
      * The quantity of data in the database, in terabytes.

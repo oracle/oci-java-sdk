@@ -57,6 +57,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "ORACLE_ADWC_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromBIP.class,
+        name = "BIP_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateConnectionFromMySQL.class,
         name = "MYSQL_CONNECTION"
     )
@@ -130,6 +134,7 @@ public class UpdateConnectionDetails {
         GenericJdbcConnection("GENERIC_JDBC_CONNECTION"),
         BiccConnection("BICC_CONNECTION"),
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
+        BipConnection("BIP_CONNECTION"),
         ;
 
         private final String value;

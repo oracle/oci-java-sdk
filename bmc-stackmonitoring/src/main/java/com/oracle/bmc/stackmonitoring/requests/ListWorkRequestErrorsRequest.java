@@ -55,13 +55,13 @@ public class ListWorkRequestErrorsRequest
     private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending. If no value is specified timestamp is default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending. If no value is specified timestamp is default.
      *
      **/
     public enum SortBy {

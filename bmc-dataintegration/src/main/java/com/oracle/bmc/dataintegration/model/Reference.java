@@ -200,6 +200,15 @@ public class Reference {
         OracleAdwcDataAsset("ORACLE_ADWC_DATA_ASSET"),
         MysqlDataAsset("MYSQL_DATA_ASSET"),
         GenericJdbcDataAsset("GENERIC_JDBC_DATA_ASSET"),
+        FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
+        AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
+        Schema("SCHEMA"),
+        IntegrationTask("INTEGRATION_TASK"),
+        DataLoaderTask("DATA_LOADER_TASK"),
+        SqlTask("SQL_TASK"),
+        OciDataflowTask("OCI_DATAFLOW_TASK"),
+        PipelineTask("PIPELINE_TASK"),
+        RestTask("REST_TASK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

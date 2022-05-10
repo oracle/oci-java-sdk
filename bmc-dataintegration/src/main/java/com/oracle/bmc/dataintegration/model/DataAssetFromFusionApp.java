@@ -159,9 +159,9 @@ public class DataAssetFromFusionApp extends DataAsset {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
-        private ConnectionFromBICCDetails defaultConnection;
+        private ConnectionDetails defaultConnection;
 
-        public Builder defaultConnection(ConnectionFromBICCDetails defaultConnection) {
+        public Builder defaultConnection(ConnectionDetails defaultConnection) {
             this.defaultConnection = defaultConnection;
             this.__explicitlySet__.add("defaultConnection");
             return this;
@@ -239,7 +239,7 @@ public class DataAssetFromFusionApp extends DataAsset {
             ObjectMetadata metadata,
             java.util.Map<String, String> keyMap,
             String serviceUrl,
-            ConnectionFromBICCDetails defaultConnection) {
+            ConnectionDetails defaultConnection) {
         super(
                 key,
                 modelVersion,
@@ -265,7 +265,7 @@ public class DataAssetFromFusionApp extends DataAsset {
     String serviceUrl;
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
-    ConnectionFromBICCDetails defaultConnection;
+    ConnectionDetails defaultConnection;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

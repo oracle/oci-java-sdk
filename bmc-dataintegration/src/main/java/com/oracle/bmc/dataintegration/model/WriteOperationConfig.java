@@ -32,6 +32,34 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("metadataConfigProperties")
+        private java.util.Map<String, String> metadataConfigProperties;
+
+        public Builder metadataConfigProperties(
+                java.util.Map<String, String> metadataConfigProperties) {
+            this.metadataConfigProperties = metadataConfigProperties;
+            this.__explicitlySet__.add("metadataConfigProperties");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("derivedAttributes")
+        private java.util.Map<String, String> derivedAttributes;
+
+        public Builder derivedAttributes(java.util.Map<String, String> derivedAttributes) {
+            this.derivedAttributes = derivedAttributes;
+            this.__explicitlySet__.add("derivedAttributes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("callAttribute")
+        private BipCallAttribute callAttribute;
+
+        public Builder callAttribute(BipCallAttribute callAttribute) {
+            this.callAttribute = callAttribute;
+            this.__explicitlySet__.add("callAttribute");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
@@ -128,6 +156,9 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
         public WriteOperationConfig build() {
             WriteOperationConfig __instance__ =
                     new WriteOperationConfig(
+                            metadataConfigProperties,
+                            derivedAttributes,
+                            callAttribute,
                             key,
                             modelVersion,
                             parentRef,
@@ -145,7 +176,10 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(WriteOperationConfig o) {
             Builder copiedBuilder =
-                    key(o.getKey())
+                    metadataConfigProperties(o.getMetadataConfigProperties())
+                            .derivedAttributes(o.getDerivedAttributes())
+                            .callAttribute(o.getCallAttribute())
+                            .key(o.getKey())
                             .modelVersion(o.getModelVersion())
                             .parentRef(o.getParentRef())
                             .operations(o.getOperations())
@@ -170,6 +204,9 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
 
     @Deprecated
     public WriteOperationConfig(
+            java.util.Map<String, String> metadataConfigProperties,
+            java.util.Map<String, String> derivedAttributes,
+            BipCallAttribute callAttribute,
             String key,
             String modelVersion,
             ParentReference parentRef,
@@ -180,7 +217,7 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
             WriteMode writeMode,
             UniqueKey mergeKey,
             Integer objectStatus) {
-        super();
+        super(metadataConfigProperties, derivedAttributes, callAttribute);
         this.key = key;
         this.modelVersion = modelVersion;
         this.parentRef = parentRef;

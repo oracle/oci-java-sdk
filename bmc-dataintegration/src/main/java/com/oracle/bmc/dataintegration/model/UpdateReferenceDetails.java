@@ -89,7 +89,7 @@ public class UpdateReferenceDetails {
     java.util.Map<String, String> options;
 
     /**
-     * The new target object to reference. This should be of type {@code DataAsset}. The child references can be of type {@code Connection}.
+     * The new target object to reference. This can be of type {@code DataAsset}, {@code Schema} or {@code Task}. In case of {@code DataAsset}, the child references can be of type {@code Connection}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
     Object targetObject;
