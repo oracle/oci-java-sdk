@@ -33,6 +33,10 @@ package com.oracle.bmc.devops.model;
         name = "DEVOPS_CODE_REPOSITORY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketCloudFilter.class,
+        name = "BITBUCKET_CLOUD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabFilter.class,
         name = "GITLAB"
     ),

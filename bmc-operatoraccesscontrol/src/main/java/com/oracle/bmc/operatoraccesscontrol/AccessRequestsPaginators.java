@@ -267,4 +267,118 @@ public class AccessRequestsPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listInteractions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListInteractionsResponse> listInteractionsResponseIterator(
+            final ListInteractionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListInteractionsRequest.Builder, ListInteractionsRequest, ListInteractionsResponse>(
+                new com.google.common.base.Supplier<ListInteractionsRequest.Builder>() {
+                    @Override
+                    public ListInteractionsRequest.Builder get() {
+                        return ListInteractionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListInteractionsResponse, String>() {
+                    @Override
+                    public String apply(ListInteractionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInteractionsRequest.Builder>,
+                        ListInteractionsRequest>() {
+                    @Override
+                    public ListInteractionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInteractionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListInteractionsRequest, ListInteractionsResponse>() {
+                    @Override
+                    public ListInteractionsResponse apply(ListInteractionsRequest request) {
+                        return client.listInteractions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.operatoraccesscontrol.model.InteractionSummary} objects
+     * contained in responses from the listInteractions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.operatoraccesscontrol.model.InteractionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.operatoraccesscontrol.model.InteractionSummary>
+            listInteractionsRecordIterator(final ListInteractionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListInteractionsRequest.Builder, ListInteractionsRequest, ListInteractionsResponse,
+                com.oracle.bmc.operatoraccesscontrol.model.InteractionSummary>(
+                new com.google.common.base.Supplier<ListInteractionsRequest.Builder>() {
+                    @Override
+                    public ListInteractionsRequest.Builder get() {
+                        return ListInteractionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListInteractionsResponse, String>() {
+                    @Override
+                    public String apply(ListInteractionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInteractionsRequest.Builder>,
+                        ListInteractionsRequest>() {
+                    @Override
+                    public ListInteractionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInteractionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListInteractionsRequest, ListInteractionsResponse>() {
+                    @Override
+                    public ListInteractionsResponse apply(ListInteractionsRequest request) {
+                        return client.listInteractions(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListInteractionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.operatoraccesscontrol.model.InteractionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.operatoraccesscontrol.model.InteractionSummary>
+                            apply(ListInteractionsResponse response) {
+                        return response.getInteractionCollection().getItems();
+                    }
+                });
+    }
 }

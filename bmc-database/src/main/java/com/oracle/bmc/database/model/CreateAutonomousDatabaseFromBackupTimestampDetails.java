@@ -43,6 +43,24 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
+        private String characterSet;
+
+        public Builder characterSet(String characterSet) {
+            this.characterSet = characterSet;
+            this.__explicitlySet__.add("characterSet");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
+        private String ncharacterSet;
+
+        public Builder ncharacterSet(String ncharacterSet) {
+            this.ncharacterSet = ncharacterSet;
+            this.__explicitlySet__.add("ncharacterSet");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
@@ -234,6 +252,15 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isLocalDataGuardEnabled")
+        private Boolean isLocalDataGuardEnabled;
+
+        public Builder isLocalDataGuardEnabled(Boolean isLocalDataGuardEnabled) {
+            this.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
+            this.__explicitlySet__.add("isLocalDataGuardEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -388,6 +415,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             CreateAutonomousDatabaseFromBackupTimestampDetails __instance__ =
                     new CreateAutonomousDatabaseFromBackupTimestampDetails(
                             compartmentId,
+                            characterSet,
+                            ncharacterSet,
                             dbName,
                             cpuCoreCount,
                             ocpuCount,
@@ -409,6 +438,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             arePrimaryWhitelistedIpsUsed,
                             standbyWhitelistedIps,
                             isDataGuardEnabled,
+                            isLocalDataGuardEnabled,
                             subnetId,
                             nsgIds,
                             privateEndpointLabel,
@@ -433,6 +463,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
         public Builder copy(CreateAutonomousDatabaseFromBackupTimestampDetails o) {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
+                            .characterSet(o.getCharacterSet())
+                            .ncharacterSet(o.getNcharacterSet())
                             .dbName(o.getDbName())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .ocpuCount(o.getOcpuCount())
@@ -455,6 +487,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .arePrimaryWhitelistedIpsUsed(o.getArePrimaryWhitelistedIpsUsed())
                             .standbyWhitelistedIps(o.getStandbyWhitelistedIps())
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
+                            .isLocalDataGuardEnabled(o.getIsLocalDataGuardEnabled())
                             .subnetId(o.getSubnetId())
                             .nsgIds(o.getNsgIds())
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
@@ -488,6 +521,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
     @Deprecated
     public CreateAutonomousDatabaseFromBackupTimestampDetails(
             String compartmentId,
+            String characterSet,
+            String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
             Float ocpuCount,
@@ -509,6 +544,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             Boolean arePrimaryWhitelistedIpsUsed,
             java.util.List<String> standbyWhitelistedIps,
             Boolean isDataGuardEnabled,
+            Boolean isLocalDataGuardEnabled,
             String subnetId,
             java.util.List<String> nsgIds,
             String privateEndpointLabel,
@@ -527,6 +563,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             CloneType cloneType) {
         super(
                 compartmentId,
+                characterSet,
+                ncharacterSet,
                 dbName,
                 cpuCoreCount,
                 ocpuCount,
@@ -548,6 +586,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 arePrimaryWhitelistedIpsUsed,
                 standbyWhitelistedIps,
                 isDataGuardEnabled,
+                isLocalDataGuardEnabled,
                 subnetId,
                 nsgIds,
                 privateEndpointLabel,

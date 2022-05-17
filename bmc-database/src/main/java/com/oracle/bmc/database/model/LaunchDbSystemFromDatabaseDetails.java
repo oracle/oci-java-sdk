@@ -132,6 +132,16 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
+        private StorageVolumePerformanceMode storageVolumePerformanceMode;
+
+        public Builder storageVolumePerformanceMode(
+                StorageVolumePerformanceMode storageVolumePerformanceMode) {
+            this.storageVolumePerformanceMode = storageVolumePerformanceMode;
+            this.__explicitlySet__.add("storageVolumePerformanceMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sparseDiskgroup")
         private Boolean sparseDiskgroup;
 
@@ -312,6 +322,7 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
                             shape,
                             timeZone,
                             dbSystemOptions,
+                            storageVolumePerformanceMode,
                             sparseDiskgroup,
                             sshPublicKeys,
                             hostname,
@@ -348,6 +359,7 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
                             .shape(o.getShape())
                             .timeZone(o.getTimeZone())
                             .dbSystemOptions(o.getDbSystemOptions())
+                            .storageVolumePerformanceMode(o.getStorageVolumePerformanceMode())
                             .sparseDiskgroup(o.getSparseDiskgroup())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .hostname(o.getHostname())
@@ -392,6 +404,7 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
             String shape,
             String timeZone,
             DbSystemOptions dbSystemOptions,
+            StorageVolumePerformanceMode storageVolumePerformanceMode,
             Boolean sparseDiskgroup,
             java.util.List<String> sshPublicKeys,
             String hostname,
@@ -422,6 +435,7 @@ public class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase {
                 shape,
                 timeZone,
                 dbSystemOptions,
+                storageVolumePerformanceMode,
                 sparseDiskgroup,
                 sshPublicKeys,
                 hostname,

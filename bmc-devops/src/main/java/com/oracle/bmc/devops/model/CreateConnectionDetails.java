@@ -34,6 +34,10 @@ package com.oracle.bmc.devops.model;
         name = "GITHUB_ACCESS_TOKEN"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateBitbucketCloudAppPasswordConnectionDetails.class,
+        name = "BITBUCKET_CLOUD_APP_PASSWORD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateGitlabAccessTokenConnectionDetails.class,
         name = "GITLAB_ACCESS_TOKEN"
     )

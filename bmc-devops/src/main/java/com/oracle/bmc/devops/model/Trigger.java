@@ -39,6 +39,10 @@ package com.oracle.bmc.devops.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DevopsCodeRepositoryTrigger.class,
         name = "DEVOPS_CODE_REPOSITORY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketCloudTrigger.class,
+        name = "BITBUCKET_CLOUD"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -167,12 +171,13 @@ public class Trigger {
     java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+     * Source of the trigger.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum TriggerSource {
         Github("GITHUB"),
         Gitlab("GITLAB"),
+        BitbucketCloud("BITBUCKET_CLOUD"),
         DevopsCodeRepository("DEVOPS_CODE_REPOSITORY"),
 
         /**

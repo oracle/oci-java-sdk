@@ -114,6 +114,25 @@ public class DbSystem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+        private Integer memorySizeInGBs;
+
+        public Builder memorySizeInGBs(Integer memorySizeInGBs) {
+            this.memorySizeInGBs = memorySizeInGBs;
+            this.__explicitlySet__.add("memorySizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
+        private StorageVolumePerformanceMode storageVolumePerformanceMode;
+
+        public Builder storageVolumePerformanceMode(
+                StorageVolumePerformanceMode storageVolumePerformanceMode) {
+            this.storageVolumePerformanceMode = storageVolumePerformanceMode;
+            this.__explicitlySet__.add("storageVolumePerformanceMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -447,6 +466,8 @@ public class DbSystem {
                             backupSubnetId,
                             nsgIds,
                             backupNetworkNsgIds,
+                            memorySizeInGBs,
+                            storageVolumePerformanceMode,
                             shape,
                             dbSystemOptions,
                             sshPublicKeys,
@@ -499,6 +520,8 @@ public class DbSystem {
                             .backupSubnetId(o.getBackupSubnetId())
                             .nsgIds(o.getNsgIds())
                             .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
+                            .memorySizeInGBs(o.getMemorySizeInGBs())
+                            .storageVolumePerformanceMode(o.getStorageVolumePerformanceMode())
                             .shape(o.getShape())
                             .dbSystemOptions(o.getDbSystemOptions())
                             .sshPublicKeys(o.getSshPublicKeys())
@@ -606,9 +629,9 @@ public class DbSystem {
     String backupSubnetId;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -620,6 +643,65 @@ public class DbSystem {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     java.util.List<String> backupNetworkNsgIds;
+
+    /**
+     * Memory allocated to the DB system, in gigabytes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+    Integer memorySizeInGBs;
+    /**
+     * The block storage volume performance level. Valid values are {@code BALANCED} and {@code HIGH_PERFORMANCE}. See [Block Volume Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum StorageVolumePerformanceMode {
+        Balanced("BALANCED"),
+        HighPerformance("HIGH_PERFORMANCE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, StorageVolumePerformanceMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (StorageVolumePerformanceMode v : StorageVolumePerformanceMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        StorageVolumePerformanceMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static StorageVolumePerformanceMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'StorageVolumePerformanceMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The block storage volume performance level. Valid values are {@code BALANCED} and {@code HIGH_PERFORMANCE}. See [Block Volume Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
+    StorageVolumePerformanceMode storageVolumePerformanceMode;
 
     /**
      * The shape of the DB system. The shape determines resources to allocate to the DB system.

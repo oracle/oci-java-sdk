@@ -6531,6 +6531,43 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ListAutonomousDatabaseCharacterSetsResponse listAutonomousDatabaseCharacterSets(
+            ListAutonomousDatabaseCharacterSetsRequest request) {
+        LOG.trace("Called listAutonomousDatabaseCharacterSets");
+        final ListAutonomousDatabaseCharacterSetsRequest interceptedRequest =
+                ListAutonomousDatabaseCharacterSetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousDatabaseCharacterSetsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDatabaseCharacterSetsResponse>
+                transformer = ListAutonomousDatabaseCharacterSetsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousDatabaseCharacterSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListAutonomousDatabaseClonesResponse listAutonomousDatabaseClones(
             ListAutonomousDatabaseClonesRequest request) {
         LOG.trace("Called listAutonomousDatabaseClones");
@@ -7456,6 +7493,42 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ListDbSystemComputePerformancesResponse listDbSystemComputePerformances(
+            ListDbSystemComputePerformancesRequest request) {
+        LOG.trace("Called listDbSystemComputePerformances");
+        final ListDbSystemComputePerformancesRequest interceptedRequest =
+                ListDbSystemComputePerformancesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDbSystemComputePerformancesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemComputePerformancesResponse>
+                transformer = ListDbSystemComputePerformancesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystemComputePerformances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListDbSystemPatchHistoryEntriesResponse listDbSystemPatchHistoryEntries(
             ListDbSystemPatchHistoryEntriesRequest request) {
         LOG.trace("Called listDbSystemPatchHistoryEntries");
@@ -7544,6 +7617,42 @@ public class DatabaseClient implements Database {
                 "ListDbSystemShapes",
                 ib.getRequestUri().toString(),
                 "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemShapeSummary/ListDbSystemShapes");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDbSystemStoragePerformancesResponse listDbSystemStoragePerformances(
+            ListDbSystemStoragePerformancesRequest request) {
+        LOG.trace("Called listDbSystemStoragePerformances");
+        final ListDbSystemStoragePerformancesRequest interceptedRequest =
+                ListDbSystemStoragePerformancesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDbSystemStoragePerformancesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemStoragePerformancesResponse>
+                transformer = ListDbSystemStoragePerformancesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystemStoragePerformances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -29,6 +29,10 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketCloudTriggerSummary.class,
+        name = "BITBUCKET_CLOUD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabTriggerSummary.class,
         name = "GITLAB"
     ),

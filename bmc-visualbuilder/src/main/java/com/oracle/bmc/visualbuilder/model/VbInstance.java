@@ -170,6 +170,24 @@ public class VbInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("idcsInfo")
+        private IdcsInfoDetails idcsInfo;
+
+        public Builder idcsInfo(IdcsInfoDetails idcsInfo) {
+            this.idcsInfo = idcsInfo;
+            this.__explicitlySet__.add("idcsInfo");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("attachments")
+        private java.util.List<AttachmentDetails> attachments;
+
+        public Builder attachments(java.util.List<AttachmentDetails> attachments) {
+            this.attachments = attachments;
+            this.__explicitlySet__.add("attachments");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -191,7 +209,9 @@ public class VbInstance {
                             isVisualBuilderEnabled,
                             customEndpoint,
                             alternateCustomEndpoints,
-                            consumptionModel);
+                            consumptionModel,
+                            idcsInfo,
+                            attachments);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -214,7 +234,9 @@ public class VbInstance {
                             .isVisualBuilderEnabled(o.getIsVisualBuilderEnabled())
                             .customEndpoint(o.getCustomEndpoint())
                             .alternateCustomEndpoints(o.getAlternateCustomEndpoints())
-                            .consumptionModel(o.getConsumptionModel());
+                            .consumptionModel(o.getConsumptionModel())
+                            .idcsInfo(o.getIdcsInfo())
+                            .attachments(o.getAttachments());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -423,6 +445,16 @@ public class VbInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
     ConsumptionModel consumptionModel;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("idcsInfo")
+    IdcsInfoDetails idcsInfo;
+
+    /**
+     * A list of associated attachments to other services
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("attachments")
+    java.util.List<AttachmentDetails> attachments;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

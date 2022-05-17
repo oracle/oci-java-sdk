@@ -81,6 +81,10 @@ package com.oracle.bmc.devops.model;
         name = "OKE_BLUE_GREEN_TRAFFIC_SHIFT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OkeHelmChartDeploymentStageExecutionProgress.class,
+        name = "OKE_HELM_CHART_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InvokeFunctionDeployStageExecutionProgress.class,
         name = "INVOKE_FUNCTION"
     ),

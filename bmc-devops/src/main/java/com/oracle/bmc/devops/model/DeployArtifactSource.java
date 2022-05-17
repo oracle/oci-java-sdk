@@ -33,6 +33,10 @@ package com.oracle.bmc.devops.model;
         name = "GENERIC_ARTIFACT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HelmRepositoryDeployArtifactSource.class,
+        name = "HELM_CHART"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OcirDeployArtifactSource.class,
         name = "OCIR"
     ),
@@ -52,6 +56,7 @@ public class DeployArtifactSource {
         Inline("INLINE"),
         Ocir("OCIR"),
         GenericArtifact("GENERIC_ARTIFACT"),
+        HelmChart("HELM_CHART"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

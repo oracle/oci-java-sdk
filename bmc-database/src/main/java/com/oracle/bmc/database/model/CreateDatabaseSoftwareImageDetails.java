@@ -291,7 +291,7 @@ public class CreateDatabaseSoftwareImageDetails {
     java.util.List<String> databaseSoftwareImageOneOffPatches;
 
     /**
-     * output from lsinventory which will get passed as a string
+     * The output from the OPatch lsInventory command, which is passed as a string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lsInventory")
     String lsInventory;

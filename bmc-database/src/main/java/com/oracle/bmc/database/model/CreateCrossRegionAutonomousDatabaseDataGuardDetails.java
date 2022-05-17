@@ -6,6 +6,10 @@ package com.oracle.bmc.database.model;
 
 /**
  * Details to create an Autonomous Data Guard association for an existing Autonomous Database where the standby is in a different (remote) region from the source primary database.
+ * *IMPORTANT*
+ * Note the following for creating standby databases in cross-region Autonomous Data Guard associations:
+ *   - To create your standby database in a region different from the region of the primary, use the API endpoint of the region in which the standby will be located. For example, if the primary database is in the IAD region, and you want to create the standby in the PHX region, make the API call using the PHX endpoint (https://database.us-phoenix-1.oraclecloud.com). See [API Endpoints](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs) for the list of Database Service API endpoints.
+ *   - In the request to create the standby database, the {@code sourceId} value should be the OCID of the primary database.
  * The following parameters are required for the cross-region standby database and must contain the same values as the source Autonomous Database:
  *   - dbName
  *   - cpuCoreCount
@@ -21,7 +25,7 @@ package com.oracle.bmc.database.model;
  *   - whitelistedIps
  *   - isMtlsConnectionRequired
  * Example I - Creating a cross-region standby with required parameters only:
- *     {
+ *     {@code {
  *       "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
  *       "cpuCoreCount": 1,
  *       "dbName": "adatabasedb1",
@@ -29,9 +33,9 @@ package com.oracle.bmc.database.model;
  *       "dataStorageSizeInTBs": 1,
  *       "source": "CROSS_REGION_DATAGUARD",
  *       "adminPassword" : "<var>&lt;password&gt;</var>",
- *     }
+ *     }}
  *  Example II - Creating a cross-region standby that specifies optional parameters in addition to the required parameters:
- *     {
+ *     {@code {
  *       "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
  *       "cpuCoreCount": 1,
  *       "dbName": "adatabasedb1",
@@ -42,7 +46,7 @@ package com.oracle.bmc.database.model;
  *       "dbVersion": "19c",
  *       "licenseModel": "LICENSE_INCLUDED",
  *       "isAutoScalingForStorageEnabled": "true"
- *     }
+ *     }}
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -77,6 +81,24 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
+        private String characterSet;
+
+        public Builder characterSet(String characterSet) {
+            this.characterSet = characterSet;
+            this.__explicitlySet__.add("characterSet");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
+        private String ncharacterSet;
+
+        public Builder ncharacterSet(String ncharacterSet) {
+            this.ncharacterSet = ncharacterSet;
+            this.__explicitlySet__.add("ncharacterSet");
             return this;
         }
 
@@ -271,6 +293,15 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isLocalDataGuardEnabled")
+        private Boolean isLocalDataGuardEnabled;
+
+        public Builder isLocalDataGuardEnabled(Boolean isLocalDataGuardEnabled) {
+            this.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
+            this.__explicitlySet__.add("isLocalDataGuardEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -407,6 +438,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             CreateCrossRegionAutonomousDatabaseDataGuardDetails __instance__ =
                     new CreateCrossRegionAutonomousDatabaseDataGuardDetails(
                             compartmentId,
+                            characterSet,
+                            ncharacterSet,
                             dbName,
                             cpuCoreCount,
                             ocpuCount,
@@ -428,6 +461,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             arePrimaryWhitelistedIpsUsed,
                             standbyWhitelistedIps,
                             isDataGuardEnabled,
+                            isLocalDataGuardEnabled,
                             subnetId,
                             nsgIds,
                             privateEndpointLabel,
@@ -450,6 +484,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         public Builder copy(CreateCrossRegionAutonomousDatabaseDataGuardDetails o) {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
+                            .characterSet(o.getCharacterSet())
+                            .ncharacterSet(o.getNcharacterSet())
                             .dbName(o.getDbName())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .ocpuCount(o.getOcpuCount())
@@ -472,6 +508,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             .arePrimaryWhitelistedIpsUsed(o.getArePrimaryWhitelistedIpsUsed())
                             .standbyWhitelistedIps(o.getStandbyWhitelistedIps())
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
+                            .isLocalDataGuardEnabled(o.getIsLocalDataGuardEnabled())
                             .subnetId(o.getSubnetId())
                             .nsgIds(o.getNsgIds())
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
@@ -503,6 +540,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
     @Deprecated
     public CreateCrossRegionAutonomousDatabaseDataGuardDetails(
             String compartmentId,
+            String characterSet,
+            String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
             Float ocpuCount,
@@ -524,6 +563,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             Boolean arePrimaryWhitelistedIpsUsed,
             java.util.List<String> standbyWhitelistedIps,
             Boolean isDataGuardEnabled,
+            Boolean isLocalDataGuardEnabled,
             String subnetId,
             java.util.List<String> nsgIds,
             String privateEndpointLabel,
@@ -540,6 +580,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             String sourceId) {
         super(
                 compartmentId,
+                characterSet,
+                ncharacterSet,
                 dbName,
                 cpuCoreCount,
                 ocpuCount,
@@ -561,6 +603,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 arePrimaryWhitelistedIpsUsed,
                 standbyWhitelistedIps,
                 isDataGuardEnabled,
+                isLocalDataGuardEnabled,
                 subnetId,
                 nsgIds,
                 privateEndpointLabel,

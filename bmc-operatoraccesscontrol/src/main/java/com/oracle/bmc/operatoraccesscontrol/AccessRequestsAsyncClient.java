@@ -475,6 +475,56 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<InteractionRequestResponse> interactionRequest(
+            InteractionRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            InteractionRequestRequest, InteractionRequestResponse>
+                    handler) {
+        LOG.trace("Called async interactionRequest");
+        final InteractionRequestRequest interceptedRequest =
+                InteractionRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InteractionRequestConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, InteractionRequestResponse>
+                transformer = InteractionRequestConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AccessRequests",
+                "InteractionRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/InteractionRequest");
+
+        com.oracle.bmc.responses.AsyncHandler<InteractionRequestRequest, InteractionRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InteractionRequestRequest, InteractionRequestResponse>,
+                        java.util.concurrent.Future<InteractionRequestResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInteractionRequestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InteractionRequestRequest, InteractionRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccessRequestHistoriesResponse>
             listAccessRequestHistories(
                     ListAccessRequestHistoriesRequest request,
@@ -555,6 +605,50 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListAccessRequestsRequest, ListAccessRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInteractionsResponse> listInteractions(
+            ListInteractionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListInteractionsRequest, ListInteractionsResponse>
+                    handler) {
+        LOG.trace("Called async listInteractions");
+        final ListInteractionsRequest interceptedRequest =
+                ListInteractionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInteractionsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListInteractionsResponse>
+                transformer = ListInteractionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AccessRequests",
+                "ListInteractions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListInteractions");
+
+        com.oracle.bmc.responses.AsyncHandler<ListInteractionsRequest, ListInteractionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInteractionsRequest, ListInteractionsResponse>,
+                        java.util.concurrent.Future<ListInteractionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInteractionsRequest, ListInteractionsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

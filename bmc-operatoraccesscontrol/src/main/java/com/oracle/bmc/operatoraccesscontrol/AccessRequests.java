@@ -76,6 +76,19 @@ public interface AccessRequests extends AutoCloseable {
     GetAccessRequestResponse getAccessRequest(GetAccessRequestRequest request);
 
     /**
+     * Posts query for additional information for the given access request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/InteractionRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InteractionRequest API.
+     */
+    InteractionRequestResponse interactionRequest(InteractionRequestRequest request);
+
+    /**
      * Returns a history of all status associated with the accessRequestId.
      *
      * @param request The request object containing the details to send
@@ -101,6 +114,19 @@ public interface AccessRequests extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessRequests API.
      */
     ListAccessRequestsResponse listAccessRequests(ListAccessRequestsRequest request);
+
+    /**
+     * Lists the MoreInformation interaction between customer and operators.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListInteractionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInteractions API.
+     */
+    ListInteractionsResponse listInteractions(ListInteractionsRequest request);
 
     /**
      * Rejects an access request.

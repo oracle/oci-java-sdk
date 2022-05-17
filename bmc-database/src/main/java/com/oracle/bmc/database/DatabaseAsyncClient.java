@@ -8433,6 +8433,58 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutonomousDatabaseCharacterSetsResponse>
+            listAutonomousDatabaseCharacterSets(
+                    ListAutonomousDatabaseCharacterSetsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabaseCharacterSetsRequest,
+                                    ListAutonomousDatabaseCharacterSetsResponse>
+                            handler) {
+        LOG.trace("Called async listAutonomousDatabaseCharacterSets");
+        final ListAutonomousDatabaseCharacterSetsRequest interceptedRequest =
+                ListAutonomousDatabaseCharacterSetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousDatabaseCharacterSetsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDatabaseCharacterSetsResponse>
+                transformer = ListAutonomousDatabaseCharacterSetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousDatabaseCharacterSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAutonomousDatabaseCharacterSetsRequest,
+                        ListAutonomousDatabaseCharacterSetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAutonomousDatabaseCharacterSetsRequest,
+                                ListAutonomousDatabaseCharacterSetsResponse>,
+                        java.util.concurrent.Future<ListAutonomousDatabaseCharacterSetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAutonomousDatabaseCharacterSetsRequest,
+                    ListAutonomousDatabaseCharacterSetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAutonomousDatabaseClonesResponse>
             listAutonomousDatabaseClones(
                     ListAutonomousDatabaseClonesRequest request,
@@ -9672,6 +9724,57 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDbSystemComputePerformancesResponse>
+            listDbSystemComputePerformances(
+                    ListDbSystemComputePerformancesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDbSystemComputePerformancesRequest,
+                                    ListDbSystemComputePerformancesResponse>
+                            handler) {
+        LOG.trace("Called async listDbSystemComputePerformances");
+        final ListDbSystemComputePerformancesRequest interceptedRequest =
+                ListDbSystemComputePerformancesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDbSystemComputePerformancesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemComputePerformancesResponse>
+                transformer = ListDbSystemComputePerformancesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystemComputePerformances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDbSystemComputePerformancesRequest,
+                        ListDbSystemComputePerformancesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDbSystemComputePerformancesRequest,
+                                ListDbSystemComputePerformancesResponse>,
+                        java.util.concurrent.Future<ListDbSystemComputePerformancesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDbSystemComputePerformancesRequest,
+                    ListDbSystemComputePerformancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDbSystemPatchHistoryEntriesResponse>
             listDbSystemPatchHistoryEntries(
                     ListDbSystemPatchHistoryEntriesRequest request,
@@ -9800,6 +9903,57 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDbSystemShapesRequest, ListDbSystemShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDbSystemStoragePerformancesResponse>
+            listDbSystemStoragePerformances(
+                    ListDbSystemStoragePerformancesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDbSystemStoragePerformancesRequest,
+                                    ListDbSystemStoragePerformancesResponse>
+                            handler) {
+        LOG.trace("Called async listDbSystemStoragePerformances");
+        final ListDbSystemStoragePerformancesRequest interceptedRequest =
+                ListDbSystemStoragePerformancesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDbSystemStoragePerformancesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemStoragePerformancesResponse>
+                transformer = ListDbSystemStoragePerformancesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystemStoragePerformances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDbSystemStoragePerformancesRequest,
+                        ListDbSystemStoragePerformancesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDbSystemStoragePerformancesRequest,
+                                ListDbSystemStoragePerformancesResponse>,
+                        java.util.concurrent.Future<ListDbSystemStoragePerformancesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDbSystemStoragePerformancesRequest,
+                    ListDbSystemStoragePerformancesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
