@@ -29,6 +29,10 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketCloudAppPasswordConnectionSummary.class,
+        name = "BITBUCKET_CLOUD_APP_PASSWORD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GithubAccessTokenConnectionSummary.class,
         name = "GITHUB_ACCESS_TOKEN"
     ),

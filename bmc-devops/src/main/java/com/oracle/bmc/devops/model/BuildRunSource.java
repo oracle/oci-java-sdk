@@ -41,6 +41,10 @@ package com.oracle.bmc.devops.model;
         name = "MANUAL"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketCloudBuildRunSource.class,
+        name = "BITBUCKET_CLOUD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabBuildRunSource.class,
         name = "GITLAB"
     )
@@ -56,6 +60,7 @@ public class BuildRunSource {
         Manual("MANUAL"),
         Github("GITHUB"),
         Gitlab("GITLAB"),
+        BitbucketCloud("BITBUCKET_CLOUD"),
         DevopsCodeRepository("DEVOPS_CODE_REPOSITORY"),
 
         /**

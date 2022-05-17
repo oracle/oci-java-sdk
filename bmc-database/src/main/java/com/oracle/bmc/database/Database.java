@@ -2279,6 +2279,19 @@ public interface Database extends AutoCloseable {
             ListAutonomousDatabaseBackupsRequest request);
 
     /**
+     * Gets a list of supported character sets.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseCharacterSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseCharacterSets API.
+     */
+    ListAutonomousDatabaseCharacterSetsResponse listAutonomousDatabaseCharacterSets(
+            ListAutonomousDatabaseCharacterSetsRequest request);
+
+    /**
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      *
      * @param request The request object containing the details to send
@@ -2633,6 +2646,20 @@ public interface Database extends AutoCloseable {
     ListDbServersResponse listDbServers(ListDbServersRequest request);
 
     /**
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemComputePerformancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemComputePerformances API.
+     */
+    ListDbSystemComputePerformancesResponse listDbSystemComputePerformances(
+            ListDbSystemComputePerformancesRequest request);
+
+    /**
      * Gets the history of the patch actions performed on the specified DB system.
      *
      * @param request The request object containing the details to send
@@ -2670,6 +2697,20 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemShapes API.
      */
     ListDbSystemShapesResponse listDbSystemShapes(ListDbSystemShapesRequest request);
+
+    /**
+     * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemStoragePerformancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemStoragePerformances API.
+     */
+    ListDbSystemStoragePerformancesResponse listDbSystemStoragePerformances(
+            ListDbSystemStoragePerformancesRequest request);
 
     /**
      * Gets the history of the upgrade actions performed on the specified DB system.

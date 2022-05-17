@@ -77,6 +77,10 @@ package com.oracle.bmc.devops.model;
         name = "WAIT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OkeHelmChartDeployStage.class,
+        name = "OKE_HELM_CHART_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ComputeInstanceGroupBlueGreenDeployStage.class,
         name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"
     ),
@@ -253,6 +257,7 @@ public class DeployStage {
         InvokeFunction("INVOKE_FUNCTION"),
         LoadBalancerTrafficShift("LOAD_BALANCER_TRAFFIC_SHIFT"),
         ManualApproval("MANUAL_APPROVAL"),
+        OkeHelmChartDeployment("OKE_HELM_CHART_DEPLOYMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -57,6 +57,10 @@ package com.oracle.bmc.devops.model;
         name = "INVOKE_FUNCTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OkeHelmChartDeployStageSummary.class,
+        name = "OKE_HELM_CHART_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OkeCanaryTrafficShiftDeployStageSummary.class,
         name = "OKE_CANARY_TRAFFIC_SHIFT"
     ),

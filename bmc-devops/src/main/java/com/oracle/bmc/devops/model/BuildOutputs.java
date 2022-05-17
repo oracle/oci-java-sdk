@@ -52,13 +52,26 @@ public class BuildOutputs {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vulnerabilityAuditSummaryCollection")
+        private VulnerabilityAuditSummaryCollection vulnerabilityAuditSummaryCollection;
+
+        public Builder vulnerabilityAuditSummaryCollection(
+                VulnerabilityAuditSummaryCollection vulnerabilityAuditSummaryCollection) {
+            this.vulnerabilityAuditSummaryCollection = vulnerabilityAuditSummaryCollection;
+            this.__explicitlySet__.add("vulnerabilityAuditSummaryCollection");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BuildOutputs build() {
             BuildOutputs __instance__ =
                     new BuildOutputs(
-                            exportedVariables, deliveredArtifacts, artifactOverrideParameters);
+                            exportedVariables,
+                            deliveredArtifacts,
+                            artifactOverrideParameters,
+                            vulnerabilityAuditSummaryCollection);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,7 +81,9 @@ public class BuildOutputs {
             Builder copiedBuilder =
                     exportedVariables(o.getExportedVariables())
                             .deliveredArtifacts(o.getDeliveredArtifacts())
-                            .artifactOverrideParameters(o.getArtifactOverrideParameters());
+                            .artifactOverrideParameters(o.getArtifactOverrideParameters())
+                            .vulnerabilityAuditSummaryCollection(
+                                    o.getVulnerabilityAuditSummaryCollection());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -90,6 +105,9 @@ public class BuildOutputs {
 
     @com.fasterxml.jackson.annotation.JsonProperty("artifactOverrideParameters")
     DeployArtifactOverrideArgumentCollection artifactOverrideParameters;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("vulnerabilityAuditSummaryCollection")
+    VulnerabilityAuditSummaryCollection vulnerabilityAuditSummaryCollection;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

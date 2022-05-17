@@ -37,6 +37,10 @@ package com.oracle.bmc.devops.model;
         name = "OKE_CANARY_DEPLOYMENT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateOkeHelmChartDeployStageDetails.class,
+        name = "OKE_HELM_CHART_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateComputeInstanceGroupDeployStageDetails.class,
         name = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"
     ),

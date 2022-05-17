@@ -81,6 +81,10 @@ package com.oracle.bmc.devops.model;
         name = "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateOkeHelmChartDeployStageDetails.class,
+        name = "OKE_HELM_CHART_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateManualApprovalDeployStageDetails.class,
         name = "MANUAL_APPROVAL"
     ),

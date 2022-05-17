@@ -35,6 +35,10 @@ package com.oracle.bmc.devops.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GithubAccessTokenConnection.class,
         name = "GITHUB_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketCloudAppPasswordConnection.class,
+        name = "BITBUCKET_CLOUD_APP_PASSWORD"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -157,6 +161,7 @@ public class Connection {
     public enum ConnectionType {
         GithubAccessToken("GITHUB_ACCESS_TOKEN"),
         GitlabAccessToken("GITLAB_ACCESS_TOKEN"),
+        BitbucketCloudAppPassword("BITBUCKET_CLOUD_APP_PASSWORD"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

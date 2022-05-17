@@ -5,8 +5,8 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the configuration needed when the target OCI resource, OKE cluster resides
- *  in the customer's private network.
+ * Specifies the configuration needed when the target OCI resource, i.e., OKE cluster, resides
+ *  in customer's private network.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

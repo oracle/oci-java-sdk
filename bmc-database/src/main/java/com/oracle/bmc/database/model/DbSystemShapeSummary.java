@@ -49,6 +49,15 @@ public class DbSystemShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
+        private ShapeType shapeType;
+
+        public Builder shapeType(ShapeType shapeType) {
+            this.shapeType = shapeType;
+            this.__explicitlySet__.add("shapeType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -229,6 +238,7 @@ public class DbSystemShapeSummary {
                     new DbSystemShapeSummary(
                             name,
                             shapeFamily,
+                            shapeType,
                             shape,
                             availableCoreCount,
                             minimumCoreCount,
@@ -257,6 +267,7 @@ public class DbSystemShapeSummary {
             Builder copiedBuilder =
                     name(o.getName())
                             .shapeFamily(o.getShapeFamily())
+                            .shapeType(o.getShapeType())
                             .shape(o.getShape())
                             .availableCoreCount(o.getAvailableCoreCount())
                             .minimumCoreCount(o.getMinimumCoreCount())
@@ -301,6 +312,57 @@ public class DbSystemShapeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeFamily")
     String shapeFamily;
+    /**
+     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} and {@code INTEL}.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ShapeType {
+        Amd("AMD"),
+        Intel("INTEL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ShapeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ShapeType v : ShapeType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ShapeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ShapeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ShapeType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} and {@code INTEL}.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
+    ShapeType shapeType;
 
     /**
      * Deprecated. Use {@code name} instead of {@code shape}.
