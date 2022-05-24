@@ -14,6 +14,12 @@ public enum OperationTypes {
     Update("UPDATE"),
     Remove("REMOVE"),
     Updateall("UPDATEALL"),
+    Enablemodulestream("ENABLEMODULESTREAM"),
+    Disablemodulestream("DISABLEMODULESTREAM"),
+    Switchmodulestream("SWITCHMODULESTREAM"),
+    Installmodulestreamprofile("INSTALLMODULESTREAMPROFILE"),
+    Removemodulestreamprofile("REMOVEMODULESTREAMPROFILE"),
+    Compound("COMPOUND"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

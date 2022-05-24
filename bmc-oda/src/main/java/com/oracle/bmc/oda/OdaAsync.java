@@ -68,7 +68,7 @@ public interface OdaAsync extends AutoCloseable {
      * Starts an asynchronous job to create a Digital Assistant instance.
      * <p>
      * To monitor the status of the job, take the `opc-work-request-id` response
-     * header value and use it to call `GET /workRequests/{workRequestID}`.
+     * header value and use it to call `GET /workRequests/{workRequestId}`.
      *
      *
      * @param request The request object containing the details to send
@@ -85,8 +85,28 @@ public interface OdaAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Starts an asynchronous job to create a Digital Assistant instance attachment.
+     * <p>
+     * To monitor the status of the job, take the `opc-work-request-id` response
+     * header value and use it to call `GET /workRequests/{workRequestId}`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOdaInstanceAttachmentResponse> createOdaInstanceAttachment(
+            CreateOdaInstanceAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOdaInstanceAttachmentRequest, CreateOdaInstanceAttachmentResponse>
+                    handler);
+
+    /**
      * Starts an asynchronous job to delete the specified Digital Assistant instance.
-     * To monitor the status of the job, take the `opc-work-request-id` response header value and use it to call `GET /workRequests/{workRequestID}`.
+     * To monitor the status of the job, take the `opc-work-request-id` response header value and use it to call `GET /workRequests/{workRequestId}`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -102,6 +122,22 @@ public interface OdaAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Starts an asynchronous job to delete the specified Digital Assistant instance attachment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOdaInstanceAttachmentResponse> deleteOdaInstanceAttachment(
+            DeleteOdaInstanceAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOdaInstanceAttachmentRequest, DeleteOdaInstanceAttachmentResponse>
+                    handler);
+
+    /**
      * Gets the specified Digital Assistant instance.
      *
      * @param request The request object containing the details to send
@@ -114,6 +150,22 @@ public interface OdaAsync extends AutoCloseable {
     java.util.concurrent.Future<GetOdaInstanceResponse> getOdaInstance(
             GetOdaInstanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetOdaInstanceRequest, GetOdaInstanceResponse>
+                    handler);
+
+    /**
+     * Gets an ODA instance attachment by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOdaInstanceAttachmentResponse> getOdaInstanceAttachment(
+            GetOdaInstanceAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOdaInstanceAttachmentRequest, GetOdaInstanceAttachmentResponse>
                     handler);
 
     /**
@@ -133,6 +185,23 @@ public interface OdaAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Returns a list of ODA instance attachments
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOdaInstanceAttachmentsResponse> listOdaInstanceAttachments(
+            ListOdaInstanceAttachmentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOdaInstanceAttachmentsRequest, ListOdaInstanceAttachmentsResponse>
                     handler);
 
     /**
@@ -267,5 +336,21 @@ public interface OdaAsync extends AutoCloseable {
             UpdateOdaInstanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateOdaInstanceRequest, UpdateOdaInstanceResponse>
+                    handler);
+
+    /**
+     * Updates the ODA instance attachment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOdaInstanceAttachmentResponse> updateOdaInstanceAttachment(
+            UpdateOdaInstanceAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOdaInstanceAttachmentRequest, UpdateOdaInstanceAttachmentResponse>
                     handler);
 }

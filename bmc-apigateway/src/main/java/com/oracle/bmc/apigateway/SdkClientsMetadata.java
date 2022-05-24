@@ -14,6 +14,10 @@ import com.oracle.bmc.SdkClients;
     DeploymentClient.class,
     GatewayAsyncClient.class,
     GatewayClient.class,
+    SubscribersAsyncClient.class,
+    SubscribersClient.class,
+    UsagePlansAsyncClient.class,
+    UsagePlansClient.class,
     WorkRequestsAsyncClient.class,
     WorkRequestsClient.class
 })

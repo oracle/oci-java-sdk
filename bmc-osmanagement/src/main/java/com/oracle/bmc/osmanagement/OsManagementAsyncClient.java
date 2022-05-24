@@ -1252,6 +1252,112 @@ public class OsManagementAsyncClient implements OsManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableModuleStreamOnManagedInstanceResponse>
+            disableModuleStreamOnManagedInstance(
+                    DisableModuleStreamOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableModuleStreamOnManagedInstanceRequest,
+                                    DisableModuleStreamOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async disableModuleStreamOnManagedInstance");
+        final DisableModuleStreamOnManagedInstanceRequest interceptedRequest =
+                DisableModuleStreamOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableModuleStreamOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DisableModuleStreamOnManagedInstanceResponse>
+                transformer = DisableModuleStreamOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DisableModuleStreamOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/DisableModuleStreamOnManagedInstance");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableModuleStreamOnManagedInstanceRequest,
+                        DisableModuleStreamOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableModuleStreamOnManagedInstanceRequest,
+                                DisableModuleStreamOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<DisableModuleStreamOnManagedInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableModuleStreamOnManagedInstanceRequest,
+                    DisableModuleStreamOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableModuleStreamOnManagedInstanceResponse>
+            enableModuleStreamOnManagedInstance(
+                    EnableModuleStreamOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableModuleStreamOnManagedInstanceRequest,
+                                    EnableModuleStreamOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async enableModuleStreamOnManagedInstance");
+        final EnableModuleStreamOnManagedInstanceRequest interceptedRequest =
+                EnableModuleStreamOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableModuleStreamOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, EnableModuleStreamOnManagedInstanceResponse>
+                transformer = EnableModuleStreamOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "EnableModuleStreamOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/EnableModuleStreamOnManagedInstance");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableModuleStreamOnManagedInstanceRequest,
+                        EnableModuleStreamOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableModuleStreamOnManagedInstanceRequest,
+                                EnableModuleStreamOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<EnableModuleStreamOnManagedInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableModuleStreamOnManagedInstanceRequest,
+                    EnableModuleStreamOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetErratumResponse> getErratum(
             GetErratumRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetErratumRequest, GetErratumResponse>
@@ -1371,6 +1477,96 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetManagedInstanceGroupRequest, GetManagedInstanceGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModuleStreamResponse> getModuleStream(
+            GetModuleStreamRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetModuleStreamRequest, GetModuleStreamResponse>
+                    handler) {
+        LOG.trace("Called async getModuleStream");
+        final GetModuleStreamRequest interceptedRequest =
+                GetModuleStreamConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModuleStreamConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetModuleStreamResponse>
+                transformer = GetModuleStreamConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetModuleStream",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStream/GetModuleStream");
+
+        com.oracle.bmc.responses.AsyncHandler<GetModuleStreamRequest, GetModuleStreamResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModuleStreamRequest, GetModuleStreamResponse>,
+                        java.util.concurrent.Future<GetModuleStreamResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModuleStreamRequest, GetModuleStreamResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModuleStreamProfileResponse> getModuleStreamProfile(
+            GetModuleStreamProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetModuleStreamProfileRequest, GetModuleStreamProfileResponse>
+                    handler) {
+        LOG.trace("Called async getModuleStreamProfile");
+        final GetModuleStreamProfileRequest interceptedRequest =
+                GetModuleStreamProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModuleStreamProfileConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetModuleStreamProfileResponse>
+                transformer = GetModuleStreamProfileConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetModuleStreamProfile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfile/GetModuleStreamProfile");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetModuleStreamProfileRequest, GetModuleStreamProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModuleStreamProfileRequest, GetModuleStreamProfileResponse>,
+                        java.util.concurrent.Future<GetModuleStreamProfileResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModuleStreamProfileRequest, GetModuleStreamProfileResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1755,6 +1951,61 @@ public class OsManagementAsyncClient implements OsManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     InstallAllWindowsUpdatesOnManagedInstanceRequest,
                     InstallAllWindowsUpdatesOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallModuleStreamProfileOnManagedInstanceResponse>
+            installModuleStreamProfileOnManagedInstance(
+                    InstallModuleStreamProfileOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    InstallModuleStreamProfileOnManagedInstanceRequest,
+                                    InstallModuleStreamProfileOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async installModuleStreamProfileOnManagedInstance");
+        final InstallModuleStreamProfileOnManagedInstanceRequest interceptedRequest =
+                InstallModuleStreamProfileOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallModuleStreamProfileOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        InstallModuleStreamProfileOnManagedInstanceResponse>
+                transformer = InstallModuleStreamProfileOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallModuleStreamProfileOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/InstallModuleStreamProfileOnManagedInstance");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        InstallModuleStreamProfileOnManagedInstanceRequest,
+                        InstallModuleStreamProfileOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InstallModuleStreamProfileOnManagedInstanceRequest,
+                                InstallModuleStreamProfileOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<
+                                InstallModuleStreamProfileOnManagedInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InstallModuleStreamProfileOnManagedInstanceRequest,
+                    InstallModuleStreamProfileOnManagedInstanceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2322,6 +2573,201 @@ public class OsManagementAsyncClient implements OsManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListModuleStreamProfilesResponse> listModuleStreamProfiles(
+            ListModuleStreamProfilesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModuleStreamProfilesRequest, ListModuleStreamProfilesResponse>
+                    handler) {
+        LOG.trace("Called async listModuleStreamProfiles");
+        final ListModuleStreamProfilesRequest interceptedRequest =
+                ListModuleStreamProfilesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModuleStreamProfilesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListModuleStreamProfilesResponse>
+                transformer = ListModuleStreamProfilesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListModuleStreamProfiles",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileSummary/ListModuleStreamProfiles");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListModuleStreamProfilesRequest, ListModuleStreamProfilesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModuleStreamProfilesRequest, ListModuleStreamProfilesResponse>,
+                        java.util.concurrent.Future<ListModuleStreamProfilesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModuleStreamProfilesRequest, ListModuleStreamProfilesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModuleStreamProfilesOnManagedInstanceResponse>
+            listModuleStreamProfilesOnManagedInstance(
+                    ListModuleStreamProfilesOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListModuleStreamProfilesOnManagedInstanceRequest,
+                                    ListModuleStreamProfilesOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async listModuleStreamProfilesOnManagedInstance");
+        final ListModuleStreamProfilesOnManagedInstanceRequest interceptedRequest =
+                ListModuleStreamProfilesOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModuleStreamProfilesOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListModuleStreamProfilesOnManagedInstanceResponse>
+                transformer = ListModuleStreamProfilesOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListModuleStreamProfilesOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamProfilesOnManagedInstance");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListModuleStreamProfilesOnManagedInstanceRequest,
+                        ListModuleStreamProfilesOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModuleStreamProfilesOnManagedInstanceRequest,
+                                ListModuleStreamProfilesOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<
+                                ListModuleStreamProfilesOnManagedInstanceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModuleStreamProfilesOnManagedInstanceRequest,
+                    ListModuleStreamProfilesOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModuleStreamsResponse> listModuleStreams(
+            ListModuleStreamsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModuleStreamsRequest, ListModuleStreamsResponse>
+                    handler) {
+        LOG.trace("Called async listModuleStreams");
+        final ListModuleStreamsRequest interceptedRequest =
+                ListModuleStreamsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModuleStreamsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListModuleStreamsResponse>
+                transformer = ListModuleStreamsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListModuleStreams",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamSummary/ListModuleStreams");
+
+        com.oracle.bmc.responses.AsyncHandler<ListModuleStreamsRequest, ListModuleStreamsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModuleStreamsRequest, ListModuleStreamsResponse>,
+                        java.util.concurrent.Future<ListModuleStreamsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModuleStreamsRequest, ListModuleStreamsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModuleStreamsOnManagedInstanceResponse>
+            listModuleStreamsOnManagedInstance(
+                    ListModuleStreamsOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListModuleStreamsOnManagedInstanceRequest,
+                                    ListModuleStreamsOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async listModuleStreamsOnManagedInstance");
+        final ListModuleStreamsOnManagedInstanceRequest interceptedRequest =
+                ListModuleStreamsOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModuleStreamsOnManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListModuleStreamsOnManagedInstanceResponse>
+                transformer = ListModuleStreamsOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListModuleStreamsOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamsOnManagedInstance");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListModuleStreamsOnManagedInstanceRequest,
+                        ListModuleStreamsOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModuleStreamsOnManagedInstanceRequest,
+                                ListModuleStreamsOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<ListModuleStreamsOnManagedInstanceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModuleStreamsOnManagedInstanceRequest,
+                    ListModuleStreamsOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPackagesInstalledOnManagedInstanceResponse>
             listPackagesInstalledOnManagedInstance(
                     ListPackagesInstalledOnManagedInstanceRequest request,
@@ -2794,6 +3240,119 @@ public class OsManagementAsyncClient implements OsManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ManageModuleStreamsOnManagedInstanceResponse>
+            manageModuleStreamsOnManagedInstance(
+                    ManageModuleStreamsOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ManageModuleStreamsOnManagedInstanceRequest,
+                                    ManageModuleStreamsOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async manageModuleStreamsOnManagedInstance");
+        final ManageModuleStreamsOnManagedInstanceRequest interceptedRequest =
+                ManageModuleStreamsOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ManageModuleStreamsOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ManageModuleStreamsOnManagedInstanceResponse>
+                transformer = ManageModuleStreamsOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ManageModuleStreamsOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ManageModuleStreamsOnManagedInstance");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ManageModuleStreamsOnManagedInstanceRequest,
+                        ManageModuleStreamsOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ManageModuleStreamsOnManagedInstanceRequest,
+                                ManageModuleStreamsOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<ManageModuleStreamsOnManagedInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getManageModuleStreamsOnManagedInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ManageModuleStreamsOnManagedInstanceRequest,
+                    ManageModuleStreamsOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveModuleStreamProfileFromManagedInstanceResponse>
+            removeModuleStreamProfileFromManagedInstance(
+                    RemoveModuleStreamProfileFromManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveModuleStreamProfileFromManagedInstanceRequest,
+                                    RemoveModuleStreamProfileFromManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async removeModuleStreamProfileFromManagedInstance");
+        final RemoveModuleStreamProfileFromManagedInstanceRequest interceptedRequest =
+                RemoveModuleStreamProfileFromManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveModuleStreamProfileFromManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        RemoveModuleStreamProfileFromManagedInstanceResponse>
+                transformer = RemoveModuleStreamProfileFromManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "RemoveModuleStreamProfileFromManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/RemoveModuleStreamProfileFromManagedInstance");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveModuleStreamProfileFromManagedInstanceRequest,
+                        RemoveModuleStreamProfileFromManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveModuleStreamProfileFromManagedInstanceRequest,
+                                RemoveModuleStreamProfileFromManagedInstanceResponse>,
+                        java.util.concurrent.Future<
+                                RemoveModuleStreamProfileFromManagedInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveModuleStreamProfileFromManagedInstanceRequest,
+                    RemoveModuleStreamProfileFromManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemovePackageFromManagedInstanceResponse>
             removePackageFromManagedInstance(
                     RemovePackageFromManagedInstanceRequest request,
@@ -3030,6 +3589,59 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     SkipNextScheduledJobExecutionRequest, SkipNextScheduledJobExecutionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwitchModuleStreamOnManagedInstanceResponse>
+            switchModuleStreamOnManagedInstance(
+                    SwitchModuleStreamOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SwitchModuleStreamOnManagedInstanceRequest,
+                                    SwitchModuleStreamOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async switchModuleStreamOnManagedInstance");
+        final SwitchModuleStreamOnManagedInstanceRequest interceptedRequest =
+                SwitchModuleStreamOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchModuleStreamOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SwitchModuleStreamOnManagedInstanceResponse>
+                transformer = SwitchModuleStreamOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "SwitchModuleStreamOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/SwitchModuleStreamOnManagedInstance");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SwitchModuleStreamOnManagedInstanceRequest,
+                        SwitchModuleStreamOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SwitchModuleStreamOnManagedInstanceRequest,
+                                SwitchModuleStreamOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<SwitchModuleStreamOnManagedInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SwitchModuleStreamOnManagedInstanceRequest,
+                    SwitchModuleStreamOnManagedInstanceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -141,6 +141,24 @@ public class WorkRequest {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+        private String parentId;
+
+        public Builder parentId(String parentId) {
+            this.parentId = parentId;
+            this.__explicitlySet__.add("parentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("childrenIds")
+        private java.util.List<String> childrenIds;
+
+        public Builder childrenIds(java.util.List<String> childrenIds) {
+            this.childrenIds = childrenIds;
+            this.__explicitlySet__.add("childrenIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -159,7 +177,9 @@ public class WorkRequest {
                             timeAccepted,
                             timeStarted,
                             timeFinished,
-                            osFamily);
+                            osFamily,
+                            parentId,
+                            childrenIds);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -179,7 +199,9 @@ public class WorkRequest {
                             .timeAccepted(o.getTimeAccepted())
                             .timeStarted(o.getTimeStarted())
                             .timeFinished(o.getTimeFinished())
-                            .osFamily(o.getOsFamily());
+                            .osFamily(o.getOsFamily())
+                            .parentId(o.getParentId())
+                            .childrenIds(o.getChildrenIds());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -276,6 +298,18 @@ public class WorkRequest {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     OsFamilies osFamily;
+
+    /**
+     * The parent of this work request, if one exists.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+    String parentId;
+
+    /**
+     * A list of the IDs of any children of this work request
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("childrenIds")
+    java.util.List<String> childrenIds;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

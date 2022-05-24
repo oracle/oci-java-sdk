@@ -162,6 +162,18 @@ public class ListWorkRequestsConverter {
                                                     String.class));
                                 }
 
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcTotalItemsHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-total-items");
+                                if (opcTotalItemsHeader.isPresent()) {
+                                    builder.opcTotalItems(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-total-items",
+                                                    opcTotalItemsHeader.get().get(0),
+                                                    Integer.class));
+                                }
+
                                 com.oracle.bmc.oda.responses.ListWorkRequestsResponse
                                         responseWrapper = builder.build();
 

@@ -65,7 +65,7 @@ public interface Oda extends AutoCloseable {
      * Starts an asynchronous job to create a Digital Assistant instance.
      * <p>
      * To monitor the status of the job, take the `opc-work-request-id` response
-     * header value and use it to call `GET /workRequests/{workRequestID}`.
+     * header value and use it to call `GET /workRequests/{workRequestId}`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -78,8 +78,25 @@ public interface Oda extends AutoCloseable {
     CreateOdaInstanceResponse createOdaInstance(CreateOdaInstanceRequest request);
 
     /**
+     * Starts an asynchronous job to create a Digital Assistant instance attachment.
+     * <p>
+     * To monitor the status of the job, take the `opc-work-request-id` response
+     * header value and use it to call `GET /workRequests/{workRequestId}`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateOdaInstanceAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOdaInstanceAttachment API.
+     */
+    CreateOdaInstanceAttachmentResponse createOdaInstanceAttachment(
+            CreateOdaInstanceAttachmentRequest request);
+
+    /**
      * Starts an asynchronous job to delete the specified Digital Assistant instance.
-     * To monitor the status of the job, take the `opc-work-request-id` response header value and use it to call `GET /workRequests/{workRequestID}`.
+     * To monitor the status of the job, take the `opc-work-request-id` response header value and use it to call `GET /workRequests/{workRequestId}`.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -89,6 +106,19 @@ public interface Oda extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOdaInstance API.
      */
     DeleteOdaInstanceResponse deleteOdaInstance(DeleteOdaInstanceRequest request);
+
+    /**
+     * Starts an asynchronous job to delete the specified Digital Assistant instance attachment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaInstanceAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOdaInstanceAttachment API.
+     */
+    DeleteOdaInstanceAttachmentResponse deleteOdaInstanceAttachment(
+            DeleteOdaInstanceAttachmentRequest request);
 
     /**
      * Gets the specified Digital Assistant instance.
@@ -101,6 +131,19 @@ public interface Oda extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetOdaInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOdaInstance API.
      */
     GetOdaInstanceResponse getOdaInstance(GetOdaInstanceRequest request);
+
+    /**
+     * Gets an ODA instance attachment by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetOdaInstanceAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOdaInstanceAttachment API.
+     */
+    GetOdaInstanceAttachmentResponse getOdaInstanceAttachment(
+            GetOdaInstanceAttachmentRequest request);
 
     /**
      * Gets information about the work request with the specified ID, including its status.
@@ -117,6 +160,20 @@ public interface Oda extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Returns a list of ODA instance attachments
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListOdaInstanceAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOdaInstanceAttachments API.
+     */
+    ListOdaInstanceAttachmentsResponse listOdaInstanceAttachments(
+            ListOdaInstanceAttachmentsRequest request);
 
     /**
      * Returns a page of Digital Assistant instances that belong to the specified
@@ -227,6 +284,19 @@ public interface Oda extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateOdaInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOdaInstance API.
      */
     UpdateOdaInstanceResponse updateOdaInstance(UpdateOdaInstanceRequest request);
+
+    /**
+     * Updates the ODA instance attachment
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateOdaInstanceAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOdaInstanceAttachment API.
+     */
+    UpdateOdaInstanceAttachmentResponse updateOdaInstanceAttachment(
+            UpdateOdaInstanceAttachmentRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

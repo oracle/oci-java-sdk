@@ -13,17 +13,15 @@ import com.oracle.bmc.oda.model.*;
 @lombok.Getter
 public class StartOdaInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of
-     * the operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
+     * of the operation.
      *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. The request id consists of 3 components.
-     * The first is the request ID provided by the client in the request headers and the remaining 2 are
-     * generated for tracing requests.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;

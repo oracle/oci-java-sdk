@@ -130,6 +130,18 @@ public class ListWorkRequestErrorsConverter {
                                 builder.items(response.getItem());
 
                                 com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
                                         opcNextPageHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "opc-next-page");
@@ -142,15 +154,15 @@ public class ListWorkRequestErrorsConverter {
                                 }
 
                                 com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
+                                        opcTotalItemsHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
-                                if (opcRequestIdHeader.isPresent()) {
-                                    builder.opcRequestId(
+                                                        headers, "opc-total-items");
+                                if (opcTotalItemsHeader.isPresent()) {
+                                    builder.opcTotalItems(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "opc-request-id",
-                                                    opcRequestIdHeader.get().get(0),
-                                                    String.class));
+                                                    "opc-total-items",
+                                                    opcTotalItemsHeader.get().get(0),
+                                                    Integer.class));
                                 }
 
                                 com.oracle.bmc.oda.responses.ListWorkRequestErrorsResponse

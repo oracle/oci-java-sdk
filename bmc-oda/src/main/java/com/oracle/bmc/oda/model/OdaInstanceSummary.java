@@ -135,6 +135,42 @@ public class OdaInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
+        private Boolean isRoleBasedAccess;
+
+        public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
+            this.isRoleBasedAccess = isRoleBasedAccess;
+            this.__explicitlySet__.add("isRoleBasedAccess");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
+        private String identityDomain;
+
+        public Builder identityDomain(String identityDomain) {
+            this.identityDomain = identityDomain;
+            this.__explicitlySet__.add("identityDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importedPackageNames")
+        private java.util.List<String> importedPackageNames;
+
+        public Builder importedPackageNames(java.util.List<String> importedPackageNames) {
+            this.importedPackageNames = importedPackageNames;
+            this.__explicitlySet__.add("importedPackageNames");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("attachmentTypes")
+        private java.util.List<String> attachmentTypes;
+
+        public Builder attachmentTypes(java.util.List<String> attachmentTypes) {
+            this.attachmentTypes = attachmentTypes;
+            this.__explicitlySet__.add("attachmentTypes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -152,7 +188,11 @@ public class OdaInstanceSummary {
                             lifecycleSubState,
                             stateMessage,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            isRoleBasedAccess,
+                            identityDomain,
+                            importedPackageNames,
+                            attachmentTypes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -171,7 +211,11 @@ public class OdaInstanceSummary {
                             .lifecycleSubState(o.getLifecycleSubState())
                             .stateMessage(o.getStateMessage())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .isRoleBasedAccess(o.getIsRoleBasedAccess())
+                            .identityDomain(o.getIdentityDomain())
+                            .importedPackageNames(o.getImportedPackageNames())
+                            .attachmentTypes(o.getAttachmentTypes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -336,9 +380,13 @@ public class OdaInstanceSummary {
         Starting("STARTING"),
         Stopping("STOPPING"),
         ChangingCompartment("CHANGING_COMPARTMENT"),
+        ActivatingCustomerEncryptionKey("ACTIVATING_CUSTOMER_ENCRYPTION_KEY"),
+        UpdatingCustomerEncryptionKey("UPDATING_CUSTOMER_ENCRYPTION_KEY"),
+        DeactivatingCustomerEncryptionKey("DEACTIVATING_CUSTOMER_ENCRYPTION_KEY"),
         Deleting("DELETING"),
         DeletePending("DELETE_PENDING"),
         Recovering("RECOVERING"),
+        Updating("UPDATING"),
         Purging("PURGING"),
         Queued("QUEUED"),
 
@@ -395,7 +443,7 @@ public class OdaInstanceSummary {
     String stateMessage;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -409,6 +457,30 @@ public class OdaInstanceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
+    Boolean isRoleBasedAccess;
+
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
+    String identityDomain;
+
+    /**
+     * A list of package names imported into this instance (if any).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importedPackageNames")
+    java.util.List<String> importedPackageNames;
+
+    /**
+     * A list of attachment types for this instance (if any).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("attachmentTypes")
+    java.util.List<String> attachmentTypes;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

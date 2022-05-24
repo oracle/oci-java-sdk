@@ -13,15 +13,15 @@ import com.oracle.bmc.oda.model.*;
 @lombok.Getter
 public class DeleteOdaInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to
-     * query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
+     * of the operation.
      *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you contact Oracle
-     * about this request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;

@@ -19,6 +19,9 @@ import java.io.InputStream;
  * for retries.
  */
 public final class KeepOpenInputStream extends FilterInputStream {
+
+    public volatile InputStream innerStream;
+
     public KeepOpenInputStream(InputStream is) {
         super(is);
         if (!is.markSupported()) {
@@ -27,6 +30,7 @@ public final class KeepOpenInputStream extends FilterInputStream {
                             "Stream '%s' does not support mark/reset, retries won't work",
                             is.getClass().getName()));
         }
+        this.innerStream = is;
     }
 
     @Override

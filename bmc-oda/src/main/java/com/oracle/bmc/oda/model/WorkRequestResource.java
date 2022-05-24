@@ -130,9 +130,18 @@ public class WorkRequestResource {
         Stop("STOP"),
         Start("START"),
         ChangeCompartment("CHANGE_COMPARTMENT"),
+        ChangeCustEncKey("CHANGE_CUST_ENC_KEY"),
+        DeactCustEncKey("DEACT_CUST_ENC_KEY"),
         CreateAssociation("CREATE_ASSOCIATION"),
         DeleteAssociation("DELETE_ASSOCIATION"),
         UpdateEntitlementsForCacct("UPDATE_ENTITLEMENTS_FOR_CACCT"),
+        CreateOdaInstanceAttachment("CREATE_ODA_INSTANCE_ATTACHMENT"),
+        UpdateOdaInstanceAttachment("UPDATE_ODA_INSTANCE_ATTACHMENT"),
+        DeleteOdaInstanceAttachment("DELETE_ODA_INSTANCE_ATTACHMENT"),
+        CreateImportedPackage("CREATE_IMPORTED_PACKAGE"),
+        UpdateImportedPackage("UPDATE_IMPORTED_PACKAGE"),
+        DeleteImportedPackage("DELETE_IMPORTED_PACKAGE"),
+        Export("EXPORT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

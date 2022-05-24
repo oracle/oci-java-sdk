@@ -415,6 +415,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
             InstancePrincipalsAuthenticationDetailsProvider provider =
                     InstancePrincipalsAuthenticationDetailsProvider.builder()
+                            .metadataBaseUrl(getMetadataBaseUrl())
                             .federationEndpoint(federationEndpoint)
                             .leafCertificateSupplier(leafCertificateSupplier)
                             .intermediateCertificateSuppliers(intermediateCertificateSuppliers)
@@ -424,7 +425,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                                             : CircuitBreakerUtils.getDefaultCircuitBreakerConfig())
                             // InstancePrincipalsAuthenticationDetailsProvider and ResourcePrincipalsFederationClient's
                             // sessionKeysSupplier must be different. BTW ResourcePrincipalsFederationClient and
-                            // ResourcePrincipalsAuthenticationDetailsProvider's sessionKeysSupplier must be same.
+                            // ResourcePrincipalAuthenticationDetailsProvider's sessionKeysSupplier must be same.
                             .build();
 
             return new ResourcePrincipalsFederationClient(

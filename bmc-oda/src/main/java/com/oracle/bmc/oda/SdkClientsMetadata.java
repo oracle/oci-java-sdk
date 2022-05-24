@@ -7,5 +7,12 @@ package com.oracle.bmc.oda;
 import com.oracle.bmc.SdkClients;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@SdkClients({OdaAsyncClient.class, OdaClient.class})
+@SdkClients({
+    ManagementAsyncClient.class,
+    ManagementClient.class,
+    OdaAsyncClient.class,
+    OdaClient.class,
+    OdapackageAsyncClient.class,
+    OdapackageClient.class
+})
 public final class SdkClientsMetadata {}
