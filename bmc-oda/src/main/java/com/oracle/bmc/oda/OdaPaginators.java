@@ -31,6 +31,123 @@ public class OdaPaginators {
     private final Oda client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listOdaInstanceAttachments operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOdaInstanceAttachmentsResponse> listOdaInstanceAttachmentsResponseIterator(
+            final ListOdaInstanceAttachmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOdaInstanceAttachmentsRequest.Builder, ListOdaInstanceAttachmentsRequest,
+                ListOdaInstanceAttachmentsResponse>(
+                new com.google.common.base.Supplier<ListOdaInstanceAttachmentsRequest.Builder>() {
+                    @Override
+                    public ListOdaInstanceAttachmentsRequest.Builder get() {
+                        return ListOdaInstanceAttachmentsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListOdaInstanceAttachmentsResponse, String>() {
+                    @Override
+                    public String apply(ListOdaInstanceAttachmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOdaInstanceAttachmentsRequest.Builder>,
+                        ListOdaInstanceAttachmentsRequest>() {
+                    @Override
+                    public ListOdaInstanceAttachmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOdaInstanceAttachmentsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOdaInstanceAttachmentsRequest, ListOdaInstanceAttachmentsResponse>() {
+                    @Override
+                    public ListOdaInstanceAttachmentsResponse apply(
+                            ListOdaInstanceAttachmentsRequest request) {
+                        return client.listOdaInstanceAttachments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.oda.model.OdaInstanceAttachmentSummary} objects
+     * contained in responses from the listOdaInstanceAttachments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.oda.model.OdaInstanceAttachmentSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.oda.model.OdaInstanceAttachmentSummary>
+            listOdaInstanceAttachmentsRecordIterator(
+                    final ListOdaInstanceAttachmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOdaInstanceAttachmentsRequest.Builder, ListOdaInstanceAttachmentsRequest,
+                ListOdaInstanceAttachmentsResponse,
+                com.oracle.bmc.oda.model.OdaInstanceAttachmentSummary>(
+                new com.google.common.base.Supplier<ListOdaInstanceAttachmentsRequest.Builder>() {
+                    @Override
+                    public ListOdaInstanceAttachmentsRequest.Builder get() {
+                        return ListOdaInstanceAttachmentsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListOdaInstanceAttachmentsResponse, String>() {
+                    @Override
+                    public String apply(ListOdaInstanceAttachmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOdaInstanceAttachmentsRequest.Builder>,
+                        ListOdaInstanceAttachmentsRequest>() {
+                    @Override
+                    public ListOdaInstanceAttachmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOdaInstanceAttachmentsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOdaInstanceAttachmentsRequest, ListOdaInstanceAttachmentsResponse>() {
+                    @Override
+                    public ListOdaInstanceAttachmentsResponse apply(
+                            ListOdaInstanceAttachmentsRequest request) {
+                        return client.listOdaInstanceAttachments(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOdaInstanceAttachmentsResponse,
+                        java.util.List<com.oracle.bmc.oda.model.OdaInstanceAttachmentSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.oda.model.OdaInstanceAttachmentSummary>
+                            apply(ListOdaInstanceAttachmentsResponse response) {
+                        return response.getOdaInstanceAttachmentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listOdaInstances operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -480,6 +480,61 @@ public class OdaAsyncClient implements OdaAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOdaInstanceAttachmentResponse>
+            createOdaInstanceAttachment(
+                    CreateOdaInstanceAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOdaInstanceAttachmentRequest,
+                                    CreateOdaInstanceAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async createOdaInstanceAttachment");
+        final CreateOdaInstanceAttachmentRequest interceptedRequest =
+                CreateOdaInstanceAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOdaInstanceAttachmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateOdaInstanceAttachmentResponse>
+                transformer = CreateOdaInstanceAttachmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Oda",
+                "CreateOdaInstanceAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/CreateOdaInstanceAttachment");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateOdaInstanceAttachmentRequest, CreateOdaInstanceAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOdaInstanceAttachmentRequest,
+                                CreateOdaInstanceAttachmentResponse>,
+                        java.util.concurrent.Future<CreateOdaInstanceAttachmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOdaInstanceAttachmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOdaInstanceAttachmentRequest, CreateOdaInstanceAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOdaInstanceResponse> deleteOdaInstance(
             DeleteOdaInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -511,6 +566,55 @@ public class OdaAsyncClient implements OdaAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteOdaInstanceRequest, DeleteOdaInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOdaInstanceAttachmentResponse>
+            deleteOdaInstanceAttachment(
+                    DeleteOdaInstanceAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOdaInstanceAttachmentRequest,
+                                    DeleteOdaInstanceAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async deleteOdaInstanceAttachment");
+        final DeleteOdaInstanceAttachmentRequest interceptedRequest =
+                DeleteOdaInstanceAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOdaInstanceAttachmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteOdaInstanceAttachmentResponse>
+                transformer = DeleteOdaInstanceAttachmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Oda",
+                "DeleteOdaInstanceAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/DeleteOdaInstanceAttachment");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteOdaInstanceAttachmentRequest, DeleteOdaInstanceAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOdaInstanceAttachmentRequest,
+                                DeleteOdaInstanceAttachmentResponse>,
+                        java.util.concurrent.Future<DeleteOdaInstanceAttachmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOdaInstanceAttachmentRequest, DeleteOdaInstanceAttachmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -568,6 +672,52 @@ public class OdaAsyncClient implements OdaAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetOdaInstanceAttachmentResponse> getOdaInstanceAttachment(
+            GetOdaInstanceAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOdaInstanceAttachmentRequest, GetOdaInstanceAttachmentResponse>
+                    handler) {
+        LOG.trace("Called async getOdaInstanceAttachment");
+        final GetOdaInstanceAttachmentRequest interceptedRequest =
+                GetOdaInstanceAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOdaInstanceAttachmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetOdaInstanceAttachmentResponse>
+                transformer = GetOdaInstanceAttachmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Oda",
+                "GetOdaInstanceAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/GetOdaInstanceAttachment");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOdaInstanceAttachmentRequest, GetOdaInstanceAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOdaInstanceAttachmentRequest, GetOdaInstanceAttachmentResponse>,
+                        java.util.concurrent.Future<GetOdaInstanceAttachmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOdaInstanceAttachmentRequest, GetOdaInstanceAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -599,6 +749,55 @@ public class OdaAsyncClient implements OdaAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOdaInstanceAttachmentsResponse>
+            listOdaInstanceAttachments(
+                    ListOdaInstanceAttachmentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOdaInstanceAttachmentsRequest,
+                                    ListOdaInstanceAttachmentsResponse>
+                            handler) {
+        LOG.trace("Called async listOdaInstanceAttachments");
+        final ListOdaInstanceAttachmentsRequest interceptedRequest =
+                ListOdaInstanceAttachmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOdaInstanceAttachmentsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListOdaInstanceAttachmentsResponse>
+                transformer = ListOdaInstanceAttachmentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Oda",
+                "ListOdaInstanceAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachmentCollection/ListOdaInstanceAttachments");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOdaInstanceAttachmentsRequest, ListOdaInstanceAttachmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOdaInstanceAttachmentsRequest,
+                                ListOdaInstanceAttachmentsResponse>,
+                        java.util.concurrent.Future<ListOdaInstanceAttachmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOdaInstanceAttachmentsRequest, ListOdaInstanceAttachmentsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -918,6 +1117,60 @@ public class OdaAsyncClient implements OdaAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateOdaInstanceRequest, UpdateOdaInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOdaInstanceAttachmentResponse>
+            updateOdaInstanceAttachment(
+                    UpdateOdaInstanceAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateOdaInstanceAttachmentRequest,
+                                    UpdateOdaInstanceAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async updateOdaInstanceAttachment");
+        final UpdateOdaInstanceAttachmentRequest interceptedRequest =
+                UpdateOdaInstanceAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOdaInstanceAttachmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateOdaInstanceAttachmentResponse>
+                transformer = UpdateOdaInstanceAttachmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Oda",
+                "UpdateOdaInstanceAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/UpdateOdaInstanceAttachment");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateOdaInstanceAttachmentRequest, UpdateOdaInstanceAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateOdaInstanceAttachmentRequest,
+                                UpdateOdaInstanceAttachmentResponse>,
+                        java.util.concurrent.Future<UpdateOdaInstanceAttachmentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOdaInstanceAttachmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateOdaInstanceAttachmentRequest, UpdateOdaInstanceAttachmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.29.0 - 2022-05-24
+### Added
+- Support for the License Manager service
+- Support for usage plans in the API Gateway service
+- Support for packaged skill and instance metadata management, role-based access options on instance creation, and assigned ownership in the Digital Assistant service
+- Support for compute capacity reservations in the VMWare Solution service
+- Support for Oracle Linux 8 application streams in the OS Management service
+- Add support for GraalVM
+
+### Breaking Changes
+- Support for retries by default on operations in the API Gateway service
+
 ## 2.28.0 - 2022-05-17
 ### Added
 - Support for information requests in the Operator Access Control service

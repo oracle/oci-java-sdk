@@ -251,6 +251,15 @@ public class CreateSddcDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -301,6 +310,7 @@ public class CreateSddcDetails {
                             initialHostShapeName,
                             initialHostOcpuCount,
                             isShieldedInstanceEnabled,
+                            capacityReservationId,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -335,6 +345,7 @@ public class CreateSddcDetails {
                             .initialHostShapeName(o.getInitialHostShapeName())
                             .initialHostOcpuCount(o.getInitialHostOcpuCount())
                             .isShieldedInstanceEnabled(o.getIsShieldedInstanceEnabled())
+                            .capacityReservationId(o.getCapacityReservationId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -556,6 +567,13 @@ public class CreateSddcDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
     Boolean isShieldedInstanceEnabled;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    String capacityReservationId;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

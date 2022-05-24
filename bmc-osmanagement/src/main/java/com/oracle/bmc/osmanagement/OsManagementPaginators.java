@@ -1022,6 +1022,503 @@ public class OsManagementPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listModuleStreamProfiles operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListModuleStreamProfilesResponse> listModuleStreamProfilesResponseIterator(
+            final ListModuleStreamProfilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModuleStreamProfilesRequest.Builder, ListModuleStreamProfilesRequest,
+                ListModuleStreamProfilesResponse>(
+                new com.google.common.base.Supplier<ListModuleStreamProfilesRequest.Builder>() {
+                    @Override
+                    public ListModuleStreamProfilesRequest.Builder get() {
+                        return ListModuleStreamProfilesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListModuleStreamProfilesResponse, String>() {
+                    @Override
+                    public String apply(ListModuleStreamProfilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModuleStreamProfilesRequest.Builder>,
+                        ListModuleStreamProfilesRequest>() {
+                    @Override
+                    public ListModuleStreamProfilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModuleStreamProfilesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamProfilesRequest, ListModuleStreamProfilesResponse>() {
+                    @Override
+                    public ListModuleStreamProfilesResponse apply(
+                            ListModuleStreamProfilesRequest request) {
+                        return client.listModuleStreamProfiles(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} objects
+     * contained in responses from the listModuleStreamProfiles operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary>
+            listModuleStreamProfilesRecordIterator(final ListModuleStreamProfilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModuleStreamProfilesRequest.Builder, ListModuleStreamProfilesRequest,
+                ListModuleStreamProfilesResponse,
+                com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary>(
+                new com.google.common.base.Supplier<ListModuleStreamProfilesRequest.Builder>() {
+                    @Override
+                    public ListModuleStreamProfilesRequest.Builder get() {
+                        return ListModuleStreamProfilesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListModuleStreamProfilesResponse, String>() {
+                    @Override
+                    public String apply(ListModuleStreamProfilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModuleStreamProfilesRequest.Builder>,
+                        ListModuleStreamProfilesRequest>() {
+                    @Override
+                    public ListModuleStreamProfilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModuleStreamProfilesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamProfilesRequest, ListModuleStreamProfilesResponse>() {
+                    @Override
+                    public ListModuleStreamProfilesResponse apply(
+                            ListModuleStreamProfilesRequest request) {
+                        return client.listModuleStreamProfiles(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamProfilesResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary>
+                            apply(ListModuleStreamProfilesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listModuleStreamProfilesOnManagedInstance operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListModuleStreamProfilesOnManagedInstanceResponse>
+            listModuleStreamProfilesOnManagedInstanceResponseIterator(
+                    final ListModuleStreamProfilesOnManagedInstanceRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModuleStreamProfilesOnManagedInstanceRequest.Builder,
+                ListModuleStreamProfilesOnManagedInstanceRequest,
+                ListModuleStreamProfilesOnManagedInstanceResponse>(
+                new com.google.common.base.Supplier<
+                        ListModuleStreamProfilesOnManagedInstanceRequest.Builder>() {
+                    @Override
+                    public ListModuleStreamProfilesOnManagedInstanceRequest.Builder get() {
+                        return ListModuleStreamProfilesOnManagedInstanceRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamProfilesOnManagedInstanceResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListModuleStreamProfilesOnManagedInstanceResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModuleStreamProfilesOnManagedInstanceRequest.Builder>,
+                        ListModuleStreamProfilesOnManagedInstanceRequest>() {
+                    @Override
+                    public ListModuleStreamProfilesOnManagedInstanceRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModuleStreamProfilesOnManagedInstanceRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamProfilesOnManagedInstanceRequest,
+                        ListModuleStreamProfilesOnManagedInstanceResponse>() {
+                    @Override
+                    public ListModuleStreamProfilesOnManagedInstanceResponse apply(
+                            ListModuleStreamProfilesOnManagedInstanceRequest request) {
+                        return client.listModuleStreamProfilesOnManagedInstance(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} objects
+     * contained in responses from the listModuleStreamProfilesOnManagedInstance operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary>
+            listModuleStreamProfilesOnManagedInstanceRecordIterator(
+                    final ListModuleStreamProfilesOnManagedInstanceRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModuleStreamProfilesOnManagedInstanceRequest.Builder,
+                ListModuleStreamProfilesOnManagedInstanceRequest,
+                ListModuleStreamProfilesOnManagedInstanceResponse,
+                com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary>(
+                new com.google.common.base.Supplier<
+                        ListModuleStreamProfilesOnManagedInstanceRequest.Builder>() {
+                    @Override
+                    public ListModuleStreamProfilesOnManagedInstanceRequest.Builder get() {
+                        return ListModuleStreamProfilesOnManagedInstanceRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamProfilesOnManagedInstanceResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListModuleStreamProfilesOnManagedInstanceResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModuleStreamProfilesOnManagedInstanceRequest.Builder>,
+                        ListModuleStreamProfilesOnManagedInstanceRequest>() {
+                    @Override
+                    public ListModuleStreamProfilesOnManagedInstanceRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModuleStreamProfilesOnManagedInstanceRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamProfilesOnManagedInstanceRequest,
+                        ListModuleStreamProfilesOnManagedInstanceResponse>() {
+                    @Override
+                    public ListModuleStreamProfilesOnManagedInstanceResponse apply(
+                            ListModuleStreamProfilesOnManagedInstanceRequest request) {
+                        return client.listModuleStreamProfilesOnManagedInstance(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamProfilesOnManagedInstanceResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagement.model
+                                        .ModuleStreamProfileOnManagedInstanceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagement.model
+                                            .ModuleStreamProfileOnManagedInstanceSummary>
+                            apply(ListModuleStreamProfilesOnManagedInstanceResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listModuleStreams operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListModuleStreamsResponse> listModuleStreamsResponseIterator(
+            final ListModuleStreamsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModuleStreamsRequest.Builder, ListModuleStreamsRequest,
+                ListModuleStreamsResponse>(
+                new com.google.common.base.Supplier<ListModuleStreamsRequest.Builder>() {
+                    @Override
+                    public ListModuleStreamsRequest.Builder get() {
+                        return ListModuleStreamsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListModuleStreamsResponse, String>() {
+                    @Override
+                    public String apply(ListModuleStreamsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModuleStreamsRequest.Builder>,
+                        ListModuleStreamsRequest>() {
+                    @Override
+                    public ListModuleStreamsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModuleStreamsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamsRequest, ListModuleStreamsResponse>() {
+                    @Override
+                    public ListModuleStreamsResponse apply(ListModuleStreamsRequest request) {
+                        return client.listModuleStreams(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamSummary} objects
+     * contained in responses from the listModuleStreams operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagement.model.ModuleStreamSummary>
+            listModuleStreamsRecordIterator(final ListModuleStreamsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModuleStreamsRequest.Builder, ListModuleStreamsRequest,
+                ListModuleStreamsResponse, com.oracle.bmc.osmanagement.model.ModuleStreamSummary>(
+                new com.google.common.base.Supplier<ListModuleStreamsRequest.Builder>() {
+                    @Override
+                    public ListModuleStreamsRequest.Builder get() {
+                        return ListModuleStreamsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListModuleStreamsResponse, String>() {
+                    @Override
+                    public String apply(ListModuleStreamsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModuleStreamsRequest.Builder>,
+                        ListModuleStreamsRequest>() {
+                    @Override
+                    public ListModuleStreamsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModuleStreamsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamsRequest, ListModuleStreamsResponse>() {
+                    @Override
+                    public ListModuleStreamsResponse apply(ListModuleStreamsRequest request) {
+                        return client.listModuleStreams(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamsResponse,
+                        java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamSummary>
+                            apply(ListModuleStreamsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listModuleStreamsOnManagedInstance operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListModuleStreamsOnManagedInstanceResponse>
+            listModuleStreamsOnManagedInstanceResponseIterator(
+                    final ListModuleStreamsOnManagedInstanceRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModuleStreamsOnManagedInstanceRequest.Builder,
+                ListModuleStreamsOnManagedInstanceRequest,
+                ListModuleStreamsOnManagedInstanceResponse>(
+                new com.google.common.base.Supplier<
+                        ListModuleStreamsOnManagedInstanceRequest.Builder>() {
+                    @Override
+                    public ListModuleStreamsOnManagedInstanceRequest.Builder get() {
+                        return ListModuleStreamsOnManagedInstanceRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamsOnManagedInstanceResponse, String>() {
+                    @Override
+                    public String apply(ListModuleStreamsOnManagedInstanceResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModuleStreamsOnManagedInstanceRequest.Builder>,
+                        ListModuleStreamsOnManagedInstanceRequest>() {
+                    @Override
+                    public ListModuleStreamsOnManagedInstanceRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModuleStreamsOnManagedInstanceRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamsOnManagedInstanceRequest,
+                        ListModuleStreamsOnManagedInstanceResponse>() {
+                    @Override
+                    public ListModuleStreamsOnManagedInstanceResponse apply(
+                            ListModuleStreamsOnManagedInstanceRequest request) {
+                        return client.listModuleStreamsOnManagedInstance(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary} objects
+     * contained in responses from the listModuleStreamsOnManagedInstance operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary>
+            listModuleStreamsOnManagedInstanceRecordIterator(
+                    final ListModuleStreamsOnManagedInstanceRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModuleStreamsOnManagedInstanceRequest.Builder,
+                ListModuleStreamsOnManagedInstanceRequest,
+                ListModuleStreamsOnManagedInstanceResponse,
+                com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary>(
+                new com.google.common.base.Supplier<
+                        ListModuleStreamsOnManagedInstanceRequest.Builder>() {
+                    @Override
+                    public ListModuleStreamsOnManagedInstanceRequest.Builder get() {
+                        return ListModuleStreamsOnManagedInstanceRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamsOnManagedInstanceResponse, String>() {
+                    @Override
+                    public String apply(ListModuleStreamsOnManagedInstanceResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModuleStreamsOnManagedInstanceRequest.Builder>,
+                        ListModuleStreamsOnManagedInstanceRequest>() {
+                    @Override
+                    public ListModuleStreamsOnManagedInstanceRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModuleStreamsOnManagedInstanceRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamsOnManagedInstanceRequest,
+                        ListModuleStreamsOnManagedInstanceResponse>() {
+                    @Override
+                    public ListModuleStreamsOnManagedInstanceResponse apply(
+                            ListModuleStreamsOnManagedInstanceRequest request) {
+                        return client.listModuleStreamsOnManagedInstance(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListModuleStreamsOnManagedInstanceResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagement.model
+                                        .ModuleStreamOnManagedInstanceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagement.model
+                                            .ModuleStreamOnManagedInstanceSummary>
+                            apply(ListModuleStreamsOnManagedInstanceResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPackagesInstalledOnManagedInstance operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -62,13 +62,22 @@ public class ApiSpecificationRequestPolicies {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("usagePlans")
+        private UsagePlansPolicy usagePlans;
+
+        public Builder usagePlans(UsagePlansPolicy usagePlans) {
+            this.usagePlans = usagePlans;
+            this.__explicitlySet__.add("usagePlans");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiSpecificationRequestPolicies build() {
             ApiSpecificationRequestPolicies __instance__ =
                     new ApiSpecificationRequestPolicies(
-                            authentication, rateLimiting, cors, mutualTls);
+                            authentication, rateLimiting, cors, mutualTls, usagePlans);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +88,8 @@ public class ApiSpecificationRequestPolicies {
                     authentication(o.getAuthentication())
                             .rateLimiting(o.getRateLimiting())
                             .cors(o.getCors())
-                            .mutualTls(o.getMutualTls());
+                            .mutualTls(o.getMutualTls())
+                            .usagePlans(o.getUsagePlans());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -104,6 +114,9 @@ public class ApiSpecificationRequestPolicies {
 
     @com.fasterxml.jackson.annotation.JsonProperty("mutualTls")
     MutualTlsDetails mutualTls;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("usagePlans")
+    UsagePlansPolicy usagePlans;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -13,8 +13,8 @@ import com.oracle.bmc.oda.model.*;
 @lombok.Getter
 public class ListOdaInstancesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you contact
-     * Oracle about this request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
@@ -28,6 +28,12 @@ public class ListOdaInstancesResponse extends com.oracle.bmc.responses.BmcRespon
     private String opcNextPage;
 
     /**
+     * The total number of results that match the query.
+     *
+     */
+    private Integer opcTotalItems;
+
+    /**
      * A list of com.oracle.bmc.oda.model.OdaInstanceSummary instances.
      */
     private java.util.List<com.oracle.bmc.oda.model.OdaInstanceSummary> items;
@@ -36,16 +42,19 @@ public class ListOdaInstancesResponse extends com.oracle.bmc.responses.BmcRespon
         "__httpStatusCode__",
         "opcRequestId",
         "opcNextPage",
+        "opcTotalItems",
         "items"
     })
     private ListOdaInstancesResponse(
             int __httpStatusCode__,
             String opcRequestId,
             String opcNextPage,
+            Integer opcTotalItems,
             java.util.List<com.oracle.bmc.oda.model.OdaInstanceSummary> items) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
+        this.opcTotalItems = opcTotalItems;
         this.items = items;
     }
 
@@ -65,6 +74,7 @@ public class ListOdaInstancesResponse extends com.oracle.bmc.responses.BmcRespon
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
+            opcTotalItems(o.getOpcTotalItems());
             items(o.getItems());
 
             return this;
@@ -72,7 +82,7 @@ public class ListOdaInstancesResponse extends com.oracle.bmc.responses.BmcRespon
 
         public ListOdaInstancesResponse build() {
             return new ListOdaInstancesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, items);
+                    __httpStatusCode__, opcRequestId, opcNextPage, opcTotalItems, items);
         }
     }
 }

@@ -292,6 +292,41 @@ public interface OsManagement extends AutoCloseable {
                     DetachParentSoftwareSourceFromManagedInstanceRequest request);
 
     /**
+     * Disables a module stream on a managed instance.  After the stream is
+     * disabled, it is no longer possible to install the profiles that are
+     * contained by the stream.  All installed profiles must be removed prior
+     * to disabling a module stream.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/DisableModuleStreamOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableModuleStreamOnManagedInstance API.
+     */
+    DisableModuleStreamOnManagedInstanceResponse disableModuleStreamOnManagedInstance(
+            DisableModuleStreamOnManagedInstanceRequest request);
+
+    /**
+     * Enables a module stream on a managed instance.  After the stream is
+     * enabled, it is possible to install the profiles that are contained
+     * by the stream.  Enabling a stream that is already enabled will
+     * succeed.  Attempting to enable a different stream for a module that
+     * already has a stream enabled results in an error.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/EnableModuleStreamOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableModuleStreamOnManagedInstance API.
+     */
+    EnableModuleStreamOnManagedInstanceResponse enableModuleStreamOnManagedInstance(
+            EnableModuleStreamOnManagedInstanceRequest request);
+
+    /**
      * Returns a specific erratum.
      *
      * @param request The request object containing the details to send
@@ -329,6 +364,32 @@ public interface OsManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagedInstanceGroup API.
      */
     GetManagedInstanceGroupResponse getManagedInstanceGroup(GetManagedInstanceGroupRequest request);
+
+    /**
+     * Retrieve a detailed description of a module stream from a software source.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetModuleStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModuleStream API.
+     */
+    GetModuleStreamResponse getModuleStream(GetModuleStreamRequest request);
+
+    /**
+     * Retrieve a detailed description of a module stream profile from a software source.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetModuleStreamProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModuleStreamProfile API.
+     */
+    GetModuleStreamProfileResponse getModuleStreamProfile(GetModuleStreamProfileRequest request);
 
     /**
      * Gets the detailed information for the Scheduled Job with the given ID.
@@ -435,6 +496,22 @@ public interface OsManagement extends AutoCloseable {
      */
     InstallAllWindowsUpdatesOnManagedInstanceResponse installAllWindowsUpdatesOnManagedInstance(
             InstallAllWindowsUpdatesOnManagedInstanceRequest request);
+
+    /**
+     * Installs a profile for an module stream.  The stream must be
+     * enabled before a profile can be installed.  If a module stream
+     * defines multiple profiles, each one can be installed independently.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/InstallModuleStreamProfileOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallModuleStreamProfileOnManagedInstance API.
+     */
+    InstallModuleStreamProfileOnManagedInstanceResponse installModuleStreamProfileOnManagedInstance(
+            InstallModuleStreamProfileOnManagedInstanceRequest request);
 
     /**
      * Installs a package on a managed instance.
@@ -591,6 +668,132 @@ public interface OsManagement extends AutoCloseable {
     ListManagedInstancesResponse listManagedInstances(ListManagedInstancesRequest request);
 
     /**
+     * Retrieve a list of module stream profiles from a software source.
+     * Filters may be applied to select a subset of module stream profiles
+     * based on the filter criteria.
+     * <p>
+     * The \"moduleName\", \"streamName\", and \"profileName\" attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a \"moduleName\" is provided, only profiles that belong to that module
+     * are returned.  If both a \"moduleName\" and \"streamName\" are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a \"streamName\"
+     * without a \"moduleName\".  It is also not valid to supply a \"profileName\"
+     * without a \"streamName\".
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListModuleStreamProfilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModuleStreamProfiles API.
+     */
+    ListModuleStreamProfilesResponse listModuleStreamProfiles(
+            ListModuleStreamProfilesRequest request);
+
+    /**
+     * Retrieve a list of module stream profiles, along with a summary of their
+     * of their status, from a managed instance.  Filters may be applied to
+     * select a subset of profiles based on the filter criteria.
+     * <p>
+     * The \"moduleName\", \"streamName\", and \"profileName\" attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a \"modulName\" is provided, only profiles that belong to that module
+     * are returned.  If both a \"moduleName\" and \"streamName\" are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a \"streamName\"
+     * without a \"moduleName\".  It is also not valid to supply a \"profileName\"
+     * without a \"streamName\".
+     * <p>
+     * The \"status\" attribute filters against the state of a module stream
+     * profile.  Valid values are \"INSTALLED\" and \"AVAILABLE\".  If the
+     * attribute is set to \"INSTALLED\", only module stream profiles that
+     * are installed are included in the result set.  If the attribute is
+     * set to \"AVAILABLE\", only module stream profiles that are not
+     * installed are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * <p>
+     * When sorting by display name, the result set is sorted first by
+     * module name, then by stream name, and finally by profile name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListModuleStreamProfilesOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModuleStreamProfilesOnManagedInstance API.
+     */
+    ListModuleStreamProfilesOnManagedInstanceResponse listModuleStreamProfilesOnManagedInstance(
+            ListModuleStreamProfilesOnManagedInstanceRequest request);
+
+    /**
+     * Retrieve a list of module streams from a software source.
+     * Filters may be applied to select a subset of module streams
+     * based on the filter criteria.
+     * <p>
+     * The 'moduleName' attribute filters against the name of a module.
+     * It accepts strings of the format \"<module>\".  If this attribute
+     * is defined, only streams that belong to the specified module are
+     * included in the result set.  If it is not defined, the request is
+     * not subject to this filter.  The 'streamName' attribute filters
+     * against the name of a stream of a module.  If this attribute is
+     * defined, only the particular module stream that matches both the
+     * module and stream names is included in the result set.  It is
+     * not valid to supply 'streamName' without also supplying a
+     * 'moduleName'.
+     * <p>
+     * When sorting by display name, the result set is sorted first by
+     * module name, then by stream name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListModuleStreamsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModuleStreams API.
+     */
+    ListModuleStreamsResponse listModuleStreams(ListModuleStreamsRequest request);
+
+    /**
+     * Retrieve a list of module streams, along with a summary of their
+     * status, from a managed instance.  Filters may be applied to select
+     * a subset of module streams based on the filter criteria.
+     * <p>
+     * The 'moduleName' attribute filters against the name of a module.
+     * It accepts strings of the format \"<module>\".  If this attribute
+     * is defined, only streams that belong to the specified module are
+     * included in the result set.  If it is not defined, the request is
+     * not subject to this filter.
+     * <p>
+     * The \"status\" attribute filters against the state of a module stream.
+     * Valid values are \"ENABLED\", \"DISABLED\", and \"ACTIVE\".  If the
+     * attribute is set to \"ENABLED\", only module streams that are enabled
+     * are included in the result set.  If the attribute is set to \"DISABLED\",
+     * only module streams that are not enabled are included in the result
+     * set.  If the attribute is set to \"ACTIVE\", only module streams that
+     * are active are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * <p>
+     * When sorting by the display name, the result set is sorted first
+     * by the module name and then by the stream name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListModuleStreamsOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModuleStreamsOnManagedInstance API.
+     */
+    ListModuleStreamsOnManagedInstanceResponse listModuleStreamsOnManagedInstance(
+            ListModuleStreamsOnManagedInstanceRequest request);
+
+    /**
      * Returns a list of installed packages on the Managed Instance.
      *
      * @param request The request object containing the details to send
@@ -724,6 +927,96 @@ public interface OsManagement extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Perform an operation involving modules, streams, and profiles on a
+     * managed instance.  Each operation may enable or disable an arbitrary
+     * amount of module streams, and install or remove an arbitrary number
+     * of module stream profiles.  When the operation is complete, the
+     * state of the modules, streams, and profiles on the managed instance
+     * will match the state indicated in the operation.
+     * <p>
+     * Each module stream specified in the list of module streams to enable
+     * will be in the \"ENABLED\" state upon completion of the operation.
+     * If there was already a stream of that module enabled, any work
+     * required to switch from the current stream to the new stream is
+     * performed implicitly.
+     * <p>
+     * Each module stream specified in the list of module streams to disable
+     * will be in the \"DISABLED\" state upon completion of the operation.
+     * Any profiles that are installed for the module stream will be removed
+     * as part of the operation.
+     * <p>
+     * Each module stream profile specified in the list of profiles to install
+     * will be in the \"INSTALLED\" state upon completion of the operation,
+     * indicating that any packages that are part of the profile are installed
+     * on the managed instance.  If the module stream containing the profile
+     * is not enabled, it will be enabled as part of the operation.  There
+     * is an exception when attempting to install a stream of a profile when
+     * another stream of the same module is enabled.  It is an error to attempt
+     * to install a profile of another module stream, unless enabling the
+     * new module stream is explicitly included in this operation.
+     * <p>
+     * Each module stream profile specified in the list of profiles to remove
+     * will be in the \"AVAILABLE\" state upon completion of the operation.
+     * The status of packages within the profile after the operation is
+     * complete is defined by the package manager on the managed instance.
+     * <p>
+     * Operations that contain one or more elements that are not allowed
+     * are rejected.
+     * <p>
+     * The result of this request is a WorkRequest object.  The returned
+     * WorkRequest is the parent of a structure of other WorkRequests.  Taken
+     * as a whole, this structure indicates the entire set of work to be
+     * performed to complete the operation.
+     * <p>
+     * This interface can also be used to perform a dry run of the operation
+     * rather than committing it to a managed instance.  If a dry run is
+     * requested, the OS Management Service will evaluate the operation
+     * against the current module, stream, and profile state on the managed
+     * instance.  It will calculate the impact of the operation on all
+     * modules, streams, and profiles on the managed instance, including those
+     * that are implicitly impacted by the operation.
+     * <p>
+     * The WorkRequest resulting from a dry run behaves differently than
+     * a WorkRequest resulting from a committable operation.  Dry run
+     * WorkRequests are always singletons and never have children.  The
+     * impact of the operation is returned using the log and error
+     * facilities of WorkRequests.  The impact of operations that are
+     * allowed by the OS Management Service are communicated as one or
+     * more work request log entries.  Operations that are not allowed
+     * by the OS Management Service are communicated as one or more
+     * work requst error entries.  Each entry, for either logs or errors,
+     * contains a structured message containing the results of one
+     * or more operations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ManageModuleStreamsOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ManageModuleStreamsOnManagedInstance API.
+     */
+    ManageModuleStreamsOnManagedInstanceResponse manageModuleStreamsOnManagedInstance(
+            ManageModuleStreamsOnManagedInstanceRequest request);
+
+    /**
+     * Removes a profile for a module stream that is installed on a managed instance.
+     * If a module stream is provided, rather than a fully qualified profile, all
+     * profiles that have been installed for the module stream will be removed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/RemoveModuleStreamProfileFromManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveModuleStreamProfileFromManagedInstance API.
+     */
+    RemoveModuleStreamProfileFromManagedInstanceResponse
+            removeModuleStreamProfileFromManagedInstance(
+                    RemoveModuleStreamProfileFromManagedInstanceRequest request);
+
+    /**
      * Removes an installed package from a managed instance.
      *
      * @param request The request object containing the details to send
@@ -793,6 +1086,23 @@ public interface OsManagement extends AutoCloseable {
      */
     SkipNextScheduledJobExecutionResponse skipNextScheduledJobExecution(
             SkipNextScheduledJobExecutionRequest request);
+
+    /**
+     * Enables a new stream for a module that already has a stream enabled.
+     * If any profiles or packages from the original module are installed,
+     * switching to a new stream will remove the existing packages and
+     * install their counterparts in the new stream.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/SwitchModuleStreamOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchModuleStreamOnManagedInstance API.
+     */
+    SwitchModuleStreamOnManagedInstanceResponse switchModuleStreamOnManagedInstance(
+            SwitchModuleStreamOnManagedInstanceRequest request);
 
     /**
      * Updates a specific Managed Instance.

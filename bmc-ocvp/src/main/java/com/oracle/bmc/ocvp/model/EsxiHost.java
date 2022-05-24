@@ -185,6 +185,15 @@ public class EsxiHost {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -227,6 +236,7 @@ public class EsxiHost {
                             computeAvailabilityDomain,
                             hostShapeName,
                             hostOcpuCount,
+                            capacityReservationId,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -253,6 +263,7 @@ public class EsxiHost {
                             .computeAvailabilityDomain(o.getComputeAvailabilityDomain())
                             .hostShapeName(o.getHostShapeName())
                             .hostOcpuCount(o.getHostOcpuCount())
+                            .capacityReservationId(o.getCapacityReservationId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -403,6 +414,13 @@ public class EsxiHost {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuCount")
     Float hostOcpuCount;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    String capacityReservationId;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

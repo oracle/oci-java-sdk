@@ -13,6 +13,13 @@ import com.oracle.bmc.oda.model.*;
 @lombok.Getter
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
+    private String opcRequestId;
+
+    /**
      * When you are paging through a list, if this header appears in the response,
      * then there might be additional items still to get. Include this value as the
      * {@code page} query parameter for the subsequent GET request.
@@ -21,11 +28,10 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
     private String opcNextPage;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you contact Oracle
-     * about this request, provide this request ID.
+     * The total number of results that match the query.
      *
      */
-    private String opcRequestId;
+    private Integer opcTotalItems;
 
     /**
      * A list of com.oracle.bmc.oda.model.WorkRequestLogEntry instances.
@@ -34,18 +40,21 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
-        "opcNextPage",
         "opcRequestId",
+        "opcNextPage",
+        "opcTotalItems",
         "items"
     })
     private ListWorkRequestLogsResponse(
             int __httpStatusCode__,
-            String opcNextPage,
             String opcRequestId,
+            String opcNextPage,
+            Integer opcTotalItems,
             java.util.List<com.oracle.bmc.oda.model.WorkRequestLogEntry> items) {
         super(__httpStatusCode__);
-        this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.opcTotalItems = opcTotalItems;
         this.items = items;
     }
 
@@ -63,8 +72,9 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ListWorkRequestLogsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
-            opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
+            opcNextPage(o.getOpcNextPage());
+            opcTotalItems(o.getOpcTotalItems());
             items(o.getItems());
 
             return this;
@@ -72,7 +82,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
         public ListWorkRequestLogsResponse build() {
             return new ListWorkRequestLogsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, items);
+                    __httpStatusCode__, opcRequestId, opcNextPage, opcTotalItems, items);
         }
     }
 }

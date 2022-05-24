@@ -151,6 +151,88 @@ public class OdaInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
+        private Boolean isRoleBasedAccess;
+
+        public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
+            this.isRoleBasedAccess = isRoleBasedAccess;
+            this.__explicitlySet__.add("isRoleBasedAccess");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
+        private String identityDomain;
+
+        public Builder identityDomain(String identityDomain) {
+            this.identityDomain = identityDomain;
+            this.__explicitlySet__.add("identityDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("identityAppGuid")
+        private String identityAppGuid;
+
+        public Builder identityAppGuid(String identityAppGuid) {
+            this.identityAppGuid = identityAppGuid;
+            this.__explicitlySet__.add("identityAppGuid");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("identityAppConsoleUrl")
+        private String identityAppConsoleUrl;
+
+        public Builder identityAppConsoleUrl(String identityAppConsoleUrl) {
+            this.identityAppConsoleUrl = identityAppConsoleUrl;
+            this.__explicitlySet__.add("identityAppConsoleUrl");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importedPackageNames")
+        private java.util.List<String> importedPackageNames;
+
+        public Builder importedPackageNames(java.util.List<String> importedPackageNames) {
+            this.importedPackageNames = importedPackageNames;
+            this.__explicitlySet__.add("importedPackageNames");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importedPackageIds")
+        private java.util.List<String> importedPackageIds;
+
+        public Builder importedPackageIds(java.util.List<String> importedPackageIds) {
+            this.importedPackageIds = importedPackageIds;
+            this.__explicitlySet__.add("importedPackageIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("attachmentTypes")
+        private java.util.List<String> attachmentTypes;
+
+        public Builder attachmentTypes(java.util.List<String> attachmentTypes) {
+            this.attachmentTypes = attachmentTypes;
+            this.__explicitlySet__.add("attachmentTypes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("attachmentIds")
+        private java.util.List<String> attachmentIds;
+
+        public Builder attachmentIds(java.util.List<String> attachmentIds) {
+            this.attachmentIds = attachmentIds;
+            this.__explicitlySet__.add("attachmentIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
+        private java.util.List<RestrictedOperation> restrictedOperations;
+
+        public Builder restrictedOperations(
+                java.util.List<RestrictedOperation> restrictedOperations) {
+            this.restrictedOperations = restrictedOperations;
+            this.__explicitlySet__.add("restrictedOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -170,7 +252,16 @@ public class OdaInstance {
                             lifecycleSubState,
                             stateMessage,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            isRoleBasedAccess,
+                            identityDomain,
+                            identityAppGuid,
+                            identityAppConsoleUrl,
+                            importedPackageNames,
+                            importedPackageIds,
+                            attachmentTypes,
+                            attachmentIds,
+                            restrictedOperations);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -191,7 +282,16 @@ public class OdaInstance {
                             .lifecycleSubState(o.getLifecycleSubState())
                             .stateMessage(o.getStateMessage())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .isRoleBasedAccess(o.getIsRoleBasedAccess())
+                            .identityDomain(o.getIdentityDomain())
+                            .identityAppGuid(o.getIdentityAppGuid())
+                            .identityAppConsoleUrl(o.getIdentityAppConsoleUrl())
+                            .importedPackageNames(o.getImportedPackageNames())
+                            .importedPackageIds(o.getImportedPackageIds())
+                            .attachmentTypes(o.getAttachmentTypes())
+                            .attachmentIds(o.getAttachmentIds())
+                            .restrictedOperations(o.getRestrictedOperations());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -370,9 +470,13 @@ public class OdaInstance {
         Starting("STARTING"),
         Stopping("STOPPING"),
         ChangingCompartment("CHANGING_COMPARTMENT"),
+        ActivatingCustomerEncryptionKey("ACTIVATING_CUSTOMER_ENCRYPTION_KEY"),
+        UpdatingCustomerEncryptionKey("UPDATING_CUSTOMER_ENCRYPTION_KEY"),
+        DeactivatingCustomerEncryptionKey("DEACTIVATING_CUSTOMER_ENCRYPTION_KEY"),
         Deleting("DELETING"),
         DeletePending("DELETE_PENDING"),
         Recovering("RECOVERING"),
+        Updating("UPDATING"),
         Purging("PURGING"),
         Queued("QUEUED"),
 
@@ -443,6 +547,60 @@ public class OdaInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
+    Boolean isRoleBasedAccess;
+
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
+    String identityDomain;
+
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("identityAppGuid")
+    String identityAppGuid;
+
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("identityAppConsoleUrl")
+    String identityAppConsoleUrl;
+
+    /**
+     * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importedPackageNames")
+    java.util.List<String> importedPackageNames;
+
+    /**
+     * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importedPackageIds")
+    java.util.List<String> importedPackageIds;
+
+    /**
+     * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("attachmentTypes")
+    java.util.List<String> attachmentTypes;
+
+    /**
+     * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("attachmentIds")
+    java.util.List<String> attachmentIds;
+
+    /**
+     * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
+    java.util.List<RestrictedOperation> restrictedOperations;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

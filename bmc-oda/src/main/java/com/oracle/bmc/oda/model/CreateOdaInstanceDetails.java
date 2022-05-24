@@ -81,6 +81,24 @@ public class CreateOdaInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
+        private Boolean isRoleBasedAccess;
+
+        public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
+            this.isRoleBasedAccess = isRoleBasedAccess;
+            this.__explicitlySet__.add("isRoleBasedAccess");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
+        private String identityDomain;
+
+        public Builder identityDomain(String identityDomain) {
+            this.identityDomain = identityDomain;
+            this.__explicitlySet__.add("identityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -92,7 +110,9 @@ public class CreateOdaInstanceDetails {
                             compartmentId,
                             shapeName,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            isRoleBasedAccess,
+                            identityDomain);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -105,7 +125,9 @@ public class CreateOdaInstanceDetails {
                             .compartmentId(o.getCompartmentId())
                             .shapeName(o.getShapeName())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .isRoleBasedAccess(o.getIsRoleBasedAccess())
+                            .identityDomain(o.getIdentityDomain());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -178,8 +200,7 @@ public class CreateOdaInstanceDetails {
     ShapeName shapeName;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -193,6 +214,18 @@ public class CreateOdaInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
+    Boolean isRoleBasedAccess;
+
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
+    String identityDomain;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

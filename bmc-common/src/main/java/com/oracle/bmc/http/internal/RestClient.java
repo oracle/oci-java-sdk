@@ -11,6 +11,8 @@ import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.http.ApacheUtils;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.io.internal.KeepOpenInputStream;
+import com.oracle.bmc.io.internal.ResettableFileInputStream;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.AsyncHandler;
@@ -37,6 +39,8 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
@@ -1293,7 +1297,9 @@ public class RestClient implements AutoCloseable {
                 return body;
             } else if (body instanceof InputStream) {
                 final Long contentLength = tryGetContentLength(request);
-                if (ApacheUtils.isExtraStreamLogsEnabled()) {
+                // check if the stream has correct implementation of available method
+                final boolean isStreamWithKnownAvailableBytes = checkStreamForAvailableBytes(body);
+                if (ApacheUtils.isExtraStreamLogsEnabled() && isStreamWithKnownAvailableBytes) {
                     try {
                         final int bytesAvailable = ((InputStream) body).available();
                         if (bytesAvailable == 0) {
@@ -1323,6 +1329,19 @@ public class RestClient implements AutoCloseable {
         } catch (IOException e) {
             throw new IllegalArgumentException("Unable to process JSON body", e);
         }
+    }
+
+    private static boolean checkStreamForAvailableBytes(Object body) {
+        if (body instanceof FileInputStream || body instanceof ByteArrayInputStream) {
+            return true;
+        }
+        if (body instanceof KeepOpenInputStream) {
+            KeepOpenInputStream keepOpenInputStream = (KeepOpenInputStream) body;
+            if (keepOpenInputStream.innerStream instanceof ResettableFileInputStream) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
