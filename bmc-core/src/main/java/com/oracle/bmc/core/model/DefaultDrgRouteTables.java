@@ -100,7 +100,7 @@ public class DefaultDrgRouteTables {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
      * of type VCN on creation.
      *
      **/

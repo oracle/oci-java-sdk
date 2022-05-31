@@ -22,7 +22,7 @@ public class ChangeCrossConnectGroupCompartmentRequest
                 com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cross-connect group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
      */
     private String crossConnectGroupId;
 

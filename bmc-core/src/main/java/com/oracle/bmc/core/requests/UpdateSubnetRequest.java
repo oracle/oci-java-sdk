@@ -21,7 +21,7 @@ public class UpdateSubnetRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateSubnetDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     private String subnetId;
 

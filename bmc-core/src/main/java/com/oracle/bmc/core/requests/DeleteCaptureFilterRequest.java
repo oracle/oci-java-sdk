@@ -20,7 +20,7 @@ import com.oracle.bmc.core.model.*;
 public class DeleteCaptureFilterRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the capture filter.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
      */
     private String captureFilterId;
 

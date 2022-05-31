@@ -22,7 +22,7 @@ public class ConnectLocalPeeringGatewaysRequest
                 com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
      */
     private String localPeeringGatewayId;
 

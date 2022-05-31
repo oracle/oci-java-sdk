@@ -169,8 +169,8 @@ public class AppCatalogListingResourceVersion {
     /**
      * List of regions that this listing resource version is available.
      * <p>
-     * For information about Regions, see
-     * [Regions](https://docs.cloud.oracle.com/#General/Concepts/regions.htm).
+     * For information about regions, see
+     * [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * <p>
      * Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
      *
@@ -181,7 +181,7 @@ public class AppCatalogListingResourceVersion {
     /**
      * Array of shapes compatible with this resource.
      * <p>
-     * You may enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
+     * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
      * <p>
      * Example: {@code ["VM.Standard1.1", "VM.Standard1.2"]}
      *

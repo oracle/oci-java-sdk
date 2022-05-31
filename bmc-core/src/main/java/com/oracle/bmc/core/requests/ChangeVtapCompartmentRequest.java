@@ -22,7 +22,7 @@ public class ChangeVtapCompartmentRequest
                 com.oracle.bmc.core.model.ChangeVtapCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VTAP.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP.
      */
     private String vtapId;
 

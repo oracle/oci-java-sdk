@@ -22,7 +22,7 @@ public class RemoveIpv6SubnetCidrRequest
                 com.oracle.bmc.core.model.RemoveSubnetIpv6CidrDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     private String subnetId;
 

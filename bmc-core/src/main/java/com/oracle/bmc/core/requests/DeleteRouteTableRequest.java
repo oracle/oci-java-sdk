@@ -20,7 +20,7 @@ import com.oracle.bmc.core.model.*;
 public class DeleteRouteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the route table.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
      */
     private String rtId;
 

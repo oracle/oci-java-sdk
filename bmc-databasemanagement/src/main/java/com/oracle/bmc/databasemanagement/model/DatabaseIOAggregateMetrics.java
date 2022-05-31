@@ -44,19 +44,43 @@ public class DatabaseIOAggregateMetrics {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("iopsStatistics")
+        private java.util.List<MetricStatisticsDefinition> iopsStatistics;
+
+        public Builder iopsStatistics(java.util.List<MetricStatisticsDefinition> iopsStatistics) {
+            this.iopsStatistics = iopsStatistics;
+            this.__explicitlySet__.add("iopsStatistics");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ioThroughputStatistics")
+        private java.util.List<MetricStatisticsDefinition> ioThroughputStatistics;
+
+        public Builder ioThroughputStatistics(
+                java.util.List<MetricStatisticsDefinition> ioThroughputStatistics) {
+            this.ioThroughputStatistics = ioThroughputStatistics;
+            this.__explicitlySet__.add("ioThroughputStatistics");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseIOAggregateMetrics build() {
             DatabaseIOAggregateMetrics __instance__ =
-                    new DatabaseIOAggregateMetrics(iops, ioThroughput);
+                    new DatabaseIOAggregateMetrics(
+                            iops, ioThroughput, iopsStatistics, ioThroughputStatistics);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseIOAggregateMetrics o) {
-            Builder copiedBuilder = iops(o.getIops()).ioThroughput(o.getIoThroughput());
+            Builder copiedBuilder =
+                    iops(o.getIops())
+                            .ioThroughput(o.getIoThroughput())
+                            .iopsStatistics(o.getIopsStatistics())
+                            .ioThroughputStatistics(o.getIoThroughputStatistics());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -71,16 +95,28 @@ public class DatabaseIOAggregateMetrics {
     }
 
     /**
-     * A list of the Input/Output Operations Per Second metrics grouped by IOType for a specific database.
+     * The Input/Output Operations Per Second metrics grouped by IOType for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iops")
     java.util.List<MetricDataPoint> iops;
 
     /**
-     * A list of the IOThroughput metrics grouped for a specific database.
+     * The IOThroughput metrics grouped by IOType for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioThroughput")
     java.util.List<MetricDataPoint> ioThroughput;
+
+    /**
+     * The Input/Output metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("iopsStatistics")
+    java.util.List<MetricStatisticsDefinition> iopsStatistics;
+
+    /**
+     * The IOThroughput metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ioThroughputStatistics")
+    java.util.List<MetricStatisticsDefinition> ioThroughputStatistics;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

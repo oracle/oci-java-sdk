@@ -235,7 +235,7 @@ public class IPSecConnection {
     String displayName;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     String drgId;
@@ -251,7 +251,7 @@ public class IPSecConnection {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

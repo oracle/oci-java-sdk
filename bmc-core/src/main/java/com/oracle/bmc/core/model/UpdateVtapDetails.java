@@ -258,14 +258,14 @@ public class UpdateVtapDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
@@ -279,7 +279,7 @@ public class UpdateVtapDetails {
     String targetIp;
 
     /**
-     * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captureFilterId")
@@ -397,7 +397,7 @@ public class UpdateVtapDetails {
     String sourcePrivateEndpointIp;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourcePrivateEndpointSubnetId")

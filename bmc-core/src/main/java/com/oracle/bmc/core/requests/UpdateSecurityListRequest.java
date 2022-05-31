@@ -22,7 +22,7 @@ public class UpdateSecurityListRequest
                 com.oracle.bmc.core.model.UpdateSecurityListDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the security list.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the security list.
      */
     private String securityListId;
 

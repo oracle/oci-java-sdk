@@ -8,7 +8,7 @@ import com.oracle.bmc.adm.requests.*;
 import com.oracle.bmc.adm.responses.*;
 
 /**
- * Use the ADM API to create ADM knowledge base and vulnerability audits.  For more information, see [ADM](https://docs.cloud.oracle.com/Content/adm/using/home.htm).
+ * Use the Application Dependency Management API to create knowledge bases and vulnerability audits.  For more information, see [ADM](https://docs.cloud.oracle.com/Content/application-dependency-management/home.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public interface ApplicationDependencyManagementAsync extends AutoCloseable {

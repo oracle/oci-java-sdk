@@ -61,7 +61,7 @@ public class MemoryAggregateMetrics {
     }
 
     /**
-     * A list of the memory usage metrics grouped by memorypool for a specific database.
+     * The Memory Usage metrics grouped by memorypool for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUsage")
     java.util.List<MetricDataPoint> memoryUsage;

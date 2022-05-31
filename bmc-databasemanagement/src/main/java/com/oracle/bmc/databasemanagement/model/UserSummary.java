@@ -78,6 +78,15 @@ public class UserSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
+        private java.util.Date timeLocked;
+
+        public Builder timeLocked(java.util.Date timeLocked) {
+            this.timeLocked = timeLocked;
+            this.__explicitlySet__.add("timeLocked");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("profile")
         private String profile;
 
@@ -99,6 +108,7 @@ public class UserSummary {
                             defaultTablespace,
                             tempTablespace,
                             timeCreated,
+                            timeLocked,
                             profile);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -113,6 +123,7 @@ public class UserSummary {
                             .defaultTablespace(o.getDefaultTablespace())
                             .tempTablespace(o.getTempTablespace())
                             .timeCreated(o.getTimeCreated())
+                            .timeLocked(o.getTimeLocked())
                             .profile(o.getProfile());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -222,7 +233,13 @@ public class UserSummary {
     java.util.Date timeCreated;
 
     /**
-     * The User resource profile name.
+     * The date the account was locked, if the status of the account is LOCKED.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
+    java.util.Date timeLocked;
+
+    /**
+     * The profile name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
     String profile;

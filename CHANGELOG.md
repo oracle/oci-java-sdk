@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.30.0 - 2022-05-31
+### Added
+
+- Support for in-depth monitoring, diagnostics capabilities, and advanced management functionality for on-premise Oracle databases in the Database Management service
+- Support for using Oracle Cloud Agent to perform iSCSI login and logout for non-multipath-enabled iSCSI attachments in the Container Engine for Kubernetes service
+- Support for Fault Domain placement in the Container Engine for Kubernetes service
+- Support for worker node images in the Container Engine for Kubernetes service
+- Support for flexible shapes using the driverShapeConfig and executorShapeConfig properties in the Data Flow service
+
+### Breaking Changes
+- Support for retries by default on operations in the Application Dependency Management service
+
 ## 2.29.0 - 2022-05-24
 ### Added
 - Support for the License Manager service
@@ -10,7 +22,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for packaged skill and instance metadata management, role-based access options on instance creation, and assigned ownership in the Digital Assistant service
 - Support for compute capacity reservations in the VMWare Solution service
 - Support for Oracle Linux 8 application streams in the OS Management service
-- Add support for GraalVM
+- Support for GraalVM
 
 ### Breaking Changes
 - Support for retries by default on operations in the API Gateway service

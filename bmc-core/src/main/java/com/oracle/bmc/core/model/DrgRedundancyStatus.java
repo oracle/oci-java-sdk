@@ -72,7 +72,7 @@ public class DrgRedundancyStatus {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

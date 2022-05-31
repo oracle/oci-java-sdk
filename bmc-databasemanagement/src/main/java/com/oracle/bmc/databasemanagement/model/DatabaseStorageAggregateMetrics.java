@@ -91,7 +91,7 @@ public class DatabaseStorageAggregateMetrics {
     MetricDataPoint storageUsed;
 
     /**
-     * A list of the storage metrics grouped by TableSpace for a specific database.
+     * A list of the storage metrics grouped by TableSpace for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsedByTableSpace")
     java.util.List<MetricDataPoint> storageUsedByTableSpace;

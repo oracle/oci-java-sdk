@@ -64,7 +64,7 @@ public class ClusterCacheMetric {
     }
 
     /**
-     * A list of cluster cache metrics for a specific database.
+     * A list of cluster cache metrics for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterCacheMetrics")
     java.util.List<TimeSeriesMetricDefinition> clusterCacheMetrics;

@@ -22,7 +22,7 @@ public class ChangeRemotePeeringConnectionCompartmentRequest
                 com.oracle.bmc.core.model.ChangeRemotePeeringConnectionCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
      */
     private String remotePeeringConnectionId;
 
