@@ -35,19 +35,29 @@ public class CpuUtilizationAggregateMetrics {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuStatistics")
+        private MetricStatisticsDefinition cpuStatistics;
+
+        public Builder cpuStatistics(MetricStatisticsDefinition cpuStatistics) {
+            this.cpuStatistics = cpuStatistics;
+            this.__explicitlySet__.add("cpuStatistics");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CpuUtilizationAggregateMetrics build() {
             CpuUtilizationAggregateMetrics __instance__ =
-                    new CpuUtilizationAggregateMetrics(cpuUtilization);
+                    new CpuUtilizationAggregateMetrics(cpuUtilization, cpuStatistics);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CpuUtilizationAggregateMetrics o) {
-            Builder copiedBuilder = cpuUtilization(o.getCpuUtilization());
+            Builder copiedBuilder =
+                    cpuUtilization(o.getCpuUtilization()).cpuStatistics(o.getCpuStatistics());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -63,6 +73,9 @@ public class CpuUtilizationAggregateMetrics {
 
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilization")
     MetricDataPoint cpuUtilization;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuStatistics")
+    MetricStatisticsDefinition cpuStatistics;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

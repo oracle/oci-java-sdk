@@ -53,13 +53,22 @@ public class NodePoolPlacementConfigDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+        private java.util.List<String> faultDomains;
+
+        public Builder faultDomains(java.util.List<String> faultDomains) {
+            this.faultDomains = faultDomains;
+            this.__explicitlySet__.add("faultDomains");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodePoolPlacementConfigDetails build() {
             NodePoolPlacementConfigDetails __instance__ =
                     new NodePoolPlacementConfigDetails(
-                            availabilityDomain, subnetId, capacityReservationId);
+                            availabilityDomain, subnetId, capacityReservationId, faultDomains);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -69,7 +78,8 @@ public class NodePoolPlacementConfigDetails {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
                             .subnetId(o.getSubnetId())
-                            .capacityReservationId(o.getCapacityReservationId());
+                            .capacityReservationId(o.getCapacityReservationId())
+                            .faultDomains(o.getFaultDomains());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -102,6 +112,13 @@ public class NodePoolPlacementConfigDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     String capacityReservationId;
+
+    /**
+     * A list of fault domains in which to place nodes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+    java.util.List<String> faultDomains;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

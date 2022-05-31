@@ -22,7 +22,7 @@ public class ChangeIPSecConnectionCompartmentRequest
                 com.oracle.bmc.core.model.ChangeIPSecConnectionCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
      */
     private String ipscId;
 

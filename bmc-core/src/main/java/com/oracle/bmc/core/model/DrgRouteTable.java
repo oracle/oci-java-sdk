@@ -181,7 +181,7 @@ public class DrgRouteTable {
     String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table
      * is always in the same compartment as the DRG.
      *
      **/
@@ -189,7 +189,7 @@ public class DrgRouteTable {
     String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DRG the DRG that contains this route table.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG that contains this route table.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
@@ -286,7 +286,7 @@ public class DrgRouteTable {
     LifecycleState lifecycleState;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from
      * referenced attachments are inserted into the DRG route table.
      *
      **/

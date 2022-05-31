@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The response containing the CPU, Storage, Wait, DB Time, and Memory metrics for a specific database.
+ * The response containing the CPU, Storage, Wait, DB Time, and Memory metrics for a specific Managed Database.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -147,7 +147,7 @@ public class DatabaseHomeMetricDefinition {
     }
 
     /**
-     * A list of the active session metrics for CPU and Wait time for a specific database.
+     * A list of the active session metrics for CPU and Wait time for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityTimeSeriesMetrics")
     java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;

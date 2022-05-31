@@ -108,6 +108,15 @@ public class SqlTuningAdvisorTaskRecommendationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isParallelExecution")
+        private Boolean isParallelExecution;
+
+        public Builder isParallelExecution(Boolean isParallelExecution) {
+            this.isParallelExecution = isParallelExecution;
+            this.__explicitlySet__.add("isParallelExecution");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -122,7 +131,8 @@ public class SqlTuningAdvisorTaskRecommendationSummary {
                             recommendation,
                             rationale,
                             benefit,
-                            implementActionSql);
+                            implementActionSql,
+                            isParallelExecution);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -138,7 +148,8 @@ public class SqlTuningAdvisorTaskRecommendationSummary {
                             .recommendation(o.getRecommendation())
                             .rationale(o.getRationale())
                             .benefit(o.getBenefit())
-                            .implementActionSql(o.getImplementActionSql());
+                            .implementActionSql(o.getImplementActionSql())
+                            .isParallelExecution(o.getIsParallelExecution());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -256,6 +267,12 @@ public class SqlTuningAdvisorTaskRecommendationSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("implementActionSql")
     String implementActionSql;
+
+    /**
+     * Indicates whether a SQL Profile recommendation uses parallel execution.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isParallelExecution")
+    Boolean isParallelExecution;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

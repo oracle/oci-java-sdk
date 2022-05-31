@@ -22,7 +22,7 @@ public class ChangeCaptureFilterCompartmentRequest
                 com.oracle.bmc.core.model.ChangeCaptureFilterCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the capture filter.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
      */
     private String captureFilterId;
 

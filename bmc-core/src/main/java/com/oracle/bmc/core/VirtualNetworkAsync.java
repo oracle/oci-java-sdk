@@ -824,7 +824,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
      * more information, see [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
      * the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
      * connection or other Networking Service components. If you're not sure which compartment to
      * use, put the CPE in the same compartment as the DRG. For more information about
@@ -858,7 +858,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * and request to have the physical cable installed. For more information, see
      * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment where you want the cross-connect to reside. If you're
      * not sure which compartment to use, put the cross-connect in the
      * same compartment with your VCN. For more information about
@@ -889,7 +889,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * FastConnect. For more information, see
      * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment where you want the cross-connect group to reside. If you're
      * not sure which compartment to use, put the cross-connect group in the
      * same compartment with your VCN. For more information about
@@ -919,7 +919,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Creates a new set of DHCP options for the specified VCN. For more information, see
      * {@link DhcpOptions}.
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want the set of
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the set of
      * DHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,
      * subnets, or other Networking Service components. If you're not sure which compartment to use, put the set
      * of DHCP options in the same compartment as the VCN. For more information about compartments and access control, see
@@ -972,7 +972,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Attaches the specified DRG to the specified network resource. A VCN can be attached to only one DRG
      * at a time, but a DRG can be attached to more than one VCN. The response includes a `DrgAttachment`
-     * object with its own [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). For more information about DRGs, see
+     * object with its own [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For more information about DRGs, see
      * [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
@@ -1044,7 +1044,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * the static routes. For more information, see the important note in
      * {@link IPSecConnection}.
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want the
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the
      * IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
      * as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
      * use, put the IPSec connection in the same compartment as the DRG. For more information about
@@ -1082,7 +1082,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Creates a new internet gateway for the specified VCN. For more information, see
      * [Access to the Internet](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want the Internet
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the Internet
      * Gateway to reside. Notice that the internet gateway doesn't have to be in the same compartment as the VCN or
      * other Networking Service components. If you're not sure which compartment to use, put the Internet
      * Gateway in the same compartment with the VCN. For more information about compartments and access control, see
@@ -1503,7 +1503,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Creates a virtual test access point (VTAP) in the specified compartment.
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the VTAP.
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the VTAP.
      * For more information about compartments and access control, see
      * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1755,7 +1755,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Unassigns and deletes the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Unassigns and deletes the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * The IPv6 address is returned to the subnet's pool of available addresses.
      *
      *
@@ -2614,7 +2614,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Gets the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * Alternatively, you can get the object by using
      * {@link #listIpv6s(ListIpv6sRequest, Consumer, Consumer) listIpv6s}
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -3177,7 +3177,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * If you want to generate CPE configuration content for one of the returned CPE device types,
      * ensure that the {@link Cpe} object's `cpeDeviceShapeId` attribute is set
-     * to the CPE device type's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) (returned by this operation).
+     * to the CPE device type's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (returned by this operation).
      * <p>
      * For information about generating CPE configuration content, see these operations:
      * <p>
@@ -3269,7 +3269,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Lists the cross-connects in the specified compartment. You can filter the list
-     * by specifying the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a cross-connect group.
+     * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      *
      *
      * @param request The request object containing the details to send
@@ -3440,7 +3440,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * information so you can specify your desired provider and service
      * offering when you create a virtual circuit.
      * <p>
-     * For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
+     * For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
      * <p>
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *

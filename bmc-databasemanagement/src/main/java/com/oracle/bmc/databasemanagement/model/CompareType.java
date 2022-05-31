@@ -14,6 +14,7 @@ package com.oracle.bmc.databasemanagement.model;
 public enum CompareType {
     Hour("HOUR"),
     Day("DAY"),
+    Week("WEEK"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

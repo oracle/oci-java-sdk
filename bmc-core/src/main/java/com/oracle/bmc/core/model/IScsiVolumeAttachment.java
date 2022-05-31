@@ -221,6 +221,15 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoIscsiLoginEnabled")
+        private Boolean isAgentAutoIscsiLoginEnabled;
+
+        public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
+            this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            this.__explicitlySet__.add("isAgentAutoIscsiLoginEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -247,7 +256,8 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             iqn,
                             port,
                             multipathDevices,
-                            encryptionInTransitType);
+                            encryptionInTransitType,
+                            isAgentAutoIscsiLoginEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -275,7 +285,8 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             .iqn(o.getIqn())
                             .port(o.getPort())
                             .multipathDevices(o.getMultipathDevices())
-                            .encryptionInTransitType(o.getEncryptionInTransitType());
+                            .encryptionInTransitType(o.getEncryptionInTransitType())
+                            .isAgentAutoIscsiLoginEnabled(o.getIsAgentAutoIscsiLoginEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -311,7 +322,8 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             String iqn,
             Integer port,
             java.util.List<MultipathDevice> multipathDevices,
-            EncryptionInTransitType encryptionInTransitType) {
+            EncryptionInTransitType encryptionInTransitType,
+            Boolean isAgentAutoIscsiLoginEnabled) {
         super(
                 availabilityDomain,
                 compartmentId,
@@ -334,6 +346,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
         this.port = port;
         this.multipathDevices = multipathDevices;
         this.encryptionInTransitType = encryptionInTransitType;
+        this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
     }
 
     /**
@@ -396,6 +409,13 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
     EncryptionInTransitType encryptionInTransitType;
+
+    /**
+     * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoIscsiLoginEnabled")
+    Boolean isAgentAutoIscsiLoginEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

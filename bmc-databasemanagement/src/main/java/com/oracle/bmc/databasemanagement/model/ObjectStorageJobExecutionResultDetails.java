@@ -130,7 +130,7 @@ public class ObjectStorageJobExecutionResultDetails extends JobExecutionResultDe
     String objectName;
 
     /**
-     * The number of rows returned in the result. Only applicable for QUERY SqlType.
+     * The number of rows returned in the result for the Query SqlType.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
     Integer rowCount;

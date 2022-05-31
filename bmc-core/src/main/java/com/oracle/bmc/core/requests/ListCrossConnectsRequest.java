@@ -25,7 +25,7 @@ public class ListCrossConnectsRequest extends com.oracle.bmc.requests.BmcRequest
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cross-connect group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
      */
     private String crossConnectGroupId;
 

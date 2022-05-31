@@ -22,7 +22,7 @@ public class UpdateIPSecConnectionTunnelRequest
                 com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
      */
     private String ipscId;
 

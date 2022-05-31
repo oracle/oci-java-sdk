@@ -109,6 +109,15 @@ public class CreateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("driverShapeConfig")
+        private ShapeConfig driverShapeConfig;
+
+        public Builder driverShapeConfig(ShapeConfig driverShapeConfig) {
+            this.driverShapeConfig = driverShapeConfig;
+            this.__explicitlySet__.add("driverShapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("execute")
         private String execute;
 
@@ -124,6 +133,15 @@ public class CreateApplicationDetails {
         public Builder executorShape(String executorShape) {
             this.executorShape = executorShape;
             this.__explicitlySet__.add("executorShape");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("executorShapeConfig")
+        private ShapeConfig executorShapeConfig;
+
+        public Builder executorShapeConfig(ShapeConfig executorShapeConfig) {
+            this.executorShapeConfig = executorShapeConfig;
+            this.__explicitlySet__.add("executorShapeConfig");
             return this;
         }
 
@@ -241,8 +259,10 @@ public class CreateApplicationDetails {
                             description,
                             displayName,
                             driverShape,
+                            driverShapeConfig,
                             execute,
                             executorShape,
+                            executorShapeConfig,
                             fileUri,
                             freeformTags,
                             language,
@@ -270,8 +290,10 @@ public class CreateApplicationDetails {
                             .description(o.getDescription())
                             .displayName(o.getDisplayName())
                             .driverShape(o.getDriverShape())
+                            .driverShapeConfig(o.getDriverShapeConfig())
                             .execute(o.getExecute())
                             .executorShape(o.getExecutorShape())
+                            .executorShapeConfig(o.getExecutorShapeConfig())
                             .fileUri(o.getFileUri())
                             .freeformTags(o.getFreeformTags())
                             .language(o.getLanguage())
@@ -372,6 +394,9 @@ public class CreateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
     String driverShape;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("driverShapeConfig")
+    ShapeConfig driverShapeConfig;
+
     /**
      * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
      * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file with arguments.
@@ -389,6 +414,9 @@ public class CreateApplicationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
     String executorShape;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("executorShapeConfig")
+    ShapeConfig executorShapeConfig;
 
     /**
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute.

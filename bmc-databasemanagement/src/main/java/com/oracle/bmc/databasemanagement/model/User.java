@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of a specific User.
+ * The summary of a specific user resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -385,7 +385,7 @@ public class User {
     Status status;
 
     /**
-     * The date the account was locked if account status was LOCKED.
+     * The date the account was locked, if the status of the account is LOCKED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
     java.util.Date timeLocked;
@@ -421,7 +421,7 @@ public class User {
     java.util.Date timeCreated;
 
     /**
-     * The User resource profile name.
+     * The profile name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
     String profile;

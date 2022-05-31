@@ -22,7 +22,7 @@ public class ChangePublicIpCompartmentRequest
                 com.oracle.bmc.core.model.ChangePublicIpCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP.
      */
     private String publicIpId;
 
