@@ -15,16 +15,37 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AnnotationAnalyticsAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AnnotationAnalyticsAggregation {
+public final class AnnotationAnalyticsAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "count",
+        "datasetId",
+        "dimensions",
+        "updatedBy",
+        "compartmentId",
+        "lifecycleState"
+    })
+    public AnnotationAnalyticsAggregation(
+            java.math.BigDecimal count,
+            String datasetId,
+            AnnotationAggregationDimensions dimensions,
+            String updatedBy,
+            String compartmentId,
+            Annotation.LifecycleState lifecycleState) {
+        super();
+        this.count = count;
+        this.datasetId = datasetId;
+        this.dimensions = dimensions;
+        this.updatedBy = updatedBy;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private java.math.BigDecimal count;
@@ -113,39 +134,125 @@ public class AnnotationAnalyticsAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The count of the matching results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    java.math.BigDecimal count;
+    private final java.math.BigDecimal count;
+
+    public java.math.BigDecimal getCount() {
+        return count;
+    }
 
     /**
      * The OCID of the dataset the annotations belong to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
-    String datasetId;
+    private final String datasetId;
+
+    public String getDatasetId() {
+        return datasetId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    AnnotationAggregationDimensions dimensions;
+    private final AnnotationAggregationDimensions dimensions;
+
+    public AnnotationAggregationDimensions getDimensions() {
+        return dimensions;
+    }
 
     /**
      * The OCID of the principal which updated the annotation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
-    String updatedBy;
+    private final String updatedBy;
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
 
     /**
      * The OCID of the compartment containing the annotations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Describes the lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    Annotation.LifecycleState lifecycleState;
+    private final Annotation.LifecycleState lifecycleState;
+
+    public Annotation.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AnnotationAnalyticsAggregation(");
+        sb.append("count=").append(String.valueOf(this.count));
+        sb.append(", datasetId=").append(String.valueOf(this.datasetId));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append(", updatedBy=").append(String.valueOf(this.updatedBy));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AnnotationAnalyticsAggregation)) {
+            return false;
+        }
+
+        AnnotationAnalyticsAggregation other = (AnnotationAnalyticsAggregation) o;
+        return java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.datasetId, other.datasetId)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.updatedBy, other.updatedBy)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result = (result * PRIME) + (this.datasetId == null ? 43 : this.datasetId.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result = (result * PRIME) + (this.updatedBy == null ? 43 : this.updatedBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,20 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NodeDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NodeDetails {
+public final class NodeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"hostname", "ip", "vipHostname", "vip"})
+    public NodeDetails(String hostname, String ip, String vipHostname, String vip) {
+        super();
+        this.hostname = hostname;
+        this.ip = ip;
+        this.vipHostname = vipHostname;
+        this.vip = vip;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
@@ -89,30 +95,98 @@ public class NodeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The node host name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * The node IP address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ip")
-    String ip;
+    private final String ip;
+
+    public String getIp() {
+        return ip;
+    }
 
     /**
      * The node virtual IP (VIP) host name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vipHostname")
-    String vipHostname;
+    private final String vipHostname;
+
+    public String getVipHostname() {
+        return vipHostname;
+    }
 
     /**
      * The node virtual IP (VIP) address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vip")
-    String vip;
+    private final String vip;
+
+    public String getVip() {
+        return vip;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NodeDetails(");
+        sb.append("hostname=").append(String.valueOf(this.hostname));
+        sb.append(", ip=").append(String.valueOf(this.ip));
+        sb.append(", vipHostname=").append(String.valueOf(this.vipHostname));
+        sb.append(", vip=").append(String.valueOf(this.vip));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NodeDetails)) {
+            return false;
+        }
+
+        NodeDetails other = (NodeDetails) o;
+        return java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.ip, other.ip)
+                && java.util.Objects.equals(this.vipHostname, other.vipHostname)
+                && java.util.Objects.equals(this.vip, other.vip)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.ip == null ? 43 : this.ip.hashCode());
+        result = (result * PRIME) + (this.vipHostname == null ? 43 : this.vipHostname.hashCode());
+        result = (result * PRIME) + (this.vip == null ? 43 : this.vip.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

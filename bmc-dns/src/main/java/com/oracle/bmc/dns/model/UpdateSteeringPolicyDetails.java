@@ -20,16 +20,43 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateSteeringPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateSteeringPolicyDetails {
+public final class UpdateSteeringPolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "ttl",
+        "healthCheckMonitorId",
+        "template",
+        "freeformTags",
+        "definedTags",
+        "answers",
+        "rules"
+    })
+    public UpdateSteeringPolicyDetails(
+            String displayName,
+            Integer ttl,
+            String healthCheckMonitorId,
+            Template template,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<SteeringPolicyAnswer> answers,
+            java.util.List<SteeringPolicyRule> rules) {
+        super();
+        this.displayName = displayName;
+        this.ttl = ttl;
+        this.healthCheckMonitorId = healthCheckMonitorId;
+        this.template = template;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.answers = answers;
+        this.rules = rules;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -146,13 +173,21 @@ public class UpdateSteeringPolicyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name for the steering policy. Does not have to be unique and can be changed.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The Time To Live (TTL) for responses from the steering policy, in seconds.
@@ -160,7 +195,11 @@ public class UpdateSteeringPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
-    Integer ttl;
+    private final Integer ttl;
+
+    public Integer getTtl() {
+        return ttl;
+    }
 
     /**
      * The OCID of the health check monitor providing health data about the answers of the
@@ -175,7 +214,12 @@ public class UpdateSteeringPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckMonitorId")
-    String healthCheckMonitorId;
+    private final String healthCheckMonitorId;
+
+    public String getHealthCheckMonitorId() {
+        return healthCheckMonitorId;
+    }
+
     /**
      * A set of predefined rules based on the desired purpose of the steering policy. Each
      * template utilizes Traffic Management's rules in a different order to produce the desired
@@ -301,7 +345,11 @@ public class UpdateSteeringPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("template")
-    Template template;
+    private final Template template;
+
+    public Template getTemplate() {
+        return template;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -312,7 +360,11 @@ public class UpdateSteeringPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -323,14 +375,22 @@ public class UpdateSteeringPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The set of all answers that can potentially issue from the steering policy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("answers")
-    java.util.List<SteeringPolicyAnswer> answers;
+    private final java.util.List<SteeringPolicyAnswer> answers;
+
+    public java.util.List<SteeringPolicyAnswer> getAnswers() {
+        return answers;
+    }
 
     /**
      * The series of rules that will be processed in sequence to reduce the pool of answers
@@ -343,8 +403,76 @@ public class UpdateSteeringPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
-    java.util.List<SteeringPolicyRule> rules;
+    private final java.util.List<SteeringPolicyRule> rules;
+
+    public java.util.List<SteeringPolicyRule> getRules() {
+        return rules;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateSteeringPolicyDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", ttl=").append(String.valueOf(this.ttl));
+        sb.append(", healthCheckMonitorId=").append(String.valueOf(this.healthCheckMonitorId));
+        sb.append(", template=").append(String.valueOf(this.template));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", answers=").append(String.valueOf(this.answers));
+        sb.append(", rules=").append(String.valueOf(this.rules));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSteeringPolicyDetails)) {
+            return false;
+        }
+
+        UpdateSteeringPolicyDetails other = (UpdateSteeringPolicyDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.ttl, other.ttl)
+                && java.util.Objects.equals(this.healthCheckMonitorId, other.healthCheckMonitorId)
+                && java.util.Objects.equals(this.template, other.template)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.answers, other.answers)
+                && java.util.Objects.equals(this.rules, other.rules)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.healthCheckMonitorId == null
+                                ? 43
+                                : this.healthCheckMonitorId.hashCode());
+        result = (result * PRIME) + (this.template == null ? 43 : this.template.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.answers == null ? 43 : this.answers.hashCode());
+        result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

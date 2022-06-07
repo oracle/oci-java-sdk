@@ -16,16 +16,22 @@ package com.oracle.bmc.announcementsservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AnnouncementUserStatusDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AnnouncementUserStatusDetails {
+public final class AnnouncementUserStatusDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"userStatusAnnouncementId", "userId", "timeAcknowledged"})
+    public AnnouncementUserStatusDetails(
+            String userStatusAnnouncementId, String userId, java.util.Date timeAcknowledged) {
+        super();
+        this.userStatusAnnouncementId = userStatusAnnouncementId;
+        this.userId = userId;
+        this.timeAcknowledged = timeAcknowledged;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("userStatusAnnouncementId")
         private String userStatusAnnouncementId;
@@ -84,17 +90,29 @@ public class AnnouncementUserStatusDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the announcement that this status is associated with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userStatusAnnouncementId")
-    String userStatusAnnouncementId;
+    private final String userStatusAnnouncementId;
+
+    public String getUserStatusAnnouncementId() {
+        return userStatusAnnouncementId;
+    }
 
     /**
      * The OCID of the user that this status is associated with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * The date and time the announcement was acknowledged, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -102,8 +120,65 @@ public class AnnouncementUserStatusDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAcknowledged")
-    java.util.Date timeAcknowledged;
+    private final java.util.Date timeAcknowledged;
+
+    public java.util.Date getTimeAcknowledged() {
+        return timeAcknowledged;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AnnouncementUserStatusDetails(");
+        sb.append("userStatusAnnouncementId=")
+                .append(String.valueOf(this.userStatusAnnouncementId));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", timeAcknowledged=").append(String.valueOf(this.timeAcknowledged));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AnnouncementUserStatusDetails)) {
+            return false;
+        }
+
+        AnnouncementUserStatusDetails other = (AnnouncementUserStatusDetails) o;
+        return java.util.Objects.equals(
+                        this.userStatusAnnouncementId, other.userStatusAnnouncementId)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.timeAcknowledged, other.timeAcknowledged)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.userStatusAnnouncementId == null
+                                ? 43
+                                : this.userStatusAnnouncementId.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeAcknowledged == null ? 43 : this.timeAcknowledged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,20 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateRuleSetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateRuleSetDetails {
+public final class CreateRuleSetDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "items"})
+    public CreateRuleSetDetails(String name, java.util.List<Rule> items) {
+        super();
+        this.name = name;
+        this.items = items;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -69,6 +73,10 @@ public class CreateRuleSetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering
      * confidential information.
@@ -77,14 +85,64 @@ public class CreateRuleSetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * An array of rules that compose the rule set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<Rule> items;
+    private final java.util.List<Rule> items;
+
+    public java.util.List<Rule> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateRuleSetDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateRuleSetDetails)) {
+            return false;
+        }
+
+        CreateRuleSetDetails other = (CreateRuleSetDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

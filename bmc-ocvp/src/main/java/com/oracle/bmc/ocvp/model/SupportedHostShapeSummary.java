@@ -16,16 +16,46 @@ package com.oracle.bmc.ocvp.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SupportedHostShapeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SupportedHostShapeSummary {
+public final class SupportedHostShapeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "supportedOperations",
+        "shapeFamily",
+        "defaultOcpuCount",
+        "supportedOcpuCount",
+        "supportedSddcTypes",
+        "supportedVmwareSoftwareVersions",
+        "description",
+        "isSupportShieldedInstances"
+    })
+    public SupportedHostShapeSummary(
+            String name,
+            java.util.List<OperationTypes> supportedOperations,
+            String shapeFamily,
+            Float defaultOcpuCount,
+            java.util.List<Float> supportedOcpuCount,
+            java.util.List<SddcTypes> supportedSddcTypes,
+            java.util.List<String> supportedVmwareSoftwareVersions,
+            String description,
+            Boolean isSupportShieldedInstances) {
+        super();
+        this.name = name;
+        this.supportedOperations = supportedOperations;
+        this.shapeFamily = shapeFamily;
+        this.defaultOcpuCount = defaultOcpuCount;
+        this.supportedOcpuCount = supportedOcpuCount;
+        this.supportedSddcTypes = supportedSddcTypes;
+        this.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
+        this.description = description;
+        this.isSupportShieldedInstances = isSupportShieldedInstances;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -153,68 +183,197 @@ public class SupportedHostShapeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the supported compute shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedOperations")
-    java.util.List<OperationTypes> supportedOperations;
+    private final java.util.List<OperationTypes> supportedOperations;
+
+    public java.util.List<OperationTypes> getSupportedOperations() {
+        return supportedOperations;
+    }
 
     /**
      * The family of the shape. ESXi hosts of one SDDC must have the same shape family.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeFamily")
-    String shapeFamily;
+    private final String shapeFamily;
+
+    public String getShapeFamily() {
+        return shapeFamily;
+    }
 
     /**
      * The default OCPU count of the shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultOcpuCount")
-    Float defaultOcpuCount;
+    private final Float defaultOcpuCount;
+
+    public Float getDefaultOcpuCount() {
+        return defaultOcpuCount;
+    }
 
     /**
      * Support OCPU count of the shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedOcpuCount")
-    java.util.List<Float> supportedOcpuCount;
+    private final java.util.List<Float> supportedOcpuCount;
+
+    public java.util.List<Float> getSupportedOcpuCount() {
+        return supportedOcpuCount;
+    }
 
     /**
      * The supported SDDC types for the shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedSddcTypes")
-    java.util.List<SddcTypes> supportedSddcTypes;
+    private final java.util.List<SddcTypes> supportedSddcTypes;
+
+    public java.util.List<SddcTypes> getSupportedSddcTypes() {
+        return supportedSddcTypes;
+    }
 
     /**
      * The VMware software versions supported by the shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedVmwareSoftwareVersions")
-    java.util.List<String> supportedVmwareSoftwareVersions;
+    private final java.util.List<String> supportedVmwareSoftwareVersions;
+
+    public java.util.List<String> getSupportedVmwareSoftwareVersions() {
+        return supportedVmwareSoftwareVersions;
+    }
 
     /**
      * Description of the shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Indicates whether the shape supports shielded instances.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportShieldedInstances")
-    Boolean isSupportShieldedInstances;
+    private final Boolean isSupportShieldedInstances;
+
+    public Boolean getIsSupportShieldedInstances() {
+        return isSupportShieldedInstances;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SupportedHostShapeSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", supportedOperations=").append(String.valueOf(this.supportedOperations));
+        sb.append(", shapeFamily=").append(String.valueOf(this.shapeFamily));
+        sb.append(", defaultOcpuCount=").append(String.valueOf(this.defaultOcpuCount));
+        sb.append(", supportedOcpuCount=").append(String.valueOf(this.supportedOcpuCount));
+        sb.append(", supportedSddcTypes=").append(String.valueOf(this.supportedSddcTypes));
+        sb.append(", supportedVmwareSoftwareVersions=")
+                .append(String.valueOf(this.supportedVmwareSoftwareVersions));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isSupportShieldedInstances=")
+                .append(String.valueOf(this.isSupportShieldedInstances));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SupportedHostShapeSummary)) {
+            return false;
+        }
+
+        SupportedHostShapeSummary other = (SupportedHostShapeSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.supportedOperations, other.supportedOperations)
+                && java.util.Objects.equals(this.shapeFamily, other.shapeFamily)
+                && java.util.Objects.equals(this.defaultOcpuCount, other.defaultOcpuCount)
+                && java.util.Objects.equals(this.supportedOcpuCount, other.supportedOcpuCount)
+                && java.util.Objects.equals(this.supportedSddcTypes, other.supportedSddcTypes)
+                && java.util.Objects.equals(
+                        this.supportedVmwareSoftwareVersions, other.supportedVmwareSoftwareVersions)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(
+                        this.isSupportShieldedInstances, other.isSupportShieldedInstances)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedOperations == null
+                                ? 43
+                                : this.supportedOperations.hashCode());
+        result = (result * PRIME) + (this.shapeFamily == null ? 43 : this.shapeFamily.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultOcpuCount == null ? 43 : this.defaultOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedOcpuCount == null
+                                ? 43
+                                : this.supportedOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedSddcTypes == null
+                                ? 43
+                                : this.supportedSddcTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedVmwareSoftwareVersions == null
+                                ? 43
+                                : this.supportedVmwareSoftwareVersions.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSupportShieldedInstances == null
+                                ? 43
+                                : this.isSupportShieldedInstances.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

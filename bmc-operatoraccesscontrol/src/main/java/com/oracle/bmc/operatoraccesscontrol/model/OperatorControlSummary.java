@@ -15,16 +15,52 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OperatorControlSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OperatorControlSummary {
+public final class OperatorControlSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "operatorControlName",
+        "compartmentId",
+        "isFullyPreApproved",
+        "resourceType",
+        "timeOfCreation",
+        "timeOfModification",
+        "timeOfDeletion",
+        "lifecycleState",
+        "freeformTags",
+        "definedTags"
+    })
+    public OperatorControlSummary(
+            String id,
+            String operatorControlName,
+            String compartmentId,
+            Boolean isFullyPreApproved,
+            ResourceTypes resourceType,
+            java.util.Date timeOfCreation,
+            java.util.Date timeOfModification,
+            java.util.Date timeOfDeletion,
+            OperatorControlLifecycleStates lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.operatorControlName = operatorControlName;
+        this.compartmentId = compartmentId;
+        this.isFullyPreApproved = isFullyPreApproved;
+        this.resourceType = resourceType;
+        this.timeOfCreation = timeOfCreation;
+        this.timeOfModification = timeOfModification;
+        this.timeOfDeletion = timeOfDeletion;
+        this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -174,77 +210,214 @@ public class OperatorControlSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Name of the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatorControlName")
-    String operatorControlName;
+    private final String operatorControlName;
+
+    public String getOperatorControlName() {
+        return operatorControlName;
+    }
 
     /**
      * The OCID of the compartment that contains the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Whether all operator actions are pre-approved. If yes, an access request associated with a resource governed by the operator control will be automatically approved by the system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFullyPreApproved")
-    Boolean isFullyPreApproved;
+    private final Boolean isFullyPreApproved;
+
+    public Boolean getIsFullyPreApproved() {
+        return isFullyPreApproved;
+    }
 
     /**
      * resourceType for which the OperatorControl is applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    ResourceTypes resourceType;
+    private final ResourceTypes resourceType;
+
+    public ResourceTypes getResourceType() {
+        return resourceType;
+    }
 
     /**
      * Time when the operator control was created, expressed in [RFC 3339] (https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfCreation")
-    java.util.Date timeOfCreation;
+    private final java.util.Date timeOfCreation;
+
+    public java.util.Date getTimeOfCreation() {
+        return timeOfCreation;
+    }
 
     /**
      * Time when the operator control was last modified, expressed in [RFC 3339] (https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfModification")
-    java.util.Date timeOfModification;
+    private final java.util.Date timeOfModification;
+
+    public java.util.Date getTimeOfModification() {
+        return timeOfModification;
+    }
 
     /**
      * Time when the operator control was deleted, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
 
     /**
      * The current lifecycle state of the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    OperatorControlLifecycleStates lifecycleState;
+    private final OperatorControlLifecycleStates lifecycleState;
+
+    public OperatorControlLifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OperatorControlSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", operatorControlName=").append(String.valueOf(this.operatorControlName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", isFullyPreApproved=").append(String.valueOf(this.isFullyPreApproved));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", timeOfCreation=").append(String.valueOf(this.timeOfCreation));
+        sb.append(", timeOfModification=").append(String.valueOf(this.timeOfModification));
+        sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OperatorControlSummary)) {
+            return false;
+        }
+
+        OperatorControlSummary other = (OperatorControlSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.operatorControlName, other.operatorControlName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.isFullyPreApproved, other.isFullyPreApproved)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.timeOfCreation, other.timeOfCreation)
+                && java.util.Objects.equals(this.timeOfModification, other.timeOfModification)
+                && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatorControlName == null
+                                ? 43
+                                : this.operatorControlName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isFullyPreApproved == null
+                                ? 43
+                                : this.isFullyPreApproved.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfCreation == null ? 43 : this.timeOfCreation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfModification == null
+                                ? 43
+                                : this.timeOfModification.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

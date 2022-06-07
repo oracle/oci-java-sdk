@@ -16,12 +16,6 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -40,38 +34,115 @@ package com.oracle.bmc.opsi.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class HostResourceStatistics {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "usage",
+        "capacity",
+        "utilizationPercent",
+        "usageChangePercent"
+    })
+    protected HostResourceStatistics(
+            Double usage, Double capacity, Double utilizationPercent, Double usageChangePercent) {
+        super();
+        this.usage = usage;
+        this.capacity = capacity;
+        this.utilizationPercent = utilizationPercent;
+        this.usageChangePercent = usageChangePercent;
+    }
 
     /**
      * Total amount used of the resource metric type (CPU, STORAGE).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
-    Double usage;
+    private final Double usage;
+
+    public Double getUsage() {
+        return usage;
+    }
 
     /**
      * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
-    Double capacity;
+    private final Double capacity;
+
+    public Double getCapacity() {
+        return capacity;
+    }
 
     /**
      * Resource utilization in percentage.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
-    Double utilizationPercent;
+    private final Double utilizationPercent;
+
+    public Double getUtilizationPercent() {
+        return utilizationPercent;
+    }
 
     /**
      * Change in resource utilization in percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
-    Double usageChangePercent;
+    private final Double usageChangePercent;
+
+    public Double getUsageChangePercent() {
+        return usageChangePercent;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostResourceStatistics(");
+        sb.append("usage=").append(String.valueOf(this.usage));
+        sb.append(", capacity=").append(String.valueOf(this.capacity));
+        sb.append(", utilizationPercent=").append(String.valueOf(this.utilizationPercent));
+        sb.append(", usageChangePercent=").append(String.valueOf(this.usageChangePercent));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostResourceStatistics)) {
+            return false;
+        }
+
+        HostResourceStatistics other = (HostResourceStatistics) o;
+        return java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.capacity, other.capacity)
+                && java.util.Objects.equals(this.utilizationPercent, other.utilizationPercent)
+                && java.util.Objects.equals(this.usageChangePercent, other.usageChangePercent);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.utilizationPercent == null
+                                ? 43
+                                : this.utilizationPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usageChangePercent == null
+                                ? 43
+                                : this.usageChangePercent.hashCode());
+        return result;
+    }
 
     /**
      * Name of resource for host
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ResourceName {
         HostCpuStatistics("HOST_CPU_STATISTICS"),
         HostMemoryStatistics("HOST_MEMORY_STATISTICS"),
@@ -81,6 +152,9 @@ public class HostResourceStatistics {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceName.class);
 
         private final String value;
         private static java.util.Map<String, ResourceName> map;

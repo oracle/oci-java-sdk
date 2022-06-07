@@ -15,16 +15,43 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreatePatternDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreatePatternDetails {
+public final class CreatePatternDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "expression",
+        "filePathPrefix",
+        "checkFilePathList",
+        "isEnableCheckFailureLimit",
+        "checkFailureLimit",
+        "properties"
+    })
+    public CreatePatternDetails(
+            String displayName,
+            String description,
+            String expression,
+            String filePathPrefix,
+            java.util.List<String> checkFilePathList,
+            Boolean isEnableCheckFailureLimit,
+            Integer checkFailureLimit,
+            java.util.Map<String, java.util.Map<String, String>> properties) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.expression = expression;
+        this.filePathPrefix = filePathPrefix;
+        this.checkFilePathList = checkFilePathList;
+        this.isEnableCheckFailureLimit = isEnableCheckFailureLimit;
+        this.checkFailureLimit = checkFailureLimit;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -140,19 +167,31 @@ public class CreatePatternDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Detailed description of the Pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
@@ -161,7 +200,11 @@ public class CreatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
-    String expression;
+    private final String expression;
+
+    public String getExpression() {
+        return expression;
+    }
 
     /**
      * Input string which drives the selection process.
@@ -170,7 +213,11 @@ public class CreatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
-    String filePathPrefix;
+    private final String filePathPrefix;
+
+    public String getFilePathPrefix() {
+        return filePathPrefix;
+    }
 
     /**
      * List of file paths against which the pattern can be tried, as a check. This documents, for reference
@@ -181,7 +228,11 @@ public class CreatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("checkFilePathList")
-    java.util.List<String> checkFilePathList;
+    private final java.util.List<String> checkFilePathList;
+
+    public java.util.List<String> getCheckFilePathList() {
+        return checkFilePathList;
+    }
 
     /**
      * Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
@@ -189,7 +240,11 @@ public class CreatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnableCheckFailureLimit")
-    Boolean isEnableCheckFailureLimit;
+    private final Boolean isEnableCheckFailureLimit;
+
+    public Boolean getIsEnableCheckFailureLimit() {
+        return isEnableCheckFailureLimit;
+    }
 
     /**
      * The maximum number of UNMATCHED files, in checkFilePathList, above which the check fails. Optional, if
@@ -197,7 +252,11 @@ public class CreatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("checkFailureLimit")
-    Integer checkFailureLimit;
+    private final Integer checkFailureLimit;
+
+    public Integer getCheckFailureLimit() {
+        return checkFailureLimit;
+    }
 
     /**
      * A map of maps that contains the properties which are specific to the pattern type. Each pattern type
@@ -206,8 +265,84 @@ public class CreatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.Map<String, java.util.Map<String, String>> properties;
+    private final java.util.Map<String, java.util.Map<String, String>> properties;
+
+    public java.util.Map<String, java.util.Map<String, String>> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreatePatternDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", expression=").append(String.valueOf(this.expression));
+        sb.append(", filePathPrefix=").append(String.valueOf(this.filePathPrefix));
+        sb.append(", checkFilePathList=").append(String.valueOf(this.checkFilePathList));
+        sb.append(", isEnableCheckFailureLimit=")
+                .append(String.valueOf(this.isEnableCheckFailureLimit));
+        sb.append(", checkFailureLimit=").append(String.valueOf(this.checkFailureLimit));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreatePatternDetails)) {
+            return false;
+        }
+
+        CreatePatternDetails other = (CreatePatternDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.expression, other.expression)
+                && java.util.Objects.equals(this.filePathPrefix, other.filePathPrefix)
+                && java.util.Objects.equals(this.checkFilePathList, other.checkFilePathList)
+                && java.util.Objects.equals(
+                        this.isEnableCheckFailureLimit, other.isEnableCheckFailureLimit)
+                && java.util.Objects.equals(this.checkFailureLimit, other.checkFailureLimit)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filePathPrefix == null ? 43 : this.filePathPrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.checkFilePathList == null ? 43 : this.checkFilePathList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEnableCheckFailureLimit == null
+                                ? 43
+                                : this.isEnableCheckFailureLimit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.checkFailureLimit == null ? 43 : this.checkFailureLimit.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

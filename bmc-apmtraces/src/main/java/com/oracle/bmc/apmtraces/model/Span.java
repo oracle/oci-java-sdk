@@ -16,14 +16,53 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Span.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Span {
+public final class Span {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "parentSpanKey",
+        "traceKey",
+        "timeStarted",
+        "timeEnded",
+        "durationInMs",
+        "operationName",
+        "serviceName",
+        "kind",
+        "tags",
+        "logs",
+        "isError"
+    })
+    public Span(
+            String key,
+            String parentSpanKey,
+            String traceKey,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded,
+            Long durationInMs,
+            String operationName,
+            String serviceName,
+            String kind,
+            java.util.List<Tag> tags,
+            java.util.List<SpanLogCollection> logs,
+            Boolean isError) {
+        super();
+        this.key = key;
+        this.parentSpanKey = parentSpanKey;
+        this.traceKey = traceKey;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+        this.durationInMs = durationInMs;
+        this.operationName = operationName;
+        this.serviceName = serviceName;
+        this.kind = kind;
+        this.tags = tags;
+        this.logs = logs;
+        this.isError = isError;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -183,6 +222,10 @@ public class Span {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier (spanId) for the span.  Note that this field is
      * defined as spanKey in the API and it maps to the spanId in the trace data
@@ -190,85 +233,209 @@ public class Span {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Unique parent identifier for the span if one exists. For root spans this will be null.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentSpanKey")
-    String parentSpanKey;
+    private final String parentSpanKey;
+
+    public String getParentSpanKey() {
+        return parentSpanKey;
+    }
 
     /**
      * Unique identifier for the trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceKey")
-    String traceKey;
+    private final String traceKey;
+
+    public String getTraceKey() {
+        return traceKey;
+    }
 
     /**
      * Span start time.  Timestamp when the span was started.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * Span end time.  Timestamp when the span was completed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
 
     /**
      * Total span duration in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
-    Long durationInMs;
+    private final Long durationInMs;
+
+    public Long getDurationInMs() {
+        return durationInMs;
+    }
 
     /**
      * Span name associated with the trace.  This is usually the method or URI of the request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
-    String operationName;
+    private final String operationName;
+
+    public String getOperationName() {
+        return operationName;
+    }
 
     /**
      * Service name associated with the span.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     /**
      * Kind associated with the span.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kind")
-    String kind;
+    private final String kind;
+
+    public String getKind() {
+        return kind;
+    }
 
     /**
      * List of tags associated with the span.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
-    java.util.List<Tag> tags;
+    private final java.util.List<Tag> tags;
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
 
     /**
      * List of logs associated with the span.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logs")
-    java.util.List<SpanLogCollection> logs;
+    private final java.util.List<SpanLogCollection> logs;
+
+    public java.util.List<SpanLogCollection> getLogs() {
+        return logs;
+    }
 
     /**
      * Indicates if the span has an error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isError")
-    Boolean isError;
+    private final Boolean isError;
+
+    public Boolean getIsError() {
+        return isError;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Span(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", parentSpanKey=").append(String.valueOf(this.parentSpanKey));
+        sb.append(", traceKey=").append(String.valueOf(this.traceKey));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", durationInMs=").append(String.valueOf(this.durationInMs));
+        sb.append(", operationName=").append(String.valueOf(this.operationName));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", kind=").append(String.valueOf(this.kind));
+        sb.append(", tags=").append(String.valueOf(this.tags));
+        sb.append(", logs=").append(String.valueOf(this.logs));
+        sb.append(", isError=").append(String.valueOf(this.isError));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Span)) {
+            return false;
+        }
+
+        Span other = (Span) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.parentSpanKey, other.parentSpanKey)
+                && java.util.Objects.equals(this.traceKey, other.traceKey)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.durationInMs, other.durationInMs)
+                && java.util.Objects.equals(this.operationName, other.operationName)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.kind, other.kind)
+                && java.util.Objects.equals(this.tags, other.tags)
+                && java.util.Objects.equals(this.logs, other.logs)
+                && java.util.Objects.equals(this.isError, other.isError)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentSpanKey == null ? 43 : this.parentSpanKey.hashCode());
+        result = (result * PRIME) + (this.traceKey == null ? 43 : this.traceKey.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result = (result * PRIME) + (this.durationInMs == null ? 43 : this.durationInMs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationName == null ? 43 : this.operationName.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.kind == null ? 43 : this.kind.hashCode());
+        result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
+        result = (result * PRIME) + (this.logs == null ? 43 : this.logs.hashCode());
+        result = (result * PRIME) + (this.isError == null ? 43 : this.isError.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

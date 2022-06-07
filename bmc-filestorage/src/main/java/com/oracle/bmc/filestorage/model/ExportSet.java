@@ -19,14 +19,44 @@ package com.oracle.bmc.filestorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportSet.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExportSet {
+public final class ExportSet {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "compartmentId",
+        "displayName",
+        "id",
+        "lifecycleState",
+        "maxFsStatBytes",
+        "maxFsStatFiles",
+        "timeCreated",
+        "vcnId"
+    })
+    public ExportSet(
+            String availabilityDomain,
+            String compartmentId,
+            String displayName,
+            String id,
+            LifecycleState lifecycleState,
+            Long maxFsStatBytes,
+            Long maxFsStatFiles,
+            java.util.Date timeCreated,
+            String vcnId) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.maxFsStatBytes = maxFsStatBytes;
+        this.maxFsStatFiles = maxFsStatFiles;
+        this.timeCreated = timeCreated;
+        this.vcnId = vcnId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -153,6 +183,10 @@ public class ExportSet {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain the export set is in. May be unset
      * as a blank or NULL value.
@@ -161,13 +195,21 @@ public class ExportSet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
@@ -177,17 +219,25 @@ public class ExportSet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The current state of the export set.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -199,6 +249,9 @@ public class ExportSet {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -236,7 +289,11 @@ public class ExportSet {
      * The current state of the export set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Controls the maximum {@code tbytes}, {@code fbytes}, and {@code abytes},
@@ -251,7 +308,11 @@ public class ExportSet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatBytes")
-    Long maxFsStatBytes;
+    private final Long maxFsStatBytes;
+
+    public Long getMaxFsStatBytes() {
+        return maxFsStatBytes;
+    }
 
     /**
      * Controls the maximum {@code tfiles}, {@code ffiles}, and {@code afiles}
@@ -266,7 +327,11 @@ public class ExportSet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatFiles")
-    Long maxFsStatFiles;
+    private final Long maxFsStatFiles;
+
+    public Long getMaxFsStatFiles() {
+        return maxFsStatFiles;
+    }
 
     /**
      * The date and time the export set was created, expressed
@@ -276,14 +341,97 @@ public class ExportSet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    String vcnId;
+    private final String vcnId;
+
+    public String getVcnId() {
+        return vcnId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExportSet(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", maxFsStatBytes=").append(String.valueOf(this.maxFsStatBytes));
+        sb.append(", maxFsStatFiles=").append(String.valueOf(this.maxFsStatFiles));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportSet)) {
+            return false;
+        }
+
+        ExportSet other = (ExportSet) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.maxFsStatBytes, other.maxFsStatBytes)
+                && java.util.Objects.equals(this.maxFsStatFiles, other.maxFsStatFiles)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxFsStatBytes == null ? 43 : this.maxFsStatBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxFsStatFiles == null ? 43 : this.maxFsStatFiles.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

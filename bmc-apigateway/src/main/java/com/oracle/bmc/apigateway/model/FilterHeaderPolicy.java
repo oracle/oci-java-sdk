@@ -17,16 +17,20 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FilterHeaderPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FilterHeaderPolicy {
+public final class FilterHeaderPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({"type", "items"})
+    public FilterHeaderPolicy(Type type, java.util.List<FilterHeaderPolicyItem> items) {
+        super();
+        this.type = type;
+        this.items = items;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -71,12 +75,15 @@ public class FilterHeaderPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW
      * permits only the headers in the list and removes all others, so it acts as an inclusion list.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Allow("ALLOW"),
         Block("BLOCK"),
@@ -86,6 +93,8 @@ public class FilterHeaderPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -124,15 +133,65 @@ public class FilterHeaderPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The list of headers.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<FilterHeaderPolicyItem> items;
+    private final java.util.List<FilterHeaderPolicyItem> items;
+
+    public java.util.List<FilterHeaderPolicyItem> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FilterHeaderPolicy(");
+        sb.append("type=").append(String.valueOf(this.type));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FilterHeaderPolicy)) {
+            return false;
+        }
+
+        FilterHeaderPolicy other = (FilterHeaderPolicy) o;
+        return java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

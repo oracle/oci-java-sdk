@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAutonomousContainerDatabaseDataguardAssociationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetAutonomousContainerDatabaseDataguardAssociationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,10 +17,17 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
      */
     private String autonomousContainerDatabaseId;
 
+    public String getAutonomousContainerDatabaseId() {
+        return autonomousContainerDatabaseId;
+    }
     /**
      * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousContainerDatabaseDataguardAssociationId;
+
+    public String getAutonomousContainerDatabaseDataguardAssociationId() {
+        return autonomousContainerDatabaseDataguardAssociationId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -36,6 +35,30 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String autonomousContainerDatabaseId = null;
+
+        /**
+         * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            return this;
+        }
+
+        private String autonomousContainerDatabaseDataguardAssociationId = null;
+
+        /**
+         * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder autonomousContainerDatabaseDataguardAssociationId(
+                String autonomousContainerDatabaseDataguardAssociationId) {
+            this.autonomousContainerDatabaseDataguardAssociationId =
+                    autonomousContainerDatabaseDataguardAssociationId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -90,5 +113,88 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetAutonomousContainerDatabaseDataguardAssociationRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetAutonomousContainerDatabaseDataguardAssociationRequest
+         */
+        public GetAutonomousContainerDatabaseDataguardAssociationRequest
+                buildWithoutInvocationCallback() {
+            GetAutonomousContainerDatabaseDataguardAssociationRequest request =
+                    new GetAutonomousContainerDatabaseDataguardAssociationRequest();
+            request.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            request.autonomousContainerDatabaseDataguardAssociationId =
+                    autonomousContainerDatabaseDataguardAssociationId;
+            return request;
+            // new GetAutonomousContainerDatabaseDataguardAssociationRequest(autonomousContainerDatabaseId, autonomousContainerDatabaseDataguardAssociationId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .autonomousContainerDatabaseId(autonomousContainerDatabaseId)
+                .autonomousContainerDatabaseDataguardAssociationId(
+                        autonomousContainerDatabaseDataguardAssociationId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",autonomousContainerDatabaseId=")
+                .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(",autonomousContainerDatabaseDataguardAssociationId=")
+                .append(String.valueOf(this.autonomousContainerDatabaseDataguardAssociationId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetAutonomousContainerDatabaseDataguardAssociationRequest)) {
+            return false;
+        }
+
+        GetAutonomousContainerDatabaseDataguardAssociationRequest other =
+                (GetAutonomousContainerDatabaseDataguardAssociationRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(
+                        this.autonomousContainerDatabaseDataguardAssociationId,
+                        other.autonomousContainerDatabaseDataguardAssociationId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.autonomousContainerDatabaseId == null
+                                ? 43
+                                : this.autonomousContainerDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousContainerDatabaseDataguardAssociationId == null
+                                ? 43
+                                : this.autonomousContainerDatabaseDataguardAssociationId
+                                        .hashCode());
+        return result;
     }
 }

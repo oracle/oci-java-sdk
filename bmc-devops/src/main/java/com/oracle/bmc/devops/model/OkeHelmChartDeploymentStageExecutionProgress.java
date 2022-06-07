@@ -15,22 +15,18 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OkeHelmChartDeploymentStageExecutionProgress.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployStageType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OkeHelmChartDeploymentStageExecutionProgress extends DeployStageExecutionProgress {
+public final class OkeHelmChartDeploymentStageExecutionProgress
+        extends DeployStageExecutionProgress {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageDisplayName")
         private String deployStageDisplayName;
@@ -184,6 +180,10 @@ public class OkeHelmChartDeploymentStageExecutionProgress extends DeployStageExe
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public OkeHelmChartDeploymentStageExecutionProgress(
             String deployStageDisplayName,
@@ -215,26 +215,93 @@ public class OkeHelmChartDeploymentStageExecutionProgress extends DeployStageExe
      * Release name of the Helm chart.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseName")
-    String releaseName;
+    private final String releaseName;
+
+    public String getReleaseName() {
+        return releaseName;
+    }
 
     /**
      * The URL of an OCIR repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chartUrl")
-    String chartUrl;
+    private final String chartUrl;
+
+    public String getChartUrl() {
+        return chartUrl;
+    }
 
     /**
      * The version of the helm chart stored in OCIR repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OkeHelmChartDeploymentStageExecutionProgress(");
+        sb.append("super=").append(super.toString());
+        sb.append(", releaseName=").append(String.valueOf(this.releaseName));
+        sb.append(", chartUrl=").append(String.valueOf(this.chartUrl));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OkeHelmChartDeploymentStageExecutionProgress)) {
+            return false;
+        }
+
+        OkeHelmChartDeploymentStageExecutionProgress other =
+                (OkeHelmChartDeploymentStageExecutionProgress) o;
+        return java.util.Objects.equals(this.releaseName, other.releaseName)
+                && java.util.Objects.equals(this.chartUrl, other.chartUrl)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.releaseName == null ? 43 : this.releaseName.hashCode());
+        result = (result * PRIME) + (this.chartUrl == null ? 43 : this.chartUrl.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

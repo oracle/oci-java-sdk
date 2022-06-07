@@ -10,7 +10,6 @@ package com.oracle.bmc.mysql.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.extern.slf4j.Slf4j
 public enum CrashRecoveryStatus {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
@@ -20,6 +19,9 @@ public enum CrashRecoveryStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(CrashRecoveryStatus.class);
 
     private final String value;
     private static java.util.Map<String, CrashRecoveryStatus> map;

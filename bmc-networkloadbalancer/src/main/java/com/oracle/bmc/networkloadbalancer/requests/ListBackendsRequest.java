@@ -9,14 +9,6 @@ import com.oracle.bmc.networkloadbalancer.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListBackendsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBackendsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String networkLoadBalancerId;
 
+    public String getNetworkLoadBalancerId() {
+        return networkLoadBalancerId;
+    }
     /**
      * The name of the backend set associated with the backend servers.
      * <p>
@@ -32,6 +27,9 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String backendSetName;
 
+    public String getBackendSetName() {
+        return backendSetName;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
@@ -39,6 +37,9 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The system returns the requested resource, with a 200 status, only if the resource has no etag
      * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
@@ -49,6 +50,9 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String ifNoneMatch;
 
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
     /**
      * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -56,6 +60,9 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page from which to start retrieving results.
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
@@ -64,11 +71,17 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
      */
     private com.oracle.bmc.networkloadbalancer.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.networkloadbalancer.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
      * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
@@ -114,12 +127,121 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListBackendsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String networkLoadBalancerId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @return this builder instance
+         */
+        public Builder networkLoadBalancerId(String networkLoadBalancerId) {
+            this.networkLoadBalancerId = networkLoadBalancerId;
+            return this;
+        }
+
+        private String backendSetName = null;
+
+        /**
+         * The name of the backend set associated with the backend servers.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         * @return this builder instance
+         */
+        public Builder backendSetName(String backendSetName) {
+            this.backendSetName = backendSetName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifNoneMatch = null;
+
+        /**
+         * The system returns the requested resource, with a 200 status, only if the resource has no etag
+         * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
+         * HTTP status code {@code 304 (Not Modified)}.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page from which to start retrieving results.
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.networkloadbalancer.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.networkloadbalancer.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+         * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -178,5 +300,105 @@ public class ListBackendsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListBackendsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListBackendsRequest
+         */
+        public ListBackendsRequest buildWithoutInvocationCallback() {
+            ListBackendsRequest request = new ListBackendsRequest();
+            request.networkLoadBalancerId = networkLoadBalancerId;
+            request.backendSetName = backendSetName;
+            request.opcRequestId = opcRequestId;
+            request.ifNoneMatch = ifNoneMatch;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            return request;
+            // new ListBackendsRequest(networkLoadBalancerId, backendSetName, opcRequestId, ifNoneMatch, limit, page, sortOrder, sortBy);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .networkLoadBalancerId(networkLoadBalancerId)
+                .backendSetName(backendSetName)
+                .opcRequestId(opcRequestId)
+                .ifNoneMatch(ifNoneMatch)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",networkLoadBalancerId=").append(String.valueOf(this.networkLoadBalancerId));
+        sb.append(",backendSetName=").append(String.valueOf(this.backendSetName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListBackendsRequest)) {
+            return false;
+        }
+
+        ListBackendsRequest other = (ListBackendsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.networkLoadBalancerId, other.networkLoadBalancerId)
+                && java.util.Objects.equals(this.backendSetName, other.backendSetName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.networkLoadBalancerId == null
+                                ? 43
+                                : this.networkLoadBalancerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        return result;
     }
 }

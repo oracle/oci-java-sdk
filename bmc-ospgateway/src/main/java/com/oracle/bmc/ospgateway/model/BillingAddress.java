@@ -15,14 +15,50 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BillingAddress.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BillingAddress {
+public final class BillingAddress {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "addressKey",
+        "line1",
+        "line2",
+        "city",
+        "country",
+        "postalCode",
+        "state",
+        "emailAddress",
+        "companyName",
+        "firstName",
+        "lastName"
+    })
+    public BillingAddress(
+            String addressKey,
+            String line1,
+            String line2,
+            String city,
+            String country,
+            String postalCode,
+            String state,
+            String emailAddress,
+            String companyName,
+            String firstName,
+            String lastName) {
+        super();
+        this.addressKey = addressKey;
+        this.line1 = line1;
+        this.line2 = line2;
+        this.city = city;
+        this.country = country;
+        this.postalCode = postalCode;
+        this.state = state;
+        this.emailAddress = emailAddress;
+        this.companyName = companyName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("addressKey")
         private String addressKey;
@@ -171,72 +207,189 @@ public class BillingAddress {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Address identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addressKey")
-    String addressKey;
+    private final String addressKey;
+
+    public String getAddressKey() {
+        return addressKey;
+    }
 
     /**
      * Address line 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("line1")
-    String line1;
+    private final String line1;
+
+    public String getLine1() {
+        return line1;
+    }
 
     /**
      * Address line 2.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("line2")
-    String line2;
+    private final String line2;
+
+    public String getLine2() {
+        return line2;
+    }
 
     /**
      * Name of the city.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("city")
-    String city;
+    private final String city;
+
+    public String getCity() {
+        return city;
+    }
 
     /**
      * Country of the address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
-    String country;
+    private final String country;
+
+    public String getCountry() {
+        return country;
+    }
 
     /**
      * Post code of the address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("postalCode")
-    String postalCode;
+    private final String postalCode;
+
+    public String getPostalCode() {
+        return postalCode;
+    }
 
     /**
      * State of the address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
-    String state;
+    private final String state;
+
+    public String getState() {
+        return state;
+    }
 
     /**
      * Contact person email address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
-    String emailAddress;
+    private final String emailAddress;
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
 
     /**
      * Name of the customer company.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("companyName")
-    String companyName;
+    private final String companyName;
+
+    public String getCompanyName() {
+        return companyName;
+    }
 
     /**
      * First name of the contact person.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
-    String firstName;
+    private final String firstName;
+
+    public String getFirstName() {
+        return firstName;
+    }
 
     /**
      * Last name of the contact person.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
-    String lastName;
+    private final String lastName;
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BillingAddress(");
+        sb.append("addressKey=").append(String.valueOf(this.addressKey));
+        sb.append(", line1=").append(String.valueOf(this.line1));
+        sb.append(", line2=").append(String.valueOf(this.line2));
+        sb.append(", city=").append(String.valueOf(this.city));
+        sb.append(", country=").append(String.valueOf(this.country));
+        sb.append(", postalCode=").append(String.valueOf(this.postalCode));
+        sb.append(", state=").append(String.valueOf(this.state));
+        sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
+        sb.append(", companyName=").append(String.valueOf(this.companyName));
+        sb.append(", firstName=").append(String.valueOf(this.firstName));
+        sb.append(", lastName=").append(String.valueOf(this.lastName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BillingAddress)) {
+            return false;
+        }
+
+        BillingAddress other = (BillingAddress) o;
+        return java.util.Objects.equals(this.addressKey, other.addressKey)
+                && java.util.Objects.equals(this.line1, other.line1)
+                && java.util.Objects.equals(this.line2, other.line2)
+                && java.util.Objects.equals(this.city, other.city)
+                && java.util.Objects.equals(this.country, other.country)
+                && java.util.Objects.equals(this.postalCode, other.postalCode)
+                && java.util.Objects.equals(this.state, other.state)
+                && java.util.Objects.equals(this.emailAddress, other.emailAddress)
+                && java.util.Objects.equals(this.companyName, other.companyName)
+                && java.util.Objects.equals(this.firstName, other.firstName)
+                && java.util.Objects.equals(this.lastName, other.lastName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.addressKey == null ? 43 : this.addressKey.hashCode());
+        result = (result * PRIME) + (this.line1 == null ? 43 : this.line1.hashCode());
+        result = (result * PRIME) + (this.line2 == null ? 43 : this.line2.hashCode());
+        result = (result * PRIME) + (this.city == null ? 43 : this.city.hashCode());
+        result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
+        result = (result * PRIME) + (this.postalCode == null ? 43 : this.postalCode.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
+        result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
+        result = (result * PRIME) + (this.companyName == null ? 43 : this.companyName.hashCode());
+        result = (result * PRIME) + (this.firstName == null ? 43 : this.firstName.hashCode());
+        result = (result * PRIME) + (this.lastName == null ? 43 : this.lastName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

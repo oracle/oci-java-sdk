@@ -723,6 +723,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets details of an OPSI data object.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOpsiDataObjectResponse> getOpsiDataObject(
+            GetOpsiDataObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOpsiDataObjectRequest, GetOpsiDataObjectResponse>
+                    handler);
+
+    /**
      * Gets the status of the work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -1126,6 +1142,23 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets a list of OPSI data objects based on the query parameters specified. CompartmentId id query parameter must be specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOpsiDataObjectsResponse> listOpsiDataObjects(
+            ListOpsiDataObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOpsiDataObjectsRequest, ListOpsiDataObjectsResponse>
+                    handler);
+
+    /**
      * Query SQL Warehouse to list the plan xml for a given SQL execution plan. This returns a SqlPlanCollection object, but is currently limited to a single plan.
      * Either databaseId or id must be specified.
      *
@@ -1223,6 +1256,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Queries an OPSI data object with the inputs provided and sends the result set back. Either analysisTimeInterval
+     * or timeIntervalStart and timeIntervalEnd parameters need to be passed as well.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<QueryOpsiDataObjectDataResponse> queryOpsiDataObjectData(
+            QueryOpsiDataObjectDataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            QueryOpsiDataObjectDataRequest, QueryOpsiDataObjectDataResponse>
                     handler);
 
     /**

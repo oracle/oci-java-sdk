@@ -16,16 +16,31 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceReservationConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceReservationConfigDetails {
+public final class InstanceReservationConfigDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "instanceShape",
+        "instanceShapeConfig",
+        "faultDomain",
+        "reservedCount"
+    })
+    public InstanceReservationConfigDetails(
+            String instanceShape,
+            InstanceReservationShapeConfigDetails instanceShapeConfig,
+            String faultDomain,
+            Long reservedCount) {
+        super();
+        this.instanceShape = instanceShape;
+        this.instanceShapeConfig = instanceShapeConfig;
+        this.faultDomain = faultDomain;
+        this.reservedCount = reservedCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
         private String instanceShape;
@@ -95,6 +110,10 @@ public class InstanceReservationConfigDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The shape requested when launching instances using reserved capacity.
      * The shape determines the number of CPUs, amount of memory,
@@ -103,10 +122,18 @@ public class InstanceReservationConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
-    String instanceShape;
+    private final String instanceShape;
+
+    public String getInstanceShape() {
+        return instanceShape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShapeConfig")
-    InstanceReservationShapeConfigDetails instanceShapeConfig;
+    private final InstanceReservationShapeConfigDetails instanceShapeConfig;
+
+    public InstanceReservationShapeConfigDetails getInstanceShapeConfig() {
+        return instanceShapeConfig;
+    }
 
     /**
      * The fault domain to use for instances created using this capacity configuration.
@@ -122,14 +149,78 @@ public class InstanceReservationConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
 
     /**
      * The total number of instances that can be launched from the capacity configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
-    Long reservedCount;
+    private final Long reservedCount;
+
+    public Long getReservedCount() {
+        return reservedCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceReservationConfigDetails(");
+        sb.append("instanceShape=").append(String.valueOf(this.instanceShape));
+        sb.append(", instanceShapeConfig=").append(String.valueOf(this.instanceShapeConfig));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", reservedCount=").append(String.valueOf(this.reservedCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceReservationConfigDetails)) {
+            return false;
+        }
+
+        InstanceReservationConfigDetails other = (InstanceReservationConfigDetails) o;
+        return java.util.Objects.equals(this.instanceShape, other.instanceShape)
+                && java.util.Objects.equals(this.instanceShapeConfig, other.instanceShapeConfig)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.reservedCount, other.reservedCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.instanceShape == null ? 43 : this.instanceShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceShapeConfig == null
+                                ? 43
+                                : this.instanceShapeConfig.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reservedCount == null ? 43 : this.reservedCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

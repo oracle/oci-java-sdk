@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourcesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSourcesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,11 +17,17 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The ID of the compartment in which to list resources.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * A filter to return only sources associated with entities of the specified type.
      * The match is case-insensitive.
@@ -37,6 +35,9 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String entityType;
 
+    public String getEntityType() {
+        return entityType;
+    }
     /**
      * The source display text used for filtering.  Only sources with the specified name
      * or description will be returned.
@@ -44,6 +45,9 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String sourceDisplayText;
 
+    public String getSourceDisplayText() {
+        return sourceDisplayText;
+    }
     /**
      * The system value used for filtering.  Only items with the specified system value
      * will be returned.  Valid values are built in, custom (for user defined items), or
@@ -91,6 +95,10 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             throw new IllegalArgumentException("Invalid IsSystem: " + key);
         }
     };
+
+    public IsSystem getIsSystem() {
+        return isSystem;
+    }
     /**
      * An auto-associate flag used for filtering.  Only sources which are marked for automatic
      * association will be returned.
@@ -98,6 +106,9 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Boolean isAutoAssociated;
 
+    public Boolean getIsAutoAssociated() {
+        return isAutoAssociated;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -140,6 +151,10 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The attribute used to sort the returned sources
      */
@@ -182,16 +197,26 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * A filter to return only log analytics entities whose name matches the entire name given. The match
      * is case-insensitive.
@@ -199,11 +224,17 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String name;
 
+    public String getName() {
+        return name;
+    }
     /**
      * A comma-separated list of categories used for filtering
      */
     private String categories;
 
+    public String getCategories() {
+        return categories;
+    }
     /**
      * A flag specifying whether or not to return all source information, or a subset of the
      * information about each source.  A value of true will return only the source unique
@@ -213,10 +244,17 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Boolean isSimplified;
 
+    public Boolean getIsSimplified() {
+        return isSimplified;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -224,6 +262,177 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String entityType = null;
+
+        /**
+         * A filter to return only sources associated with entities of the specified type.
+         * The match is case-insensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder entityType(String entityType) {
+            this.entityType = entityType;
+            return this;
+        }
+
+        private String sourceDisplayText = null;
+
+        /**
+         * The source display text used for filtering.  Only sources with the specified name
+         * or description will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder sourceDisplayText(String sourceDisplayText) {
+            this.sourceDisplayText = sourceDisplayText;
+            return this;
+        }
+
+        private IsSystem isSystem = null;
+
+        /**
+         * The system value used for filtering.  Only items with the specified system value
+         * will be returned.  Valid values are built in, custom (for user defined items), or
+         * all (for all items, regardless of system value).
+         *
+         * @return this builder instance
+         */
+        public Builder isSystem(IsSystem isSystem) {
+            this.isSystem = isSystem;
+            return this;
+        }
+
+        private Boolean isAutoAssociated = null;
+
+        /**
+         * An auto-associate flag used for filtering.  Only sources which are marked for automatic
+         * association will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder isAutoAssociated(Boolean isAutoAssociated) {
+            this.isAutoAssociated = isAutoAssociated;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The attribute used to sort the returned sources
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String name = null;
+
+        /**
+         * A filter to return only log analytics entities whose name matches the entire name given. The match
+         * is case-insensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        private String categories = null;
+
+        /**
+         * A comma-separated list of categories used for filtering
+         * @return this builder instance
+         */
+        public Builder categories(String categories) {
+            this.categories = categories;
+            return this;
+        }
+
+        private Boolean isSimplified = null;
+
+        /**
+         * A flag specifying whether or not to return all source information, or a subset of the
+         * information about each source.  A value of true will return only the source unique
+         * identifier and the source name.  A value of false will return all source information
+         * (such as author, updated date, system flag, etc.)
+         *
+         * @return this builder instance
+         */
+        public Builder isSimplified(Boolean isSimplified) {
+            this.isSimplified = isSimplified;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -288,5 +497,137 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListSourcesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListSourcesRequest
+         */
+        public ListSourcesRequest buildWithoutInvocationCallback() {
+            ListSourcesRequest request = new ListSourcesRequest();
+            request.namespaceName = namespaceName;
+            request.compartmentId = compartmentId;
+            request.entityType = entityType;
+            request.sourceDisplayText = sourceDisplayText;
+            request.isSystem = isSystem;
+            request.isAutoAssociated = isAutoAssociated;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.limit = limit;
+            request.page = page;
+            request.name = name;
+            request.categories = categories;
+            request.isSimplified = isSimplified;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListSourcesRequest(namespaceName, compartmentId, entityType, sourceDisplayText, isSystem, isAutoAssociated, sortOrder, sortBy, limit, page, name, categories, isSimplified, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .compartmentId(compartmentId)
+                .entityType(entityType)
+                .sourceDisplayText(sourceDisplayText)
+                .isSystem(isSystem)
+                .isAutoAssociated(isAutoAssociated)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .limit(limit)
+                .page(page)
+                .name(name)
+                .categories(categories)
+                .isSimplified(isSimplified)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",entityType=").append(String.valueOf(this.entityType));
+        sb.append(",sourceDisplayText=").append(String.valueOf(this.sourceDisplayText));
+        sb.append(",isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(",isAutoAssociated=").append(String.valueOf(this.isAutoAssociated));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",categories=").append(String.valueOf(this.categories));
+        sb.append(",isSimplified=").append(String.valueOf(this.isSimplified));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListSourcesRequest)) {
+            return false;
+        }
+
+        ListSourcesRequest other = (ListSourcesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.sourceDisplayText, other.sourceDisplayText)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.isAutoAssociated, other.isAutoAssociated)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.isSimplified, other.isSimplified)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDisplayText == null ? 43 : this.sourceDisplayText.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoAssociated == null ? 43 : this.isAutoAssociated.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.isSimplified == null ? 43 : this.isSimplified.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

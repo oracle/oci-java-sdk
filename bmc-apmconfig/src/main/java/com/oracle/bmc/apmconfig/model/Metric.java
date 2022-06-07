@@ -16,14 +16,20 @@ package com.oracle.bmc.apmconfig.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Metric.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Metric {
+public final class Metric {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "valueSource", "unit", "description"})
+    public Metric(String name, String valueSource, String unit, String description) {
+        super();
+        this.name = name;
+        this.valueSource = valueSource;
+        this.unit = unit;
+        this.description = description;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -90,30 +96,98 @@ public class Metric {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the metric. This must be a known metric name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * This must not be set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueSource")
-    String valueSource;
+    private final String valueSource;
+
+    public String getValueSource() {
+        return valueSource;
+    }
 
     /**
      * The unit of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    String unit;
+    private final String unit;
+
+    public String getUnit() {
+        return unit;
+    }
 
     /**
      * A description of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Metric(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", valueSource=").append(String.valueOf(this.valueSource));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Metric)) {
+            return false;
+        }
+
+        Metric other = (Metric) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.valueSource, other.valueSource)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.valueSource == null ? 43 : this.valueSource.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,38 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ServiceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ServiceSummary {
+public final class ServiceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tenantId",
+        "namespace",
+        "servicePrincipalName",
+        "endpoint",
+        "name",
+        "id",
+        "resourceTypes"
+    })
+    public ServiceSummary(
+            String tenantId,
+            String namespace,
+            String servicePrincipalName,
+            String endpoint,
+            String name,
+            String id,
+            java.util.List<ResourceType> resourceTypes) {
+        super();
+        this.tenantId = tenantId;
+        this.namespace = namespace;
+        this.servicePrincipalName = servicePrincipalName;
+        this.endpoint = endpoint;
+        this.name = name;
+        this.id = id;
+        this.resourceTypes = resourceTypes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
@@ -127,48 +151,143 @@ public class ServiceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Tenant OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    private final String tenantId;
+
+    public String getTenantId() {
+        return tenantId;
+    }
 
     /**
      * Apollo project namespace, if any.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * Service ID as set in Service Principal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipalName")
-    String servicePrincipalName;
+    private final String servicePrincipalName;
+
+    public String getServicePrincipalName() {
+        return servicePrincipalName;
+    }
 
     /**
      * Service endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
-    String endpoint;
+    private final String endpoint;
+
+    public String getEndpoint() {
+        return endpoint;
+    }
 
     /**
      * User-friendly service name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Service ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Type of resource that a service provides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypes")
-    java.util.List<ResourceType> resourceTypes;
+    private final java.util.List<ResourceType> resourceTypes;
+
+    public java.util.List<ResourceType> getResourceTypes() {
+        return resourceTypes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ServiceSummary(");
+        sb.append("tenantId=").append(String.valueOf(this.tenantId));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", servicePrincipalName=").append(String.valueOf(this.servicePrincipalName));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", resourceTypes=").append(String.valueOf(this.resourceTypes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ServiceSummary)) {
+            return false;
+        }
+
+        ServiceSummary other = (ServiceSummary) o;
+        return java.util.Objects.equals(this.tenantId, other.tenantId)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.servicePrincipalName, other.servicePrincipalName)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.resourceTypes, other.resourceTypes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.servicePrincipalName == null
+                                ? 43
+                                : this.servicePrincipalName.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceTypes == null ? 43 : this.resourceTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

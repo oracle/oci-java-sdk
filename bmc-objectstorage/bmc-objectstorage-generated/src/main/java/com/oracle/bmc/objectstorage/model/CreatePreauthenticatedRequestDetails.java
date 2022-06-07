@@ -15,16 +15,34 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreatePreauthenticatedRequestDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreatePreauthenticatedRequestDetails {
+public final class CreatePreauthenticatedRequestDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "bucketListingAction",
+        "objectName",
+        "accessType",
+        "timeExpires"
+    })
+    public CreatePreauthenticatedRequestDetails(
+            String name,
+            PreauthenticatedRequest.BucketListingAction bucketListingAction,
+            String objectName,
+            AccessType accessType,
+            java.util.Date timeExpires) {
+        super();
+        this.name = name;
+        this.bucketListingAction = bucketListingAction;
+        this.objectName = objectName;
+        this.accessType = accessType;
+        this.timeExpires = timeExpires;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -104,13 +122,21 @@ public class CreatePreauthenticatedRequestDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
@@ -119,7 +145,11 @@ public class CreatePreauthenticatedRequestDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketListingAction")
-    PreauthenticatedRequest.BucketListingAction bucketListingAction;
+    private final PreauthenticatedRequest.BucketListingAction bucketListingAction;
+
+    public PreauthenticatedRequest.BucketListingAction getBucketListingAction() {
+        return bucketListingAction;
+    }
 
     /**
      * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
@@ -129,7 +159,12 @@ public class CreatePreauthenticatedRequestDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
+
     /**
      * The operation that can be performed on this resource.
      **/
@@ -173,7 +208,11 @@ public class CreatePreauthenticatedRequestDetails {
      * The operation that can be performed on this resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessType")
-    AccessType accessType;
+    private final AccessType accessType;
+
+    public AccessType getAccessType() {
+        return accessType;
+    }
 
     /**
      * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -181,8 +220,67 @@ public class CreatePreauthenticatedRequestDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
-    java.util.Date timeExpires;
+    private final java.util.Date timeExpires;
+
+    public java.util.Date getTimeExpires() {
+        return timeExpires;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreatePreauthenticatedRequestDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", bucketListingAction=").append(String.valueOf(this.bucketListingAction));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", accessType=").append(String.valueOf(this.accessType));
+        sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreatePreauthenticatedRequestDetails)) {
+            return false;
+        }
+
+        CreatePreauthenticatedRequestDetails other = (CreatePreauthenticatedRequestDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.bucketListingAction, other.bucketListingAction)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.accessType, other.accessType)
+                && java.util.Objects.equals(this.timeExpires, other.timeExpires)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bucketListingAction == null
+                                ? 43
+                                : this.bucketListingAction.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.accessType == null ? 43 : this.accessType.hashCode());
+        result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

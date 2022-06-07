@@ -15,16 +15,21 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CpuUtilizationAggregateMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CpuUtilizationAggregateMetrics {
+public final class CpuUtilizationAggregateMetrics {
+    @Deprecated
+    @java.beans.ConstructorProperties({"cpuUtilization", "cpuStatistics"})
+    public CpuUtilizationAggregateMetrics(
+            MetricDataPoint cpuUtilization, MetricStatisticsDefinition cpuStatistics) {
+        super();
+        this.cpuUtilization = cpuUtilization;
+        this.cpuStatistics = cpuStatistics;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilization")
         private MetricDataPoint cpuUtilization;
@@ -71,12 +76,70 @@ public class CpuUtilizationAggregateMetrics {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilization")
-    MetricDataPoint cpuUtilization;
+    private final MetricDataPoint cpuUtilization;
+
+    public MetricDataPoint getCpuUtilization() {
+        return cpuUtilization;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("cpuStatistics")
-    MetricStatisticsDefinition cpuStatistics;
+    private final MetricStatisticsDefinition cpuStatistics;
+
+    public MetricStatisticsDefinition getCpuStatistics() {
+        return cpuStatistics;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CpuUtilizationAggregateMetrics(");
+        sb.append("cpuUtilization=").append(String.valueOf(this.cpuUtilization));
+        sb.append(", cpuStatistics=").append(String.valueOf(this.cpuStatistics));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CpuUtilizationAggregateMetrics)) {
+            return false;
+        }
+
+        CpuUtilizationAggregateMetrics other = (CpuUtilizationAggregateMetrics) o;
+        return java.util.Objects.equals(this.cpuUtilization, other.cpuUtilization)
+                && java.util.Objects.equals(this.cpuStatistics, other.cpuStatistics)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.cpuUtilization == null ? 43 : this.cpuUtilization.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuStatistics == null ? 43 : this.cpuStatistics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

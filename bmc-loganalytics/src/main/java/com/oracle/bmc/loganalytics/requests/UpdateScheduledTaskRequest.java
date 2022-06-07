@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateScheduledTaskExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateScheduledTaskRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateScheduledTaskRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails> {
@@ -27,6 +19,9 @@ public class UpdateScheduledTaskRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * Unique scheduledTask id returned from task create.
      * If invalid will lead to a 404 not found.
@@ -34,6 +29,9 @@ public class UpdateScheduledTaskRequest
      */
     private String scheduledTaskId;
 
+    public String getScheduledTaskId() {
+        return scheduledTaskId;
+    }
     /**
      * Update details.
      * Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
@@ -41,11 +39,18 @@ public class UpdateScheduledTaskRequest
      */
     private com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails updateScheduledTaskDetails;
 
+    public com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails
+            getUpdateScheduledTaskDetails() {
+        return updateScheduledTaskDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -55,6 +60,10 @@ public class UpdateScheduledTaskRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -78,6 +87,74 @@ public class UpdateScheduledTaskRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String scheduledTaskId = null;
+
+        /**
+         * Unique scheduledTask id returned from task create.
+         * If invalid will lead to a 404 not found.
+         *
+         * @return this builder instance
+         */
+        public Builder scheduledTaskId(String scheduledTaskId) {
+            this.scheduledTaskId = scheduledTaskId;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails
+                updateScheduledTaskDetails = null;
+
+        /**
+         * Update details.
+         * Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
+         *
+         * @return this builder instance
+         */
+        public Builder updateScheduledTaskDetails(
+                com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails
+                        updateScheduledTaskDetails) {
+            this.updateScheduledTaskDetails = updateScheduledTaskDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -144,5 +221,94 @@ public class UpdateScheduledTaskRequest
             updateScheduledTaskDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateScheduledTaskRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateScheduledTaskRequest
+         */
+        public UpdateScheduledTaskRequest buildWithoutInvocationCallback() {
+            UpdateScheduledTaskRequest request = new UpdateScheduledTaskRequest();
+            request.namespaceName = namespaceName;
+            request.scheduledTaskId = scheduledTaskId;
+            request.updateScheduledTaskDetails = updateScheduledTaskDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateScheduledTaskRequest(namespaceName, scheduledTaskId, updateScheduledTaskDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .scheduledTaskId(scheduledTaskId)
+                .updateScheduledTaskDetails(updateScheduledTaskDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",scheduledTaskId=").append(String.valueOf(this.scheduledTaskId));
+        sb.append(",updateScheduledTaskDetails=")
+                .append(String.valueOf(this.updateScheduledTaskDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateScheduledTaskRequest)) {
+            return false;
+        }
+
+        UpdateScheduledTaskRequest other = (UpdateScheduledTaskRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.scheduledTaskId, other.scheduledTaskId)
+                && java.util.Objects.equals(
+                        this.updateScheduledTaskDetails, other.updateScheduledTaskDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledTaskId == null ? 43 : this.scheduledTaskId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateScheduledTaskDetails == null
+                                ? 43
+                                : this.updateScheduledTaskDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

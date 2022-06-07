@@ -9,7 +9,6 @@ package com.oracle.bmc.analytics.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-@lombok.extern.slf4j.Slf4j
 public enum CapacityType {
     OlpuCount("OLPU_COUNT"),
     UserCount("USER_COUNT"),
@@ -19,6 +18,9 @@ public enum CapacityType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(CapacityType.class);
 
     private final String value;
     private static java.util.Map<String, CapacityType> map;

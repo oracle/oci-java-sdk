@@ -8,7 +8,6 @@ package com.oracle.bmc.databasemanagement.model;
  * The types of jobs.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.extern.slf4j.Slf4j
 public enum JobTypes {
     Sql("SQL"),
 
@@ -17,6 +16,8 @@ public enum JobTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(JobTypes.class);
 
     private final String value;
     private static java.util.Map<String, JobTypes> map;

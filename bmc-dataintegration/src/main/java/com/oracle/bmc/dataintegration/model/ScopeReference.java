@@ -15,14 +15,20 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScopeReference.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScopeReference {
+public final class ScopeReference {
+    @Deprecated
+    @java.beans.ConstructorProperties({"referenceObject", "referenceType", "refObjectName"})
+    public ScopeReference(
+            String referenceObject, ReferenceType referenceType, String refObjectName) {
+        super();
+        this.referenceObject = referenceObject;
+        this.referenceType = referenceType;
+        this.refObjectName = refObjectName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("referenceObject")
         private String referenceObject;
@@ -80,15 +86,23 @@ public class ScopeReference {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A key or shallow reference to an object.  For direct reference, it points to the actual scope object.  For BOUND_ENTITY_SHAPE or BOUND_ENTITY_SHAPE_FIELD, it points to the source or target operator.   For OCI_FUNCTION_INPUT_SHAPE or OCI_FUNCTION_OUTPUT_SHAPE, it points to the OCI Function object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceObject")
-    String referenceObject;
+    private final String referenceObject;
+
+    public String getReferenceObject() {
+        return referenceObject;
+    }
+
     /**
      * The reference type for this reference.  Set to null for a direct reference, for indirect references set to a type of association such as "BOUND_ENTITY_SHAPE".   Current known reference type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE", "OCI_FUNCTION_OUTPUT_SHAPE"
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ReferenceType {
         DirectRef("DIRECT_REF"),
         BoundEntityShape("BOUND_ENTITY_SHAPE"),
@@ -101,6 +115,9 @@ public class ScopeReference {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ReferenceType.class);
 
         private final String value;
         private static java.util.Map<String, ReferenceType> map;
@@ -138,14 +155,73 @@ public class ScopeReference {
      * The reference type for this reference.  Set to null for a direct reference, for indirect references set to a type of association such as "BOUND_ENTITY_SHAPE".   Current known reference type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE", "OCI_FUNCTION_OUTPUT_SHAPE"
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceType")
-    ReferenceType referenceType;
+    private final ReferenceType referenceType;
+
+    public ReferenceType getReferenceType() {
+        return referenceType;
+    }
 
     /**
      * The referenced object name for this reference.  Set to the field name if the referenceType is BOUND_ENTITY_SHAPE_FIELD, else set to null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("refObjectName")
-    String refObjectName;
+    private final String refObjectName;
+
+    public String getRefObjectName() {
+        return refObjectName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScopeReference(");
+        sb.append("referenceObject=").append(String.valueOf(this.referenceObject));
+        sb.append(", referenceType=").append(String.valueOf(this.referenceType));
+        sb.append(", refObjectName=").append(String.valueOf(this.refObjectName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScopeReference)) {
+            return false;
+        }
+
+        ScopeReference other = (ScopeReference) o;
+        return java.util.Objects.equals(this.referenceObject, other.referenceObject)
+                && java.util.Objects.equals(this.referenceType, other.referenceType)
+                && java.util.Objects.equals(this.refObjectName, other.refObjectName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.referenceObject == null ? 43 : this.referenceObject.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referenceType == null ? 43 : this.referenceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refObjectName == null ? 43 : this.refObjectName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

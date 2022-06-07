@@ -9,14 +9,6 @@ import com.oracle.bmc.artifacts.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteGenericArtifactByPathRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteGenericArtifactByPathRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -28,6 +20,9 @@ public class DeleteGenericArtifactByPathRequest
      */
     private String repositoryId;
 
+    public String getRepositoryId() {
+        return repositoryId;
+    }
     /**
      * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
      * <p>
@@ -36,6 +31,9 @@ public class DeleteGenericArtifactByPathRequest
      */
     private String artifactPath;
 
+    public String getArtifactPath() {
+        return artifactPath;
+    }
     /**
      * A user-defined string to describe the artifact version.
      * <p>
@@ -44,6 +42,9 @@ public class DeleteGenericArtifactByPathRequest
      */
     private String version;
 
+    public String getVersion() {
+        return version;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -52,6 +53,9 @@ public class DeleteGenericArtifactByPathRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -59,12 +63,85 @@ public class DeleteGenericArtifactByPathRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteGenericArtifactByPathRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String repositoryId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+         * <p>
+         * Example: {@code ocid1.artifactrepository.oc1..exampleuniqueID}
+         *
+         * @return this builder instance
+         */
+        public Builder repositoryId(String repositoryId) {
+            this.repositoryId = repositoryId;
+            return this;
+        }
+
+        private String artifactPath = null;
+
+        /**
+         * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
+         * <p>
+         * Example: {@code project01/my-web-app/artifact-abc}
+         *
+         * @return this builder instance
+         */
+        public Builder artifactPath(String artifactPath) {
+            this.artifactPath = artifactPath;
+            return this;
+        }
+
+        private String version = null;
+
+        /**
+         * A user-defined string to describe the artifact version.
+         * <p>
+         * Example: {@code 1.1.2} or {@code 1.2-beta-2}
+         *
+         * @return this builder instance
+         */
+        public Builder version(String version) {
+            this.version = version;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +197,84 @@ public class DeleteGenericArtifactByPathRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of DeleteGenericArtifactByPathRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DeleteGenericArtifactByPathRequest
+         */
+        public DeleteGenericArtifactByPathRequest buildWithoutInvocationCallback() {
+            DeleteGenericArtifactByPathRequest request = new DeleteGenericArtifactByPathRequest();
+            request.repositoryId = repositoryId;
+            request.artifactPath = artifactPath;
+            request.version = version;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new DeleteGenericArtifactByPathRequest(repositoryId, artifactPath, version, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .repositoryId(repositoryId)
+                .artifactPath(artifactPath)
+                .version(version)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",repositoryId=").append(String.valueOf(this.repositoryId));
+        sb.append(",artifactPath=").append(String.valueOf(this.artifactPath));
+        sb.append(",version=").append(String.valueOf(this.version));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteGenericArtifactByPathRequest)) {
+            return false;
+        }
+
+        DeleteGenericArtifactByPathRequest other = (DeleteGenericArtifactByPathRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.repositoryId, other.repositoryId)
+                && java.util.Objects.equals(this.artifactPath, other.artifactPath)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.repositoryId == null ? 43 : this.repositoryId.hashCode());
+        result = (result * PRIME) + (this.artifactPath == null ? 43 : this.artifactPath.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

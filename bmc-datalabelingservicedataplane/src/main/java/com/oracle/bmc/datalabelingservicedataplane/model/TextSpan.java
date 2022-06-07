@@ -15,14 +15,18 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TextSpan.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TextSpan {
+public final class TextSpan {
+    @Deprecated
+    @java.beans.ConstructorProperties({"offset", "length"})
+    public TextSpan(java.math.BigDecimal offset, java.math.BigDecimal length) {
+        super();
+        this.offset = offset;
+        this.length = length;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private java.math.BigDecimal offset;
@@ -67,18 +71,72 @@ public class TextSpan {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The offset of the selected text within the entire text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
-    java.math.BigDecimal offset;
+    private final java.math.BigDecimal offset;
+
+    public java.math.BigDecimal getOffset() {
+        return offset;
+    }
 
     /**
      * The length of the selected text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
-    java.math.BigDecimal length;
+    private final java.math.BigDecimal length;
+
+    public java.math.BigDecimal getLength() {
+        return length;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TextSpan(");
+        sb.append("offset=").append(String.valueOf(this.offset));
+        sb.append(", length=").append(String.valueOf(this.length));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TextSpan)) {
+            return false;
+        }
+
+        TextSpan other = (TextSpan) o;
+        return java.util.Objects.equals(this.offset, other.offset)
+                && java.util.Objects.equals(this.length, other.length)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
+        result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BiccReadAttributes.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BiccReadAttributes extends AbstractReadAttribute {
+public final class BiccReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
         private Integer fetchSize;
@@ -113,6 +108,10 @@ public class BiccReadAttributes extends AbstractReadAttribute {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public BiccReadAttributes(
             Integer fetchSize,
@@ -132,11 +131,15 @@ public class BiccReadAttributes extends AbstractReadAttribute {
      * The fetch size for reading.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
-    Integer fetchSize;
+    private final Integer fetchSize;
+
+    public Integer getFetchSize() {
+        return fetchSize;
+    }
+
     /**
      * Extraction Strategy - FULL|INCREMENTAL
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ExtractStrategy {
         Full("FULL"),
         Incremental("INCREMENTAL"),
@@ -146,6 +149,9 @@ public class BiccReadAttributes extends AbstractReadAttribute {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ExtractStrategy.class);
 
         private final String value;
         private static java.util.Map<String, ExtractStrategy> map;
@@ -183,23 +189,102 @@ public class BiccReadAttributes extends AbstractReadAttribute {
      * Extraction Strategy - FULL|INCREMENTAL
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extractStrategy")
-    ExtractStrategy extractStrategy;
+    private final ExtractStrategy extractStrategy;
+
+    public ExtractStrategy getExtractStrategy() {
+        return extractStrategy;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("externalStorage")
-    ExternalStorage externalStorage;
+    private final ExternalStorage externalStorage;
+
+    public ExternalStorage getExternalStorage() {
+        return externalStorage;
+    }
 
     /**
      * Date from where extract should start
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialExtractDate")
-    java.util.Date initialExtractDate;
+    private final java.util.Date initialExtractDate;
+
+    public java.util.Date getInitialExtractDate() {
+        return initialExtractDate;
+    }
 
     /**
      * Date last extracted
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastExtractDate")
-    java.util.Date lastExtractDate;
+    private final java.util.Date lastExtractDate;
+
+    public java.util.Date getLastExtractDate() {
+        return lastExtractDate;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BiccReadAttributes(");
+        sb.append("super=").append(super.toString());
+        sb.append(", fetchSize=").append(String.valueOf(this.fetchSize));
+        sb.append(", extractStrategy=").append(String.valueOf(this.extractStrategy));
+        sb.append(", externalStorage=").append(String.valueOf(this.externalStorage));
+        sb.append(", initialExtractDate=").append(String.valueOf(this.initialExtractDate));
+        sb.append(", lastExtractDate=").append(String.valueOf(this.lastExtractDate));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BiccReadAttributes)) {
+            return false;
+        }
+
+        BiccReadAttributes other = (BiccReadAttributes) o;
+        return java.util.Objects.equals(this.fetchSize, other.fetchSize)
+                && java.util.Objects.equals(this.extractStrategy, other.extractStrategy)
+                && java.util.Objects.equals(this.externalStorage, other.externalStorage)
+                && java.util.Objects.equals(this.initialExtractDate, other.initialExtractDate)
+                && java.util.Objects.equals(this.lastExtractDate, other.lastExtractDate)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.fetchSize == null ? 43 : this.fetchSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extractStrategy == null ? 43 : this.extractStrategy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalStorage == null ? 43 : this.externalStorage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialExtractDate == null
+                                ? 43
+                                : this.initialExtractDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastExtractDate == null ? 43 : this.lastExtractDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.computeinstanceagent.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computeinstanceagent/ListInstanceAgentPluginsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListInstanceAgentPluginsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListInstanceAgentPluginsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,11 +17,17 @@ public class ListInstanceAgentPluginsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The OCID of the instance.
      */
     private String instanceagentId;
 
+    public String getInstanceagentId() {
+        return instanceagentId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
      * please provide the request ID.
@@ -37,6 +35,9 @@ public class ListInstanceAgentPluginsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The plugin status
      */
@@ -79,6 +80,10 @@ public class ListInstanceAgentPluginsRequest
             throw new IllegalArgumentException("Invalid Status: " + key);
         }
     };
+
+    public Status getStatus() {
+        return status;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
@@ -87,6 +92,9 @@ public class ListInstanceAgentPluginsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * "List" call. For important details about how pagination works, see
@@ -95,6 +103,9 @@ public class ListInstanceAgentPluginsRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * {@code TIMECREATED} is descending.
@@ -149,6 +160,10 @@ public class ListInstanceAgentPluginsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The {@code DISPLAYNAME} sort order
      * is case sensitive.
@@ -193,10 +208,18 @@ public class ListInstanceAgentPluginsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The plugin name
      */
     private String name;
+
+    public String getName() {
+        return name;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -204,6 +227,122 @@ public class ListInstanceAgentPluginsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String instanceagentId = null;
+
+        /**
+         * The OCID of the instance.
+         * @return this builder instance
+         */
+        public Builder instanceagentId(String instanceagentId) {
+            this.instanceagentId = instanceagentId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Status status = null;
+
+        /**
+         * The plugin status
+         * @return this builder instance
+         */
+        public Builder status(Status status) {
+            this.status = status;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * {@code TIMECREATED} is descending.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by availability domain if the scope of the resource type is within a
+         * single availability domain. If you call one of these "List" operations without specifying
+         * an availability domain, the resources are grouped by availability domain, then sorted.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The {@code DISPLAYNAME} sort order
+         * is case sensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private String name = null;
+
+        /**
+         * The plugin name
+         * @return this builder instance
+         */
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -263,5 +402,108 @@ public class ListInstanceAgentPluginsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListInstanceAgentPluginsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListInstanceAgentPluginsRequest
+         */
+        public ListInstanceAgentPluginsRequest buildWithoutInvocationCallback() {
+            ListInstanceAgentPluginsRequest request = new ListInstanceAgentPluginsRequest();
+            request.compartmentId = compartmentId;
+            request.instanceagentId = instanceagentId;
+            request.opcRequestId = opcRequestId;
+            request.status = status;
+            request.page = page;
+            request.limit = limit;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.name = name;
+            return request;
+            // new ListInstanceAgentPluginsRequest(compartmentId, instanceagentId, opcRequestId, status, page, limit, sortBy, sortOrder, name);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .instanceagentId(instanceagentId)
+                .opcRequestId(opcRequestId)
+                .status(status)
+                .page(page)
+                .limit(limit)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .name(name);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",instanceagentId=").append(String.valueOf(this.instanceagentId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListInstanceAgentPluginsRequest)) {
+            return false;
+        }
+
+        ListInstanceAgentPluginsRequest other = (ListInstanceAgentPluginsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.instanceagentId, other.instanceagentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.name, other.name);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceagentId == null ? 43 : this.instanceagentId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        return result;
     }
 }

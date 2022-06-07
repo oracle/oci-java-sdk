@@ -8,7 +8,6 @@ package com.oracle.bmc.ocvp.model;
  * Possible types of actions.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.extern.slf4j.Slf4j
 public enum ActionTypes {
     Created("CREATED"),
     Updated("UPDATED"),
@@ -22,6 +21,9 @@ public enum ActionTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ActionTypes.class);
 
     private final String value;
     private static java.util.Map<String, ActionTypes> map;

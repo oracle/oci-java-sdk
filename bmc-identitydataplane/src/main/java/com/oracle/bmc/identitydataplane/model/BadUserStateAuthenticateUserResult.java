@@ -15,16 +15,34 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BadUserStateAuthenticateUserResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BadUserStateAuthenticateUserResult {
+public final class BadUserStateAuthenticateUserResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tenantInput",
+        "userInput",
+        "resolvedTenantId",
+        "resolvedUserId",
+        "userState"
+    })
+    public BadUserStateAuthenticateUserResult(
+            String tenantInput,
+            String userInput,
+            String resolvedTenantId,
+            String resolvedUserId,
+            UserState userState) {
+        super();
+        this.tenantInput = tenantInput;
+        this.userInput = userInput;
+        this.resolvedTenantId = resolvedTenantId;
+        this.resolvedUserId = resolvedUserId;
+        this.userState = userState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tenantInput")
         private String tenantInput;
@@ -103,29 +121,50 @@ public class BadUserStateAuthenticateUserResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The tenant name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantInput")
-    String tenantInput;
+    private final String tenantInput;
+
+    public String getTenantInput() {
+        return tenantInput;
+    }
 
     /**
      * The user name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userInput")
-    String userInput;
+    private final String userInput;
+
+    public String getUserInput() {
+        return userInput;
+    }
 
     /**
      * The resolved tenant id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedTenantId")
-    String resolvedTenantId;
+    private final String resolvedTenantId;
+
+    public String getResolvedTenantId() {
+        return resolvedTenantId;
+    }
 
     /**
      * The resolved user id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedUserId")
-    String resolvedUserId;
+    private final String resolvedUserId;
+
+    public String getResolvedUserId() {
+        return resolvedUserId;
+    }
+
     /**
      * The bad user state.
      **/
@@ -167,8 +206,67 @@ public class BadUserStateAuthenticateUserResult {
      * The bad user state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userState")
-    UserState userState;
+    private final UserState userState;
+
+    public UserState getUserState() {
+        return userState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BadUserStateAuthenticateUserResult(");
+        sb.append("tenantInput=").append(String.valueOf(this.tenantInput));
+        sb.append(", userInput=").append(String.valueOf(this.userInput));
+        sb.append(", resolvedTenantId=").append(String.valueOf(this.resolvedTenantId));
+        sb.append(", resolvedUserId=").append(String.valueOf(this.resolvedUserId));
+        sb.append(", userState=").append(String.valueOf(this.userState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BadUserStateAuthenticateUserResult)) {
+            return false;
+        }
+
+        BadUserStateAuthenticateUserResult other = (BadUserStateAuthenticateUserResult) o;
+        return java.util.Objects.equals(this.tenantInput, other.tenantInput)
+                && java.util.Objects.equals(this.userInput, other.userInput)
+                && java.util.Objects.equals(this.resolvedTenantId, other.resolvedTenantId)
+                && java.util.Objects.equals(this.resolvedUserId, other.resolvedUserId)
+                && java.util.Objects.equals(this.userState, other.userState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tenantInput == null ? 43 : this.tenantInput.hashCode());
+        result = (result * PRIME) + (this.userInput == null ? 43 : this.userInput.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resolvedTenantId == null ? 43 : this.resolvedTenantId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resolvedUserId == null ? 43 : this.resolvedUserId.hashCode());
+        result = (result * PRIME) + (this.userState == null ? 43 : this.userState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

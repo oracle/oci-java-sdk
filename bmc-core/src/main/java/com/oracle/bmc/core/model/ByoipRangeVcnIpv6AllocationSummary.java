@@ -16,16 +16,23 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ByoipRangeVcnIpv6AllocationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ByoipRangeVcnIpv6AllocationSummary {
+public final class ByoipRangeVcnIpv6AllocationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"byoipRangeId", "compartmentId", "ipv6CidrBlock", "vcnId"})
+    public ByoipRangeVcnIpv6AllocationSummary(
+            String byoipRangeId, String compartmentId, String ipv6CidrBlock, String vcnId) {
+        super();
+        this.byoipRangeId = byoipRangeId;
+        this.compartmentId = compartmentId;
+        this.ipv6CidrBlock = ipv6CidrBlock;
+        this.vcnId = vcnId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
         private String byoipRangeId;
@@ -94,18 +101,30 @@ public class ByoipRangeVcnIpv6AllocationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
-    String byoipRangeId;
+    private final String byoipRangeId;
+
+    public String getByoipRangeId() {
+        return byoipRangeId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the {@code ByoipRange}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
@@ -113,15 +132,75 @@ public class ByoipRangeVcnIpv6AllocationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
-    String ipv6CidrBlock;
+    private final String ipv6CidrBlock;
+
+    public String getIpv6CidrBlock() {
+        return ipv6CidrBlock;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code Vcn} resource to which the ByoipRange belongs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    String vcnId;
+    private final String vcnId;
+
+    public String getVcnId() {
+        return vcnId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ByoipRangeVcnIpv6AllocationSummary(");
+        sb.append("byoipRangeId=").append(String.valueOf(this.byoipRangeId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
+        sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ByoipRangeVcnIpv6AllocationSummary)) {
+            return false;
+        }
+
+        ByoipRangeVcnIpv6AllocationSummary other = (ByoipRangeVcnIpv6AllocationSummary) o;
+        return java.util.Objects.equals(this.byoipRangeId, other.byoipRangeId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
+                && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.byoipRangeId == null ? 43 : this.byoipRangeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());
+        result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Operation names supported for Condition Operator
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum ConditionOperatorName {
     And("AND"),
     Or("OR"),
@@ -25,6 +24,9 @@ public enum ConditionOperatorName {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ConditionOperatorName.class);
 
     private final String value;
     private static java.util.Map<String, ConditionOperatorName> map;

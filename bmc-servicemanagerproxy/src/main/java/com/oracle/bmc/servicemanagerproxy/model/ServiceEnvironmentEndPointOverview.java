@@ -16,16 +16,22 @@ package com.oracle.bmc.servicemanagerproxy.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ServiceEnvironmentEndPointOverview.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ServiceEnvironmentEndPointOverview {
+public final class ServiceEnvironmentEndPointOverview {
+    @Deprecated
+    @java.beans.ConstructorProperties({"environmentType", "url", "description"})
+    public ServiceEnvironmentEndPointOverview(
+            EnvironmentType environmentType, String url, String description) {
+        super();
+        this.environmentType = environmentType;
+        this.url = url;
+        this.description = description;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private EnvironmentType environmentType;
@@ -83,10 +89,13 @@ public class ServiceEnvironmentEndPointOverview {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Service environment endpoint type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EnvironmentType {
         InstanceUrlProd("INSTANCE_URL_PROD"),
         InstanceUrlTest("INSTANCE_URL_TEST"),
@@ -98,6 +107,9 @@ public class ServiceEnvironmentEndPointOverview {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EnvironmentType.class);
 
         private final String value;
         private static java.util.Map<String, EnvironmentType> map;
@@ -135,20 +147,79 @@ public class ServiceEnvironmentEndPointOverview {
      * Service environment endpoint type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
-    EnvironmentType environmentType;
+    private final EnvironmentType environmentType;
+
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
+    }
 
     /**
      * Service environment instance URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
 
     /**
      * Description of the environment link
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ServiceEnvironmentEndPointOverview(");
+        sb.append("environmentType=").append(String.valueOf(this.environmentType));
+        sb.append(", url=").append(String.valueOf(this.url));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ServiceEnvironmentEndPointOverview)) {
+            return false;
+        }
+
+        ServiceEnvironmentEndPointOverview other = (ServiceEnvironmentEndPointOverview) o;
+        return java.util.Objects.equals(this.environmentType, other.environmentType)
+                && java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

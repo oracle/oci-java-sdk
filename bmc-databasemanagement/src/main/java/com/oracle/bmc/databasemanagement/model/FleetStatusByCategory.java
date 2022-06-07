@@ -15,16 +15,31 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FleetStatusByCategory.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FleetStatusByCategory {
+public final class FleetStatusByCategory {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "databaseType",
+        "databaseSubType",
+        "deploymentType",
+        "inventoryCount"
+    })
+    public FleetStatusByCategory(
+            DatabaseType databaseType,
+            DatabaseSubType databaseSubType,
+            DeploymentType deploymentType,
+            Integer inventoryCount) {
+        super();
+        this.databaseType = databaseType;
+        this.databaseSubType = databaseSubType;
+        this.deploymentType = deploymentType;
+        this.inventoryCount = inventoryCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
@@ -93,11 +108,19 @@ public class FleetStatusByCategory {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of Oracle Database installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    DatabaseType databaseType;
+    private final DatabaseType databaseType;
+
+    public DatabaseType getDatabaseType() {
+        return databaseType;
+    }
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
@@ -105,20 +128,86 @@ public class FleetStatusByCategory {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
-    DatabaseSubType databaseSubType;
+    private final DatabaseSubType databaseSubType;
+
+    public DatabaseSubType getDatabaseSubType() {
+        return databaseSubType;
+    }
 
     /**
      * The infrastructure used to deploy the Oracle Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
-    DeploymentType deploymentType;
+    private final DeploymentType deploymentType;
+
+    public DeploymentType getDeploymentType() {
+        return deploymentType;
+    }
 
     /**
      * The number of databases in the fleet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inventoryCount")
-    Integer inventoryCount;
+    private final Integer inventoryCount;
+
+    public Integer getInventoryCount() {
+        return inventoryCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FleetStatusByCategory(");
+        sb.append("databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
+        sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
+        sb.append(", inventoryCount=").append(String.valueOf(this.inventoryCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FleetStatusByCategory)) {
+            return false;
+        }
+
+        FleetStatusByCategory other = (FleetStatusByCategory) o;
+        return java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
+                && java.util.Objects.equals(this.inventoryCount, other.inventoryCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSubType == null ? 43 : this.databaseSubType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inventoryCount == null ? 43 : this.inventoryCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,32 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProfileConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProfileConfig {
+public final class ProfileConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "attributes",
+        "functions",
+        "topNValFreq",
+        "patternThreshold",
+        "dataTypeThreshold"
+    })
+    public ProfileConfig(
+            java.util.List<String> attributes,
+            java.util.List<Functions> functions,
+            Integer topNValFreq,
+            Integer patternThreshold,
+            Integer dataTypeThreshold) {
+        super();
+        this.attributes = attributes;
+        this.functions = functions;
+        this.topNValFreq = topNValFreq;
+        this.patternThreshold = patternThreshold;
+        this.dataTypeThreshold = dataTypeThreshold;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private java.util.List<String> attributes;
@@ -105,11 +123,20 @@ public class ProfileConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Array of column names to profile. If empty all columns in the entity are profiled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
-    java.util.List<String> attributes;
+    private final java.util.List<String> attributes;
+
+    public java.util.List<String> getAttributes() {
+        return attributes;
+    }
+
     /**
      **/
     public enum Functions {
@@ -166,26 +193,97 @@ public class ProfileConfig {
      * Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
-    java.util.List<Functions> functions;
+    private final java.util.List<Functions> functions;
+
+    public java.util.List<Functions> getFunctions() {
+        return functions;
+    }
 
     /**
      * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topNValFreq")
-    Integer topNValFreq;
+    private final Integer topNValFreq;
+
+    public Integer getTopNValFreq() {
+        return topNValFreq;
+    }
 
     /**
      * A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternThreshold")
-    Integer patternThreshold;
+    private final Integer patternThreshold;
+
+    public Integer getPatternThreshold() {
+        return patternThreshold;
+    }
 
     /**
      * A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeThreshold")
-    Integer dataTypeThreshold;
+    private final Integer dataTypeThreshold;
+
+    public Integer getDataTypeThreshold() {
+        return dataTypeThreshold;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProfileConfig(");
+        sb.append("attributes=").append(String.valueOf(this.attributes));
+        sb.append(", functions=").append(String.valueOf(this.functions));
+        sb.append(", topNValFreq=").append(String.valueOf(this.topNValFreq));
+        sb.append(", patternThreshold=").append(String.valueOf(this.patternThreshold));
+        sb.append(", dataTypeThreshold=").append(String.valueOf(this.dataTypeThreshold));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProfileConfig)) {
+            return false;
+        }
+
+        ProfileConfig other = (ProfileConfig) o;
+        return java.util.Objects.equals(this.attributes, other.attributes)
+                && java.util.Objects.equals(this.functions, other.functions)
+                && java.util.Objects.equals(this.topNValFreq, other.topNValFreq)
+                && java.util.Objects.equals(this.patternThreshold, other.patternThreshold)
+                && java.util.Objects.equals(this.dataTypeThreshold, other.dataTypeThreshold)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.attributes == null ? 43 : this.attributes.hashCode());
+        result = (result * PRIME) + (this.functions == null ? 43 : this.functions.hashCode());
+        result = (result * PRIME) + (this.topNValFreq == null ? 43 : this.topNValFreq.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patternThreshold == null ? 43 : this.patternThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataTypeThreshold == null ? 43 : this.dataTypeThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

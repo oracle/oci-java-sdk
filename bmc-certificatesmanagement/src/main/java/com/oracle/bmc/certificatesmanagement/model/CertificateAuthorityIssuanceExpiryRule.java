@@ -17,22 +17,17 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CertificateAuthorityIssuanceExpiryRule.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "ruleType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CertificateAuthorityIssuanceExpiryRule extends CertificateAuthorityRule {
+public final class CertificateAuthorityIssuanceExpiryRule extends CertificateAuthorityRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("leafCertificateMaxValidityDuration")
         private String leafCertificateMaxValidityDuration;
@@ -85,6 +80,10 @@ public class CertificateAuthorityIssuanceExpiryRule extends CertificateAuthority
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CertificateAuthorityIssuanceExpiryRule(
             String leafCertificateMaxValidityDuration,
@@ -100,7 +99,11 @@ public class CertificateAuthorityIssuanceExpiryRule extends CertificateAuthority
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("leafCertificateMaxValidityDuration")
-    String leafCertificateMaxValidityDuration;
+    private final String leafCertificateMaxValidityDuration;
+
+    public String getLeafCertificateMaxValidityDuration() {
+        return leafCertificateMaxValidityDuration;
+    }
 
     /**
      * A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA.
@@ -108,8 +111,70 @@ public class CertificateAuthorityIssuanceExpiryRule extends CertificateAuthority
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityMaxValidityDuration")
-    String certificateAuthorityMaxValidityDuration;
+    private final String certificateAuthorityMaxValidityDuration;
+
+    public String getCertificateAuthorityMaxValidityDuration() {
+        return certificateAuthorityMaxValidityDuration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CertificateAuthorityIssuanceExpiryRule(");
+        sb.append("super=").append(super.toString());
+        sb.append(", leafCertificateMaxValidityDuration=")
+                .append(String.valueOf(this.leafCertificateMaxValidityDuration));
+        sb.append(", certificateAuthorityMaxValidityDuration=")
+                .append(String.valueOf(this.certificateAuthorityMaxValidityDuration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CertificateAuthorityIssuanceExpiryRule)) {
+            return false;
+        }
+
+        CertificateAuthorityIssuanceExpiryRule other = (CertificateAuthorityIssuanceExpiryRule) o;
+        return java.util.Objects.equals(
+                        this.leafCertificateMaxValidityDuration,
+                        other.leafCertificateMaxValidityDuration)
+                && java.util.Objects.equals(
+                        this.certificateAuthorityMaxValidityDuration,
+                        other.certificateAuthorityMaxValidityDuration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.leafCertificateMaxValidityDuration == null
+                                ? 43
+                                : this.leafCertificateMaxValidityDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateAuthorityMaxValidityDuration == null
+                                ? 43
+                                : this.certificateAuthorityMaxValidityDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

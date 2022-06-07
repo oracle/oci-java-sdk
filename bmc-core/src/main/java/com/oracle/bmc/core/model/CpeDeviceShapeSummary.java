@@ -17,16 +17,20 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CpeDeviceShapeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CpeDeviceShapeSummary {
+public final class CpeDeviceShapeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "cpeDeviceInfo"})
+    public CpeDeviceShapeSummary(String id, CpeDeviceInfo cpeDeviceInfo) {
+        super();
+        this.id = id;
+        this.cpeDeviceInfo = cpeDeviceInfo;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -71,17 +75,73 @@ public class CpeDeviceShapeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
      * This value uniquely identifies the type of CPE device.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceInfo")
-    CpeDeviceInfo cpeDeviceInfo;
+    private final CpeDeviceInfo cpeDeviceInfo;
+
+    public CpeDeviceInfo getCpeDeviceInfo() {
+        return cpeDeviceInfo;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CpeDeviceShapeSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", cpeDeviceInfo=").append(String.valueOf(this.cpeDeviceInfo));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CpeDeviceShapeSummary)) {
+            return false;
+        }
+
+        CpeDeviceShapeSummary other = (CpeDeviceShapeSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.cpeDeviceInfo, other.cpeDeviceInfo)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpeDeviceInfo == null ? 43 : this.cpeDeviceInfo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

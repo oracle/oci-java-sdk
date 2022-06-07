@@ -15,22 +15,17 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateServiceCloudChannelResult.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateServiceCloudChannelResult extends CreateChannelResult {
+public final class CreateServiceCloudChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -215,6 +210,10 @@ public class CreateServiceCloudChannelResult extends CreateChannelResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateServiceCloudChannelResult(
             String id,
@@ -260,7 +259,11 @@ public class CreateServiceCloudChannelResult extends CreateChannelResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
-    String domainName;
+    private final String domainName;
+
+    public String getDomainName() {
+        return domainName;
+    }
 
     /**
      * The host prefix.
@@ -274,20 +277,84 @@ public class CreateServiceCloudChannelResult extends CreateChannelResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostNamePrefix")
-    String hostNamePrefix;
+    private final String hostNamePrefix;
+
+    public String getHostNamePrefix() {
+        return hostNamePrefix;
+    }
 
     /**
      * The user name for an Oracle B2C Service staff member who has the necessary profile permissions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * The type of Service Cloud client.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientType")
-    ServiceCloudClientType clientType;
+    private final ServiceCloudClientType clientType;
+
+    public ServiceCloudClientType getClientType() {
+        return clientType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateServiceCloudChannelResult(");
+        sb.append("super=").append(super.toString());
+        sb.append(", domainName=").append(String.valueOf(this.domainName));
+        sb.append(", hostNamePrefix=").append(String.valueOf(this.hostNamePrefix));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", clientType=").append(String.valueOf(this.clientType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateServiceCloudChannelResult)) {
+            return false;
+        }
+
+        CreateServiceCloudChannelResult other = (CreateServiceCloudChannelResult) o;
+        return java.util.Objects.equals(this.domainName, other.domainName)
+                && java.util.Objects.equals(this.hostNamePrefix, other.hostNamePrefix)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.clientType, other.clientType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.domainName == null ? 43 : this.domainName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostNamePrefix == null ? 43 : this.hostNamePrefix.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result = (result * PRIME) + (this.clientType == null ? 43 : this.clientType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

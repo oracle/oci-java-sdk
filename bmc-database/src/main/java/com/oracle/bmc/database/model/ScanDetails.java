@@ -16,14 +16,32 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScanDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScanDetails {
+public final class ScanDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "hostname",
+        "port",
+        "scanListenerPortTcp",
+        "scanListenerPortTcpSsl",
+        "ips"
+    })
+    public ScanDetails(
+            String hostname,
+            Integer port,
+            Integer scanListenerPortTcp,
+            Integer scanListenerPortTcpSsl,
+            java.util.List<String> ips) {
+        super();
+        this.hostname = hostname;
+        this.port = port;
+        this.scanListenerPortTcp = scanListenerPortTcp;
+        this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+        this.ips = ips;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
@@ -102,36 +120,120 @@ public class ScanDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The SCAN hostname.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * The SCAN TCPIP port. Default is 1521.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The SCAN TCPIP port. Default is 1521.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
-    Integer scanListenerPortTcp;
+    private final Integer scanListenerPortTcp;
+
+    public Integer getScanListenerPortTcp() {
+        return scanListenerPortTcp;
+    }
 
     /**
      * The SCAN TCPIP SSL port. Default is 2484.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
-    Integer scanListenerPortTcpSsl;
+    private final Integer scanListenerPortTcpSsl;
+
+    public Integer getScanListenerPortTcpSsl() {
+        return scanListenerPortTcpSsl;
+    }
 
     /**
      * The list of SCAN IP addresses. Three addresses should be provided.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ips")
-    java.util.List<String> ips;
+    private final java.util.List<String> ips;
+
+    public java.util.List<String> getIps() {
+        return ips;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScanDetails(");
+        sb.append("hostname=").append(String.valueOf(this.hostname));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
+        sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
+        sb.append(", ips=").append(String.valueOf(this.ips));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScanDetails)) {
+            return false;
+        }
+
+        ScanDetails other = (ScanDetails) o;
+        return java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.scanListenerPortTcp, other.scanListenerPortTcp)
+                && java.util.Objects.equals(
+                        this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
+                && java.util.Objects.equals(this.ips, other.ips)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTcp == null
+                                ? 43
+                                : this.scanListenerPortTcp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTcpSsl == null
+                                ? 43
+                                : this.scanListenerPortTcpSsl.hashCode());
+        result = (result * PRIME) + (this.ips == null ? 43 : this.ips.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

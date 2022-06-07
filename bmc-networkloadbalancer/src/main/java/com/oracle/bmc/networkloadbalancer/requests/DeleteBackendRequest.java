@@ -9,14 +9,6 @@ import com.oracle.bmc.networkloadbalancer.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteBackendExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteBackendRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String networkLoadBalancerId;
 
+    public String getNetworkLoadBalancerId() {
+        return networkLoadBalancerId;
+    }
     /**
      * The name of the backend set associated with the backend server.
      * <p>
@@ -32,6 +27,9 @@ public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String backendSetName;
 
+    public String getBackendSetName() {
+        return backendSetName;
+    }
     /**
      * The name of the backend server to remove.
      * If the backend was created with an explicitly specified name, that name should be used here.
@@ -43,6 +41,9 @@ public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String backendName;
 
+    public String getBackendName() {
+        return backendName;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
@@ -50,6 +51,9 @@ public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -60,12 +64,87 @@ public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteBackendRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String networkLoadBalancerId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @return this builder instance
+         */
+        public Builder networkLoadBalancerId(String networkLoadBalancerId) {
+            this.networkLoadBalancerId = networkLoadBalancerId;
+            return this;
+        }
+
+        private String backendSetName = null;
+
+        /**
+         * The name of the backend set associated with the backend server.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         * @return this builder instance
+         */
+        public Builder backendSetName(String backendSetName) {
+            this.backendSetName = backendSetName;
+            return this;
+        }
+
+        private String backendName = null;
+
+        /**
+         * The name of the backend server to remove.
+         * If the backend was created with an explicitly specified name, that name should be used here.
+         * If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
+         * If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
+         * <p>
+         * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
+         *
+         * @return this builder instance
+         */
+        public Builder backendName(String backendName) {
+            this.backendName = backendName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the current etag value of the resource.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -121,5 +200,90 @@ public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of DeleteBackendRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DeleteBackendRequest
+         */
+        public DeleteBackendRequest buildWithoutInvocationCallback() {
+            DeleteBackendRequest request = new DeleteBackendRequest();
+            request.networkLoadBalancerId = networkLoadBalancerId;
+            request.backendSetName = backendSetName;
+            request.backendName = backendName;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new DeleteBackendRequest(networkLoadBalancerId, backendSetName, backendName, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .networkLoadBalancerId(networkLoadBalancerId)
+                .backendSetName(backendSetName)
+                .backendName(backendName)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",networkLoadBalancerId=").append(String.valueOf(this.networkLoadBalancerId));
+        sb.append(",backendSetName=").append(String.valueOf(this.backendSetName));
+        sb.append(",backendName=").append(String.valueOf(this.backendName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteBackendRequest)) {
+            return false;
+        }
+
+        DeleteBackendRequest other = (DeleteBackendRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.networkLoadBalancerId, other.networkLoadBalancerId)
+                && java.util.Objects.equals(this.backendSetName, other.backendSetName)
+                && java.util.Objects.equals(this.backendName, other.backendName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.networkLoadBalancerId == null
+                                ? 43
+                                : this.networkLoadBalancerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
+        result = (result * PRIME) + (this.backendName == null ? 43 : this.backendName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

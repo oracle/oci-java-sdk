@@ -16,16 +16,20 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExecutionLogPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExecutionLogPolicy {
+public final class ExecutionLogPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isEnabled", "logLevel"})
+    public ExecutionLogPolicy(Boolean isEnabled, LogLevel logLevel) {
+        super();
+        this.isEnabled = isEnabled;
+        this.logLevel = logLevel;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
@@ -70,6 +74,10 @@ public class ExecutionLogPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
      * <p>
@@ -83,13 +91,17 @@ public class ExecutionLogPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
+
     /**
      * Specifies the log level used to control logging output of execution logs.
      * Enabling logging at a given level also enables logging at all higher levels.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LogLevel {
         Info("INFO"),
         Warn("WARN"),
@@ -100,6 +112,9 @@ public class ExecutionLogPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LogLevel.class);
 
         private final String value;
         private static java.util.Map<String, LogLevel> map;
@@ -139,8 +154,54 @@ public class ExecutionLogPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logLevel")
-    LogLevel logLevel;
+    private final LogLevel logLevel;
+
+    public LogLevel getLogLevel() {
+        return logLevel;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExecutionLogPolicy(");
+        sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", logLevel=").append(String.valueOf(this.logLevel));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExecutionLogPolicy)) {
+            return false;
+        }
+
+        ExecutionLogPolicy other = (ExecutionLogPolicy) o;
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.logLevel, other.logLevel)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.logLevel == null ? 43 : this.logLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

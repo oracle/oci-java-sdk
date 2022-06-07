@@ -8,7 +8,6 @@ package com.oracle.bmc.oce.model;
  * Instance lifecycle details
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
-@lombok.extern.slf4j.Slf4j
 public enum LifecycleDetails {
     Standby("STANDBY"),
     Failover("FAILOVER"),
@@ -20,6 +19,9 @@ public enum LifecycleDetails {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LifecycleDetails.class);
 
     private final String value;
     private static java.util.Map<String, LifecycleDetails> map;

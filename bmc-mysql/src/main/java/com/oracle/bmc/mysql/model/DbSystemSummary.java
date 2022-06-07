@@ -16,14 +16,80 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbSystemSummary {
+public final class DbSystemSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "description",
+        "compartmentId",
+        "isHighlyAvailable",
+        "currentPlacement",
+        "isAnalyticsClusterAttached",
+        "analyticsCluster",
+        "isHeatWaveClusterAttached",
+        "heatWaveCluster",
+        "availabilityDomain",
+        "faultDomain",
+        "endpoints",
+        "lifecycleState",
+        "mysqlVersion",
+        "timeCreated",
+        "timeUpdated",
+        "deletionPolicy",
+        "freeformTags",
+        "definedTags",
+        "crashRecovery"
+    })
+    public DbSystemSummary(
+            String id,
+            String displayName,
+            String description,
+            String compartmentId,
+            Boolean isHighlyAvailable,
+            DbSystemPlacement currentPlacement,
+            Boolean isAnalyticsClusterAttached,
+            AnalyticsClusterSummary analyticsCluster,
+            Boolean isHeatWaveClusterAttached,
+            HeatWaveClusterSummary heatWaveCluster,
+            String availabilityDomain,
+            String faultDomain,
+            java.util.List<DbSystemEndpoint> endpoints,
+            DbSystem.LifecycleState lifecycleState,
+            String mysqlVersion,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            DeletionPolicyDetails deletionPolicy,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            CrashRecoveryStatus crashRecovery) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.isHighlyAvailable = isHighlyAvailable;
+        this.currentPlacement = currentPlacement;
+        this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
+        this.analyticsCluster = analyticsCluster;
+        this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+        this.heatWaveCluster = heatWaveCluster;
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomain = faultDomain;
+        this.endpoints = endpoints;
+        this.lifecycleState = lifecycleState;
+        this.mysqlVersion = mysqlVersion;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.deletionPolicy = deletionPolicy;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.crashRecovery = crashRecovery;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -283,39 +349,67 @@ public class DbSystemSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The user-friendly name for the DB System. It does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * User-provided data about the DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The OCID of the compartment the DB System belongs in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Specifies if the DB System is highly available.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
-    Boolean isHighlyAvailable;
+    private final Boolean isHighlyAvailable;
+
+    public Boolean getIsHighlyAvailable() {
+        return isHighlyAvailable;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("currentPlacement")
-    DbSystemPlacement currentPlacement;
+    private final DbSystemPlacement currentPlacement;
+
+    public DbSystemPlacement getCurrentPlacement() {
+        return currentPlacement;
+    }
 
     /**
      * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead.
@@ -323,20 +417,36 @@ public class DbSystemSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
-    Boolean isAnalyticsClusterAttached;
+    private final Boolean isAnalyticsClusterAttached;
+
+    public Boolean getIsAnalyticsClusterAttached() {
+        return isAnalyticsClusterAttached;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
-    AnalyticsClusterSummary analyticsCluster;
+    private final AnalyticsClusterSummary analyticsCluster;
+
+    public AnalyticsClusterSummary getAnalyticsCluster() {
+        return analyticsCluster;
+    }
 
     /**
      * If the DB System has a HeatWave Cluster attached.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
-    Boolean isHeatWaveClusterAttached;
+    private final Boolean isHeatWaveClusterAttached;
+
+    public Boolean getIsHeatWaveClusterAttached() {
+        return isHeatWaveClusterAttached;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveCluster")
-    HeatWaveClusterSummary heatWaveCluster;
+    private final HeatWaveClusterSummary heatWaveCluster;
+
+    public HeatWaveClusterSummary getHeatWaveCluster() {
+        return heatWaveCluster;
+    }
 
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -349,7 +459,11 @@ public class DbSystemSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -362,41 +476,69 @@ public class DbSystemSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
 
     /**
      * The network endpoints available for this DB System.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
-    java.util.List<DbSystemEndpoint> endpoints;
+    private final java.util.List<DbSystemEndpoint> endpoints;
+
+    public java.util.List<DbSystemEndpoint> getEndpoints() {
+        return endpoints;
+    }
 
     /**
      * The current state of the DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    DbSystem.LifecycleState lifecycleState;
+    private final DbSystem.LifecycleState lifecycleState;
+
+    public DbSystem.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Name of the MySQL Version in use for the DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
-    String mysqlVersion;
+    private final String mysqlVersion;
+
+    public String getMysqlVersion() {
+        return mysqlVersion;
+    }
 
     /**
      * The date and time the DB System was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the DB System was last updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
-    DeletionPolicyDetails deletionPolicy;
+    private final DeletionPolicyDetails deletionPolicy;
+
+    public DeletionPolicyDetails getDeletionPolicy() {
+        return deletionPolicy;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -404,7 +546,11 @@ public class DbSystemSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -412,7 +558,11 @@ public class DbSystemSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
@@ -420,8 +570,143 @@ public class DbSystemSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
-    CrashRecoveryStatus crashRecovery;
+    private final CrashRecoveryStatus crashRecovery;
+
+    public CrashRecoveryStatus getCrashRecovery() {
+        return crashRecovery;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbSystemSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
+        sb.append(", currentPlacement=").append(String.valueOf(this.currentPlacement));
+        sb.append(", isAnalyticsClusterAttached=")
+                .append(String.valueOf(this.isAnalyticsClusterAttached));
+        sb.append(", analyticsCluster=").append(String.valueOf(this.analyticsCluster));
+        sb.append(", isHeatWaveClusterAttached=")
+                .append(String.valueOf(this.isHeatWaveClusterAttached));
+        sb.append(", heatWaveCluster=").append(String.valueOf(this.heatWaveCluster));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", endpoints=").append(String.valueOf(this.endpoints));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", deletionPolicy=").append(String.valueOf(this.deletionPolicy));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbSystemSummary)) {
+            return false;
+        }
+
+        DbSystemSummary other = (DbSystemSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
+                && java.util.Objects.equals(this.currentPlacement, other.currentPlacement)
+                && java.util.Objects.equals(
+                        this.isAnalyticsClusterAttached, other.isAnalyticsClusterAttached)
+                && java.util.Objects.equals(this.analyticsCluster, other.analyticsCluster)
+                && java.util.Objects.equals(
+                        this.isHeatWaveClusterAttached, other.isHeatWaveClusterAttached)
+                && java.util.Objects.equals(this.heatWaveCluster, other.heatWaveCluster)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.endpoints, other.endpoints)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.deletionPolicy, other.deletionPolicy)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentPlacement == null ? 43 : this.currentPlacement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAnalyticsClusterAttached == null
+                                ? 43
+                                : this.isAnalyticsClusterAttached.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.analyticsCluster == null ? 43 : this.analyticsCluster.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHeatWaveClusterAttached == null
+                                ? 43
+                                : this.isHeatWaveClusterAttached.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveCluster == null ? 43 : this.heatWaveCluster.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result = (result * PRIME) + (this.endpoints == null ? 43 : this.endpoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.mysqlVersion == null ? 43 : this.mysqlVersion.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deletionPolicy == null ? 43 : this.deletionPolicy.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

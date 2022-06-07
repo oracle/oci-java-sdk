@@ -15,12 +15,6 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -63,74 +57,232 @@ package com.oracle.bmc.dataintegration.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DataAssetSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelVersion",
+        "name",
+        "description",
+        "objectStatus",
+        "identifier",
+        "externalKey",
+        "assetProperties",
+        "nativeTypeSystem",
+        "objectVersion",
+        "parentRef",
+        "metadata"
+    })
+    protected DataAssetSummary(
+            String key,
+            String modelVersion,
+            String name,
+            String description,
+            Integer objectStatus,
+            String identifier,
+            String externalKey,
+            java.util.Map<String, String> assetProperties,
+            TypeSystem nativeTypeSystem,
+            Integer objectVersion,
+            ParentReference parentRef,
+            ObjectMetadata metadata) {
+        super();
+        this.key = key;
+        this.modelVersion = modelVersion;
+        this.name = name;
+        this.description = description;
+        this.objectStatus = objectStatus;
+        this.identifier = identifier;
+        this.externalKey = externalKey;
+        this.assetProperties = assetProperties;
+        this.nativeTypeSystem = nativeTypeSystem;
+        this.objectVersion = objectVersion;
+        this.parentRef = parentRef;
+        this.metadata = metadata;
+    }
 
     /**
      * Generated key that can be used in API calls to identify data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The user-defined description of the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     /**
      * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * The external key for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
-    String externalKey;
+    private final String externalKey;
+
+    public String getExternalKey() {
+        return externalKey;
+    }
 
     /**
      * Additional properties for the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetProperties")
-    java.util.Map<String, String> assetProperties;
+    private final java.util.Map<String, String> assetProperties;
+
+    public java.util.Map<String, String> getAssetProperties() {
+        return assetProperties;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("nativeTypeSystem")
-    TypeSystem nativeTypeSystem;
+    private final TypeSystem nativeTypeSystem;
+
+    public TypeSystem getNativeTypeSystem() {
+        return nativeTypeSystem;
+    }
 
     /**
      * The version of the object that is used to track changes in the object instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    ObjectMetadata metadata;
+    private final ObjectMetadata metadata;
+
+    public ObjectMetadata getMetadata() {
+        return metadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataAssetSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", externalKey=").append(String.valueOf(this.externalKey));
+        sb.append(", assetProperties=").append(String.valueOf(this.assetProperties));
+        sb.append(", nativeTypeSystem=").append(String.valueOf(this.nativeTypeSystem));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataAssetSummary)) {
+            return false;
+        }
+
+        DataAssetSummary other = (DataAssetSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.externalKey, other.externalKey)
+                && java.util.Objects.equals(this.assetProperties, other.assetProperties)
+                && java.util.Objects.equals(this.nativeTypeSystem, other.nativeTypeSystem)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.metadata, other.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assetProperties == null ? 43 : this.assetProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nativeTypeSystem == null ? 43 : this.nativeTypeSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        return result;
+    }
 
     /**
      * The type of the data asset.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ModelType {
         OracleDataAsset("ORACLE_DATA_ASSET"),
         OracleObjectStorageDataAsset("ORACLE_OBJECT_STORAGE_DATA_ASSET"),
@@ -146,6 +298,9 @@ public class DataAssetSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ModelType.class);
 
         private final String value;
         private static java.util.Map<String, ModelType> map;

@@ -15,16 +15,34 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExadataInfrastructureContact.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExadataInfrastructureContact {
+public final class ExadataInfrastructureContact {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "phoneNumber",
+        "email",
+        "isPrimary",
+        "isContactMosValidated"
+    })
+    public ExadataInfrastructureContact(
+            String name,
+            String phoneNumber,
+            String email,
+            Boolean isPrimary,
+            Boolean isContactMosValidated) {
+        super();
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.isPrimary = isPrimary;
+        this.isContactMosValidated = isContactMosValidated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -103,36 +121,115 @@ public class ExadataInfrastructureContact {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the Exadata Infrastructure contact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The phone number for the Exadata Infrastructure contact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
-    String phoneNumber;
+    private final String phoneNumber;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
     /**
      * The email for the Exadata Infrastructure contact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")
-    String email;
+    private final String email;
+
+    public String getEmail() {
+        return email;
+    }
 
     /**
      * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false}, this Exadata Infrastructure is a secondary contact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
-    Boolean isPrimary;
+    private final Boolean isPrimary;
+
+    public Boolean getIsPrimary() {
+        return isPrimary;
+    }
 
     /**
      * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isContactMosValidated")
-    Boolean isContactMosValidated;
+    private final Boolean isContactMosValidated;
+
+    public Boolean getIsContactMosValidated() {
+        return isContactMosValidated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExadataInfrastructureContact(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", phoneNumber=").append(String.valueOf(this.phoneNumber));
+        sb.append(", email=").append(String.valueOf(this.email));
+        sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append(", isContactMosValidated=").append(String.valueOf(this.isContactMosValidated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExadataInfrastructureContact)) {
+            return false;
+        }
+
+        ExadataInfrastructureContact other = (ExadataInfrastructureContact) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.phoneNumber, other.phoneNumber)
+                && java.util.Objects.equals(this.email, other.email)
+                && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(this.isContactMosValidated, other.isContactMosValidated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.phoneNumber == null ? 43 : this.phoneNumber.hashCode());
+        result = (result * PRIME) + (this.email == null ? 43 : this.email.hashCode());
+        result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isContactMosValidated == null
+                                ? 43
+                                : this.isContactMosValidated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

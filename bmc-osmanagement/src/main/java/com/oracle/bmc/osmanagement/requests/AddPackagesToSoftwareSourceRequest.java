@@ -9,14 +9,6 @@ import com.oracle.bmc.osmanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/AddPackagesToSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddPackagesToSoftwareSourceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AddPackagesToSoftwareSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails> {
@@ -26,16 +18,27 @@ public class AddPackagesToSoftwareSourceRequest
      */
     private String softwareSourceId;
 
+    public String getSoftwareSourceId() {
+        return softwareSourceId;
+    }
     /**
      * A list of package identifiers
      */
     private com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails
             addPackagesToSoftwareSourceDetails;
 
+    public com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails
+            getAddPackagesToSoftwareSourceDetails() {
+        return addPackagesToSoftwareSourceDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -54,6 +57,42 @@ public class AddPackagesToSoftwareSourceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String softwareSourceId = null;
+
+        /**
+         * The OCID of the software source.
+         * @return this builder instance
+         */
+        public Builder softwareSourceId(String softwareSourceId) {
+            this.softwareSourceId = softwareSourceId;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails
+                addPackagesToSoftwareSourceDetails = null;
+
+        /**
+         * A list of package identifiers
+         * @return this builder instance
+         */
+        public Builder addPackagesToSoftwareSourceDetails(
+                com.oracle.bmc.osmanagement.model.AddPackagesToSoftwareSourceDetails
+                        addPackagesToSoftwareSourceDetails) {
+            this.addPackagesToSoftwareSourceDetails = addPackagesToSoftwareSourceDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -119,5 +158,83 @@ public class AddPackagesToSoftwareSourceRequest
             addPackagesToSoftwareSourceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of AddPackagesToSoftwareSourceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of AddPackagesToSoftwareSourceRequest
+         */
+        public AddPackagesToSoftwareSourceRequest buildWithoutInvocationCallback() {
+            AddPackagesToSoftwareSourceRequest request = new AddPackagesToSoftwareSourceRequest();
+            request.softwareSourceId = softwareSourceId;
+            request.addPackagesToSoftwareSourceDetails = addPackagesToSoftwareSourceDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new AddPackagesToSoftwareSourceRequest(softwareSourceId, addPackagesToSoftwareSourceDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .softwareSourceId(softwareSourceId)
+                .addPackagesToSoftwareSourceDetails(addPackagesToSoftwareSourceDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",softwareSourceId=").append(String.valueOf(this.softwareSourceId));
+        sb.append(",addPackagesToSoftwareSourceDetails=")
+                .append(String.valueOf(this.addPackagesToSoftwareSourceDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AddPackagesToSoftwareSourceRequest)) {
+            return false;
+        }
+
+        AddPackagesToSoftwareSourceRequest other = (AddPackagesToSoftwareSourceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
+                && java.util.Objects.equals(
+                        this.addPackagesToSoftwareSourceDetails,
+                        other.addPackagesToSoftwareSourceDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.addPackagesToSoftwareSourceDetails == null
+                                ? 43
+                                : this.addPackagesToSoftwareSourceDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

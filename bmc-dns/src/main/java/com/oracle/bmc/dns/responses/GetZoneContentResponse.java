@@ -7,10 +7,6 @@ package com.oracle.bmc.dns.responses;
 import com.oracle.bmc.dns.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The current version of the resource, ending with a
@@ -20,6 +16,10 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
      * contact Oracle about a particular request, please provide the request ID.
@@ -27,10 +27,18 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned java.io.InputStream instance.
      */
     private java.io.InputStream inputStream;
+
+    public java.io.InputStream getInputStream() {
+        return inputStream;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "inputStream"})
     private GetZoneContentResponse(
@@ -52,6 +60,27 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private java.io.InputStream inputStream;
+
+        public Builder inputStream(java.io.InputStream inputStream) {
+            this.inputStream = inputStream;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -68,5 +97,47 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
         public GetZoneContentResponse build() {
             return new GetZoneContentResponse(__httpStatusCode__, etag, opcRequestId, inputStream);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",inputStream=").append(String.valueOf(inputStream));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetZoneContentResponse)) {
+            return false;
+        }
+
+        GetZoneContentResponse other = (GetZoneContentResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.inputStream, other.inputStream);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.inputStream == null ? 43 : this.inputStream.hashCode());
+        return result;
     }
 }

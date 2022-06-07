@@ -23,12 +23,6 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -63,12 +57,136 @@ package com.oracle.bmc.database.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateAutonomousDatabaseBase {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "characterSet",
+        "ncharacterSet",
+        "dbName",
+        "cpuCoreCount",
+        "ocpuCount",
+        "dbWorkload",
+        "dataStorageSizeInTBs",
+        "dataStorageSizeInGBs",
+        "isFreeTier",
+        "kmsKeyId",
+        "vaultId",
+        "adminPassword",
+        "displayName",
+        "licenseModel",
+        "isPreviewVersionWithServiceTermsAccepted",
+        "isAutoScalingEnabled",
+        "isDedicated",
+        "autonomousContainerDatabaseId",
+        "isAccessControlEnabled",
+        "whitelistedIps",
+        "arePrimaryWhitelistedIpsUsed",
+        "standbyWhitelistedIps",
+        "isDataGuardEnabled",
+        "isLocalDataGuardEnabled",
+        "subnetId",
+        "nsgIds",
+        "privateEndpointLabel",
+        "freeformTags",
+        "definedTags",
+        "dbVersion",
+        "customerContacts",
+        "isMtlsConnectionRequired",
+        "autonomousMaintenanceScheduleType",
+        "scheduledOperations",
+        "isAutoScalingForStorageEnabled",
+        "maxCpuCoreCount",
+        "databaseEdition"
+    })
+    protected CreateAutonomousDatabaseBase(
+            String compartmentId,
+            String characterSet,
+            String ncharacterSet,
+            String dbName,
+            Integer cpuCoreCount,
+            Float ocpuCount,
+            DbWorkload dbWorkload,
+            Integer dataStorageSizeInTBs,
+            Integer dataStorageSizeInGBs,
+            Boolean isFreeTier,
+            String kmsKeyId,
+            String vaultId,
+            String adminPassword,
+            String displayName,
+            LicenseModel licenseModel,
+            Boolean isPreviewVersionWithServiceTermsAccepted,
+            Boolean isAutoScalingEnabled,
+            Boolean isDedicated,
+            String autonomousContainerDatabaseId,
+            Boolean isAccessControlEnabled,
+            java.util.List<String> whitelistedIps,
+            Boolean arePrimaryWhitelistedIpsUsed,
+            java.util.List<String> standbyWhitelistedIps,
+            Boolean isDataGuardEnabled,
+            Boolean isLocalDataGuardEnabled,
+            String subnetId,
+            java.util.List<String> nsgIds,
+            String privateEndpointLabel,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String dbVersion,
+            java.util.List<CustomerContact> customerContacts,
+            Boolean isMtlsConnectionRequired,
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            java.util.List<ScheduledOperationDetails> scheduledOperations,
+            Boolean isAutoScalingForStorageEnabled,
+            Integer maxCpuCoreCount,
+            AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+        super();
+        this.compartmentId = compartmentId;
+        this.characterSet = characterSet;
+        this.ncharacterSet = ncharacterSet;
+        this.dbName = dbName;
+        this.cpuCoreCount = cpuCoreCount;
+        this.ocpuCount = ocpuCount;
+        this.dbWorkload = dbWorkload;
+        this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+        this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.isFreeTier = isFreeTier;
+        this.kmsKeyId = kmsKeyId;
+        this.vaultId = vaultId;
+        this.adminPassword = adminPassword;
+        this.displayName = displayName;
+        this.licenseModel = licenseModel;
+        this.isPreviewVersionWithServiceTermsAccepted = isPreviewVersionWithServiceTermsAccepted;
+        this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.isDedicated = isDedicated;
+        this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+        this.isAccessControlEnabled = isAccessControlEnabled;
+        this.whitelistedIps = whitelistedIps;
+        this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
+        this.standbyWhitelistedIps = standbyWhitelistedIps;
+        this.isDataGuardEnabled = isDataGuardEnabled;
+        this.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
+        this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
+        this.privateEndpointLabel = privateEndpointLabel;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.dbVersion = dbVersion;
+        this.customerContacts = customerContacts;
+        this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+        this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+        this.scheduledOperations = scheduledOperations;
+        this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+        this.maxCpuCoreCount = maxCpuCoreCount;
+        this.databaseEdition = databaseEdition;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
@@ -77,7 +195,11 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
-    String characterSet;
+    private final String characterSet;
+
+    public String getCharacterSet() {
+        return characterSet;
+    }
 
     /**
      * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are:
@@ -85,13 +207,21 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-    String ncharacterSet;
+    private final String ncharacterSet;
+
+    public String getNcharacterSet() {
+        return ncharacterSet;
+    }
 
     /**
      * The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    private final String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
 
     /**
      * The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -100,7 +230,11 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * The number of OCPU cores to be made available to the database.
@@ -115,7 +249,12 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
-    Float ocpuCount;
+    private final Float ocpuCount;
+
+    public Float getOcpuCount() {
+        return ocpuCount;
+    }
+
     /**
      * The Autonomous Database workload type. The following values are valid:
      * <p>
@@ -169,7 +308,11 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
-    DbWorkload dbWorkload;
+    private final DbWorkload dbWorkload;
+
+    public DbWorkload getDbWorkload() {
+        return dbWorkload;
+    }
 
     /**
      * The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -178,7 +321,11 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
-    Integer dataStorageSizeInTBs;
+    private final Integer dataStorageSizeInTBs;
+
+    public Integer getDataStorageSizeInTBs() {
+        return dataStorageSizeInTBs;
+    }
 
     /**
      * The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -189,39 +336,64 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
-    Integer dataStorageSizeInGBs;
+    private final Integer dataStorageSizeInGBs;
+
+    public Integer getDataStorageSizeInGBs() {
+        return dataStorageSizeInGBs;
+    }
 
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
-    Boolean isFreeTier;
+    private final Boolean isFreeTier;
+
+    public Boolean getIsFreeTier() {
+        return isFreeTier;
+    }
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * **Important** The {@code adminPassword} must be specified for all Autonomous Databases except for refreshable clones. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    String adminPassword;
+    private final String adminPassword;
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
 
     /**
      * The user-friendly name for the Autonomous Database. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
@@ -269,34 +441,54 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     /**
      * If set to {@code TRUE}, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
-    Boolean isPreviewVersionWithServiceTermsAccepted;
+    private final Boolean isPreviewVersionWithServiceTermsAccepted;
+
+    public Boolean getIsPreviewVersionWithServiceTermsAccepted() {
+        return isPreviewVersionWithServiceTermsAccepted;
+    }
 
     /**
      * Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is {@code FALSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
-    Boolean isAutoScalingEnabled;
+    private final Boolean isAutoScalingEnabled;
+
+    public Boolean getIsAutoScalingEnabled() {
+        return isAutoScalingEnabled;
+    }
 
     /**
      * True if the database is on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
-    Boolean isDedicated;
+    private final Boolean isDedicated;
+
+    public Boolean getIsDedicated() {
+        return isDedicated;
+    }
 
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
-    String autonomousContainerDatabaseId;
+    private final String autonomousContainerDatabaseId;
+
+    public String getAutonomousContainerDatabaseId() {
+        return autonomousContainerDatabaseId;
+    }
 
     /**
      * Indicates if the database-level access control is enabled.
@@ -309,7 +501,11 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlEnabled")
-    Boolean isAccessControlEnabled;
+    private final Boolean isAccessControlEnabled;
+
+    public Boolean getIsAccessControlEnabled() {
+        return isAccessControlEnabled;
+    }
 
     /**
      * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
@@ -325,7 +521,11 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
-    java.util.List<String> whitelistedIps;
+    private final java.util.List<String> whitelistedIps;
+
+    public java.util.List<String> getWhitelistedIps() {
+        return whitelistedIps;
+    }
 
     /**
      * This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
@@ -334,7 +534,11 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
-    Boolean arePrimaryWhitelistedIpsUsed;
+    private final Boolean arePrimaryWhitelistedIpsUsed;
+
+    public Boolean getArePrimaryWhitelistedIpsUsed() {
+        return arePrimaryWhitelistedIpsUsed;
+    }
 
     /**
      * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
@@ -350,20 +554,32 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("standbyWhitelistedIps")
-    java.util.List<String> standbyWhitelistedIps;
+    private final java.util.List<String> standbyWhitelistedIps;
+
+    public java.util.List<String> getStandbyWhitelistedIps() {
+        return standbyWhitelistedIps;
+    }
 
     /**
      * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
-    Boolean isDataGuardEnabled;
+    private final Boolean isDataGuardEnabled;
+
+    public Boolean getIsDataGuardEnabled() {
+        return isDataGuardEnabled;
+    }
 
     /**
      * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLocalDataGuardEnabled")
-    Boolean isLocalDataGuardEnabled;
+    private final Boolean isLocalDataGuardEnabled;
+
+    public Boolean getIsLocalDataGuardEnabled() {
+        return isLocalDataGuardEnabled;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
@@ -379,22 +595,34 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     /**
      * The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointLabel")
-    String privateEndpointLabel;
+    private final String privateEndpointLabel;
+
+    public String getPrivateEndpointLabel() {
+        return privateEndpointLabel;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -404,7 +632,11 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -412,25 +644,42 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A valid Oracle Database version for Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-    String dbVersion;
+    private final String dbVersion;
+
+    public String getDbVersion() {
+        return dbVersion;
+    }
 
     /**
      * Customer Contacts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
-    java.util.List<CustomerContact> customerContacts;
+    private final java.util.List<CustomerContact> customerContacts;
+
+    public java.util.List<CustomerContact> getCustomerContacts() {
+        return customerContacts;
+    }
 
     /**
      * Indicates whether the Autonomous Database requires mTLS connections.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
-    Boolean isMtlsConnectionRequired;
+    private final Boolean isMtlsConnectionRequired;
+
+    public Boolean getIsMtlsConnectionRequired() {
+        return isMtlsConnectionRequired;
+    }
+
     /**
      * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
      * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
@@ -474,34 +723,286 @@ public class CreateAutonomousDatabaseBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
-    AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+    private final AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+    public AutonomousMaintenanceScheduleType getAutonomousMaintenanceScheduleType() {
+        return autonomousMaintenanceScheduleType;
+    }
 
     /**
      * list of scheduled operations
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
-    java.util.List<ScheduledOperationDetails> scheduledOperations;
+    private final java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+    public java.util.List<ScheduledOperationDetails> getScheduledOperations() {
+        return scheduledOperations;
+    }
 
     /**
      * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is {@code FALSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
-    Boolean isAutoScalingForStorageEnabled;
+    private final Boolean isAutoScalingForStorageEnabled;
+
+    public Boolean getIsAutoScalingForStorageEnabled() {
+        return isAutoScalingForStorageEnabled;
+    }
 
     /**
      * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
-    Integer maxCpuCoreCount;
+    private final Integer maxCpuCoreCount;
+
+    public Integer getMaxCpuCoreCount() {
+        return maxCpuCoreCount;
+    }
 
     /**
      * The Oracle Database Edition that applies to the Autonomous databases.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-    AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
+    private final AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
+
+    public AutonomousDatabaseSummary.DatabaseEdition getDatabaseEdition() {
+        return databaseEdition;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateAutonomousDatabaseBase(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", characterSet=").append(String.valueOf(this.characterSet));
+        sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
+        sb.append(", dbName=").append(String.valueOf(this.dbName));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
+        sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
+        sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", isFreeTier=").append(String.valueOf(this.isFreeTier));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", isPreviewVersionWithServiceTermsAccepted=")
+                .append(String.valueOf(this.isPreviewVersionWithServiceTermsAccepted));
+        sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
+        sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
+        sb.append(", autonomousContainerDatabaseId=")
+                .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(", isAccessControlEnabled=").append(String.valueOf(this.isAccessControlEnabled));
+        sb.append(", whitelistedIps=").append(String.valueOf(this.whitelistedIps));
+        sb.append(", arePrimaryWhitelistedIpsUsed=")
+                .append(String.valueOf(this.arePrimaryWhitelistedIpsUsed));
+        sb.append(", standbyWhitelistedIps=").append(String.valueOf(this.standbyWhitelistedIps));
+        sb.append(", isDataGuardEnabled=").append(String.valueOf(this.isDataGuardEnabled));
+        sb.append(", isLocalDataGuardEnabled=")
+                .append(String.valueOf(this.isLocalDataGuardEnabled));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", privateEndpointLabel=").append(String.valueOf(this.privateEndpointLabel));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", isMtlsConnectionRequired=")
+                .append(String.valueOf(this.isMtlsConnectionRequired));
+        sb.append(", autonomousMaintenanceScheduleType=")
+                .append(String.valueOf(this.autonomousMaintenanceScheduleType));
+        sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
+        sb.append(", isAutoScalingForStorageEnabled=")
+                .append(String.valueOf(this.isAutoScalingForStorageEnabled));
+        sb.append(", maxCpuCoreCount=").append(String.valueOf(this.maxCpuCoreCount));
+        sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAutonomousDatabaseBase)) {
+            return false;
+        }
+
+        CreateAutonomousDatabaseBase other = (CreateAutonomousDatabaseBase) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.characterSet, other.characterSet)
+                && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
+                && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
+                && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
+                && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.adminPassword, other.adminPassword)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.isPreviewVersionWithServiceTermsAccepted,
+                        other.isPreviewVersionWithServiceTermsAccepted)
+                && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
+                && java.util.Objects.equals(this.isDedicated, other.isDedicated)
+                && java.util.Objects.equals(
+                        this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(
+                        this.isAccessControlEnabled, other.isAccessControlEnabled)
+                && java.util.Objects.equals(this.whitelistedIps, other.whitelistedIps)
+                && java.util.Objects.equals(
+                        this.arePrimaryWhitelistedIpsUsed, other.arePrimaryWhitelistedIpsUsed)
+                && java.util.Objects.equals(this.standbyWhitelistedIps, other.standbyWhitelistedIps)
+                && java.util.Objects.equals(this.isDataGuardEnabled, other.isDataGuardEnabled)
+                && java.util.Objects.equals(
+                        this.isLocalDataGuardEnabled, other.isLocalDataGuardEnabled)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.privateEndpointLabel, other.privateEndpointLabel)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(
+                        this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
+                && java.util.Objects.equals(
+                        this.autonomousMaintenanceScheduleType,
+                        other.autonomousMaintenanceScheduleType)
+                && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
+                && java.util.Objects.equals(
+                        this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
+                && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
+                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
+        result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInTBs == null
+                                ? 43
+                                : this.dataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInGBs == null
+                                ? 43
+                                : this.dataStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.isFreeTier == null ? 43 : this.isFreeTier.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPreviewVersionWithServiceTermsAccepted == null
+                                ? 43
+                                : this.isPreviewVersionWithServiceTermsAccepted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoScalingEnabled == null
+                                ? 43
+                                : this.isAutoScalingEnabled.hashCode());
+        result = (result * PRIME) + (this.isDedicated == null ? 43 : this.isDedicated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousContainerDatabaseId == null
+                                ? 43
+                                : this.autonomousContainerDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAccessControlEnabled == null
+                                ? 43
+                                : this.isAccessControlEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.whitelistedIps == null ? 43 : this.whitelistedIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.arePrimaryWhitelistedIpsUsed == null
+                                ? 43
+                                : this.arePrimaryWhitelistedIpsUsed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standbyWhitelistedIps == null
+                                ? 43
+                                : this.standbyWhitelistedIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDataGuardEnabled == null
+                                ? 43
+                                : this.isDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLocalDataGuardEnabled == null
+                                ? 43
+                                : this.isLocalDataGuardEnabled.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointLabel == null
+                                ? 43
+                                : this.privateEndpointLabel.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMtlsConnectionRequired == null
+                                ? 43
+                                : this.isMtlsConnectionRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousMaintenanceScheduleType == null
+                                ? 43
+                                : this.autonomousMaintenanceScheduleType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledOperations == null
+                                ? 43
+                                : this.scheduledOperations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoScalingForStorageEnabled == null
+                                ? 43
+                                : this.isAutoScalingForStorageEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxCpuCoreCount == null ? 43 : this.maxCpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        return result;
+    }
 
     /**
      * The source of the database: Use {@code NONE} for creating a new Autonomous Database. Use {@code DATABASE} for creating a new Autonomous Database by cloning an existing Autonomous Database. Use {@code CROSS_REGION_DATAGUARD} to create a standby Data Guard database in another region.

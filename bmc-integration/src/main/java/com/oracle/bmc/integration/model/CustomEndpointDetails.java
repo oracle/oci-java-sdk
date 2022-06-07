@@ -15,16 +15,26 @@ package com.oracle.bmc.integration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CustomEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CustomEndpointDetails {
+public final class CustomEndpointDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "hostname",
+        "certificateSecretId",
+        "certificateSecretVersion"
+    })
+    public CustomEndpointDetails(
+            String hostname, String certificateSecretId, Integer certificateSecretVersion) {
+        super();
+        this.hostname = hostname;
+        this.certificateSecretId = certificateSecretId;
+        this.certificateSecretVersion = certificateSecretVersion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
@@ -83,26 +93,97 @@ public class CustomEndpointDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A custom hostname to be used for the integration instance URL, in FQDN format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
-    String certificateSecretId;
+    private final String certificateSecretId;
+
+    public String getCertificateSecretId() {
+        return certificateSecretId;
+    }
 
     /**
      * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretVersion")
-    Integer certificateSecretVersion;
+    private final Integer certificateSecretVersion;
+
+    public Integer getCertificateSecretVersion() {
+        return certificateSecretVersion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CustomEndpointDetails(");
+        sb.append("hostname=").append(String.valueOf(this.hostname));
+        sb.append(", certificateSecretId=").append(String.valueOf(this.certificateSecretId));
+        sb.append(", certificateSecretVersion=")
+                .append(String.valueOf(this.certificateSecretVersion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CustomEndpointDetails)) {
+            return false;
+        }
+
+        CustomEndpointDetails other = (CustomEndpointDetails) o;
+        return java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.certificateSecretId, other.certificateSecretId)
+                && java.util.Objects.equals(
+                        this.certificateSecretVersion, other.certificateSecretVersion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateSecretId == null
+                                ? 43
+                                : this.certificateSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateSecretVersion == null
+                                ? 43
+                                : this.certificateSecretVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

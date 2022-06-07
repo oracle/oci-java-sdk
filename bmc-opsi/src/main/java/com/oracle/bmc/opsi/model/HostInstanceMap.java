@@ -15,14 +15,18 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostInstanceMap.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HostInstanceMap {
+public final class HostInstanceMap {
+    @Deprecated
+    @java.beans.ConstructorProperties({"hostName", "instanceName"})
+    public HostInstanceMap(String hostName, String instanceName) {
+        super();
+        this.hostName = hostName;
+        this.instanceName = instanceName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
@@ -67,18 +71,72 @@ public class HostInstanceMap {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The hostname of the database insight resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
-    String hostName;
+    private final String hostName;
+
+    public String getHostName() {
+        return hostName;
+    }
 
     /**
      * The instance name of the database insight resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
-    String instanceName;
+    private final String instanceName;
+
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostInstanceMap(");
+        sb.append("hostName=").append(String.valueOf(this.hostName));
+        sb.append(", instanceName=").append(String.valueOf(this.instanceName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostInstanceMap)) {
+            return false;
+        }
+
+        HostInstanceMap other = (HostInstanceMap) o;
+        return java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.instanceName, other.instanceName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.instanceName == null ? 43 : this.instanceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

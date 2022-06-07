@@ -15,16 +15,22 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MaskingAnalyticsSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MaskingAnalyticsSummary {
+public final class MaskingAnalyticsSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"metricName", "dimensions", "count"})
+    public MaskingAnalyticsSummary(
+            MetricName metricName, MaskingAnalyticsDimensions dimensions, Long count) {
+        super();
+        this.metricName = metricName;
+        this.dimensions = dimensions;
+        this.count = count;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private MetricName metricName;
@@ -80,10 +86,13 @@ public class MaskingAnalyticsSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the aggregation metric.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MetricName {
         MaskingPolicy("MASKING_POLICY"),
         MaskingDatabase("MASKING_DATABASE"),
@@ -99,6 +108,9 @@ public class MaskingAnalyticsSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MetricName.class);
 
         private final String value;
         private static java.util.Map<String, MetricName> map;
@@ -136,17 +148,74 @@ public class MaskingAnalyticsSummary {
      * The name of the aggregation metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
-    MetricName metricName;
+    private final MetricName metricName;
+
+    public MetricName getMetricName() {
+        return metricName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    MaskingAnalyticsDimensions dimensions;
+    private final MaskingAnalyticsDimensions dimensions;
+
+    public MaskingAnalyticsDimensions getDimensions() {
+        return dimensions;
+    }
 
     /**
      * The total count for the aggregation metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    Long count;
+    private final Long count;
+
+    public Long getCount() {
+        return count;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MaskingAnalyticsSummary(");
+        sb.append("metricName=").append(String.valueOf(this.metricName));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append(", count=").append(String.valueOf(this.count));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MaskingAnalyticsSummary)) {
+            return false;
+        }
+
+        MaskingAnalyticsSummary other = (MaskingAnalyticsSummary) o;
+        return java.util.Objects.equals(this.metricName, other.metricName)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

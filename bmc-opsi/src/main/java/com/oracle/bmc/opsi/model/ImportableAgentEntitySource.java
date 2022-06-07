@@ -8,7 +8,6 @@ package com.oracle.bmc.opsi.model;
  * Source of the importable agent entity.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.extern.slf4j.Slf4j
 public enum ImportableAgentEntitySource {
     MacsManagedExternalHost("MACS_MANAGED_EXTERNAL_HOST"),
 
@@ -17,6 +16,9 @@ public enum ImportableAgentEntitySource {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ImportableAgentEntitySource.class);
 
     private final String value;
     private static java.util.Map<String, ImportableAgentEntitySource> map;

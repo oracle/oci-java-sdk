@@ -9,14 +9,6 @@ import com.oracle.bmc.dts.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListApplianceExportJobsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListApplianceExportJobsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListApplianceExportJobsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class ListApplianceExportJobsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * filtering by lifecycleState
      */
@@ -70,11 +65,18 @@ public class ListApplianceExportJobsRequest
             throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * filtering by displayName
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * "List" call. For important details about how pagination works, see
@@ -85,6 +87,9 @@ public class ListApplianceExportJobsRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
@@ -93,6 +98,9 @@ public class ListApplianceExportJobsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -100,12 +108,92 @@ public class ListApplianceExportJobsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListApplianceExportJobsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * compartment id
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private LifecycleState lifecycleState = null;
+
+        /**
+         * filtering by lifecycleState
+         * @return this builder instance
+         */
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * filtering by displayName
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -162,5 +250,93 @@ public class ListApplianceExportJobsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListApplianceExportJobsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListApplianceExportJobsRequest
+         */
+        public ListApplianceExportJobsRequest buildWithoutInvocationCallback() {
+            ListApplianceExportJobsRequest request = new ListApplianceExportJobsRequest();
+            request.compartmentId = compartmentId;
+            request.lifecycleState = lifecycleState;
+            request.displayName = displayName;
+            request.limit = limit;
+            request.page = page;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListApplianceExportJobsRequest(compartmentId, lifecycleState, displayName, limit, page, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .lifecycleState(lifecycleState)
+                .displayName(displayName)
+                .limit(limit)
+                .page(page)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListApplianceExportJobsRequest)) {
+            return false;
+        }
+
+        ListApplianceExportJobsRequest other = (ListApplianceExportJobsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

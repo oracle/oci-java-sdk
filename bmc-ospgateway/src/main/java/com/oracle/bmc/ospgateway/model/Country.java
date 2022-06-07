@@ -15,14 +15,32 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Country.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Country {
+public final class Country {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "countryId",
+        "countryCode",
+        "countryName",
+        "languageId",
+        "ascii3CountryCode"
+    })
+    public Country(
+            java.math.BigDecimal countryId,
+            String countryCode,
+            String countryName,
+            java.math.BigDecimal languageId,
+            String ascii3CountryCode) {
+        super();
+        this.countryId = countryId;
+        this.countryCode = countryCode;
+        this.countryName = countryName;
+        this.languageId = languageId;
+        this.ascii3CountryCode = ascii3CountryCode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("countryId")
         private java.math.BigDecimal countryId;
@@ -100,36 +118,113 @@ public class Country {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryId")
-    java.math.BigDecimal countryId;
+    private final java.math.BigDecimal countryId;
+
+    public java.math.BigDecimal getCountryId() {
+        return countryId;
+    }
 
     /**
      * Country code in ISO-3166-1 2-letter format
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
-    String countryCode;
+    private final String countryCode;
+
+    public String getCountryCode() {
+        return countryCode;
+    }
 
     /**
      * Name of the country
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryName")
-    String countryName;
+    private final String countryName;
+
+    public String getCountryName() {
+        return countryName;
+    }
 
     /**
      * Language identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageId")
-    java.math.BigDecimal languageId;
+    private final java.math.BigDecimal languageId;
+
+    public java.math.BigDecimal getLanguageId() {
+        return languageId;
+    }
 
     /**
      * Country code in ISO-3166-1 3-letter format
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ascii3CountryCode")
-    String ascii3CountryCode;
+    private final String ascii3CountryCode;
+
+    public String getAscii3CountryCode() {
+        return ascii3CountryCode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Country(");
+        sb.append("countryId=").append(String.valueOf(this.countryId));
+        sb.append(", countryCode=").append(String.valueOf(this.countryCode));
+        sb.append(", countryName=").append(String.valueOf(this.countryName));
+        sb.append(", languageId=").append(String.valueOf(this.languageId));
+        sb.append(", ascii3CountryCode=").append(String.valueOf(this.ascii3CountryCode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Country)) {
+            return false;
+        }
+
+        Country other = (Country) o;
+        return java.util.Objects.equals(this.countryId, other.countryId)
+                && java.util.Objects.equals(this.countryCode, other.countryCode)
+                && java.util.Objects.equals(this.countryName, other.countryName)
+                && java.util.Objects.equals(this.languageId, other.languageId)
+                && java.util.Objects.equals(this.ascii3CountryCode, other.ascii3CountryCode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.countryId == null ? 43 : this.countryId.hashCode());
+        result = (result * PRIME) + (this.countryCode == null ? 43 : this.countryCode.hashCode());
+        result = (result * PRIME) + (this.countryName == null ? 43 : this.countryName.hashCode());
+        result = (result * PRIME) + (this.languageId == null ? 43 : this.languageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ascii3CountryCode == null ? 43 : this.ascii3CountryCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

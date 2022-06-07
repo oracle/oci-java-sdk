@@ -15,16 +15,20 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FacetedSearchStringFilterRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FacetedSearchStringFilterRequest {
+public final class FacetedSearchStringFilterRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({"field", "values"})
+    public FacetedSearchStringFilterRequest(String field, java.util.List<String> values) {
+        super();
+        this.field = field;
+        this.values = values;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private String field;
@@ -70,18 +74,72 @@ public class FacetedSearchStringFilterRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * String/boolean/numerical field name that needs to filtered with
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("field")
-    String field;
+    private final String field;
+
+    public String getField() {
+        return field;
+    }
 
     /**
      * Array of values that the search results needs to be filtered by.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
-    java.util.List<String> values;
+    private final java.util.List<String> values;
+
+    public java.util.List<String> getValues() {
+        return values;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FacetedSearchStringFilterRequest(");
+        sb.append("field=").append(String.valueOf(this.field));
+        sb.append(", values=").append(String.valueOf(this.values));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FacetedSearchStringFilterRequest)) {
+            return false;
+        }
+
+        FacetedSearchStringFilterRequest other = (FacetedSearchStringFilterRequest) o;
+        return java.util.Objects.equals(this.field, other.field)
+                && java.util.Objects.equals(this.values, other.values)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.field == null ? 43 : this.field.hashCode());
+        result = (result * PRIME) + (this.values == null ? 43 : this.values.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

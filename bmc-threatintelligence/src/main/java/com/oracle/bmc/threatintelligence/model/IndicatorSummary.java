@@ -15,14 +15,44 @@ package com.oracle.bmc.threatintelligence.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IndicatorSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IndicatorSummary {
+public final class IndicatorSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "type",
+        "value",
+        "confidence",
+        "compartmentId",
+        "threatTypes",
+        "lifecycleState",
+        "timeCreated",
+        "timeUpdated"
+    })
+    public IndicatorSummary(
+            String id,
+            IndicatorType type,
+            String value,
+            Integer confidence,
+            String compartmentId,
+            java.util.List<ThreatType> threatTypes,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.id = id;
+        this.type = type;
+        this.value = value;
+        this.confidence = confidence;
+        this.compartmentId = compartmentId;
+        this.threatTypes = threatTypes;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -149,60 +179,167 @@ public class IndicatorSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the indicator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Type of indicator
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    IndicatorType type;
+    private final IndicatorType type;
+
+    public IndicatorType getType() {
+        return type;
+    }
 
     /**
      * The value of indicator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
 
     /**
      * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
-    Integer confidence;
+    private final Integer confidence;
+
+    public Integer getConfidence() {
+        return confidence;
+    }
 
     /**
      * Compartment Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threatTypes")
-    java.util.List<ThreatType> threatTypes;
+    private final java.util.List<ThreatType> threatTypes;
+
+    public java.util.List<ThreatType> getThreatTypes() {
+        return threatTypes;
+    }
 
     /**
      * The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The time the data was first seen for this indicator. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IndicatorSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", confidence=").append(String.valueOf(this.confidence));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", threatTypes=").append(String.valueOf(this.threatTypes));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IndicatorSummary)) {
+            return false;
+        }
+
+        IndicatorSummary other = (IndicatorSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.confidence, other.confidence)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.threatTypes, other.threatTypes)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.confidence == null ? 43 : this.confidence.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.threatTypes == null ? 43 : this.threatTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

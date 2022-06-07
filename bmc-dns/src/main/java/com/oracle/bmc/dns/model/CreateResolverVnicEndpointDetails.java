@@ -20,22 +20,17 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateResolverVnicEndpointDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "endpointType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateResolverVnicEndpointDetails extends CreateResolverEndpointDetails {
+public final class CreateResolverVnicEndpointDetails extends CreateResolverEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -140,6 +135,10 @@ public class CreateResolverVnicEndpointDetails extends CreateResolverEndpointDet
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateResolverVnicEndpointDetails(
             String name,
@@ -158,7 +157,11 @@ public class CreateResolverVnicEndpointDetails extends CreateResolverEndpointDet
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
@@ -166,8 +169,56 @@ public class CreateResolverVnicEndpointDetails extends CreateResolverEndpointDet
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateResolverVnicEndpointDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateResolverVnicEndpointDetails)) {
+            return false;
+        }
+
+        CreateResolverVnicEndpointDetails other = (CreateResolverVnicEndpointDetails) o;
+        return java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

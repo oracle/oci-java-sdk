@@ -9,14 +9,6 @@ import com.oracle.bmc.oda.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ExportDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ExportDigitalAssistantRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ExportDigitalAssistantRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.oda.model.ExportDigitalAssistantDetails> {
@@ -26,20 +18,34 @@ public class ExportDigitalAssistantRequest
      */
     private String odaInstanceId;
 
+    public String getOdaInstanceId() {
+        return odaInstanceId;
+    }
     /**
      * Unique Digital Assistant identifier.
      */
     private String digitalAssistantId;
 
+    public String getDigitalAssistantId() {
+        return digitalAssistantId;
+    }
     /**
      * Where in Object Storage to export the Digital Assistant to.
      */
     private com.oracle.bmc.oda.model.ExportDigitalAssistantDetails exportDigitalAssistantDetails;
 
+    public com.oracle.bmc.oda.model.ExportDigitalAssistantDetails
+            getExportDigitalAssistantDetails() {
+        return exportDigitalAssistantDetails;
+    }
     /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -58,6 +64,53 @@ public class ExportDigitalAssistantRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String odaInstanceId = null;
+
+        /**
+         * Unique Digital Assistant instance identifier.
+         * @return this builder instance
+         */
+        public Builder odaInstanceId(String odaInstanceId) {
+            this.odaInstanceId = odaInstanceId;
+            return this;
+        }
+
+        private String digitalAssistantId = null;
+
+        /**
+         * Unique Digital Assistant identifier.
+         * @return this builder instance
+         */
+        public Builder digitalAssistantId(String digitalAssistantId) {
+            this.digitalAssistantId = digitalAssistantId;
+            return this;
+        }
+
+        private com.oracle.bmc.oda.model.ExportDigitalAssistantDetails
+                exportDigitalAssistantDetails = null;
+
+        /**
+         * Where in Object Storage to export the Digital Assistant to.
+         * @return this builder instance
+         */
+        public Builder exportDigitalAssistantDetails(
+                com.oracle.bmc.oda.model.ExportDigitalAssistantDetails
+                        exportDigitalAssistantDetails) {
+            this.exportDigitalAssistantDetails = exportDigitalAssistantDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -123,5 +176,91 @@ public class ExportDigitalAssistantRequest
             exportDigitalAssistantDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ExportDigitalAssistantRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ExportDigitalAssistantRequest
+         */
+        public ExportDigitalAssistantRequest buildWithoutInvocationCallback() {
+            ExportDigitalAssistantRequest request = new ExportDigitalAssistantRequest();
+            request.odaInstanceId = odaInstanceId;
+            request.digitalAssistantId = digitalAssistantId;
+            request.exportDigitalAssistantDetails = exportDigitalAssistantDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ExportDigitalAssistantRequest(odaInstanceId, digitalAssistantId, exportDigitalAssistantDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .odaInstanceId(odaInstanceId)
+                .digitalAssistantId(digitalAssistantId)
+                .exportDigitalAssistantDetails(exportDigitalAssistantDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(",digitalAssistantId=").append(String.valueOf(this.digitalAssistantId));
+        sb.append(",exportDigitalAssistantDetails=")
+                .append(String.valueOf(this.exportDigitalAssistantDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportDigitalAssistantRequest)) {
+            return false;
+        }
+
+        ExportDigitalAssistantRequest other = (ExportDigitalAssistantRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.digitalAssistantId, other.digitalAssistantId)
+                && java.util.Objects.equals(
+                        this.exportDigitalAssistantDetails, other.exportDigitalAssistantDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.digitalAssistantId == null
+                                ? 43
+                                : this.digitalAssistantId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportDigitalAssistantDetails == null
+                                ? 43
+                                : this.exportDigitalAssistantDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

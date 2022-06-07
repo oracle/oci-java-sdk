@@ -9,14 +9,6 @@ import com.oracle.bmc.opsi.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeSqlPlanInsightsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeSqlPlanInsightsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SummarizeSqlPlanInsightsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Unique SQL_ID for a SQL Statement.
      * Example: {@code 6rgjh9bjmy2s7}
@@ -32,18 +27,27 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String sqlIdentifier;
 
+    public String getSqlIdentifier() {
+        return sqlIdentifier;
+    }
     /**
      * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      *
      */
     private String databaseId;
 
+    public String getDatabaseId() {
+        return databaseId;
+    }
     /**
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
      *
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * Specify time period in ISO 8601 format with respect to current time.
      * Default is last 30 days represented by P30D.
@@ -53,6 +57,9 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String analysisTimeInterval;
 
+    public String getAnalysisTimeInterval() {
+        return analysisTimeInterval;
+    }
     /**
      * Analysis start time in UTC in ISO 8601 format(inclusive).
      * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
@@ -63,6 +70,9 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private java.util.Date timeIntervalStart;
 
+    public java.util.Date getTimeIntervalStart() {
+        return timeIntervalStart;
+    }
     /**
      * Analysis end time in UTC in ISO 8601 format(exclusive).
      * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
@@ -72,6 +82,9 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private java.util.Date timeIntervalEnd;
 
+    public java.util.Date getTimeIntervalEnd() {
+        return timeIntervalEnd;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from
      * the previous "List" call. For important details about how pagination works,
@@ -80,6 +93,9 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -87,12 +103,137 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeSqlPlanInsightsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String sqlIdentifier = null;
+
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         * Example: {@code 6rgjh9bjmy2s7}
+         *
+         * @return this builder instance
+         */
+        public Builder sqlIdentifier(String sqlIdentifier) {
+            this.sqlIdentifier = sqlIdentifier;
+            return this;
+        }
+
+        private String databaseId = null;
+
+        /**
+         * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
+         * @return this builder instance
+         */
+        public Builder databaseId(String databaseId) {
+            this.databaseId = databaseId;
+            return this;
+        }
+
+        private String id = null;
+
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         *
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private String analysisTimeInterval = null;
+
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         *
+         * @return this builder instance
+         */
+        public Builder analysisTimeInterval(String analysisTimeInterval) {
+            this.analysisTimeInterval = analysisTimeInterval;
+            return this;
+        }
+
+        private java.util.Date timeIntervalStart = null;
+
+        /**
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
+         * @return this builder instance
+         */
+        public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
+            this.timeIntervalStart = timeIntervalStart;
+            return this;
+        }
+
+        private java.util.Date timeIntervalEnd = null;
+
+        /**
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
+         * @return this builder instance
+         */
+        public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
+            this.timeIntervalEnd = timeIntervalEnd;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -152,5 +293,116 @@ public class SummarizeSqlPlanInsightsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of SummarizeSqlPlanInsightsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of SummarizeSqlPlanInsightsRequest
+         */
+        public SummarizeSqlPlanInsightsRequest buildWithoutInvocationCallback() {
+            SummarizeSqlPlanInsightsRequest request = new SummarizeSqlPlanInsightsRequest();
+            request.compartmentId = compartmentId;
+            request.sqlIdentifier = sqlIdentifier;
+            request.databaseId = databaseId;
+            request.id = id;
+            request.analysisTimeInterval = analysisTimeInterval;
+            request.timeIntervalStart = timeIntervalStart;
+            request.timeIntervalEnd = timeIntervalEnd;
+            request.page = page;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new SummarizeSqlPlanInsightsRequest(compartmentId, sqlIdentifier, databaseId, id, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, page, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .sqlIdentifier(sqlIdentifier)
+                .databaseId(databaseId)
+                .id(id)
+                .analysisTimeInterval(analysisTimeInterval)
+                .timeIntervalStart(timeIntervalStart)
+                .timeIntervalEnd(timeIntervalEnd)
+                .page(page)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
+        sb.append(",databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",analysisTimeInterval=").append(String.valueOf(this.analysisTimeInterval));
+        sb.append(",timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
+        sb.append(",timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeSqlPlanInsightsRequest)) {
+            return false;
+        }
+
+        SummarizeSqlPlanInsightsRequest other = (SummarizeSqlPlanInsightsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.sqlIdentifier, other.sqlIdentifier)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.analysisTimeInterval, other.analysisTimeInterval)
+                && java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
+                && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sqlIdentifier == null ? 43 : this.sqlIdentifier.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.analysisTimeInterval == null
+                                ? 43
+                                : this.analysisTimeInterval.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalStart == null ? 43 : this.timeIntervalStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

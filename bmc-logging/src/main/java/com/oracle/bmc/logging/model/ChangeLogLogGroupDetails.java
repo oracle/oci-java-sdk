@@ -15,16 +15,19 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ChangeLogLogGroupDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ChangeLogLogGroupDetails {
+public final class ChangeLogLogGroupDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"targetLogGroupId"})
+    public ChangeLogLogGroupDetails(String targetLogGroupId) {
+        super();
+        this.targetLogGroupId = targetLogGroupId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("targetLogGroupId")
         private String targetLogGroupId;
@@ -60,12 +63,61 @@ public class ChangeLogLogGroupDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Log group OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetLogGroupId")
-    String targetLogGroupId;
+    private final String targetLogGroupId;
+
+    public String getTargetLogGroupId() {
+        return targetLogGroupId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ChangeLogLogGroupDetails(");
+        sb.append("targetLogGroupId=").append(String.valueOf(this.targetLogGroupId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeLogLogGroupDetails)) {
+            return false;
+        }
+
+        ChangeLogLogGroupDetails other = (ChangeLogLogGroupDetails) o;
+        return java.util.Objects.equals(this.targetLogGroupId, other.targetLogGroupId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.targetLogGroupId == null ? 43 : this.targetLogGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

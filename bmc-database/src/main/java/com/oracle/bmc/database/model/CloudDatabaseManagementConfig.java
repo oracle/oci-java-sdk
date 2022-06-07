@@ -15,16 +15,21 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CloudDatabaseManagementConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CloudDatabaseManagementConfig {
+public final class CloudDatabaseManagementConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"managementStatus", "managementType"})
+    public CloudDatabaseManagementConfig(
+            ManagementStatus managementStatus, ManagementType managementType) {
+        super();
+        this.managementStatus = managementStatus;
+        this.managementType = managementType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("managementStatus")
         private ManagementStatus managementStatus;
@@ -71,10 +76,13 @@ public class CloudDatabaseManagementConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The status of the Database Management service.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ManagementStatus {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
@@ -90,6 +98,9 @@ public class CloudDatabaseManagementConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManagementStatus.class);
 
         private final String value;
         private static java.util.Map<String, ManagementStatus> map;
@@ -127,11 +138,15 @@ public class CloudDatabaseManagementConfig {
      * The status of the Database Management service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementStatus")
-    ManagementStatus managementStatus;
+    private final ManagementStatus managementStatus;
+
+    public ManagementStatus getManagementStatus() {
+        return managementStatus;
+    }
+
     /**
      * The Database Management type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ManagementType {
         Basic("BASIC"),
         Advanced("ADVANCED"),
@@ -141,6 +156,9 @@ public class CloudDatabaseManagementConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManagementType.class);
 
         private final String value;
         private static java.util.Map<String, ManagementType> map;
@@ -178,8 +196,58 @@ public class CloudDatabaseManagementConfig {
      * The Database Management type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementType")
-    ManagementType managementType;
+    private final ManagementType managementType;
+
+    public ManagementType getManagementType() {
+        return managementType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CloudDatabaseManagementConfig(");
+        sb.append("managementStatus=").append(String.valueOf(this.managementStatus));
+        sb.append(", managementType=").append(String.valueOf(this.managementType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CloudDatabaseManagementConfig)) {
+            return false;
+        }
+
+        CloudDatabaseManagementConfig other = (CloudDatabaseManagementConfig) o;
+        return java.util.Objects.equals(this.managementStatus, other.managementStatus)
+                && java.util.Objects.equals(this.managementType, other.managementType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.managementStatus == null ? 43 : this.managementStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementType == null ? 43 : this.managementType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,6 +7,7 @@ package com.oracle.bmc.certificatesmanagement;
 import com.oracle.bmc.certificatesmanagement.internal.http.*;
 import com.oracle.bmc.certificatesmanagement.requests.*;
 import com.oracle.bmc.certificatesmanagement.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for CertificatesManagement service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.certificatesmanagement.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.extern.slf4j.Slf4j
 public class CertificatesManagementAsyncClient implements CertificatesManagementAsync {
     /**
      * Service instance for CertificatesManagement.
@@ -35,7 +35,9 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                             "https://certificatesmanagement.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(CertificatesManagementAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -319,9 +321,13 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
          * @return the client
          */
         public CertificatesManagementAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new CertificatesManagementAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -331,6 +337,10 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

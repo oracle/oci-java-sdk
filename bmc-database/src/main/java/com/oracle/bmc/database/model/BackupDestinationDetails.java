@@ -15,16 +15,24 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BackupDestinationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackupDestinationDetails {
+public final class BackupDestinationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"type", "id", "vpcUser", "vpcPassword", "internetProxy"})
+    public BackupDestinationDetails(
+            Type type, String id, String vpcUser, String vpcPassword, String internetProxy) {
+        super();
+        this.type = type;
+        this.id = id;
+        this.vpcUser = vpcUser;
+        this.vpcPassword = vpcPassword;
+        this.internetProxy = internetProxy;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -102,10 +110,13 @@ public class BackupDestinationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Type of the database backup destination.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Nfs("NFS"),
         RecoveryAppliance("RECOVERY_APPLIANCE"),
@@ -117,6 +128,8 @@ public class BackupDestinationDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -153,32 +166,105 @@ public class BackupDestinationDetails {
      * Type of the database backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
-    String vpcUser;
+    private final String vpcUser;
+
+    public String getVpcUser() {
+        return vpcUser;
+    }
 
     /**
      * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
-    String vpcPassword;
+    private final String vpcPassword;
+
+    public String getVpcPassword() {
+        return vpcPassword;
+    }
 
     /**
      * Proxy URL to connect to object store.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
-    String internetProxy;
+    private final String internetProxy;
+
+    public String getInternetProxy() {
+        return internetProxy;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackupDestinationDetails(");
+        sb.append("type=").append(String.valueOf(this.type));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", vpcUser=").append(String.valueOf(this.vpcUser));
+        sb.append(", vpcPassword=").append(String.valueOf(this.vpcPassword));
+        sb.append(", internetProxy=").append(String.valueOf(this.internetProxy));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackupDestinationDetails)) {
+            return false;
+        }
+
+        BackupDestinationDetails other = (BackupDestinationDetails) o;
+        return java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.vpcUser, other.vpcUser)
+                && java.util.Objects.equals(this.vpcPassword, other.vpcPassword)
+                && java.util.Objects.equals(this.internetProxy, other.internetProxy)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.vpcUser == null ? 43 : this.vpcUser.hashCode());
+        result = (result * PRIME) + (this.vpcPassword == null ? 43 : this.vpcPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.internetProxy == null ? 43 : this.internetProxy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,19 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DeregisterAutonomousDatabaseDataSafeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeregisterAutonomousDatabaseDataSafeDetails {
+public final class DeregisterAutonomousDatabaseDataSafeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"pdbAdminPassword"})
+    public DeregisterAutonomousDatabaseDataSafeDetails(String pdbAdminPassword) {
+        super();
+        this.pdbAdminPassword = pdbAdminPassword;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
         private String pdbAdminPassword;
@@ -62,12 +65,62 @@ public class DeregisterAutonomousDatabaseDataSafeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The admin password provided during the creation of the database. This password is between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
-    String pdbAdminPassword;
+    private final String pdbAdminPassword;
+
+    public String getPdbAdminPassword() {
+        return pdbAdminPassword;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeregisterAutonomousDatabaseDataSafeDetails(");
+        sb.append("pdbAdminPassword=").append(String.valueOf(this.pdbAdminPassword));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeregisterAutonomousDatabaseDataSafeDetails)) {
+            return false;
+        }
+
+        DeregisterAutonomousDatabaseDataSafeDetails other =
+                (DeregisterAutonomousDatabaseDataSafeDetails) o;
+        return java.util.Objects.equals(this.pdbAdminPassword, other.pdbAdminPassword)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.pdbAdminPassword == null ? 43 : this.pdbAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

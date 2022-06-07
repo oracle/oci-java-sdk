@@ -15,16 +15,28 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseStorageAggregateMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseStorageAggregateMetrics {
+public final class DatabaseStorageAggregateMetrics {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "storageAllocated",
+        "storageUsed",
+        "storageUsedByTableSpace"
+    })
+    public DatabaseStorageAggregateMetrics(
+            MetricDataPoint storageAllocated,
+            MetricDataPoint storageUsed,
+            java.util.List<MetricDataPoint> storageUsedByTableSpace) {
+        super();
+        this.storageAllocated = storageAllocated;
+        this.storageUsed = storageUsed;
+        this.storageUsedByTableSpace = storageUsedByTableSpace;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("storageAllocated")
         private MetricDataPoint storageAllocated;
@@ -84,18 +96,87 @@ public class DatabaseStorageAggregateMetrics {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("storageAllocated")
-    MetricDataPoint storageAllocated;
+    private final MetricDataPoint storageAllocated;
+
+    public MetricDataPoint getStorageAllocated() {
+        return storageAllocated;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsed")
-    MetricDataPoint storageUsed;
+    private final MetricDataPoint storageUsed;
+
+    public MetricDataPoint getStorageUsed() {
+        return storageUsed;
+    }
 
     /**
      * A list of the storage metrics grouped by TableSpace for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsedByTableSpace")
-    java.util.List<MetricDataPoint> storageUsedByTableSpace;
+    private final java.util.List<MetricDataPoint> storageUsedByTableSpace;
+
+    public java.util.List<MetricDataPoint> getStorageUsedByTableSpace() {
+        return storageUsedByTableSpace;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseStorageAggregateMetrics(");
+        sb.append("storageAllocated=").append(String.valueOf(this.storageAllocated));
+        sb.append(", storageUsed=").append(String.valueOf(this.storageUsed));
+        sb.append(", storageUsedByTableSpace=")
+                .append(String.valueOf(this.storageUsedByTableSpace));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseStorageAggregateMetrics)) {
+            return false;
+        }
+
+        DatabaseStorageAggregateMetrics other = (DatabaseStorageAggregateMetrics) o;
+        return java.util.Objects.equals(this.storageAllocated, other.storageAllocated)
+                && java.util.Objects.equals(this.storageUsed, other.storageUsed)
+                && java.util.Objects.equals(
+                        this.storageUsedByTableSpace, other.storageUsedByTableSpace)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.storageAllocated == null ? 43 : this.storageAllocated.hashCode());
+        result = (result * PRIME) + (this.storageUsed == null ? 43 : this.storageUsed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageUsedByTableSpace == null
+                                ? 43
+                                : this.storageUsedByTableSpace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,37 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ModelTrainingResults.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModelTrainingResults {
+public final class ModelTrainingResults {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "fap",
+        "multivariateFap",
+        "isTrainingGoalAchieved",
+        "warning",
+        "signalDetails",
+        "rowReductionDetails"
+    })
+    public ModelTrainingResults(
+            Float fap,
+            Float multivariateFap,
+            Boolean isTrainingGoalAchieved,
+            String warning,
+            java.util.List<PerSignalDetails> signalDetails,
+            RowReductionDetails rowReductionDetails) {
+        super();
+        this.fap = fap;
+        this.multivariateFap = multivariateFap;
+        this.isTrainingGoalAchieved = isTrainingGoalAchieved;
+        this.warning = warning;
+        this.signalDetails = signalDetails;
+        this.rowReductionDetails = rowReductionDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fap")
         private Float fap;
@@ -118,39 +139,134 @@ public class ModelTrainingResults {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The final-achieved model accuracy metric on individual value level
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fap")
-    Float fap;
+    private final Float fap;
+
+    public Float getFap() {
+        return fap;
+    }
 
     /**
      * The model accuracy metric on timestamp level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("multivariateFap")
-    Float multivariateFap;
+    private final Float multivariateFap;
+
+    public Float getMultivariateFap() {
+        return multivariateFap;
+    }
 
     /**
      * A boolean value to indicate if train goal/targetFap is achieved for trained model
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTrainingGoalAchieved")
-    Boolean isTrainingGoalAchieved;
+    private final Boolean isTrainingGoalAchieved;
+
+    public Boolean getIsTrainingGoalAchieved() {
+        return isTrainingGoalAchieved;
+    }
 
     /**
      * A warning message to explain the reason when targetFap cannot be achieved for trained model
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warning")
-    String warning;
+    private final String warning;
+
+    public String getWarning() {
+        return warning;
+    }
 
     /**
      * The list of signal details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signalDetails")
-    java.util.List<PerSignalDetails> signalDetails;
+    private final java.util.List<PerSignalDetails> signalDetails;
+
+    public java.util.List<PerSignalDetails> getSignalDetails() {
+        return signalDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("rowReductionDetails")
-    RowReductionDetails rowReductionDetails;
+    private final RowReductionDetails rowReductionDetails;
+
+    public RowReductionDetails getRowReductionDetails() {
+        return rowReductionDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModelTrainingResults(");
+        sb.append("fap=").append(String.valueOf(this.fap));
+        sb.append(", multivariateFap=").append(String.valueOf(this.multivariateFap));
+        sb.append(", isTrainingGoalAchieved=").append(String.valueOf(this.isTrainingGoalAchieved));
+        sb.append(", warning=").append(String.valueOf(this.warning));
+        sb.append(", signalDetails=").append(String.valueOf(this.signalDetails));
+        sb.append(", rowReductionDetails=").append(String.valueOf(this.rowReductionDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModelTrainingResults)) {
+            return false;
+        }
+
+        ModelTrainingResults other = (ModelTrainingResults) o;
+        return java.util.Objects.equals(this.fap, other.fap)
+                && java.util.Objects.equals(this.multivariateFap, other.multivariateFap)
+                && java.util.Objects.equals(
+                        this.isTrainingGoalAchieved, other.isTrainingGoalAchieved)
+                && java.util.Objects.equals(this.warning, other.warning)
+                && java.util.Objects.equals(this.signalDetails, other.signalDetails)
+                && java.util.Objects.equals(this.rowReductionDetails, other.rowReductionDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fap == null ? 43 : this.fap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multivariateFap == null ? 43 : this.multivariateFap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isTrainingGoalAchieved == null
+                                ? 43
+                                : this.isTrainingGoalAchieved.hashCode());
+        result = (result * PRIME) + (this.warning == null ? 43 : this.warning.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.signalDetails == null ? 43 : this.signalDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rowReductionDetails == null
+                                ? 43
+                                : this.rowReductionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

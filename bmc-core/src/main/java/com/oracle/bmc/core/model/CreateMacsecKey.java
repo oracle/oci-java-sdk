@@ -15,14 +15,22 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateMacsecKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateMacsecKey {
+public final class CreateMacsecKey {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "connectivityAssociationNameSecretId",
+        "connectivityAssociationKeySecretId"
+    })
+    public CreateMacsecKey(
+            String connectivityAssociationNameSecretId, String connectivityAssociationKeySecretId) {
+        super();
+        this.connectivityAssociationNameSecretId = connectivityAssociationNameSecretId;
+        this.connectivityAssociationKeySecretId = connectivityAssociationKeySecretId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationNameSecretId")
         private String connectivityAssociationNameSecretId;
@@ -75,6 +83,10 @@ public class CreateMacsecKey {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
      * <p>
@@ -82,7 +94,11 @@ public class CreateMacsecKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationNameSecretId")
-    String connectivityAssociationNameSecretId;
+    private final String connectivityAssociationNameSecretId;
+
+    public String getConnectivityAssociationNameSecretId() {
+        return connectivityAssociationNameSecretId;
+    }
 
     /**
      * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
@@ -91,8 +107,68 @@ public class CreateMacsecKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationKeySecretId")
-    String connectivityAssociationKeySecretId;
+    private final String connectivityAssociationKeySecretId;
+
+    public String getConnectivityAssociationKeySecretId() {
+        return connectivityAssociationKeySecretId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateMacsecKey(");
+        sb.append("connectivityAssociationNameSecretId=")
+                .append(String.valueOf(this.connectivityAssociationNameSecretId));
+        sb.append(", connectivityAssociationKeySecretId=")
+                .append(String.valueOf(this.connectivityAssociationKeySecretId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateMacsecKey)) {
+            return false;
+        }
+
+        CreateMacsecKey other = (CreateMacsecKey) o;
+        return java.util.Objects.equals(
+                        this.connectivityAssociationNameSecretId,
+                        other.connectivityAssociationNameSecretId)
+                && java.util.Objects.equals(
+                        this.connectivityAssociationKeySecretId,
+                        other.connectivityAssociationKeySecretId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.connectivityAssociationNameSecretId == null
+                                ? 43
+                                : this.connectivityAssociationNameSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectivityAssociationKeySecretId == null
+                                ? 43
+                                : this.connectivityAssociationKeySecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

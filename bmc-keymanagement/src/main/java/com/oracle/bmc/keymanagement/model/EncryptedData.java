@@ -15,14 +15,29 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EncryptedData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EncryptedData {
+public final class EncryptedData {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "ciphertext",
+        "keyId",
+        "keyVersionId",
+        "encryptionAlgorithm"
+    })
+    public EncryptedData(
+            String ciphertext,
+            String keyId,
+            String keyVersionId,
+            EncryptionAlgorithm encryptionAlgorithm) {
+        super();
+        this.ciphertext = ciphertext;
+        this.keyId = keyId;
+        this.keyVersionId = keyVersionId;
+        this.encryptionAlgorithm = encryptionAlgorithm;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
         private String ciphertext;
@@ -90,23 +105,40 @@ public class EncryptedData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The encrypted data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
-    String ciphertext;
+    private final String ciphertext;
+
+    public String getCiphertext() {
+        return ciphertext;
+    }
 
     /**
      * The OCID of the key used to encrypt the ciphertext.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * The OCID of the key version used to encrypt the ciphertext.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
-    String keyVersionId;
+    private final String keyVersionId;
+
+    public String getKeyVersionId() {
+        return keyVersionId;
+    }
+
     /**
      * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
      * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
@@ -116,7 +148,6 @@ public class EncryptedData {
      * and uses OAEP.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EncryptionAlgorithm {
         Aes256Gcm("AES_256_GCM"),
         RsaOaepSha1("RSA_OAEP_SHA_1"),
@@ -127,6 +158,9 @@ public class EncryptedData {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EncryptionAlgorithm.class);
 
         private final String value;
         private static java.util.Map<String, EncryptionAlgorithm> map;
@@ -170,8 +204,64 @@ public class EncryptedData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
-    EncryptionAlgorithm encryptionAlgorithm;
+    private final EncryptionAlgorithm encryptionAlgorithm;
+
+    public EncryptionAlgorithm getEncryptionAlgorithm() {
+        return encryptionAlgorithm;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EncryptedData(");
+        sb.append("ciphertext=").append(String.valueOf(this.ciphertext));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
+        sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EncryptedData)) {
+            return false;
+        }
+
+        EncryptedData other = (EncryptedData) o;
+        return java.util.Objects.equals(this.ciphertext, other.ciphertext)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
+                && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ciphertext == null ? 43 : this.ciphertext.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.keyVersionId == null ? 43 : this.keyVersionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionAlgorithm == null
+                                ? 43
+                                : this.encryptionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

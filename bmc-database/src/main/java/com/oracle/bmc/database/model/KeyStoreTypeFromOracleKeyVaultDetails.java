@@ -15,22 +15,17 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = KeyStoreTypeFromOracleKeyVaultDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDetails {
+public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("connectionIps")
         private java.util.List<String> connectionIps;
@@ -99,6 +94,10 @@ public class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public KeyStoreTypeFromOracleKeyVaultDetails(
             java.util.List<String> connectionIps,
@@ -116,26 +115,96 @@ public class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDetails {
      * The list of Oracle Key Vault connection IP addresses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionIps")
-    java.util.List<String> connectionIps;
+    private final java.util.List<String> connectionIps;
+
+    public java.util.List<String> getConnectionIps() {
+        return connectionIps;
+    }
 
     /**
      * The administrator username to connect to Oracle Key Vault
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
-    String adminUsername;
+    private final String adminUsername;
+
+    public String getAdminUsername() {
+        return adminUsername;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
-    String secretId;
+    private final String secretId;
+
+    public String getSecretId() {
+        return secretId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("KeyStoreTypeFromOracleKeyVaultDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", connectionIps=").append(String.valueOf(this.connectionIps));
+        sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof KeyStoreTypeFromOracleKeyVaultDetails)) {
+            return false;
+        }
+
+        KeyStoreTypeFromOracleKeyVaultDetails other = (KeyStoreTypeFromOracleKeyVaultDetails) o;
+        return java.util.Objects.equals(this.connectionIps, other.connectionIps)
+                && java.util.Objects.equals(this.adminUsername, other.adminUsername)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.connectionIps == null ? 43 : this.connectionIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminUsername == null ? 43 : this.adminUsername.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,58 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateNodePoolDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateNodePoolDetails {
+public final class UpdateNodePoolDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "kubernetesVersion",
+        "initialNodeLabels",
+        "quantityPerSubnet",
+        "subnetIds",
+        "nodeConfigDetails",
+        "nodeMetadata",
+        "nodeSourceDetails",
+        "sshPublicKey",
+        "nodeShape",
+        "nodeShapeConfig",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateNodePoolDetails(
+            String name,
+            String kubernetesVersion,
+            java.util.List<KeyValue> initialNodeLabels,
+            Integer quantityPerSubnet,
+            java.util.List<String> subnetIds,
+            UpdateNodePoolNodeConfigDetails nodeConfigDetails,
+            java.util.Map<String, String> nodeMetadata,
+            NodeSourceDetails nodeSourceDetails,
+            String sshPublicKey,
+            String nodeShape,
+            UpdateNodeShapeConfigDetails nodeShapeConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.name = name;
+        this.kubernetesVersion = kubernetesVersion;
+        this.initialNodeLabels = initialNodeLabels;
+        this.quantityPerSubnet = quantityPerSubnet;
+        this.subnetIds = subnetIds;
+        this.nodeConfigDetails = nodeConfigDetails;
+        this.nodeMetadata = nodeMetadata;
+        this.nodeSourceDetails = nodeSourceDetails;
+        this.sshPublicKey = sshPublicKey;
+        this.nodeShape = nodeShape;
+        this.nodeShapeConfig = nodeShapeConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -196,23 +238,39 @@ public class UpdateNodePoolDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The new name for the cluster. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The version of Kubernetes to which the nodes in the node pool should be upgraded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
-    String kubernetesVersion;
+    private final String kubernetesVersion;
+
+    public String getKubernetesVersion() {
+        return kubernetesVersion;
+    }
 
     /**
      * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialNodeLabels")
-    java.util.List<KeyValue> initialNodeLabels;
+    private final java.util.List<KeyValue> initialNodeLabels;
+
+    public java.util.List<KeyValue> getInitialNodeLabels() {
+        return initialNodeLabels;
+    }
 
     /**
      * The number of nodes to have in each subnet specified in the subnetIds property. This property is deprecated,
@@ -223,7 +281,11 @@ public class UpdateNodePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
-    Integer quantityPerSubnet;
+    private final Integer quantityPerSubnet;
+
+    public Integer getQuantityPerSubnet() {
+        return quantityPerSubnet;
+    }
 
     /**
      * The OCIDs of the subnets in which to place nodes for this node pool. This property is deprecated,
@@ -232,7 +294,11 @@ public class UpdateNodePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
-    java.util.List<String> subnetIds;
+    private final java.util.List<String> subnetIds;
+
+    public java.util.List<String> getSubnetIds() {
+        return subnetIds;
+    }
 
     /**
      * The configuration of nodes in the node pool. Only one of the subnetIds or nodeConfigDetails
@@ -242,39 +308,63 @@ public class UpdateNodePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
-    UpdateNodePoolNodeConfigDetails nodeConfigDetails;
+    private final UpdateNodePoolNodeConfigDetails nodeConfigDetails;
+
+    public UpdateNodePoolNodeConfigDetails getNodeConfigDetails() {
+        return nodeConfigDetails;
+    }
 
     /**
      * A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
-    java.util.Map<String, String> nodeMetadata;
+    private final java.util.Map<String, String> nodeMetadata;
+
+    public java.util.Map<String, String> getNodeMetadata() {
+        return nodeMetadata;
+    }
 
     /**
      * Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
-    NodeSourceDetails nodeSourceDetails;
+    private final NodeSourceDetails nodeSourceDetails;
+
+    public NodeSourceDetails getNodeSourceDetails() {
+        return nodeSourceDetails;
+    }
 
     /**
      * The SSH public key to add to each node in the node pool on launch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKey")
-    String sshPublicKey;
+    private final String sshPublicKey;
+
+    public String getSshPublicKey() {
+        return sshPublicKey;
+    }
 
     /**
      * The name of the node shape of the nodes in the node pool used on launch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
-    String nodeShape;
+    private final String nodeShape;
+
+    public String getNodeShape() {
+        return nodeShape;
+    }
 
     /**
      * Specify the configuration of the shape to launch nodes in the node pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
-    UpdateNodeShapeConfigDetails nodeShapeConfig;
+    private final UpdateNodeShapeConfigDetails nodeShapeConfig;
+
+    public UpdateNodeShapeConfigDetails getNodeShapeConfig() {
+        return nodeShapeConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -283,7 +373,11 @@ public class UpdateNodePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -292,8 +386,99 @@ public class UpdateNodePoolDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateNodePoolDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", kubernetesVersion=").append(String.valueOf(this.kubernetesVersion));
+        sb.append(", initialNodeLabels=").append(String.valueOf(this.initialNodeLabels));
+        sb.append(", quantityPerSubnet=").append(String.valueOf(this.quantityPerSubnet));
+        sb.append(", subnetIds=").append(String.valueOf(this.subnetIds));
+        sb.append(", nodeConfigDetails=").append(String.valueOf(this.nodeConfigDetails));
+        sb.append(", nodeMetadata=").append(String.valueOf(this.nodeMetadata));
+        sb.append(", nodeSourceDetails=").append(String.valueOf(this.nodeSourceDetails));
+        sb.append(", sshPublicKey=").append(String.valueOf(this.sshPublicKey));
+        sb.append(", nodeShape=").append(String.valueOf(this.nodeShape));
+        sb.append(", nodeShapeConfig=").append(String.valueOf(this.nodeShapeConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateNodePoolDetails)) {
+            return false;
+        }
+
+        UpdateNodePoolDetails other = (UpdateNodePoolDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.kubernetesVersion, other.kubernetesVersion)
+                && java.util.Objects.equals(this.initialNodeLabels, other.initialNodeLabels)
+                && java.util.Objects.equals(this.quantityPerSubnet, other.quantityPerSubnet)
+                && java.util.Objects.equals(this.subnetIds, other.subnetIds)
+                && java.util.Objects.equals(this.nodeConfigDetails, other.nodeConfigDetails)
+                && java.util.Objects.equals(this.nodeMetadata, other.nodeMetadata)
+                && java.util.Objects.equals(this.nodeSourceDetails, other.nodeSourceDetails)
+                && java.util.Objects.equals(this.sshPublicKey, other.sshPublicKey)
+                && java.util.Objects.equals(this.nodeShape, other.nodeShape)
+                && java.util.Objects.equals(this.nodeShapeConfig, other.nodeShapeConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kubernetesVersion == null ? 43 : this.kubernetesVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialNodeLabels == null ? 43 : this.initialNodeLabels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.quantityPerSubnet == null ? 43 : this.quantityPerSubnet.hashCode());
+        result = (result * PRIME) + (this.subnetIds == null ? 43 : this.subnetIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodeConfigDetails == null ? 43 : this.nodeConfigDetails.hashCode());
+        result = (result * PRIME) + (this.nodeMetadata == null ? 43 : this.nodeMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodeSourceDetails == null ? 43 : this.nodeSourceDetails.hashCode());
+        result = (result * PRIME) + (this.sshPublicKey == null ? 43 : this.sshPublicKey.hashCode());
+        result = (result * PRIME) + (this.nodeShape == null ? 43 : this.nodeShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodeShapeConfig == null ? 43 : this.nodeShapeConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

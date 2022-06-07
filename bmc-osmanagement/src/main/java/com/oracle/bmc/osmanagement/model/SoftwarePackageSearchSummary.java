@@ -15,16 +15,46 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SoftwarePackageSearchSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SoftwarePackageSearchSummary {
+public final class SoftwarePackageSearchSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "name",
+        "type",
+        "version",
+        "architecture",
+        "summary",
+        "advisoryType",
+        "errata",
+        "softwareSources"
+    })
+    public SoftwarePackageSearchSummary(
+            String displayName,
+            String name,
+            String type,
+            String version,
+            String architecture,
+            String summary,
+            UpdateTypes advisoryType,
+            java.util.List<Id> errata,
+            java.util.List<SoftwareSourceId> softwareSources) {
+        super();
+        this.displayName = displayName;
+        this.name = name;
+        this.type = type;
+        this.version = version;
+        this.architecture = architecture;
+        this.summary = summary;
+        this.advisoryType = advisoryType;
+        this.errata = errata;
+        this.softwareSources = softwareSources;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -151,60 +181,165 @@ public class SoftwarePackageSearchSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Package name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Unique identifier for the package. NOTE - This is not an OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Type of the package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * Version of the package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * the architecture for which this software was built
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
-    String architecture;
+    private final String architecture;
+
+    public String getArchitecture() {
+        return architecture;
+    }
 
     /**
      * a summary description of the software package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
-    String summary;
+    private final String summary;
+
+    public String getSummary() {
+        return summary;
+    }
 
     /**
      * Type of the erratum.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
-    UpdateTypes advisoryType;
+    private final UpdateTypes advisoryType;
+
+    public UpdateTypes getAdvisoryType() {
+        return advisoryType;
+    }
 
     /**
      * List of errata containing this software package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errata")
-    java.util.List<Id> errata;
+    private final java.util.List<Id> errata;
+
+    public java.util.List<Id> getErrata() {
+        return errata;
+    }
 
     /**
      * list of software sources that provide the software package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
-    java.util.List<SoftwareSourceId> softwareSources;
+    private final java.util.List<SoftwareSourceId> softwareSources;
+
+    public java.util.List<SoftwareSourceId> getSoftwareSources() {
+        return softwareSources;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SoftwarePackageSearchSummary(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", architecture=").append(String.valueOf(this.architecture));
+        sb.append(", summary=").append(String.valueOf(this.summary));
+        sb.append(", advisoryType=").append(String.valueOf(this.advisoryType));
+        sb.append(", errata=").append(String.valueOf(this.errata));
+        sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SoftwarePackageSearchSummary)) {
+            return false;
+        }
+
+        SoftwarePackageSearchSummary other = (SoftwarePackageSearchSummary) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.architecture, other.architecture)
+                && java.util.Objects.equals(this.summary, other.summary)
+                && java.util.Objects.equals(this.advisoryType, other.advisoryType)
+                && java.util.Objects.equals(this.errata, other.errata)
+                && java.util.Objects.equals(this.softwareSources, other.softwareSources)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
+        result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
+        result = (result * PRIME) + (this.advisoryType == null ? 43 : this.advisoryType.hashCode());
+        result = (result * PRIME) + (this.errata == null ? 43 : this.errata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,77 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReportDefinition.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ReportDefinition {
+public final class ReportDefinition {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "id",
+        "parentId",
+        "category",
+        "description",
+        "dataSource",
+        "isSeeded",
+        "displayOrder",
+        "timeCreated",
+        "timeUpdated",
+        "scimFilter",
+        "columnInfo",
+        "columnFilters",
+        "columnSortings",
+        "summary",
+        "compartmentId",
+        "lifecycleState",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public ReportDefinition(
+            String displayName,
+            String id,
+            String parentId,
+            Category category,
+            String description,
+            ReportDefinitionDataSource dataSource,
+            Boolean isSeeded,
+            Integer displayOrder,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String scimFilter,
+            java.util.List<Column> columnInfo,
+            java.util.List<ColumnFilter> columnFilters,
+            java.util.List<ColumnSorting> columnSortings,
+            java.util.List<Summary> summary,
+            String compartmentId,
+            ReportDefinitionLifecycleState lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.displayName = displayName;
+        this.id = id;
+        this.parentId = parentId;
+        this.category = category;
+        this.description = description;
+        this.dataSource = dataSource;
+        this.isSeeded = isSeeded;
+        this.displayOrder = displayOrder;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.scimFilter = scimFilter;
+        this.columnInfo = columnInfo;
+        this.columnFilters = columnFilters;
+        this.columnSortings = columnSortings;
+        this.summary = summary;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -271,27 +334,43 @@ public class ReportDefinition {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the report definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the report definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
-    String parentId;
+    private final String parentId;
+
+    public String getParentId() {
+        return parentId;
+    }
+
     /**
      * Specifies the name of the category that this report belongs to.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Category {
         CustomReports("CUSTOM_REPORTS"),
         Summary("SUMMARY"),
@@ -302,6 +381,9 @@ public class ReportDefinition {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Category.class);
 
         private final String value;
         private static java.util.Map<String, Category> map;
@@ -339,85 +421,141 @@ public class ReportDefinition {
      * Specifies the name of the category that this report belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    Category category;
+    private final Category category;
+
+    public Category getCategory() {
+        return category;
+    }
 
     /**
      * A description of the report definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
-    ReportDefinitionDataSource dataSource;
+    private final ReportDefinitionDataSource dataSource;
+
+    public ReportDefinitionDataSource getDataSource() {
+        return dataSource;
+    }
 
     /**
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSeeded")
-    Boolean isSeeded;
+    private final Boolean isSeeded;
+
+    public Boolean getIsSeeded() {
+        return isSeeded;
+    }
 
     /**
      * Specifies how the report definitions are ordered in the display.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
-    Integer displayOrder;
+    private final Integer displayOrder;
+
+    public Integer getDisplayOrder() {
+        return displayOrder;
+    }
 
     /**
      * Specifies the time at which the report definition was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time of the report definition update in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Additional scim filters used to specialize the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
-    String scimFilter;
+    private final String scimFilter;
+
+    public String getScimFilter() {
+        return scimFilter;
+    }
 
     /**
      * An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnInfo")
-    java.util.List<Column> columnInfo;
+    private final java.util.List<Column> columnInfo;
+
+    public java.util.List<Column> getColumnInfo() {
+        return columnInfo;
+    }
 
     /**
      * An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnFilters")
-    java.util.List<ColumnFilter> columnFilters;
+    private final java.util.List<ColumnFilter> columnFilters;
+
+    public java.util.List<ColumnFilter> getColumnFilters() {
+        return columnFilters;
+    }
 
     /**
      * An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnSortings")
-    java.util.List<ColumnSorting> columnSortings;
+    private final java.util.List<ColumnSorting> columnSortings;
+
+    public java.util.List<ColumnSorting> getColumnSortings() {
+        return columnSortings;
+    }
 
     /**
      * An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
-    java.util.List<Summary> summary;
+    private final java.util.List<Summary> summary;
+
+    public java.util.List<Summary> getSummary() {
+        return summary;
+    }
 
     /**
      * The OCID of the compartment containing the report definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The current state of the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ReportDefinitionLifecycleState lifecycleState;
+    private final ReportDefinitionLifecycleState lifecycleState;
+
+    public ReportDefinitionLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -426,7 +564,11 @@ public class ReportDefinition {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -435,7 +577,11 @@ public class ReportDefinition {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
@@ -443,8 +589,116 @@ public class ReportDefinition {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ReportDefinition(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", parentId=").append(String.valueOf(this.parentId));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", dataSource=").append(String.valueOf(this.dataSource));
+        sb.append(", isSeeded=").append(String.valueOf(this.isSeeded));
+        sb.append(", displayOrder=").append(String.valueOf(this.displayOrder));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", scimFilter=").append(String.valueOf(this.scimFilter));
+        sb.append(", columnInfo=").append(String.valueOf(this.columnInfo));
+        sb.append(", columnFilters=").append(String.valueOf(this.columnFilters));
+        sb.append(", columnSortings=").append(String.valueOf(this.columnSortings));
+        sb.append(", summary=").append(String.valueOf(this.summary));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ReportDefinition)) {
+            return false;
+        }
+
+        ReportDefinition other = (ReportDefinition) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.parentId, other.parentId)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.dataSource, other.dataSource)
+                && java.util.Objects.equals(this.isSeeded, other.isSeeded)
+                && java.util.Objects.equals(this.displayOrder, other.displayOrder)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.scimFilter, other.scimFilter)
+                && java.util.Objects.equals(this.columnInfo, other.columnInfo)
+                && java.util.Objects.equals(this.columnFilters, other.columnFilters)
+                && java.util.Objects.equals(this.columnSortings, other.columnSortings)
+                && java.util.Objects.equals(this.summary, other.summary)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.dataSource == null ? 43 : this.dataSource.hashCode());
+        result = (result * PRIME) + (this.isSeeded == null ? 43 : this.isSeeded.hashCode());
+        result = (result * PRIME) + (this.displayOrder == null ? 43 : this.displayOrder.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.scimFilter == null ? 43 : this.scimFilter.hashCode());
+        result = (result * PRIME) + (this.columnInfo == null ? 43 : this.columnInfo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.columnFilters == null ? 43 : this.columnFilters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.columnSortings == null ? 43 : this.columnSortings.hashCode());
+        result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

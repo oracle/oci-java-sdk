@@ -15,12 +15,6 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,23 +33,76 @@ package com.oracle.bmc.devops.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DeliveredArtifact {
+    @Deprecated
+    @java.beans.ConstructorProperties({"deployArtifactId", "outputArtifactName"})
+    protected DeliveredArtifact(String deployArtifactId, String outputArtifactName) {
+        super();
+        this.deployArtifactId = deployArtifactId;
+        this.outputArtifactName = outputArtifactName;
+    }
 
     /**
      * The OCID of the deployment artifact definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
-    String deployArtifactId;
+    private final String deployArtifactId;
+
+    public String getDeployArtifactId() {
+        return deployArtifactId;
+    }
 
     /**
      * Name of the output artifact defined in the build specification file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputArtifactName")
-    String outputArtifactName;
+    private final String outputArtifactName;
+
+    public String getOutputArtifactName() {
+        return outputArtifactName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeliveredArtifact(");
+        sb.append("deployArtifactId=").append(String.valueOf(this.deployArtifactId));
+        sb.append(", outputArtifactName=").append(String.valueOf(this.outputArtifactName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeliveredArtifact)) {
+            return false;
+        }
+
+        DeliveredArtifact other = (DeliveredArtifact) o;
+        return java.util.Objects.equals(this.deployArtifactId, other.deployArtifactId)
+                && java.util.Objects.equals(this.outputArtifactName, other.outputArtifactName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.deployArtifactId == null ? 43 : this.deployArtifactId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputArtifactName == null
+                                ? 43
+                                : this.outputArtifactName.hashCode());
+        return result;
+    }
 
     /**
      * Type of artifact delivered.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ArtifactType {
         GenericArtifact("GENERIC_ARTIFACT"),
         Ocir("OCIR"),
@@ -65,6 +112,9 @@ public class DeliveredArtifact {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ArtifactType.class);
 
         private final String value;
         private static java.util.Map<String, ArtifactType> map;

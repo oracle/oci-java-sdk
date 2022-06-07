@@ -19,16 +19,40 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TableUsageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TableUsageSummary {
+public final class TableUsageSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "secondsInPeriod",
+        "readUnits",
+        "writeUnits",
+        "storageInGBs",
+        "readThrottleCount",
+        "writeThrottleCount",
+        "storageThrottleCount"
+    })
+    public TableUsageSummary(
+            Integer secondsInPeriod,
+            Integer readUnits,
+            Integer writeUnits,
+            Integer storageInGBs,
+            Integer readThrottleCount,
+            Integer writeThrottleCount,
+            Integer storageThrottleCount) {
+        super();
+        this.secondsInPeriod = secondsInPeriod;
+        this.readUnits = readUnits;
+        this.writeUnits = writeUnits;
+        this.storageInGBs = storageInGBs;
+        this.readThrottleCount = readThrottleCount;
+        this.writeThrottleCount = writeThrottleCount;
+        this.storageThrottleCount = storageThrottleCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("secondsInPeriod")
         private Integer secondsInPeriod;
@@ -133,29 +157,49 @@ public class TableUsageSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The length of the sampling period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secondsInPeriod")
-    Integer secondsInPeriod;
+    private final Integer secondsInPeriod;
+
+    public Integer getSecondsInPeriod() {
+        return secondsInPeriod;
+    }
 
     /**
      * Read throughput during the sampling period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("readUnits")
-    Integer readUnits;
+    private final Integer readUnits;
+
+    public Integer getReadUnits() {
+        return readUnits;
+    }
 
     /**
      * Write throughput during the sampling period.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("writeUnits")
-    Integer writeUnits;
+    private final Integer writeUnits;
+
+    public Integer getWriteUnits() {
+        return writeUnits;
+    }
 
     /**
      * The size of the table, in GB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageInGBs")
-    Integer storageInGBs;
+    private final Integer storageInGBs;
+
+    public Integer getStorageInGBs() {
+        return storageInGBs;
+    }
 
     /**
      * The number of times reads were throttled due to exceeding
@@ -163,7 +207,11 @@ public class TableUsageSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("readThrottleCount")
-    Integer readThrottleCount;
+    private final Integer readThrottleCount;
+
+    public Integer getReadThrottleCount() {
+        return readThrottleCount;
+    }
 
     /**
      * The number of times writes were throttled due to exceeding
@@ -171,7 +219,11 @@ public class TableUsageSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("writeThrottleCount")
-    Integer writeThrottleCount;
+    private final Integer writeThrottleCount;
+
+    public Integer getWriteThrottleCount() {
+        return writeThrottleCount;
+    }
 
     /**
      * The number of times writes were throttled because the table
@@ -179,8 +231,81 @@ public class TableUsageSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageThrottleCount")
-    Integer storageThrottleCount;
+    private final Integer storageThrottleCount;
+
+    public Integer getStorageThrottleCount() {
+        return storageThrottleCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TableUsageSummary(");
+        sb.append("secondsInPeriod=").append(String.valueOf(this.secondsInPeriod));
+        sb.append(", readUnits=").append(String.valueOf(this.readUnits));
+        sb.append(", writeUnits=").append(String.valueOf(this.writeUnits));
+        sb.append(", storageInGBs=").append(String.valueOf(this.storageInGBs));
+        sb.append(", readThrottleCount=").append(String.valueOf(this.readThrottleCount));
+        sb.append(", writeThrottleCount=").append(String.valueOf(this.writeThrottleCount));
+        sb.append(", storageThrottleCount=").append(String.valueOf(this.storageThrottleCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TableUsageSummary)) {
+            return false;
+        }
+
+        TableUsageSummary other = (TableUsageSummary) o;
+        return java.util.Objects.equals(this.secondsInPeriod, other.secondsInPeriod)
+                && java.util.Objects.equals(this.readUnits, other.readUnits)
+                && java.util.Objects.equals(this.writeUnits, other.writeUnits)
+                && java.util.Objects.equals(this.storageInGBs, other.storageInGBs)
+                && java.util.Objects.equals(this.readThrottleCount, other.readThrottleCount)
+                && java.util.Objects.equals(this.writeThrottleCount, other.writeThrottleCount)
+                && java.util.Objects.equals(this.storageThrottleCount, other.storageThrottleCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.secondsInPeriod == null ? 43 : this.secondsInPeriod.hashCode());
+        result = (result * PRIME) + (this.readUnits == null ? 43 : this.readUnits.hashCode());
+        result = (result * PRIME) + (this.writeUnits == null ? 43 : this.writeUnits.hashCode());
+        result = (result * PRIME) + (this.storageInGBs == null ? 43 : this.storageInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.readThrottleCount == null ? 43 : this.readThrottleCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.writeThrottleCount == null
+                                ? 43
+                                : this.writeThrottleCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageThrottleCount == null
+                                ? 43
+                                : this.storageThrottleCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

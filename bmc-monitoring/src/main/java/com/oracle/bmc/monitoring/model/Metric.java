@@ -17,14 +17,32 @@ package com.oracle.bmc.monitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Metric.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Metric {
+public final class Metric {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "namespace",
+        "resourceGroup",
+        "compartmentId",
+        "dimensions"
+    })
+    public Metric(
+            String name,
+            String namespace,
+            String resourceGroup,
+            String compartmentId,
+            java.util.Map<String, String> dimensions) {
+        super();
+        this.name = name;
+        this.namespace = namespace;
+        this.resourceGroup = resourceGroup;
+        this.compartmentId = compartmentId;
+        this.dimensions = dimensions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -102,6 +120,10 @@ public class Metric {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the metric.
      * <p>
@@ -109,7 +131,11 @@ public class Metric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The source service or application emitting the metric.
@@ -118,7 +144,11 @@ public class Metric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
@@ -128,7 +158,11 @@ public class Metric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
-    String resourceGroup;
+    private final String resourceGroup;
+
+    public String getResourceGroup() {
+        return resourceGroup;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing
@@ -136,7 +170,11 @@ public class Metric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
@@ -146,8 +184,67 @@ public class Metric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    java.util.Map<String, String> dimensions;
+    private final java.util.Map<String, String> dimensions;
+
+    public java.util.Map<String, String> getDimensions() {
+        return dimensions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Metric(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Metric)) {
+            return false;
+        }
+
+        Metric other = (Metric) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

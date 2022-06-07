@@ -15,16 +15,76 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SubscriptionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SubscriptionSummary {
+public final class SubscriptionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "subscriptionPlanNumber",
+        "planType",
+        "timeStart",
+        "shipToCustAcctSiteId",
+        "shipToCustAcctRoleId",
+        "billToCustAccountId",
+        "isIntentToPay",
+        "currencyCode",
+        "gsiOrgCode",
+        "languageCode",
+        "organizationId",
+        "upgradeState",
+        "upgradeStateDetails",
+        "taxInfo",
+        "paymentOptions",
+        "paymentGateway",
+        "billingAddress",
+        "timePlanUpgrade"
+    })
+    public SubscriptionSummary(
+            String id,
+            String subscriptionPlanNumber,
+            PlanType planType,
+            java.util.Date timeStart,
+            String shipToCustAcctSiteId,
+            String shipToCustAcctRoleId,
+            String billToCustAccountId,
+            Boolean isIntentToPay,
+            String currencyCode,
+            String gsiOrgCode,
+            String languageCode,
+            String organizationId,
+            UpgradeState upgradeState,
+            UpgradeStateDetails upgradeStateDetails,
+            TaxInfo taxInfo,
+            java.util.List<PaymentOption> paymentOptions,
+            PaymentGateway paymentGateway,
+            BillingAddress billingAddress,
+            java.util.Date timePlanUpgrade) {
+        super();
+        this.id = id;
+        this.subscriptionPlanNumber = subscriptionPlanNumber;
+        this.planType = planType;
+        this.timeStart = timeStart;
+        this.shipToCustAcctSiteId = shipToCustAcctSiteId;
+        this.shipToCustAcctRoleId = shipToCustAcctRoleId;
+        this.billToCustAccountId = billToCustAccountId;
+        this.isIntentToPay = isIntentToPay;
+        this.currencyCode = currencyCode;
+        this.gsiOrgCode = gsiOrgCode;
+        this.languageCode = languageCode;
+        this.organizationId = organizationId;
+        this.upgradeState = upgradeState;
+        this.upgradeStateDetails = upgradeStateDetails;
+        this.taxInfo = taxInfo;
+        this.paymentOptions = paymentOptions;
+        this.paymentGateway = paymentGateway;
+        this.billingAddress = billingAddress;
+        this.timePlanUpgrade = timePlanUpgrade;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -261,21 +321,33 @@ public class SubscriptionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Subscription id identifier (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Subscription plan number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionPlanNumber")
-    String subscriptionPlanNumber;
+    private final String subscriptionPlanNumber;
+
+    public String getSubscriptionPlanNumber() {
+        return subscriptionPlanNumber;
+    }
+
     /**
      * Subscription plan type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PlanType {
         FreeTier("FREE_TIER"),
         Payg("PAYG"),
@@ -285,6 +357,9 @@ public class SubscriptionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlanType.class);
 
         private final String value;
         private static java.util.Map<String, PlanType> map;
@@ -322,65 +397,105 @@ public class SubscriptionSummary {
      * Subscription plan type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planType")
-    PlanType planType;
+    private final PlanType planType;
+
+    public PlanType getPlanType() {
+        return planType;
+    }
 
     /**
      * Start date of the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Ship to customer account site address id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctSiteId")
-    String shipToCustAcctSiteId;
+    private final String shipToCustAcctSiteId;
+
+    public String getShipToCustAcctSiteId() {
+        return shipToCustAcctSiteId;
+    }
 
     /**
      * Ship to customer account role.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctRoleId")
-    String shipToCustAcctRoleId;
+    private final String shipToCustAcctRoleId;
+
+    public String getShipToCustAcctRoleId() {
+        return shipToCustAcctRoleId;
+    }
 
     /**
      * Bill to customer Account id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billToCustAccountId")
-    String billToCustAccountId;
+    private final String billToCustAccountId;
+
+    public String getBillToCustAccountId() {
+        return billToCustAccountId;
+    }
 
     /**
      * Payment intension.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
-    Boolean isIntentToPay;
+    private final Boolean isIntentToPay;
+
+    public Boolean getIsIntentToPay() {
+        return isIntentToPay;
+    }
 
     /**
      * Currency code
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
-    String currencyCode;
+    private final String currencyCode;
+
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
 
     /**
      * GSI Subscription external code.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gsiOrgCode")
-    String gsiOrgCode;
+    private final String gsiOrgCode;
+
+    public String getGsiOrgCode() {
+        return gsiOrgCode;
+    }
 
     /**
      * Language short code (en, de, hu, etc)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
-    String languageCode;
+    private final String languageCode;
+
+    public String getLanguageCode() {
+        return languageCode;
+    }
 
     /**
      * GSI organization external identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("organizationId")
-    String organizationId;
+    private final String organizationId;
+
+    public String getOrganizationId() {
+        return organizationId;
+    }
+
     /**
      * Status of the upgrade.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum UpgradeState {
         Promo("PROMO"),
         Submitted("SUBMITTED"),
@@ -392,6 +507,9 @@ public class SubscriptionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UpgradeState.class);
 
         private final String value;
         private static java.util.Map<String, UpgradeState> map;
@@ -429,11 +547,15 @@ public class SubscriptionSummary {
      * Status of the upgrade.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("upgradeState")
-    UpgradeState upgradeState;
+    private final UpgradeState upgradeState;
+
+    public UpgradeState getUpgradeState() {
+        return upgradeState;
+    }
+
     /**
      * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum UpgradeStateDetails {
         TaxError("TAX_ERROR"),
         UpgradeError("UPGRADE_ERROR"),
@@ -443,6 +565,9 @@ public class SubscriptionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UpgradeStateDetails.class);
 
         private final String value;
         private static java.util.Map<String, UpgradeStateDetails> map;
@@ -480,29 +605,179 @@ public class SubscriptionSummary {
      * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("upgradeStateDetails")
-    UpgradeStateDetails upgradeStateDetails;
+    private final UpgradeStateDetails upgradeStateDetails;
+
+    public UpgradeStateDetails getUpgradeStateDetails() {
+        return upgradeStateDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("taxInfo")
-    TaxInfo taxInfo;
+    private final TaxInfo taxInfo;
+
+    public TaxInfo getTaxInfo() {
+        return taxInfo;
+    }
 
     /**
      * Payment option list of a subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("paymentOptions")
-    java.util.List<PaymentOption> paymentOptions;
+    private final java.util.List<PaymentOption> paymentOptions;
+
+    public java.util.List<PaymentOption> getPaymentOptions() {
+        return paymentOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("paymentGateway")
-    PaymentGateway paymentGateway;
+    private final PaymentGateway paymentGateway;
+
+    public PaymentGateway getPaymentGateway() {
+        return paymentGateway;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("billingAddress")
-    BillingAddress billingAddress;
+    private final BillingAddress billingAddress;
+
+    public BillingAddress getBillingAddress() {
+        return billingAddress;
+    }
 
     /**
      * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePlanUpgrade")
-    java.util.Date timePlanUpgrade;
+    private final java.util.Date timePlanUpgrade;
+
+    public java.util.Date getTimePlanUpgrade() {
+        return timePlanUpgrade;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SubscriptionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", subscriptionPlanNumber=").append(String.valueOf(this.subscriptionPlanNumber));
+        sb.append(", planType=").append(String.valueOf(this.planType));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", shipToCustAcctSiteId=").append(String.valueOf(this.shipToCustAcctSiteId));
+        sb.append(", shipToCustAcctRoleId=").append(String.valueOf(this.shipToCustAcctRoleId));
+        sb.append(", billToCustAccountId=").append(String.valueOf(this.billToCustAccountId));
+        sb.append(", isIntentToPay=").append(String.valueOf(this.isIntentToPay));
+        sb.append(", currencyCode=").append(String.valueOf(this.currencyCode));
+        sb.append(", gsiOrgCode=").append(String.valueOf(this.gsiOrgCode));
+        sb.append(", languageCode=").append(String.valueOf(this.languageCode));
+        sb.append(", organizationId=").append(String.valueOf(this.organizationId));
+        sb.append(", upgradeState=").append(String.valueOf(this.upgradeState));
+        sb.append(", upgradeStateDetails=").append(String.valueOf(this.upgradeStateDetails));
+        sb.append(", taxInfo=").append(String.valueOf(this.taxInfo));
+        sb.append(", paymentOptions=").append(String.valueOf(this.paymentOptions));
+        sb.append(", paymentGateway=").append(String.valueOf(this.paymentGateway));
+        sb.append(", billingAddress=").append(String.valueOf(this.billingAddress));
+        sb.append(", timePlanUpgrade=").append(String.valueOf(this.timePlanUpgrade));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SubscriptionSummary)) {
+            return false;
+        }
+
+        SubscriptionSummary other = (SubscriptionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.subscriptionPlanNumber, other.subscriptionPlanNumber)
+                && java.util.Objects.equals(this.planType, other.planType)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.shipToCustAcctSiteId, other.shipToCustAcctSiteId)
+                && java.util.Objects.equals(this.shipToCustAcctRoleId, other.shipToCustAcctRoleId)
+                && java.util.Objects.equals(this.billToCustAccountId, other.billToCustAccountId)
+                && java.util.Objects.equals(this.isIntentToPay, other.isIntentToPay)
+                && java.util.Objects.equals(this.currencyCode, other.currencyCode)
+                && java.util.Objects.equals(this.gsiOrgCode, other.gsiOrgCode)
+                && java.util.Objects.equals(this.languageCode, other.languageCode)
+                && java.util.Objects.equals(this.organizationId, other.organizationId)
+                && java.util.Objects.equals(this.upgradeState, other.upgradeState)
+                && java.util.Objects.equals(this.upgradeStateDetails, other.upgradeStateDetails)
+                && java.util.Objects.equals(this.taxInfo, other.taxInfo)
+                && java.util.Objects.equals(this.paymentOptions, other.paymentOptions)
+                && java.util.Objects.equals(this.paymentGateway, other.paymentGateway)
+                && java.util.Objects.equals(this.billingAddress, other.billingAddress)
+                && java.util.Objects.equals(this.timePlanUpgrade, other.timePlanUpgrade)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionPlanNumber == null
+                                ? 43
+                                : this.subscriptionPlanNumber.hashCode());
+        result = (result * PRIME) + (this.planType == null ? 43 : this.planType.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shipToCustAcctSiteId == null
+                                ? 43
+                                : this.shipToCustAcctSiteId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shipToCustAcctRoleId == null
+                                ? 43
+                                : this.shipToCustAcctRoleId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.billToCustAccountId == null
+                                ? 43
+                                : this.billToCustAccountId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIntentToPay == null ? 43 : this.isIntentToPay.hashCode());
+        result = (result * PRIME) + (this.currencyCode == null ? 43 : this.currencyCode.hashCode());
+        result = (result * PRIME) + (this.gsiOrgCode == null ? 43 : this.gsiOrgCode.hashCode());
+        result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.organizationId == null ? 43 : this.organizationId.hashCode());
+        result = (result * PRIME) + (this.upgradeState == null ? 43 : this.upgradeState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upgradeStateDetails == null
+                                ? 43
+                                : this.upgradeStateDetails.hashCode());
+        result = (result * PRIME) + (this.taxInfo == null ? 43 : this.taxInfo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.paymentOptions == null ? 43 : this.paymentOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.paymentGateway == null ? 43 : this.paymentGateway.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.billingAddress == null ? 43 : this.billingAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePlanUpgrade == null ? 43 : this.timePlanUpgrade.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

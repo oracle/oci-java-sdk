@@ -9,9 +9,9 @@ import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.extern.slf4j.Slf4j
 public class LoadBalancerClient implements LoadBalancer {
     /**
      * Service instance for LoadBalancer.
@@ -25,13 +25,17 @@ public class LoadBalancerClient implements LoadBalancer {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LoadBalancerAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final LoadBalancerWaiters waiters;
 
     private final LoadBalancerPaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -400,9 +404,13 @@ public class LoadBalancerClient implements LoadBalancer {
          * @return the client
          */
         public LoadBalancerClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new LoadBalancerClient(
                     authenticationDetailsProvider,
                     configuration,

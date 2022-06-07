@@ -16,14 +16,19 @@ package com.oracle.bmc.optimizer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Action.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Action {
+public final class Action {
+    @Deprecated
+    @java.beans.ConstructorProperties({"type", "description", "url"})
+    public Action(ActionType type, String description, String url) {
+        super();
+        this.type = type;
+        this.description = description;
+        this.url = url;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ActionType type;
@@ -78,24 +83,85 @@ public class Action {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The status of the resource action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    ActionType type;
+    private final ActionType type;
+
+    public ActionType getType() {
+        return type;
+    }
 
     /**
      * Text describing the recommended action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The URL path to documentation that explains how to perform the action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Action(");
+        sb.append("type=").append(String.valueOf(this.type));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", url=").append(String.valueOf(this.url));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Action)) {
+            return false;
+        }
+
+        Action other = (Action) o;
+        return java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

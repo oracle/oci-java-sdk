@@ -15,14 +15,20 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UploadData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UploadData {
+public final class UploadData {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "contentUrl", "mimeType", "fileExtension"})
+    public UploadData(String name, String contentUrl, String mimeType, String fileExtension) {
+        super();
+        this.name = name;
+        this.contentUrl = contentUrl;
+        this.mimeType = mimeType;
+        this.fileExtension = fileExtension;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -89,30 +95,100 @@ public class UploadData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name used to refer to the upload data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The content URL of the upload data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
-    String contentUrl;
+    private final String contentUrl;
+
+    public String getContentUrl() {
+        return contentUrl;
+    }
 
     /**
      * The MIME type of the upload data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
-    String mimeType;
+    private final String mimeType;
+
+    public String getMimeType() {
+        return mimeType;
+    }
 
     /**
      * The file extension of the upload data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileExtension")
-    String fileExtension;
+    private final String fileExtension;
+
+    public String getFileExtension() {
+        return fileExtension;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UploadData(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", contentUrl=").append(String.valueOf(this.contentUrl));
+        sb.append(", mimeType=").append(String.valueOf(this.mimeType));
+        sb.append(", fileExtension=").append(String.valueOf(this.fileExtension));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UploadData)) {
+            return false;
+        }
+
+        UploadData other = (UploadData) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.contentUrl, other.contentUrl)
+                && java.util.Objects.equals(this.mimeType, other.mimeType)
+                && java.util.Objects.equals(this.fileExtension, other.fileExtension)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.contentUrl == null ? 43 : this.contentUrl.hashCode());
+        result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileExtension == null ? 43 : this.fileExtension.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

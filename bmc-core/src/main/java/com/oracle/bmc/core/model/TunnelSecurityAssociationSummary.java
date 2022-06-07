@@ -16,16 +16,34 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TunnelSecurityAssociationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TunnelSecurityAssociationSummary {
+public final class TunnelSecurityAssociationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "cpeSubnet",
+        "oracleSubnet",
+        "tunnelSaStatus",
+        "tunnelSaErrorInfo",
+        "time"
+    })
+    public TunnelSecurityAssociationSummary(
+            String cpeSubnet,
+            String oracleSubnet,
+            TunnelSaStatus tunnelSaStatus,
+            String tunnelSaErrorInfo,
+            String time) {
+        super();
+        this.cpeSubnet = cpeSubnet;
+        this.oracleSubnet = oracleSubnet;
+        this.tunnelSaStatus = tunnelSaStatus;
+        this.tunnelSaErrorInfo = tunnelSaErrorInfo;
+        this.time = time;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cpeSubnet")
         private String cpeSubnet;
@@ -104,21 +122,33 @@ public class TunnelSecurityAssociationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The IP address and mask of the partner subnet used in policy based VPNs or static routes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeSubnet")
-    String cpeSubnet;
+    private final String cpeSubnet;
+
+    public String getCpeSubnet() {
+        return cpeSubnet;
+    }
 
     /**
      * The IP address and mask of the local subnet used in policy based VPNs or static routes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleSubnet")
-    String oracleSubnet;
+    private final String oracleSubnet;
+
+    public String getOracleSubnet() {
+        return oracleSubnet;
+    }
+
     /**
      * The IPSec tunnel's phase one status.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TunnelSaStatus {
         Initiating("INITIATING"),
         Listening("LISTENING"),
@@ -132,6 +162,9 @@ public class TunnelSecurityAssociationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TunnelSaStatus.class);
 
         private final String value;
         private static java.util.Map<String, TunnelSaStatus> map;
@@ -169,21 +202,88 @@ public class TunnelSecurityAssociationSummary {
      * The IPSec tunnel's phase one status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaStatus")
-    TunnelSaStatus tunnelSaStatus;
+    private final TunnelSaStatus tunnelSaStatus;
+
+    public TunnelSaStatus getTunnelSaStatus() {
+        return tunnelSaStatus;
+    }
 
     /**
      * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two details and a possible reason the tunnel is not {@code UP}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaErrorInfo")
-    String tunnelSaErrorInfo;
+    private final String tunnelSaErrorInfo;
+
+    public String getTunnelSaErrorInfo() {
+        return tunnelSaErrorInfo;
+    }
 
     /**
      * Time in the current state, in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
-    String time;
+    private final String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TunnelSecurityAssociationSummary(");
+        sb.append("cpeSubnet=").append(String.valueOf(this.cpeSubnet));
+        sb.append(", oracleSubnet=").append(String.valueOf(this.oracleSubnet));
+        sb.append(", tunnelSaStatus=").append(String.valueOf(this.tunnelSaStatus));
+        sb.append(", tunnelSaErrorInfo=").append(String.valueOf(this.tunnelSaErrorInfo));
+        sb.append(", time=").append(String.valueOf(this.time));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TunnelSecurityAssociationSummary)) {
+            return false;
+        }
+
+        TunnelSecurityAssociationSummary other = (TunnelSecurityAssociationSummary) o;
+        return java.util.Objects.equals(this.cpeSubnet, other.cpeSubnet)
+                && java.util.Objects.equals(this.oracleSubnet, other.oracleSubnet)
+                && java.util.Objects.equals(this.tunnelSaStatus, other.tunnelSaStatus)
+                && java.util.Objects.equals(this.tunnelSaErrorInfo, other.tunnelSaErrorInfo)
+                && java.util.Objects.equals(this.time, other.time)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.cpeSubnet == null ? 43 : this.cpeSubnet.hashCode());
+        result = (result * PRIME) + (this.oracleSubnet == null ? 43 : this.oracleSubnet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tunnelSaStatus == null ? 43 : this.tunnelSaStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tunnelSaErrorInfo == null ? 43 : this.tunnelSaErrorInfo.hashCode());
+        result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

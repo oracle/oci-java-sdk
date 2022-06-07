@@ -16,22 +16,17 @@ package com.oracle.bmc.applicationmigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OacDiscoveryDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OacDiscoveryDetails extends DiscoveryDetails {
+public final class OacDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
         private String serviceInstanceUser;
@@ -79,6 +74,10 @@ public class OacDiscoveryDetails extends DiscoveryDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public OacDiscoveryDetails(String serviceInstanceUser, String serviceInstancePassword) {
         super();
@@ -90,14 +89,76 @@ public class OacDiscoveryDetails extends DiscoveryDetails {
      * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
-    String serviceInstanceUser;
+    private final String serviceInstanceUser;
+
+    public String getServiceInstanceUser() {
+        return serviceInstanceUser;
+    }
 
     /**
      * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
-    String serviceInstancePassword;
+    private final String serviceInstancePassword;
+
+    public String getServiceInstancePassword() {
+        return serviceInstancePassword;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OacDiscoveryDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", serviceInstanceUser=").append(String.valueOf(this.serviceInstanceUser));
+        sb.append(", serviceInstancePassword=")
+                .append(String.valueOf(this.serviceInstancePassword));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OacDiscoveryDetails)) {
+            return false;
+        }
+
+        OacDiscoveryDetails other = (OacDiscoveryDetails) o;
+        return java.util.Objects.equals(this.serviceInstanceUser, other.serviceInstanceUser)
+                && java.util.Objects.equals(
+                        this.serviceInstancePassword, other.serviceInstancePassword)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.serviceInstanceUser == null
+                                ? 43
+                                : this.serviceInstanceUser.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceInstancePassword == null
+                                ? 43
+                                : this.serviceInstancePassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

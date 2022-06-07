@@ -15,16 +15,21 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AuthorizeSubscriptionPaymentReceipt.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AuthorizeSubscriptionPaymentReceipt {
+public final class AuthorizeSubscriptionPaymentReceipt {
+    @Deprecated
+    @java.beans.ConstructorProperties({"headerId", "apiToken", "userToken"})
+    public AuthorizeSubscriptionPaymentReceipt(String headerId, String apiToken, String userToken) {
+        super();
+        this.headerId = headerId;
+        this.apiToken = apiToken;
+        this.userToken = userToken;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("headerId")
         private String headerId;
@@ -80,24 +85,85 @@ public class AuthorizeSubscriptionPaymentReceipt {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Payment header id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerId")
-    String headerId;
+    private final String headerId;
+
+    public String getHeaderId() {
+        return headerId;
+    }
 
     /**
      * Parameters in a token for Payment Service
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiToken")
-    String apiToken;
+    private final String apiToken;
+
+    public String getApiToken() {
+        return apiToken;
+    }
 
     /**
      * Session token created for Payment Service
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userToken")
-    String userToken;
+    private final String userToken;
+
+    public String getUserToken() {
+        return userToken;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuthorizeSubscriptionPaymentReceipt(");
+        sb.append("headerId=").append(String.valueOf(this.headerId));
+        sb.append(", apiToken=").append(String.valueOf(this.apiToken));
+        sb.append(", userToken=").append(String.valueOf(this.userToken));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuthorizeSubscriptionPaymentReceipt)) {
+            return false;
+        }
+
+        AuthorizeSubscriptionPaymentReceipt other = (AuthorizeSubscriptionPaymentReceipt) o;
+        return java.util.Objects.equals(this.headerId, other.headerId)
+                && java.util.Objects.equals(this.apiToken, other.apiToken)
+                && java.util.Objects.equals(this.userToken, other.userToken)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.headerId == null ? 43 : this.headerId.hashCode());
+        result = (result * PRIME) + (this.apiToken == null ? 43 : this.apiToken.hashCode());
+        result = (result * PRIME) + (this.userToken == null ? 43 : this.userToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

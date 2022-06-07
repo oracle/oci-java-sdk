@@ -15,12 +15,6 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,21 +33,94 @@ package com.oracle.bmc.dataintegration.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AbstractDataOperationConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "metadataConfigProperties",
+        "derivedAttributes",
+        "callAttribute"
+    })
+    protected AbstractDataOperationConfig(
+            java.util.Map<String, String> metadataConfigProperties,
+            java.util.Map<String, String> derivedAttributes,
+            BipCallAttribute callAttribute) {
+        super();
+        this.metadataConfigProperties = metadataConfigProperties;
+        this.derivedAttributes = derivedAttributes;
+        this.callAttribute = callAttribute;
+    }
 
     /**
      * This map is used for passing extra metatdata configuration that is required by read / write operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataConfigProperties")
-    java.util.Map<String, String> metadataConfigProperties;
+    private final java.util.Map<String, String> metadataConfigProperties;
+
+    public java.util.Map<String, String> getMetadataConfigProperties() {
+        return metadataConfigProperties;
+    }
 
     /**
      * this map is used for passing BIP report parameter values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("derivedAttributes")
-    java.util.Map<String, String> derivedAttributes;
+    private final java.util.Map<String, String> derivedAttributes;
+
+    public java.util.Map<String, String> getDerivedAttributes() {
+        return derivedAttributes;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("callAttribute")
-    BipCallAttribute callAttribute;
+    private final BipCallAttribute callAttribute;
+
+    public BipCallAttribute getCallAttribute() {
+        return callAttribute;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AbstractDataOperationConfig(");
+        sb.append("metadataConfigProperties=")
+                .append(String.valueOf(this.metadataConfigProperties));
+        sb.append(", derivedAttributes=").append(String.valueOf(this.derivedAttributes));
+        sb.append(", callAttribute=").append(String.valueOf(this.callAttribute));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AbstractDataOperationConfig)) {
+            return false;
+        }
+
+        AbstractDataOperationConfig other = (AbstractDataOperationConfig) o;
+        return java.util.Objects.equals(
+                        this.metadataConfigProperties, other.metadataConfigProperties)
+                && java.util.Objects.equals(this.derivedAttributes, other.derivedAttributes)
+                && java.util.Objects.equals(this.callAttribute, other.callAttribute);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.metadataConfigProperties == null
+                                ? 43
+                                : this.metadataConfigProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.derivedAttributes == null ? 43 : this.derivedAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.callAttribute == null ? 43 : this.callAttribute.hashCode());
+        return result;
+    }
 
     /**
      * The type of data operation.

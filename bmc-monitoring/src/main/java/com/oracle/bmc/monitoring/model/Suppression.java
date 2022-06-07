@@ -17,14 +17,20 @@ package com.oracle.bmc.monitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Suppression.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Suppression {
+public final class Suppression {
+    @Deprecated
+    @java.beans.ConstructorProperties({"description", "timeSuppressFrom", "timeSuppressUntil"})
+    public Suppression(
+            String description, java.util.Date timeSuppressFrom, java.util.Date timeSuppressUntil) {
+        super();
+        this.description = description;
+        this.timeSuppressFrom = timeSuppressFrom;
+        this.timeSuppressUntil = timeSuppressUntil;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -82,6 +88,10 @@ public class Suppression {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Human-readable reason for suppressing alarm notifications.
      * It does not have to be unique, and it's changeable.
@@ -94,7 +104,11 @@ public class Suppression {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
@@ -103,7 +117,11 @@ public class Suppression {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
-    java.util.Date timeSuppressFrom;
+    private final java.util.Date timeSuppressFrom;
+
+    public java.util.Date getTimeSuppressFrom() {
+        return timeSuppressFrom;
+    }
 
     /**
      * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
@@ -112,8 +130,61 @@ public class Suppression {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")
-    java.util.Date timeSuppressUntil;
+    private final java.util.Date timeSuppressUntil;
+
+    public java.util.Date getTimeSuppressUntil() {
+        return timeSuppressUntil;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Suppression(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", timeSuppressFrom=").append(String.valueOf(this.timeSuppressFrom));
+        sb.append(", timeSuppressUntil=").append(String.valueOf(this.timeSuppressUntil));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Suppression)) {
+            return false;
+        }
+
+        Suppression other = (Suppression) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeSuppressFrom, other.timeSuppressFrom)
+                && java.util.Objects.equals(this.timeSuppressUntil, other.timeSuppressUntil)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSuppressFrom == null ? 43 : this.timeSuppressFrom.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSuppressUntil == null ? 43 : this.timeSuppressUntil.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

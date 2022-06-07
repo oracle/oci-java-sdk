@@ -15,16 +15,23 @@ package com.oracle.bmc.limits.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LimitValueSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LimitValueSummary {
+public final class LimitValueSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "scopeType", "availabilityDomain", "value"})
+    public LimitValueSummary(
+            String name, ScopeType scopeType, String availabilityDomain, Long value) {
+        super();
+        this.name = name;
+        this.scopeType = scopeType;
+        this.availabilityDomain = availabilityDomain;
+        this.value = value;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -92,17 +99,25 @@ public class LimitValueSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The scope type of the limit.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ScopeType {
         Global("GLOBAL"),
         Region("REGION"),
@@ -113,6 +128,9 @@ public class LimitValueSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ScopeType.class);
 
         private final String value;
         private static java.util.Map<String, ScopeType> map;
@@ -151,20 +169,84 @@ public class LimitValueSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopeType")
-    ScopeType scopeType;
+    private final ScopeType scopeType;
+
+    public ScopeType getScopeType() {
+        return scopeType;
+    }
 
     /**
      * If present, the returned value is only specific to this availability domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The resource limit value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    Long value;
+    private final Long value;
+
+    public Long getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LimitValueSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", scopeType=").append(String.valueOf(this.scopeType));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LimitValueSummary)) {
+            return false;
+        }
+
+        LimitValueSummary other = (LimitValueSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.scopeType, other.scopeType)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.scopeType == null ? 43 : this.scopeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

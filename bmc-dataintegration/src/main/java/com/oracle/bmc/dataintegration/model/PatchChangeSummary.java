@@ -15,16 +15,40 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PatchChangeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PatchChangeSummary {
+public final class PatchChangeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "name",
+        "namePath",
+        "type",
+        "objectVersion",
+        "identifier",
+        "action"
+    })
+    public PatchChangeSummary(
+            String key,
+            String name,
+            String namePath,
+            Type type,
+            Integer objectVersion,
+            String identifier,
+            Action action) {
+        super();
+        this.key = key;
+        this.name = name;
+        this.namePath = namePath;
+        this.type = type;
+        this.objectVersion = objectVersion;
+        this.identifier = identifier;
+        this.action = action;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -123,27 +147,43 @@ public class PatchChangeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The fully qualified path of the published object, which would include its project and folder.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namePath")
-    String namePath;
+    private final String namePath;
+
+    public String getNamePath() {
+        return namePath;
+    }
+
     /**
      * The type of the object in patch.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
@@ -157,6 +197,8 @@ public class PatchChangeSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -193,23 +235,35 @@ public class PatchChangeSummary {
      * The type of the object in patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The object version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
     /**
      * The patch action indicating if object was created, updated, or deleted.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Created("CREATED"),
         Deleted("DELETED"),
@@ -220,6 +274,8 @@ public class PatchChangeSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -257,8 +313,71 @@ public class PatchChangeSummary {
      * The patch action indicating if object was created, updated, or deleted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PatchChangeSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", namePath=").append(String.valueOf(this.namePath));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PatchChangeSummary)) {
+            return false;
+        }
+
+        PatchChangeSummary other = (PatchChangeSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.namePath, other.namePath)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.namePath == null ? 43 : this.namePath.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

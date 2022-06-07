@@ -16,16 +16,28 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ZoneTransferServer.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ZoneTransferServer {
+public final class ZoneTransferServer {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "address",
+        "port",
+        "isTransferSource",
+        "isTransferDestination"
+    })
+    public ZoneTransferServer(
+            String address, Integer port, Boolean isTransferSource, Boolean isTransferDestination) {
+        super();
+        this.address = address;
+        this.port = port;
+        this.isTransferSource = isTransferSource;
+        this.isTransferDestination = isTransferDestination;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
@@ -93,33 +105,107 @@ public class ZoneTransferServer {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The server's IP address (IPv4 or IPv6).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("address")
-    String address;
+    private final String address;
+
+    public String getAddress() {
+        return address;
+    }
 
     /**
      * The server's port.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * A Boolean flag indicating whether or not the server is a zone data transfer source.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTransferSource")
-    Boolean isTransferSource;
+    private final Boolean isTransferSource;
+
+    public Boolean getIsTransferSource() {
+        return isTransferSource;
+    }
 
     /**
      * A Boolean flag indicating whether or not the server is a zone data transfer destination.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTransferDestination")
-    Boolean isTransferDestination;
+    private final Boolean isTransferDestination;
+
+    public Boolean getIsTransferDestination() {
+        return isTransferDestination;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ZoneTransferServer(");
+        sb.append("address=").append(String.valueOf(this.address));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", isTransferSource=").append(String.valueOf(this.isTransferSource));
+        sb.append(", isTransferDestination=").append(String.valueOf(this.isTransferDestination));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ZoneTransferServer)) {
+            return false;
+        }
+
+        ZoneTransferServer other = (ZoneTransferServer) o;
+        return java.util.Objects.equals(this.address, other.address)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.isTransferSource, other.isTransferSource)
+                && java.util.Objects.equals(this.isTransferDestination, other.isTransferDestination)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.address == null ? 43 : this.address.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isTransferSource == null ? 43 : this.isTransferSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isTransferDestination == null
+                                ? 43
+                                : this.isTransferDestination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

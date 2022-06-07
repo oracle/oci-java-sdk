@@ -15,14 +15,35 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InstanceMetrics.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceMetrics {
+public final class InstanceMetrics {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "hostName",
+        "instanceName",
+        "usage",
+        "capacity",
+        "utilizationPercent",
+        "usageChangePercent"
+    })
+    public InstanceMetrics(
+            String hostName,
+            String instanceName,
+            Double usage,
+            Double capacity,
+            Double utilizationPercent,
+            Double usageChangePercent) {
+        super();
+        this.hostName = hostName;
+        this.instanceName = instanceName;
+        this.usage = usage;
+        this.capacity = capacity;
+        this.utilizationPercent = utilizationPercent;
+        this.usageChangePercent = usageChangePercent;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
@@ -116,44 +137,134 @@ public class InstanceMetrics {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The hostname of the database insight resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
-    String hostName;
+    private final String hostName;
+
+    public String getHostName() {
+        return hostName;
+    }
 
     /**
      * The instance name of the database insight resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
-    String instanceName;
+    private final String instanceName;
+
+    public String getInstanceName() {
+        return instanceName;
+    }
 
     /**
      * Total amount used of the resource metric type (CPU, STORAGE).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
-    Double usage;
+    private final Double usage;
+
+    public Double getUsage() {
+        return usage;
+    }
 
     /**
      * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
-    Double capacity;
+    private final Double capacity;
+
+    public Double getCapacity() {
+        return capacity;
+    }
 
     /**
      * Resource utilization in percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
-    Double utilizationPercent;
+    private final Double utilizationPercent;
+
+    public Double getUtilizationPercent() {
+        return utilizationPercent;
+    }
 
     /**
      * Change in resource utilization in percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
-    Double usageChangePercent;
+    private final Double usageChangePercent;
+
+    public Double getUsageChangePercent() {
+        return usageChangePercent;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceMetrics(");
+        sb.append("hostName=").append(String.valueOf(this.hostName));
+        sb.append(", instanceName=").append(String.valueOf(this.instanceName));
+        sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append(", capacity=").append(String.valueOf(this.capacity));
+        sb.append(", utilizationPercent=").append(String.valueOf(this.utilizationPercent));
+        sb.append(", usageChangePercent=").append(String.valueOf(this.usageChangePercent));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceMetrics)) {
+            return false;
+        }
+
+        InstanceMetrics other = (InstanceMetrics) o;
+        return java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.instanceName, other.instanceName)
+                && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.capacity, other.capacity)
+                && java.util.Objects.equals(this.utilizationPercent, other.utilizationPercent)
+                && java.util.Objects.equals(this.usageChangePercent, other.usageChangePercent)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.instanceName == null ? 43 : this.instanceName.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.utilizationPercent == null
+                                ? 43
+                                : this.utilizationPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usageChangePercent == null
+                                ? 43
+                                : this.usageChangePercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

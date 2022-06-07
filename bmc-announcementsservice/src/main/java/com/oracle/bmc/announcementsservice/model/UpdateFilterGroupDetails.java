@@ -15,16 +15,19 @@ package com.oracle.bmc.announcementsservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateFilterGroupDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateFilterGroupDetails {
+public final class UpdateFilterGroupDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"filters"})
+    public UpdateFilterGroupDetails(java.util.List<Filter> filters) {
+        super();
+        this.filters = filters;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<Filter> filters;
@@ -60,12 +63,59 @@ public class UpdateFilterGroupDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
-    java.util.List<Filter> filters;
+    private final java.util.List<Filter> filters;
+
+    public java.util.List<Filter> getFilters() {
+        return filters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateFilterGroupDetails(");
+        sb.append("filters=").append(String.valueOf(this.filters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateFilterGroupDetails)) {
+            return false;
+        }
+
+        UpdateFilterGroupDetails other = (UpdateFilterGroupDetails) o;
+        return java.util.Objects.equals(this.filters, other.filters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

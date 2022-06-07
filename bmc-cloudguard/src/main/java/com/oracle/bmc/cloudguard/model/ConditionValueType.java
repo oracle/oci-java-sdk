@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Possible condition value types
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum ConditionValueType {
     Managed("MANAGED"),
     Custom("CUSTOM"),
@@ -18,6 +17,9 @@ public enum ConditionValueType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ConditionValueType.class);
 
     private final String value;
     private static java.util.Map<String, ConditionValueType> map;

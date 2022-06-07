@@ -15,16 +15,20 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DbSystemPlacement.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbSystemPlacement {
+public final class DbSystemPlacement {
+    @Deprecated
+    @java.beans.ConstructorProperties({"availabilityDomain", "faultDomain"})
+    public DbSystemPlacement(String availabilityDomain, String faultDomain) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomain = faultDomain;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -70,18 +74,76 @@ public class DbSystemPlacement {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain in which the DB System is placed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The fault domain in which the DB System is placed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbSystemPlacement(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbSystemPlacement)) {
+            return false;
+        }
+
+        DbSystemPlacement other = (DbSystemPlacement) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

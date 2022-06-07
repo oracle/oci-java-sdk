@@ -16,14 +16,92 @@ package com.oracle.bmc.osubusage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ComputedUsage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ComputedUsage {
+public final class ComputedUsage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeCreated",
+        "timeUpdated",
+        "parentSubscribedServiceId",
+        "parentProduct",
+        "planNumber",
+        "currencyCode",
+        "rateCardTierdId",
+        "rateCardId",
+        "computeSource",
+        "dataCenter",
+        "mqsMessageId",
+        "id",
+        "quantity",
+        "usageNumber",
+        "originalUsageNumber",
+        "commitmentServiceId",
+        "isInvoiced",
+        "type",
+        "timeOfArrival",
+        "timeMeteredOn",
+        "netUnitPrice",
+        "costRounded",
+        "cost",
+        "product",
+        "unitOfMeasure"
+    })
+    public ComputedUsage(
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String parentSubscribedServiceId,
+            Product parentProduct,
+            String planNumber,
+            String currencyCode,
+            String rateCardTierdId,
+            String rateCardId,
+            String computeSource,
+            String dataCenter,
+            String mqsMessageId,
+            String id,
+            String quantity,
+            String usageNumber,
+            String originalUsageNumber,
+            String commitmentServiceId,
+            Boolean isInvoiced,
+            Type type,
+            java.util.Date timeOfArrival,
+            java.util.Date timeMeteredOn,
+            String netUnitPrice,
+            String costRounded,
+            String cost,
+            Product product,
+            String unitOfMeasure) {
+        super();
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.parentSubscribedServiceId = parentSubscribedServiceId;
+        this.parentProduct = parentProduct;
+        this.planNumber = planNumber;
+        this.currencyCode = currencyCode;
+        this.rateCardTierdId = rateCardTierdId;
+        this.rateCardId = rateCardId;
+        this.computeSource = computeSource;
+        this.dataCenter = dataCenter;
+        this.mqsMessageId = mqsMessageId;
+        this.id = id;
+        this.quantity = quantity;
+        this.usageNumber = usageNumber;
+        this.originalUsageNumber = originalUsageNumber;
+        this.commitmentServiceId = commitmentServiceId;
+        this.isInvoiced = isInvoiced;
+        this.type = type;
+        this.timeOfArrival = timeOfArrival;
+        this.timeMeteredOn = timeMeteredOn;
+        this.netUnitPrice = netUnitPrice;
+        this.costRounded = costRounded;
+        this.cost = cost;
+        this.product = product;
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -326,125 +404,197 @@ public class ComputedUsage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Computed Usage created time, expressed in RFC 3339 timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Computed Usage updated time, expressed in RFC 3339 timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Subscribed service line parent id
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
-    String parentSubscribedServiceId;
+    private final String parentSubscribedServiceId;
+
+    public String getParentSubscribedServiceId() {
+        return parentSubscribedServiceId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentProduct")
-    Product parentProduct;
+    private final Product parentProduct;
+
+    public Product getParentProduct() {
+        return parentProduct;
+    }
 
     /**
      * Subscription plan number
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
-    String planNumber;
+    private final String planNumber;
+
+    public String getPlanNumber() {
+        return planNumber;
+    }
 
     /**
      * Currency code
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
-    String currencyCode;
+    private final String currencyCode;
+
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
 
     /**
      * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardTierdId")
-    String rateCardTierdId;
+    private final String rateCardTierdId;
+
+    public String getRateCardTierdId() {
+        return rateCardTierdId;
+    }
 
     /**
      * Ratecard Id at subscribed service level
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
-    String rateCardId;
+    private final String rateCardId;
+
+    public String getRateCardId() {
+        return rateCardId;
+    }
 
     /**
      * SPM Internal compute records source .
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeSource")
-    String computeSource;
+    private final String computeSource;
+
+    public String getComputeSource() {
+        return computeSource;
+    }
 
     /**
      * Data Center Attribute as sent by MQS to SPM.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
-    String dataCenter;
+    private final String dataCenter;
+
+    public String getDataCenter() {
+        return dataCenter;
+    }
 
     /**
      * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mqsMessageId")
-    String mqsMessageId;
+    private final String mqsMessageId;
+
+    public String getMqsMessageId() {
+        return mqsMessageId;
+    }
 
     /**
      * SPM Internal computed usage Id , 32 character string
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Total Quantity that was used for computation
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
-    String quantity;
+    private final String quantity;
+
+    public String getQuantity() {
+        return quantity;
+    }
 
     /**
      * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageNumber")
-    String usageNumber;
+    private final String usageNumber;
+
+    public String getUsageNumber() {
+        return usageNumber;
+    }
 
     /**
      * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalUsageNumber")
-    String originalUsageNumber;
+    private final String originalUsageNumber;
+
+    public String getOriginalUsageNumber() {
+        return originalUsageNumber;
+    }
 
     /**
      * Subscribed service commitmentId.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitmentServiceId")
-    String commitmentServiceId;
+    private final String commitmentServiceId;
+
+    public String getCommitmentServiceId() {
+        return commitmentServiceId;
+    }
 
     /**
      * Invoicing status for the aggregated compute usage
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInvoiced")
-    Boolean isInvoiced;
+    private final Boolean isInvoiced;
+
+    public Boolean getIsInvoiced() {
+        return isInvoiced;
+    }
+
     /**
      * Usage compute type in SPM.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Promotion("PROMOTION"),
         DoNotBill("DO_NOT_BILL"),
@@ -467,6 +617,8 @@ public class ComputedUsage {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -504,53 +656,222 @@ public class ComputedUsage {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * Usae computation date, expressed in RFC 3339 timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfArrival")
-    java.util.Date timeOfArrival;
+    private final java.util.Date timeOfArrival;
+
+    public java.util.Date getTimeOfArrival() {
+        return timeOfArrival;
+    }
 
     /**
      * Metered Service date, expressed in RFC 3339 timestamp format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
-    java.util.Date timeMeteredOn;
+    private final java.util.Date timeMeteredOn;
+
+    public java.util.Date getTimeMeteredOn() {
+        return timeMeteredOn;
+    }
 
     /**
      * Net Unit Price for the product in consideration, price actual.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
-    String netUnitPrice;
+    private final String netUnitPrice;
+
+    public String getNetUnitPrice() {
+        return netUnitPrice;
+    }
 
     /**
      * Computed Line Amount rounded.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
-    String costRounded;
+    private final String costRounded;
+
+    public String getCostRounded() {
+        return costRounded;
+    }
 
     /**
      * Computed Line Amount not rounded
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
-    String cost;
+    private final String cost;
+
+    public String getCost() {
+        return cost;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("product")
-    Product product;
+    private final Product product;
+
+    public Product getProduct() {
+        return product;
+    }
 
     /**
      * Unit of Messure
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
-    String unitOfMeasure;
+    private final String unitOfMeasure;
+
+    public String getUnitOfMeasure() {
+        return unitOfMeasure;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ComputedUsage(");
+        sb.append("timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", parentSubscribedServiceId=")
+                .append(String.valueOf(this.parentSubscribedServiceId));
+        sb.append(", parentProduct=").append(String.valueOf(this.parentProduct));
+        sb.append(", planNumber=").append(String.valueOf(this.planNumber));
+        sb.append(", currencyCode=").append(String.valueOf(this.currencyCode));
+        sb.append(", rateCardTierdId=").append(String.valueOf(this.rateCardTierdId));
+        sb.append(", rateCardId=").append(String.valueOf(this.rateCardId));
+        sb.append(", computeSource=").append(String.valueOf(this.computeSource));
+        sb.append(", dataCenter=").append(String.valueOf(this.dataCenter));
+        sb.append(", mqsMessageId=").append(String.valueOf(this.mqsMessageId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", quantity=").append(String.valueOf(this.quantity));
+        sb.append(", usageNumber=").append(String.valueOf(this.usageNumber));
+        sb.append(", originalUsageNumber=").append(String.valueOf(this.originalUsageNumber));
+        sb.append(", commitmentServiceId=").append(String.valueOf(this.commitmentServiceId));
+        sb.append(", isInvoiced=").append(String.valueOf(this.isInvoiced));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", timeOfArrival=").append(String.valueOf(this.timeOfArrival));
+        sb.append(", timeMeteredOn=").append(String.valueOf(this.timeMeteredOn));
+        sb.append(", netUnitPrice=").append(String.valueOf(this.netUnitPrice));
+        sb.append(", costRounded=").append(String.valueOf(this.costRounded));
+        sb.append(", cost=").append(String.valueOf(this.cost));
+        sb.append(", product=").append(String.valueOf(this.product));
+        sb.append(", unitOfMeasure=").append(String.valueOf(this.unitOfMeasure));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ComputedUsage)) {
+            return false;
+        }
+
+        ComputedUsage other = (ComputedUsage) o;
+        return java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(
+                        this.parentSubscribedServiceId, other.parentSubscribedServiceId)
+                && java.util.Objects.equals(this.parentProduct, other.parentProduct)
+                && java.util.Objects.equals(this.planNumber, other.planNumber)
+                && java.util.Objects.equals(this.currencyCode, other.currencyCode)
+                && java.util.Objects.equals(this.rateCardTierdId, other.rateCardTierdId)
+                && java.util.Objects.equals(this.rateCardId, other.rateCardId)
+                && java.util.Objects.equals(this.computeSource, other.computeSource)
+                && java.util.Objects.equals(this.dataCenter, other.dataCenter)
+                && java.util.Objects.equals(this.mqsMessageId, other.mqsMessageId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.quantity, other.quantity)
+                && java.util.Objects.equals(this.usageNumber, other.usageNumber)
+                && java.util.Objects.equals(this.originalUsageNumber, other.originalUsageNumber)
+                && java.util.Objects.equals(this.commitmentServiceId, other.commitmentServiceId)
+                && java.util.Objects.equals(this.isInvoiced, other.isInvoiced)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.timeOfArrival, other.timeOfArrival)
+                && java.util.Objects.equals(this.timeMeteredOn, other.timeMeteredOn)
+                && java.util.Objects.equals(this.netUnitPrice, other.netUnitPrice)
+                && java.util.Objects.equals(this.costRounded, other.costRounded)
+                && java.util.Objects.equals(this.cost, other.cost)
+                && java.util.Objects.equals(this.product, other.product)
+                && java.util.Objects.equals(this.unitOfMeasure, other.unitOfMeasure)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentSubscribedServiceId == null
+                                ? 43
+                                : this.parentSubscribedServiceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentProduct == null ? 43 : this.parentProduct.hashCode());
+        result = (result * PRIME) + (this.planNumber == null ? 43 : this.planNumber.hashCode());
+        result = (result * PRIME) + (this.currencyCode == null ? 43 : this.currencyCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rateCardTierdId == null ? 43 : this.rateCardTierdId.hashCode());
+        result = (result * PRIME) + (this.rateCardId == null ? 43 : this.rateCardId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeSource == null ? 43 : this.computeSource.hashCode());
+        result = (result * PRIME) + (this.dataCenter == null ? 43 : this.dataCenter.hashCode());
+        result = (result * PRIME) + (this.mqsMessageId == null ? 43 : this.mqsMessageId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.quantity == null ? 43 : this.quantity.hashCode());
+        result = (result * PRIME) + (this.usageNumber == null ? 43 : this.usageNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originalUsageNumber == null
+                                ? 43
+                                : this.originalUsageNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.commitmentServiceId == null
+                                ? 43
+                                : this.commitmentServiceId.hashCode());
+        result = (result * PRIME) + (this.isInvoiced == null ? 43 : this.isInvoiced.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfArrival == null ? 43 : this.timeOfArrival.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMeteredOn == null ? 43 : this.timeMeteredOn.hashCode());
+        result = (result * PRIME) + (this.netUnitPrice == null ? 43 : this.netUnitPrice.hashCode());
+        result = (result * PRIME) + (this.costRounded == null ? 43 : this.costRounded.hashCode());
+        result = (result * PRIME) + (this.cost == null ? 43 : this.cost.hashCode());
+        result = (result * PRIME) + (this.product == null ? 43 : this.product.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unitOfMeasure == null ? 43 : this.unitOfMeasure.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

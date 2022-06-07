@@ -26,9 +26,12 @@ import com.oracle.bmc.dashboardservice.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
-@lombok.RequiredArgsConstructor
 public class DashboardPaginators {
     private final Dashboard client;
+
+    public DashboardPaginators(Dashboard client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listDashboards operation. This iterable

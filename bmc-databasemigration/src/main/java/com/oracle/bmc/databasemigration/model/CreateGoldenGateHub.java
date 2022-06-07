@@ -16,16 +16,43 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateGoldenGateHub.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateGoldenGateHub {
+public final class CreateGoldenGateHub {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "restAdminCredentials",
+        "sourceDbAdminCredentials",
+        "sourceContainerDbAdminCredentials",
+        "targetDbAdminCredentials",
+        "url",
+        "sourceMicroservicesDeploymentName",
+        "targetMicroservicesDeploymentName",
+        "computeId"
+    })
+    public CreateGoldenGateHub(
+            CreateAdminCredentials restAdminCredentials,
+            CreateAdminCredentials sourceDbAdminCredentials,
+            CreateAdminCredentials sourceContainerDbAdminCredentials,
+            CreateAdminCredentials targetDbAdminCredentials,
+            String url,
+            String sourceMicroservicesDeploymentName,
+            String targetMicroservicesDeploymentName,
+            String computeId) {
+        super();
+        this.restAdminCredentials = restAdminCredentials;
+        this.sourceDbAdminCredentials = sourceDbAdminCredentials;
+        this.sourceContainerDbAdminCredentials = sourceContainerDbAdminCredentials;
+        this.targetDbAdminCredentials = targetDbAdminCredentials;
+        this.url = url;
+        this.sourceMicroservicesDeploymentName = sourceMicroservicesDeploymentName;
+        this.targetMicroservicesDeploymentName = targetMicroservicesDeploymentName;
+        this.computeId = computeId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("restAdminCredentials")
         private CreateAdminCredentials restAdminCredentials;
@@ -145,17 +172,37 @@ public class CreateGoldenGateHub {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("restAdminCredentials")
-    CreateAdminCredentials restAdminCredentials;
+    private final CreateAdminCredentials restAdminCredentials;
+
+    public CreateAdminCredentials getRestAdminCredentials() {
+        return restAdminCredentials;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbAdminCredentials")
-    CreateAdminCredentials sourceDbAdminCredentials;
+    private final CreateAdminCredentials sourceDbAdminCredentials;
+
+    public CreateAdminCredentials getSourceDbAdminCredentials() {
+        return sourceDbAdminCredentials;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDbAdminCredentials")
-    CreateAdminCredentials sourceContainerDbAdminCredentials;
+    private final CreateAdminCredentials sourceContainerDbAdminCredentials;
+
+    public CreateAdminCredentials getSourceContainerDbAdminCredentials() {
+        return sourceContainerDbAdminCredentials;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("targetDbAdminCredentials")
-    CreateAdminCredentials targetDbAdminCredentials;
+    private final CreateAdminCredentials targetDbAdminCredentials;
+
+    public CreateAdminCredentials getTargetDbAdminCredentials() {
+        return targetDbAdminCredentials;
+    }
 
     /**
      * Oracle GoldenGate Microservices hub's REST endpoint.
@@ -163,29 +210,142 @@ public class CreateGoldenGateHub {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
 
     /**
      * Name of GoldenGate Microservices deployment to operate on source database
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceMicroservicesDeploymentName")
-    String sourceMicroservicesDeploymentName;
+    private final String sourceMicroservicesDeploymentName;
+
+    public String getSourceMicroservicesDeploymentName() {
+        return sourceMicroservicesDeploymentName;
+    }
 
     /**
      * Name of GoldenGate Microservices deployment to operate on target database
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetMicroservicesDeploymentName")
-    String targetMicroservicesDeploymentName;
+    private final String targetMicroservicesDeploymentName;
+
+    public String getTargetMicroservicesDeploymentName() {
+        return targetMicroservicesDeploymentName;
+    }
 
     /**
      * OCID of GoldenGate Microservices compute instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeId")
-    String computeId;
+    private final String computeId;
+
+    public String getComputeId() {
+        return computeId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateGoldenGateHub(");
+        sb.append("restAdminCredentials=").append(String.valueOf(this.restAdminCredentials));
+        sb.append(", sourceDbAdminCredentials=")
+                .append(String.valueOf(this.sourceDbAdminCredentials));
+        sb.append(", sourceContainerDbAdminCredentials=")
+                .append(String.valueOf(this.sourceContainerDbAdminCredentials));
+        sb.append(", targetDbAdminCredentials=")
+                .append(String.valueOf(this.targetDbAdminCredentials));
+        sb.append(", url=").append(String.valueOf(this.url));
+        sb.append(", sourceMicroservicesDeploymentName=")
+                .append(String.valueOf(this.sourceMicroservicesDeploymentName));
+        sb.append(", targetMicroservicesDeploymentName=")
+                .append(String.valueOf(this.targetMicroservicesDeploymentName));
+        sb.append(", computeId=").append(String.valueOf(this.computeId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateGoldenGateHub)) {
+            return false;
+        }
+
+        CreateGoldenGateHub other = (CreateGoldenGateHub) o;
+        return java.util.Objects.equals(this.restAdminCredentials, other.restAdminCredentials)
+                && java.util.Objects.equals(
+                        this.sourceDbAdminCredentials, other.sourceDbAdminCredentials)
+                && java.util.Objects.equals(
+                        this.sourceContainerDbAdminCredentials,
+                        other.sourceContainerDbAdminCredentials)
+                && java.util.Objects.equals(
+                        this.targetDbAdminCredentials, other.targetDbAdminCredentials)
+                && java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(
+                        this.sourceMicroservicesDeploymentName,
+                        other.sourceMicroservicesDeploymentName)
+                && java.util.Objects.equals(
+                        this.targetMicroservicesDeploymentName,
+                        other.targetMicroservicesDeploymentName)
+                && java.util.Objects.equals(this.computeId, other.computeId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.restAdminCredentials == null
+                                ? 43
+                                : this.restAdminCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDbAdminCredentials == null
+                                ? 43
+                                : this.sourceDbAdminCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceContainerDbAdminCredentials == null
+                                ? 43
+                                : this.sourceContainerDbAdminCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDbAdminCredentials == null
+                                ? 43
+                                : this.targetDbAdminCredentials.hashCode());
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceMicroservicesDeploymentName == null
+                                ? 43
+                                : this.sourceMicroservicesDeploymentName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetMicroservicesDeploymentName == null
+                                ? 43
+                                : this.targetMicroservicesDeploymentName.hashCode());
+        result = (result * PRIME) + (this.computeId == null ? 43 : this.computeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

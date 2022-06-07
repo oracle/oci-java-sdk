@@ -15,16 +15,43 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SubscriptionMapping.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SubscriptionMapping {
+public final class SubscriptionMapping {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "subscriptionId",
+        "compartmentId",
+        "isExplicitlyAssigned",
+        "lifecycleState",
+        "timeTerminated",
+        "timeCreated",
+        "timeUpdated"
+    })
+    public SubscriptionMapping(
+            String id,
+            String subscriptionId,
+            String compartmentId,
+            Boolean isExplicitlyAssigned,
+            LifecycleState lifecycleState,
+            java.util.Date timeTerminated,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.id = id;
+        this.subscriptionId = subscriptionId;
+        this.compartmentId = compartmentId;
+        this.isExplicitlyAssigned = isExplicitlyAssigned;
+        this.lifecycleState = lifecycleState;
+        this.timeTerminated = timeTerminated;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -140,33 +167,53 @@ public class SubscriptionMapping {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID of the mapping between subscription and compartment identified by the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * OCID of the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
-    String subscriptionId;
+    private final String subscriptionId;
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
 
     /**
      * OCID of the compartment. Always a tenancy OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Denotes if the subscription is explicity assigned to the root compartment or tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isExplicitlyAssigned")
-    Boolean isExplicitlyAssigned;
+    private final Boolean isExplicitlyAssigned;
+
+    public Boolean getIsExplicitlyAssigned() {
+        return isExplicitlyAssigned;
+    }
+
     /**
      * Lifecycle state of the subscription mapping.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -181,6 +228,9 @@ public class SubscriptionMapping {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -218,26 +268,114 @@ public class SubscriptionMapping {
      * Lifecycle state of the subscription mapping.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Date-time when subscription mapping was terminated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTerminated")
-    java.util.Date timeTerminated;
+    private final java.util.Date timeTerminated;
+
+    public java.util.Date getTimeTerminated() {
+        return timeTerminated;
+    }
 
     /**
      * Date-time when subscription mapping was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Date-time when subscription mapping was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SubscriptionMapping(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", isExplicitlyAssigned=").append(String.valueOf(this.isExplicitlyAssigned));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeTerminated=").append(String.valueOf(this.timeTerminated));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SubscriptionMapping)) {
+            return false;
+        }
+
+        SubscriptionMapping other = (SubscriptionMapping) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.isExplicitlyAssigned, other.isExplicitlyAssigned)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeTerminated, other.timeTerminated)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isExplicitlyAssigned == null
+                                ? 43
+                                : this.isExplicitlyAssigned.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeTerminated == null ? 43 : this.timeTerminated.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

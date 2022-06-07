@@ -20,14 +20,19 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Certificate.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Certificate {
+public final class Certificate {
+    @Deprecated
+    @java.beans.ConstructorProperties({"certificateName", "publicCertificate", "caCertificate"})
+    public Certificate(String certificateName, String publicCertificate, String caCertificate) {
+        super();
+        this.certificateName = certificateName;
+        this.publicCertificate = publicCertificate;
+        this.caCertificate = caCertificate;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
@@ -85,6 +90,10 @@ public class Certificate {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
      * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
@@ -94,7 +103,11 @@ public class Certificate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
-    String certificateName;
+    private final String certificateName;
+
+    public String getCertificateName() {
+        return certificateName;
+    }
 
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
@@ -111,7 +124,11 @@ public class Certificate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
-    String publicCertificate;
+    private final String publicCertificate;
+
+    public String getPublicCertificate() {
+        return publicCertificate;
+    }
 
     /**
      * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
@@ -128,8 +145,63 @@ public class Certificate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
-    String caCertificate;
+    private final String caCertificate;
+
+    public String getCaCertificate() {
+        return caCertificate;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Certificate(");
+        sb.append("certificateName=").append(String.valueOf(this.certificateName));
+        sb.append(", publicCertificate=").append(String.valueOf(this.publicCertificate));
+        sb.append(", caCertificate=").append(String.valueOf(this.caCertificate));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Certificate)) {
+            return false;
+        }
+
+        Certificate other = (Certificate) o;
+        return java.util.Objects.equals(this.certificateName, other.certificateName)
+                && java.util.Objects.equals(this.publicCertificate, other.publicCertificate)
+                && java.util.Objects.equals(this.caCertificate, other.caCertificate)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.certificateName == null ? 43 : this.certificateName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicCertificate == null ? 43 : this.publicCertificate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.caCertificate == null ? 43 : this.caCertificate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

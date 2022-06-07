@@ -26,9 +26,12 @@ import com.oracle.bmc.databasemigration.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.RequiredArgsConstructor
 public class DatabaseMigrationPaginators {
     private final DatabaseMigration client;
+
+    public DatabaseMigrationPaginators(DatabaseMigration client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listAgentImages operation. This iterable

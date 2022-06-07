@@ -9,14 +9,6 @@ import com.oracle.bmc.oda.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/StartOdaInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use StartOdaInstanceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class StartOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +16,17 @@ public class StartOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String odaInstanceId;
 
+    public String getOdaInstanceId() {
+        return odaInstanceId;
+    }
     /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control in a PUT or DELETE call for
      * a Digital Assistant instance, set the {@code if-match} query parameter
@@ -40,6 +38,9 @@ public class StartOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * A token that uniquely identifies a request so that you can retry the request if there's
      * a timeout or server error without the risk of executing that same action again.
@@ -51,12 +52,72 @@ public class StartOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     StartOdaInstanceRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String odaInstanceId = null;
+
+        /**
+         * Unique Digital Assistant instance identifier.
+         * @return this builder instance
+         */
+        public Builder odaInstanceId(String odaInstanceId) {
+            this.odaInstanceId = odaInstanceId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -111,5 +172,83 @@ public class StartOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest<
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of StartOdaInstanceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of StartOdaInstanceRequest
+         */
+        public StartOdaInstanceRequest buildWithoutInvocationCallback() {
+            StartOdaInstanceRequest request = new StartOdaInstanceRequest();
+            request.odaInstanceId = odaInstanceId;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new StartOdaInstanceRequest(odaInstanceId, opcRequestId, ifMatch, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .odaInstanceId(odaInstanceId)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StartOdaInstanceRequest)) {
+            return false;
+        }
+
+        StartOdaInstanceRequest other = (StartOdaInstanceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

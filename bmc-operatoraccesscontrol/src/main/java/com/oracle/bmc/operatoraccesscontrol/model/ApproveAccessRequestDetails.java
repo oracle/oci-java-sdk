@@ -15,16 +15,31 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApproveAccessRequestDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApproveAccessRequestDetails {
+public final class ApproveAccessRequestDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "approverComment",
+        "auditType",
+        "additionalMessage",
+        "timeOfUserCreation"
+    })
+    public ApproveAccessRequestDetails(
+            String approverComment,
+            java.util.List<String> auditType,
+            String additionalMessage,
+            java.util.Date timeOfUserCreation) {
+        super();
+        this.approverComment = approverComment;
+        this.auditType = auditType;
+        this.additionalMessage = additionalMessage;
+        this.timeOfUserCreation = timeOfUserCreation;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
         private String approverComment;
@@ -93,11 +108,19 @@ public class ApproveAccessRequestDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Comment by the approver during approval.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
-    String approverComment;
+    private final String approverComment;
+
+    public String getApproverComment() {
+        return approverComment;
+    }
 
     /**
      * Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.
@@ -106,21 +129,89 @@ public class ApproveAccessRequestDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditType")
-    java.util.List<String> auditType;
+    private final java.util.List<String> auditType;
+
+    public java.util.List<String> getAuditType() {
+        return auditType;
+    }
 
     /**
      * Message that needs to be displayed to the Ops User.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalMessage")
-    String additionalMessage;
+    private final String additionalMessage;
+
+    public String getAdditionalMessage() {
+        return additionalMessage;
+    }
 
     /**
      * The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfUserCreation")
-    java.util.Date timeOfUserCreation;
+    private final java.util.Date timeOfUserCreation;
+
+    public java.util.Date getTimeOfUserCreation() {
+        return timeOfUserCreation;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApproveAccessRequestDetails(");
+        sb.append("approverComment=").append(String.valueOf(this.approverComment));
+        sb.append(", auditType=").append(String.valueOf(this.auditType));
+        sb.append(", additionalMessage=").append(String.valueOf(this.additionalMessage));
+        sb.append(", timeOfUserCreation=").append(String.valueOf(this.timeOfUserCreation));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApproveAccessRequestDetails)) {
+            return false;
+        }
+
+        ApproveAccessRequestDetails other = (ApproveAccessRequestDetails) o;
+        return java.util.Objects.equals(this.approverComment, other.approverComment)
+                && java.util.Objects.equals(this.auditType, other.auditType)
+                && java.util.Objects.equals(this.additionalMessage, other.additionalMessage)
+                && java.util.Objects.equals(this.timeOfUserCreation, other.timeOfUserCreation)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.approverComment == null ? 43 : this.approverComment.hashCode());
+        result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalMessage == null ? 43 : this.additionalMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfUserCreation == null
+                                ? 43
+                                : this.timeOfUserCreation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

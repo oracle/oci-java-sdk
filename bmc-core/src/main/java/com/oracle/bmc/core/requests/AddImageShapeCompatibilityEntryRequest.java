@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddImageShapeCompatibilityEntryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AddImageShapeCompatibilityEntryRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails> {
@@ -26,16 +18,27 @@ public class AddImageShapeCompatibilityEntryRequest
      */
     private String imageId;
 
+    public String getImageId() {
+        return imageId;
+    }
     /**
      * Shape name.
      */
     private String shapeName;
 
+    public String getShapeName() {
+        return shapeName;
+    }
     /**
      * Image shape compatibility details
      */
     private com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails
             addImageShapeCompatibilityEntryDetails;
+
+    public com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails
+            getAddImageShapeCompatibilityEntryDetails() {
+        return addImageShapeCompatibilityEntryDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -54,6 +57,42 @@ public class AddImageShapeCompatibilityEntryRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String imageId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+         * @return this builder instance
+         */
+        public Builder imageId(String imageId) {
+            this.imageId = imageId;
+            return this;
+        }
+
+        private String shapeName = null;
+
+        /**
+         * Shape name.
+         * @return this builder instance
+         */
+        public Builder shapeName(String shapeName) {
+            this.shapeName = shapeName;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails
+                addImageShapeCompatibilityEntryDetails = null;
+
+        /**
+         * Image shape compatibility details
+         * @return this builder instance
+         */
+        public Builder addImageShapeCompatibilityEntryDetails(
+                com.oracle.bmc.core.model.AddImageShapeCompatibilityEntryDetails
+                        addImageShapeCompatibilityEntryDetails) {
+            this.addImageShapeCompatibilityEntryDetails = addImageShapeCompatibilityEntryDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -119,5 +158,82 @@ public class AddImageShapeCompatibilityEntryRequest
             addImageShapeCompatibilityEntryDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of AddImageShapeCompatibilityEntryRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of AddImageShapeCompatibilityEntryRequest
+         */
+        public AddImageShapeCompatibilityEntryRequest buildWithoutInvocationCallback() {
+            AddImageShapeCompatibilityEntryRequest request =
+                    new AddImageShapeCompatibilityEntryRequest();
+            request.imageId = imageId;
+            request.shapeName = shapeName;
+            request.addImageShapeCompatibilityEntryDetails = addImageShapeCompatibilityEntryDetails;
+            return request;
+            // new AddImageShapeCompatibilityEntryRequest(imageId, shapeName, addImageShapeCompatibilityEntryDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .imageId(imageId)
+                .shapeName(shapeName)
+                .addImageShapeCompatibilityEntryDetails(addImageShapeCompatibilityEntryDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",imageId=").append(String.valueOf(this.imageId));
+        sb.append(",shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(",addImageShapeCompatibilityEntryDetails=")
+                .append(String.valueOf(this.addImageShapeCompatibilityEntryDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AddImageShapeCompatibilityEntryRequest)) {
+            return false;
+        }
+
+        AddImageShapeCompatibilityEntryRequest other = (AddImageShapeCompatibilityEntryRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(
+                        this.addImageShapeCompatibilityEntryDetails,
+                        other.addImageShapeCompatibilityEntryDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.addImageShapeCompatibilityEntryDetails == null
+                                ? 43
+                                : this.addImageShapeCompatibilityEntryDetails.hashCode());
+        return result;
     }
 }

@@ -17,16 +17,20 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RequestAccessControl.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RequestAccessControl {
+public final class RequestAccessControl {
+    @Deprecated
+    @java.beans.ConstructorProperties({"defaultActionName", "rules"})
+    public RequestAccessControl(String defaultActionName, java.util.List<AccessControlRule> rules) {
+        super();
+        this.defaultActionName = defaultActionName;
+        this.rules = rules;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("defaultActionName")
         private String defaultActionName;
@@ -71,6 +75,10 @@ public class RequestAccessControl {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * References an default Action to take if no AccessControlRule was matched. Allowed action types:
      * <p>
@@ -80,14 +88,66 @@ public class RequestAccessControl {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultActionName")
-    String defaultActionName;
+    private final String defaultActionName;
+
+    public String getDefaultActionName() {
+        return defaultActionName;
+    }
 
     /**
      * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
-    java.util.List<AccessControlRule> rules;
+    private final java.util.List<AccessControlRule> rules;
+
+    public java.util.List<AccessControlRule> getRules() {
+        return rules;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RequestAccessControl(");
+        sb.append("defaultActionName=").append(String.valueOf(this.defaultActionName));
+        sb.append(", rules=").append(String.valueOf(this.rules));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RequestAccessControl)) {
+            return false;
+        }
+
+        RequestAccessControl other = (RequestAccessControl) o;
+        return java.util.Objects.equals(this.defaultActionName, other.defaultActionName)
+                && java.util.Objects.equals(this.rules, other.rules)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.defaultActionName == null ? 43 : this.defaultActionName.hashCode());
+        result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

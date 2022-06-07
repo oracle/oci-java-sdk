@@ -16,16 +16,24 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseConnectionStrings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseConnectionStrings {
+public final class DatabaseConnectionStrings {
+    @Deprecated
+    @java.beans.ConstructorProperties({"cdbDefault", "cdbIpDefault", "allConnectionStrings"})
+    public DatabaseConnectionStrings(
+            String cdbDefault,
+            String cdbIpDefault,
+            java.util.Map<String, String> allConnectionStrings) {
+        super();
+        this.cdbDefault = cdbDefault;
+        this.cdbIpDefault = cdbIpDefault;
+        this.allConnectionStrings = allConnectionStrings;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cdbDefault")
         private String cdbDefault;
@@ -83,24 +91,89 @@ public class DatabaseConnectionStrings {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Host name based CDB Connection String.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdbDefault")
-    String cdbDefault;
+    private final String cdbDefault;
+
+    public String getCdbDefault() {
+        return cdbDefault;
+    }
 
     /**
      * IP based CDB Connection String.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdbIpDefault")
-    String cdbIpDefault;
+    private final String cdbIpDefault;
+
+    public String getCdbIpDefault() {
+        return cdbIpDefault;
+    }
 
     /**
      * All connection strings to use to connect to the Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
-    java.util.Map<String, String> allConnectionStrings;
+    private final java.util.Map<String, String> allConnectionStrings;
+
+    public java.util.Map<String, String> getAllConnectionStrings() {
+        return allConnectionStrings;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseConnectionStrings(");
+        sb.append("cdbDefault=").append(String.valueOf(this.cdbDefault));
+        sb.append(", cdbIpDefault=").append(String.valueOf(this.cdbIpDefault));
+        sb.append(", allConnectionStrings=").append(String.valueOf(this.allConnectionStrings));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseConnectionStrings)) {
+            return false;
+        }
+
+        DatabaseConnectionStrings other = (DatabaseConnectionStrings) o;
+        return java.util.Objects.equals(this.cdbDefault, other.cdbDefault)
+                && java.util.Objects.equals(this.cdbIpDefault, other.cdbIpDefault)
+                && java.util.Objects.equals(this.allConnectionStrings, other.allConnectionStrings)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.cdbDefault == null ? 43 : this.cdbDefault.hashCode());
+        result = (result * PRIME) + (this.cdbIpDefault == null ? 43 : this.cdbIpDefault.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allConnectionStrings == null
+                                ? 43
+                                : this.allConnectionStrings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

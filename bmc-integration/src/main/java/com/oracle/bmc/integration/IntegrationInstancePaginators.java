@@ -26,9 +26,12 @@ import com.oracle.bmc.integration.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
-@lombok.RequiredArgsConstructor
 public class IntegrationInstancePaginators {
     private final IntegrationInstance client;
+
+    public IntegrationInstancePaginators(IntegrationInstance client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listIntegrationInstances operation. This iterable

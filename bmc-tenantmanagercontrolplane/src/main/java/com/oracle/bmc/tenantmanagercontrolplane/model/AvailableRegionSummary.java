@@ -15,16 +15,19 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AvailableRegionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AvailableRegionSummary {
+public final class AvailableRegionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"regionName"})
+    public AvailableRegionSummary(String regionName) {
+        super();
+        this.regionName = regionName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("regionName")
         private String regionName;
@@ -60,12 +63,59 @@ public class AvailableRegionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Region availability for the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionName")
-    String regionName;
+    private final String regionName;
+
+    public String getRegionName() {
+        return regionName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AvailableRegionSummary(");
+        sb.append("regionName=").append(String.valueOf(this.regionName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AvailableRegionSummary)) {
+            return false;
+        }
+
+        AvailableRegionSummary other = (AvailableRegionSummary) o;
+        return java.util.Objects.equals(this.regionName, other.regionName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.regionName == null ? 43 : this.regionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

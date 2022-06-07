@@ -15,14 +15,38 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LinkSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LinkSummary {
+public final class LinkSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "parentTenancyId",
+        "childTenancyId",
+        "lifecycleState",
+        "timeCreated",
+        "timeUpdated",
+        "timeTerminated"
+    })
+    public LinkSummary(
+            String id,
+            String parentTenancyId,
+            String childTenancyId,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.Date timeTerminated) {
+        super();
+        this.id = id;
+        this.parentTenancyId = parentTenancyId;
+        this.childTenancyId = childTenancyId;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.timeTerminated = timeTerminated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -127,48 +151,145 @@ public class LinkSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID of the link.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * OCID of the parent tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTenancyId")
-    String parentTenancyId;
+    private final String parentTenancyId;
+
+    public String getParentTenancyId() {
+        return parentTenancyId;
+    }
 
     /**
      * OCID of the child tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("childTenancyId")
-    String childTenancyId;
+    private final String childTenancyId;
+
+    public String getChildTenancyId() {
+        return childTenancyId;
+    }
 
     /**
      * Lifecycle state of the link.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Date-time when this link was created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Date-time when this link was last updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Date-time when this link was terminated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTerminated")
-    java.util.Date timeTerminated;
+    private final java.util.Date timeTerminated;
+
+    public java.util.Date getTimeTerminated() {
+        return timeTerminated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LinkSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", parentTenancyId=").append(String.valueOf(this.parentTenancyId));
+        sb.append(", childTenancyId=").append(String.valueOf(this.childTenancyId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeTerminated=").append(String.valueOf(this.timeTerminated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LinkSummary)) {
+            return false;
+        }
+
+        LinkSummary other = (LinkSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.parentTenancyId, other.parentTenancyId)
+                && java.util.Objects.equals(this.childTenancyId, other.childTenancyId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeTerminated, other.timeTerminated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTenancyId == null ? 43 : this.parentTenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.childTenancyId == null ? 43 : this.childTenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeTerminated == null ? 43 : this.timeTerminated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

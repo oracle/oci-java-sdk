@@ -18,14 +18,41 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BucketSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BucketSummary {
+public final class BucketSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "namespace",
+        "name",
+        "compartmentId",
+        "createdBy",
+        "timeCreated",
+        "etag",
+        "freeformTags",
+        "definedTags"
+    })
+    public BucketSummary(
+            String namespace,
+            String name,
+            String compartmentId,
+            String createdBy,
+            java.util.Date timeCreated,
+            String etag,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.namespace = namespace;
+        this.name = name;
+        this.compartmentId = compartmentId;
+        this.createdBy = createdBy;
+        this.timeCreated = timeCreated;
+        this.etag = etag;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
@@ -142,11 +169,19 @@ public class BucketSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The Object Storage namespace in which the bucket lives.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * The name of the bucket. Avoid entering confidential information.
@@ -154,31 +189,51 @@ public class BucketSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The compartment ID in which the bucket is authorized.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-    String createdBy;
+    private final String createdBy;
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
 
     /**
      * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The entity tag (ETag) for the bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
-    String etag;
+    private final String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -187,7 +242,11 @@ public class BucketSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -196,8 +255,74 @@ public class BucketSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BucketSummary(");
+        sb.append("namespace=").append(String.valueOf(this.namespace));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", etag=").append(String.valueOf(this.etag));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BucketSummary)) {
+            return false;
+        }
+
+        BucketSummary other = (BucketSummary) o;
+        return java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.dataintegration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDataEntityExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDataEntityRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,21 +16,33 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String workspaceId;
 
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
     /**
      * The connection key.
      */
     private String connectionKey;
 
+    public String getConnectionKey() {
+        return connectionKey;
+    }
     /**
      * The schema resource name used for retrieving schemas.
      */
     private String schemaResourceName;
 
+    public String getSchemaResourceName() {
+        return schemaResourceName;
+    }
     /**
      * The key of the data entity.
      */
     private String dataEntityKey;
 
+    public String getDataEntityKey() {
+        return dataEntityKey;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -47,12 +51,74 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDataEntityRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String workspaceId = null;
+
+        /**
+         * The workspace ID.
+         * @return this builder instance
+         */
+        public Builder workspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+
+        private String connectionKey = null;
+
+        /**
+         * The connection key.
+         * @return this builder instance
+         */
+        public Builder connectionKey(String connectionKey) {
+            this.connectionKey = connectionKey;
+            return this;
+        }
+
+        private String schemaResourceName = null;
+
+        /**
+         * The schema resource name used for retrieving schemas.
+         * @return this builder instance
+         */
+        public Builder schemaResourceName(String schemaResourceName) {
+            this.schemaResourceName = schemaResourceName;
+            return this;
+        }
+
+        private String dataEntityKey = null;
+
+        /**
+         * The key of the data entity.
+         * @return this builder instance
+         */
+        public Builder dataEntityKey(String dataEntityKey) {
+            this.dataEntityKey = dataEntityKey;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -108,5 +174,92 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetDataEntityRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetDataEntityRequest
+         */
+        public GetDataEntityRequest buildWithoutInvocationCallback() {
+            GetDataEntityRequest request = new GetDataEntityRequest();
+            request.workspaceId = workspaceId;
+            request.connectionKey = connectionKey;
+            request.schemaResourceName = schemaResourceName;
+            request.dataEntityKey = dataEntityKey;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetDataEntityRequest(workspaceId, connectionKey, schemaResourceName, dataEntityKey, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .workspaceId(workspaceId)
+                .connectionKey(connectionKey)
+                .schemaResourceName(schemaResourceName)
+                .dataEntityKey(dataEntityKey)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",workspaceId=").append(String.valueOf(this.workspaceId));
+        sb.append(",connectionKey=").append(String.valueOf(this.connectionKey));
+        sb.append(",schemaResourceName=").append(String.valueOf(this.schemaResourceName));
+        sb.append(",dataEntityKey=").append(String.valueOf(this.dataEntityKey));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetDataEntityRequest)) {
+            return false;
+        }
+
+        GetDataEntityRequest other = (GetDataEntityRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.workspaceId, other.workspaceId)
+                && java.util.Objects.equals(this.connectionKey, other.connectionKey)
+                && java.util.Objects.equals(this.schemaResourceName, other.schemaResourceName)
+                && java.util.Objects.equals(this.dataEntityKey, other.dataEntityKey)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.workspaceId == null ? 43 : this.workspaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionKey == null ? 43 : this.connectionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.schemaResourceName == null
+                                ? 43
+                                : this.schemaResourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataEntityKey == null ? 43 : this.dataEntityKey.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

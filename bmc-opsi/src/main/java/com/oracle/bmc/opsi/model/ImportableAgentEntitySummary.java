@@ -15,12 +15,6 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,16 +29,73 @@ package com.oracle.bmc.opsi.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ImportableAgentEntitySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"managementAgentId", "managementAgentDisplayName"})
+    protected ImportableAgentEntitySummary(
+            String managementAgentId, String managementAgentDisplayName) {
+        super();
+        this.managementAgentId = managementAgentId;
+        this.managementAgentDisplayName = managementAgentDisplayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
-    String managementAgentId;
+    private final String managementAgentId;
+
+    public String getManagementAgentId() {
+        return managementAgentId;
+    }
 
     /**
      * The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentDisplayName")
-    String managementAgentDisplayName;
+    private final String managementAgentDisplayName;
+
+    public String getManagementAgentDisplayName() {
+        return managementAgentDisplayName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImportableAgentEntitySummary(");
+        sb.append("managementAgentId=").append(String.valueOf(this.managementAgentId));
+        sb.append(", managementAgentDisplayName=")
+                .append(String.valueOf(this.managementAgentDisplayName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImportableAgentEntitySummary)) {
+            return false;
+        }
+
+        ImportableAgentEntitySummary other = (ImportableAgentEntitySummary) o;
+        return java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
+                && java.util.Objects.equals(
+                        this.managementAgentDisplayName, other.managementAgentDisplayName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.managementAgentId == null ? 43 : this.managementAgentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementAgentDisplayName == null
+                                ? 43
+                                : this.managementAgentDisplayName.hashCode());
+        return result;
+    }
 }

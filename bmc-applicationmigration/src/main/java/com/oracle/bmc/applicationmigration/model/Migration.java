@@ -22,14 +22,68 @@ package com.oracle.bmc.applicationmigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Migration.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Migration {
+public final class Migration {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "description",
+        "timeCreated",
+        "sourceId",
+        "applicationName",
+        "applicationType",
+        "preCreatedTargetDatabaseType",
+        "isSelectiveMigration",
+        "serviceConfig",
+        "applicationConfig",
+        "lifecycleState",
+        "lifecycleDetails",
+        "migrationState",
+        "freeformTags",
+        "definedTags"
+    })
+    public Migration(
+            String id,
+            String compartmentId,
+            String displayName,
+            String description,
+            java.util.Date timeCreated,
+            String sourceId,
+            String applicationName,
+            MigrationTypes applicationType,
+            TargetDatabaseTypes preCreatedTargetDatabaseType,
+            Boolean isSelectiveMigration,
+            java.util.Map<String, ConfigurationField> serviceConfig,
+            java.util.Map<String, ConfigurationField> applicationConfig,
+            MigrationLifecycleStates lifecycleState,
+            String lifecycleDetails,
+            MigrationStates migrationState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.description = description;
+        this.timeCreated = timeCreated;
+        this.sourceId = sourceId;
+        this.applicationName = applicationName;
+        this.applicationType = applicationType;
+        this.preCreatedTargetDatabaseType = preCreatedTargetDatabaseType;
+        this.isSelectiveMigration = isSelectiveMigration;
+        this.serviceConfig = serviceConfig;
+        this.applicationConfig = applicationConfig;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.migrationState = migrationState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -247,54 +301,90 @@ public class Migration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the migration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * User-friendly name of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The date and time at which the migration was created, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source with which this migration is associated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    String sourceId;
+    private final String sourceId;
+
+    public String getSourceId() {
+        return sourceId;
+    }
 
     /**
      * Name of the application which is being migrated. This is the name of the application in the source environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
-    String applicationName;
+    private final String applicationName;
+
+    public String getApplicationName() {
+        return applicationName;
+    }
 
     /**
      * The type of application being migrated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
-    MigrationTypes applicationType;
+    private final MigrationTypes applicationType;
+
+    public MigrationTypes getApplicationType() {
+        return applicationType;
+    }
 
     /**
      * The pre-existing database type to be used in this migration. Currently, Application migration only supports Oracle Cloud
@@ -302,14 +392,22 @@ public class Migration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preCreatedTargetDatabaseType")
-    TargetDatabaseTypes preCreatedTargetDatabaseType;
+    private final TargetDatabaseTypes preCreatedTargetDatabaseType;
+
+    public TargetDatabaseTypes getPreCreatedTargetDatabaseType() {
+        return preCreatedTargetDatabaseType;
+    }
 
     /**
      * If set to {@code true}, Application Migration migrates only the application resources that you specify. If set to {@code false}, Application Migration migrates the entire application. When you migrate the entire application, all the application resources are migrated to the target environment. You can selectively migrate resources only for the Oracle Integration Cloud and Oracle Integration Cloud Service applications.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
-    Boolean isSelectiveMigration;
+    private final Boolean isSelectiveMigration;
+
+    public Boolean getIsSelectiveMigration() {
+        return isSelectiveMigration;
+    }
 
     /**
      * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
@@ -318,7 +416,11 @@ public class Migration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
-    java.util.Map<String, ConfigurationField> serviceConfig;
+    private final java.util.Map<String, ConfigurationField> serviceConfig;
+
+    public java.util.Map<String, ConfigurationField> getServiceConfig() {
+        return serviceConfig;
+    }
 
     /**
      * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
@@ -327,25 +429,41 @@ public class Migration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationConfig")
-    java.util.Map<String, ConfigurationField> applicationConfig;
+    private final java.util.Map<String, ConfigurationField> applicationConfig;
+
+    public java.util.Map<String, ConfigurationField> getApplicationConfig() {
+        return applicationConfig;
+    }
 
     /**
      * The current state of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    MigrationLifecycleStates lifecycleState;
+    private final MigrationLifecycleStates lifecycleState;
+
+    public MigrationLifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Details about the current lifecycle state of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The current state of the overall migration process.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("migrationState")
-    MigrationStates migrationState;
+    private final MigrationStates migrationState;
+
+    public MigrationStates getMigrationState() {
+        return migrationState;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -353,7 +471,11 @@ public class Migration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -361,8 +483,125 @@ public class Migration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Migration(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", applicationName=").append(String.valueOf(this.applicationName));
+        sb.append(", applicationType=").append(String.valueOf(this.applicationType));
+        sb.append(", preCreatedTargetDatabaseType=")
+                .append(String.valueOf(this.preCreatedTargetDatabaseType));
+        sb.append(", isSelectiveMigration=").append(String.valueOf(this.isSelectiveMigration));
+        sb.append(", serviceConfig=").append(String.valueOf(this.serviceConfig));
+        sb.append(", applicationConfig=").append(String.valueOf(this.applicationConfig));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", migrationState=").append(String.valueOf(this.migrationState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Migration)) {
+            return false;
+        }
+
+        Migration other = (Migration) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.applicationName, other.applicationName)
+                && java.util.Objects.equals(this.applicationType, other.applicationType)
+                && java.util.Objects.equals(
+                        this.preCreatedTargetDatabaseType, other.preCreatedTargetDatabaseType)
+                && java.util.Objects.equals(this.isSelectiveMigration, other.isSelectiveMigration)
+                && java.util.Objects.equals(this.serviceConfig, other.serviceConfig)
+                && java.util.Objects.equals(this.applicationConfig, other.applicationConfig)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.migrationState, other.migrationState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationName == null ? 43 : this.applicationName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationType == null ? 43 : this.applicationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preCreatedTargetDatabaseType == null
+                                ? 43
+                                : this.preCreatedTargetDatabaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSelectiveMigration == null
+                                ? 43
+                                : this.isSelectiveMigration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceConfig == null ? 43 : this.serviceConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationConfig == null ? 43 : this.applicationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.migrationState == null ? 43 : this.migrationState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

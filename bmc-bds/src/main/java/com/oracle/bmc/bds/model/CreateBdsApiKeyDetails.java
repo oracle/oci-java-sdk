@@ -15,16 +15,23 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateBdsApiKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateBdsApiKeyDetails {
+public final class CreateBdsApiKeyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"userId", "passphrase", "defaultRegion", "keyAlias"})
+    public CreateBdsApiKeyDetails(
+            String userId, String passphrase, String defaultRegion, String keyAlias) {
+        super();
+        this.userId = userId;
+        this.passphrase = passphrase;
+        this.defaultRegion = defaultRegion;
+        this.keyAlias = keyAlias;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
@@ -92,17 +99,29 @@ public class CreateBdsApiKeyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * Base64 passphrase used to secure the private key which will be created on user behalf.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
-    String passphrase;
+    private final String passphrase;
+
+    public String getPassphrase() {
+        return passphrase;
+    }
 
     /**
      * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/
@@ -110,7 +129,11 @@ public class CreateBdsApiKeyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRegion")
-    String defaultRegion;
+    private final String defaultRegion;
+
+    public String getDefaultRegion() {
+        return defaultRegion;
+    }
 
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster.
@@ -118,8 +141,62 @@ public class CreateBdsApiKeyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyAlias")
-    String keyAlias;
+    private final String keyAlias;
+
+    public String getKeyAlias() {
+        return keyAlias;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateBdsApiKeyDetails(");
+        sb.append("userId=").append(String.valueOf(this.userId));
+        sb.append(", passphrase=").append(String.valueOf(this.passphrase));
+        sb.append(", defaultRegion=").append(String.valueOf(this.defaultRegion));
+        sb.append(", keyAlias=").append(String.valueOf(this.keyAlias));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateBdsApiKeyDetails)) {
+            return false;
+        }
+
+        CreateBdsApiKeyDetails other = (CreateBdsApiKeyDetails) o;
+        return java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.passphrase, other.passphrase)
+                && java.util.Objects.equals(this.defaultRegion, other.defaultRegion)
+                && java.util.Objects.equals(this.keyAlias, other.keyAlias)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.passphrase == null ? 43 : this.passphrase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultRegion == null ? 43 : this.defaultRegion.hashCode());
+        result = (result * PRIME) + (this.keyAlias == null ? 43 : this.keyAlias.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

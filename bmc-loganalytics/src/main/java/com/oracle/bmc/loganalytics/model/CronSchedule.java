@@ -15,20 +15,15 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CronSchedule.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CronSchedule extends Schedule {
+public final class CronSchedule extends Schedule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("misfirePolicy")
         private MisfirePolicy misfirePolicy;
@@ -96,6 +91,10 @@ public class CronSchedule extends Schedule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CronSchedule(
             MisfirePolicy misfirePolicy,
@@ -111,14 +110,66 @@ public class CronSchedule extends Schedule {
      * Value in cron format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
-    String expression;
+    private final String expression;
+
+    public String getExpression() {
+        return expression;
+    }
 
     /**
      * Time zone, by default UTC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
-    String timeZone;
+    private final String timeZone;
+
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CronSchedule(");
+        sb.append("super=").append(super.toString());
+        sb.append(", expression=").append(String.valueOf(this.expression));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CronSchedule)) {
+            return false;
+        }
+
+        CronSchedule other = (CronSchedule) o;
+        return java.util.Objects.equals(this.expression, other.expression)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,12 +16,6 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -40,11 +34,55 @@ package com.oracle.bmc.marketplace.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class SearchListingsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"matchingContextType"})
+    protected SearchListingsDetails(MatchingContextTypeEnum matchingContextType) {
+        super();
+        this.matchingContextType = matchingContextType;
+    }
 
     /**
      * The type of matching context returned in the response. If you specify HIGHLIGHTS, then the service will highlight fragments in its response. The default value is NONE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingContextType")
-    MatchingContextTypeEnum matchingContextType;
+    private final MatchingContextTypeEnum matchingContextType;
+
+    public MatchingContextTypeEnum getMatchingContextType() {
+        return matchingContextType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SearchListingsDetails(");
+        sb.append("matchingContextType=").append(String.valueOf(this.matchingContextType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SearchListingsDetails)) {
+            return false;
+        }
+
+        SearchListingsDetails other = (SearchListingsDetails) o;
+        return java.util.Objects.equals(this.matchingContextType, other.matchingContextType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.matchingContextType == null
+                                ? 43
+                                : this.matchingContextType.hashCode());
+        return result;
+    }
 }

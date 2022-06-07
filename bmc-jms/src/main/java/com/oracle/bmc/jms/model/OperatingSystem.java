@@ -16,14 +16,20 @@ package com.oracle.bmc.jms.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OperatingSystem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OperatingSystem {
+public final class OperatingSystem {
+    @Deprecated
+    @java.beans.ConstructorProperties({"family", "name", "version", "architecture"})
+    public OperatingSystem(OsFamily family, String name, String version, String architecture) {
+        super();
+        this.family = family;
+        this.name = name;
+        this.version = version;
+        this.architecture = architecture;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("family")
         private OsFamily family;
@@ -90,30 +96,98 @@ public class OperatingSystem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The operating system type, such as Windows or Linux
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("family")
-    OsFamily family;
+    private final OsFamily family;
+
+    public OsFamily getFamily() {
+        return family;
+    }
 
     /**
      * The name of the operating system as provided by the Java system property os.name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The version of the operating system as provided by the Java system property os.version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The architecture of the operating system as provided by the Java system property os.arch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
-    String architecture;
+    private final String architecture;
+
+    public String getArchitecture() {
+        return architecture;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OperatingSystem(");
+        sb.append("family=").append(String.valueOf(this.family));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", architecture=").append(String.valueOf(this.architecture));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OperatingSystem)) {
+            return false;
+        }
+
+        OperatingSystem other = (OperatingSystem) o;
+        return java.util.Objects.equals(this.family, other.family)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.architecture, other.architecture)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.family == null ? 43 : this.family.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

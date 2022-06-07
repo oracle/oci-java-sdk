@@ -15,14 +15,32 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackupPolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackupPolicy {
+public final class BackupPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isEnabled",
+        "windowStartTime",
+        "retentionInDays",
+        "freeformTags",
+        "definedTags"
+    })
+    public BackupPolicy(
+            Boolean isEnabled,
+            String windowStartTime,
+            Integer retentionInDays,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.isEnabled = isEnabled;
+        this.windowStartTime = windowStartTime;
+        this.retentionInDays = retentionInDays;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
@@ -102,11 +120,19 @@ public class BackupPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * If automated backups are enabled or disabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * The start of a 30-minute window of time in which daily, automated backups occur.
@@ -124,14 +150,22 @@ public class BackupPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
-    String windowStartTime;
+    private final String windowStartTime;
+
+    public String getWindowStartTime() {
+        return windowStartTime;
+    }
 
     /**
      * The number of days automated backups are retained.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
-    Integer retentionInDays;
+    private final Integer retentionInDays;
+
+    public Integer getRetentionInDays() {
+        return retentionInDays;
+    }
 
     /**
      * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -142,7 +176,11 @@ public class BackupPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -153,8 +191,67 @@ public class BackupPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackupPolicy(");
+        sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", windowStartTime=").append(String.valueOf(this.windowStartTime));
+        sb.append(", retentionInDays=").append(String.valueOf(this.retentionInDays));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackupPolicy)) {
+            return false;
+        }
+
+        BackupPolicy other = (BackupPolicy) o;
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.windowStartTime, other.windowStartTime)
+                && java.util.Objects.equals(this.retentionInDays, other.retentionInDays)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.windowStartTime == null ? 43 : this.windowStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionInDays == null ? 43 : this.retentionInDays.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,14 +16,18 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShapeDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ShapeDetails {
+public final class ShapeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"minimumBandwidthInMbps", "maximumBandwidthInMbps"})
+    public ShapeDetails(Integer minimumBandwidthInMbps, Integer maximumBandwidthInMbps) {
+        super();
+        this.minimumBandwidthInMbps = minimumBandwidthInMbps;
+        this.maximumBandwidthInMbps = maximumBandwidthInMbps;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("minimumBandwidthInMbps")
         private Integer minimumBandwidthInMbps;
@@ -71,6 +75,10 @@ public class ShapeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress).
      * The values must be between 10 and the maximumBandwidthInMbps.
@@ -79,7 +87,11 @@ public class ShapeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumBandwidthInMbps")
-    Integer minimumBandwidthInMbps;
+    private final Integer minimumBandwidthInMbps;
+
+    public Integer getMinimumBandwidthInMbps() {
+        return minimumBandwidthInMbps;
+    }
 
     /**
      * Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can
@@ -92,8 +104,63 @@ public class ShapeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumBandwidthInMbps")
-    Integer maximumBandwidthInMbps;
+    private final Integer maximumBandwidthInMbps;
+
+    public Integer getMaximumBandwidthInMbps() {
+        return maximumBandwidthInMbps;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ShapeDetails(");
+        sb.append("minimumBandwidthInMbps=").append(String.valueOf(this.minimumBandwidthInMbps));
+        sb.append(", maximumBandwidthInMbps=").append(String.valueOf(this.maximumBandwidthInMbps));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ShapeDetails)) {
+            return false;
+        }
+
+        ShapeDetails other = (ShapeDetails) o;
+        return java.util.Objects.equals(this.minimumBandwidthInMbps, other.minimumBandwidthInMbps)
+                && java.util.Objects.equals(
+                        this.maximumBandwidthInMbps, other.maximumBandwidthInMbps)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.minimumBandwidthInMbps == null
+                                ? 43
+                                : this.minimumBandwidthInMbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maximumBandwidthInMbps == null
+                                ? 43
+                                : this.maximumBandwidthInMbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

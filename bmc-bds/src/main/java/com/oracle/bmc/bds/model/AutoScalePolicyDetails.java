@@ -23,12 +23,6 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -55,11 +49,17 @@ package com.oracle.bmc.bds.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AutoScalePolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"triggerType", "actionType"})
+    protected AutoScalePolicyDetails(TriggerType triggerType, ActionType actionType) {
+        super();
+        this.triggerType = triggerType;
+        this.actionType = actionType;
+    }
 
     /**
      * The type of autoscaling trigger.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TriggerType {
         MetricBased("METRIC_BASED"),
         ScheduleBased("SCHEDULE_BASED"),
@@ -69,6 +69,9 @@ public class AutoScalePolicyDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TriggerType.class);
 
         private final String value;
         private static java.util.Map<String, TriggerType> map;
@@ -106,11 +109,15 @@ public class AutoScalePolicyDetails {
      * The type of autoscaling trigger.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerType")
-    TriggerType triggerType;
+    private final TriggerType triggerType;
+
+    public TriggerType getTriggerType() {
+        return triggerType;
+    }
+
     /**
      * The type of autoscaling action to take.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ActionType {
         VerticalScaling("VERTICAL_SCALING"),
         HorizontalScaling("HORIZONTAL_SCALING"),
@@ -120,6 +127,9 @@ public class AutoScalePolicyDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ActionType.class);
 
         private final String value;
         private static java.util.Map<String, ActionType> map;
@@ -157,12 +167,48 @@ public class AutoScalePolicyDetails {
      * The type of autoscaling action to take.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
-    ActionType actionType;
+    private final ActionType actionType;
+
+    public ActionType getActionType() {
+        return actionType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutoScalePolicyDetails(");
+        sb.append("triggerType=").append(String.valueOf(this.triggerType));
+        sb.append(", actionType=").append(String.valueOf(this.actionType));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutoScalePolicyDetails)) {
+            return false;
+        }
+
+        AutoScalePolicyDetails other = (AutoScalePolicyDetails) o;
+        return java.util.Objects.equals(this.triggerType, other.triggerType)
+                && java.util.Objects.equals(this.actionType, other.actionType);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.triggerType == null ? 43 : this.triggerType.hashCode());
+        result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
+        return result;
+    }
 
     /**
      * Type of autoscaling policy.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PolicyType {
         MetricBasedVerticalScalingPolicy("METRIC_BASED_VERTICAL_SCALING_POLICY"),
         MetricBasedHorizontalScalingPolicy("METRIC_BASED_HORIZONTAL_SCALING_POLICY"),
@@ -174,6 +220,9 @@ public class AutoScalePolicyDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PolicyType.class);
 
         private final String value;
         private static java.util.Map<String, PolicyType> map;

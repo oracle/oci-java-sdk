@@ -15,14 +15,19 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EdgeSubnet.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EdgeSubnet {
+public final class EdgeSubnet {
+    @Deprecated
+    @java.beans.ConstructorProperties({"cidr", "timeModified", "region"})
+    public EdgeSubnet(String cidr, java.util.Date timeModified, String region) {
+        super();
+        this.cidr = cidr;
+        this.timeModified = timeModified;
+        this.region = region;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cidr")
         private String cidr;
@@ -77,24 +82,85 @@ public class EdgeSubnet {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An edge node subnet. This can include /24 or /8 addresses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidr")
-    String cidr;
+    private final String cidr;
+
+    public String getCidr() {
+        return cidr;
+    }
 
     /**
      * The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
-    java.util.Date timeModified;
+    private final java.util.Date timeModified;
+
+    public java.util.Date getTimeModified() {
+        return timeModified;
+    }
 
     /**
      * The name of the region containing the indicated subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EdgeSubnet(");
+        sb.append("cidr=").append(String.valueOf(this.cidr));
+        sb.append(", timeModified=").append(String.valueOf(this.timeModified));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EdgeSubnet)) {
+            return false;
+        }
+
+        EdgeSubnet other = (EdgeSubnet) o;
+        return java.util.Objects.equals(this.cidr, other.cidr)
+                && java.util.Objects.equals(this.timeModified, other.timeModified)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.cidr == null ? 43 : this.cidr.hashCode());
+        result = (result * PRIME) + (this.timeModified == null ? 43 : this.timeModified.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

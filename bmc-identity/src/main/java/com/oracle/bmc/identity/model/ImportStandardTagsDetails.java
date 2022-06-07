@@ -15,16 +15,20 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ImportStandardTagsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ImportStandardTagsDetails {
+public final class ImportStandardTagsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"compartmentId", "standardTagNamespaceName"})
+    public ImportStandardTagsDetails(String compartmentId, String standardTagNamespaceName) {
+        super();
+        this.compartmentId = compartmentId;
+        this.standardTagNamespaceName = standardTagNamespaceName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -72,20 +76,82 @@ public class ImportStandardTagsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of standard tag namespace that will be imported in bulk
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("standardTagNamespaceName")
-    String standardTagNamespaceName;
+    private final String standardTagNamespaceName;
+
+    public String getStandardTagNamespaceName() {
+        return standardTagNamespaceName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImportStandardTagsDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", standardTagNamespaceName=")
+                .append(String.valueOf(this.standardTagNamespaceName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImportStandardTagsDetails)) {
+            return false;
+        }
+
+        ImportStandardTagsDetails other = (ImportStandardTagsDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.standardTagNamespaceName, other.standardTagNamespaceName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standardTagNamespaceName == null
+                                ? 43
+                                : this.standardTagNamespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

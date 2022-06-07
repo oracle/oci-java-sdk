@@ -9,14 +9,6 @@ import com.oracle.bmc.oda.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ExportSkillExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ExportSkillRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ExportSkillRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.oda.model.ExportSkillDetails> {
 
@@ -25,20 +17,33 @@ public class ExportSkillRequest
      */
     private String odaInstanceId;
 
+    public String getOdaInstanceId() {
+        return odaInstanceId;
+    }
     /**
      * Unique Skill identifier.
      */
     private String skillId;
 
+    public String getSkillId() {
+        return skillId;
+    }
     /**
      * Where in Object Storage to export the Skill to.
      */
     private com.oracle.bmc.oda.model.ExportSkillDetails exportSkillDetails;
 
+    public com.oracle.bmc.oda.model.ExportSkillDetails getExportSkillDetails() {
+        return exportSkillDetails;
+    }
     /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +61,51 @@ public class ExportSkillRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String odaInstanceId = null;
+
+        /**
+         * Unique Digital Assistant instance identifier.
+         * @return this builder instance
+         */
+        public Builder odaInstanceId(String odaInstanceId) {
+            this.odaInstanceId = odaInstanceId;
+            return this;
+        }
+
+        private String skillId = null;
+
+        /**
+         * Unique Skill identifier.
+         * @return this builder instance
+         */
+        public Builder skillId(String skillId) {
+            this.skillId = skillId;
+            return this;
+        }
+
+        private com.oracle.bmc.oda.model.ExportSkillDetails exportSkillDetails = null;
+
+        /**
+         * Where in Object Storage to export the Skill to.
+         * @return this builder instance
+         */
+        public Builder exportSkillDetails(
+                com.oracle.bmc.oda.model.ExportSkillDetails exportSkillDetails) {
+            this.exportSkillDetails = exportSkillDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -121,5 +171,85 @@ public class ExportSkillRequest
             exportSkillDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ExportSkillRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ExportSkillRequest
+         */
+        public ExportSkillRequest buildWithoutInvocationCallback() {
+            ExportSkillRequest request = new ExportSkillRequest();
+            request.odaInstanceId = odaInstanceId;
+            request.skillId = skillId;
+            request.exportSkillDetails = exportSkillDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ExportSkillRequest(odaInstanceId, skillId, exportSkillDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .odaInstanceId(odaInstanceId)
+                .skillId(skillId)
+                .exportSkillDetails(exportSkillDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(",skillId=").append(String.valueOf(this.skillId));
+        sb.append(",exportSkillDetails=").append(String.valueOf(this.exportSkillDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportSkillRequest)) {
+            return false;
+        }
+
+        ExportSkillRequest other = (ExportSkillRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.skillId, other.skillId)
+                && java.util.Objects.equals(this.exportSkillDetails, other.exportSkillDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result = (result * PRIME) + (this.skillId == null ? 43 : this.skillId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportSkillDetails == null
+                                ? 43
+                                : this.exportSkillDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

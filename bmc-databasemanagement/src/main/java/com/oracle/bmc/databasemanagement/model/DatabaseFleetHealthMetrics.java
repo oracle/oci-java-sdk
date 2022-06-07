@@ -15,16 +15,34 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseFleetHealthMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseFleetHealthMetrics {
+public final class DatabaseFleetHealthMetrics {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compareBaselineTime",
+        "compareTargetTime",
+        "compareType",
+        "fleetSummary",
+        "fleetDatabases"
+    })
+    public DatabaseFleetHealthMetrics(
+            String compareBaselineTime,
+            String compareTargetTime,
+            CompareType compareType,
+            FleetSummary fleetSummary,
+            java.util.List<DatabaseUsageMetrics> fleetDatabases) {
+        super();
+        this.compareBaselineTime = compareBaselineTime;
+        this.compareTargetTime = compareTargetTime;
+        this.compareType = compareType;
+        this.fleetSummary = fleetSummary;
+        this.fleetDatabases = fleetDatabases;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compareBaselineTime")
         private String compareBaselineTime;
@@ -107,13 +125,21 @@ public class DatabaseFleetHealthMetrics {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The baseline date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      * This is the date and time against which percentage change is calculated.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compareBaselineTime")
-    String compareBaselineTime;
+    private final String compareBaselineTime;
+
+    public String getCompareBaselineTime() {
+        return compareBaselineTime;
+    }
 
     /**
      * The target date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
@@ -122,23 +148,98 @@ public class DatabaseFleetHealthMetrics {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compareTargetTime")
-    String compareTargetTime;
+    private final String compareTargetTime;
+
+    public String getCompareTargetTime() {
+        return compareTargetTime;
+    }
 
     /**
      * The time window used for metrics comparison.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compareType")
-    CompareType compareType;
+    private final CompareType compareType;
+
+    public CompareType getCompareType() {
+        return compareType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fleetSummary")
-    FleetSummary fleetSummary;
+    private final FleetSummary fleetSummary;
+
+    public FleetSummary getFleetSummary() {
+        return fleetSummary;
+    }
 
     /**
      * A list of the databases present in the fleet and their usage metrics.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetDatabases")
-    java.util.List<DatabaseUsageMetrics> fleetDatabases;
+    private final java.util.List<DatabaseUsageMetrics> fleetDatabases;
+
+    public java.util.List<DatabaseUsageMetrics> getFleetDatabases() {
+        return fleetDatabases;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseFleetHealthMetrics(");
+        sb.append("compareBaselineTime=").append(String.valueOf(this.compareBaselineTime));
+        sb.append(", compareTargetTime=").append(String.valueOf(this.compareTargetTime));
+        sb.append(", compareType=").append(String.valueOf(this.compareType));
+        sb.append(", fleetSummary=").append(String.valueOf(this.fleetSummary));
+        sb.append(", fleetDatabases=").append(String.valueOf(this.fleetDatabases));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseFleetHealthMetrics)) {
+            return false;
+        }
+
+        DatabaseFleetHealthMetrics other = (DatabaseFleetHealthMetrics) o;
+        return java.util.Objects.equals(this.compareBaselineTime, other.compareBaselineTime)
+                && java.util.Objects.equals(this.compareTargetTime, other.compareTargetTime)
+                && java.util.Objects.equals(this.compareType, other.compareType)
+                && java.util.Objects.equals(this.fleetSummary, other.fleetSummary)
+                && java.util.Objects.equals(this.fleetDatabases, other.fleetDatabases)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compareBaselineTime == null
+                                ? 43
+                                : this.compareBaselineTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compareTargetTime == null ? 43 : this.compareTargetTime.hashCode());
+        result = (result * PRIME) + (this.compareType == null ? 43 : this.compareType.hashCode());
+        result = (result * PRIME) + (this.fleetSummary == null ? 43 : this.fleetSummary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fleetDatabases == null ? 43 : this.fleetDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

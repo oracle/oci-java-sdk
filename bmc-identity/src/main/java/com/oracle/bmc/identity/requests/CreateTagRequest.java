@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateTagExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateTagRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateTagRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.identity.model.CreateTagDetails> {
 
@@ -26,11 +18,17 @@ public class CreateTagRequest
      */
     private String tagNamespaceId;
 
+    public String getTagNamespaceId() {
+        return tagNamespaceId;
+    }
     /**
      * Request object for creating a new tag in the specified tag namespace.
      */
     private com.oracle.bmc.identity.model.CreateTagDetails createTagDetails;
 
+    public com.oracle.bmc.identity.model.CreateTagDetails getCreateTagDetails() {
+        return createTagDetails;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -40,6 +38,10 @@ public class CreateTagRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -57,6 +59,46 @@ public class CreateTagRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String tagNamespaceId = null;
+
+        /**
+         * The OCID of the tag namespace.
+         *
+         * @return this builder instance
+         */
+        public Builder tagNamespaceId(String tagNamespaceId) {
+            this.tagNamespaceId = tagNamespaceId;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.CreateTagDetails createTagDetails = null;
+
+        /**
+         * Request object for creating a new tag in the specified tag namespace.
+         * @return this builder instance
+         */
+        public Builder createTagDetails(
+                com.oracle.bmc.identity.model.CreateTagDetails createTagDetails) {
+            this.createTagDetails = createTagDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -121,5 +163,80 @@ public class CreateTagRequest
             createTagDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateTagRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateTagRequest
+         */
+        public CreateTagRequest buildWithoutInvocationCallback() {
+            CreateTagRequest request = new CreateTagRequest();
+            request.tagNamespaceId = tagNamespaceId;
+            request.createTagDetails = createTagDetails;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateTagRequest(tagNamespaceId, createTagDetails, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .tagNamespaceId(tagNamespaceId)
+                .createTagDetails(createTagDetails)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
+        sb.append(",createTagDetails=").append(String.valueOf(this.createTagDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTagRequest)) {
+            return false;
+        }
+
+        CreateTagRequest other = (CreateTagRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.tagNamespaceId, other.tagNamespaceId)
+                && java.util.Objects.equals(this.createTagDetails, other.createTagDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.tagNamespaceId == null ? 43 : this.tagNamespaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createTagDetails == null ? 43 : this.createTagDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

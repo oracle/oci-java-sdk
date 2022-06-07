@@ -17,12 +17,6 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -41,12 +35,52 @@ package com.oracle.bmc.aianomalydetection.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DetectAnomaliesDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"modelId"})
+    protected DetectAnomaliesDetails(String modelId) {
+        super();
+        this.modelId = modelId;
+    }
 
     /**
      * The OCID of the trained model\u3002
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
-    String modelId;
+    private final String modelId;
+
+    public String getModelId() {
+        return modelId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DetectAnomaliesDetails(");
+        sb.append("modelId=").append(String.valueOf(this.modelId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DetectAnomaliesDetails)) {
+            return false;
+        }
+
+        DetectAnomaliesDetails other = (DetectAnomaliesDetails) o;
+        return java.util.Objects.equals(this.modelId, other.modelId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        return result;
+    }
 
     /**
      * Type of request. This parameter will be filled autmatically by classes generated

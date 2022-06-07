@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RemoveEntityAssociationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RemoveEntityAssociationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class RemoveEntityAssociationsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails> {
@@ -27,18 +19,28 @@ public class RemoveEntityAssociationsRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The log analytics entity OCID.
      *
      */
     private String logAnalyticsEntityId;
 
+    public String getLogAnalyticsEntityId() {
+        return logAnalyticsEntityId;
+    }
     /**
      * This parameter specifies the entity OCIDs with which associations are to be deleted.
      */
     private com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails
             removeEntityAssociationsDetails;
 
+    public com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails
+            getRemoveEntityAssociationsDetails() {
+        return removeEntityAssociationsDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -49,11 +51,17 @@ public class RemoveEntityAssociationsRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -63,6 +71,10 @@ public class RemoveEntityAssociationsRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -86,6 +98,87 @@ public class RemoveEntityAssociationsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String logAnalyticsEntityId = null;
+
+        /**
+         * The log analytics entity OCID.
+         *
+         * @return this builder instance
+         */
+        public Builder logAnalyticsEntityId(String logAnalyticsEntityId) {
+            this.logAnalyticsEntityId = logAnalyticsEntityId;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails
+                removeEntityAssociationsDetails = null;
+
+        /**
+         * This parameter specifies the entity OCIDs with which associations are to be deleted.
+         * @return this builder instance
+         */
+        public Builder removeEntityAssociationsDetails(
+                com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails
+                        removeEntityAssociationsDetails) {
+            this.removeEntityAssociationsDetails = removeEntityAssociationsDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -154,5 +247,103 @@ public class RemoveEntityAssociationsRequest
             removeEntityAssociationsDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of RemoveEntityAssociationsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of RemoveEntityAssociationsRequest
+         */
+        public RemoveEntityAssociationsRequest buildWithoutInvocationCallback() {
+            RemoveEntityAssociationsRequest request = new RemoveEntityAssociationsRequest();
+            request.namespaceName = namespaceName;
+            request.logAnalyticsEntityId = logAnalyticsEntityId;
+            request.removeEntityAssociationsDetails = removeEntityAssociationsDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new RemoveEntityAssociationsRequest(namespaceName, logAnalyticsEntityId, removeEntityAssociationsDetails, ifMatch, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .logAnalyticsEntityId(logAnalyticsEntityId)
+                .removeEntityAssociationsDetails(removeEntityAssociationsDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",logAnalyticsEntityId=").append(String.valueOf(this.logAnalyticsEntityId));
+        sb.append(",removeEntityAssociationsDetails=")
+                .append(String.valueOf(this.removeEntityAssociationsDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RemoveEntityAssociationsRequest)) {
+            return false;
+        }
+
+        RemoveEntityAssociationsRequest other = (RemoveEntityAssociationsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.logAnalyticsEntityId, other.logAnalyticsEntityId)
+                && java.util.Objects.equals(
+                        this.removeEntityAssociationsDetails, other.removeEntityAssociationsDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logAnalyticsEntityId == null
+                                ? 43
+                                : this.logAnalyticsEntityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.removeEntityAssociationsDetails == null
+                                ? 43
+                                : this.removeEntityAssociationsDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

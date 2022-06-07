@@ -15,14 +15,32 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StatusSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StatusSummary {
+public final class StatusSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "chunksProcessed",
+        "failureDetails",
+        "filename",
+        "status",
+        "totalChunks"
+    })
+    public StatusSummary(
+            Long chunksProcessed,
+            String failureDetails,
+            String filename,
+            String status,
+            Long totalChunks) {
+        super();
+        this.chunksProcessed = chunksProcessed;
+        this.failureDetails = failureDetails;
+        this.filename = filename;
+        this.status = status;
+        this.totalChunks = totalChunks;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("chunksProcessed")
         private Long chunksProcessed;
@@ -101,36 +119,115 @@ public class StatusSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of chunks processed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chunksProcessed")
-    Long chunksProcessed;
+    private final Long chunksProcessed;
+
+    public Long getChunksProcessed() {
+        return chunksProcessed;
+    }
 
     /**
      * The failure details, if any.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
-    String failureDetails;
+    private final String failureDetails;
+
+    public String getFailureDetails() {
+        return failureDetails;
+    }
 
     /**
      * The filename.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filename")
-    String filename;
+    private final String filename;
+
+    public String getFilename() {
+        return filename;
+    }
 
     /**
      * The status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * The total number of chunks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalChunks")
-    Long totalChunks;
+    private final Long totalChunks;
+
+    public Long getTotalChunks() {
+        return totalChunks;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StatusSummary(");
+        sb.append("chunksProcessed=").append(String.valueOf(this.chunksProcessed));
+        sb.append(", failureDetails=").append(String.valueOf(this.failureDetails));
+        sb.append(", filename=").append(String.valueOf(this.filename));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", totalChunks=").append(String.valueOf(this.totalChunks));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StatusSummary)) {
+            return false;
+        }
+
+        StatusSummary other = (StatusSummary) o;
+        return java.util.Objects.equals(this.chunksProcessed, other.chunksProcessed)
+                && java.util.Objects.equals(this.failureDetails, other.failureDetails)
+                && java.util.Objects.equals(this.filename, other.filename)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.totalChunks, other.totalChunks)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.chunksProcessed == null ? 43 : this.chunksProcessed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureDetails == null ? 43 : this.failureDetails.hashCode());
+        result = (result * PRIME) + (this.filename == null ? 43 : this.filename.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.totalChunks == null ? 43 : this.totalChunks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

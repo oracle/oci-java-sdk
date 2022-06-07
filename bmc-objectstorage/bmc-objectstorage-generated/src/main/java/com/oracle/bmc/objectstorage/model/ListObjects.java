@@ -18,14 +18,22 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ListObjects.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ListObjects {
+public final class ListObjects {
+    @Deprecated
+    @java.beans.ConstructorProperties({"objects", "prefixes", "nextStartWith"})
+    public ListObjects(
+            java.util.List<ObjectSummary> objects,
+            java.util.List<String> prefixes,
+            String nextStartWith) {
+        super();
+        this.objects = objects;
+        this.prefixes = prefixes;
+        this.nextStartWith = nextStartWith;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objects")
         private java.util.List<ObjectSummary> objects;
@@ -82,19 +90,31 @@ public class ListObjects {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An array of object summaries.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objects")
-    java.util.List<ObjectSummary> objects;
+    private final java.util.List<ObjectSummary> objects;
+
+    public java.util.List<ObjectSummary> getObjects() {
+        return objects;
+    }
 
     /**
      * Prefixes that are common to the results returned by the request if the request specified a delimiter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
-    java.util.List<String> prefixes;
+    private final java.util.List<String> prefixes;
+
+    public java.util.List<String> getPrefixes() {
+        return prefixes;
+    }
 
     /**
      * The name of the object to use in the {@code start} parameter to obtain the next page of
@@ -103,8 +123,59 @@ public class ListObjects {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextStartWith")
-    String nextStartWith;
+    private final String nextStartWith;
+
+    public String getNextStartWith() {
+        return nextStartWith;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ListObjects(");
+        sb.append("objects=").append(String.valueOf(this.objects));
+        sb.append(", prefixes=").append(String.valueOf(this.prefixes));
+        sb.append(", nextStartWith=").append(String.valueOf(this.nextStartWith));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListObjects)) {
+            return false;
+        }
+
+        ListObjects other = (ListObjects) o;
+        return java.util.Objects.equals(this.objects, other.objects)
+                && java.util.Objects.equals(this.prefixes, other.prefixes)
+                && java.util.Objects.equals(this.nextStartWith, other.nextStartWith)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.objects == null ? 43 : this.objects.hashCode());
+        result = (result * PRIME) + (this.prefixes == null ? 43 : this.prefixes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextStartWith == null ? 43 : this.nextStartWith.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

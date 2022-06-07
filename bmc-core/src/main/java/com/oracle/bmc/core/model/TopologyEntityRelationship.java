@@ -15,12 +15,6 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -43,23 +37,70 @@ package com.oracle.bmc.core.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class TopologyEntityRelationship {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id1", "id2"})
+    protected TopologyEntityRelationship(String id1, String id2) {
+        super();
+        this.id1 = id1;
+        this.id2 = id2;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first entity in the relationship.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id1")
-    String id1;
+    private final String id1;
+
+    public String getId1() {
+        return id1;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second entity in the relationship.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id2")
-    String id2;
+    private final String id2;
+
+    public String getId2() {
+        return id2;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TopologyEntityRelationship(");
+        sb.append("id1=").append(String.valueOf(this.id1));
+        sb.append(", id2=").append(String.valueOf(this.id2));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TopologyEntityRelationship)) {
+            return false;
+        }
+
+        TopologyEntityRelationship other = (TopologyEntityRelationship) o;
+        return java.util.Objects.equals(this.id1, other.id1)
+                && java.util.Objects.equals(this.id2, other.id2);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id1 == null ? 43 : this.id1.hashCode());
+        result = (result * PRIME) + (this.id2 == null ? 43 : this.id2.hashCode());
+        return result;
+    }
 
     /**
      * The type of relationship between the entities.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Contains("CONTAINS"),
         AssociatedWith("ASSOCIATED_WITH"),
@@ -70,6 +111,8 @@ public class TopologyEntityRelationship {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;

@@ -15,16 +15,43 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SectionStatistics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SectionStatistics {
+public final class SectionStatistics {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "targetsCount",
+        "auditingFindingsCount",
+        "authorizationControlFindingsCount",
+        "dataEncryptionFindingsCount",
+        "dbConfigurationFindingsCount",
+        "fineGrainedAccessControlFindingsCount",
+        "privilegesAndRolesFindingsCount",
+        "userAccountsFindingsCount"
+    })
+    public SectionStatistics(
+            Integer targetsCount,
+            Integer auditingFindingsCount,
+            Integer authorizationControlFindingsCount,
+            Integer dataEncryptionFindingsCount,
+            Integer dbConfigurationFindingsCount,
+            Integer fineGrainedAccessControlFindingsCount,
+            Integer privilegesAndRolesFindingsCount,
+            Integer userAccountsFindingsCount) {
+        super();
+        this.targetsCount = targetsCount;
+        this.auditingFindingsCount = auditingFindingsCount;
+        this.authorizationControlFindingsCount = authorizationControlFindingsCount;
+        this.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
+        this.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
+        this.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
+        this.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
+        this.userAccountsFindingsCount = userAccountsFindingsCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
         private Integer targetsCount;
@@ -144,54 +171,192 @@ public class SectionStatistics {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of targets that contributed to the counts at this risk level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
-    Integer targetsCount;
+    private final Integer targetsCount;
+
+    public Integer getTargetsCount() {
+        return targetsCount;
+    }
 
     /**
      * The number of findings in the Auditing category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditingFindingsCount")
-    Integer auditingFindingsCount;
+    private final Integer auditingFindingsCount;
+
+    public Integer getAuditingFindingsCount() {
+        return auditingFindingsCount;
+    }
 
     /**
      * The number of findings in the Authorization Control category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationControlFindingsCount")
-    Integer authorizationControlFindingsCount;
+    private final Integer authorizationControlFindingsCount;
+
+    public Integer getAuthorizationControlFindingsCount() {
+        return authorizationControlFindingsCount;
+    }
 
     /**
      * The number of findings in the Data Encryption category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataEncryptionFindingsCount")
-    Integer dataEncryptionFindingsCount;
+    private final Integer dataEncryptionFindingsCount;
+
+    public Integer getDataEncryptionFindingsCount() {
+        return dataEncryptionFindingsCount;
+    }
 
     /**
      * The number of findings in the Database Configuration category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbConfigurationFindingsCount")
-    Integer dbConfigurationFindingsCount;
+    private final Integer dbConfigurationFindingsCount;
+
+    public Integer getDbConfigurationFindingsCount() {
+        return dbConfigurationFindingsCount;
+    }
 
     /**
      * The number of findings in the Fine-Grained Access Control category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAccessControlFindingsCount")
-    Integer fineGrainedAccessControlFindingsCount;
+    private final Integer fineGrainedAccessControlFindingsCount;
+
+    public Integer getFineGrainedAccessControlFindingsCount() {
+        return fineGrainedAccessControlFindingsCount;
+    }
 
     /**
      * The number of findings in the Privileges and Roles category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilegesAndRolesFindingsCount")
-    Integer privilegesAndRolesFindingsCount;
+    private final Integer privilegesAndRolesFindingsCount;
+
+    public Integer getPrivilegesAndRolesFindingsCount() {
+        return privilegesAndRolesFindingsCount;
+    }
 
     /**
      * The number of findings in the User Accounts category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userAccountsFindingsCount")
-    Integer userAccountsFindingsCount;
+    private final Integer userAccountsFindingsCount;
+
+    public Integer getUserAccountsFindingsCount() {
+        return userAccountsFindingsCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SectionStatistics(");
+        sb.append("targetsCount=").append(String.valueOf(this.targetsCount));
+        sb.append(", auditingFindingsCount=").append(String.valueOf(this.auditingFindingsCount));
+        sb.append(", authorizationControlFindingsCount=")
+                .append(String.valueOf(this.authorizationControlFindingsCount));
+        sb.append(", dataEncryptionFindingsCount=")
+                .append(String.valueOf(this.dataEncryptionFindingsCount));
+        sb.append(", dbConfigurationFindingsCount=")
+                .append(String.valueOf(this.dbConfigurationFindingsCount));
+        sb.append(", fineGrainedAccessControlFindingsCount=")
+                .append(String.valueOf(this.fineGrainedAccessControlFindingsCount));
+        sb.append(", privilegesAndRolesFindingsCount=")
+                .append(String.valueOf(this.privilegesAndRolesFindingsCount));
+        sb.append(", userAccountsFindingsCount=")
+                .append(String.valueOf(this.userAccountsFindingsCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SectionStatistics)) {
+            return false;
+        }
+
+        SectionStatistics other = (SectionStatistics) o;
+        return java.util.Objects.equals(this.targetsCount, other.targetsCount)
+                && java.util.Objects.equals(this.auditingFindingsCount, other.auditingFindingsCount)
+                && java.util.Objects.equals(
+                        this.authorizationControlFindingsCount,
+                        other.authorizationControlFindingsCount)
+                && java.util.Objects.equals(
+                        this.dataEncryptionFindingsCount, other.dataEncryptionFindingsCount)
+                && java.util.Objects.equals(
+                        this.dbConfigurationFindingsCount, other.dbConfigurationFindingsCount)
+                && java.util.Objects.equals(
+                        this.fineGrainedAccessControlFindingsCount,
+                        other.fineGrainedAccessControlFindingsCount)
+                && java.util.Objects.equals(
+                        this.privilegesAndRolesFindingsCount, other.privilegesAndRolesFindingsCount)
+                && java.util.Objects.equals(
+                        this.userAccountsFindingsCount, other.userAccountsFindingsCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.targetsCount == null ? 43 : this.targetsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditingFindingsCount == null
+                                ? 43
+                                : this.auditingFindingsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authorizationControlFindingsCount == null
+                                ? 43
+                                : this.authorizationControlFindingsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataEncryptionFindingsCount == null
+                                ? 43
+                                : this.dataEncryptionFindingsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbConfigurationFindingsCount == null
+                                ? 43
+                                : this.dbConfigurationFindingsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fineGrainedAccessControlFindingsCount == null
+                                ? 43
+                                : this.fineGrainedAccessControlFindingsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privilegesAndRolesFindingsCount == null
+                                ? 43
+                                : this.privilegesAndRolesFindingsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.userAccountsFindingsCount == null
+                                ? 43
+                                : this.userAccountsFindingsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

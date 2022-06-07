@@ -15,16 +15,20 @@ package com.oracle.bmc.loggingsearch.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SearchResultSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SearchResultSummary {
+public final class SearchResultSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"resultCount", "fieldCount"})
+    public SearchResultSummary(Integer resultCount, Integer fieldCount) {
+        super();
+        this.resultCount = resultCount;
+        this.fieldCount = fieldCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resultCount")
         private Integer resultCount;
@@ -69,18 +73,72 @@ public class SearchResultSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Total number of search results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultCount")
-    Integer resultCount;
+    private final Integer resultCount;
+
+    public Integer getResultCount() {
+        return resultCount;
+    }
 
     /**
      * Total number of field schema information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldCount")
-    Integer fieldCount;
+    private final Integer fieldCount;
+
+    public Integer getFieldCount() {
+        return fieldCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SearchResultSummary(");
+        sb.append("resultCount=").append(String.valueOf(this.resultCount));
+        sb.append(", fieldCount=").append(String.valueOf(this.fieldCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SearchResultSummary)) {
+            return false;
+        }
+
+        SearchResultSummary other = (SearchResultSummary) o;
+        return java.util.Objects.equals(this.resultCount, other.resultCount)
+                && java.util.Objects.equals(this.fieldCount, other.fieldCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.resultCount == null ? 43 : this.resultCount.hashCode());
+        result = (result * PRIME) + (this.fieldCount == null ? 43 : this.fieldCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

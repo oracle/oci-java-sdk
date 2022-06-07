@@ -15,16 +15,22 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ValidAuthenticateUserResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ValidAuthenticateUserResult {
+public final class ValidAuthenticateUserResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"tenantInput", "userInput", "resolvedPrincipal"})
+    public ValidAuthenticateUserResult(
+            String tenantInput, String userInput, AuthenticationPrincipal resolvedPrincipal) {
+        super();
+        this.tenantInput = tenantInput;
+        this.userInput = userInput;
+        this.resolvedPrincipal = resolvedPrincipal;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tenantInput")
         private String tenantInput;
@@ -82,24 +88,87 @@ public class ValidAuthenticateUserResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The tenant name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantInput")
-    String tenantInput;
+    private final String tenantInput;
+
+    public String getTenantInput() {
+        return tenantInput;
+    }
 
     /**
      * The user name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userInput")
-    String userInput;
+    private final String userInput;
+
+    public String getUserInput() {
+        return userInput;
+    }
 
     /**
      * The resolved principal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedPrincipal")
-    AuthenticationPrincipal resolvedPrincipal;
+    private final AuthenticationPrincipal resolvedPrincipal;
+
+    public AuthenticationPrincipal getResolvedPrincipal() {
+        return resolvedPrincipal;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ValidAuthenticateUserResult(");
+        sb.append("tenantInput=").append(String.valueOf(this.tenantInput));
+        sb.append(", userInput=").append(String.valueOf(this.userInput));
+        sb.append(", resolvedPrincipal=").append(String.valueOf(this.resolvedPrincipal));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ValidAuthenticateUserResult)) {
+            return false;
+        }
+
+        ValidAuthenticateUserResult other = (ValidAuthenticateUserResult) o;
+        return java.util.Objects.equals(this.tenantInput, other.tenantInput)
+                && java.util.Objects.equals(this.userInput, other.userInput)
+                && java.util.Objects.equals(this.resolvedPrincipal, other.resolvedPrincipal)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tenantInput == null ? 43 : this.tenantInput.hashCode());
+        result = (result * PRIME) + (this.userInput == null ? 43 : this.userInput.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resolvedPrincipal == null ? 43 : this.resolvedPrincipal.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

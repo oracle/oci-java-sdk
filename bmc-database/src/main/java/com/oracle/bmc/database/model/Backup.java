@@ -15,14 +15,68 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Backup.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Backup {
+public final class Backup {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "databaseId",
+        "displayName",
+        "type",
+        "timeStarted",
+        "timeEnded",
+        "lifecycleDetails",
+        "availabilityDomain",
+        "lifecycleState",
+        "databaseEdition",
+        "databaseSizeInGBs",
+        "shape",
+        "version",
+        "kmsKeyId",
+        "kmsKeyVersionId",
+        "vaultId"
+    })
+    public Backup(
+            String id,
+            String compartmentId,
+            String databaseId,
+            String displayName,
+            Type type,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded,
+            String lifecycleDetails,
+            String availabilityDomain,
+            LifecycleState lifecycleState,
+            DatabaseEdition databaseEdition,
+            Double databaseSizeInGBs,
+            String shape,
+            String version,
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            String vaultId) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.databaseId = databaseId;
+        this.displayName = displayName;
+        this.type = type;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+        this.lifecycleDetails = lifecycleDetails;
+        this.availabilityDomain = availabilityDomain;
+        this.lifecycleState = lifecycleState;
+        this.databaseEdition = databaseEdition;
+        this.databaseSizeInGBs = databaseSizeInGBs;
+        this.shape = shape;
+        this.version = version;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.vaultId = vaultId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -237,33 +291,53 @@ public class Backup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    String databaseId;
+    private final String databaseId;
+
+    public String getDatabaseId() {
+        return databaseId;
+    }
 
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The type of backup.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Incremental("INCREMENTAL"),
         Full("FULL"),
@@ -274,6 +348,8 @@ public class Backup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -310,35 +386,55 @@ public class Backup {
      * The type of backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The date and time the backup started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The date and time the backup was completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The name of the availability domain where the database backup is stored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
     /**
      * The current state of the backup.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -352,6 +448,9 @@ public class Backup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -389,12 +488,16 @@ public class Backup {
      * The current state of the backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     /**
      * The Oracle Database edition of the DB system from which the database backup was taken.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DatabaseEdition {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
@@ -406,6 +509,9 @@ public class Backup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseEdition.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseEdition> map;
@@ -444,46 +550,177 @@ public class Backup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-    DatabaseEdition databaseEdition;
+    private final DatabaseEdition databaseEdition;
+
+    public DatabaseEdition getDatabaseEdition() {
+        return databaseEdition;
+    }
 
     /**
      * The size of the database in gigabytes at the time the backup was taken.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
-    Double databaseSizeInGBs;
+    private final Double databaseSizeInGBs;
+
+    public Double getDatabaseSizeInGBs() {
+        return databaseSizeInGBs;
+    }
 
     /**
      * Shape of the backup's source database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * Version of the backup's source database
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
-    String kmsKeyVersionId;
+    private final String kmsKeyVersionId;
+
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Backup(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
+        sb.append(", databaseSizeInGBs=").append(String.valueOf(this.databaseSizeInGBs));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Backup)) {
+            return false;
+        }
+
+        Backup other = (Backup) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && java.util.Objects.equals(this.databaseSizeInGBs, other.databaseSizeInGBs)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSizeInGBs == null ? 43 : this.databaseSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

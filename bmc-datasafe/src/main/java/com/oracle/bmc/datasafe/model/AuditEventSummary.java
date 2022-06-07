@@ -15,16 +15,121 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AuditEventSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AuditEventSummary {
+public final class AuditEventSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "dbUserName",
+        "targetId",
+        "targetName",
+        "databaseType",
+        "targetClass",
+        "auditEventTime",
+        "timeCollected",
+        "osUserName",
+        "operation",
+        "operationStatus",
+        "eventName",
+        "errorCode",
+        "errorMessage",
+        "objectType",
+        "objectName",
+        "objectOwner",
+        "clientHostname",
+        "clientIp",
+        "auditTrailId",
+        "isAlerted",
+        "actionTaken",
+        "clientProgram",
+        "commandText",
+        "commandParam",
+        "extendedEventAttributes",
+        "auditLocation",
+        "osTerminal",
+        "clientId",
+        "auditPolicies",
+        "auditType",
+        "freeformTags",
+        "definedTags"
+    })
+    public AuditEventSummary(
+            String id,
+            String compartmentId,
+            String dbUserName,
+            String targetId,
+            String targetName,
+            DatabaseType databaseType,
+            TargetClass targetClass,
+            java.util.Date auditEventTime,
+            java.util.Date timeCollected,
+            String osUserName,
+            String operation,
+            OperationStatus operationStatus,
+            String eventName,
+            String errorCode,
+            String errorMessage,
+            String objectType,
+            String objectName,
+            String objectOwner,
+            String clientHostname,
+            String clientIp,
+            String auditTrailId,
+            Boolean isAlerted,
+            String actionTaken,
+            String clientProgram,
+            String commandText,
+            String commandParam,
+            String extendedEventAttributes,
+            AuditLocation auditLocation,
+            String osTerminal,
+            String clientId,
+            String auditPolicies,
+            AuditType auditType,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.dbUserName = dbUserName;
+        this.targetId = targetId;
+        this.targetName = targetName;
+        this.databaseType = databaseType;
+        this.targetClass = targetClass;
+        this.auditEventTime = auditEventTime;
+        this.timeCollected = timeCollected;
+        this.osUserName = osUserName;
+        this.operation = operation;
+        this.operationStatus = operationStatus;
+        this.eventName = eventName;
+        this.errorCode = errorCode;
+        this.errorMessage = errorMessage;
+        this.objectType = objectType;
+        this.objectName = objectName;
+        this.objectOwner = objectOwner;
+        this.clientHostname = clientHostname;
+        this.clientIp = clientIp;
+        this.auditTrailId = auditTrailId;
+        this.isAlerted = isAlerted;
+        this.actionTaken = actionTaken;
+        this.clientProgram = clientProgram;
+        this.commandText = commandText;
+        this.commandParam = commandParam;
+        this.extendedEventAttributes = extendedEventAttributes;
+        this.auditLocation = auditLocation;
+        this.osTerminal = osTerminal;
+        this.clientId = clientId;
+        this.auditPolicies = auditPolicies;
+        this.auditType = auditType;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -427,35 +532,60 @@ public class AuditEventSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the audit event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Name of the database user whose actions were audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
-    String dbUserName;
+    private final String dbUserName;
+
+    public String getDbUserName() {
+        return dbUserName;
+    }
 
     /**
      * The OCID of the target database that was audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The name of the target database that was audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetName")
-    String targetName;
+    private final String targetName;
+
+    public String getTargetName() {
+        return targetName;
+    }
+
     /**
      * The type of the target database that was audited. Allowed values are
      *   - DATABASE_CLOUD_SERVICE - Represents Oracle Database Cloud Services.
@@ -463,7 +593,6 @@ public class AuditEventSummary {
      *   - INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DatabaseType {
         DatabaseCloudService("DATABASE_CLOUD_SERVICE"),
         AutonomousDatabase("AUTONOMOUS_DATABASE"),
@@ -474,6 +603,9 @@ public class AuditEventSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseType.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseType> map;
@@ -515,11 +647,15 @@ public class AuditEventSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    DatabaseType databaseType;
+    private final DatabaseType databaseType;
+
+    public DatabaseType getDatabaseType() {
+        return databaseType;
+    }
+
     /**
      * Class of the target that was audited.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TargetClass {
         Database("DATABASE"),
 
@@ -528,6 +664,9 @@ public class AuditEventSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TargetClass.class);
 
         private final String value;
         private static java.util.Map<String, TargetClass> map;
@@ -565,35 +704,55 @@ public class AuditEventSummary {
      * Class of the target that was audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetClass")
-    TargetClass targetClass;
+    private final TargetClass targetClass;
+
+    public TargetClass getTargetClass() {
+        return targetClass;
+    }
 
     /**
      * Time of audit event occurrence in the target database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
-    java.util.Date auditEventTime;
+    private final java.util.Date auditEventTime;
+
+    public java.util.Date getAuditEventTime() {
+        return auditEventTime;
+    }
 
     /**
      * Timestamp when this audit event was collected from the target database by Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
-    java.util.Date timeCollected;
+    private final java.util.Date timeCollected;
+
+    public java.util.Date getTimeCollected() {
+        return timeCollected;
+    }
 
     /**
      * Name of the operating system user for the database session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osUserName")
-    String osUserName;
+    private final String osUserName;
+
+    public String getOsUserName() {
+        return osUserName;
+    }
 
     /**
      * Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
-    String operation;
+    private final String operation;
+
+    public String getOperation() {
+        return operation;
+    }
+
     /**
      * Indicates whether the operation was a success or a failure.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OperationStatus {
         Success("SUCCESS"),
         Failure("FAILURE"),
@@ -603,6 +762,9 @@ public class AuditEventSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OperationStatus.class);
 
         private final String value;
         private static java.util.Map<String, OperationStatus> map;
@@ -640,101 +802,165 @@ public class AuditEventSummary {
      * Indicates whether the operation was a success or a failure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
-    OperationStatus operationStatus;
+    private final OperationStatus operationStatus;
+
+    public OperationStatus getOperationStatus() {
+        return operationStatus;
+    }
 
     /**
      * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
-    String eventName;
+    private final String eventName;
+
+    public String getEventName() {
+        return eventName;
+    }
 
     /**
      * Oracle Error code generated by the action. Zero indicates the action was successful.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
-    String errorCode;
+    private final String errorCode;
+
+    public String getErrorCode() {
+        return errorCode;
+    }
 
     /**
      * Detailed message on why the Error occurred.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     /**
      * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
-    String objectType;
+    private final String objectType;
+
+    public String getObjectType() {
+        return objectType;
+    }
 
     /**
      * Name of the object affected by the action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * Schema name of object affected but the action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
-    String objectOwner;
+    private final String objectOwner;
+
+    public String getObjectOwner() {
+        return objectOwner;
+    }
 
     /**
      * Name of the host machine from which the session was spawned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientHostname")
-    String clientHostname;
+    private final String clientHostname;
+
+    public String getClientHostname() {
+        return clientHostname;
+    }
 
     /**
      * IP address of the host from which the session was spawned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientIp")
-    String clientIp;
+    private final String clientIp;
+
+    public String getClientIp() {
+        return clientIp;
+    }
 
     /**
      * The OCID of the audit trail that generated this audit event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditTrailId")
-    String auditTrailId;
+    private final String auditTrailId;
+
+    public String getAuditTrailId() {
+        return auditTrailId;
+    }
 
     /**
      * Indicates whether an alert was raised for this audit event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAlerted")
-    Boolean isAlerted;
+    private final Boolean isAlerted;
+
+    public Boolean getIsAlerted() {
+        return isAlerted;
+    }
 
     /**
      * The action taken for this audit event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionTaken")
-    String actionTaken;
+    private final String actionTaken;
+
+    public String getActionTaken() {
+        return actionTaken;
+    }
 
     /**
      * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
-    String clientProgram;
+    private final String clientProgram;
+
+    public String getClientProgram() {
+        return clientProgram;
+    }
 
     /**
      * The SQL associated with the audit event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commandText")
-    String commandText;
+    private final String commandText;
+
+    public String getCommandText() {
+        return commandText;
+    }
 
     /**
      * List of bind variables associated with the command text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commandParam")
-    String commandParam;
+    private final String commandParam;
+
+    public String getCommandParam() {
+        return commandParam;
+    }
 
     /**
      * List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedEventAttributes")
-    String extendedEventAttributes;
+    private final String extendedEventAttributes;
+
+    public String getExtendedEventAttributes() {
+        return extendedEventAttributes;
+    }
+
     /**
      * The location of the audit. Currently the value is audit table.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AuditLocation {
         AuditTable("AUDIT_TABLE"),
 
@@ -743,6 +969,9 @@ public class AuditEventSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AuditLocation.class);
 
         private final String value;
         private static java.util.Map<String, AuditLocation> map;
@@ -780,29 +1009,45 @@ public class AuditEventSummary {
      * The location of the audit. Currently the value is audit table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditLocation")
-    AuditLocation auditLocation;
+    private final AuditLocation auditLocation;
+
+    public AuditLocation getAuditLocation() {
+        return auditLocation;
+    }
 
     /**
      * The operating system terminal of the user session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osTerminal")
-    String osTerminal;
+    private final String osTerminal;
+
+    public String getOsTerminal() {
+        return osTerminal;
+    }
 
     /**
      * The client identifier in each Oracle session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
-    String clientId;
+    private final String clientId;
+
+    public String getClientId() {
+        return clientId;
+    }
 
     /**
      * Comma-seperated list of audit policies that caused the current audit event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicies")
-    String auditPolicies;
+    private final String auditPolicies;
+
+    public String getAuditPolicies() {
+        return auditPolicies;
+    }
+
     /**
      * Type of auditing.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AuditType {
         Standard("STANDARD"),
         FineGrained("FINE_GRAINED"),
@@ -818,6 +1063,9 @@ public class AuditEventSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AuditType.class);
 
         private final String value;
         private static java.util.Map<String, AuditType> map;
@@ -855,7 +1103,11 @@ public class AuditEventSummary {
      * Type of auditing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditType")
-    AuditType auditType;
+    private final AuditType auditType;
+
+    public AuditType getAuditType() {
+        return auditType;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -864,7 +1116,11 @@ public class AuditEventSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -873,8 +1129,172 @@ public class AuditEventSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuditEventSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", dbUserName=").append(String.valueOf(this.dbUserName));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", targetName=").append(String.valueOf(this.targetName));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", targetClass=").append(String.valueOf(this.targetClass));
+        sb.append(", auditEventTime=").append(String.valueOf(this.auditEventTime));
+        sb.append(", timeCollected=").append(String.valueOf(this.timeCollected));
+        sb.append(", osUserName=").append(String.valueOf(this.osUserName));
+        sb.append(", operation=").append(String.valueOf(this.operation));
+        sb.append(", operationStatus=").append(String.valueOf(this.operationStatus));
+        sb.append(", eventName=").append(String.valueOf(this.eventName));
+        sb.append(", errorCode=").append(String.valueOf(this.errorCode));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", objectType=").append(String.valueOf(this.objectType));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", objectOwner=").append(String.valueOf(this.objectOwner));
+        sb.append(", clientHostname=").append(String.valueOf(this.clientHostname));
+        sb.append(", clientIp=").append(String.valueOf(this.clientIp));
+        sb.append(", auditTrailId=").append(String.valueOf(this.auditTrailId));
+        sb.append(", isAlerted=").append(String.valueOf(this.isAlerted));
+        sb.append(", actionTaken=").append(String.valueOf(this.actionTaken));
+        sb.append(", clientProgram=").append(String.valueOf(this.clientProgram));
+        sb.append(", commandText=").append(String.valueOf(this.commandText));
+        sb.append(", commandParam=").append(String.valueOf(this.commandParam));
+        sb.append(", extendedEventAttributes=")
+                .append(String.valueOf(this.extendedEventAttributes));
+        sb.append(", auditLocation=").append(String.valueOf(this.auditLocation));
+        sb.append(", osTerminal=").append(String.valueOf(this.osTerminal));
+        sb.append(", clientId=").append(String.valueOf(this.clientId));
+        sb.append(", auditPolicies=").append(String.valueOf(this.auditPolicies));
+        sb.append(", auditType=").append(String.valueOf(this.auditType));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuditEventSummary)) {
+            return false;
+        }
+
+        AuditEventSummary other = (AuditEventSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.dbUserName, other.dbUserName)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetName, other.targetName)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.targetClass, other.targetClass)
+                && java.util.Objects.equals(this.auditEventTime, other.auditEventTime)
+                && java.util.Objects.equals(this.timeCollected, other.timeCollected)
+                && java.util.Objects.equals(this.osUserName, other.osUserName)
+                && java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(this.operationStatus, other.operationStatus)
+                && java.util.Objects.equals(this.eventName, other.eventName)
+                && java.util.Objects.equals(this.errorCode, other.errorCode)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.objectOwner, other.objectOwner)
+                && java.util.Objects.equals(this.clientHostname, other.clientHostname)
+                && java.util.Objects.equals(this.clientIp, other.clientIp)
+                && java.util.Objects.equals(this.auditTrailId, other.auditTrailId)
+                && java.util.Objects.equals(this.isAlerted, other.isAlerted)
+                && java.util.Objects.equals(this.actionTaken, other.actionTaken)
+                && java.util.Objects.equals(this.clientProgram, other.clientProgram)
+                && java.util.Objects.equals(this.commandText, other.commandText)
+                && java.util.Objects.equals(this.commandParam, other.commandParam)
+                && java.util.Objects.equals(
+                        this.extendedEventAttributes, other.extendedEventAttributes)
+                && java.util.Objects.equals(this.auditLocation, other.auditLocation)
+                && java.util.Objects.equals(this.osTerminal, other.osTerminal)
+                && java.util.Objects.equals(this.clientId, other.clientId)
+                && java.util.Objects.equals(this.auditPolicies, other.auditPolicies)
+                && java.util.Objects.equals(this.auditType, other.auditType)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.dbUserName == null ? 43 : this.dbUserName.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.targetName == null ? 43 : this.targetName.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result = (result * PRIME) + (this.targetClass == null ? 43 : this.targetClass.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditEventTime == null ? 43 : this.auditEventTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCollected == null ? 43 : this.timeCollected.hashCode());
+        result = (result * PRIME) + (this.osUserName == null ? 43 : this.osUserName.hashCode());
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationStatus == null ? 43 : this.operationStatus.hashCode());
+        result = (result * PRIME) + (this.eventName == null ? 43 : this.eventName.hashCode());
+        result = (result * PRIME) + (this.errorCode == null ? 43 : this.errorCode.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.objectOwner == null ? 43 : this.objectOwner.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientHostname == null ? 43 : this.clientHostname.hashCode());
+        result = (result * PRIME) + (this.clientIp == null ? 43 : this.clientIp.hashCode());
+        result = (result * PRIME) + (this.auditTrailId == null ? 43 : this.auditTrailId.hashCode());
+        result = (result * PRIME) + (this.isAlerted == null ? 43 : this.isAlerted.hashCode());
+        result = (result * PRIME) + (this.actionTaken == null ? 43 : this.actionTaken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientProgram == null ? 43 : this.clientProgram.hashCode());
+        result = (result * PRIME) + (this.commandText == null ? 43 : this.commandText.hashCode());
+        result = (result * PRIME) + (this.commandParam == null ? 43 : this.commandParam.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedEventAttributes == null
+                                ? 43
+                                : this.extendedEventAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditLocation == null ? 43 : this.auditLocation.hashCode());
+        result = (result * PRIME) + (this.osTerminal == null ? 43 : this.osTerminal.hashCode());
+        result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditPolicies == null ? 43 : this.auditPolicies.hashCode());
+        result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

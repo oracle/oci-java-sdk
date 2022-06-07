@@ -26,9 +26,12 @@ import com.oracle.bmc.cloudguard.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.RequiredArgsConstructor
 public class CloudGuardPaginators {
     private final CloudGuard client;
+
+    public CloudGuardPaginators(CloudGuard client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listConditionMetadataTypes operation. This iterable

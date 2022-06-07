@@ -9,14 +9,6 @@ import com.oracle.bmc.oda.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDigitalAssistantRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,15 +16,25 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String odaInstanceId;
 
+    public String getOdaInstanceId() {
+        return odaInstanceId;
+    }
     /**
      * Unique Digital Assistant identifier.
      */
     private String digitalAssistantId;
 
+    public String getDigitalAssistantId() {
+        return digitalAssistantId;
+    }
     /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -40,6 +42,39 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String odaInstanceId = null;
+
+        /**
+         * Unique Digital Assistant instance identifier.
+         * @return this builder instance
+         */
+        public Builder odaInstanceId(String odaInstanceId) {
+            this.odaInstanceId = odaInstanceId;
+            return this;
+        }
+
+        private String digitalAssistantId = null;
+
+        /**
+         * Unique Digital Assistant identifier.
+         * @return this builder instance
+         */
+        public Builder digitalAssistantId(String digitalAssistantId) {
+            this.digitalAssistantId = digitalAssistantId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -93,5 +128,80 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetDigitalAssistantRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetDigitalAssistantRequest
+         */
+        public GetDigitalAssistantRequest buildWithoutInvocationCallback() {
+            GetDigitalAssistantRequest request = new GetDigitalAssistantRequest();
+            request.odaInstanceId = odaInstanceId;
+            request.digitalAssistantId = digitalAssistantId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetDigitalAssistantRequest(odaInstanceId, digitalAssistantId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .odaInstanceId(odaInstanceId)
+                .digitalAssistantId(digitalAssistantId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(",digitalAssistantId=").append(String.valueOf(this.digitalAssistantId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetDigitalAssistantRequest)) {
+            return false;
+        }
+
+        GetDigitalAssistantRequest other = (GetDigitalAssistantRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.digitalAssistantId, other.digitalAssistantId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.digitalAssistantId == null
+                                ? 43
+                                : this.digitalAssistantId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

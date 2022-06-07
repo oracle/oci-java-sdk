@@ -15,16 +15,58 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDisApplicationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDisApplicationDetails {
+public final class CreateDisApplicationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelVersion",
+        "modelType",
+        "name",
+        "description",
+        "objectStatus",
+        "identifier",
+        "displayName",
+        "freeformTags",
+        "definedTags",
+        "lifecycleState",
+        "sourceApplicationInfo",
+        "registryMetadata"
+    })
+    public CreateDisApplicationDetails(
+            String key,
+            String modelVersion,
+            ModelType modelType,
+            String name,
+            String description,
+            Integer objectStatus,
+            String identifier,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            LifecycleState lifecycleState,
+            CreateSourceApplicationInfo sourceApplicationInfo,
+            RegistryMetadata registryMetadata) {
+        super();
+        this.key = key;
+        this.modelVersion = modelVersion;
+        this.modelType = modelType;
+        this.name = name;
+        this.description = description;
+        this.objectStatus = objectStatus;
+        this.identifier = identifier;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.lifecycleState = lifecycleState;
+        this.sourceApplicationInfo = sourceApplicationInfo;
+        this.registryMetadata = registryMetadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -196,17 +238,30 @@ public class CreateDisApplicationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Currently not used on application creation. Reserved for future.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
+
     /**
      * The type of the application.
      **/
@@ -245,37 +300,61 @@ public class CreateDisApplicationDetails {
      * The type of the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    ModelType modelType;
+    private final ModelType modelType;
+
+    public ModelType getModelType() {
+        return modelType;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     /**
      * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -283,7 +362,11 @@ public class CreateDisApplicationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -291,7 +374,12 @@ public class CreateDisApplicationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     /**
      * The current state of the workspace.
      **/
@@ -335,14 +423,109 @@ public class CreateDisApplicationDetails {
      * The current state of the workspace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceApplicationInfo")
-    CreateSourceApplicationInfo sourceApplicationInfo;
+    private final CreateSourceApplicationInfo sourceApplicationInfo;
+
+    public CreateSourceApplicationInfo getSourceApplicationInfo() {
+        return sourceApplicationInfo;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
-    RegistryMetadata registryMetadata;
+    private final RegistryMetadata registryMetadata;
+
+    public RegistryMetadata getRegistryMetadata() {
+        return registryMetadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDisApplicationDetails(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", sourceApplicationInfo=").append(String.valueOf(this.sourceApplicationInfo));
+        sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDisApplicationDetails)) {
+            return false;
+        }
+
+        CreateDisApplicationDetails other = (CreateDisApplicationDetails) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.sourceApplicationInfo, other.sourceApplicationInfo)
+                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceApplicationInfo == null
+                                ? 43
+                                : this.sourceApplicationInfo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

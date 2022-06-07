@@ -15,16 +15,22 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateTargetDetectorRecipe.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateTargetDetectorRecipe {
+public final class UpdateTargetDetectorRecipe {
+    @Deprecated
+    @java.beans.ConstructorProperties({"targetDetectorRecipeId", "detectorRules"})
+    public UpdateTargetDetectorRecipe(
+            String targetDetectorRecipeId,
+            java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules) {
+        super();
+        this.targetDetectorRecipeId = targetDetectorRecipeId;
+        this.detectorRules = detectorRules;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipeId")
         private String targetDetectorRecipeId;
@@ -73,18 +79,78 @@ public class UpdateTargetDetectorRecipe {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Identifier for DetectorRecipe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipeId")
-    String targetDetectorRecipeId;
+    private final String targetDetectorRecipeId;
+
+    public String getTargetDetectorRecipeId() {
+        return targetDetectorRecipeId;
+    }
 
     /**
      * Updates to be applied to Detector Rule associated with the target
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
-    java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
+    private final java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
+
+    public java.util.List<UpdateTargetRecipeDetectorRuleDetails> getDetectorRules() {
+        return detectorRules;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateTargetDetectorRecipe(");
+        sb.append("targetDetectorRecipeId=").append(String.valueOf(this.targetDetectorRecipeId));
+        sb.append(", detectorRules=").append(String.valueOf(this.detectorRules));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTargetDetectorRecipe)) {
+            return false;
+        }
+
+        UpdateTargetDetectorRecipe other = (UpdateTargetDetectorRecipe) o;
+        return java.util.Objects.equals(this.targetDetectorRecipeId, other.targetDetectorRecipeId)
+                && java.util.Objects.equals(this.detectorRules, other.detectorRules)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.targetDetectorRecipeId == null
+                                ? 43
+                                : this.targetDetectorRecipeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRules == null ? 43 : this.detectorRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

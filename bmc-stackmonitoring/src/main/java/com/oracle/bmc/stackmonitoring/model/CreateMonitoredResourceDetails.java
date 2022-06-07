@@ -15,16 +15,52 @@ package com.oracle.bmc.stackmonitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateMonitoredResourceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateMonitoredResourceDetails {
+public final class CreateMonitoredResourceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "displayName",
+        "type",
+        "compartmentId",
+        "hostName",
+        "managementAgentId",
+        "resourceTimeZone",
+        "properties",
+        "databaseConnectionDetails",
+        "credentials",
+        "aliases"
+    })
+    public CreateMonitoredResourceDetails(
+            String name,
+            String displayName,
+            String type,
+            String compartmentId,
+            String hostName,
+            String managementAgentId,
+            String resourceTimeZone,
+            java.util.List<MonitoredResourceProperty> properties,
+            ConnectionDetails databaseConnectionDetails,
+            MonitoredResourceCredential credentials,
+            MonitoredResourceAliasCredential aliases) {
+        super();
+        this.name = name;
+        this.displayName = displayName;
+        this.type = type;
+        this.compartmentId = compartmentId;
+        this.hostName = hostName;
+        this.managementAgentId = managementAgentId;
+        this.resourceTimeZone = resourceTimeZone;
+        this.properties = properties;
+        this.databaseConnectionDetails = databaseConnectionDetails;
+        this.credentials = credentials;
+        this.aliases = aliases;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -173,63 +209,192 @@ public class CreateMonitoredResourceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Monitored resource name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Monitored resource display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Monitored resource type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Host name of the monitored resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
-    String hostName;
+    private final String hostName;
+
+    public String getHostName() {
+        return hostName;
+    }
 
     /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
-    String managementAgentId;
+    private final String managementAgentId;
+
+    public String getManagementAgentId() {
+        return managementAgentId;
+    }
 
     /**
      * Time zone in the form of tz database canonical zone ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
-    String resourceTimeZone;
+    private final String resourceTimeZone;
+
+    public String getResourceTimeZone() {
+        return resourceTimeZone;
+    }
 
     /**
      * List of monitored resource properties
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.List<MonitoredResourceProperty> properties;
+    private final java.util.List<MonitoredResourceProperty> properties;
+
+    public java.util.List<MonitoredResourceProperty> getProperties() {
+        return properties;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionDetails")
-    ConnectionDetails databaseConnectionDetails;
+    private final ConnectionDetails databaseConnectionDetails;
+
+    public ConnectionDetails getDatabaseConnectionDetails() {
+        return databaseConnectionDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("credentials")
-    MonitoredResourceCredential credentials;
+    private final MonitoredResourceCredential credentials;
+
+    public MonitoredResourceCredential getCredentials() {
+        return credentials;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("aliases")
-    MonitoredResourceAliasCredential aliases;
+    private final MonitoredResourceAliasCredential aliases;
+
+    public MonitoredResourceAliasCredential getAliases() {
+        return aliases;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateMonitoredResourceDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
+        sb.append(", resourceTimeZone=").append(String.valueOf(this.resourceTimeZone));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", databaseConnectionDetails=")
+                .append(String.valueOf(this.databaseConnectionDetails));
+        sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", aliases=").append(String.valueOf(this.aliases));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateMonitoredResourceDetails)) {
+            return false;
+        }
+
+        CreateMonitoredResourceDetails other = (CreateMonitoredResourceDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
+                && java.util.Objects.equals(this.resourceTimeZone, other.resourceTimeZone)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(
+                        this.databaseConnectionDetails, other.databaseConnectionDetails)
+                && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.aliases, other.aliases)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementAgentId == null ? 43 : this.managementAgentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceTimeZone == null ? 43 : this.resourceTimeZone.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseConnectionDetails == null
+                                ? 43
+                                : this.databaseConnectionDetails.hashCode());
+        result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result = (result * PRIME) + (this.aliases == null ? 43 : this.aliases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.logging.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateLogSavedSearchExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateLogSavedSearchRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateLogSavedSearchRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails> {
@@ -27,11 +19,18 @@ public class UpdateLogSavedSearchRequest
      */
     private String logSavedSearchId;
 
+    public String getLogSavedSearchId() {
+        return logSavedSearchId;
+    }
     /**
      * Updates to the saved search.
      */
     private com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails updateLogSavedSearchDetails;
 
+    public com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails
+            getUpdateLogSavedSearchDetails() {
+        return updateLogSavedSearchDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
      * resource, set the {@code if-match} parameter to the value of the etag from a
@@ -42,12 +41,19 @@ public class UpdateLogSavedSearchRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -66,6 +72,61 @@ public class UpdateLogSavedSearchRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String logSavedSearchId = null;
+
+        /**
+         * OCID of the logSavedSearch
+         *
+         * @return this builder instance
+         */
+        public Builder logSavedSearchId(String logSavedSearchId) {
+            this.logSavedSearchId = logSavedSearchId;
+            return this;
+        }
+
+        private com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails
+                updateLogSavedSearchDetails = null;
+
+        /**
+         * Updates to the saved search.
+         * @return this builder instance
+         */
+        public Builder updateLogSavedSearchDetails(
+                com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails
+                        updateLogSavedSearchDetails) {
+            this.updateLogSavedSearchDetails = updateLogSavedSearchDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -131,5 +192,87 @@ public class UpdateLogSavedSearchRequest
             updateLogSavedSearchDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateLogSavedSearchRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateLogSavedSearchRequest
+         */
+        public UpdateLogSavedSearchRequest buildWithoutInvocationCallback() {
+            UpdateLogSavedSearchRequest request = new UpdateLogSavedSearchRequest();
+            request.logSavedSearchId = logSavedSearchId;
+            request.updateLogSavedSearchDetails = updateLogSavedSearchDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateLogSavedSearchRequest(logSavedSearchId, updateLogSavedSearchDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .logSavedSearchId(logSavedSearchId)
+                .updateLogSavedSearchDetails(updateLogSavedSearchDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",logSavedSearchId=").append(String.valueOf(this.logSavedSearchId));
+        sb.append(",updateLogSavedSearchDetails=")
+                .append(String.valueOf(this.updateLogSavedSearchDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLogSavedSearchRequest)) {
+            return false;
+        }
+
+        UpdateLogSavedSearchRequest other = (UpdateLogSavedSearchRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.logSavedSearchId, other.logSavedSearchId)
+                && java.util.Objects.equals(
+                        this.updateLogSavedSearchDetails, other.updateLogSavedSearchDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.logSavedSearchId == null ? 43 : this.logSavedSearchId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateLogSavedSearchDetails == null
+                                ? 43
+                                : this.updateLogSavedSearchDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

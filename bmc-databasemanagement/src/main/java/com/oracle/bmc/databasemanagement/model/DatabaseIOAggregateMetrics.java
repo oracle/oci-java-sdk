@@ -15,16 +15,31 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseIOAggregateMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseIOAggregateMetrics {
+public final class DatabaseIOAggregateMetrics {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "iops",
+        "ioThroughput",
+        "iopsStatistics",
+        "ioThroughputStatistics"
+    })
+    public DatabaseIOAggregateMetrics(
+            java.util.List<MetricDataPoint> iops,
+            java.util.List<MetricDataPoint> ioThroughput,
+            java.util.List<MetricStatisticsDefinition> iopsStatistics,
+            java.util.List<MetricStatisticsDefinition> ioThroughputStatistics) {
+        super();
+        this.iops = iops;
+        this.ioThroughput = ioThroughput;
+        this.iopsStatistics = iopsStatistics;
+        this.ioThroughputStatistics = ioThroughputStatistics;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("iops")
         private java.util.List<MetricDataPoint> iops;
@@ -94,30 +109,105 @@ public class DatabaseIOAggregateMetrics {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The Input/Output Operations Per Second metrics grouped by IOType for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iops")
-    java.util.List<MetricDataPoint> iops;
+    private final java.util.List<MetricDataPoint> iops;
+
+    public java.util.List<MetricDataPoint> getIops() {
+        return iops;
+    }
 
     /**
      * The IOThroughput metrics grouped by IOType for a specific Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioThroughput")
-    java.util.List<MetricDataPoint> ioThroughput;
+    private final java.util.List<MetricDataPoint> ioThroughput;
+
+    public java.util.List<MetricDataPoint> getIoThroughput() {
+        return ioThroughput;
+    }
 
     /**
      * The Input/Output metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iopsStatistics")
-    java.util.List<MetricStatisticsDefinition> iopsStatistics;
+    private final java.util.List<MetricStatisticsDefinition> iopsStatistics;
+
+    public java.util.List<MetricStatisticsDefinition> getIopsStatistics() {
+        return iopsStatistics;
+    }
 
     /**
      * The IOThroughput metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioThroughputStatistics")
-    java.util.List<MetricStatisticsDefinition> ioThroughputStatistics;
+    private final java.util.List<MetricStatisticsDefinition> ioThroughputStatistics;
+
+    public java.util.List<MetricStatisticsDefinition> getIoThroughputStatistics() {
+        return ioThroughputStatistics;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseIOAggregateMetrics(");
+        sb.append("iops=").append(String.valueOf(this.iops));
+        sb.append(", ioThroughput=").append(String.valueOf(this.ioThroughput));
+        sb.append(", iopsStatistics=").append(String.valueOf(this.iopsStatistics));
+        sb.append(", ioThroughputStatistics=").append(String.valueOf(this.ioThroughputStatistics));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseIOAggregateMetrics)) {
+            return false;
+        }
+
+        DatabaseIOAggregateMetrics other = (DatabaseIOAggregateMetrics) o;
+        return java.util.Objects.equals(this.iops, other.iops)
+                && java.util.Objects.equals(this.ioThroughput, other.ioThroughput)
+                && java.util.Objects.equals(this.iopsStatistics, other.iopsStatistics)
+                && java.util.Objects.equals(
+                        this.ioThroughputStatistics, other.ioThroughputStatistics)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.iops == null ? 43 : this.iops.hashCode());
+        result = (result * PRIME) + (this.ioThroughput == null ? 43 : this.ioThroughput.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.iopsStatistics == null ? 43 : this.iopsStatistics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ioThroughputStatistics == null
+                                ? 43
+                                : this.ioThroughputStatistics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

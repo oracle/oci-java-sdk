@@ -24,16 +24,26 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceConfigurationLaunchInstanceShapeConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
+public final class InstanceConfigurationLaunchInstanceShapeConfigDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "baselineOcpuUtilization", "nvmes"})
+    public InstanceConfigurationLaunchInstanceShapeConfigDetails(
+            Float ocpus,
+            Float memoryInGBs,
+            BaselineOcpuUtilization baselineOcpuUtilization,
+            Integer nvmes) {
+        super();
+        this.ocpus = ocpus;
+        this.memoryInGBs = memoryInGBs;
+        this.baselineOcpuUtilization = baselineOcpuUtilization;
+        this.nvmes = nvmes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
@@ -102,19 +112,32 @@ public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The total number of OCPUs available to the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
-    Float ocpus;
+    private final Float ocpus;
+
+    public Float getOcpus() {
+        return ocpus;
+    }
 
     /**
      * The total amount of memory available to the instance, in gigabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
-    Float memoryInGBs;
+    private final Float memoryInGBs;
+
+    public Float getMemoryInGBs() {
+        return memoryInGBs;
+    }
+
     /**
      * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
      * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
@@ -125,7 +148,6 @@ public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
      * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BaselineOcpuUtilization {
         Baseline18("BASELINE_1_8"),
         Baseline12("BASELINE_1_2"),
@@ -136,6 +158,9 @@ public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BaselineOcpuUtilization.class);
 
         private final String value;
         private static java.util.Map<String, BaselineOcpuUtilization> map;
@@ -180,15 +205,78 @@ public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
-    BaselineOcpuUtilization baselineOcpuUtilization;
+    private final BaselineOcpuUtilization baselineOcpuUtilization;
+
+    public BaselineOcpuUtilization getBaselineOcpuUtilization() {
+        return baselineOcpuUtilization;
+    }
 
     /**
      * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
-    Integer nvmes;
+    private final Integer nvmes;
+
+    public Integer getNvmes() {
+        return nvmes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceConfigurationLaunchInstanceShapeConfigDetails(");
+        sb.append("ocpus=").append(String.valueOf(this.ocpus));
+        sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", baselineOcpuUtilization=")
+                .append(String.valueOf(this.baselineOcpuUtilization));
+        sb.append(", nvmes=").append(String.valueOf(this.nvmes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceConfigurationLaunchInstanceShapeConfigDetails)) {
+            return false;
+        }
+
+        InstanceConfigurationLaunchInstanceShapeConfigDetails other =
+                (InstanceConfigurationLaunchInstanceShapeConfigDetails) o;
+        return java.util.Objects.equals(this.ocpus, other.ocpus)
+                && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(
+                        this.baselineOcpuUtilization, other.baselineOcpuUtilization)
+                && java.util.Objects.equals(this.nvmes, other.nvmes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
+        result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baselineOcpuUtilization == null
+                                ? 43
+                                : this.baselineOcpuUtilization.hashCode());
+        result = (result * PRIME) + (this.nvmes == null ? 43 : this.nvmes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

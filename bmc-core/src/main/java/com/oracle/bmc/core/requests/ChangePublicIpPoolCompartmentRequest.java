@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangePublicIpPoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangePublicIpPoolCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangePublicIpPoolCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails> {
@@ -26,12 +18,19 @@ public class ChangePublicIpPoolCompartmentRequest
      */
     private String publicIpPoolId;
 
+    public String getPublicIpPoolId() {
+        return publicIpPoolId;
+    }
     /**
      * Request to change the compartment of a public IP pool.
      */
     private com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails
             changePublicIpPoolCompartmentDetails;
 
+    public com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails
+            getChangePublicIpPoolCompartmentDetails() {
+        return changePublicIpPoolCompartmentDetails;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -39,6 +38,9 @@ public class ChangePublicIpPoolCompartmentRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -48,6 +50,10 @@ public class ChangePublicIpPoolCompartmentRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -66,6 +72,60 @@ public class ChangePublicIpPoolCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String publicIpPoolId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         * @return this builder instance
+         */
+        public Builder publicIpPoolId(String publicIpPoolId) {
+            this.publicIpPoolId = publicIpPoolId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails
+                changePublicIpPoolCompartmentDetails = null;
+
+        /**
+         * Request to change the compartment of a public IP pool.
+         * @return this builder instance
+         */
+        public Builder changePublicIpPoolCompartmentDetails(
+                com.oracle.bmc.core.model.ChangePublicIpPoolCompartmentDetails
+                        changePublicIpPoolCompartmentDetails) {
+            this.changePublicIpPoolCompartmentDetails = changePublicIpPoolCompartmentDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -131,5 +191,91 @@ public class ChangePublicIpPoolCompartmentRequest
             changePublicIpPoolCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangePublicIpPoolCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangePublicIpPoolCompartmentRequest
+         */
+        public ChangePublicIpPoolCompartmentRequest buildWithoutInvocationCallback() {
+            ChangePublicIpPoolCompartmentRequest request =
+                    new ChangePublicIpPoolCompartmentRequest();
+            request.publicIpPoolId = publicIpPoolId;
+            request.changePublicIpPoolCompartmentDetails = changePublicIpPoolCompartmentDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new ChangePublicIpPoolCompartmentRequest(publicIpPoolId, changePublicIpPoolCompartmentDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .publicIpPoolId(publicIpPoolId)
+                .changePublicIpPoolCompartmentDetails(changePublicIpPoolCompartmentDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",publicIpPoolId=").append(String.valueOf(this.publicIpPoolId));
+        sb.append(",changePublicIpPoolCompartmentDetails=")
+                .append(String.valueOf(this.changePublicIpPoolCompartmentDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangePublicIpPoolCompartmentRequest)) {
+            return false;
+        }
+
+        ChangePublicIpPoolCompartmentRequest other = (ChangePublicIpPoolCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.publicIpPoolId, other.publicIpPoolId)
+                && java.util.Objects.equals(
+                        this.changePublicIpPoolCompartmentDetails,
+                        other.changePublicIpPoolCompartmentDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.publicIpPoolId == null ? 43 : this.publicIpPoolId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changePublicIpPoolCompartmentDetails == null
+                                ? 43
+                                : this.changePublicIpPoolCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

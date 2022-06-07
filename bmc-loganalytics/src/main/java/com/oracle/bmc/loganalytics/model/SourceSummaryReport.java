@@ -15,16 +15,22 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SourceSummaryReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SourceSummaryReport {
+public final class SourceSummaryReport {
+    @Deprecated
+    @java.beans.ConstructorProperties({"nonOobCount", "autoAssociationSourceCount", "oobCount"})
+    public SourceSummaryReport(
+            Integer nonOobCount, Integer autoAssociationSourceCount, Integer oobCount) {
+        super();
+        this.nonOobCount = nonOobCount;
+        this.autoAssociationSourceCount = autoAssociationSourceCount;
+        this.oobCount = oobCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
         private Integer nonOobCount;
@@ -82,24 +88,91 @@ public class SourceSummaryReport {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The count of custom (user defined) sources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
-    Integer nonOobCount;
+    private final Integer nonOobCount;
+
+    public Integer getNonOobCount() {
+        return nonOobCount;
+    }
 
     /**
      * The count of sources set to auto-associate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoAssociationSourceCount")
-    Integer autoAssociationSourceCount;
+    private final Integer autoAssociationSourceCount;
+
+    public Integer getAutoAssociationSourceCount() {
+        return autoAssociationSourceCount;
+    }
 
     /**
      * The count of built in sources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
-    Integer oobCount;
+    private final Integer oobCount;
+
+    public Integer getOobCount() {
+        return oobCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SourceSummaryReport(");
+        sb.append("nonOobCount=").append(String.valueOf(this.nonOobCount));
+        sb.append(", autoAssociationSourceCount=")
+                .append(String.valueOf(this.autoAssociationSourceCount));
+        sb.append(", oobCount=").append(String.valueOf(this.oobCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SourceSummaryReport)) {
+            return false;
+        }
+
+        SourceSummaryReport other = (SourceSummaryReport) o;
+        return java.util.Objects.equals(this.nonOobCount, other.nonOobCount)
+                && java.util.Objects.equals(
+                        this.autoAssociationSourceCount, other.autoAssociationSourceCount)
+                && java.util.Objects.equals(this.oobCount, other.oobCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.nonOobCount == null ? 43 : this.nonOobCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoAssociationSourceCount == null
+                                ? 43
+                                : this.autoAssociationSourceCount.hashCode());
+        result = (result * PRIME) + (this.oobCount == null ? 43 : this.oobCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

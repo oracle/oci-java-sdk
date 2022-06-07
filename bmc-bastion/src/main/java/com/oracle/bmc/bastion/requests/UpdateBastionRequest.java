@@ -9,14 +9,6 @@ import com.oracle.bmc.bastion.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/UpdateBastionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBastionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateBastionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.bastion.model.UpdateBastionDetails> {
@@ -26,11 +18,17 @@ public class UpdateBastionRequest
      */
     private String bastionId;
 
+    public String getBastionId() {
+        return bastionId;
+    }
     /**
      * The bastion information to be updated.
      */
     private com.oracle.bmc.bastion.model.UpdateBastionDetails updateBastionDetails;
 
+    public com.oracle.bmc.bastion.model.UpdateBastionDetails getUpdateBastionDetails() {
+        return updateBastionDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -41,10 +39,17 @@ public class UpdateBastionRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -62,6 +67,56 @@ public class UpdateBastionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String bastionId = null;
+
+        /**
+         * The unique identifier (OCID) of the bastion.
+         * @return this builder instance
+         */
+        public Builder bastionId(String bastionId) {
+            this.bastionId = bastionId;
+            return this;
+        }
+
+        private com.oracle.bmc.bastion.model.UpdateBastionDetails updateBastionDetails = null;
+
+        /**
+         * The bastion information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateBastionDetails(
+                com.oracle.bmc.bastion.model.UpdateBastionDetails updateBastionDetails) {
+            this.updateBastionDetails = updateBastionDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -127,5 +182,83 @@ public class UpdateBastionRequest
             updateBastionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateBastionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateBastionRequest
+         */
+        public UpdateBastionRequest buildWithoutInvocationCallback() {
+            UpdateBastionRequest request = new UpdateBastionRequest();
+            request.bastionId = bastionId;
+            request.updateBastionDetails = updateBastionDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateBastionRequest(bastionId, updateBastionDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .bastionId(bastionId)
+                .updateBastionDetails(updateBastionDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",bastionId=").append(String.valueOf(this.bastionId));
+        sb.append(",updateBastionDetails=").append(String.valueOf(this.updateBastionDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBastionRequest)) {
+            return false;
+        }
+
+        UpdateBastionRequest other = (UpdateBastionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.bastionId, other.bastionId)
+                && java.util.Objects.equals(this.updateBastionDetails, other.updateBastionDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.bastionId == null ? 43 : this.bastionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateBastionDetails == null
+                                ? 43
+                                : this.updateBastionDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

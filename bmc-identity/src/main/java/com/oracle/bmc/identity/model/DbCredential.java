@@ -17,14 +17,35 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbCredential.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbCredential {
+public final class DbCredential {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "userId",
+        "timeCreated",
+        "timeExpires",
+        "lifecycleState",
+        "lifecycleDetails"
+    })
+    public DbCredential(
+            String id,
+            String userId,
+            java.util.Date timeCreated,
+            java.util.Date timeExpires,
+            LifecycleState lifecycleState,
+            Long lifecycleDetails) {
+        super();
+        this.id = id;
+        this.userId = userId;
+        this.timeCreated = timeCreated;
+        this.timeExpires = timeExpires;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -113,17 +134,29 @@ public class DbCredential {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the DB credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the user the DB credential belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * Date and time the {@code DbCredential} object was created, in the format defined by RFC3339.
@@ -132,7 +165,11 @@ public class DbCredential {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Date and time when this credential will expire, in the format defined by RFC3339.
@@ -142,13 +179,17 @@ public class DbCredential {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
-    java.util.Date timeExpires;
+    private final java.util.Date timeExpires;
+
+    public java.util.Date getTimeExpires() {
+        return timeExpires;
+    }
+
     /**
      * The credential's current state. After creating a DB credential, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -160,6 +201,9 @@ public class DbCredential {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -199,14 +243,80 @@ public class DbCredential {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    Long lifecycleDetails;
+    private final Long lifecycleDetails;
+
+    public Long getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbCredential(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbCredential)) {
+            return false;
+        }
+
+        DbCredential other = (DbCredential) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeExpires, other.timeExpires)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,29 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TableLimits.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TableLimits {
+public final class TableLimits {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "maxReadUnits",
+        "maxWriteUnits",
+        "maxStorageInGBs",
+        "capacityMode"
+    })
+    public TableLimits(
+            Integer maxReadUnits,
+            Integer maxWriteUnits,
+            Integer maxStorageInGBs,
+            CapacityMode capacityMode) {
+        super();
+        this.maxReadUnits = maxReadUnits;
+        this.maxWriteUnits = maxWriteUnits;
+        this.maxStorageInGBs = maxStorageInGBs;
+        this.capacityMode = capacityMode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("maxReadUnits")
         private Integer maxReadUnits;
@@ -90,30 +105,46 @@ public class TableLimits {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Maximum sustained read throughput limit for the table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxReadUnits")
-    Integer maxReadUnits;
+    private final Integer maxReadUnits;
+
+    public Integer getMaxReadUnits() {
+        return maxReadUnits;
+    }
 
     /**
      * Maximum sustained write throughput limit for the table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxWriteUnits")
-    Integer maxWriteUnits;
+    private final Integer maxWriteUnits;
+
+    public Integer getMaxWriteUnits() {
+        return maxWriteUnits;
+    }
 
     /**
      * Maximum size of storage used by the table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxStorageInGBs")
-    Integer maxStorageInGBs;
+    private final Integer maxStorageInGBs;
+
+    public Integer getMaxStorageInGBs() {
+        return maxStorageInGBs;
+    }
+
     /**
      * The capacity mode of the table.  If capacityMode = ON_DEMAND,
      * maxReadUnits and maxWriteUnits are not used, and both will have
      * the value of zero.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CapacityMode {
         Provisioned("PROVISIONED"),
         OnDemand("ON_DEMAND"),
@@ -123,6 +154,9 @@ public class TableLimits {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CapacityMode.class);
 
         private final String value;
         private static java.util.Map<String, CapacityMode> map;
@@ -163,8 +197,64 @@ public class TableLimits {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityMode")
-    CapacityMode capacityMode;
+    private final CapacityMode capacityMode;
+
+    public CapacityMode getCapacityMode() {
+        return capacityMode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TableLimits(");
+        sb.append("maxReadUnits=").append(String.valueOf(this.maxReadUnits));
+        sb.append(", maxWriteUnits=").append(String.valueOf(this.maxWriteUnits));
+        sb.append(", maxStorageInGBs=").append(String.valueOf(this.maxStorageInGBs));
+        sb.append(", capacityMode=").append(String.valueOf(this.capacityMode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TableLimits)) {
+            return false;
+        }
+
+        TableLimits other = (TableLimits) o;
+        return java.util.Objects.equals(this.maxReadUnits, other.maxReadUnits)
+                && java.util.Objects.equals(this.maxWriteUnits, other.maxWriteUnits)
+                && java.util.Objects.equals(this.maxStorageInGBs, other.maxStorageInGBs)
+                && java.util.Objects.equals(this.capacityMode, other.capacityMode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.maxReadUnits == null ? 43 : this.maxReadUnits.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxWriteUnits == null ? 43 : this.maxWriteUnits.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxStorageInGBs == null ? 43 : this.maxStorageInGBs.hashCode());
+        result = (result * PRIME) + (this.capacityMode == null ? 43 : this.capacityMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

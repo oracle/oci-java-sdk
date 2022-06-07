@@ -9,14 +9,6 @@ import com.oracle.bmc.usage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usage/CreateRedeemableUserExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateRedeemableUserRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateRedeemableUserRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.usage.model.CreateRedeemableUserDetails> {
@@ -27,26 +19,41 @@ public class CreateRedeemableUserRequest
      */
     private com.oracle.bmc.usage.model.CreateRedeemableUserDetails createRedeemableUserDetails;
 
+    public com.oracle.bmc.usage.model.CreateRedeemableUserDetails getCreateRedeemableUserDetails() {
+        return createRedeemableUserDetails;
+    }
     /**
      * The OCID of the tenancy.
      */
     private String tenancyId;
 
+    public String getTenancyId() {
+        return tenancyId;
+    }
     /**
      * The subscription ID for which rewards information is requested for.
      */
     private String subscriptionId;
 
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
     /**
      * The user ID of the person to send a copy of an email.
      */
     private String userId;
 
+    public String getUserId() {
+        return userId;
+    }
     /**
      * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -57,6 +64,9 @@ public class CreateRedeemableUserRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error, without risk of executing that same action again. Retry tokens expire after 24
@@ -66,6 +76,10 @@ public class CreateRedeemableUserRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -84,6 +98,97 @@ public class CreateRedeemableUserRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.usage.model.CreateRedeemableUserDetails createRedeemableUserDetails =
+                null;
+
+        /**
+         * CreateRedeemableUserDetails inforamtion.
+         *
+         * @return this builder instance
+         */
+        public Builder createRedeemableUserDetails(
+                com.oracle.bmc.usage.model.CreateRedeemableUserDetails
+                        createRedeemableUserDetails) {
+            this.createRedeemableUserDetails = createRedeemableUserDetails;
+            return this;
+        }
+
+        private String tenancyId = null;
+
+        /**
+         * The OCID of the tenancy.
+         * @return this builder instance
+         */
+        public Builder tenancyId(String tenancyId) {
+            this.tenancyId = tenancyId;
+            return this;
+        }
+
+        private String subscriptionId = null;
+
+        /**
+         * The subscription ID for which rewards information is requested for.
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        private String userId = null;
+
+        /**
+         * The user ID of the person to send a copy of an email.
+         * @return this builder instance
+         */
+        public Builder userId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted, only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error, without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -152,5 +257,104 @@ public class CreateRedeemableUserRequest
             createRedeemableUserDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateRedeemableUserRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateRedeemableUserRequest
+         */
+        public CreateRedeemableUserRequest buildWithoutInvocationCallback() {
+            CreateRedeemableUserRequest request = new CreateRedeemableUserRequest();
+            request.createRedeemableUserDetails = createRedeemableUserDetails;
+            request.tenancyId = tenancyId;
+            request.subscriptionId = subscriptionId;
+            request.userId = userId;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateRedeemableUserRequest(createRedeemableUserDetails, tenancyId, subscriptionId, userId, opcRequestId, ifMatch, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createRedeemableUserDetails(createRedeemableUserDetails)
+                .tenancyId(tenancyId)
+                .subscriptionId(subscriptionId)
+                .userId(userId)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createRedeemableUserDetails=")
+                .append(String.valueOf(this.createRedeemableUserDetails));
+        sb.append(",tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(",userId=").append(String.valueOf(this.userId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateRedeemableUserRequest)) {
+            return false;
+        }
+
+        CreateRedeemableUserRequest other = (CreateRedeemableUserRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createRedeemableUserDetails, other.createRedeemableUserDetails)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createRedeemableUserDetails == null
+                                ? 43
+                                : this.createRedeemableUserDetails.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

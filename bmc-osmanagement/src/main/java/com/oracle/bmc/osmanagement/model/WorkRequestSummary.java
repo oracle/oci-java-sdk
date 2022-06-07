@@ -15,16 +15,46 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestSummary {
+public final class WorkRequestSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "operationType",
+        "status",
+        "id",
+        "compartmentId",
+        "description",
+        "message",
+        "percentComplete",
+        "timeAccepted",
+        "osFamily"
+    })
+    public WorkRequestSummary(
+            OperationTypes operationType,
+            OperationStatus status,
+            String id,
+            String compartmentId,
+            String description,
+            String message,
+            Float percentComplete,
+            java.util.Date timeAccepted,
+            OsFamilies osFamily) {
+        super();
+        this.operationType = operationType;
+        this.status = status;
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.description = description;
+        this.message = message;
+        this.percentComplete = percentComplete;
+        this.timeAccepted = timeAccepted;
+        this.osFamily = osFamily;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationTypes operationType;
@@ -151,23 +181,39 @@ public class WorkRequestSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * the type of operation this Work Request performs
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
-    OperationTypes operationType;
+    private final OperationTypes operationType;
+
+    public OperationTypes getOperationType() {
+        return operationType;
+    }
 
     /**
      * status of current work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    OperationStatus status;
+    private final OperationStatus status;
+
+    public OperationStatus getStatus() {
+        return status;
+    }
 
     /**
      * The id of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The ocid of the compartment that contains the work request. Work requests should be scoped to
@@ -177,25 +223,41 @@ public class WorkRequestSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Description of the type of work.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A progress or error message, if there is any.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * Percentage of the request completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
-    Float percentComplete;
+    private final Float percentComplete;
+
+    public Float getPercentComplete() {
+        return percentComplete;
+    }
 
     /**
      * The date and time the request was created, as described in
@@ -203,14 +265,91 @@ public class WorkRequestSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
-    java.util.Date timeAccepted;
+    private final java.util.Date timeAccepted;
+
+    public java.util.Date getTimeAccepted() {
+        return timeAccepted;
+    }
 
     /**
      * The Operating System type of the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
-    OsFamilies osFamily;
+    private final OsFamilies osFamily;
+
+    public OsFamilies getOsFamily() {
+        return osFamily;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestSummary(");
+        sb.append("operationType=").append(String.valueOf(this.operationType));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
+        sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
+        sb.append(", osFamily=").append(String.valueOf(this.osFamily));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestSummary)) {
+            return false;
+        }
+
+        WorkRequestSummary other = (WorkRequestSummary) o;
+        return java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.percentComplete, other.percentComplete)
+                && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
+        result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
+        result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

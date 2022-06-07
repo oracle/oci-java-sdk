@@ -15,16 +15,37 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PhaseTwoConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PhaseTwoConfigDetails {
+public final class PhaseTwoConfigDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isCustomPhaseTwoConfig",
+        "authenticationAlgorithm",
+        "encryptionAlgorithm",
+        "lifetimeInSeconds",
+        "isPfsEnabled",
+        "pfsDhGroup"
+    })
+    public PhaseTwoConfigDetails(
+            Boolean isCustomPhaseTwoConfig,
+            AuthenticationAlgorithm authenticationAlgorithm,
+            EncryptionAlgorithm encryptionAlgorithm,
+            Integer lifetimeInSeconds,
+            Boolean isPfsEnabled,
+            PfsDhGroup pfsDhGroup) {
+        super();
+        this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
+        this.authenticationAlgorithm = authenticationAlgorithm;
+        this.encryptionAlgorithm = encryptionAlgorithm;
+        this.lifetimeInSeconds = lifetimeInSeconds;
+        this.isPfsEnabled = isPfsEnabled;
+        this.pfsDhGroup = pfsDhGroup;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
         private Boolean isCustomPhaseTwoConfig;
@@ -118,11 +139,20 @@ public class PhaseTwoConfigDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates whether custom configuration is enabled for phase two options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
-    Boolean isCustomPhaseTwoConfig;
+    private final Boolean isCustomPhaseTwoConfig;
+
+    public Boolean getIsCustomPhaseTwoConfig() {
+        return isCustomPhaseTwoConfig;
+    }
+
     /**
      * The authentication algorithm proposed during phase two tunnel negotiation.
      *
@@ -164,7 +194,12 @@ public class PhaseTwoConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
-    AuthenticationAlgorithm authenticationAlgorithm;
+    private final AuthenticationAlgorithm authenticationAlgorithm;
+
+    public AuthenticationAlgorithm getAuthenticationAlgorithm() {
+        return authenticationAlgorithm;
+    }
+
     /**
      * The encryption algorithm proposed during phase two tunnel negotiation.
      *
@@ -210,20 +245,33 @@ public class PhaseTwoConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
-    EncryptionAlgorithm encryptionAlgorithm;
+    private final EncryptionAlgorithm encryptionAlgorithm;
+
+    public EncryptionAlgorithm getEncryptionAlgorithm() {
+        return encryptionAlgorithm;
+    }
 
     /**
      * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
-    Integer lifetimeInSeconds;
+    private final Integer lifetimeInSeconds;
+
+    public Integer getLifetimeInSeconds() {
+        return lifetimeInSeconds;
+    }
 
     /**
      * Indicates whether perfect forward secrecy (PFS) is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPfsEnabled")
-    Boolean isPfsEnabled;
+    private final Boolean isPfsEnabled;
+
+    public Boolean getIsPfsEnabled() {
+        return isPfsEnabled;
+    }
+
     /**
      * The Diffie-Hellman group used for PFS, if PFS is enabled.
      **/
@@ -267,8 +315,82 @@ public class PhaseTwoConfigDetails {
      * The Diffie-Hellman group used for PFS, if PFS is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pfsDhGroup")
-    PfsDhGroup pfsDhGroup;
+    private final PfsDhGroup pfsDhGroup;
+
+    public PfsDhGroup getPfsDhGroup() {
+        return pfsDhGroup;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PhaseTwoConfigDetails(");
+        sb.append("isCustomPhaseTwoConfig=").append(String.valueOf(this.isCustomPhaseTwoConfig));
+        sb.append(", authenticationAlgorithm=")
+                .append(String.valueOf(this.authenticationAlgorithm));
+        sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
+        sb.append(", lifetimeInSeconds=").append(String.valueOf(this.lifetimeInSeconds));
+        sb.append(", isPfsEnabled=").append(String.valueOf(this.isPfsEnabled));
+        sb.append(", pfsDhGroup=").append(String.valueOf(this.pfsDhGroup));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PhaseTwoConfigDetails)) {
+            return false;
+        }
+
+        PhaseTwoConfigDetails other = (PhaseTwoConfigDetails) o;
+        return java.util.Objects.equals(this.isCustomPhaseTwoConfig, other.isCustomPhaseTwoConfig)
+                && java.util.Objects.equals(
+                        this.authenticationAlgorithm, other.authenticationAlgorithm)
+                && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
+                && java.util.Objects.equals(this.lifetimeInSeconds, other.lifetimeInSeconds)
+                && java.util.Objects.equals(this.isPfsEnabled, other.isPfsEnabled)
+                && java.util.Objects.equals(this.pfsDhGroup, other.pfsDhGroup)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isCustomPhaseTwoConfig == null
+                                ? 43
+                                : this.isCustomPhaseTwoConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationAlgorithm == null
+                                ? 43
+                                : this.authenticationAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionAlgorithm == null
+                                ? 43
+                                : this.encryptionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifetimeInSeconds == null ? 43 : this.lifetimeInSeconds.hashCode());
+        result = (result * PRIME) + (this.isPfsEnabled == null ? 43 : this.isPfsEnabled.hashCode());
+        result = (result * PRIME) + (this.pfsDhGroup == null ? 43 : this.pfsDhGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

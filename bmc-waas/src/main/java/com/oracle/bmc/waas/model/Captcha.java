@@ -17,14 +17,38 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Captcha.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Captcha {
+public final class Captcha {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "url",
+        "sessionExpirationInSeconds",
+        "title",
+        "headerText",
+        "footerText",
+        "failureMessage",
+        "submitLabel"
+    })
+    public Captcha(
+            String url,
+            Integer sessionExpirationInSeconds,
+            String title,
+            String headerText,
+            String footerText,
+            String failureMessage,
+            String submitLabel) {
+        super();
+        this.url = url;
+        this.sessionExpirationInSeconds = sessionExpirationInSeconds;
+        this.title = title;
+        this.headerText = headerText;
+        this.footerText = footerText;
+        this.failureMessage = failureMessage;
+        this.submitLabel = submitLabel;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
@@ -129,48 +153,145 @@ public class Captcha {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique URL path at which to show the CAPTCHA challenge.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
 
     /**
      * The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to {@code 300}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionExpirationInSeconds")
-    Integer sessionExpirationInSeconds;
+    private final Integer sessionExpirationInSeconds;
+
+    public Integer getSessionExpirationInSeconds() {
+        return sessionExpirationInSeconds;
+    }
 
     /**
      * The title used when displaying a CAPTCHA challenge. If unspecified, defaults to {@code Are you human?}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
-    String title;
+    private final String title;
+
+    public String getTitle() {
+        return title;
+    }
 
     /**
      * The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerText")
-    String headerText;
+    private final String headerText;
+
+    public String getHeaderText() {
+        return headerText;
+    }
 
     /**
      * The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("footerText")
-    String footerText;
+    private final String footerText;
+
+    public String getFooterText() {
+        return footerText;
+    }
 
     /**
      * The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to {@code The CAPTCHA was incorrect. Try again.}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureMessage")
-    String failureMessage;
+    private final String failureMessage;
+
+    public String getFailureMessage() {
+        return failureMessage;
+    }
 
     /**
      * The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to {@code Yes, I am human}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("submitLabel")
-    String submitLabel;
+    private final String submitLabel;
+
+    public String getSubmitLabel() {
+        return submitLabel;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Captcha(");
+        sb.append("url=").append(String.valueOf(this.url));
+        sb.append(", sessionExpirationInSeconds=")
+                .append(String.valueOf(this.sessionExpirationInSeconds));
+        sb.append(", title=").append(String.valueOf(this.title));
+        sb.append(", headerText=").append(String.valueOf(this.headerText));
+        sb.append(", footerText=").append(String.valueOf(this.footerText));
+        sb.append(", failureMessage=").append(String.valueOf(this.failureMessage));
+        sb.append(", submitLabel=").append(String.valueOf(this.submitLabel));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Captcha)) {
+            return false;
+        }
+
+        Captcha other = (Captcha) o;
+        return java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(
+                        this.sessionExpirationInSeconds, other.sessionExpirationInSeconds)
+                && java.util.Objects.equals(this.title, other.title)
+                && java.util.Objects.equals(this.headerText, other.headerText)
+                && java.util.Objects.equals(this.footerText, other.footerText)
+                && java.util.Objects.equals(this.failureMessage, other.failureMessage)
+                && java.util.Objects.equals(this.submitLabel, other.submitLabel)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sessionExpirationInSeconds == null
+                                ? 43
+                                : this.sessionExpirationInSeconds.hashCode());
+        result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
+        result = (result * PRIME) + (this.headerText == null ? 43 : this.headerText.hashCode());
+        result = (result * PRIME) + (this.footerText == null ? 43 : this.footerText.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureMessage == null ? 43 : this.failureMessage.hashCode());
+        result = (result * PRIME) + (this.submitLabel == null ? 43 : this.submitLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

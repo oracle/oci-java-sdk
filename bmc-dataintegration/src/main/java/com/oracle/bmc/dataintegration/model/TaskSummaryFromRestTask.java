@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TaskSummaryFromRestTask.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TaskSummaryFromRestTask extends TaskSummary {
+public final class TaskSummaryFromRestTask extends TaskSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -355,6 +350,10 @@ public class TaskSummaryFromRestTask extends TaskSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public TaskSummaryFromRestTask(
             String key,
@@ -415,17 +414,29 @@ public class TaskSummaryFromRestTask extends TaskSummary {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("authDetails")
-    AuthDetails authDetails;
+    private final AuthDetails authDetails;
+
+    public AuthDetails getAuthDetails() {
+        return authDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("authConfig")
-    AuthConfig authConfig;
+    private final AuthConfig authConfig;
+
+    public AuthConfig getAuthConfig() {
+        return authConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
-    Expression endpoint;
+    private final Expression endpoint;
+
+    public Expression getEndpoint() {
+        return endpoint;
+    }
+
     /**
      * The REST method to use. This property is deprecated, use ExecuteRestCallConfig's methodType property instead.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MethodType {
         Get("GET"),
         Post("POST"),
@@ -438,6 +449,9 @@ public class TaskSummaryFromRestTask extends TaskSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MethodType.class);
 
         private final String value;
         private static java.util.Map<String, MethodType> map;
@@ -475,20 +489,32 @@ public class TaskSummaryFromRestTask extends TaskSummary {
      * The REST method to use. This property is deprecated, use ExecuteRestCallConfig's methodType property instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("methodType")
-    MethodType methodType;
+    private final MethodType methodType;
+
+    public MethodType getMethodType() {
+        return methodType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
-    Object headers;
+    private final Object headers;
+
+    public Object getHeaders() {
+        return headers;
+    }
 
     /**
      * JSON data for payload body. This property is deprecated, use ExecuteRestCallConfig's payload config param instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jsonData")
-    String jsonData;
+    private final String jsonData;
+
+    public String getJsonData() {
+        return jsonData;
+    }
+
     /**
      * The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ApiCallMode {
         Synchronous("SYNCHRONOUS"),
         AsyncOciWorkrequest("ASYNC_OCI_WORKREQUEST"),
@@ -499,6 +525,9 @@ public class TaskSummaryFromRestTask extends TaskSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ApiCallMode.class);
 
         private final String value;
         private static java.util.Map<String, ApiCallMode> map;
@@ -536,14 +565,22 @@ public class TaskSummaryFromRestTask extends TaskSummary {
      * The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiCallMode")
-    ApiCallMode apiCallMode;
+    private final ApiCallMode apiCallMode;
+
+    public ApiCallMode getApiCallMode() {
+        return apiCallMode;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("cancelEndpoint")
-    Expression cancelEndpoint;
+    private final Expression cancelEndpoint;
+
+    public Expression getCancelEndpoint() {
+        return cancelEndpoint;
+    }
+
     /**
      * The REST method to use for canceling the original request.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CancelMethodType {
         Get("GET"),
         Post("POST"),
@@ -556,6 +593,9 @@ public class TaskSummaryFromRestTask extends TaskSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CancelMethodType.class);
 
         private final String value;
         private static java.util.Map<String, CancelMethodType> map;
@@ -593,17 +633,123 @@ public class TaskSummaryFromRestTask extends TaskSummary {
      * The REST method to use for canceling the original request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cancelMethodType")
-    CancelMethodType cancelMethodType;
+    private final CancelMethodType cancelMethodType;
+
+    public CancelMethodType getCancelMethodType() {
+        return cancelMethodType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("executeRestCallConfig")
-    ExecuteRestCallConfig executeRestCallConfig;
+    private final ExecuteRestCallConfig executeRestCallConfig;
+
+    public ExecuteRestCallConfig getExecuteRestCallConfig() {
+        return executeRestCallConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("cancelRestCallConfig")
-    CancelRestCallConfig cancelRestCallConfig;
+    private final CancelRestCallConfig cancelRestCallConfig;
+
+    public CancelRestCallConfig getCancelRestCallConfig() {
+        return cancelRestCallConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("pollRestCallConfig")
-    PollRestCallConfig pollRestCallConfig;
+    private final PollRestCallConfig pollRestCallConfig;
+
+    public PollRestCallConfig getPollRestCallConfig() {
+        return pollRestCallConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TaskSummaryFromRestTask(");
+        sb.append("super=").append(super.toString());
+        sb.append(", authDetails=").append(String.valueOf(this.authDetails));
+        sb.append(", authConfig=").append(String.valueOf(this.authConfig));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", methodType=").append(String.valueOf(this.methodType));
+        sb.append(", headers=").append(String.valueOf(this.headers));
+        sb.append(", jsonData=").append(String.valueOf(this.jsonData));
+        sb.append(", apiCallMode=").append(String.valueOf(this.apiCallMode));
+        sb.append(", cancelEndpoint=").append(String.valueOf(this.cancelEndpoint));
+        sb.append(", cancelMethodType=").append(String.valueOf(this.cancelMethodType));
+        sb.append(", executeRestCallConfig=").append(String.valueOf(this.executeRestCallConfig));
+        sb.append(", cancelRestCallConfig=").append(String.valueOf(this.cancelRestCallConfig));
+        sb.append(", pollRestCallConfig=").append(String.valueOf(this.pollRestCallConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TaskSummaryFromRestTask)) {
+            return false;
+        }
+
+        TaskSummaryFromRestTask other = (TaskSummaryFromRestTask) o;
+        return java.util.Objects.equals(this.authDetails, other.authDetails)
+                && java.util.Objects.equals(this.authConfig, other.authConfig)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.methodType, other.methodType)
+                && java.util.Objects.equals(this.headers, other.headers)
+                && java.util.Objects.equals(this.jsonData, other.jsonData)
+                && java.util.Objects.equals(this.apiCallMode, other.apiCallMode)
+                && java.util.Objects.equals(this.cancelEndpoint, other.cancelEndpoint)
+                && java.util.Objects.equals(this.cancelMethodType, other.cancelMethodType)
+                && java.util.Objects.equals(this.executeRestCallConfig, other.executeRestCallConfig)
+                && java.util.Objects.equals(this.cancelRestCallConfig, other.cancelRestCallConfig)
+                && java.util.Objects.equals(this.pollRestCallConfig, other.pollRestCallConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.authDetails == null ? 43 : this.authDetails.hashCode());
+        result = (result * PRIME) + (this.authConfig == null ? 43 : this.authConfig.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result = (result * PRIME) + (this.methodType == null ? 43 : this.methodType.hashCode());
+        result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
+        result = (result * PRIME) + (this.jsonData == null ? 43 : this.jsonData.hashCode());
+        result = (result * PRIME) + (this.apiCallMode == null ? 43 : this.apiCallMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cancelEndpoint == null ? 43 : this.cancelEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cancelMethodType == null ? 43 : this.cancelMethodType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executeRestCallConfig == null
+                                ? 43
+                                : this.executeRestCallConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cancelRestCallConfig == null
+                                ? 43
+                                : this.cancelRestCallConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pollRestCallConfig == null
+                                ? 43
+                                : this.pollRestCallConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

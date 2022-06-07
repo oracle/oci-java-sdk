@@ -16,14 +16,19 @@ package com.oracle.bmc.autoscaling.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Capacity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Capacity {
+public final class Capacity {
+    @Deprecated
+    @java.beans.ConstructorProperties({"max", "min", "initial"})
+    public Capacity(Integer max, Integer min, Integer initial) {
+        super();
+        this.max = max;
+        this.min = min;
+        this.initial = initial;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Integer max;
@@ -77,6 +82,10 @@ public class Capacity {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed
      * to increase to (scale out).
@@ -85,7 +94,11 @@ public class Capacity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("max")
-    Integer max;
+    private final Integer max;
+
+    public Integer getMax() {
+        return max;
+    }
 
     /**
      * For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed
@@ -95,7 +108,11 @@ public class Capacity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("min")
-    Integer min;
+    private final Integer min;
+
+    public Integer getMin() {
+        return min;
+    }
 
     /**
      * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool
@@ -108,8 +125,57 @@ public class Capacity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initial")
-    Integer initial;
+    private final Integer initial;
+
+    public Integer getInitial() {
+        return initial;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Capacity(");
+        sb.append("max=").append(String.valueOf(this.max));
+        sb.append(", min=").append(String.valueOf(this.min));
+        sb.append(", initial=").append(String.valueOf(this.initial));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Capacity)) {
+            return false;
+        }
+
+        Capacity other = (Capacity) o;
+        return java.util.Objects.equals(this.max, other.max)
+                && java.util.Objects.equals(this.min, other.min)
+                && java.util.Objects.equals(this.initial, other.initial)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.max == null ? 43 : this.max.hashCode());
+        result = (result * PRIME) + (this.min == null ? 43 : this.min.hashCode());
+        result = (result * PRIME) + (this.initial == null ? 43 : this.initial.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

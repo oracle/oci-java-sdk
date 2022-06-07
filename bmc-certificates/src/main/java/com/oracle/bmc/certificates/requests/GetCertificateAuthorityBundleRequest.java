@@ -9,14 +9,6 @@ import com.oracle.bmc.certificates.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificates/GetCertificateAuthorityBundleExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCertificateAuthorityBundleRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetCertificateAuthorityBundleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class GetCertificateAuthorityBundleRequest
      */
     private String certificateAuthorityId;
 
+    public String getCertificateAuthorityId() {
+        return certificateAuthorityId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
      * please provide the request ID.
@@ -32,17 +27,26 @@ public class GetCertificateAuthorityBundleRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The version number of the certificate authority (CA).
      */
     private Long versionNumber;
 
+    public Long getVersionNumber() {
+        return versionNumber;
+    }
     /**
      * The name of the certificate authority (CA). (This might be referred to as the name of the CA version, as every CA consists of at least one version.) Names are unique across versions of a given CA.
      *
      */
     private String certificateAuthorityVersionName;
 
+    public String getCertificateAuthorityVersionName() {
+        return certificateAuthorityVersionName;
+    }
     /**
      * The rotation state of the certificate version.
      */
@@ -87,12 +91,74 @@ public class GetCertificateAuthorityBundleRequest
         }
     };
 
+    public Stage getStage() {
+        return stage;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetCertificateAuthorityBundleRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String certificateAuthorityId = null;
+
+        /**
+         * The OCID of the certificate authority (CA).
+         * @return this builder instance
+         */
+        public Builder certificateAuthorityId(String certificateAuthorityId) {
+            this.certificateAuthorityId = certificateAuthorityId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Long versionNumber = null;
+
+        /**
+         * The version number of the certificate authority (CA).
+         * @return this builder instance
+         */
+        public Builder versionNumber(Long versionNumber) {
+            this.versionNumber = versionNumber;
+            return this;
+        }
+
+        private String certificateAuthorityVersionName = null;
+
+        /**
+         * The name of the certificate authority (CA). (This might be referred to as the name of the CA version, as every CA consists of at least one version.) Names are unique across versions of a given CA.
+         *
+         * @return this builder instance
+         */
+        public Builder certificateAuthorityVersionName(String certificateAuthorityVersionName) {
+            this.certificateAuthorityVersionName = certificateAuthorityVersionName;
+            return this;
+        }
+
+        private Stage stage = null;
+
+        /**
+         * The rotation state of the certificate version.
+         * @return this builder instance
+         */
+        public Builder stage(Stage stage) {
+            this.stage = stage;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -148,5 +214,98 @@ public class GetCertificateAuthorityBundleRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetCertificateAuthorityBundleRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetCertificateAuthorityBundleRequest
+         */
+        public GetCertificateAuthorityBundleRequest buildWithoutInvocationCallback() {
+            GetCertificateAuthorityBundleRequest request =
+                    new GetCertificateAuthorityBundleRequest();
+            request.certificateAuthorityId = certificateAuthorityId;
+            request.opcRequestId = opcRequestId;
+            request.versionNumber = versionNumber;
+            request.certificateAuthorityVersionName = certificateAuthorityVersionName;
+            request.stage = stage;
+            return request;
+            // new GetCertificateAuthorityBundleRequest(certificateAuthorityId, opcRequestId, versionNumber, certificateAuthorityVersionName, stage);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .certificateAuthorityId(certificateAuthorityId)
+                .opcRequestId(opcRequestId)
+                .versionNumber(versionNumber)
+                .certificateAuthorityVersionName(certificateAuthorityVersionName)
+                .stage(stage);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",certificateAuthorityId=").append(String.valueOf(this.certificateAuthorityId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",versionNumber=").append(String.valueOf(this.versionNumber));
+        sb.append(",certificateAuthorityVersionName=")
+                .append(String.valueOf(this.certificateAuthorityVersionName));
+        sb.append(",stage=").append(String.valueOf(this.stage));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetCertificateAuthorityBundleRequest)) {
+            return false;
+        }
+
+        GetCertificateAuthorityBundleRequest other = (GetCertificateAuthorityBundleRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.certificateAuthorityId, other.certificateAuthorityId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.versionNumber, other.versionNumber)
+                && java.util.Objects.equals(
+                        this.certificateAuthorityVersionName, other.certificateAuthorityVersionName)
+                && java.util.Objects.equals(this.stage, other.stage);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.certificateAuthorityId == null
+                                ? 43
+                                : this.certificateAuthorityId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionNumber == null ? 43 : this.versionNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateAuthorityVersionName == null
+                                ? 43
+                                : this.certificateAuthorityVersionName.hashCode());
+        result = (result * PRIME) + (this.stage == null ? 43 : this.stage.hashCode());
+        return result;
     }
 }

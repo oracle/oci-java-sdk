@@ -15,16 +15,20 @@ package com.oracle.bmc.optimizer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LevelConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LevelConfiguration {
+public final class LevelConfiguration {
+    @Deprecated
+    @java.beans.ConstructorProperties({"recommendationId", "level"})
+    public LevelConfiguration(String recommendationId, String level) {
+        super();
+        this.recommendationId = recommendationId;
+        this.level = level;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationId")
         private String recommendationId;
@@ -69,18 +73,74 @@ public class LevelConfiguration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique OCID of the recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationId")
-    String recommendationId;
+    private final String recommendationId;
+
+    public String getRecommendationId() {
+        return recommendationId;
+    }
 
     /**
      * The pre-defined profile level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
-    String level;
+    private final String level;
+
+    public String getLevel() {
+        return level;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LevelConfiguration(");
+        sb.append("recommendationId=").append(String.valueOf(this.recommendationId));
+        sb.append(", level=").append(String.valueOf(this.level));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LevelConfiguration)) {
+            return false;
+        }
+
+        LevelConfiguration other = (LevelConfiguration) o;
+        return java.util.Objects.equals(this.recommendationId, other.recommendationId)
+                && java.util.Objects.equals(this.level, other.level)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.recommendationId == null ? 43 : this.recommendationId.hashCode());
+        result = (result * PRIME) + (this.level == null ? 43 : this.level.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

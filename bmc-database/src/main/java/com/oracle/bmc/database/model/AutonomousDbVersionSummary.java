@@ -16,16 +16,43 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousDbVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousDbVersionSummary {
+public final class AutonomousDbVersionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "version",
+        "dbWorkload",
+        "isDedicated",
+        "details",
+        "isFreeTierEnabled",
+        "isPaidEnabled",
+        "isDefaultForFree",
+        "isDefaultForPaid"
+    })
+    public AutonomousDbVersionSummary(
+            String version,
+            DbWorkload dbWorkload,
+            Boolean isDedicated,
+            String details,
+            Boolean isFreeTierEnabled,
+            Boolean isPaidEnabled,
+            Boolean isDefaultForFree,
+            Boolean isDefaultForPaid) {
+        super();
+        this.version = version;
+        this.dbWorkload = dbWorkload;
+        this.isDedicated = isDedicated;
+        this.details = details;
+        this.isFreeTierEnabled = isFreeTierEnabled;
+        this.isPaidEnabled = isPaidEnabled;
+        this.isDefaultForFree = isDefaultForFree;
+        this.isDefaultForPaid = isDefaultForPaid;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
@@ -141,11 +168,20 @@ public class AutonomousDbVersionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A valid Oracle Database version for Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
+
     /**
      * The Autonomous Database workload type. The following values are valid:
      * <p>
@@ -155,7 +191,6 @@ public class AutonomousDbVersionSummary {
      * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DbWorkload {
         Oltp("OLTP"),
         Dw("DW"),
@@ -167,6 +202,9 @@ public class AutonomousDbVersionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DbWorkload.class);
 
         private final String value;
         private static java.util.Map<String, DbWorkload> map;
@@ -210,45 +248,141 @@ public class AutonomousDbVersionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
-    DbWorkload dbWorkload;
+    private final DbWorkload dbWorkload;
+
+    public DbWorkload getDbWorkload() {
+        return dbWorkload;
+    }
 
     /**
      * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
-    Boolean isDedicated;
+    private final Boolean isDedicated;
+
+    public Boolean getIsDedicated() {
+        return isDedicated;
+    }
 
     /**
      * A URL that points to a detailed description of the Autonomous Database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
-    String details;
+    private final String details;
+
+    public String getDetails() {
+        return details;
+    }
 
     /**
      * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
-    Boolean isFreeTierEnabled;
+    private final Boolean isFreeTierEnabled;
+
+    public Boolean getIsFreeTierEnabled() {
+        return isFreeTierEnabled;
+    }
 
     /**
      * True if this version of the Oracle Database software has payments enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
-    Boolean isPaidEnabled;
+    private final Boolean isPaidEnabled;
+
+    public Boolean getIsPaidEnabled() {
+        return isPaidEnabled;
+    }
 
     /**
      * True if this version of the Oracle Database software's default is free.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForFree")
-    Boolean isDefaultForFree;
+    private final Boolean isDefaultForFree;
+
+    public Boolean getIsDefaultForFree() {
+        return isDefaultForFree;
+    }
 
     /**
      * True if this version of the Oracle Database software's default is paid.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForPaid")
-    Boolean isDefaultForPaid;
+    private final Boolean isDefaultForPaid;
+
+    public Boolean getIsDefaultForPaid() {
+        return isDefaultForPaid;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousDbVersionSummary(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
+        sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
+        sb.append(", details=").append(String.valueOf(this.details));
+        sb.append(", isFreeTierEnabled=").append(String.valueOf(this.isFreeTierEnabled));
+        sb.append(", isPaidEnabled=").append(String.valueOf(this.isPaidEnabled));
+        sb.append(", isDefaultForFree=").append(String.valueOf(this.isDefaultForFree));
+        sb.append(", isDefaultForPaid=").append(String.valueOf(this.isDefaultForPaid));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousDbVersionSummary)) {
+            return false;
+        }
+
+        AutonomousDbVersionSummary other = (AutonomousDbVersionSummary) o;
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
+                && java.util.Objects.equals(this.isDedicated, other.isDedicated)
+                && java.util.Objects.equals(this.details, other.details)
+                && java.util.Objects.equals(this.isFreeTierEnabled, other.isFreeTierEnabled)
+                && java.util.Objects.equals(this.isPaidEnabled, other.isPaidEnabled)
+                && java.util.Objects.equals(this.isDefaultForFree, other.isDefaultForFree)
+                && java.util.Objects.equals(this.isDefaultForPaid, other.isDefaultForPaid)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
+        result = (result * PRIME) + (this.isDedicated == null ? 43 : this.isDedicated.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isFreeTierEnabled == null ? 43 : this.isFreeTierEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPaidEnabled == null ? 43 : this.isPaidEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultForFree == null ? 43 : this.isDefaultForFree.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultForPaid == null ? 43 : this.isDefaultForPaid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

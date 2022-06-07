@@ -15,22 +15,17 @@ package com.oracle.bmc.aispeech.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectListInlineInputLocation.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "locationType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectListInlineInputLocation extends InputLocation {
+public final class ObjectListInlineInputLocation extends InputLocation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objectLocations")
         private java.util.List<ObjectLocation> objectLocations;
@@ -67,6 +62,10 @@ public class ObjectListInlineInputLocation extends InputLocation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ObjectListInlineInputLocation(java.util.List<ObjectLocation> objectLocations) {
         super();
@@ -77,8 +76,55 @@ public class ObjectListInlineInputLocation extends InputLocation {
      * A list of ObjectLocations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectLocations")
-    java.util.List<ObjectLocation> objectLocations;
+    private final java.util.List<ObjectLocation> objectLocations;
+
+    public java.util.List<ObjectLocation> getObjectLocations() {
+        return objectLocations;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectListInlineInputLocation(");
+        sb.append("super=").append(super.toString());
+        sb.append(", objectLocations=").append(String.valueOf(this.objectLocations));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectListInlineInputLocation)) {
+            return false;
+        }
+
+        ObjectListInlineInputLocation other = (ObjectListInlineInputLocation) o;
+        return java.util.Objects.equals(this.objectLocations, other.objectLocations)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.objectLocations == null ? 43 : this.objectLocations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,26 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Contact.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Contact {
+public final class Contact {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "contactName",
+        "contactEmail",
+        "contactPhone",
+        "contactType"
+    })
+    public Contact(
+            String contactName, String contactEmail, String contactPhone, ContactType contactType) {
+        super();
+        this.contactName = contactName;
+        this.contactEmail = contactEmail;
+        this.contactPhone = contactPhone;
+        this.contactType = contactType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("contactName")
         private String contactName;
@@ -90,27 +102,43 @@ public class Contact {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the contact person.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactName")
-    String contactName;
+    private final String contactName;
+
+    public String getContactName() {
+        return contactName;
+    }
 
     /**
      * The email of the contact person.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
-    String contactEmail;
+    private final String contactEmail;
+
+    public String getContactEmail() {
+        return contactEmail;
+    }
 
     /**
      * The phone number of the contact person.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
-    String contactPhone;
+    private final String contactPhone;
+
+    public String getContactPhone() {
+        return contactPhone;
+    }
+
     /**
      * The type of contact, such as primary or alternate.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ContactType {
         Primary("PRIMARY"),
         Alternate("ALTERNATE"),
@@ -123,6 +151,9 @@ public class Contact {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ContactType.class);
 
         private final String value;
         private static java.util.Map<String, ContactType> map;
@@ -160,8 +191,60 @@ public class Contact {
      * The type of contact, such as primary or alternate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactType")
-    ContactType contactType;
+    private final ContactType contactType;
+
+    public ContactType getContactType() {
+        return contactType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Contact(");
+        sb.append("contactName=").append(String.valueOf(this.contactName));
+        sb.append(", contactEmail=").append(String.valueOf(this.contactEmail));
+        sb.append(", contactPhone=").append(String.valueOf(this.contactPhone));
+        sb.append(", contactType=").append(String.valueOf(this.contactType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Contact)) {
+            return false;
+        }
+
+        Contact other = (Contact) o;
+        return java.util.Objects.equals(this.contactName, other.contactName)
+                && java.util.Objects.equals(this.contactEmail, other.contactEmail)
+                && java.util.Objects.equals(this.contactPhone, other.contactPhone)
+                && java.util.Objects.equals(this.contactType, other.contactType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.contactName == null ? 43 : this.contactName.hashCode());
+        result = (result * PRIME) + (this.contactEmail == null ? 43 : this.contactEmail.hashCode());
+        result = (result * PRIME) + (this.contactPhone == null ? 43 : this.contactPhone.hashCode());
+        result = (result * PRIME) + (this.contactType == null ? 43 : this.contactType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

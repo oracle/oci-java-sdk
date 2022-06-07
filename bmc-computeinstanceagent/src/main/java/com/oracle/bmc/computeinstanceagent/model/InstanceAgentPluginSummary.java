@@ -15,16 +15,22 @@ package com.oracle.bmc.computeinstanceagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceAgentPluginSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceAgentPluginSummary {
+public final class InstanceAgentPluginSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "status", "timeLastUpdatedUtc"})
+    public InstanceAgentPluginSummary(
+            String name, Status status, java.util.Date timeLastUpdatedUtc) {
+        super();
+        this.name = name;
+        this.status = status;
+        this.timeLastUpdatedUtc = timeLastUpdatedUtc;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -82,15 +88,23 @@ public class InstanceAgentPluginSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The plugin name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Running("RUNNING"),
         Stopped("STOPPED"),
@@ -102,6 +116,8 @@ public class InstanceAgentPluginSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -139,14 +155,71 @@ public class InstanceAgentPluginSummary {
      * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The last update time of the plugin in UTC
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdatedUtc")
-    java.util.Date timeLastUpdatedUtc;
+    private final java.util.Date timeLastUpdatedUtc;
+
+    public java.util.Date getTimeLastUpdatedUtc() {
+        return timeLastUpdatedUtc;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceAgentPluginSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeLastUpdatedUtc=").append(String.valueOf(this.timeLastUpdatedUtc));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceAgentPluginSummary)) {
+            return false;
+        }
+
+        InstanceAgentPluginSummary other = (InstanceAgentPluginSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeLastUpdatedUtc, other.timeLastUpdatedUtc)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastUpdatedUtc == null
+                                ? 43
+                                : this.timeLastUpdatedUtc.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

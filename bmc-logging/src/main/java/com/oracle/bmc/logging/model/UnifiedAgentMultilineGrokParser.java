@@ -15,22 +15,17 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UnifiedAgentMultilineGrokParser.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "parserType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
+public final class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
         private String fieldTimeKey;
@@ -179,6 +174,10 @@ public class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UnifiedAgentMultilineGrokParser(
             String fieldTimeKey,
@@ -207,17 +206,89 @@ public class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("grokNameKey")
-    String grokNameKey;
+    private final String grokNameKey;
+
+    public String getGrokNameKey() {
+        return grokNameKey;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("grokFailureKey")
-    String grokFailureKey;
+    private final String grokFailureKey;
+
+    public String getGrokFailureKey() {
+        return grokFailureKey;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("multiLineStartRegexp")
-    String multiLineStartRegexp;
+    private final String multiLineStartRegexp;
+
+    public String getMultiLineStartRegexp() {
+        return multiLineStartRegexp;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("patterns")
-    java.util.List<GrokPattern> patterns;
+    private final java.util.List<GrokPattern> patterns;
+
+    public java.util.List<GrokPattern> getPatterns() {
+        return patterns;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UnifiedAgentMultilineGrokParser(");
+        sb.append("super=").append(super.toString());
+        sb.append(", grokNameKey=").append(String.valueOf(this.grokNameKey));
+        sb.append(", grokFailureKey=").append(String.valueOf(this.grokFailureKey));
+        sb.append(", multiLineStartRegexp=").append(String.valueOf(this.multiLineStartRegexp));
+        sb.append(", patterns=").append(String.valueOf(this.patterns));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UnifiedAgentMultilineGrokParser)) {
+            return false;
+        }
+
+        UnifiedAgentMultilineGrokParser other = (UnifiedAgentMultilineGrokParser) o;
+        return java.util.Objects.equals(this.grokNameKey, other.grokNameKey)
+                && java.util.Objects.equals(this.grokFailureKey, other.grokFailureKey)
+                && java.util.Objects.equals(this.multiLineStartRegexp, other.multiLineStartRegexp)
+                && java.util.Objects.equals(this.patterns, other.patterns)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.grokNameKey == null ? 43 : this.grokNameKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.grokFailureKey == null ? 43 : this.grokFailureKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multiLineStartRegexp == null
+                                ? 43
+                                : this.multiLineStartRegexp.hashCode());
+        result = (result * PRIME) + (this.patterns == null ? 43 : this.patterns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

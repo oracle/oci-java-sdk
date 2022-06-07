@@ -17,22 +17,17 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseConnectionCredentialsByDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "credentialType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseConnectionCredentialsByDetails extends DatabaseConnectionCredentials {
+public final class DatabaseConnectionCredentialsByDetails extends DatabaseConnectionCredentials {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
         private String credentialName;
@@ -101,6 +96,10 @@ public class DatabaseConnectionCredentialsByDetails extends DatabaseConnectionCr
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DatabaseConnectionCredentialsByDetails(
             String credentialName, String username, String password, Role role) {
@@ -124,23 +123,35 @@ public class DatabaseConnectionCredentialsByDetails extends DatabaseConnectionCr
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
-    String credentialName;
+    private final String credentialName;
+
+    public String getCredentialName() {
+        return credentialName;
+    }
 
     /**
      * The username that will be used to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
-    String username;
+    private final String username;
+
+    public String getUsername() {
+        return username;
+    }
 
     /**
      * The password that will be used to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    String password;
+    private final String password;
+
+    public String getPassword() {
+        return password;
+    }
+
     /**
      * The role of the user that will be connecting to the database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Role {
         Sysdba("SYSDBA"),
         Normal("NORMAL"),
@@ -150,6 +161,8 @@ public class DatabaseConnectionCredentialsByDetails extends DatabaseConnectionCr
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Role.class);
 
         private final String value;
         private static java.util.Map<String, Role> map;
@@ -186,8 +199,64 @@ public class DatabaseConnectionCredentialsByDetails extends DatabaseConnectionCr
      * The role of the user that will be connecting to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    Role role;
+    private final Role role;
+
+    public Role getRole() {
+        return role;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseConnectionCredentialsByDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", credentialName=").append(String.valueOf(this.credentialName));
+        sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", role=").append(String.valueOf(this.role));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseConnectionCredentialsByDetails)) {
+            return false;
+        }
+
+        DatabaseConnectionCredentialsByDetails other = (DatabaseConnectionCredentialsByDetails) o;
+        return java.util.Objects.equals(this.credentialName, other.credentialName)
+                && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.credentialName == null ? 43 : this.credentialName.hashCode());
+        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

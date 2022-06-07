@@ -15,22 +15,17 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateOSSChannelDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateOSSChannelDetails extends CreateChannelDetails {
+public final class CreateOSSChannelDetails extends CreateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -226,6 +221,10 @@ public class CreateOSSChannelDetails extends CreateChannelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateOSSChannelDetails(
             String name,
@@ -260,62 +259,186 @@ public class CreateOSSChannelDetails extends CreateChannelDetails {
      * The IDs of the Skills and Digital Assistants that the Channel is routed to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventSinkBotIds")
-    java.util.List<String> eventSinkBotIds;
+    private final java.util.List<String> eventSinkBotIds;
+
+    public java.util.List<String> getEventSinkBotIds() {
+        return eventSinkBotIds;
+    }
 
     /**
      * The topic inbound messages are received on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inboundMessageTopic")
-    String inboundMessageTopic;
+    private final String inboundMessageTopic;
+
+    public String getInboundMessageTopic() {
+        return inboundMessageTopic;
+    }
 
     /**
      * The topic outbound messages are sent on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outboundMessageTopic")
-    String outboundMessageTopic;
+    private final String outboundMessageTopic;
+
+    public String getOutboundMessageTopic() {
+        return outboundMessageTopic;
+    }
 
     /**
      * The Oracle Streaming Service bootstrap servers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
-    String bootstrapServers;
+    private final String bootstrapServers;
+
+    public String getBootstrapServers() {
+        return bootstrapServers;
+    }
 
     /**
      * The security protocol to use when conecting to the Oracle Streaming Service. See Oracle Streaming Service documentation for a list of valid values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
-    String securityProtocol;
+    private final String securityProtocol;
+
+    public String getSecurityProtocol() {
+        return securityProtocol;
+    }
 
     /**
      * The SASL mechanmism to use when conecting to the Oracle Streaming Service. See Oracle Streaming Service documentation for a list of valid values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("saslMechanism")
-    String saslMechanism;
+    private final String saslMechanism;
+
+    public String getSaslMechanism() {
+        return saslMechanism;
+    }
 
     /**
      * The tenancy to use when connecting to the Oracle Streaming Service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
-    String tenancyName;
+    private final String tenancyName;
+
+    public String getTenancyName() {
+        return tenancyName;
+    }
 
     /**
      * The user name to use when connecting to the Oracle Streaming Service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * The stream pool OCI to use when connecting to the Oracle Streaming Service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
-    String streamPoolId;
+    private final String streamPoolId;
+
+    public String getStreamPoolId() {
+        return streamPoolId;
+    }
 
     /**
      * The authentication token to use when connecting to the Oracle Streaming Service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-    String authToken;
+    private final String authToken;
+
+    public String getAuthToken() {
+        return authToken;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateOSSChannelDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", eventSinkBotIds=").append(String.valueOf(this.eventSinkBotIds));
+        sb.append(", inboundMessageTopic=").append(String.valueOf(this.inboundMessageTopic));
+        sb.append(", outboundMessageTopic=").append(String.valueOf(this.outboundMessageTopic));
+        sb.append(", bootstrapServers=").append(String.valueOf(this.bootstrapServers));
+        sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
+        sb.append(", saslMechanism=").append(String.valueOf(this.saslMechanism));
+        sb.append(", tenancyName=").append(String.valueOf(this.tenancyName));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", streamPoolId=").append(String.valueOf(this.streamPoolId));
+        sb.append(", authToken=").append(String.valueOf(this.authToken));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOSSChannelDetails)) {
+            return false;
+        }
+
+        CreateOSSChannelDetails other = (CreateOSSChannelDetails) o;
+        return java.util.Objects.equals(this.eventSinkBotIds, other.eventSinkBotIds)
+                && java.util.Objects.equals(this.inboundMessageTopic, other.inboundMessageTopic)
+                && java.util.Objects.equals(this.outboundMessageTopic, other.outboundMessageTopic)
+                && java.util.Objects.equals(this.bootstrapServers, other.bootstrapServers)
+                && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
+                && java.util.Objects.equals(this.saslMechanism, other.saslMechanism)
+                && java.util.Objects.equals(this.tenancyName, other.tenancyName)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.streamPoolId, other.streamPoolId)
+                && java.util.Objects.equals(this.authToken, other.authToken)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.eventSinkBotIds == null ? 43 : this.eventSinkBotIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inboundMessageTopic == null
+                                ? 43
+                                : this.inboundMessageTopic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outboundMessageTopic == null
+                                ? 43
+                                : this.outboundMessageTopic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bootstrapServers == null ? 43 : this.bootstrapServers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.saslMechanism == null ? 43 : this.saslMechanism.hashCode());
+        result = (result * PRIME) + (this.tenancyName == null ? 43 : this.tenancyName.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result = (result * PRIME) + (this.streamPoolId == null ? 43 : this.streamPoolId.hashCode());
+        result = (result * PRIME) + (this.authToken == null ? 43 : this.authToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

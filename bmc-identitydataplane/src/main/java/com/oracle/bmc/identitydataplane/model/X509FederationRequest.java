@@ -15,16 +15,22 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = X509FederationRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class X509FederationRequest {
+public final class X509FederationRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({"certificate", "publicKey", "intermediateCertificates"})
+    public X509FederationRequest(
+            String certificate, String publicKey, java.util.List<String> intermediateCertificates) {
+        super();
+        this.certificate = certificate;
+        this.publicKey = publicKey;
+        this.intermediateCertificates = intermediateCertificates;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
@@ -82,11 +88,19 @@ public class X509FederationRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The x509 certificate of the service instance, issued by his CA.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
-    String certificate;
+    private final String certificate;
+
+    public String getCertificate() {
+        return certificate;
+    }
 
     /**
      * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
@@ -94,7 +108,11 @@ public class X509FederationRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
-    String publicKey;
+    private final String publicKey;
+
+    public String getPublicKey() {
+        return publicKey;
+    }
 
     /**
      * An array of intermediate certificates to form the chain from the leaf certificate to the root CA. If auth
@@ -102,8 +120,63 @@ public class X509FederationRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intermediateCertificates")
-    java.util.List<String> intermediateCertificates;
+    private final java.util.List<String> intermediateCertificates;
+
+    public java.util.List<String> getIntermediateCertificates() {
+        return intermediateCertificates;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("X509FederationRequest(");
+        sb.append("certificate=").append(String.valueOf(this.certificate));
+        sb.append(", publicKey=").append(String.valueOf(this.publicKey));
+        sb.append(", intermediateCertificates=")
+                .append(String.valueOf(this.intermediateCertificates));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof X509FederationRequest)) {
+            return false;
+        }
+
+        X509FederationRequest other = (X509FederationRequest) o;
+        return java.util.Objects.equals(this.certificate, other.certificate)
+                && java.util.Objects.equals(this.publicKey, other.publicKey)
+                && java.util.Objects.equals(
+                        this.intermediateCertificates, other.intermediateCertificates)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.certificate == null ? 43 : this.certificate.hashCode());
+        result = (result * PRIME) + (this.publicKey == null ? 43 : this.publicKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.intermediateCertificates == null
+                                ? 43
+                                : this.intermediateCertificates.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

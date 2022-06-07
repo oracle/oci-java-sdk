@@ -16,16 +16,31 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RecallArchivedDataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RecallArchivedDataDetails {
+public final class RecallArchivedDataDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "timeDataEnded",
+        "timeDataStarted",
+        "dataType"
+    })
+    public RecallArchivedDataDetails(
+            String compartmentId,
+            java.util.Date timeDataEnded,
+            java.util.Date timeDataStarted,
+            StorageDataType dataType) {
+        super();
+        this.compartmentId = compartmentId;
+        this.timeDataEnded = timeDataEnded;
+        this.timeDataStarted = timeDataStarted;
+        this.dataType = dataType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -94,30 +109,104 @@ public class RecallArchivedDataDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This is the compartment OCID for permission checking
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * This is the end of the time interval
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
-    java.util.Date timeDataEnded;
+    private final java.util.Date timeDataEnded;
+
+    public java.util.Date getTimeDataEnded() {
+        return timeDataEnded;
+    }
 
     /**
      * This is the start of the time interval
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
-    java.util.Date timeDataStarted;
+    private final java.util.Date timeDataStarted;
+
+    public java.util.Date getTimeDataStarted() {
+        return timeDataStarted;
+    }
 
     /**
      * This is the type of the log data to be recalled
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    StorageDataType dataType;
+    private final StorageDataType dataType;
+
+    public StorageDataType getDataType() {
+        return dataType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RecallArchivedDataDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeDataEnded=").append(String.valueOf(this.timeDataEnded));
+        sb.append(", timeDataStarted=").append(String.valueOf(this.timeDataStarted));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RecallArchivedDataDetails)) {
+            return false;
+        }
+
+        RecallArchivedDataDetails other = (RecallArchivedDataDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeDataEnded, other.timeDataEnded)
+                && java.util.Objects.equals(this.timeDataStarted, other.timeDataStarted)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataEnded == null ? 43 : this.timeDataEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataStarted == null ? 43 : this.timeDataStarted.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

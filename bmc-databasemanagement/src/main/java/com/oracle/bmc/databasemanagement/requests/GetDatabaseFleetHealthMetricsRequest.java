@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDatabaseFleetHealthMetricsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDatabaseFleetHealthMetricsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetDatabaseFleetHealthMetricsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,55 +17,89 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String compareBaselineTime;
 
+    public String getCompareBaselineTime() {
+        return compareBaselineTime;
+    }
     /**
      * The target time for metrics comparison.
      */
     private String compareTargetTime;
 
+    public String getCompareTargetTime() {
+        return compareTargetTime;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
      */
     private String managedDatabaseGroupId;
 
+    public String getManagedDatabaseGroupId() {
+        return managedDatabaseGroupId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The time window used for metrics comparison.
      */
     private com.oracle.bmc.databasemanagement.model.CompareType compareType;
 
+    public com.oracle.bmc.databasemanagement.model.CompareType getCompareType() {
+        return compareType;
+    }
     /**
      * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
      */
     private String filterByMetricNames;
 
+    public String getFilterByMetricNames() {
+        return filterByMetricNames;
+    }
     /**
      * The filter used to filter the databases in the fleet by a specific Oracle Database type.
      */
     private String filterByDatabaseType;
 
+    public String getFilterByDatabaseType() {
+        return filterByDatabaseType;
+    }
     /**
      * The filter used to filter the databases in the fleet by a specific Oracle Database subtype.
      */
     private String filterByDatabaseSubType;
 
+    public String getFilterByDatabaseSubType() {
+        return filterByDatabaseSubType;
+    }
     /**
      * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
      */
     private String filterByDatabaseDeploymentType;
 
+    public String getFilterByDatabaseDeploymentType() {
+        return filterByDatabaseDeploymentType;
+    }
     /**
      * The filter used to filter the databases in the fleet by a specific Oracle Database version.
      */
     private String filterByDatabaseVersion;
+
+    public String getFilterByDatabaseVersion() {
+        return filterByDatabaseVersion;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -81,6 +107,128 @@ public class GetDatabaseFleetHealthMetricsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compareBaselineTime = null;
+
+        /**
+         * The baseline time for metrics comparison.
+         * @return this builder instance
+         */
+        public Builder compareBaselineTime(String compareBaselineTime) {
+            this.compareBaselineTime = compareBaselineTime;
+            return this;
+        }
+
+        private String compareTargetTime = null;
+
+        /**
+         * The target time for metrics comparison.
+         * @return this builder instance
+         */
+        public Builder compareTargetTime(String compareTargetTime) {
+            this.compareTargetTime = compareTargetTime;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String managedDatabaseGroupId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         * @return this builder instance
+         */
+        public Builder managedDatabaseGroupId(String managedDatabaseGroupId) {
+            this.managedDatabaseGroupId = managedDatabaseGroupId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.CompareType compareType = null;
+
+        /**
+         * The time window used for metrics comparison.
+         * @return this builder instance
+         */
+        public Builder compareType(
+                com.oracle.bmc.databasemanagement.model.CompareType compareType) {
+            this.compareType = compareType;
+            return this;
+        }
+
+        private String filterByMetricNames = null;
+
+        /**
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+         * @return this builder instance
+         */
+        public Builder filterByMetricNames(String filterByMetricNames) {
+            this.filterByMetricNames = filterByMetricNames;
+            return this;
+        }
+
+        private String filterByDatabaseType = null;
+
+        /**
+         * The filter used to filter the databases in the fleet by a specific Oracle Database type.
+         * @return this builder instance
+         */
+        public Builder filterByDatabaseType(String filterByDatabaseType) {
+            this.filterByDatabaseType = filterByDatabaseType;
+            return this;
+        }
+
+        private String filterByDatabaseSubType = null;
+
+        /**
+         * The filter used to filter the databases in the fleet by a specific Oracle Database subtype.
+         * @return this builder instance
+         */
+        public Builder filterByDatabaseSubType(String filterByDatabaseSubType) {
+            this.filterByDatabaseSubType = filterByDatabaseSubType;
+            return this;
+        }
+
+        private String filterByDatabaseDeploymentType = null;
+
+        /**
+         * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
+         * @return this builder instance
+         */
+        public Builder filterByDatabaseDeploymentType(String filterByDatabaseDeploymentType) {
+            this.filterByDatabaseDeploymentType = filterByDatabaseDeploymentType;
+            return this;
+        }
+
+        private String filterByDatabaseVersion = null;
+
+        /**
+         * The filter used to filter the databases in the fleet by a specific Oracle Database version.
+         * @return this builder instance
+         */
+        public Builder filterByDatabaseVersion(String filterByDatabaseVersion) {
+            this.filterByDatabaseVersion = filterByDatabaseVersion;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -142,5 +290,152 @@ public class GetDatabaseFleetHealthMetricsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetDatabaseFleetHealthMetricsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetDatabaseFleetHealthMetricsRequest
+         */
+        public GetDatabaseFleetHealthMetricsRequest buildWithoutInvocationCallback() {
+            GetDatabaseFleetHealthMetricsRequest request =
+                    new GetDatabaseFleetHealthMetricsRequest();
+            request.compareBaselineTime = compareBaselineTime;
+            request.compareTargetTime = compareTargetTime;
+            request.opcRequestId = opcRequestId;
+            request.managedDatabaseGroupId = managedDatabaseGroupId;
+            request.compartmentId = compartmentId;
+            request.compareType = compareType;
+            request.filterByMetricNames = filterByMetricNames;
+            request.filterByDatabaseType = filterByDatabaseType;
+            request.filterByDatabaseSubType = filterByDatabaseSubType;
+            request.filterByDatabaseDeploymentType = filterByDatabaseDeploymentType;
+            request.filterByDatabaseVersion = filterByDatabaseVersion;
+            return request;
+            // new GetDatabaseFleetHealthMetricsRequest(compareBaselineTime, compareTargetTime, opcRequestId, managedDatabaseGroupId, compartmentId, compareType, filterByMetricNames, filterByDatabaseType, filterByDatabaseSubType, filterByDatabaseDeploymentType, filterByDatabaseVersion);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compareBaselineTime(compareBaselineTime)
+                .compareTargetTime(compareTargetTime)
+                .opcRequestId(opcRequestId)
+                .managedDatabaseGroupId(managedDatabaseGroupId)
+                .compartmentId(compartmentId)
+                .compareType(compareType)
+                .filterByMetricNames(filterByMetricNames)
+                .filterByDatabaseType(filterByDatabaseType)
+                .filterByDatabaseSubType(filterByDatabaseSubType)
+                .filterByDatabaseDeploymentType(filterByDatabaseDeploymentType)
+                .filterByDatabaseVersion(filterByDatabaseVersion);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compareBaselineTime=").append(String.valueOf(this.compareBaselineTime));
+        sb.append(",compareTargetTime=").append(String.valueOf(this.compareTargetTime));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",managedDatabaseGroupId=").append(String.valueOf(this.managedDatabaseGroupId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compareType=").append(String.valueOf(this.compareType));
+        sb.append(",filterByMetricNames=").append(String.valueOf(this.filterByMetricNames));
+        sb.append(",filterByDatabaseType=").append(String.valueOf(this.filterByDatabaseType));
+        sb.append(",filterByDatabaseSubType=").append(String.valueOf(this.filterByDatabaseSubType));
+        sb.append(",filterByDatabaseDeploymentType=")
+                .append(String.valueOf(this.filterByDatabaseDeploymentType));
+        sb.append(",filterByDatabaseVersion=").append(String.valueOf(this.filterByDatabaseVersion));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetDatabaseFleetHealthMetricsRequest)) {
+            return false;
+        }
+
+        GetDatabaseFleetHealthMetricsRequest other = (GetDatabaseFleetHealthMetricsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compareBaselineTime, other.compareBaselineTime)
+                && java.util.Objects.equals(this.compareTargetTime, other.compareTargetTime)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.managedDatabaseGroupId, other.managedDatabaseGroupId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.compareType, other.compareType)
+                && java.util.Objects.equals(this.filterByMetricNames, other.filterByMetricNames)
+                && java.util.Objects.equals(this.filterByDatabaseType, other.filterByDatabaseType)
+                && java.util.Objects.equals(
+                        this.filterByDatabaseSubType, other.filterByDatabaseSubType)
+                && java.util.Objects.equals(
+                        this.filterByDatabaseDeploymentType, other.filterByDatabaseDeploymentType)
+                && java.util.Objects.equals(
+                        this.filterByDatabaseVersion, other.filterByDatabaseVersion);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compareBaselineTime == null
+                                ? 43
+                                : this.compareBaselineTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compareTargetTime == null ? 43 : this.compareTargetTime.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseGroupId == null
+                                ? 43
+                                : this.managedDatabaseGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.compareType == null ? 43 : this.compareType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterByMetricNames == null
+                                ? 43
+                                : this.filterByMetricNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterByDatabaseType == null
+                                ? 43
+                                : this.filterByDatabaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterByDatabaseSubType == null
+                                ? 43
+                                : this.filterByDatabaseSubType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterByDatabaseDeploymentType == null
+                                ? 43
+                                : this.filterByDatabaseDeploymentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterByDatabaseVersion == null
+                                ? 43
+                                : this.filterByDatabaseVersion.hashCode());
+        return result;
     }
 }

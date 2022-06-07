@@ -9,14 +9,6 @@ import com.oracle.bmc.rover.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeActionSetKeyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RoverNodeActionSetKeyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class RoverNodeActionSetKeyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails> {
@@ -26,6 +18,9 @@ public class RoverNodeActionSetKeyRequest
      */
     private String roverNodeId;
 
+    public String getRoverNodeId() {
+        return roverNodeId;
+    }
     /**
      * The Java Web Token which is a signature of the request that is signed with the resource's private key
      * This is meant solely in the context of getRpt
@@ -33,11 +28,18 @@ public class RoverNodeActionSetKeyRequest
      */
     private String jwt;
 
+    public String getJwt() {
+        return jwt;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails roverNodeActionSetKeyDetails;
 
+    public com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails
+            getRoverNodeActionSetKeyDetails() {
+        return roverNodeActionSetKeyDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -48,11 +50,17 @@ public class RoverNodeActionSetKeyRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -62,6 +70,10 @@ public class RoverNodeActionSetKeyRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -80,6 +92,87 @@ public class RoverNodeActionSetKeyRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String roverNodeId = null;
+
+        /**
+         * Unique RoverNode identifier
+         * @return this builder instance
+         */
+        public Builder roverNodeId(String roverNodeId) {
+            this.roverNodeId = roverNodeId;
+            return this;
+        }
+
+        private String jwt = null;
+
+        /**
+         * The Java Web Token which is a signature of the request that is signed with the resource's private key
+         * This is meant solely in the context of getRpt
+         *
+         * @return this builder instance
+         */
+        public Builder jwt(String jwt) {
+            this.jwt = jwt;
+            return this;
+        }
+
+        private com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails
+                roverNodeActionSetKeyDetails = null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder roverNodeActionSetKeyDetails(
+                com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails
+                        roverNodeActionSetKeyDetails) {
+            this.roverNodeActionSetKeyDetails = roverNodeActionSetKeyDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -147,5 +240,97 @@ public class RoverNodeActionSetKeyRequest
             roverNodeActionSetKeyDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of RoverNodeActionSetKeyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of RoverNodeActionSetKeyRequest
+         */
+        public RoverNodeActionSetKeyRequest buildWithoutInvocationCallback() {
+            RoverNodeActionSetKeyRequest request = new RoverNodeActionSetKeyRequest();
+            request.roverNodeId = roverNodeId;
+            request.jwt = jwt;
+            request.roverNodeActionSetKeyDetails = roverNodeActionSetKeyDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new RoverNodeActionSetKeyRequest(roverNodeId, jwt, roverNodeActionSetKeyDetails, ifMatch, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .roverNodeId(roverNodeId)
+                .jwt(jwt)
+                .roverNodeActionSetKeyDetails(roverNodeActionSetKeyDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",roverNodeId=").append(String.valueOf(this.roverNodeId));
+        sb.append(",jwt=").append(String.valueOf(this.jwt));
+        sb.append(",roverNodeActionSetKeyDetails=")
+                .append(String.valueOf(this.roverNodeActionSetKeyDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RoverNodeActionSetKeyRequest)) {
+            return false;
+        }
+
+        RoverNodeActionSetKeyRequest other = (RoverNodeActionSetKeyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.roverNodeId, other.roverNodeId)
+                && java.util.Objects.equals(this.jwt, other.jwt)
+                && java.util.Objects.equals(
+                        this.roverNodeActionSetKeyDetails, other.roverNodeActionSetKeyDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.roverNodeId == null ? 43 : this.roverNodeId.hashCode());
+        result = (result * PRIME) + (this.jwt == null ? 43 : this.jwt.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.roverNodeActionSetKeyDetails == null
+                                ? 43
+                                : this.roverNodeActionSetKeyDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

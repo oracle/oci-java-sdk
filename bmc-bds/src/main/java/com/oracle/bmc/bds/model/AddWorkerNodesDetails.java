@@ -15,16 +15,37 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AddWorkerNodesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AddWorkerNodesDetails {
+public final class AddWorkerNodesDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "clusterAdminPassword",
+        "numberOfWorkerNodes",
+        "nodeType",
+        "shape",
+        "blockVolumeSizeInGBs",
+        "shapeConfig"
+    })
+    public AddWorkerNodesDetails(
+            String clusterAdminPassword,
+            Integer numberOfWorkerNodes,
+            NodeType nodeType,
+            String shape,
+            Long blockVolumeSizeInGBs,
+            ShapeConfigDetails shapeConfig) {
+        super();
+        this.clusterAdminPassword = clusterAdminPassword;
+        this.numberOfWorkerNodes = numberOfWorkerNodes;
+        this.nodeType = nodeType;
+        this.shape = shape;
+        this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
+        this.shapeConfig = shapeConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
@@ -118,17 +139,30 @@ public class AddWorkerNodesDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    String clusterAdminPassword;
+    private final String clusterAdminPassword;
+
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword;
+    }
 
     /**
      * Number of additional worker nodes for the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfWorkerNodes")
-    Integer numberOfWorkerNodes;
+    private final Integer numberOfWorkerNodes;
+
+    public Integer getNumberOfWorkerNodes() {
+        return numberOfWorkerNodes;
+    }
+
     /**
      * Worker node types, can either be Worker Data node or Compute only worker node.
      **/
@@ -168,24 +202,106 @@ public class AddWorkerNodesDetails {
      * Worker node types, can either be Worker Data node or Compute only worker node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
-    NodeType nodeType;
+    private final NodeType nodeType;
+
+    public NodeType getNodeType() {
+        return nodeType;
+    }
 
     /**
      * Shape of the node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The size of block volume in GB to be attached to the given node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
-    Long blockVolumeSizeInGBs;
+    private final Long blockVolumeSizeInGBs;
+
+    public Long getBlockVolumeSizeInGBs() {
+        return blockVolumeSizeInGBs;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
-    ShapeConfigDetails shapeConfig;
+    private final ShapeConfigDetails shapeConfig;
+
+    public ShapeConfigDetails getShapeConfig() {
+        return shapeConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AddWorkerNodesDetails(");
+        sb.append("clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", numberOfWorkerNodes=").append(String.valueOf(this.numberOfWorkerNodes));
+        sb.append(", nodeType=").append(String.valueOf(this.nodeType));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
+        sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AddWorkerNodesDetails)) {
+            return false;
+        }
+
+        AddWorkerNodesDetails other = (AddWorkerNodesDetails) o;
+        return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.numberOfWorkerNodes, other.numberOfWorkerNodes)
+                && java.util.Objects.equals(this.nodeType, other.nodeType)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.blockVolumeSizeInGBs, other.blockVolumeSizeInGBs)
+                && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.clusterAdminPassword == null
+                                ? 43
+                                : this.clusterAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfWorkerNodes == null
+                                ? 43
+                                : this.numberOfWorkerNodes.hashCode());
+        result = (result * PRIME) + (this.nodeType == null ? 43 : this.nodeType.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockVolumeSizeInGBs == null
+                                ? 43
+                                : this.blockVolumeSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

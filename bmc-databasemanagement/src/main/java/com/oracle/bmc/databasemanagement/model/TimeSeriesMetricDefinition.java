@@ -17,16 +17,21 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TimeSeriesMetricDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TimeSeriesMetricDefinition {
+public final class TimeSeriesMetricDefinition {
+    @Deprecated
+    @java.beans.ConstructorProperties({"metricName", "datapoints"})
+    public TimeSeriesMetricDefinition(
+            String metricName, java.util.List<TimeSeriesMetricDataPoint> datapoints) {
+        super();
+        this.metricName = metricName;
+        this.datapoints = datapoints;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
@@ -72,18 +77,72 @@ public class TimeSeriesMetricDefinition {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the metric the time series data corresponds to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
-    String metricName;
+    private final String metricName;
+
+    public String getMetricName() {
+        return metricName;
+    }
 
     /**
      * The time series metric data for the given metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datapoints")
-    java.util.List<TimeSeriesMetricDataPoint> datapoints;
+    private final java.util.List<TimeSeriesMetricDataPoint> datapoints;
+
+    public java.util.List<TimeSeriesMetricDataPoint> getDatapoints() {
+        return datapoints;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TimeSeriesMetricDefinition(");
+        sb.append("metricName=").append(String.valueOf(this.metricName));
+        sb.append(", datapoints=").append(String.valueOf(this.datapoints));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TimeSeriesMetricDefinition)) {
+            return false;
+        }
+
+        TimeSeriesMetricDefinition other = (TimeSeriesMetricDefinition) o;
+        return java.util.Objects.equals(this.metricName, other.metricName)
+                && java.util.Objects.equals(this.datapoints, other.datapoints)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
+        result = (result * PRIME) + (this.datapoints == null ? 43 : this.datapoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

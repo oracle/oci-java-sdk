@@ -16,16 +16,37 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsEmBridgeSummaryReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsEmBridgeSummaryReport {
+public final class LogAnalyticsEmBridgeSummaryReport {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "activeEmBridgeCount",
+        "creatingEmBridgeCount",
+        "needsAttentionEmBridgeCount",
+        "deletedEmBridgeCount",
+        "totalEmBridgeCount"
+    })
+    public LogAnalyticsEmBridgeSummaryReport(
+            String compartmentId,
+            Integer activeEmBridgeCount,
+            Integer creatingEmBridgeCount,
+            Integer needsAttentionEmBridgeCount,
+            Integer deletedEmBridgeCount,
+            Integer totalEmBridgeCount) {
+        super();
+        this.compartmentId = compartmentId;
+        this.activeEmBridgeCount = activeEmBridgeCount;
+        this.creatingEmBridgeCount = creatingEmBridgeCount;
+        this.needsAttentionEmBridgeCount = needsAttentionEmBridgeCount;
+        this.deletedEmBridgeCount = deletedEmBridgeCount;
+        this.totalEmBridgeCount = totalEmBridgeCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -119,47 +140,153 @@ public class LogAnalyticsEmBridgeSummaryReport {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Total number of ACTIVE enterprise manager bridges.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activeEmBridgeCount")
-    Integer activeEmBridgeCount;
+    private final Integer activeEmBridgeCount;
+
+    public Integer getActiveEmBridgeCount() {
+        return activeEmBridgeCount;
+    }
 
     /**
      * Number of enterprise manager bridges in CREATING state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("creatingEmBridgeCount")
-    Integer creatingEmBridgeCount;
+    private final Integer creatingEmBridgeCount;
+
+    public Integer getCreatingEmBridgeCount() {
+        return creatingEmBridgeCount;
+    }
 
     /**
      * Number of enterprise manager bridges in NEEDS_ATTENTION state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("needsAttentionEmBridgeCount")
-    Integer needsAttentionEmBridgeCount;
+    private final Integer needsAttentionEmBridgeCount;
+
+    public Integer getNeedsAttentionEmBridgeCount() {
+        return needsAttentionEmBridgeCount;
+    }
 
     /**
      * Number of enterprise manager bridges in DELETED state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deletedEmBridgeCount")
-    Integer deletedEmBridgeCount;
+    private final Integer deletedEmBridgeCount;
+
+    public Integer getDeletedEmBridgeCount() {
+        return deletedEmBridgeCount;
+    }
 
     /**
      * Total number of enterprise manager bridges.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalEmBridgeCount")
-    Integer totalEmBridgeCount;
+    private final Integer totalEmBridgeCount;
+
+    public Integer getTotalEmBridgeCount() {
+        return totalEmBridgeCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsEmBridgeSummaryReport(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", activeEmBridgeCount=").append(String.valueOf(this.activeEmBridgeCount));
+        sb.append(", creatingEmBridgeCount=").append(String.valueOf(this.creatingEmBridgeCount));
+        sb.append(", needsAttentionEmBridgeCount=")
+                .append(String.valueOf(this.needsAttentionEmBridgeCount));
+        sb.append(", deletedEmBridgeCount=").append(String.valueOf(this.deletedEmBridgeCount));
+        sb.append(", totalEmBridgeCount=").append(String.valueOf(this.totalEmBridgeCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsEmBridgeSummaryReport)) {
+            return false;
+        }
+
+        LogAnalyticsEmBridgeSummaryReport other = (LogAnalyticsEmBridgeSummaryReport) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.activeEmBridgeCount, other.activeEmBridgeCount)
+                && java.util.Objects.equals(this.creatingEmBridgeCount, other.creatingEmBridgeCount)
+                && java.util.Objects.equals(
+                        this.needsAttentionEmBridgeCount, other.needsAttentionEmBridgeCount)
+                && java.util.Objects.equals(this.deletedEmBridgeCount, other.deletedEmBridgeCount)
+                && java.util.Objects.equals(this.totalEmBridgeCount, other.totalEmBridgeCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.activeEmBridgeCount == null
+                                ? 43
+                                : this.activeEmBridgeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.creatingEmBridgeCount == null
+                                ? 43
+                                : this.creatingEmBridgeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.needsAttentionEmBridgeCount == null
+                                ? 43
+                                : this.needsAttentionEmBridgeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deletedEmBridgeCount == null
+                                ? 43
+                                : this.deletedEmBridgeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalEmBridgeCount == null
+                                ? 43
+                                : this.totalEmBridgeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,28 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExcludedObjectSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExcludedObjectSummary {
+public final class ExcludedObjectSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"owner", "object", "type", "reasonCategory", "sourceRule"})
+    public ExcludedObjectSummary(
+            String owner,
+            String object,
+            String type,
+            ReasonKeywords reasonCategory,
+            String sourceRule) {
+        super();
+        this.owner = owner;
+        this.object = object;
+        this.type = type;
+        this.reasonCategory = reasonCategory;
+        this.sourceRule = sourceRule;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
@@ -103,41 +115,118 @@ public class ExcludedObjectSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Database object owner.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
-    String owner;
+    private final String owner;
+
+    public String getOwner() {
+        return owner;
+    }
 
     /**
      * Database object name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("object")
-    String object;
+    private final String object;
+
+    public String getObject() {
+        return object;
+    }
 
     /**
      * Database object type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * Reason category for object exclusion.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reasonCategory")
-    ReasonKeywords reasonCategory;
+    private final ReasonKeywords reasonCategory;
+
+    public ReasonKeywords getReasonCategory() {
+        return reasonCategory;
+    }
 
     /**
      * Reason for exclusion.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRule")
-    String sourceRule;
+    private final String sourceRule;
+
+    public String getSourceRule() {
+        return sourceRule;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExcludedObjectSummary(");
+        sb.append("owner=").append(String.valueOf(this.owner));
+        sb.append(", object=").append(String.valueOf(this.object));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", reasonCategory=").append(String.valueOf(this.reasonCategory));
+        sb.append(", sourceRule=").append(String.valueOf(this.sourceRule));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExcludedObjectSummary)) {
+            return false;
+        }
+
+        ExcludedObjectSummary other = (ExcludedObjectSummary) o;
+        return java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(this.object, other.object)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.reasonCategory, other.reasonCategory)
+                && java.util.Objects.equals(this.sourceRule, other.sourceRule)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result = (result * PRIME) + (this.object == null ? 43 : this.object.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reasonCategory == null ? 43 : this.reasonCategory.hashCode());
+        result = (result * PRIME) + (this.sourceRule == null ? 43 : this.sourceRule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,6 +7,7 @@ package com.oracle.bmc.servicecatalog;
 import com.oracle.bmc.servicecatalog.internal.http.*;
 import com.oracle.bmc.servicecatalog.requests.*;
 import com.oracle.bmc.servicecatalog.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ServiceCatalog service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.servicecatalog.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
-@lombok.extern.slf4j.Slf4j
 public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
     /**
      * Service instance for ServiceCatalog.
@@ -35,7 +35,9 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                             "https://service-catalog.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ServiceCatalogAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -319,9 +321,13 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
          * @return the client
          */
         public ServiceCatalogAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new ServiceCatalogAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -331,6 +337,10 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

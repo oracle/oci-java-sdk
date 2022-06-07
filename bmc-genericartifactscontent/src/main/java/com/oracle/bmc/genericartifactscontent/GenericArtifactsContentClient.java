@@ -9,9 +9,9 @@ import com.oracle.bmc.genericartifactscontent.requests.*;
 import com.oracle.bmc.genericartifactscontent.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.extern.slf4j.Slf4j
 public class GenericArtifactsContentClient implements GenericArtifactsContent {
     /**
      * Service instance for GenericArtifactsContent.
@@ -26,9 +26,14 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
-    private final com.oracle.bmc.http.internal.RestClient client;
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(GenericArtifactsContentAsyncClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    private final com.oracle.bmc.http.internal.RestClient client;
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -325,9 +330,13 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
          * @return the client
          */
         public GenericArtifactsContentClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new GenericArtifactsContentClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -481,8 +490,12 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
             PutGenericArtifactContentByPathRequest request) {
         LOG.trace("Called putGenericArtifactContentByPath");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -501,10 +514,6 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
             ib.property(
                     com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                     com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
                     "GenericArtifactsContent",
@@ -531,6 +540,7 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -551,5 +561,31 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
             com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
                     request.getGenericArtifactContentBody());
         }
+    }
+
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

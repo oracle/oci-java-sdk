@@ -15,16 +15,23 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CustomPropertyTypeUsage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CustomPropertyTypeUsage {
+public final class CustomPropertyTypeUsage {
+    @Deprecated
+    @java.beans.ConstructorProperties({"typeId", "typeName", "count", "isEventEnabled"})
+    public CustomPropertyTypeUsage(
+            String typeId, String typeName, Integer count, Boolean isEventEnabled) {
+        super();
+        this.typeId = typeId;
+        this.typeName = typeName;
+        this.count = count;
+        this.isEventEnabled = isEventEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("typeId")
         private String typeId;
@@ -92,30 +99,100 @@ public class CustomPropertyTypeUsage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique type key identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeId")
-    String typeId;
+    private final String typeId;
+
+    public String getTypeId() {
+        return typeId;
+    }
 
     /**
      * Name of the type associated with
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
-    String typeName;
+    private final String typeName;
+
+    public String getTypeName() {
+        return typeName;
+    }
 
     /**
      * Number of objects associated with this type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    Integer count;
+    private final Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
 
     /**
      * If an OCI Event will be emitted when the custom property is modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
-    Boolean isEventEnabled;
+    private final Boolean isEventEnabled;
+
+    public Boolean getIsEventEnabled() {
+        return isEventEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CustomPropertyTypeUsage(");
+        sb.append("typeId=").append(String.valueOf(this.typeId));
+        sb.append(", typeName=").append(String.valueOf(this.typeName));
+        sb.append(", count=").append(String.valueOf(this.count));
+        sb.append(", isEventEnabled=").append(String.valueOf(this.isEventEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CustomPropertyTypeUsage)) {
+            return false;
+        }
+
+        CustomPropertyTypeUsage other = (CustomPropertyTypeUsage) o;
+        return java.util.Objects.equals(this.typeId, other.typeId)
+                && java.util.Objects.equals(this.typeName, other.typeName)
+                && java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.isEventEnabled, other.isEventEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.typeId == null ? 43 : this.typeId.hashCode());
+        result = (result * PRIME) + (this.typeName == null ? 43 : this.typeName.hashCode());
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEventEnabled == null ? 43 : this.isEventEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

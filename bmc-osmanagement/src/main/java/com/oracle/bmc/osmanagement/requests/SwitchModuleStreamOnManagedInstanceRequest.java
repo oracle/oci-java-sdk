@@ -9,14 +9,6 @@ import com.oracle.bmc.osmanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/SwitchModuleStreamOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SwitchModuleStreamOnManagedInstanceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SwitchModuleStreamOnManagedInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,16 +17,25 @@ public class SwitchModuleStreamOnManagedInstanceRequest
      */
     private String managedInstanceId;
 
+    public String getManagedInstanceId() {
+        return managedInstanceId;
+    }
     /**
      * The name of a module.
      */
     private String moduleName;
 
+    public String getModuleName() {
+        return moduleName;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -45,6 +46,9 @@ public class SwitchModuleStreamOnManagedInstanceRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -55,6 +59,9 @@ public class SwitchModuleStreamOnManagedInstanceRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The name of the stream of the containing module.  This parameter
      * is required if a profileName is specified.
@@ -62,12 +69,94 @@ public class SwitchModuleStreamOnManagedInstanceRequest
      */
     private String streamName;
 
+    public String getStreamName() {
+        return streamName;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SwitchModuleStreamOnManagedInstanceRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedInstanceId = null;
+
+        /**
+         * OCID for the managed instance
+         * @return this builder instance
+         */
+        public Builder managedInstanceId(String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+
+        private String moduleName = null;
+
+        /**
+         * The name of a module.
+         * @return this builder instance
+         */
+        public Builder moduleName(String moduleName) {
+            this.moduleName = moduleName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String streamName = null;
+
+        /**
+         * The name of the stream of the containing module.  This parameter
+         * is required if a profileName is specified.
+         *
+         * @return this builder instance
+         */
+        public Builder streamName(String streamName) {
+            this.streamName = streamName;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -124,5 +213,95 @@ public class SwitchModuleStreamOnManagedInstanceRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of SwitchModuleStreamOnManagedInstanceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of SwitchModuleStreamOnManagedInstanceRequest
+         */
+        public SwitchModuleStreamOnManagedInstanceRequest buildWithoutInvocationCallback() {
+            SwitchModuleStreamOnManagedInstanceRequest request =
+                    new SwitchModuleStreamOnManagedInstanceRequest();
+            request.managedInstanceId = managedInstanceId;
+            request.moduleName = moduleName;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            request.ifMatch = ifMatch;
+            request.streamName = streamName;
+            return request;
+            // new SwitchModuleStreamOnManagedInstanceRequest(managedInstanceId, moduleName, opcRequestId, opcRetryToken, ifMatch, streamName);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedInstanceId(managedInstanceId)
+                .moduleName(moduleName)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken)
+                .ifMatch(ifMatch)
+                .streamName(streamName);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(",moduleName=").append(String.valueOf(this.moduleName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",streamName=").append(String.valueOf(this.streamName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SwitchModuleStreamOnManagedInstanceRequest)) {
+            return false;
+        }
+
+        SwitchModuleStreamOnManagedInstanceRequest other =
+                (SwitchModuleStreamOnManagedInstanceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.moduleName, other.moduleName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.streamName, other.streamName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result = (result * PRIME) + (this.moduleName == null ? 43 : this.moduleName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.streamName == null ? 43 : this.streamName.hashCode());
+        return result;
     }
 }

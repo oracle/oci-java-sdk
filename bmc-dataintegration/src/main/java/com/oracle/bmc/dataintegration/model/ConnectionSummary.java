@@ -15,12 +15,6 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -67,80 +61,250 @@ package com.oracle.bmc.dataintegration.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ConnectionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelVersion",
+        "parentRef",
+        "name",
+        "description",
+        "objectVersion",
+        "objectStatus",
+        "identifier",
+        "primarySchema",
+        "connectionProperties",
+        "isDefault",
+        "metadata",
+        "keyMap"
+    })
+    protected ConnectionSummary(
+            String key,
+            String modelVersion,
+            ParentReference parentRef,
+            String name,
+            String description,
+            Integer objectVersion,
+            Integer objectStatus,
+            String identifier,
+            Schema primarySchema,
+            java.util.List<ConnectionProperty> connectionProperties,
+            Boolean isDefault,
+            ObjectMetadata metadata,
+            java.util.Map<String, String> keyMap) {
+        super();
+        this.key = key;
+        this.modelVersion = modelVersion;
+        this.parentRef = parentRef;
+        this.name = name;
+        this.description = description;
+        this.objectVersion = objectVersion;
+        this.objectStatus = objectStatus;
+        this.identifier = identifier;
+        this.primarySchema = primarySchema;
+        this.connectionProperties = connectionProperties;
+        this.isDefault = isDefault;
+        this.metadata = metadata;
+        this.keyMap = keyMap;
+    }
 
     /**
      * Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * User-defined description for the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The version of the object that is used to track changes in the object instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("primarySchema")
-    Schema primarySchema;
+    private final Schema primarySchema;
+
+    public Schema getPrimarySchema() {
+        return primarySchema;
+    }
 
     /**
      * The properties for the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionProperties")
-    java.util.List<ConnectionProperty> connectionProperties;
+    private final java.util.List<ConnectionProperty> connectionProperties;
+
+    public java.util.List<ConnectionProperty> getConnectionProperties() {
+        return connectionProperties;
+    }
 
     /**
      * The default property for the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    ObjectMetadata metadata;
+    private final ObjectMetadata metadata;
+
+    public ObjectMetadata getMetadata() {
+        return metadata;
+    }
 
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
-    java.util.Map<String, String> keyMap;
+    private final java.util.Map<String, String> keyMap;
+
+    public java.util.Map<String, String> getKeyMap() {
+        return keyMap;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConnectionSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", primarySchema=").append(String.valueOf(this.primarySchema));
+        sb.append(", connectionProperties=").append(String.valueOf(this.connectionProperties));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", keyMap=").append(String.valueOf(this.keyMap));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConnectionSummary)) {
+            return false;
+        }
+
+        ConnectionSummary other = (ConnectionSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.primarySchema, other.primarySchema)
+                && java.util.Objects.equals(this.connectionProperties, other.connectionProperties)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.keyMap, other.keyMap);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primarySchema == null ? 43 : this.primarySchema.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionProperties == null
+                                ? 43
+                                : this.connectionProperties.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
+        return result;
+    }
 
     /**
      * The type of the connection.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ModelType {
         OracleAdwcConnection("ORACLE_ADWC_CONNECTION"),
         OracleAtpConnection("ORACLE_ATP_CONNECTION"),
@@ -157,6 +321,9 @@ public class ConnectionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ModelType.class);
 
         private final String value;
         private static java.util.Map<String, ModelType> map;

@@ -9,14 +9,6 @@ import com.oracle.bmc.objectstorage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListRetentionRulesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRetentionRulesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The name of the bucket. Avoid entering confidential information.
      * Example: {@code my-new-bucket1}
@@ -31,6 +26,9 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String bucketName;
 
+    public String getBucketName() {
+        return bucketName;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
      * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -38,12 +36,53 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListRetentionRulesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Object Storage namespace used for the request.
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String bucketName = null;
+
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         * @return this builder instance
+         */
+        public Builder bucketName(String bucketName) {
+            this.bucketName = bucketName;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
+         * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -97,5 +136,73 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListRetentionRulesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListRetentionRulesRequest
+         */
+        public ListRetentionRulesRequest buildWithoutInvocationCallback() {
+            ListRetentionRulesRequest request = new ListRetentionRulesRequest();
+            request.namespaceName = namespaceName;
+            request.bucketName = bucketName;
+            request.page = page;
+            return request;
+            // new ListRetentionRulesRequest(namespaceName, bucketName, page);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().namespaceName(namespaceName).bucketName(bucketName).page(page);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListRetentionRulesRequest)) {
+            return false;
+        }
+
+        ListRetentionRulesRequest other = (ListRetentionRulesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.page, other.page);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        return result;
     }
 }

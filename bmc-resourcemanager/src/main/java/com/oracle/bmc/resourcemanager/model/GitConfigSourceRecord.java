@@ -16,22 +16,17 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GitConfigSourceRecord.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "configSourceRecordType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GitConfigSourceRecord extends ConfigSourceRecord {
+public final class GitConfigSourceRecord extends ConfigSourceRecord {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
         private String configurationSourceProviderId;
@@ -100,6 +95,10 @@ public class GitConfigSourceRecord extends ConfigSourceRecord {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public GitConfigSourceRecord(
             String configurationSourceProviderId,
@@ -119,26 +118,100 @@ public class GitConfigSourceRecord extends ConfigSourceRecord {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
-    String configurationSourceProviderId;
+    private final String configurationSourceProviderId;
+
+    public String getConfigurationSourceProviderId() {
+        return configurationSourceProviderId;
+    }
 
     /**
      * The URL of the Git repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
-    String repositoryUrl;
+    private final String repositoryUrl;
+
+    public String getRepositoryUrl() {
+        return repositoryUrl;
+    }
 
     /**
      * The name of the branch within the Git repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("branchName")
-    String branchName;
+    private final String branchName;
+
+    public String getBranchName() {
+        return branchName;
+    }
 
     /**
      * The unique identifier (SHA-1 hash) of the individual change to the Git repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitId")
-    String commitId;
+    private final String commitId;
+
+    public String getCommitId() {
+        return commitId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GitConfigSourceRecord(");
+        sb.append("super=").append(super.toString());
+        sb.append(", configurationSourceProviderId=")
+                .append(String.valueOf(this.configurationSourceProviderId));
+        sb.append(", repositoryUrl=").append(String.valueOf(this.repositoryUrl));
+        sb.append(", branchName=").append(String.valueOf(this.branchName));
+        sb.append(", commitId=").append(String.valueOf(this.commitId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GitConfigSourceRecord)) {
+            return false;
+        }
+
+        GitConfigSourceRecord other = (GitConfigSourceRecord) o;
+        return java.util.Objects.equals(
+                        this.configurationSourceProviderId, other.configurationSourceProviderId)
+                && java.util.Objects.equals(this.repositoryUrl, other.repositoryUrl)
+                && java.util.Objects.equals(this.branchName, other.branchName)
+                && java.util.Objects.equals(this.commitId, other.commitId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.configurationSourceProviderId == null
+                                ? 43
+                                : this.configurationSourceProviderId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryUrl == null ? 43 : this.repositoryUrl.hashCode());
+        result = (result * PRIME) + (this.branchName == null ? 43 : this.branchName.hashCode());
+        result = (result * PRIME) + (this.commitId == null ? 43 : this.commitId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

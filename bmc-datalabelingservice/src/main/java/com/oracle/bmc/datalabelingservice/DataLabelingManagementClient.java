@@ -9,9 +9,9 @@ import com.oracle.bmc.datalabelingservice.requests.*;
 import com.oracle.bmc.datalabelingservice.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.extern.slf4j.Slf4j
 public class DataLabelingManagementClient implements DataLabelingManagement {
     /**
      * Service instance for DataLabelingManagement.
@@ -26,13 +26,17 @@ public class DataLabelingManagementClient implements DataLabelingManagement {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DataLabelingManagementAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final DataLabelingManagementWaiters waiters;
 
     private final DataLabelingManagementPaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -402,9 +406,13 @@ public class DataLabelingManagementClient implements DataLabelingManagement {
          * @return the client
          */
         public DataLabelingManagementClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DataLabelingManagementClient(
                     authenticationDetailsProvider,
                     configuration,

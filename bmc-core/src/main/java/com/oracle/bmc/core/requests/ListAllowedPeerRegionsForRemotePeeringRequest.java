@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAllowedPeerRegionsForRemotePeeringExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAllowedPeerRegionsForRemotePeeringRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAllowedPeerRegionsForRemotePeeringRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -78,5 +70,61 @@ public class ListAllowedPeerRegionsForRemotePeeringRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListAllowedPeerRegionsForRemotePeeringRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListAllowedPeerRegionsForRemotePeeringRequest
+         */
+        public ListAllowedPeerRegionsForRemotePeeringRequest buildWithoutInvocationCallback() {
+            ListAllowedPeerRegionsForRemotePeeringRequest request =
+                    new ListAllowedPeerRegionsForRemotePeeringRequest();
+            return request;
+            // new ListAllowedPeerRegionsForRemotePeeringRequest();
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder();
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAllowedPeerRegionsForRemotePeeringRequest)) {
+            return false;
+        }
+
+        ListAllowedPeerRegionsForRemotePeeringRequest other =
+                (ListAllowedPeerRegionsForRemotePeeringRequest) o;
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        return result;
     }
 }

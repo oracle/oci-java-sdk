@@ -15,14 +15,32 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaxInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TaxInfo {
+public final class TaxInfo {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "taxPayerId",
+        "taxRegNumber",
+        "noTaxReasonCode",
+        "noTaxReasonCodeDetails",
+        "taxCnpj"
+    })
+    public TaxInfo(
+            String taxPayerId,
+            String taxRegNumber,
+            String noTaxReasonCode,
+            String noTaxReasonCodeDetails,
+            String taxCnpj) {
+        super();
+        this.taxPayerId = taxPayerId;
+        this.taxRegNumber = taxRegNumber;
+        this.noTaxReasonCode = noTaxReasonCode;
+        this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
+        this.taxCnpj = taxCnpj;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("taxPayerId")
         private String taxPayerId;
@@ -105,36 +123,118 @@ public class TaxInfo {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Tay payer identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taxPayerId")
-    String taxPayerId;
+    private final String taxPayerId;
+
+    public String getTaxPayerId() {
+        return taxPayerId;
+    }
 
     /**
      * Tax registration number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taxRegNumber")
-    String taxRegNumber;
+    private final String taxRegNumber;
+
+    public String getTaxRegNumber() {
+        return taxRegNumber;
+    }
 
     /**
      * Tax exemption reason code.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCode")
-    String noTaxReasonCode;
+    private final String noTaxReasonCode;
+
+    public String getNoTaxReasonCode() {
+        return noTaxReasonCode;
+    }
 
     /**
      * Tax exemption reason description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCodeDetails")
-    String noTaxReasonCodeDetails;
+    private final String noTaxReasonCodeDetails;
+
+    public String getNoTaxReasonCodeDetails() {
+        return noTaxReasonCodeDetails;
+    }
 
     /**
      * Brazilian companies' CNPJ number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taxCnpj")
-    String taxCnpj;
+    private final String taxCnpj;
+
+    public String getTaxCnpj() {
+        return taxCnpj;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TaxInfo(");
+        sb.append("taxPayerId=").append(String.valueOf(this.taxPayerId));
+        sb.append(", taxRegNumber=").append(String.valueOf(this.taxRegNumber));
+        sb.append(", noTaxReasonCode=").append(String.valueOf(this.noTaxReasonCode));
+        sb.append(", noTaxReasonCodeDetails=").append(String.valueOf(this.noTaxReasonCodeDetails));
+        sb.append(", taxCnpj=").append(String.valueOf(this.taxCnpj));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TaxInfo)) {
+            return false;
+        }
+
+        TaxInfo other = (TaxInfo) o;
+        return java.util.Objects.equals(this.taxPayerId, other.taxPayerId)
+                && java.util.Objects.equals(this.taxRegNumber, other.taxRegNumber)
+                && java.util.Objects.equals(this.noTaxReasonCode, other.noTaxReasonCode)
+                && java.util.Objects.equals(
+                        this.noTaxReasonCodeDetails, other.noTaxReasonCodeDetails)
+                && java.util.Objects.equals(this.taxCnpj, other.taxCnpj)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.taxPayerId == null ? 43 : this.taxPayerId.hashCode());
+        result = (result * PRIME) + (this.taxRegNumber == null ? 43 : this.taxRegNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.noTaxReasonCode == null ? 43 : this.noTaxReasonCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.noTaxReasonCodeDetails == null
+                                ? 43
+                                : this.noTaxReasonCodeDetails.hashCode());
+        result = (result * PRIME) + (this.taxCnpj == null ? 43 : this.taxCnpj.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

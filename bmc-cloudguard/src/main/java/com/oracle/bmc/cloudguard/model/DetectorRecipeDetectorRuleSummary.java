@@ -15,16 +15,61 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DetectorRecipeDetectorRuleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DetectorRecipeDetectorRuleSummary {
+public final class DetectorRecipeDetectorRuleSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "description",
+        "recommendation",
+        "detector",
+        "serviceType",
+        "resourceType",
+        "managedListTypes",
+        "candidateResponderRules",
+        "detectorDetails",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "lifecycleDetails"
+    })
+    public DetectorRecipeDetectorRuleSummary(
+            String id,
+            String displayName,
+            String description,
+            String recommendation,
+            DetectorEnum detector,
+            String serviceType,
+            String resourceType,
+            java.util.List<ManagedListTypes> managedListTypes,
+            java.util.List<CandidateResponderRule> candidateResponderRules,
+            DetectorDetails detectorDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            LifecycleState lifecycleState,
+            String lifecycleDetails) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.recommendation = recommendation;
+        this.detector = detector;
+        this.serviceType = serviceType;
+        this.resourceType = resourceType;
+        this.managedListTypes = managedListTypes;
+        this.candidateResponderRules = candidateResponderRules;
+        this.detectorDetails = detectorDetails;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -207,50 +252,82 @@ public class DetectorRecipeDetectorRuleSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier of the detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * DetectorTemplate Identifier, can be renamed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * DetectorTemplate Identifier, can be renamed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Recommendation for DetectorRecipeDetectorRule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
-    String recommendation;
+    private final String recommendation;
+
+    public String getRecommendation() {
+        return recommendation;
+    }
 
     /**
      * possible type of detectors
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
-    DetectorEnum detector;
+    private final DetectorEnum detector;
+
+    public DetectorEnum getDetector() {
+        return detector;
+    }
 
     /**
      * service type of the configuration to which the rule is applied
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
-    String serviceType;
+    private final String serviceType;
+
+    public String getServiceType() {
+        return serviceType;
+    }
 
     /**
      * resource type of the configuration to which the rule is applied
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ManagedListTypes {
         CidrBlock("CIDR_BLOCK"),
         Users("USERS"),
@@ -270,6 +347,9 @@ public class DetectorRecipeDetectorRuleSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManagedListTypes.class);
 
         private final String value;
         private static java.util.Map<String, ManagedListTypes> map;
@@ -307,41 +387,163 @@ public class DetectorRecipeDetectorRuleSummary {
      * List of cloudguard managed list types related to this rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
-    java.util.List<ManagedListTypes> managedListTypes;
+    private final java.util.List<ManagedListTypes> managedListTypes;
+
+    public java.util.List<ManagedListTypes> getManagedListTypes() {
+        return managedListTypes;
+    }
 
     /**
      * List of CandidateResponderRule related to this rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("candidateResponderRules")
-    java.util.List<CandidateResponderRule> candidateResponderRules;
+    private final java.util.List<CandidateResponderRule> candidateResponderRules;
+
+    public java.util.List<CandidateResponderRule> getCandidateResponderRules() {
+        return candidateResponderRules;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("detectorDetails")
-    DetectorDetails detectorDetails;
+    private final DetectorDetails detectorDetails;
+
+    public DetectorDetails getDetectorDetails() {
+        return detectorDetails;
+    }
 
     /**
      * The date and time the detector recipe rule was created. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the detector recipe rule was updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the detector recipe rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DetectorRecipeDetectorRuleSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", recommendation=").append(String.valueOf(this.recommendation));
+        sb.append(", detector=").append(String.valueOf(this.detector));
+        sb.append(", serviceType=").append(String.valueOf(this.serviceType));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", managedListTypes=").append(String.valueOf(this.managedListTypes));
+        sb.append(", candidateResponderRules=")
+                .append(String.valueOf(this.candidateResponderRules));
+        sb.append(", detectorDetails=").append(String.valueOf(this.detectorDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DetectorRecipeDetectorRuleSummary)) {
+            return false;
+        }
+
+        DetectorRecipeDetectorRuleSummary other = (DetectorRecipeDetectorRuleSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.recommendation, other.recommendation)
+                && java.util.Objects.equals(this.detector, other.detector)
+                && java.util.Objects.equals(this.serviceType, other.serviceType)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.managedListTypes, other.managedListTypes)
+                && java.util.Objects.equals(
+                        this.candidateResponderRules, other.candidateResponderRules)
+                && java.util.Objects.equals(this.detectorDetails, other.detectorDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendation == null ? 43 : this.recommendation.hashCode());
+        result = (result * PRIME) + (this.detector == null ? 43 : this.detector.hashCode());
+        result = (result * PRIME) + (this.serviceType == null ? 43 : this.serviceType.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedListTypes == null ? 43 : this.managedListTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.candidateResponderRules == null
+                                ? 43
+                                : this.candidateResponderRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorDetails == null ? 43 : this.detectorDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

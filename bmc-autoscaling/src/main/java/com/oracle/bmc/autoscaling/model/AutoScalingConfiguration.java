@@ -17,16 +17,55 @@ package com.oracle.bmc.autoscaling.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutoScalingConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutoScalingConfiguration {
+public final class AutoScalingConfiguration {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "coolDownInSeconds",
+        "isEnabled",
+        "resource",
+        "policies",
+        "timeCreated",
+        "maxResourceCount",
+        "minResourceCount"
+    })
+    public AutoScalingConfiguration(
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            Integer coolDownInSeconds,
+            Boolean isEnabled,
+            Resource resource,
+            java.util.List<AutoScalingPolicy> policies,
+            java.util.Date timeCreated,
+            Integer maxResourceCount,
+            Integer minResourceCount) {
+        super();
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.coolDownInSeconds = coolDownInSeconds;
+        this.isEnabled = isEnabled;
+        this.resource = resource;
+        this.policies = policies;
+        this.timeCreated = timeCreated;
+        this.maxResourceCount = maxResourceCount;
+        this.minResourceCount = minResourceCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -187,12 +226,20 @@ public class AutoScalingConfiguration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -202,14 +249,22 @@ public class AutoScalingConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -219,13 +274,21 @@ public class AutoScalingConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
@@ -236,16 +299,28 @@ public class AutoScalingConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coolDownInSeconds")
-    Integer coolDownInSeconds;
+    private final Integer coolDownInSeconds;
+
+    public Integer getCoolDownInSeconds() {
+        return coolDownInSeconds;
+    }
 
     /**
      * Whether the autoscaling configuration is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("resource")
-    Resource resource;
+    private final Resource resource;
+
+    public Resource getResource() {
+        return resource;
+    }
 
     /**
      * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that
@@ -253,7 +328,11 @@ public class AutoScalingConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policies")
-    java.util.List<AutoScalingPolicy> policies;
+    private final java.util.List<AutoScalingPolicy> policies;
+
+    public java.util.List<AutoScalingPolicy> getPolicies() {
+        return policies;
+    }
 
     /**
      * The date and time the autoscaling configuration was created, in the format defined by RFC3339.
@@ -262,20 +341,112 @@ public class AutoScalingConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The maximum number of resources to scale out to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxResourceCount")
-    Integer maxResourceCount;
+    private final Integer maxResourceCount;
+
+    public Integer getMaxResourceCount() {
+        return maxResourceCount;
+    }
 
     /**
      * The minimum number of resources to scale in to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minResourceCount")
-    Integer minResourceCount;
+    private final Integer minResourceCount;
+
+    public Integer getMinResourceCount() {
+        return minResourceCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutoScalingConfiguration(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", coolDownInSeconds=").append(String.valueOf(this.coolDownInSeconds));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", resource=").append(String.valueOf(this.resource));
+        sb.append(", policies=").append(String.valueOf(this.policies));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", maxResourceCount=").append(String.valueOf(this.maxResourceCount));
+        sb.append(", minResourceCount=").append(String.valueOf(this.minResourceCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutoScalingConfiguration)) {
+            return false;
+        }
+
+        AutoScalingConfiguration other = (AutoScalingConfiguration) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.coolDownInSeconds, other.coolDownInSeconds)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.resource, other.resource)
+                && java.util.Objects.equals(this.policies, other.policies)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.maxResourceCount, other.maxResourceCount)
+                && java.util.Objects.equals(this.minResourceCount, other.minResourceCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coolDownInSeconds == null ? 43 : this.coolDownInSeconds.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.resource == null ? 43 : this.resource.hashCode());
+        result = (result * PRIME) + (this.policies == null ? 43 : this.policies.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxResourceCount == null ? 43 : this.maxResourceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minResourceCount == null ? 43 : this.minResourceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

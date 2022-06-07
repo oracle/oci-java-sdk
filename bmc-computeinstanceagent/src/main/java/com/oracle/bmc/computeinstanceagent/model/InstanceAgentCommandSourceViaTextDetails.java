@@ -15,22 +15,18 @@ package com.oracle.bmc.computeinstanceagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceAgentCommandSourceViaTextDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "sourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceAgentCommandSourceViaTextDetails extends InstanceAgentCommandSourceDetails {
+public final class InstanceAgentCommandSourceViaTextDetails
+        extends InstanceAgentCommandSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
@@ -76,6 +72,10 @@ public class InstanceAgentCommandSourceViaTextDetails extends InstanceAgentComma
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public InstanceAgentCommandSourceViaTextDetails(String text, String textSha256) {
         super();
@@ -87,14 +87,67 @@ public class InstanceAgentCommandSourceViaTextDetails extends InstanceAgentComma
      * The plain text command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
-    String text;
+    private final String text;
+
+    public String getText() {
+        return text;
+    }
 
     /**
      * SHA-256 checksum value of the text content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("textSha256")
-    String textSha256;
+    private final String textSha256;
+
+    public String getTextSha256() {
+        return textSha256;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceAgentCommandSourceViaTextDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", text=").append(String.valueOf(this.text));
+        sb.append(", textSha256=").append(String.valueOf(this.textSha256));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceAgentCommandSourceViaTextDetails)) {
+            return false;
+        }
+
+        InstanceAgentCommandSourceViaTextDetails other =
+                (InstanceAgentCommandSourceViaTextDetails) o;
+        return java.util.Objects.equals(this.text, other.text)
+                && java.util.Objects.equals(this.textSha256, other.textSha256)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
+        result = (result * PRIME) + (this.textSha256 == null ? 43 : this.textSha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

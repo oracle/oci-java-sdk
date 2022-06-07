@@ -16,16 +16,21 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDumpTransferDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateDumpTransferDetails {
+public final class UpdateDumpTransferDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"source", "target"})
+    public UpdateDumpTransferDetails(
+            UpdateHostDumpTransferDetails source, UpdateHostDumpTransferDetails target) {
+        super();
+        this.source = source;
+        this.target = target;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private UpdateHostDumpTransferDetails source;
@@ -70,12 +75,66 @@ public class UpdateDumpTransferDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    UpdateHostDumpTransferDetails source;
+    private final UpdateHostDumpTransferDetails source;
+
+    public UpdateHostDumpTransferDetails getSource() {
+        return source;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    UpdateHostDumpTransferDetails target;
+    private final UpdateHostDumpTransferDetails target;
+
+    public UpdateHostDumpTransferDetails getTarget() {
+        return target;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateDumpTransferDetails(");
+        sb.append("source=").append(String.valueOf(this.source));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDumpTransferDetails)) {
+            return false;
+        }
+
+        UpdateDumpTransferDetails other = (UpdateDumpTransferDetails) o;
+        return java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

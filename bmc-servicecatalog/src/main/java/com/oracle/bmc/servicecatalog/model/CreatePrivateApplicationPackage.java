@@ -15,12 +15,6 @@ package com.oracle.bmc.servicecatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,10 +29,50 @@ package com.oracle.bmc.servicecatalog.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreatePrivateApplicationPackage {
+    @Deprecated
+    @java.beans.ConstructorProperties({"version"})
+    protected CreatePrivateApplicationPackage(String version) {
+        super();
+        this.version = version;
+    }
 
     /**
      * The package version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreatePrivateApplicationPackage(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreatePrivateApplicationPackage)) {
+            return false;
+        }
+
+        CreatePrivateApplicationPackage other = (CreatePrivateApplicationPackage) o;
+        return java.util.Objects.equals(this.version, other.version);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        return result;
+    }
 }

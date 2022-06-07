@@ -8,7 +8,6 @@ package com.oracle.bmc.osmanagement.model;
  * Indicates whether the update can be installed using OSMS.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.extern.slf4j.Slf4j
 public enum IsEligibleForInstallation {
     Installable("INSTALLABLE"),
     NotInstallable("NOT_INSTALLABLE"),
@@ -19,6 +18,9 @@ public enum IsEligibleForInstallation {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(IsEligibleForInstallation.class);
 
     private final String value;
     private static java.util.Map<String, IsEligibleForInstallation> map;

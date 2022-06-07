@@ -7,10 +7,6 @@ package com.oracle.bmc.optimizer.responses;
 import com.oracle.bmc.optimizer.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListHistoriesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -18,6 +14,10 @@ public class ListHistoriesResponse extends com.oracle.bmc.responses.BmcResponse 
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -27,6 +27,10 @@ public class ListHistoriesResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * For list pagination. When this header appears in the response, previous pages of results exist.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -34,10 +38,18 @@ public class ListHistoriesResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcPrevPage;
 
+    public String getOpcPrevPage() {
+        return opcPrevPage;
+    }
+
     /**
      * The returned HistoryCollection instance.
      */
     private com.oracle.bmc.optimizer.model.HistoryCollection historyCollection;
+
+    public com.oracle.bmc.optimizer.model.HistoryCollection getHistoryCollection() {
+        return historyCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -67,6 +79,35 @@ public class ListHistoriesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcPrevPage;
+
+        public Builder opcPrevPage(String opcPrevPage) {
+            this.opcPrevPage = opcPrevPage;
+            return this;
+        }
+
+        private com.oracle.bmc.optimizer.model.HistoryCollection historyCollection;
+
+        public Builder historyCollection(
+                com.oracle.bmc.optimizer.model.HistoryCollection historyCollection) {
+            this.historyCollection = historyCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -85,5 +126,52 @@ public class ListHistoriesResponse extends com.oracle.bmc.responses.BmcResponse 
             return new ListHistoriesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, opcPrevPage, historyCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcPrevPage=").append(String.valueOf(opcPrevPage));
+        sb.append(",historyCollection=").append(String.valueOf(historyCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListHistoriesResponse)) {
+            return false;
+        }
+
+        ListHistoriesResponse other = (ListHistoriesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcPrevPage, other.opcPrevPage)
+                && java.util.Objects.equals(this.historyCollection, other.historyCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcPrevPage == null ? 43 : this.opcPrevPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.historyCollection == null ? 43 : this.historyCollection.hashCode());
+        return result;
     }
 }

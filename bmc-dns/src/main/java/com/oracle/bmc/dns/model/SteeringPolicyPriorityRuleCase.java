@@ -15,16 +15,21 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SteeringPolicyPriorityRuleCase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SteeringPolicyPriorityRuleCase {
+public final class SteeringPolicyPriorityRuleCase {
+    @Deprecated
+    @java.beans.ConstructorProperties({"caseCondition", "answerData"})
+    public SteeringPolicyPriorityRuleCase(
+            String caseCondition, java.util.List<SteeringPolicyPriorityAnswerData> answerData) {
+        super();
+        this.caseCondition = caseCondition;
+        this.answerData = answerData;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
         private String caseCondition;
@@ -71,6 +76,10 @@ public class SteeringPolicyPriorityRuleCase {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An expression that uses conditions at the time of a DNS query to indicate
      * whether a case matches. Conditions may include the geographical location, IP
@@ -81,14 +90,66 @@ public class SteeringPolicyPriorityRuleCase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
-    String caseCondition;
+    private final String caseCondition;
+
+    public String getCaseCondition() {
+        return caseCondition;
+    }
 
     /**
      * An array of {@code SteeringPolicyPriorityAnswerData} objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("answerData")
-    java.util.List<SteeringPolicyPriorityAnswerData> answerData;
+    private final java.util.List<SteeringPolicyPriorityAnswerData> answerData;
+
+    public java.util.List<SteeringPolicyPriorityAnswerData> getAnswerData() {
+        return answerData;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SteeringPolicyPriorityRuleCase(");
+        sb.append("caseCondition=").append(String.valueOf(this.caseCondition));
+        sb.append(", answerData=").append(String.valueOf(this.answerData));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SteeringPolicyPriorityRuleCase)) {
+            return false;
+        }
+
+        SteeringPolicyPriorityRuleCase other = (SteeringPolicyPriorityRuleCase) o;
+        return java.util.Objects.equals(this.caseCondition, other.caseCondition)
+                && java.util.Objects.equals(this.answerData, other.answerData)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.caseCondition == null ? 43 : this.caseCondition.hashCode());
+        result = (result * PRIME) + (this.answerData == null ? 43 : this.answerData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

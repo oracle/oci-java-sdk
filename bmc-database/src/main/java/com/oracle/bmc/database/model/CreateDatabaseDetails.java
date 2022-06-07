@@ -18,16 +18,67 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDatabaseDetails {
+public final class CreateDatabaseDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "dbName",
+        "dbUniqueName",
+        "databaseSoftwareImageId",
+        "pdbName",
+        "adminPassword",
+        "tdeWalletPassword",
+        "characterSet",
+        "ncharacterSet",
+        "dbWorkload",
+        "dbBackupConfig",
+        "freeformTags",
+        "definedTags",
+        "kmsKeyId",
+        "kmsKeyVersionId",
+        "vaultId",
+        "sidPrefix"
+    })
+    public CreateDatabaseDetails(
+            String dbName,
+            String dbUniqueName,
+            String databaseSoftwareImageId,
+            String pdbName,
+            String adminPassword,
+            String tdeWalletPassword,
+            String characterSet,
+            String ncharacterSet,
+            DbWorkload dbWorkload,
+            DbBackupConfig dbBackupConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            String vaultId,
+            String sidPrefix) {
+        super();
+        this.dbName = dbName;
+        this.dbUniqueName = dbUniqueName;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.pdbName = pdbName;
+        this.adminPassword = adminPassword;
+        this.tdeWalletPassword = tdeWalletPassword;
+        this.characterSet = characterSet;
+        this.ncharacterSet = ncharacterSet;
+        this.dbWorkload = dbWorkload;
+        this.dbBackupConfig = dbBackupConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.vaultId = vaultId;
+        this.sidPrefix = sidPrefix;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
@@ -232,41 +283,69 @@ public class CreateDatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The database name. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    private final String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
 
     /**
      * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-    String dbUniqueName;
+    private final String dbUniqueName;
+
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
 
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
-    String databaseSoftwareImageId;
+    private final String databaseSoftwareImageId;
+
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
+    }
 
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
-    String pdbName;
+    private final String pdbName;
+
+    public String getPdbName() {
+        return pdbName;
+    }
 
     /**
      * A strong password for SYS, SYSTEM, and PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    String adminPassword;
+    private final String adminPassword;
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
 
     /**
      * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
-    String tdeWalletPassword;
+    private final String tdeWalletPassword;
+
+    public String getTdeWalletPassword() {
+        return tdeWalletPassword;
+    }
 
     /**
      * The character set for the database.  The default is AL32UTF8. Allowed values are:
@@ -275,7 +354,11 @@ public class CreateDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
-    String characterSet;
+    private final String characterSet;
+
+    public String getCharacterSet() {
+        return characterSet;
+    }
 
     /**
      * The national character set for the database.  The default is AL16UTF16. Allowed values are:
@@ -283,7 +366,12 @@ public class CreateDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-    String ncharacterSet;
+    private final String ncharacterSet;
+
+    public String getNcharacterSet() {
+        return ncharacterSet;
+    }
+
     /**
      * The database workload type.
      **/
@@ -323,10 +411,18 @@ public class CreateDatabaseDetails {
      * The database workload type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
-    DbWorkload dbWorkload;
+    private final DbWorkload dbWorkload;
+
+    public DbWorkload getDbWorkload() {
+        return dbWorkload;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
-    DbBackupConfig dbBackupConfig;
+    private final DbBackupConfig dbBackupConfig;
+
+    public DbBackupConfig getDbBackupConfig() {
+        return dbBackupConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -336,7 +432,11 @@ public class CreateDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -344,34 +444,154 @@ public class CreateDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
-    String kmsKeyVersionId;
+    private final String kmsKeyVersionId;
+
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * Specifies a prefix for the {@code Oracle SID} of the database to be created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
-    String sidPrefix;
+    private final String sidPrefix;
+
+    public String getSidPrefix() {
+        return sidPrefix;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDatabaseDetails(");
+        sb.append("dbName=").append(String.valueOf(this.dbName));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", databaseSoftwareImageId=")
+                .append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", pdbName=").append(String.valueOf(this.pdbName));
+        sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", tdeWalletPassword=").append(String.valueOf(this.tdeWalletPassword));
+        sb.append(", characterSet=").append(String.valueOf(this.characterSet));
+        sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
+        sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
+        sb.append(", dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDatabaseDetails)) {
+            return false;
+        }
+
+        CreateDatabaseDetails other = (CreateDatabaseDetails) o;
+        return java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageId, other.databaseSoftwareImageId)
+                && java.util.Objects.equals(this.pdbName, other.pdbName)
+                && java.util.Objects.equals(this.adminPassword, other.adminPassword)
+                && java.util.Objects.equals(this.tdeWalletPassword, other.tdeWalletPassword)
+                && java.util.Objects.equals(this.characterSet, other.characterSet)
+                && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
+                && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
+                && java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
+        result = (result * PRIME) + (this.pdbName == null ? 43 : this.pdbName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tdeWalletPassword == null ? 43 : this.tdeWalletPassword.hashCode());
+        result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
+        result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

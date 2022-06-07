@@ -15,14 +15,32 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SignDataDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SignDataDetails {
+public final class SignDataDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "message",
+        "keyId",
+        "keyVersionId",
+        "messageType",
+        "signingAlgorithm"
+    })
+    public SignDataDetails(
+            String message,
+            String keyId,
+            String keyVersionId,
+            MessageType messageType,
+            SigningAlgorithm signingAlgorithm) {
+        super();
+        this.message = message;
+        this.keyId = keyId;
+        this.keyVersionId = keyVersionId;
+        this.messageType = messageType;
+        this.signingAlgorithm = signingAlgorithm;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
@@ -101,23 +119,40 @@ public class SignDataDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * The OCID of the key used to sign the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * The OCID of the key version used to sign the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
-    String keyVersionId;
+    private final String keyVersionId;
+
+    public String getKeyVersionId() {
+        return keyVersionId;
+    }
+
     /**
      * Denotes whether the value of the message parameter is a raw message or a message digest.
      * The default value, {@code RAW}, indicates a message. To indicate a message digest, use {@code DIGEST}.
@@ -161,7 +196,12 @@ public class SignDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageType")
-    MessageType messageType;
+    private final MessageType messageType;
+
+    public MessageType getMessageType() {
+        return messageType;
+    }
+
     /**
      * The algorithm to use to sign the message or message digest.
      * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
@@ -222,8 +262,65 @@ public class SignDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
-    SigningAlgorithm signingAlgorithm;
+    private final SigningAlgorithm signingAlgorithm;
+
+    public SigningAlgorithm getSigningAlgorithm() {
+        return signingAlgorithm;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SignDataDetails(");
+        sb.append("message=").append(String.valueOf(this.message));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
+        sb.append(", messageType=").append(String.valueOf(this.messageType));
+        sb.append(", signingAlgorithm=").append(String.valueOf(this.signingAlgorithm));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SignDataDetails)) {
+            return false;
+        }
+
+        SignDataDetails other = (SignDataDetails) o;
+        return java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
+                && java.util.Objects.equals(this.messageType, other.messageType)
+                && java.util.Objects.equals(this.signingAlgorithm, other.signingAlgorithm)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.keyVersionId == null ? 43 : this.keyVersionId.hashCode());
+        result = (result * PRIME) + (this.messageType == null ? 43 : this.messageType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.signingAlgorithm == null ? 43 : this.signingAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

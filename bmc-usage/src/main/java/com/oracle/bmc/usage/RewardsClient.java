@@ -9,9 +9,9 @@ import com.oracle.bmc.usage.requests.*;
 import com.oracle.bmc.usage.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.extern.slf4j.Slf4j
 public class RewardsClient implements Rewards {
     /**
      * Service instance for Rewards.
@@ -25,11 +25,15 @@ public class RewardsClient implements Rewards {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RewardsAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final RewardsPaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -327,9 +331,13 @@ public class RewardsClient implements Rewards {
          * @return the client
          */
         public RewardsClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new RewardsClient(
                     authenticationDetailsProvider,
                     configuration,

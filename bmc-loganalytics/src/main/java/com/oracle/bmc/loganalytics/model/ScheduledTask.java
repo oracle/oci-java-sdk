@@ -16,12 +16,6 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -36,13 +30,71 @@ package com.oracle.bmc.loganalytics.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ScheduledTask {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "taskType",
+        "schedules",
+        "action",
+        "taskStatus",
+        "pauseReason",
+        "workRequestId",
+        "numOccurrences",
+        "compartmentId",
+        "timeCreated",
+        "timeUpdated",
+        "timeOfNextExecution",
+        "lifecycleState",
+        "freeformTags",
+        "definedTags"
+    })
+    protected ScheduledTask(
+            String id,
+            String displayName,
+            TaskType taskType,
+            java.util.List<Schedule> schedules,
+            Action action,
+            TaskStatus taskStatus,
+            PauseReason pauseReason,
+            String workRequestId,
+            Long numOccurrences,
+            String compartmentId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.Date timeOfNextExecution,
+            LifecycleState lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.taskType = taskType;
+        this.schedules = schedules;
+        this.action = action;
+        this.taskStatus = taskStatus;
+        this.pauseReason = pauseReason;
+        this.workRequestId = workRequestId;
+        this.numOccurrences = numOccurrences;
+        this.compartmentId = compartmentId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.timeOfNextExecution = timeOfNextExecution;
+        this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A user-friendly name that is changeable and that does not have to be unique.
@@ -52,26 +104,42 @@ public class ScheduledTask {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Task type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
-    TaskType taskType;
+    private final TaskType taskType;
+
+    public TaskType getTaskType() {
+        return taskType;
+    }
 
     /**
      * Schedules.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
-    java.util.List<Schedule> schedules;
+    private final java.util.List<Schedule> schedules;
+
+    public java.util.List<Schedule> getSchedules() {
+        return schedules;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
+
     /**
      * Status of the scheduled task.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TaskStatus {
         Ready("READY"),
         Paused("PAUSED"),
@@ -83,6 +151,9 @@ public class ScheduledTask {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TaskStatus.class);
 
         private final String value;
         private static java.util.Map<String, TaskStatus> map;
@@ -120,11 +191,15 @@ public class ScheduledTask {
      * Status of the scheduled task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
-    TaskStatus taskStatus;
+    private final TaskStatus taskStatus;
+
+    public TaskStatus getTaskStatus() {
+        return taskStatus;
+    }
+
     /**
      * reason for taskStatus PAUSED.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PauseReason {
         MetricExtractionNotValid("METRIC_EXTRACTION_NOT_VALID"),
         SavedSearchNotValid("SAVED_SEARCH_NOT_VALID"),
@@ -139,6 +214,9 @@ public class ScheduledTask {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PauseReason.class);
 
         private final String value;
         private static java.util.Map<String, PauseReason> map;
@@ -176,39 +254,63 @@ public class ScheduledTask {
      * reason for taskStatus PAUSED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pauseReason")
-    PauseReason pauseReason;
+    private final PauseReason pauseReason;
+
+    public PauseReason getPauseReason() {
+        return pauseReason;
+    }
 
     /**
      * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
-    String workRequestId;
+    private final String workRequestId;
+
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
 
     /**
      * Number of execution occurrences.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numOccurrences")
-    Long numOccurrences;
+    private final Long numOccurrences;
+
+    public Long getNumOccurrences() {
+        return numOccurrences;
+    }
 
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The date and time the scheduled task was created, in the format defined by RFC3339.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the scheduled task was last updated, in the format defined by RFC3339.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The date and time the scheduled task will execute next,
@@ -216,11 +318,15 @@ public class ScheduledTask {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextExecution")
-    java.util.Date timeOfNextExecution;
+    private final java.util.Date timeOfNextExecution;
+
+    public java.util.Date getTimeOfNextExecution() {
+        return timeOfNextExecution;
+    }
+
     /**
      * The current state of the scheduled task.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Deleted("DELETED"),
@@ -230,6 +336,9 @@ public class ScheduledTask {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -267,7 +376,11 @@ public class ScheduledTask {
      * The current state of the scheduled task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -275,7 +388,11 @@ public class ScheduledTask {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -283,12 +400,102 @@ public class ScheduledTask {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScheduledTask(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", taskType=").append(String.valueOf(this.taskType));
+        sb.append(", schedules=").append(String.valueOf(this.schedules));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", taskStatus=").append(String.valueOf(this.taskStatus));
+        sb.append(", pauseReason=").append(String.valueOf(this.pauseReason));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
+        sb.append(", numOccurrences=").append(String.valueOf(this.numOccurrences));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeOfNextExecution=").append(String.valueOf(this.timeOfNextExecution));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScheduledTask)) {
+            return false;
+        }
+
+        ScheduledTask other = (ScheduledTask) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.taskType, other.taskType)
+                && java.util.Objects.equals(this.schedules, other.schedules)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.taskStatus, other.taskStatus)
+                && java.util.Objects.equals(this.pauseReason, other.pauseReason)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
+                && java.util.Objects.equals(this.numOccurrences, other.numOccurrences)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeOfNextExecution, other.timeOfNextExecution)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
+        result = (result * PRIME) + (this.schedules == null ? 43 : this.schedules.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.taskStatus == null ? 43 : this.taskStatus.hashCode());
+        result = (result * PRIME) + (this.pauseReason == null ? 43 : this.pauseReason.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numOccurrences == null ? 43 : this.numOccurrences.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfNextExecution == null
+                                ? 43
+                                : this.timeOfNextExecution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        return result;
+    }
 
     /**
      * Discriminator.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Kind {
         Acceleration("ACCELERATION"),
         Standard("STANDARD"),
@@ -298,6 +505,8 @@ public class ScheduledTask {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Kind.class);
 
         private final String value;
         private static java.util.Map<String, Kind> map;

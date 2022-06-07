@@ -9,14 +9,6 @@ import com.oracle.bmc.rover.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeGetRptExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRoverNodeGetRptRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String roverNodeId;
 
+    public String getRoverNodeId() {
+        return roverNodeId;
+    }
     /**
      * The Java Web Token which is a signature of the request that is signed with the resource's private key
      * This is meant solely in the context of getRpt
@@ -31,10 +26,17 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String jwt;
 
+    public String getJwt() {
+        return jwt;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -42,6 +44,41 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String roverNodeId = null;
+
+        /**
+         * Unique RoverNode identifier
+         * @return this builder instance
+         */
+        public Builder roverNodeId(String roverNodeId) {
+            this.roverNodeId = roverNodeId;
+            return this;
+        }
+
+        private String jwt = null;
+
+        /**
+         * The Java Web Token which is a signature of the request that is signed with the resource's private key
+         * This is meant solely in the context of getRpt
+         *
+         * @return this builder instance
+         */
+        public Builder jwt(String jwt) {
+            this.jwt = jwt;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -95,5 +132,71 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetRoverNodeGetRptRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetRoverNodeGetRptRequest
+         */
+        public GetRoverNodeGetRptRequest buildWithoutInvocationCallback() {
+            GetRoverNodeGetRptRequest request = new GetRoverNodeGetRptRequest();
+            request.roverNodeId = roverNodeId;
+            request.jwt = jwt;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetRoverNodeGetRptRequest(roverNodeId, jwt, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().roverNodeId(roverNodeId).jwt(jwt).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",roverNodeId=").append(String.valueOf(this.roverNodeId));
+        sb.append(",jwt=").append(String.valueOf(this.jwt));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetRoverNodeGetRptRequest)) {
+            return false;
+        }
+
+        GetRoverNodeGetRptRequest other = (GetRoverNodeGetRptRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.roverNodeId, other.roverNodeId)
+                && java.util.Objects.equals(this.jwt, other.jwt)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.roverNodeId == null ? 43 : this.roverNodeId.hashCode());
+        result = (result * PRIME) + (this.jwt == null ? 43 : this.jwt.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

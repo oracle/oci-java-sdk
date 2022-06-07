@@ -15,16 +15,20 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConditionMetadataType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConditionMetadataType {
+public final class ConditionMetadataType {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "serviceTypes"})
+    public ConditionMetadataType(String name, java.util.List<ServiceTypeSummary> serviceTypes) {
+        super();
+        this.name = name;
+        this.serviceTypes = serviceTypes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -69,18 +73,72 @@ public class ConditionMetadataType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name used to identify
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * collection of Service type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceTypes")
-    java.util.List<ServiceTypeSummary> serviceTypes;
+    private final java.util.List<ServiceTypeSummary> serviceTypes;
+
+    public java.util.List<ServiceTypeSummary> getServiceTypes() {
+        return serviceTypes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConditionMetadataType(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", serviceTypes=").append(String.valueOf(this.serviceTypes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConditionMetadataType)) {
+            return false;
+        }
+
+        ConditionMetadataType other = (ConditionMetadataType) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.serviceTypes, other.serviceTypes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.serviceTypes == null ? 43 : this.serviceTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,21 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CollaborativeCapabilityWeight.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CollaborativeCapabilityWeight {
+public final class CollaborativeCapabilityWeight {
+    @Deprecated
+    @java.beans.ConstructorProperties({"key", "displayName", "weight"})
+    public CollaborativeCapabilityWeight(String key, String displayName, Integer weight) {
+        super();
+        this.key = key;
+        this.displayName = displayName;
+        this.weight = weight;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -81,24 +86,85 @@ public class CollaborativeCapabilityWeight {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique key of contributing protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The display name of contributing protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The weight of contributing protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    Integer weight;
+    private final Integer weight;
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CollaborativeCapabilityWeight(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", weight=").append(String.valueOf(this.weight));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CollaborativeCapabilityWeight)) {
+            return false;
+        }
+
+        CollaborativeCapabilityWeight other = (CollaborativeCapabilityWeight) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

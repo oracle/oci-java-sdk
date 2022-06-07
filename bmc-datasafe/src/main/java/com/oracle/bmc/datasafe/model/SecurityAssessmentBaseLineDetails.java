@@ -15,16 +15,19 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SecurityAssessmentBaseLineDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SecurityAssessmentBaseLineDetails {
+public final class SecurityAssessmentBaseLineDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"assessmentIds"})
+    public SecurityAssessmentBaseLineDetails(java.util.List<String> assessmentIds) {
+        super();
+        this.assessmentIds = assessmentIds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("assessmentIds")
         private java.util.List<String> assessmentIds;
@@ -61,12 +64,61 @@ public class SecurityAssessmentBaseLineDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of security assessment OCIDs that need to be updated while setting the baseline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentIds")
-    java.util.List<String> assessmentIds;
+    private final java.util.List<String> assessmentIds;
+
+    public java.util.List<String> getAssessmentIds() {
+        return assessmentIds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SecurityAssessmentBaseLineDetails(");
+        sb.append("assessmentIds=").append(String.valueOf(this.assessmentIds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SecurityAssessmentBaseLineDetails)) {
+            return false;
+        }
+
+        SecurityAssessmentBaseLineDetails other = (SecurityAssessmentBaseLineDetails) o;
+        return java.util.Objects.equals(this.assessmentIds, other.assessmentIds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.assessmentIds == null ? 43 : this.assessmentIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

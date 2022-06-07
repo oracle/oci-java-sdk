@@ -15,12 +15,6 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -43,12 +37,52 @@ package com.oracle.bmc.datasafe.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class PatchInstruction {
+    @Deprecated
+    @java.beans.ConstructorProperties({"selection"})
+    protected PatchInstruction(String selection) {
+        super();
+        this.selection = selection;
+    }
 
     /**
      * The set of values to which the operation applies as a [JMESPath expression](https://jmespath.org/specification.html) for evaluation against the context resource. An operation fails if the selection yields an exception, except as otherwise specified. Note that comparisons involving non-primitive values (objects or arrays) are not supported and will always evaluate to false.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("selection")
-    String selection;
+    private final String selection;
+
+    public String getSelection() {
+        return selection;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PatchInstruction(");
+        sb.append("selection=").append(String.valueOf(this.selection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PatchInstruction)) {
+            return false;
+        }
+
+        PatchInstruction other = (PatchInstruction) o;
+        return java.util.Objects.equals(this.selection, other.selection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.selection == null ? 43 : this.selection.hashCode());
+        return result;
+    }
 
     /**
      * The patch operation.

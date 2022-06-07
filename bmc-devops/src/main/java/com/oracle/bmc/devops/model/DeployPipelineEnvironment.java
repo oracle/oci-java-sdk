@@ -15,16 +15,28 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DeployPipelineEnvironment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeployPipelineEnvironment {
+public final class DeployPipelineEnvironment {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "deployEnvironmentId",
+        "displayName",
+        "deployPipelineStages"
+    })
+    public DeployPipelineEnvironment(
+            String deployEnvironmentId,
+            String displayName,
+            DeployPipelineStageCollection deployPipelineStages) {
+        super();
+        this.deployEnvironmentId = deployEnvironmentId;
+        this.displayName = displayName;
+        this.deployPipelineStages = deployPipelineStages;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentId")
         private String deployEnvironmentId;
@@ -83,21 +95,90 @@ public class DeployPipelineEnvironment {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of an Environment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentId")
-    String deployEnvironmentId;
+    private final String deployEnvironmentId;
+
+    public String getDeployEnvironmentId() {
+        return deployEnvironmentId;
+    }
 
     /**
      * Display name of the environment. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deployPipelineStages")
-    DeployPipelineStageCollection deployPipelineStages;
+    private final DeployPipelineStageCollection deployPipelineStages;
+
+    public DeployPipelineStageCollection getDeployPipelineStages() {
+        return deployPipelineStages;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeployPipelineEnvironment(");
+        sb.append("deployEnvironmentId=").append(String.valueOf(this.deployEnvironmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", deployPipelineStages=").append(String.valueOf(this.deployPipelineStages));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeployPipelineEnvironment)) {
+            return false;
+        }
+
+        DeployPipelineEnvironment other = (DeployPipelineEnvironment) o;
+        return java.util.Objects.equals(this.deployEnvironmentId, other.deployEnvironmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.deployPipelineStages, other.deployPipelineStages)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.deployEnvironmentId == null
+                                ? 43
+                                : this.deployEnvironmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployPipelineStages == null
+                                ? 43
+                                : this.deployPipelineStages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

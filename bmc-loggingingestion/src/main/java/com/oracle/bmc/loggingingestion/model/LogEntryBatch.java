@@ -15,14 +15,32 @@ package com.oracle.bmc.loggingingestion.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LogEntryBatch.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogEntryBatch {
+public final class LogEntryBatch {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "entries",
+        "source",
+        "type",
+        "subject",
+        "defaultlogentrytime"
+    })
+    public LogEntryBatch(
+            java.util.List<LogEntry> entries,
+            String source,
+            String type,
+            String subject,
+            java.util.Date defaultlogentrytime) {
+        super();
+        this.entries = entries;
+        this.source = source;
+        this.type = type;
+        this.subject = subject;
+        this.defaultlogentrytime = defaultlogentrytime;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("entries")
         private java.util.List<LogEntry> entries;
@@ -100,11 +118,19 @@ public class LogEntryBatch {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of data entries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entries")
-    java.util.List<LogEntry> entries;
+    private final java.util.List<LogEntry> entries;
+
+    public java.util.List<LogEntry> getEntries() {
+        return entries;
+    }
 
     /**
      * Source of the logs that generated the message. This could be the
@@ -112,7 +138,11 @@ public class LogEntryBatch {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    String source;
+    private final String source;
+
+    public String getSource() {
+        return source;
+    }
 
     /**
      * This field signifies the type of logs being ingested.
@@ -120,7 +150,11 @@ public class LogEntryBatch {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * This optional field is useful for specifying the specific sub-resource
@@ -129,7 +163,11 @@ public class LogEntryBatch {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subject")
-    String subject;
+    private final String subject;
+
+    public String getSubject() {
+        return subject;
+    }
 
     /**
      * The timestamp for all log entries in this batch. This can be
@@ -139,8 +177,67 @@ public class LogEntryBatch {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultlogentrytime")
-    java.util.Date defaultlogentrytime;
+    private final java.util.Date defaultlogentrytime;
+
+    public java.util.Date getDefaultlogentrytime() {
+        return defaultlogentrytime;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogEntryBatch(");
+        sb.append("entries=").append(String.valueOf(this.entries));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", subject=").append(String.valueOf(this.subject));
+        sb.append(", defaultlogentrytime=").append(String.valueOf(this.defaultlogentrytime));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogEntryBatch)) {
+            return false;
+        }
+
+        LogEntryBatch other = (LogEntryBatch) o;
+        return java.util.Objects.equals(this.entries, other.entries)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.subject, other.subject)
+                && java.util.Objects.equals(this.defaultlogentrytime, other.defaultlogentrytime)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.entries == null ? 43 : this.entries.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.subject == null ? 43 : this.subject.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultlogentrytime == null
+                                ? 43
+                                : this.defaultlogentrytime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

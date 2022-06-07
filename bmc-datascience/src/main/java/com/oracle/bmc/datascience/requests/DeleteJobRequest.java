@@ -9,14 +9,6 @@ import com.oracle.bmc.datascience.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteJobRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String jobId;
 
+    public String getJobId() {
+        return jobId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -34,16 +29,26 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
      *
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Delete all JobRuns associated with this job.
      */
     private Boolean deleteRelatedJobRuns;
+
+    public Boolean getDeleteRelatedJobRuns() {
+        return deleteRelatedJobRuns;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -51,6 +56,56 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String jobId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         * @return this builder instance
+         */
+        public Builder jobId(String jobId) {
+            this.jobId = jobId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Boolean deleteRelatedJobRuns = null;
+
+        /**
+         * Delete all JobRuns associated with this job.
+         * @return this builder instance
+         */
+        public Builder deleteRelatedJobRuns(Boolean deleteRelatedJobRuns) {
+            this.deleteRelatedJobRuns = deleteRelatedJobRuns;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -105,5 +160,83 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of DeleteJobRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DeleteJobRequest
+         */
+        public DeleteJobRequest buildWithoutInvocationCallback() {
+            DeleteJobRequest request = new DeleteJobRequest();
+            request.jobId = jobId;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            request.deleteRelatedJobRuns = deleteRelatedJobRuns;
+            return request;
+            // new DeleteJobRequest(jobId, ifMatch, opcRequestId, deleteRelatedJobRuns);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .jobId(jobId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .deleteRelatedJobRuns(deleteRelatedJobRuns);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",jobId=").append(String.valueOf(this.jobId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",deleteRelatedJobRuns=").append(String.valueOf(this.deleteRelatedJobRuns));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteJobRequest)) {
+            return false;
+        }
+
+        DeleteJobRequest other = (DeleteJobRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.jobId, other.jobId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.deleteRelatedJobRuns, other.deleteRelatedJobRuns);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deleteRelatedJobRuns == null
+                                ? 43
+                                : this.deleteRelatedJobRuns.hashCode());
+        return result;
     }
 }

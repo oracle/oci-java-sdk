@@ -9,14 +9,6 @@ import com.oracle.bmc.dataintegration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateWorkspaceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateWorkspaceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails> {
@@ -26,11 +18,17 @@ public class UpdateWorkspaceRequest
      */
     private String workspaceId;
 
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
     /**
      * The information needed to update the workspace.
      */
     private com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails updateWorkspaceDetails;
 
+    public com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails getUpdateWorkspaceDetails() {
+        return updateWorkspaceDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
      * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
@@ -39,6 +37,9 @@ public class UpdateWorkspaceRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -46,6 +47,10 @@ public class UpdateWorkspaceRequest
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +69,59 @@ public class UpdateWorkspaceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String workspaceId = null;
+
+        /**
+         * The workspace ID.
+         * @return this builder instance
+         */
+        public Builder workspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+
+        private com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails updateWorkspaceDetails =
+                null;
+
+        /**
+         * The information needed to update the workspace.
+         * @return this builder instance
+         */
+        public Builder updateWorkspaceDetails(
+                com.oracle.bmc.dataintegration.model.UpdateWorkspaceDetails
+                        updateWorkspaceDetails) {
+            this.updateWorkspaceDetails = updateWorkspaceDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -129,5 +187,84 @@ public class UpdateWorkspaceRequest
             updateWorkspaceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateWorkspaceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateWorkspaceRequest
+         */
+        public UpdateWorkspaceRequest buildWithoutInvocationCallback() {
+            UpdateWorkspaceRequest request = new UpdateWorkspaceRequest();
+            request.workspaceId = workspaceId;
+            request.updateWorkspaceDetails = updateWorkspaceDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateWorkspaceRequest(workspaceId, updateWorkspaceDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .workspaceId(workspaceId)
+                .updateWorkspaceDetails(updateWorkspaceDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",workspaceId=").append(String.valueOf(this.workspaceId));
+        sb.append(",updateWorkspaceDetails=").append(String.valueOf(this.updateWorkspaceDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateWorkspaceRequest)) {
+            return false;
+        }
+
+        UpdateWorkspaceRequest other = (UpdateWorkspaceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.workspaceId, other.workspaceId)
+                && java.util.Objects.equals(
+                        this.updateWorkspaceDetails, other.updateWorkspaceDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.workspaceId == null ? 43 : this.workspaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateWorkspaceDetails == null
+                                ? 43
+                                : this.updateWorkspaceDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

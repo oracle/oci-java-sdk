@@ -15,16 +15,22 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateReplicationPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateReplicationPolicyDetails {
+public final class CreateReplicationPolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "destinationRegionName", "destinationBucketName"})
+    public CreateReplicationPolicyDetails(
+            String name, String destinationRegionName, String destinationBucketName) {
+        super();
+        this.name = name;
+        this.destinationRegionName = destinationRegionName;
+        this.destinationBucketName = destinationBucketName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -83,17 +89,29 @@ public class CreateReplicationPolicyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the policy. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The destination region to replicate to, for example "us-ashburn-1".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegionName")
-    String destinationRegionName;
+    private final String destinationRegionName;
+
+    public String getDestinationRegionName() {
+        return destinationRegionName;
+    }
 
     /**
      * The bucket to replicate to in the destination region. Replication policy creation does not automatically
@@ -101,8 +119,65 @@ public class CreateReplicationPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
-    String destinationBucketName;
+    private final String destinationBucketName;
+
+    public String getDestinationBucketName() {
+        return destinationBucketName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateReplicationPolicyDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", destinationRegionName=").append(String.valueOf(this.destinationRegionName));
+        sb.append(", destinationBucketName=").append(String.valueOf(this.destinationBucketName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateReplicationPolicyDetails)) {
+            return false;
+        }
+
+        CreateReplicationPolicyDetails other = (CreateReplicationPolicyDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.destinationRegionName, other.destinationRegionName)
+                && java.util.Objects.equals(this.destinationBucketName, other.destinationBucketName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationRegionName == null
+                                ? 43
+                                : this.destinationRegionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationBucketName == null
+                                ? 43
+                                : this.destinationBucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogListingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAppCatalogListingsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAppCatalogListingsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -30,6 +22,9 @@ public class ListAppCatalogListingsRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
@@ -38,6 +33,9 @@ public class ListAppCatalogListingsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
      * is case sensitive.
@@ -82,23 +80,37 @@ public class ListAppCatalogListingsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * A filter to return only the publisher that matches the given publisher name exactly.
      *
      */
     private String publisherName;
 
+    public String getPublisherName() {
+        return publisherName;
+    }
     /**
      * A filter to return only publishers that match the given publisher type exactly. Valid types are OCI, ORACLE, TRUSTED, STANDARD.
      *
      */
     private String publisherType;
 
+    public String getPublisherType() {
+        return publisherType;
+    }
     /**
      * A filter to return only resources that match the given display name exactly.
      *
      */
     private String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -106,6 +118,85 @@ public class ListAppCatalogListingsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private String publisherName = null;
+
+        /**
+         * A filter to return only the publisher that matches the given publisher name exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder publisherName(String publisherName) {
+            this.publisherName = publisherName;
+            return this;
+        }
+
+        private String publisherType = null;
+
+        /**
+         * A filter to return only publishers that match the given publisher type exactly. Valid types are OCI, ORACLE, TRUSTED, STANDARD.
+         *
+         * @return this builder instance
+         */
+        public Builder publisherType(String publisherType) {
+            this.publisherType = publisherType;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -162,5 +253,93 @@ public class ListAppCatalogListingsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListAppCatalogListingsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListAppCatalogListingsRequest
+         */
+        public ListAppCatalogListingsRequest buildWithoutInvocationCallback() {
+            ListAppCatalogListingsRequest request = new ListAppCatalogListingsRequest();
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.publisherName = publisherName;
+            request.publisherType = publisherType;
+            request.displayName = displayName;
+            return request;
+            // new ListAppCatalogListingsRequest(limit, page, sortOrder, publisherName, publisherType, displayName);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .publisherName(publisherName)
+                .publisherType(publisherType)
+                .displayName(displayName);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",publisherName=").append(String.valueOf(this.publisherName));
+        sb.append(",publisherType=").append(String.valueOf(this.publisherType));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAppCatalogListingsRequest)) {
+            return false;
+        }
+
+        ListAppCatalogListingsRequest other = (ListAppCatalogListingsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.publisherName, other.publisherName)
+                && java.util.Objects.equals(this.publisherType, other.publisherType)
+                && java.util.Objects.equals(this.displayName, other.displayName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publisherName == null ? 43 : this.publisherName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publisherType == null ? 43 : this.publisherType.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        return result;
     }
 }

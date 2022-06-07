@@ -9,14 +9,6 @@ import com.oracle.bmc.monitoring.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/PostMetricDataExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PostMetricDataRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class PostMetricDataRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.monitoring.model.PostMetricDataDetails> {
@@ -27,12 +19,19 @@ public class PostMetricDataRequest
      */
     private com.oracle.bmc.monitoring.model.PostMetricDataDetails postMetricDataDetails;
 
+    public com.oracle.bmc.monitoring.model.PostMetricDataDetails getPostMetricDataDetails() {
+        return postMetricDataDetails;
+    }
     /**
      * Customer part of the request identifier token. If you need to contact Oracle about a particular
      * request, please provide the complete request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -50,6 +49,32 @@ public class PostMetricDataRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.monitoring.model.PostMetricDataDetails postMetricDataDetails = null;
+
+        /**
+         * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
+         *
+         * @return this builder instance
+         */
+        public Builder postMetricDataDetails(
+                com.oracle.bmc.monitoring.model.PostMetricDataDetails postMetricDataDetails) {
+            this.postMetricDataDetails = postMetricDataDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -113,5 +138,73 @@ public class PostMetricDataRequest
             postMetricDataDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of PostMetricDataRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of PostMetricDataRequest
+         */
+        public PostMetricDataRequest buildWithoutInvocationCallback() {
+            PostMetricDataRequest request = new PostMetricDataRequest();
+            request.postMetricDataDetails = postMetricDataDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new PostMetricDataRequest(postMetricDataDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .postMetricDataDetails(postMetricDataDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",postMetricDataDetails=").append(String.valueOf(this.postMetricDataDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PostMetricDataRequest)) {
+            return false;
+        }
+
+        PostMetricDataRequest other = (PostMetricDataRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.postMetricDataDetails, other.postMetricDataDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.postMetricDataDetails == null
+                                ? 43
+                                : this.postMetricDataDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

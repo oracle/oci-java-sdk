@@ -22,16 +22,70 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseSoftwareImageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseSoftwareImageSummary {
+public final class DatabaseSoftwareImageSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "databaseVersion",
+        "displayName",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "imageType",
+        "imageShapeFamily",
+        "patchSet",
+        "freeformTags",
+        "definedTags",
+        "databaseSoftwareImageIncludedPatches",
+        "includedPatchesSummary",
+        "databaseSoftwareImageOneOffPatches",
+        "lsInventory",
+        "isUpgradeSupported"
+    })
+    public DatabaseSoftwareImageSummary(
+            String id,
+            String compartmentId,
+            String databaseVersion,
+            String displayName,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            ImageType imageType,
+            ImageShapeFamily imageShapeFamily,
+            String patchSet,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<String> databaseSoftwareImageIncludedPatches,
+            String includedPatchesSummary,
+            java.util.List<String> databaseSoftwareImageOneOffPatches,
+            String lsInventory,
+            Boolean isUpgradeSupported) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.databaseVersion = databaseVersion;
+        this.displayName = displayName;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.imageType = imageType;
+        this.imageShapeFamily = imageShapeFamily;
+        this.patchSet = patchSet;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.databaseSoftwareImageIncludedPatches = databaseSoftwareImageIncludedPatches;
+        this.includedPatchesSummary = includedPatchesSummary;
+        this.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
+        this.lsInventory = lsInventory;
+        this.isUpgradeSupported = isUpgradeSupported;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -251,33 +305,53 @@ public class DatabaseSoftwareImageSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database software image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The database version with which the database software image is to be built.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
-    String databaseVersion;
+    private final String databaseVersion;
+
+    public String getDatabaseVersion() {
+        return databaseVersion;
+    }
 
     /**
      * The user-friendly name for the database software image. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The current state of the database software image.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -293,6 +367,9 @@ public class DatabaseSoftwareImageSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -330,23 +407,35 @@ public class DatabaseSoftwareImageSummary {
      * The current state of the database software image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Detailed message for the lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time the database software image was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * The type of software image. Can be grid or database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ImageType {
         GridImage("GRID_IMAGE"),
         DatabaseImage("DATABASE_IMAGE"),
@@ -356,6 +445,9 @@ public class DatabaseSoftwareImageSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ImageType.class);
 
         private final String value;
         private static java.util.Map<String, ImageType> map;
@@ -393,11 +485,15 @@ public class DatabaseSoftwareImageSummary {
      * The type of software image. Can be grid or database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageType")
-    ImageType imageType;
+    private final ImageType imageType;
+
+    public ImageType getImageType() {
+        return imageType;
+    }
+
     /**
      * To what shape the image is meant for.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ImageShapeFamily {
         VmBmShape("VM_BM_SHAPE"),
         ExadataShape("EXADATA_SHAPE"),
@@ -408,6 +504,9 @@ public class DatabaseSoftwareImageSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ImageShapeFamily.class);
 
         private final String value;
         private static java.util.Map<String, ImageShapeFamily> map;
@@ -445,13 +544,21 @@ public class DatabaseSoftwareImageSummary {
      * To what shape the image is meant for.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageShapeFamily")
-    ImageShapeFamily imageShapeFamily;
+    private final ImageShapeFamily imageShapeFamily;
+
+    public ImageShapeFamily getImageShapeFamily() {
+        return imageShapeFamily;
+    }
 
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchSet")
-    String patchSet;
+    private final String patchSet;
+
+    public String getPatchSet() {
+        return patchSet;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -461,7 +568,11 @@ public class DatabaseSoftwareImageSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -469,38 +580,182 @@ public class DatabaseSoftwareImageSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * List of one-off patches for Database Homes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageIncludedPatches")
-    java.util.List<String> databaseSoftwareImageIncludedPatches;
+    private final java.util.List<String> databaseSoftwareImageIncludedPatches;
+
+    public java.util.List<String> getDatabaseSoftwareImageIncludedPatches() {
+        return databaseSoftwareImageIncludedPatches;
+    }
 
     /**
      * The patches included in the image and the version of the image
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("includedPatchesSummary")
-    String includedPatchesSummary;
+    private final String includedPatchesSummary;
+
+    public String getIncludedPatchesSummary() {
+        return includedPatchesSummary;
+    }
 
     /**
      * List of one-off patches for Database Homes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageOneOffPatches")
-    java.util.List<String> databaseSoftwareImageOneOffPatches;
+    private final java.util.List<String> databaseSoftwareImageOneOffPatches;
+
+    public java.util.List<String> getDatabaseSoftwareImageOneOffPatches() {
+        return databaseSoftwareImageOneOffPatches;
+    }
 
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lsInventory")
-    String lsInventory;
+    private final String lsInventory;
+
+    public String getLsInventory() {
+        return lsInventory;
+    }
 
     /**
      * True if this Database software image is supported for Upgrade.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUpgradeSupported")
-    Boolean isUpgradeSupported;
+    private final Boolean isUpgradeSupported;
+
+    public Boolean getIsUpgradeSupported() {
+        return isUpgradeSupported;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseSoftwareImageSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", imageType=").append(String.valueOf(this.imageType));
+        sb.append(", imageShapeFamily=").append(String.valueOf(this.imageShapeFamily));
+        sb.append(", patchSet=").append(String.valueOf(this.patchSet));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", databaseSoftwareImageIncludedPatches=")
+                .append(String.valueOf(this.databaseSoftwareImageIncludedPatches));
+        sb.append(", includedPatchesSummary=").append(String.valueOf(this.includedPatchesSummary));
+        sb.append(", databaseSoftwareImageOneOffPatches=")
+                .append(String.valueOf(this.databaseSoftwareImageOneOffPatches));
+        sb.append(", lsInventory=").append(String.valueOf(this.lsInventory));
+        sb.append(", isUpgradeSupported=").append(String.valueOf(this.isUpgradeSupported));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseSoftwareImageSummary)) {
+            return false;
+        }
+
+        DatabaseSoftwareImageSummary other = (DatabaseSoftwareImageSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.imageType, other.imageType)
+                && java.util.Objects.equals(this.imageShapeFamily, other.imageShapeFamily)
+                && java.util.Objects.equals(this.patchSet, other.patchSet)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageIncludedPatches,
+                        other.databaseSoftwareImageIncludedPatches)
+                && java.util.Objects.equals(
+                        this.includedPatchesSummary, other.includedPatchesSummary)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageOneOffPatches,
+                        other.databaseSoftwareImageOneOffPatches)
+                && java.util.Objects.equals(this.lsInventory, other.lsInventory)
+                && java.util.Objects.equals(this.isUpgradeSupported, other.isUpgradeSupported)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.imageType == null ? 43 : this.imageType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.imageShapeFamily == null ? 43 : this.imageShapeFamily.hashCode());
+        result = (result * PRIME) + (this.patchSet == null ? 43 : this.patchSet.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageIncludedPatches == null
+                                ? 43
+                                : this.databaseSoftwareImageIncludedPatches.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includedPatchesSummary == null
+                                ? 43
+                                : this.includedPatchesSummary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageOneOffPatches == null
+                                ? 43
+                                : this.databaseSoftwareImageOneOffPatches.hashCode());
+        result = (result * PRIME) + (this.lsInventory == null ? 43 : this.lsInventory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUpgradeSupported == null
+                                ? 43
+                                : this.isUpgradeSupported.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

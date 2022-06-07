@@ -16,16 +16,26 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = NamespaceMetadata.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NamespaceMetadata {
+public final class NamespaceMetadata {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "namespace",
+        "defaultS3CompartmentId",
+        "defaultSwiftCompartmentId"
+    })
+    public NamespaceMetadata(
+            String namespace, String defaultS3CompartmentId, String defaultSwiftCompartmentId) {
+        super();
+        this.namespace = namespace;
+        this.defaultS3CompartmentId = defaultS3CompartmentId;
+        this.defaultSwiftCompartmentId = defaultSwiftCompartmentId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
@@ -84,24 +94,96 @@ public class NamespaceMetadata {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The Object Storage namespace to which the metadata belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * If the field is set, specifies the default compartment assignment for the Amazon S3 Compatibility API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultS3CompartmentId")
-    String defaultS3CompartmentId;
+    private final String defaultS3CompartmentId;
+
+    public String getDefaultS3CompartmentId() {
+        return defaultS3CompartmentId;
+    }
 
     /**
      * If the field is set, specifies the default compartment assignment for the Swift API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultSwiftCompartmentId")
-    String defaultSwiftCompartmentId;
+    private final String defaultSwiftCompartmentId;
+
+    public String getDefaultSwiftCompartmentId() {
+        return defaultSwiftCompartmentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NamespaceMetadata(");
+        sb.append("namespace=").append(String.valueOf(this.namespace));
+        sb.append(", defaultS3CompartmentId=").append(String.valueOf(this.defaultS3CompartmentId));
+        sb.append(", defaultSwiftCompartmentId=")
+                .append(String.valueOf(this.defaultSwiftCompartmentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NamespaceMetadata)) {
+            return false;
+        }
+
+        NamespaceMetadata other = (NamespaceMetadata) o;
+        return java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(
+                        this.defaultS3CompartmentId, other.defaultS3CompartmentId)
+                && java.util.Objects.equals(
+                        this.defaultSwiftCompartmentId, other.defaultSwiftCompartmentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultS3CompartmentId == null
+                                ? 43
+                                : this.defaultS3CompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultSwiftCompartmentId == null
+                                ? 43
+                                : this.defaultSwiftCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

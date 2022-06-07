@@ -16,22 +16,17 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ADBServerlesTablespaceDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "targetType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ADBServerlesTablespaceDetails extends TargetTypeTablespaceDetails {
+public final class ADBServerlesTablespaceDetails extends TargetTypeTablespaceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
         private RemapTarget remapTarget;
@@ -68,6 +63,10 @@ public class ADBServerlesTablespaceDetails extends TargetTypeTablespaceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ADBServerlesTablespaceDetails(RemapTarget remapTarget) {
         super();
@@ -78,7 +77,6 @@ public class ADBServerlesTablespaceDetails extends TargetTypeTablespaceDetails {
      * Name of tablespace at target to which the source database tablespace need to be remapped.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RemapTarget {
         Data("DATA"),
 
@@ -87,6 +85,9 @@ public class ADBServerlesTablespaceDetails extends TargetTypeTablespaceDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RemapTarget.class);
 
         private final String value;
         private static java.util.Map<String, RemapTarget> map;
@@ -125,8 +126,53 @@ public class ADBServerlesTablespaceDetails extends TargetTypeTablespaceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
-    RemapTarget remapTarget;
+    private final RemapTarget remapTarget;
+
+    public RemapTarget getRemapTarget() {
+        return remapTarget;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ADBServerlesTablespaceDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", remapTarget=").append(String.valueOf(this.remapTarget));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ADBServerlesTablespaceDetails)) {
+            return false;
+        }
+
+        ADBServerlesTablespaceDetails other = (ADBServerlesTablespaceDetails) o;
+        return java.util.Objects.equals(this.remapTarget, other.remapTarget)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.remapTarget == null ? 43 : this.remapTarget.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

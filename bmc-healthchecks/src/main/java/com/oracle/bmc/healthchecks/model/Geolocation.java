@@ -15,14 +15,38 @@ package com.oracle.bmc.healthchecks.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Geolocation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Geolocation {
+public final class Geolocation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "geoKey",
+        "adminDivCode",
+        "cityName",
+        "countryCode",
+        "countryName",
+        "latitude",
+        "longitude"
+    })
+    public Geolocation(
+            String geoKey,
+            String adminDivCode,
+            String cityName,
+            String countryCode,
+            String countryName,
+            Float latitude,
+            Float longitude) {
+        super();
+        this.geoKey = geoKey;
+        this.adminDivCode = adminDivCode;
+        this.cityName = cityName;
+        this.countryCode = countryCode;
+        this.countryName = countryName;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("geoKey")
         private String geoKey;
@@ -127,11 +151,19 @@ public class Geolocation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An opaque identifier for the geographic location of the vantage point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("geoKey")
-    String geoKey;
+    private final String geoKey;
+
+    public String getGeoKey() {
+        return geoKey;
+    }
 
     /**
      * The ISO 3166-2 code for this location's first-level administrative
@@ -141,14 +173,22 @@ public class Geolocation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminDivCode")
-    String adminDivCode;
+    private final String adminDivCode;
+
+    public String getAdminDivCode() {
+        return adminDivCode;
+    }
 
     /**
      * Common English-language name for the city.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cityName")
-    String cityName;
+    private final String cityName;
+
+    public String getCityName() {
+        return cityName;
+    }
 
     /**
      * The ISO 3166-1 alpha-2 country code. For a list of codes,
@@ -156,29 +196,102 @@ public class Geolocation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
-    String countryCode;
+    private final String countryCode;
+
+    public String getCountryCode() {
+        return countryCode;
+    }
 
     /**
      * The common English-language name for the country.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryName")
-    String countryName;
+    private final String countryName;
+
+    public String getCountryName() {
+        return countryName;
+    }
 
     /**
      * Degrees north of the Equator.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("latitude")
-    Float latitude;
+    private final Float latitude;
+
+    public Float getLatitude() {
+        return latitude;
+    }
 
     /**
      * Degrees east of the prime meridian.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longitude")
-    Float longitude;
+    private final Float longitude;
+
+    public Float getLongitude() {
+        return longitude;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Geolocation(");
+        sb.append("geoKey=").append(String.valueOf(this.geoKey));
+        sb.append(", adminDivCode=").append(String.valueOf(this.adminDivCode));
+        sb.append(", cityName=").append(String.valueOf(this.cityName));
+        sb.append(", countryCode=").append(String.valueOf(this.countryCode));
+        sb.append(", countryName=").append(String.valueOf(this.countryName));
+        sb.append(", latitude=").append(String.valueOf(this.latitude));
+        sb.append(", longitude=").append(String.valueOf(this.longitude));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Geolocation)) {
+            return false;
+        }
+
+        Geolocation other = (Geolocation) o;
+        return java.util.Objects.equals(this.geoKey, other.geoKey)
+                && java.util.Objects.equals(this.adminDivCode, other.adminDivCode)
+                && java.util.Objects.equals(this.cityName, other.cityName)
+                && java.util.Objects.equals(this.countryCode, other.countryCode)
+                && java.util.Objects.equals(this.countryName, other.countryName)
+                && java.util.Objects.equals(this.latitude, other.latitude)
+                && java.util.Objects.equals(this.longitude, other.longitude)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.geoKey == null ? 43 : this.geoKey.hashCode());
+        result = (result * PRIME) + (this.adminDivCode == null ? 43 : this.adminDivCode.hashCode());
+        result = (result * PRIME) + (this.cityName == null ? 43 : this.cityName.hashCode());
+        result = (result * PRIME) + (this.countryCode == null ? 43 : this.countryCode.hashCode());
+        result = (result * PRIME) + (this.countryName == null ? 43 : this.countryName.hashCode());
+        result = (result * PRIME) + (this.latitude == null ? 43 : this.latitude.hashCode());
+        result = (result * PRIME) + (this.longitude == null ? 43 : this.longitude.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

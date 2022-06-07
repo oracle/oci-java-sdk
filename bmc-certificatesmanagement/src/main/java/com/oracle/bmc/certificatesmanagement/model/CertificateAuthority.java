@@ -15,16 +15,73 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CertificateAuthority.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CertificateAuthority {
+public final class CertificateAuthority {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "issuerCertificateAuthorityId",
+        "name",
+        "description",
+        "timeCreated",
+        "timeOfDeletion",
+        "kmsKeyId",
+        "lifecycleState",
+        "lifecycleDetails",
+        "compartmentId",
+        "certificateAuthorityRules",
+        "currentVersion",
+        "certificateRevocationListDetails",
+        "configType",
+        "subject",
+        "signingAlgorithm",
+        "freeformTags",
+        "definedTags"
+    })
+    public CertificateAuthority(
+            String id,
+            String issuerCertificateAuthorityId,
+            String name,
+            String description,
+            java.util.Date timeCreated,
+            java.util.Date timeOfDeletion,
+            String kmsKeyId,
+            CertificateAuthorityLifecycleState lifecycleState,
+            String lifecycleDetails,
+            String compartmentId,
+            java.util.List<CertificateAuthorityRule> certificateAuthorityRules,
+            CertificateAuthorityVersionSummary currentVersion,
+            CertificateRevocationListDetails certificateRevocationListDetails,
+            CertificateAuthorityConfigType configType,
+            CertificateSubject subject,
+            SignatureAlgorithm signingAlgorithm,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+        this.name = name;
+        this.description = description;
+        this.timeCreated = timeCreated;
+        this.timeOfDeletion = timeOfDeletion;
+        this.kmsKeyId = kmsKeyId;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.compartmentId = compartmentId;
+        this.certificateAuthorityRules = certificateAuthorityRules;
+        this.currentVersion = currentVersion;
+        this.certificateRevocationListDetails = certificateRevocationListDetails;
+        this.configType = configType;
+        this.subject = subject;
+        this.signingAlgorithm = signingAlgorithm;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -254,30 +311,50 @@ public class CertificateAuthority {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the CA.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("issuerCertificateAuthorityId")
-    String issuerCertificateAuthorityId;
+    private final String issuerCertificateAuthorityId;
+
+    public String getIssuerCertificateAuthorityId() {
+        return issuerCertificateAuthorityId;
+    }
 
     /**
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A brief description of the CA.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -285,7 +362,11 @@ public class CertificateAuthority {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -293,58 +374,102 @@ public class CertificateAuthority {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
 
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The current lifecycle state of the certificate authority.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    CertificateAuthorityLifecycleState lifecycleState;
+    private final CertificateAuthorityLifecycleState lifecycleState;
+
+    public CertificateAuthorityLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current CA lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The OCID of the compartment under which the CA is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * An optional list of rules that control how the CA is used and managed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityRules")
-    java.util.List<CertificateAuthorityRule> certificateAuthorityRules;
+    private final java.util.List<CertificateAuthorityRule> certificateAuthorityRules;
+
+    public java.util.List<CertificateAuthorityRule> getCertificateAuthorityRules() {
+        return certificateAuthorityRules;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("currentVersion")
-    CertificateAuthorityVersionSummary currentVersion;
+    private final CertificateAuthorityVersionSummary currentVersion;
+
+    public CertificateAuthorityVersionSummary getCurrentVersion() {
+        return currentVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("certificateRevocationListDetails")
-    CertificateRevocationListDetails certificateRevocationListDetails;
+    private final CertificateRevocationListDetails certificateRevocationListDetails;
+
+    public CertificateRevocationListDetails getCertificateRevocationListDetails() {
+        return certificateRevocationListDetails;
+    }
 
     /**
      * The origin of the CA.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configType")
-    CertificateAuthorityConfigType configType;
+    private final CertificateAuthorityConfigType configType;
+
+    public CertificateAuthorityConfigType getConfigType() {
+        return configType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("subject")
-    CertificateSubject subject;
+    private final CertificateSubject subject;
+
+    public CertificateSubject getSubject() {
+        return subject;
+    }
 
     /**
      * The algorithm used to sign public key certificates that the CA issues.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
-    SignatureAlgorithm signingAlgorithm;
+    private final SignatureAlgorithm signingAlgorithm;
+
+    public SignatureAlgorithm getSigningAlgorithm() {
+        return signingAlgorithm;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -352,7 +477,11 @@ public class CertificateAuthority {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -360,8 +489,133 @@ public class CertificateAuthority {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CertificateAuthority(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", issuerCertificateAuthorityId=")
+                .append(String.valueOf(this.issuerCertificateAuthorityId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", certificateAuthorityRules=")
+                .append(String.valueOf(this.certificateAuthorityRules));
+        sb.append(", currentVersion=").append(String.valueOf(this.currentVersion));
+        sb.append(", certificateRevocationListDetails=")
+                .append(String.valueOf(this.certificateRevocationListDetails));
+        sb.append(", configType=").append(String.valueOf(this.configType));
+        sb.append(", subject=").append(String.valueOf(this.subject));
+        sb.append(", signingAlgorithm=").append(String.valueOf(this.signingAlgorithm));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CertificateAuthority)) {
+            return false;
+        }
+
+        CertificateAuthority other = (CertificateAuthority) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.issuerCertificateAuthorityId, other.issuerCertificateAuthorityId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.certificateAuthorityRules, other.certificateAuthorityRules)
+                && java.util.Objects.equals(this.currentVersion, other.currentVersion)
+                && java.util.Objects.equals(
+                        this.certificateRevocationListDetails,
+                        other.certificateRevocationListDetails)
+                && java.util.Objects.equals(this.configType, other.configType)
+                && java.util.Objects.equals(this.subject, other.subject)
+                && java.util.Objects.equals(this.signingAlgorithm, other.signingAlgorithm)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.issuerCertificateAuthorityId == null
+                                ? 43
+                                : this.issuerCertificateAuthorityId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateAuthorityRules == null
+                                ? 43
+                                : this.certificateAuthorityRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentVersion == null ? 43 : this.currentVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateRevocationListDetails == null
+                                ? 43
+                                : this.certificateRevocationListDetails.hashCode());
+        result = (result * PRIME) + (this.configType == null ? 43 : this.configType.hashCode());
+        result = (result * PRIME) + (this.subject == null ? 43 : this.subject.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.signingAlgorithm == null ? 43 : this.signingAlgorithm.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

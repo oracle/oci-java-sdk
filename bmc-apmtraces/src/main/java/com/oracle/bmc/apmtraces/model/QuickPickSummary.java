@@ -16,14 +16,18 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QuickPickSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class QuickPickSummary {
+public final class QuickPickSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"quickPickName", "quickPickQuery"})
+    public QuickPickSummary(String quickPickName, String quickPickQuery) {
+        super();
+        this.quickPickName = quickPickName;
+        this.quickPickQuery = quickPickQuery;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("quickPickName")
         private String quickPickName;
@@ -69,20 +73,78 @@ public class QuickPickSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Quick Pick name for the query.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quickPickName")
-    String quickPickName;
+    private final String quickPickName;
+
+    public String getQuickPickName() {
+        return quickPickName;
+    }
 
     /**
      * Query for the Quick Pick.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quickPickQuery")
-    String quickPickQuery;
+    private final String quickPickQuery;
+
+    public String getQuickPickQuery() {
+        return quickPickQuery;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("QuickPickSummary(");
+        sb.append("quickPickName=").append(String.valueOf(this.quickPickName));
+        sb.append(", quickPickQuery=").append(String.valueOf(this.quickPickQuery));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof QuickPickSummary)) {
+            return false;
+        }
+
+        QuickPickSummary other = (QuickPickSummary) o;
+        return java.util.Objects.equals(this.quickPickName, other.quickPickName)
+                && java.util.Objects.equals(this.quickPickQuery, other.quickPickQuery)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.quickPickName == null ? 43 : this.quickPickName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.quickPickQuery == null ? 43 : this.quickPickQuery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

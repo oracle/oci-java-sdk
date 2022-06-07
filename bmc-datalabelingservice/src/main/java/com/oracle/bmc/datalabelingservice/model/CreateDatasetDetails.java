@@ -15,16 +15,52 @@ package com.oracle.bmc.datalabelingservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDatasetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDatasetDetails {
+public final class CreateDatasetDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "compartmentId",
+        "annotationFormat",
+        "datasetSourceDetails",
+        "datasetFormatDetails",
+        "initialRecordGenerationConfiguration",
+        "labelSet",
+        "labelingInstructions",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateDatasetDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            String annotationFormat,
+            DatasetSourceDetails datasetSourceDetails,
+            DatasetFormatDetails datasetFormatDetails,
+            InitialRecordGenerationConfiguration initialRecordGenerationConfiguration,
+            LabelSet labelSet,
+            String labelingInstructions,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.annotationFormat = annotationFormat;
+        this.datasetSourceDetails = datasetSourceDetails;
+        this.datasetFormatDetails = datasetFormatDetails;
+        this.initialRecordGenerationConfiguration = initialRecordGenerationConfiguration;
+        this.labelSet = labelSet;
+        this.labelingInstructions = labelingInstructions;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -176,47 +212,87 @@ public class CreateDatasetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly display name for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A user provided description of the dataset
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The OCID of the compartment of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The annotation format name required for labeling records.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("annotationFormat")
-    String annotationFormat;
+    private final String annotationFormat;
+
+    public String getAnnotationFormat() {
+        return annotationFormat;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("datasetSourceDetails")
-    DatasetSourceDetails datasetSourceDetails;
+    private final DatasetSourceDetails datasetSourceDetails;
+
+    public DatasetSourceDetails getDatasetSourceDetails() {
+        return datasetSourceDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("datasetFormatDetails")
-    DatasetFormatDetails datasetFormatDetails;
+    private final DatasetFormatDetails datasetFormatDetails;
+
+    public DatasetFormatDetails getDatasetFormatDetails() {
+        return datasetFormatDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("initialRecordGenerationConfiguration")
-    InitialRecordGenerationConfiguration initialRecordGenerationConfiguration;
+    private final InitialRecordGenerationConfiguration initialRecordGenerationConfiguration;
+
+    public InitialRecordGenerationConfiguration getInitialRecordGenerationConfiguration() {
+        return initialRecordGenerationConfiguration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("labelSet")
-    LabelSet labelSet;
+    private final LabelSet labelSet;
+
+    public LabelSet getLabelSet() {
+        return labelSet;
+    }
 
     /**
      * The labeling instructions for human labelers in rich text format
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelingInstructions")
-    String labelingInstructions;
+    private final String labelingInstructions;
+
+    public String getLabelingInstructions() {
+        return labelingInstructions;
+    }
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
@@ -224,7 +300,11 @@ public class CreateDatasetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -232,8 +312,104 @@ public class CreateDatasetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDatasetDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", annotationFormat=").append(String.valueOf(this.annotationFormat));
+        sb.append(", datasetSourceDetails=").append(String.valueOf(this.datasetSourceDetails));
+        sb.append(", datasetFormatDetails=").append(String.valueOf(this.datasetFormatDetails));
+        sb.append(", initialRecordGenerationConfiguration=")
+                .append(String.valueOf(this.initialRecordGenerationConfiguration));
+        sb.append(", labelSet=").append(String.valueOf(this.labelSet));
+        sb.append(", labelingInstructions=").append(String.valueOf(this.labelingInstructions));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDatasetDetails)) {
+            return false;
+        }
+
+        CreateDatasetDetails other = (CreateDatasetDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.annotationFormat, other.annotationFormat)
+                && java.util.Objects.equals(this.datasetSourceDetails, other.datasetSourceDetails)
+                && java.util.Objects.equals(this.datasetFormatDetails, other.datasetFormatDetails)
+                && java.util.Objects.equals(
+                        this.initialRecordGenerationConfiguration,
+                        other.initialRecordGenerationConfiguration)
+                && java.util.Objects.equals(this.labelSet, other.labelSet)
+                && java.util.Objects.equals(this.labelingInstructions, other.labelingInstructions)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.annotationFormat == null ? 43 : this.annotationFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.datasetSourceDetails == null
+                                ? 43
+                                : this.datasetSourceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.datasetFormatDetails == null
+                                ? 43
+                                : this.datasetFormatDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialRecordGenerationConfiguration == null
+                                ? 43
+                                : this.initialRecordGenerationConfiguration.hashCode());
+        result = (result * PRIME) + (this.labelSet == null ? 43 : this.labelSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.labelingInstructions == null
+                                ? 43
+                                : this.labelingInstructions.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

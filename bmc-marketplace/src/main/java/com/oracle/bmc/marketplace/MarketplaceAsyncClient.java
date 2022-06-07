@@ -7,6 +7,7 @@ package com.oracle.bmc.marketplace;
 import com.oracle.bmc.marketplace.internal.http.*;
 import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Marketplace service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.marketplace.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.extern.slf4j.Slf4j
 public class MarketplaceAsyncClient implements MarketplaceAsync {
     /**
      * Service instance for Marketplace.
@@ -34,7 +34,9 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                     .serviceEndpointTemplate("https://marketplace.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MarketplaceAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
          * @return the client
          */
         public MarketplaceAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new MarketplaceAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

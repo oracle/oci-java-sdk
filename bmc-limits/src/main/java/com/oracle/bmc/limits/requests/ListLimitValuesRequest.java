@@ -9,14 +9,6 @@ import com.oracle.bmc.limits.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListLimitValuesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLimitValuesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,11 +17,17 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The target service name.
      */
     private String serviceName;
 
+    public String getServiceName() {
+        return serviceName;
+    }
     /**
      * Filter entries by scope type.
      */
@@ -71,17 +69,27 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             throw new IllegalArgumentException("Invalid ScopeType: " + key);
         }
     };
+
+    public ScopeType getScopeType() {
+        return scopeType;
+    }
     /**
      * Filter entries by availability domain. This implies that only AD-specific values are returned.
      *
      */
     private String availabilityDomain;
 
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
     /**
      * Optional field, can be used to see a specific resource limit value.
      */
     private String name;
 
+    public String getName() {
+        return name;
+    }
     /**
      * The field to sort by. The sorting is by availabilityDomain, as a second level field, if available.
      *
@@ -123,6 +131,10 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
      *
@@ -165,18 +177,28 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous "List" call.
      *
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -184,12 +206,134 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListLimitValuesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String serviceName = null;
+
+        /**
+         * The target service name.
+         * @return this builder instance
+         */
+        public Builder serviceName(String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        private ScopeType scopeType = null;
+
+        /**
+         * Filter entries by scope type.
+         * @return this builder instance
+         */
+        public Builder scopeType(ScopeType scopeType) {
+            this.scopeType = scopeType;
+            return this;
+        }
+
+        private String availabilityDomain = null;
+
+        /**
+         * Filter entries by availability domain. This implies that only AD-specific values are returned.
+         *
+         * @return this builder instance
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        private String name = null;
+
+        /**
+         * Optional field, can be used to see a specific resource limit value.
+         * @return this builder instance
+         */
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. The sorting is by availabilityDomain, as a second level field, if available.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -250,5 +394,115 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListLimitValuesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListLimitValuesRequest
+         */
+        public ListLimitValuesRequest buildWithoutInvocationCallback() {
+            ListLimitValuesRequest request = new ListLimitValuesRequest();
+            request.compartmentId = compartmentId;
+            request.serviceName = serviceName;
+            request.scopeType = scopeType;
+            request.availabilityDomain = availabilityDomain;
+            request.name = name;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.limit = limit;
+            request.page = page;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListLimitValuesRequest(compartmentId, serviceName, scopeType, availabilityDomain, name, sortBy, sortOrder, limit, page, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .serviceName(serviceName)
+                .scopeType(scopeType)
+                .availabilityDomain(availabilityDomain)
+                .name(name)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .limit(limit)
+                .page(page)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(",scopeType=").append(String.valueOf(this.scopeType));
+        sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListLimitValuesRequest)) {
+            return false;
+        }
+
+        ListLimitValuesRequest other = (ListLimitValuesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.scopeType, other.scopeType)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.scopeType == null ? 43 : this.scopeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

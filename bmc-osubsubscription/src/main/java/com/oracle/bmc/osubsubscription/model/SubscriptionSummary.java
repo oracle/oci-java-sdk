@@ -16,16 +16,37 @@ package com.oracle.bmc.osubsubscription.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SubscriptionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SubscriptionSummary {
+public final class SubscriptionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "status",
+        "timeStart",
+        "timeEnd",
+        "currency",
+        "serviceName",
+        "subscribedServices"
+    })
+    public SubscriptionSummary(
+            String status,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            Currency currency,
+            String serviceName,
+            java.util.List<SubscribedServiceSummary> subscribedServices) {
+        super();
+        this.status = status;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.currency = currency;
+        this.serviceName = serviceName;
+        this.subscribedServices = subscribedServices;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
@@ -115,44 +136,130 @@ public class SubscriptionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Status of the plan
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * Represents the date when the first service of the subscription was activated
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Represents the date when the last service of the subscription ends
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
-    Currency currency;
+    private final Currency currency;
+
+    public Currency getCurrency() {
+        return currency;
+    }
 
     /**
      * Customer friendly service name provided by PRG
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     /**
      * List of Subscribed Services of the plan
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscribedServices")
-    java.util.List<SubscribedServiceSummary> subscribedServices;
+    private final java.util.List<SubscribedServiceSummary> subscribedServices;
+
+    public java.util.List<SubscribedServiceSummary> getSubscribedServices() {
+        return subscribedServices;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SubscriptionSummary(");
+        sb.append("status=").append(String.valueOf(this.status));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", currency=").append(String.valueOf(this.currency));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", subscribedServices=").append(String.valueOf(this.subscribedServices));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SubscriptionSummary)) {
+            return false;
+        }
+
+        SubscriptionSummary other = (SubscriptionSummary) o;
+        return java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.currency, other.currency)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.subscribedServices, other.subscribedServices)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.currency == null ? 43 : this.currency.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscribedServices == null
+                                ? 43
+                                : this.subscribedServices.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

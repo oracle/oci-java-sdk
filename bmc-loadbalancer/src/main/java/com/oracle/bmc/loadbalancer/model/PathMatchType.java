@@ -15,14 +15,17 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PathMatchType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PathMatchType {
+public final class PathMatchType {
+    @Deprecated
+    @java.beans.ConstructorProperties({"matchType"})
+    public PathMatchType(MatchType matchType) {
+        super();
+        this.matchType = matchType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("matchType")
         private MatchType matchType;
@@ -58,6 +61,10 @@ public class PathMatchType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Specifies how the load balancing service compares a {@link #pathRoute(PathRouteRequest) pathRoute}
      * object's {@code path} string against the incoming URI.
@@ -75,7 +82,6 @@ public class PathMatchType {
      * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MatchType {
         ExactMatch("EXACT_MATCH"),
         ForceLongestPrefixMatch("FORCE_LONGEST_PREFIX_MATCH"),
@@ -87,6 +93,9 @@ public class PathMatchType {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MatchType.class);
 
         private final String value;
         private static java.util.Map<String, MatchType> map;
@@ -138,8 +147,51 @@ public class PathMatchType {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchType")
-    MatchType matchType;
+    private final MatchType matchType;
+
+    public MatchType getMatchType() {
+        return matchType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PathMatchType(");
+        sb.append("matchType=").append(String.valueOf(this.matchType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PathMatchType)) {
+            return false;
+        }
+
+        PathMatchType other = (PathMatchType) o;
+        return java.util.Objects.equals(this.matchType, other.matchType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.matchType == null ? 43 : this.matchType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

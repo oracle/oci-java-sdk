@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Parameter.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Parameter extends TypedObject {
+public final class Parameter extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -221,6 +216,10 @@ public class Parameter extends TypedObject {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public Parameter(
             String key,
@@ -253,35 +252,55 @@ public class Parameter extends TypedObject {
      * This can either be a string value referencing the type or a BaseType object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Object type;
+    private final Object type;
+
+    public Object getType() {
+        return type;
+    }
 
     /**
      * The default value of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
-    Object defaultValue;
+    private final Object defaultValue;
+
+    public Object getDefaultValue() {
+        return defaultValue;
+    }
 
     /**
      * The default value of the parameter which can be an object in DIS, such as a data entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootObjectDefaultValue")
-    Object rootObjectDefaultValue;
+    private final Object rootObjectDefaultValue;
+
+    public Object getRootObjectDefaultValue() {
+        return rootObjectDefaultValue;
+    }
 
     /**
      * Specifies whether the parameter is input value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInput")
-    Boolean isInput;
+    private final Boolean isInput;
+
+    public Boolean getIsInput() {
+        return isInput;
+    }
 
     /**
      * Specifies whether the parameter is output value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOutput")
-    Boolean isOutput;
+    private final Boolean isOutput;
+
+    public Boolean getIsOutput() {
+        return isOutput;
+    }
+
     /**
      * The output aggregation type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OutputAggregationType {
         Min("MIN"),
         Max("MAX"),
@@ -293,6 +312,9 @@ public class Parameter extends TypedObject {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OutputAggregationType.class);
 
         private final String value;
         private static java.util.Map<String, OutputAggregationType> map;
@@ -330,20 +352,103 @@ public class Parameter extends TypedObject {
      * The output aggregation type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputAggregationType")
-    OutputAggregationType outputAggregationType;
+    private final OutputAggregationType outputAggregationType;
+
+    public OutputAggregationType getOutputAggregationType() {
+        return outputAggregationType;
+    }
 
     /**
      * The type of value the parameter was created for.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
-    String typeName;
+    private final String typeName;
+
+    public String getTypeName() {
+        return typeName;
+    }
 
     /**
      * The param name for which parameter is created for for eg. driver Shape, Operation etc.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedFor")
-    String usedFor;
+    private final String usedFor;
+
+    public String getUsedFor() {
+        return usedFor;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Parameter(");
+        sb.append("super=").append(super.toString());
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
+        sb.append(", rootObjectDefaultValue=").append(String.valueOf(this.rootObjectDefaultValue));
+        sb.append(", isInput=").append(String.valueOf(this.isInput));
+        sb.append(", isOutput=").append(String.valueOf(this.isOutput));
+        sb.append(", outputAggregationType=").append(String.valueOf(this.outputAggregationType));
+        sb.append(", typeName=").append(String.valueOf(this.typeName));
+        sb.append(", usedFor=").append(String.valueOf(this.usedFor));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Parameter)) {
+            return false;
+        }
+
+        Parameter other = (Parameter) o;
+        return java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.defaultValue, other.defaultValue)
+                && java.util.Objects.equals(
+                        this.rootObjectDefaultValue, other.rootObjectDefaultValue)
+                && java.util.Objects.equals(this.isInput, other.isInput)
+                && java.util.Objects.equals(this.isOutput, other.isOutput)
+                && java.util.Objects.equals(this.outputAggregationType, other.outputAggregationType)
+                && java.util.Objects.equals(this.typeName, other.typeName)
+                && java.util.Objects.equals(this.usedFor, other.usedFor)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rootObjectDefaultValue == null
+                                ? 43
+                                : this.rootObjectDefaultValue.hashCode());
+        result = (result * PRIME) + (this.isInput == null ? 43 : this.isInput.hashCode());
+        result = (result * PRIME) + (this.isOutput == null ? 43 : this.isOutput.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputAggregationType == null
+                                ? 43
+                                : this.outputAggregationType.hashCode());
+        result = (result * PRIME) + (this.typeName == null ? 43 : this.typeName.hashCode());
+        result = (result * PRIME) + (this.usedFor == null ? 43 : this.usedFor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

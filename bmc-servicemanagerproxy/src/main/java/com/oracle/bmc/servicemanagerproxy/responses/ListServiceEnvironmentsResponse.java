@@ -7,10 +7,6 @@ package com.oracle.bmc.servicemanagerproxy.responses;
 import com.oracle.bmc.servicemanagerproxy.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListServiceEnvironmentsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -18,6 +14,10 @@ public class ListServiceEnvironmentsResponse extends com.oracle.bmc.responses.Bm
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For list pagination. When this header appears in the response, additional pages
@@ -27,11 +27,20 @@ public class ListServiceEnvironmentsResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned ServiceEnvironmentCollection instance.
      */
     private com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironmentCollection
             serviceEnvironmentCollection;
+
+    public com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironmentCollection
+            getServiceEnvironmentCollection() {
+        return serviceEnvironmentCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -59,6 +68,30 @@ public class ListServiceEnvironmentsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironmentCollection
+                serviceEnvironmentCollection;
+
+        public Builder serviceEnvironmentCollection(
+                com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironmentCollection
+                        serviceEnvironmentCollection) {
+            this.serviceEnvironmentCollection = serviceEnvironmentCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -76,5 +109,53 @@ public class ListServiceEnvironmentsResponse extends com.oracle.bmc.responses.Bm
             return new ListServiceEnvironmentsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, serviceEnvironmentCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",serviceEnvironmentCollection=")
+                .append(String.valueOf(serviceEnvironmentCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListServiceEnvironmentsResponse)) {
+            return false;
+        }
+
+        ListServiceEnvironmentsResponse other = (ListServiceEnvironmentsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.serviceEnvironmentCollection, other.serviceEnvironmentCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceEnvironmentCollection == null
+                                ? 43
+                                : this.serviceEnvironmentCollection.hashCode());
+        return result;
     }
 }

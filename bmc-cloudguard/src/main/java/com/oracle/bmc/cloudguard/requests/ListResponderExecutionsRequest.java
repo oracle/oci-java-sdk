@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderExecutionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResponderExecutionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListResponderExecutionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class ListResponderExecutionsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Default is false.
      * When set to true, the hierarchy of compartments is traversed
@@ -34,6 +29,9 @@ public class ListResponderExecutionsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
      * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
@@ -84,41 +82,66 @@ public class ListResponderExecutionsRequest
             throw new IllegalArgumentException("Invalid AccessLevel: " + key);
         }
     };
+
+    public AccessLevel getAccessLevel() {
+        return accessLevel;
+    }
     /**
      * Responder Rule Ids filter for the Responder Executions.
      */
     private java.util.List<String> responderRuleIds;
 
+    public java.util.List<String> getResponderRuleIds() {
+        return responderRuleIds;
+    }
     /**
      * Creation Start time for filtering
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
+        return timeCreatedGreaterThanOrEqualTo;
+    }
     /**
      * Creation End time for filtering
      */
     private java.util.Date timeCreatedLessThanOrEqualTo;
 
+    public java.util.Date getTimeCreatedLessThanOrEqualTo() {
+        return timeCreatedLessThanOrEqualTo;
+    }
     /**
      * Completion End Time
      */
     private java.util.Date timeCompletedGreaterThanOrEqualTo;
 
+    public java.util.Date getTimeCompletedGreaterThanOrEqualTo() {
+        return timeCompletedGreaterThanOrEqualTo;
+    }
     /**
      * Completion Start Time
      */
     private java.util.Date timeCompletedLessThanOrEqualTo;
 
+    public java.util.Date getTimeCompletedLessThanOrEqualTo() {
+        return timeCompletedLessThanOrEqualTo;
+    }
     /**
      * The ID of the target in which to list resources.
      */
     private String targetId;
 
+    public String getTargetId() {
+        return targetId;
+    }
     /**
      * Resource Type associated with the resource.
      */
     private String resourceType;
 
+    public String getResourceType() {
+        return resourceType;
+    }
     /**
      * The field to list the Responder Executions by Responder Type. Valid values are REMEDIATION and NOTIFICATION
      *
@@ -161,31 +184,50 @@ public class ListResponderExecutionsRequest
             throw new IllegalArgumentException("Invalid ResponderType: " + key);
         }
     };
+
+    public ResponderType getResponderType() {
+        return responderType;
+    }
     /**
      * The status of the responder execution in which to list responders.
      */
     private com.oracle.bmc.cloudguard.model.ResponderExecutionStates responderExecutionStatus;
 
+    public com.oracle.bmc.cloudguard.model.ResponderExecutionStates getResponderExecutionStatus() {
+        return responderExecutionStatus;
+    }
     /**
      * The mode of the responder execution in which to list responders.
      */
     private com.oracle.bmc.cloudguard.model.ResponderExecutionModes responderExecutionMode;
 
+    public com.oracle.bmc.cloudguard.model.ResponderExecutionModes getResponderExecutionMode() {
+        return responderExecutionMode;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
+    public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for responderRuleName and resourceName is ascending. If no value is specified timeCreated is default.
      *
@@ -230,10 +272,18 @@ public class ListResponderExecutionsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -241,6 +291,48 @@ public class ListResponderExecutionsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        private AccessLevel accessLevel = null;
+
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         * @return this builder instance
+         */
+        public Builder accessLevel(AccessLevel accessLevel) {
+            this.accessLevel = accessLevel;
+            return this;
+        }
 
         private java.util.List<String> responderRuleIds = null;
 
@@ -259,6 +351,169 @@ public class ListResponderExecutionsRequest
          */
         public Builder responderRuleIds(String singularValue) {
             return this.responderRuleIds(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
+
+        /**
+         * Creation Start time for filtering
+         * @return this builder instance
+         */
+        public Builder timeCreatedGreaterThanOrEqualTo(
+                java.util.Date timeCreatedGreaterThanOrEqualTo) {
+            this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeCreatedLessThanOrEqualTo = null;
+
+        /**
+         * Creation End time for filtering
+         * @return this builder instance
+         */
+        public Builder timeCreatedLessThanOrEqualTo(java.util.Date timeCreatedLessThanOrEqualTo) {
+            this.timeCreatedLessThanOrEqualTo = timeCreatedLessThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeCompletedGreaterThanOrEqualTo = null;
+
+        /**
+         * Completion End Time
+         * @return this builder instance
+         */
+        public Builder timeCompletedGreaterThanOrEqualTo(
+                java.util.Date timeCompletedGreaterThanOrEqualTo) {
+            this.timeCompletedGreaterThanOrEqualTo = timeCompletedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeCompletedLessThanOrEqualTo = null;
+
+        /**
+         * Completion Start Time
+         * @return this builder instance
+         */
+        public Builder timeCompletedLessThanOrEqualTo(
+                java.util.Date timeCompletedLessThanOrEqualTo) {
+            this.timeCompletedLessThanOrEqualTo = timeCompletedLessThanOrEqualTo;
+            return this;
+        }
+
+        private String targetId = null;
+
+        /**
+         * The ID of the target in which to list resources.
+         * @return this builder instance
+         */
+        public Builder targetId(String targetId) {
+            this.targetId = targetId;
+            return this;
+        }
+
+        private String resourceType = null;
+
+        /**
+         * Resource Type associated with the resource.
+         * @return this builder instance
+         */
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
+            return this;
+        }
+
+        private ResponderType responderType = null;
+
+        /**
+         * The field to list the Responder Executions by Responder Type. Valid values are REMEDIATION and NOTIFICATION
+         *
+         * @return this builder instance
+         */
+        public Builder responderType(ResponderType responderType) {
+            this.responderType = responderType;
+            return this;
+        }
+
+        private com.oracle.bmc.cloudguard.model.ResponderExecutionStates responderExecutionStatus =
+                null;
+
+        /**
+         * The status of the responder execution in which to list responders.
+         * @return this builder instance
+         */
+        public Builder responderExecutionStatus(
+                com.oracle.bmc.cloudguard.model.ResponderExecutionStates responderExecutionStatus) {
+            this.responderExecutionStatus = responderExecutionStatus;
+            return this;
+        }
+
+        private com.oracle.bmc.cloudguard.model.ResponderExecutionModes responderExecutionMode =
+                null;
+
+        /**
+         * The mode of the responder execution in which to list responders.
+         * @return this builder instance
+         */
+        public Builder responderExecutionMode(
+                com.oracle.bmc.cloudguard.model.ResponderExecutionModes responderExecutionMode) {
+            this.responderExecutionMode = responderExecutionMode;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.cloudguard.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for responderRuleName and resourceName is ascending. If no value is specified timeCreated is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -328,5 +583,196 @@ public class ListResponderExecutionsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListResponderExecutionsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListResponderExecutionsRequest
+         */
+        public ListResponderExecutionsRequest buildWithoutInvocationCallback() {
+            ListResponderExecutionsRequest request = new ListResponderExecutionsRequest();
+            request.compartmentId = compartmentId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
+            request.accessLevel = accessLevel;
+            request.responderRuleIds = responderRuleIds;
+            request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            request.timeCreatedLessThanOrEqualTo = timeCreatedLessThanOrEqualTo;
+            request.timeCompletedGreaterThanOrEqualTo = timeCompletedGreaterThanOrEqualTo;
+            request.timeCompletedLessThanOrEqualTo = timeCompletedLessThanOrEqualTo;
+            request.targetId = targetId;
+            request.resourceType = resourceType;
+            request.responderType = responderType;
+            request.responderExecutionStatus = responderExecutionStatus;
+            request.responderExecutionMode = responderExecutionMode;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListResponderExecutionsRequest(compartmentId, compartmentIdInSubtree, accessLevel, responderRuleIds, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThanOrEqualTo, timeCompletedGreaterThanOrEqualTo, timeCompletedLessThanOrEqualTo, targetId, resourceType, responderType, responderExecutionStatus, responderExecutionMode, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
+                .accessLevel(accessLevel)
+                .responderRuleIds(responderRuleIds)
+                .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
+                .timeCreatedLessThanOrEqualTo(timeCreatedLessThanOrEqualTo)
+                .timeCompletedGreaterThanOrEqualTo(timeCompletedGreaterThanOrEqualTo)
+                .timeCompletedLessThanOrEqualTo(timeCompletedLessThanOrEqualTo)
+                .targetId(targetId)
+                .resourceType(resourceType)
+                .responderType(responderType)
+                .responderExecutionStatus(responderExecutionStatus)
+                .responderExecutionMode(responderExecutionMode)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
+        sb.append(",responderRuleIds=").append(String.valueOf(this.responderRuleIds));
+        sb.append(",timeCreatedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
+        sb.append(",timeCreatedLessThanOrEqualTo=")
+                .append(String.valueOf(this.timeCreatedLessThanOrEqualTo));
+        sb.append(",timeCompletedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeCompletedGreaterThanOrEqualTo));
+        sb.append(",timeCompletedLessThanOrEqualTo=")
+                .append(String.valueOf(this.timeCompletedLessThanOrEqualTo));
+        sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(",responderType=").append(String.valueOf(this.responderType));
+        sb.append(",responderExecutionStatus=")
+                .append(String.valueOf(this.responderExecutionStatus));
+        sb.append(",responderExecutionMode=").append(String.valueOf(this.responderExecutionMode));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListResponderExecutionsRequest)) {
+            return false;
+        }
+
+        ListResponderExecutionsRequest other = (ListResponderExecutionsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.accessLevel, other.accessLevel)
+                && java.util.Objects.equals(this.responderRuleIds, other.responderRuleIds)
+                && java.util.Objects.equals(
+                        this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeCreatedLessThanOrEqualTo, other.timeCreatedLessThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeCompletedGreaterThanOrEqualTo,
+                        other.timeCompletedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeCompletedLessThanOrEqualTo, other.timeCompletedLessThanOrEqualTo)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.responderType, other.responderType)
+                && java.util.Objects.equals(
+                        this.responderExecutionStatus, other.responderExecutionStatus)
+                && java.util.Objects.equals(
+                        this.responderExecutionMode, other.responderExecutionMode)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderRuleIds == null ? 43 : this.responderRuleIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeCreatedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedLessThanOrEqualTo == null
+                                ? 43
+                                : this.timeCreatedLessThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCompletedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeCompletedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCompletedLessThanOrEqualTo == null
+                                ? 43
+                                : this.timeCompletedLessThanOrEqualTo.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderType == null ? 43 : this.responderType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderExecutionStatus == null
+                                ? 43
+                                : this.responderExecutionStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderExecutionMode == null
+                                ? 43
+                                : this.responderExecutionMode.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

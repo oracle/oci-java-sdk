@@ -15,14 +15,47 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SubscriptionSku.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SubscriptionSku {
+public final class SubscriptionSku {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sku",
+        "quantity",
+        "description",
+        "gsiOrderLineId",
+        "licensePartDescription",
+        "metricName",
+        "isBaseServiceComponent",
+        "isAdditionalInstance",
+        "startDate",
+        "endDate"
+    })
+    public SubscriptionSku(
+            String sku,
+            Integer quantity,
+            String description,
+            String gsiOrderLineId,
+            String licensePartDescription,
+            String metricName,
+            Boolean isBaseServiceComponent,
+            Boolean isAdditionalInstance,
+            java.util.Date startDate,
+            java.util.Date endDate) {
+        super();
+        this.sku = sku;
+        this.quantity = quantity;
+        this.description = description;
+        this.gsiOrderLineId = gsiOrderLineId;
+        this.licensePartDescription = licensePartDescription;
+        this.metricName = metricName;
+        this.isBaseServiceComponent = isBaseServiceComponent;
+        this.isAdditionalInstance = isAdditionalInstance;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sku")
         private String sku;
@@ -160,66 +193,192 @@ public class SubscriptionSku {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Stock keeping unit ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sku")
-    String sku;
+    private final String sku;
+
+    public String getSku() {
+        return sku;
+    }
 
     /**
      * Quantity of the stock units.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
-    Integer quantity;
+    private final Integer quantity;
+
+    public Integer getQuantity() {
+        return quantity;
+    }
 
     /**
      * Description of the stock units.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Sales order line identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gsiOrderLineId")
-    String gsiOrderLineId;
+    private final String gsiOrderLineId;
+
+    public String getGsiOrderLineId() {
+        return gsiOrderLineId;
+    }
 
     /**
      * Description of the covered product belonging to this SKU.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licensePartDescription")
-    String licensePartDescription;
+    private final String licensePartDescription;
+
+    public String getLicensePartDescription() {
+        return licensePartDescription;
+    }
 
     /**
      * Base metric for billing the service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
-    String metricName;
+    private final String metricName;
+
+    public String getMetricName() {
+        return metricName;
+    }
 
     /**
      * Denotes if the SKU is considered as a parent or child.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBaseServiceComponent")
-    Boolean isBaseServiceComponent;
+    private final Boolean isBaseServiceComponent;
+
+    public Boolean getIsBaseServiceComponent() {
+        return isBaseServiceComponent;
+    }
 
     /**
      * Denotes if an additional test instance can be provisioned by the SAAS application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAdditionalInstance")
-    Boolean isAdditionalInstance;
+    private final Boolean isAdditionalInstance;
+
+    public Boolean getIsAdditionalInstance() {
+        return isAdditionalInstance;
+    }
 
     /**
      * Date-time when the SKU was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
-    java.util.Date startDate;
+    private final java.util.Date startDate;
+
+    public java.util.Date getStartDate() {
+        return startDate;
+    }
 
     /**
      * Date-time when the SKU ended.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
-    java.util.Date endDate;
+    private final java.util.Date endDate;
+
+    public java.util.Date getEndDate() {
+        return endDate;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SubscriptionSku(");
+        sb.append("sku=").append(String.valueOf(this.sku));
+        sb.append(", quantity=").append(String.valueOf(this.quantity));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", gsiOrderLineId=").append(String.valueOf(this.gsiOrderLineId));
+        sb.append(", licensePartDescription=").append(String.valueOf(this.licensePartDescription));
+        sb.append(", metricName=").append(String.valueOf(this.metricName));
+        sb.append(", isBaseServiceComponent=").append(String.valueOf(this.isBaseServiceComponent));
+        sb.append(", isAdditionalInstance=").append(String.valueOf(this.isAdditionalInstance));
+        sb.append(", startDate=").append(String.valueOf(this.startDate));
+        sb.append(", endDate=").append(String.valueOf(this.endDate));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SubscriptionSku)) {
+            return false;
+        }
+
+        SubscriptionSku other = (SubscriptionSku) o;
+        return java.util.Objects.equals(this.sku, other.sku)
+                && java.util.Objects.equals(this.quantity, other.quantity)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.gsiOrderLineId, other.gsiOrderLineId)
+                && java.util.Objects.equals(
+                        this.licensePartDescription, other.licensePartDescription)
+                && java.util.Objects.equals(this.metricName, other.metricName)
+                && java.util.Objects.equals(
+                        this.isBaseServiceComponent, other.isBaseServiceComponent)
+                && java.util.Objects.equals(this.isAdditionalInstance, other.isAdditionalInstance)
+                && java.util.Objects.equals(this.startDate, other.startDate)
+                && java.util.Objects.equals(this.endDate, other.endDate)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.sku == null ? 43 : this.sku.hashCode());
+        result = (result * PRIME) + (this.quantity == null ? 43 : this.quantity.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.gsiOrderLineId == null ? 43 : this.gsiOrderLineId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licensePartDescription == null
+                                ? 43
+                                : this.licensePartDescription.hashCode());
+        result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBaseServiceComponent == null
+                                ? 43
+                                : this.isBaseServiceComponent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAdditionalInstance == null
+                                ? 43
+                                : this.isAdditionalInstance.hashCode());
+        result = (result * PRIME) + (this.startDate == null ? 43 : this.startDate.hashCode());
+        result = (result * PRIME) + (this.endDate == null ? 43 : this.endDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

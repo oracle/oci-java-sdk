@@ -9,14 +9,6 @@ import com.oracle.bmc.mysql.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConfigurationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.mysql.model.UpdateConfigurationDetails> {
@@ -26,11 +18,17 @@ public class UpdateConfigurationRequest
      */
     private String configurationId;
 
+    public String getConfigurationId() {
+        return configurationId;
+    }
     /**
      * Request to update a Configuration.
      */
     private com.oracle.bmc.mysql.model.UpdateConfigurationDetails updateConfigurationDetails;
 
+    public com.oracle.bmc.mysql.model.UpdateConfigurationDetails getUpdateConfigurationDetails() {
+        return updateConfigurationDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
      * resource, set the {@code If-Match} header to the value of the etag from a
@@ -41,6 +39,9 @@ public class UpdateConfigurationRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Customer-defined unique identifier for the request. If you need to
      * contact Oracle about a specific request, please provide the request
@@ -48,6 +49,10 @@ public class UpdateConfigurationRequest
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -66,6 +71,60 @@ public class UpdateConfigurationRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String configurationId = null;
+
+        /**
+         * The OCID of the Configuration.
+         * @return this builder instance
+         */
+        public Builder configurationId(String configurationId) {
+            this.configurationId = configurationId;
+            return this;
+        }
+
+        private com.oracle.bmc.mysql.model.UpdateConfigurationDetails updateConfigurationDetails =
+                null;
+
+        /**
+         * Request to update a Configuration.
+         * @return this builder instance
+         */
+        public Builder updateConfigurationDetails(
+                com.oracle.bmc.mysql.model.UpdateConfigurationDetails updateConfigurationDetails) {
+            this.updateConfigurationDetails = updateConfigurationDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code If-Match} header to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -131,5 +190,87 @@ public class UpdateConfigurationRequest
             updateConfigurationDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateConfigurationRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateConfigurationRequest
+         */
+        public UpdateConfigurationRequest buildWithoutInvocationCallback() {
+            UpdateConfigurationRequest request = new UpdateConfigurationRequest();
+            request.configurationId = configurationId;
+            request.updateConfigurationDetails = updateConfigurationDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateConfigurationRequest(configurationId, updateConfigurationDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .configurationId(configurationId)
+                .updateConfigurationDetails(updateConfigurationDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",configurationId=").append(String.valueOf(this.configurationId));
+        sb.append(",updateConfigurationDetails=")
+                .append(String.valueOf(this.updateConfigurationDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateConfigurationRequest)) {
+            return false;
+        }
+
+        UpdateConfigurationRequest other = (UpdateConfigurationRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.configurationId, other.configurationId)
+                && java.util.Objects.equals(
+                        this.updateConfigurationDetails, other.updateConfigurationDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.configurationId == null ? 43 : this.configurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateConfigurationDetails == null
+                                ? 43
+                                : this.updateConfigurationDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

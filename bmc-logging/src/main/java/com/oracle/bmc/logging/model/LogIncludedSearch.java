@@ -16,16 +16,43 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogIncludedSearch.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogIncludedSearch {
+public final class LogIncludedSearch {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "timeCreated",
+        "timeLastModified",
+        "description",
+        "query",
+        "definedTags",
+        "freeformTags"
+    })
+    public LogIncludedSearch(
+            String id,
+            String displayName,
+            java.util.Date timeCreated,
+            java.util.Date timeLastModified,
+            String description,
+            String query,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
+        this.timeLastModified = timeLastModified;
+        this.description = description;
+        this.query = query;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -142,11 +169,19 @@ public class LogIncludedSearch {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The user-friendly display name. This must be unique within the enclosing resource,
@@ -154,32 +189,52 @@ public class LogIncludedSearch {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Time the resource was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Time the resource was last modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
-    java.util.Date timeLastModified;
+    private final java.util.Date timeLastModified;
+
+    public java.util.Date getTimeLastModified() {
+        return timeLastModified;
+    }
 
     /**
      * Description for this resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The search query that is saved.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
-    String query;
+    private final String query;
+
+    public String getQuery() {
+        return query;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -189,7 +244,11 @@ public class LogIncludedSearch {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -198,8 +257,74 @@ public class LogIncludedSearch {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogIncludedSearch(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeLastModified=").append(String.valueOf(this.timeLastModified));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", query=").append(String.valueOf(this.query));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogIncludedSearch)) {
+            return false;
+        }
+
+        LogIncludedSearch other = (LogIncludedSearch) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeLastModified, other.timeLastModified)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.query, other.query)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastModified == null ? 43 : this.timeLastModified.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

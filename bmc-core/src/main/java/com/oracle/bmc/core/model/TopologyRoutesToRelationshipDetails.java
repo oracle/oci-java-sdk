@@ -15,16 +15,28 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TopologyRoutesToRelationshipDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TopologyRoutesToRelationshipDetails {
+public final class TopologyRoutesToRelationshipDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "destinationType",
+        "destination",
+        "routeTableId",
+        "routeType"
+    })
+    public TopologyRoutesToRelationshipDetails(
+            String destinationType, String destination, String routeTableId, RouteType routeType) {
+        super();
+        this.destinationType = destinationType;
+        this.destination = destination;
+        this.routeTableId = routeTableId;
+        this.routeType = routeType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private String destinationType;
@@ -93,6 +105,10 @@ public class TopologyRoutesToRelationshipDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The destinationType can be set to one of two values:
      * <p>
@@ -102,24 +118,36 @@ public class TopologyRoutesToRelationshipDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
-    String destinationType;
+    private final String destinationType;
+
+    public String getDestinationType() {
+        return destinationType;
+    }
 
     /**
      * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link Service}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
-    String destination;
+    private final String destination;
+
+    public String getDestination() {
+        return destination;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing table that contains the route rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    String routeTableId;
+    private final String routeTableId;
+
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
     /**
      * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RouteType {
         Static("STATIC"),
         Dynamic("DYNAMIC"),
@@ -129,6 +157,9 @@ public class TopologyRoutesToRelationshipDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RouteType.class);
 
         private final String value;
         private static java.util.Map<String, RouteType> map;
@@ -167,8 +198,62 @@ public class TopologyRoutesToRelationshipDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeType")
-    RouteType routeType;
+    private final RouteType routeType;
+
+    public RouteType getRouteType() {
+        return routeType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TopologyRoutesToRelationshipDetails(");
+        sb.append("destinationType=").append(String.valueOf(this.destinationType));
+        sb.append(", destination=").append(String.valueOf(this.destination));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", routeType=").append(String.valueOf(this.routeType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TopologyRoutesToRelationshipDetails)) {
+            return false;
+        }
+
+        TopologyRoutesToRelationshipDetails other = (TopologyRoutesToRelationshipDetails) o;
+        return java.util.Objects.equals(this.destinationType, other.destinationType)
+                && java.util.Objects.equals(this.destination, other.destination)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.routeType, other.routeType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.destinationType == null ? 43 : this.destinationType.hashCode());
+        result = (result * PRIME) + (this.destination == null ? 43 : this.destination.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result = (result * PRIME) + (this.routeType == null ? 43 : this.routeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,10 +7,6 @@ package com.oracle.bmc.datalabelingservicedataplane.responses;
 import com.oracle.bmc.datalabelingservicedataplane.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SummarizeRecordAnalyticsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact
@@ -18,6 +14,10 @@ public class SummarizeRecordAnalyticsResponse extends com.oracle.bmc.responses.B
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For the pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -27,11 +27,20 @@ public class SummarizeRecordAnalyticsResponse extends com.oracle.bmc.responses.B
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned RecordAnalyticsAggregationCollection instance.
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.RecordAnalyticsAggregationCollection
             recordAnalyticsAggregationCollection;
+
+    public com.oracle.bmc.datalabelingservicedataplane.model.RecordAnalyticsAggregationCollection
+            getRecordAnalyticsAggregationCollection() {
+        return recordAnalyticsAggregationCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -59,6 +68,32 @@ public class SummarizeRecordAnalyticsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.datalabelingservicedataplane.model
+                        .RecordAnalyticsAggregationCollection
+                recordAnalyticsAggregationCollection;
+
+        public Builder recordAnalyticsAggregationCollection(
+                com.oracle.bmc.datalabelingservicedataplane.model
+                                .RecordAnalyticsAggregationCollection
+                        recordAnalyticsAggregationCollection) {
+            this.recordAnalyticsAggregationCollection = recordAnalyticsAggregationCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -79,5 +114,54 @@ public class SummarizeRecordAnalyticsResponse extends com.oracle.bmc.responses.B
                     opcNextPage,
                     recordAnalyticsAggregationCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",recordAnalyticsAggregationCollection=")
+                .append(String.valueOf(recordAnalyticsAggregationCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeRecordAnalyticsResponse)) {
+            return false;
+        }
+
+        SummarizeRecordAnalyticsResponse other = (SummarizeRecordAnalyticsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.recordAnalyticsAggregationCollection,
+                        other.recordAnalyticsAggregationCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recordAnalyticsAggregationCollection == null
+                                ? 43
+                                : this.recordAnalyticsAggregationCollection.hashCode());
+        return result;
     }
 }

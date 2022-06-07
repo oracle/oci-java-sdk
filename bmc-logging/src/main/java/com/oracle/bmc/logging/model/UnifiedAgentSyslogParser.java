@@ -15,22 +15,17 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UnifiedAgentSyslogParser.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "parserType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UnifiedAgentSyslogParser extends UnifiedAgentParser {
+public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
         private String fieldTimeKey;
@@ -201,6 +196,10 @@ public class UnifiedAgentSyslogParser extends UnifiedAgentParser {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UnifiedAgentSyslogParser(
             String fieldTimeKey,
@@ -233,13 +232,21 @@ public class UnifiedAgentSyslogParser extends UnifiedAgentParser {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
-    String timeFormat;
+    private final String timeFormat;
+
+    public String getTimeFormat() {
+        return timeFormat;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("rfc5424TimeFormat")
-    String rfc5424TimeFormat;
+    private final String rfc5424TimeFormat;
+
+    public String getRfc5424TimeFormat() {
+        return rfc5424TimeFormat;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MessageFormat {
         Rfc3164("RFC3164"),
         Rfc5424("RFC5424"),
@@ -250,6 +257,9 @@ public class UnifiedAgentSyslogParser extends UnifiedAgentParser {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MessageFormat.class);
 
         private final String value;
         private static java.util.Map<String, MessageFormat> map;
@@ -285,16 +295,28 @@ public class UnifiedAgentSyslogParser extends UnifiedAgentParser {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
-    MessageFormat messageFormat;
+    private final MessageFormat messageFormat;
+
+    public MessageFormat getMessageFormat() {
+        return messageFormat;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("isWithPriority")
-    Boolean isWithPriority;
+    private final Boolean isWithPriority;
+
+    public Boolean getIsWithPriority() {
+        return isWithPriority;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportColonlessIdent")
-    Boolean isSupportColonlessIdent;
+    private final Boolean isSupportColonlessIdent;
+
+    public Boolean getIsSupportColonlessIdent() {
+        return isSupportColonlessIdent;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SyslogParserType {
         String("STRING"),
         Regexp("REGEXP"),
@@ -304,6 +326,9 @@ public class UnifiedAgentSyslogParser extends UnifiedAgentParser {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SyslogParserType.class);
 
         private final String value;
         private static java.util.Map<String, SyslogParserType> map;
@@ -339,8 +364,82 @@ public class UnifiedAgentSyslogParser extends UnifiedAgentParser {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("syslogParserType")
-    SyslogParserType syslogParserType;
+    private final SyslogParserType syslogParserType;
+
+    public SyslogParserType getSyslogParserType() {
+        return syslogParserType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UnifiedAgentSyslogParser(");
+        sb.append("super=").append(super.toString());
+        sb.append(", timeFormat=").append(String.valueOf(this.timeFormat));
+        sb.append(", rfc5424TimeFormat=").append(String.valueOf(this.rfc5424TimeFormat));
+        sb.append(", messageFormat=").append(String.valueOf(this.messageFormat));
+        sb.append(", isWithPriority=").append(String.valueOf(this.isWithPriority));
+        sb.append(", isSupportColonlessIdent=")
+                .append(String.valueOf(this.isSupportColonlessIdent));
+        sb.append(", syslogParserType=").append(String.valueOf(this.syslogParserType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UnifiedAgentSyslogParser)) {
+            return false;
+        }
+
+        UnifiedAgentSyslogParser other = (UnifiedAgentSyslogParser) o;
+        return java.util.Objects.equals(this.timeFormat, other.timeFormat)
+                && java.util.Objects.equals(this.rfc5424TimeFormat, other.rfc5424TimeFormat)
+                && java.util.Objects.equals(this.messageFormat, other.messageFormat)
+                && java.util.Objects.equals(this.isWithPriority, other.isWithPriority)
+                && java.util.Objects.equals(
+                        this.isSupportColonlessIdent, other.isSupportColonlessIdent)
+                && java.util.Objects.equals(this.syslogParserType, other.syslogParserType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.timeFormat == null ? 43 : this.timeFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rfc5424TimeFormat == null ? 43 : this.rfc5424TimeFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.messageFormat == null ? 43 : this.messageFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isWithPriority == null ? 43 : this.isWithPriority.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSupportColonlessIdent == null
+                                ? 43
+                                : this.isSupportColonlessIdent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.syslogParserType == null ? 43 : this.syslogParserType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemigration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListJobOutputsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJobOutputsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListJobOutputsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,6 +17,9 @@ public class ListJobOutputsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String jobId;
 
+    public String getJobId() {
+        return jobId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -32,17 +27,27 @@ public class ListJobOutputsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The maximum number of items to return.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      *
      */
     private String page;
+
+    public String getPage() {
+        return page;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -50,6 +55,55 @@ public class ListJobOutputsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String jobId = null;
+
+        /**
+         * The OCID of the job
+         *
+         * @return this builder instance
+         */
+        public Builder jobId(String jobId) {
+            this.jobId = jobId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -104,5 +158,75 @@ public class ListJobOutputsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListJobOutputsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListJobOutputsRequest
+         */
+        public ListJobOutputsRequest buildWithoutInvocationCallback() {
+            ListJobOutputsRequest request = new ListJobOutputsRequest();
+            request.jobId = jobId;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            return request;
+            // new ListJobOutputsRequest(jobId, opcRequestId, limit, page);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().jobId(jobId).opcRequestId(opcRequestId).limit(limit).page(page);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",jobId=").append(String.valueOf(this.jobId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListJobOutputsRequest)) {
+            return false;
+        }
+
+        ListJobOutputsRequest other = (ListJobOutputsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.jobId, other.jobId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        return result;
     }
 }

@@ -15,22 +15,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PeComanagedDatabaseInsight.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "entitySource"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PeComanagedDatabaseInsight extends DatabaseInsight {
+public final class PeComanagedDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -290,6 +285,10 @@ public class PeComanagedDatabaseInsight extends DatabaseInsight {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public PeComanagedDatabaseInsight(
             String id,
@@ -341,38 +340,141 @@ public class PeComanagedDatabaseInsight extends DatabaseInsight {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
-    String opsiPrivateEndpointId;
+    private final String opsiPrivateEndpointId;
+
+    public String getOpsiPrivateEndpointId() {
+        return opsiPrivateEndpointId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
-    PeComanagedDatabaseConnectionDetails connectionDetails;
+    private final PeComanagedDatabaseConnectionDetails connectionDetails;
+
+    public PeComanagedDatabaseConnectionDetails getConnectionDetails() {
+        return connectionDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
-    CredentialDetails credentialDetails;
+    private final CredentialDetails credentialDetails;
+
+    public CredentialDetails getCredentialDetails() {
+        return credentialDetails;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    String databaseId;
+    private final String databaseId;
+
+    public String getDatabaseId() {
+        return databaseId;
+    }
 
     /**
      * Name of database
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
-    String databaseName;
+    private final String databaseName;
+
+    public String getDatabaseName() {
+        return databaseName;
+    }
 
     /**
      * Display name of database
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
-    String databaseDisplayName;
+    private final String databaseDisplayName;
+
+    public String getDatabaseDisplayName() {
+        return databaseDisplayName;
+    }
 
     /**
      * OCI database resource type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
-    String databaseResourceType;
+    private final String databaseResourceType;
+
+    public String getDatabaseResourceType() {
+        return databaseResourceType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PeComanagedDatabaseInsight(");
+        sb.append("super=").append(super.toString());
+        sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
+        sb.append(", connectionDetails=").append(String.valueOf(this.connectionDetails));
+        sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", databaseName=").append(String.valueOf(this.databaseName));
+        sb.append(", databaseDisplayName=").append(String.valueOf(this.databaseDisplayName));
+        sb.append(", databaseResourceType=").append(String.valueOf(this.databaseResourceType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PeComanagedDatabaseInsight)) {
+            return false;
+        }
+
+        PeComanagedDatabaseInsight other = (PeComanagedDatabaseInsight) o;
+        return java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
+                && java.util.Objects.equals(this.connectionDetails, other.connectionDetails)
+                && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.databaseName, other.databaseName)
+                && java.util.Objects.equals(this.databaseDisplayName, other.databaseDisplayName)
+                && java.util.Objects.equals(this.databaseResourceType, other.databaseResourceType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.opsiPrivateEndpointId == null
+                                ? 43
+                                : this.opsiPrivateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionDetails == null ? 43 : this.connectionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result = (result * PRIME) + (this.databaseName == null ? 43 : this.databaseName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseDisplayName == null
+                                ? 43
+                                : this.databaseDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseResourceType == null
+                                ? 43
+                                : this.databaseResourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

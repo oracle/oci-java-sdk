@@ -16,16 +16,31 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PartitionReservation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PartitionReservation {
+public final class PartitionReservation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "partition",
+        "committedOffset",
+        "reservedInstance",
+        "timeReservedUntil"
+    })
+    public PartitionReservation(
+            String partition,
+            Long committedOffset,
+            String reservedInstance,
+            java.util.Date timeReservedUntil) {
+        super();
+        this.partition = partition;
+        this.committedOffset = committedOffset;
+        this.reservedInstance = reservedInstance;
+        this.timeReservedUntil = timeReservedUntil;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("partition")
         private String partition;
@@ -94,30 +109,104 @@ public class PartitionReservation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The partition for which the reservation applies.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partition")
-    String partition;
+    private final String partition;
+
+    public String getPartition() {
+        return partition;
+    }
 
     /**
      * The latest offset which has been committed for this partition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("committedOffset")
-    Long committedOffset;
+    private final Long committedOffset;
+
+    public Long getCommittedOffset() {
+        return committedOffset;
+    }
 
     /**
      * The consumer instance which currently has the partition reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservedInstance")
-    String reservedInstance;
+    private final String reservedInstance;
+
+    public String getReservedInstance() {
+        return reservedInstance;
+    }
 
     /**
      * A timestamp when the current reservation expires.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReservedUntil")
-    java.util.Date timeReservedUntil;
+    private final java.util.Date timeReservedUntil;
+
+    public java.util.Date getTimeReservedUntil() {
+        return timeReservedUntil;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PartitionReservation(");
+        sb.append("partition=").append(String.valueOf(this.partition));
+        sb.append(", committedOffset=").append(String.valueOf(this.committedOffset));
+        sb.append(", reservedInstance=").append(String.valueOf(this.reservedInstance));
+        sb.append(", timeReservedUntil=").append(String.valueOf(this.timeReservedUntil));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PartitionReservation)) {
+            return false;
+        }
+
+        PartitionReservation other = (PartitionReservation) o;
+        return java.util.Objects.equals(this.partition, other.partition)
+                && java.util.Objects.equals(this.committedOffset, other.committedOffset)
+                && java.util.Objects.equals(this.reservedInstance, other.reservedInstance)
+                && java.util.Objects.equals(this.timeReservedUntil, other.timeReservedUntil)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.partition == null ? 43 : this.partition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.committedOffset == null ? 43 : this.committedOffset.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reservedInstance == null ? 43 : this.reservedInstance.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeReservedUntil == null ? 43 : this.timeReservedUntil.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

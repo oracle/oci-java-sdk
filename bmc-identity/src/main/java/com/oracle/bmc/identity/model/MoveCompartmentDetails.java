@@ -15,16 +15,19 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MoveCompartmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MoveCompartmentDetails {
+public final class MoveCompartmentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"targetCompartmentId"})
+    public MoveCompartmentDetails(String targetCompartmentId) {
+        super();
+        this.targetCompartmentId = targetCompartmentId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
         private String targetCompartmentId;
@@ -60,14 +63,65 @@ public class MoveCompartmentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the destination compartment
      * into which to move the compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
-    String targetCompartmentId;
+    private final String targetCompartmentId;
+
+    public String getTargetCompartmentId() {
+        return targetCompartmentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MoveCompartmentDetails(");
+        sb.append("targetCompartmentId=").append(String.valueOf(this.targetCompartmentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MoveCompartmentDetails)) {
+            return false;
+        }
+
+        MoveCompartmentDetails other = (MoveCompartmentDetails) o;
+        return java.util.Objects.equals(this.targetCompartmentId, other.targetCompartmentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.targetCompartmentId == null
+                                ? 43
+                                : this.targetCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,20 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConvertToPdbDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConvertToPdbDetails {
+public final class ConvertToPdbDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"action", "convertToPdbTargetDetails"})
+    public ConvertToPdbDetails(Action action, ConvertToPdbTargetBase convertToPdbTargetDetails) {
+        super();
+        this.action = action;
+        this.convertToPdbTargetDetails = convertToPdbTargetDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
@@ -71,6 +75,10 @@ public class ConvertToPdbDetails {
      */
     public static Builder builder() {
         return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
     }
 
     /**
@@ -124,11 +132,67 @@ public class ConvertToPdbDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("convertToPdbTargetDetails")
-    ConvertToPdbTargetBase convertToPdbTargetDetails;
+    private final ConvertToPdbTargetBase convertToPdbTargetDetails;
+
+    public ConvertToPdbTargetBase getConvertToPdbTargetDetails() {
+        return convertToPdbTargetDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConvertToPdbDetails(");
+        sb.append("action=").append(String.valueOf(this.action));
+        sb.append(", convertToPdbTargetDetails=")
+                .append(String.valueOf(this.convertToPdbTargetDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConvertToPdbDetails)) {
+            return false;
+        }
+
+        ConvertToPdbDetails other = (ConvertToPdbDetails) o;
+        return java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(
+                        this.convertToPdbTargetDetails, other.convertToPdbTargetDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.convertToPdbTargetDetails == null
+                                ? 43
+                                : this.convertToPdbTargetDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

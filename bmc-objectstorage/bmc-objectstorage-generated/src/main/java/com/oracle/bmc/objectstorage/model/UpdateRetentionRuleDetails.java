@@ -15,16 +15,22 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateRetentionRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateRetentionRuleDetails {
+public final class UpdateRetentionRuleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"displayName", "duration", "timeRuleLocked"})
+    public UpdateRetentionRuleDetails(
+            String displayName, Duration duration, java.util.Date timeRuleLocked) {
+        super();
+        this.displayName = displayName;
+        this.duration = duration;
+        this.timeRuleLocked = timeRuleLocked;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -82,16 +88,28 @@ public class UpdateRetentionRuleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-specified name for the retention rule. Names can be helpful in identifying retention rules.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
-    Duration duration;
+    private final Duration duration;
+
+    public Duration getDuration() {
+        return duration;
+    }
 
     /**
      * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked
@@ -101,8 +119,59 @@ public class UpdateRetentionRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRuleLocked")
-    java.util.Date timeRuleLocked;
+    private final java.util.Date timeRuleLocked;
+
+    public java.util.Date getTimeRuleLocked() {
+        return timeRuleLocked;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateRetentionRuleDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", duration=").append(String.valueOf(this.duration));
+        sb.append(", timeRuleLocked=").append(String.valueOf(this.timeRuleLocked));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateRetentionRuleDetails)) {
+            return false;
+        }
+
+        UpdateRetentionRuleDetails other = (UpdateRetentionRuleDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.duration, other.duration)
+                && java.util.Objects.equals(this.timeRuleLocked, other.timeRuleLocked)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.duration == null ? 43 : this.duration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRuleLocked == null ? 43 : this.timeRuleLocked.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

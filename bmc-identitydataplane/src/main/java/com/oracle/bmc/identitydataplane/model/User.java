@@ -15,14 +15,22 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = User.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class User {
+public final class User {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "name", "isOTP", "isMfaActivated", "isMfaVerified"})
+    public User(
+            String id, String name, Boolean isOTP, Boolean isMfaActivated, Boolean isMfaVerified) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.isOTP = isOTP;
+        this.isMfaActivated = isMfaActivated;
+        this.isMfaVerified = isMfaVerified;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -99,36 +107,115 @@ public class User {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The user's Oracle ID (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * If the provided password is a one-time password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOTP")
-    Boolean isOTP;
+    private final Boolean isOTP;
+
+    public Boolean getIsOTP() {
+        return isOTP;
+    }
 
     /**
      * If mfa is activated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMfaActivated")
-    Boolean isMfaActivated;
+    private final Boolean isMfaActivated;
+
+    public Boolean getIsMfaActivated() {
+        return isMfaActivated;
+    }
 
     /**
      * If the user has been mfa verified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMfaVerified")
-    Boolean isMfaVerified;
+    private final Boolean isMfaVerified;
+
+    public Boolean getIsMfaVerified() {
+        return isMfaVerified;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("User(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", isOTP=").append(String.valueOf(this.isOTP));
+        sb.append(", isMfaActivated=").append(String.valueOf(this.isMfaActivated));
+        sb.append(", isMfaVerified=").append(String.valueOf(this.isMfaVerified));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof User)) {
+            return false;
+        }
+
+        User other = (User) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.isOTP, other.isOTP)
+                && java.util.Objects.equals(this.isMfaActivated, other.isMfaActivated)
+                && java.util.Objects.equals(this.isMfaVerified, other.isMfaVerified)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.isOTP == null ? 43 : this.isOTP.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMfaActivated == null ? 43 : this.isMfaActivated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMfaVerified == null ? 43 : this.isMfaVerified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

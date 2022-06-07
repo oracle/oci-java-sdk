@@ -15,16 +15,37 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConfigParameterValue.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConfigParameterValue {
+public final class ConfigParameterValue {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "stringValue",
+        "intValue",
+        "objectValue",
+        "refValue",
+        "parameterValue",
+        "rootObjectValue"
+    })
+    public ConfigParameterValue(
+            String stringValue,
+            Integer intValue,
+            Object objectValue,
+            Object refValue,
+            String parameterValue,
+            Object rootObjectValue) {
+        super();
+        this.stringValue = stringValue;
+        this.intValue = intValue;
+        this.objectValue = objectValue;
+        this.refValue = refValue;
+        this.parameterValue = parameterValue;
+        this.rootObjectValue = rootObjectValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("stringValue")
         private String stringValue;
@@ -118,42 +139,128 @@ public class ConfigParameterValue {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A string value of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stringValue")
-    String stringValue;
+    private final String stringValue;
+
+    public String getStringValue() {
+        return stringValue;
+    }
 
     /**
      * An integer value of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intValue")
-    Integer intValue;
+    private final Integer intValue;
+
+    public Integer getIntValue() {
+        return intValue;
+    }
 
     /**
      * An object value of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectValue")
-    Object objectValue;
+    private final Object objectValue;
+
+    public Object getObjectValue() {
+        return objectValue;
+    }
 
     /**
      * The root object reference value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("refValue")
-    Object refValue;
+    private final Object refValue;
+
+    public Object getRefValue() {
+        return refValue;
+    }
 
     /**
      * Reference to the parameter by its key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameterValue")
-    String parameterValue;
+    private final String parameterValue;
+
+    public String getParameterValue() {
+        return parameterValue;
+    }
 
     /**
      * The root object value, used in custom parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootObjectValue")
-    Object rootObjectValue;
+    private final Object rootObjectValue;
+
+    public Object getRootObjectValue() {
+        return rootObjectValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConfigParameterValue(");
+        sb.append("stringValue=").append(String.valueOf(this.stringValue));
+        sb.append(", intValue=").append(String.valueOf(this.intValue));
+        sb.append(", objectValue=").append(String.valueOf(this.objectValue));
+        sb.append(", refValue=").append(String.valueOf(this.refValue));
+        sb.append(", parameterValue=").append(String.valueOf(this.parameterValue));
+        sb.append(", rootObjectValue=").append(String.valueOf(this.rootObjectValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConfigParameterValue)) {
+            return false;
+        }
+
+        ConfigParameterValue other = (ConfigParameterValue) o;
+        return java.util.Objects.equals(this.stringValue, other.stringValue)
+                && java.util.Objects.equals(this.intValue, other.intValue)
+                && java.util.Objects.equals(this.objectValue, other.objectValue)
+                && java.util.Objects.equals(this.refValue, other.refValue)
+                && java.util.Objects.equals(this.parameterValue, other.parameterValue)
+                && java.util.Objects.equals(this.rootObjectValue, other.rootObjectValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.stringValue == null ? 43 : this.stringValue.hashCode());
+        result = (result * PRIME) + (this.intValue == null ? 43 : this.intValue.hashCode());
+        result = (result * PRIME) + (this.objectValue == null ? 43 : this.objectValue.hashCode());
+        result = (result * PRIME) + (this.refValue == null ? 43 : this.refValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parameterValue == null ? 43 : this.parameterValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rootObjectValue == null ? 43 : this.rootObjectValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

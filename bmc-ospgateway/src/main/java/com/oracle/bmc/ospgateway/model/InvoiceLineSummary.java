@@ -15,16 +15,46 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InvoiceLineSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InvoiceLineSummary {
+public final class InvoiceLineSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "product",
+        "orderNo",
+        "partNumber",
+        "timeStart",
+        "timeEnd",
+        "quantity",
+        "netUnitPrice",
+        "totalPrice",
+        "currency"
+    })
+    public InvoiceLineSummary(
+            String product,
+            String orderNo,
+            String partNumber,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            java.math.BigDecimal quantity,
+            java.math.BigDecimal netUnitPrice,
+            java.math.BigDecimal totalPrice,
+            Currency currency) {
+        super();
+        this.product = product;
+        this.orderNo = orderNo;
+        this.partNumber = partNumber;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.quantity = quantity;
+        this.netUnitPrice = netUnitPrice;
+        this.totalPrice = totalPrice;
+        this.currency = currency;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("product")
         private String product;
@@ -151,57 +181,160 @@ public class InvoiceLineSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Product of the item
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("product")
-    String product;
+    private final String product;
+
+    public String getProduct() {
+        return product;
+    }
 
     /**
      * Product of the item
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderNo")
-    String orderNo;
+    private final String orderNo;
+
+    public String getOrderNo() {
+        return orderNo;
+    }
 
     /**
      * Part number
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
-    String partNumber;
+    private final String partNumber;
+
+    public String getPartNumber() {
+        return partNumber;
+    }
 
     /**
      * Start date
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * End date
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * Quantity of the ordered product
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
-    java.math.BigDecimal quantity;
+    private final java.math.BigDecimal quantity;
+
+    public java.math.BigDecimal getQuantity() {
+        return quantity;
+    }
 
     /**
      * Unit price of the ordered product
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
-    java.math.BigDecimal netUnitPrice;
+    private final java.math.BigDecimal netUnitPrice;
+
+    public java.math.BigDecimal getNetUnitPrice() {
+        return netUnitPrice;
+    }
 
     /**
      * Total price of the ordered product (Net unit price x quantity)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalPrice")
-    java.math.BigDecimal totalPrice;
+    private final java.math.BigDecimal totalPrice;
+
+    public java.math.BigDecimal getTotalPrice() {
+        return totalPrice;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
-    Currency currency;
+    private final Currency currency;
+
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InvoiceLineSummary(");
+        sb.append("product=").append(String.valueOf(this.product));
+        sb.append(", orderNo=").append(String.valueOf(this.orderNo));
+        sb.append(", partNumber=").append(String.valueOf(this.partNumber));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", quantity=").append(String.valueOf(this.quantity));
+        sb.append(", netUnitPrice=").append(String.valueOf(this.netUnitPrice));
+        sb.append(", totalPrice=").append(String.valueOf(this.totalPrice));
+        sb.append(", currency=").append(String.valueOf(this.currency));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InvoiceLineSummary)) {
+            return false;
+        }
+
+        InvoiceLineSummary other = (InvoiceLineSummary) o;
+        return java.util.Objects.equals(this.product, other.product)
+                && java.util.Objects.equals(this.orderNo, other.orderNo)
+                && java.util.Objects.equals(this.partNumber, other.partNumber)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.quantity, other.quantity)
+                && java.util.Objects.equals(this.netUnitPrice, other.netUnitPrice)
+                && java.util.Objects.equals(this.totalPrice, other.totalPrice)
+                && java.util.Objects.equals(this.currency, other.currency)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.product == null ? 43 : this.product.hashCode());
+        result = (result * PRIME) + (this.orderNo == null ? 43 : this.orderNo.hashCode());
+        result = (result * PRIME) + (this.partNumber == null ? 43 : this.partNumber.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.quantity == null ? 43 : this.quantity.hashCode());
+        result = (result * PRIME) + (this.netUnitPrice == null ? 43 : this.netUnitPrice.hashCode());
+        result = (result * PRIME) + (this.totalPrice == null ? 43 : this.totalPrice.hashCode());
+        result = (result * PRIME) + (this.currency == null ? 43 : this.currency.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

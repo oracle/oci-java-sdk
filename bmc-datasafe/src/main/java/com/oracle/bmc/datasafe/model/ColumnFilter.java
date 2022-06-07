@@ -15,14 +15,32 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ColumnFilter.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ColumnFilter {
+public final class ColumnFilter {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "fieldName",
+        "operator",
+        "expressions",
+        "isEnabled",
+        "isHidden"
+    })
+    public ColumnFilter(
+            String fieldName,
+            Operator operator,
+            java.util.List<String> expressions,
+            Boolean isEnabled,
+            Boolean isHidden) {
+        super();
+        this.fieldName = fieldName;
+        this.operator = operator;
+        this.expressions = expressions;
+        this.isEnabled = isEnabled;
+        this.isHidden = isHidden;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
@@ -100,15 +118,23 @@ public class ColumnFilter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the column on which the filter must be applied.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
-    String fieldName;
+    private final String fieldName;
+
+    public String getFieldName() {
+        return fieldName;
+    }
+
     /**
      * Specifies the type of operator that must be applied for example in, eq etc.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Operator {
         In("IN"),
         Eq("EQ"),
@@ -128,6 +154,9 @@ public class ColumnFilter {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Operator.class);
 
         private final String value;
         private static java.util.Map<String, Operator> map;
@@ -165,26 +194,93 @@ public class ColumnFilter {
      * Specifies the type of operator that must be applied for example in, eq etc.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
-    Operator operator;
+    private final Operator operator;
+
+    public Operator getOperator() {
+        return operator;
+    }
 
     /**
      * An array of expressions based on the operator type. A filter may have one or more expressions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expressions")
-    java.util.List<String> expressions;
+    private final java.util.List<String> expressions;
+
+    public java.util.List<String> getExpressions() {
+        return expressions;
+    }
 
     /**
      * Indicates if the filter is enabled. Values can either be 'true' or 'false'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * Indicates if the filter is hidden. Values can either be 'true' or 'false'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
-    Boolean isHidden;
+    private final Boolean isHidden;
+
+    public Boolean getIsHidden() {
+        return isHidden;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ColumnFilter(");
+        sb.append("fieldName=").append(String.valueOf(this.fieldName));
+        sb.append(", operator=").append(String.valueOf(this.operator));
+        sb.append(", expressions=").append(String.valueOf(this.expressions));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", isHidden=").append(String.valueOf(this.isHidden));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ColumnFilter)) {
+            return false;
+        }
+
+        ColumnFilter other = (ColumnFilter) o;
+        return java.util.Objects.equals(this.fieldName, other.fieldName)
+                && java.util.Objects.equals(this.operator, other.operator)
+                && java.util.Objects.equals(this.expressions, other.expressions)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.isHidden, other.isHidden)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
+        result = (result * PRIME) + (this.operator == null ? 43 : this.operator.hashCode());
+        result = (result * PRIME) + (this.expressions == null ? 43 : this.expressions.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

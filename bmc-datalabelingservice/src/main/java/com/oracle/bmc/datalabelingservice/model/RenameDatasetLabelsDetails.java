@@ -18,16 +18,20 @@ package com.oracle.bmc.datalabelingservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RenameDatasetLabelsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RenameDatasetLabelsDetails {
+public final class RenameDatasetLabelsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"sourceLabelSet", "targetLabelSet"})
+    public RenameDatasetLabelsDetails(LabelSet sourceLabelSet, LabelSet targetLabelSet) {
+        super();
+        this.sourceLabelSet = sourceLabelSet;
+        this.targetLabelSet = targetLabelSet;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sourceLabelSet")
         private LabelSet sourceLabelSet;
@@ -74,12 +78,70 @@ public class RenameDatasetLabelsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("sourceLabelSet")
-    LabelSet sourceLabelSet;
+    private final LabelSet sourceLabelSet;
+
+    public LabelSet getSourceLabelSet() {
+        return sourceLabelSet;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("targetLabelSet")
-    LabelSet targetLabelSet;
+    private final LabelSet targetLabelSet;
+
+    public LabelSet getTargetLabelSet() {
+        return targetLabelSet;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RenameDatasetLabelsDetails(");
+        sb.append("sourceLabelSet=").append(String.valueOf(this.sourceLabelSet));
+        sb.append(", targetLabelSet=").append(String.valueOf(this.targetLabelSet));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RenameDatasetLabelsDetails)) {
+            return false;
+        }
+
+        RenameDatasetLabelsDetails other = (RenameDatasetLabelsDetails) o;
+        return java.util.Objects.equals(this.sourceLabelSet, other.sourceLabelSet)
+                && java.util.Objects.equals(this.targetLabelSet, other.targetLabelSet)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sourceLabelSet == null ? 43 : this.sourceLabelSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetLabelSet == null ? 43 : this.targetLabelSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

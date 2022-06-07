@@ -16,14 +16,26 @@ package com.oracle.bmc.audit.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Response.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Response {
+public final class Response {
+    @Deprecated
+    @java.beans.ConstructorProperties({"status", "responseTime", "headers", "payload", "message"})
+    public Response(
+            String status,
+            java.util.Date responseTime,
+            java.util.Map<String, java.util.List<String>> headers,
+            java.util.Map<String, Object> payload,
+            String message) {
+        super();
+        this.status = status;
+        this.responseTime = responseTime;
+        this.headers = headers;
+        this.payload = payload;
+        this.message = message;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
@@ -100,6 +112,10 @@ public class Response {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The status code of the response.
      * <p>
@@ -107,7 +123,11 @@ public class Response {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * The time of the response to the audited request, expressed in
@@ -117,7 +137,11 @@ public class Response {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseTime")
-    java.util.Date responseTime;
+    private final java.util.Date responseTime;
+
+    public java.util.Date getResponseTime() {
+        return responseTime;
+    }
 
     /**
      * The headers of the response.
@@ -149,7 +173,11 @@ public class Response {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
-    java.util.Map<String, java.util.List<String>> headers;
+    private final java.util.Map<String, java.util.List<String>> headers;
+
+    public java.util.Map<String, java.util.List<String>> getHeaders() {
+        return headers;
+    }
 
     /**
      * This value is included for backward compatibility with the Audit version 1 schema, where
@@ -166,15 +194,74 @@ public class Response {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
-    java.util.Map<String, Object> payload;
+    private final java.util.Map<String, Object> payload;
+
+    public java.util.Map<String, Object> getPayload() {
+        return payload;
+    }
 
     /**
      * A friendly description of what happened during the operation. Use this for troubleshooting.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Response(");
+        sb.append("status=").append(String.valueOf(this.status));
+        sb.append(", responseTime=").append(String.valueOf(this.responseTime));
+        sb.append(", headers=").append(String.valueOf(this.headers));
+        sb.append(", payload=").append(String.valueOf(this.payload));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Response)) {
+            return false;
+        }
+
+        Response other = (Response) o;
+        return java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.responseTime, other.responseTime)
+                && java.util.Objects.equals(this.headers, other.headers)
+                && java.util.Objects.equals(this.payload, other.payload)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.responseTime == null ? 43 : this.responseTime.hashCode());
+        result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
+        result = (result * PRIME) + (this.payload == null ? 43 : this.payload.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

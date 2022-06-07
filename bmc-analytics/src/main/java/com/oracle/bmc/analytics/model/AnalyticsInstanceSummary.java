@@ -16,16 +16,58 @@ package com.oracle.bmc.analytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AnalyticsInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AnalyticsInstanceSummary {
+public final class AnalyticsInstanceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "description",
+        "compartmentId",
+        "lifecycleState",
+        "featureSet",
+        "capacity",
+        "licenseType",
+        "emailNotification",
+        "networkEndpointDetails",
+        "serviceUrl",
+        "timeCreated",
+        "timeUpdated"
+    })
+    public AnalyticsInstanceSummary(
+            String id,
+            String name,
+            String description,
+            String compartmentId,
+            AnalyticsInstanceLifecycleState lifecycleState,
+            FeatureSet featureSet,
+            Capacity capacity,
+            LicenseType licenseType,
+            String emailNotification,
+            NetworkEndpointDetails networkEndpointDetails,
+            String serviceUrl,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+        this.featureSet = featureSet;
+        this.capacity = capacity;
+        this.licenseType = licenseType;
+        this.emailNotification = emailNotification;
+        this.networkEndpointDetails = networkEndpointDetails;
+        this.serviceUrl = serviceUrl;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -196,74 +238,122 @@ public class AnalyticsInstanceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The resource OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Optional description.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The OCID of the compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The current state of an instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    AnalyticsInstanceLifecycleState lifecycleState;
+    private final AnalyticsInstanceLifecycleState lifecycleState;
+
+    public AnalyticsInstanceLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Analytics feature set.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
-    FeatureSet featureSet;
+    private final FeatureSet featureSet;
+
+    public FeatureSet getFeatureSet() {
+        return featureSet;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
-    Capacity capacity;
+    private final Capacity capacity;
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
 
     /**
      * The license used for the service.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
-    LicenseType licenseType;
+    private final LicenseType licenseType;
+
+    public LicenseType getLicenseType() {
+        return licenseType;
+    }
 
     /**
      * Email address receiving notifications.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailNotification")
-    String emailNotification;
+    private final String emailNotification;
+
+    public String getEmailNotification() {
+        return emailNotification;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
-    NetworkEndpointDetails networkEndpointDetails;
+    private final NetworkEndpointDetails networkEndpointDetails;
+
+    public NetworkEndpointDetails getNetworkEndpointDetails() {
+        return networkEndpointDetails;
+    }
 
     /**
      * URL of the Analytics service.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
-    String serviceUrl;
+    private final String serviceUrl;
+
+    public String getServiceUrl() {
+        return serviceUrl;
+    }
 
     /**
      * The date and time the instance was created, in the format defined by RFC3339.
@@ -272,7 +362,11 @@ public class AnalyticsInstanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the instance was last updated (in the format defined by RFC3339).
@@ -281,8 +375,98 @@ public class AnalyticsInstanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AnalyticsInstanceSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", featureSet=").append(String.valueOf(this.featureSet));
+        sb.append(", capacity=").append(String.valueOf(this.capacity));
+        sb.append(", licenseType=").append(String.valueOf(this.licenseType));
+        sb.append(", emailNotification=").append(String.valueOf(this.emailNotification));
+        sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
+        sb.append(", serviceUrl=").append(String.valueOf(this.serviceUrl));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AnalyticsInstanceSummary)) {
+            return false;
+        }
+
+        AnalyticsInstanceSummary other = (AnalyticsInstanceSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.featureSet, other.featureSet)
+                && java.util.Objects.equals(this.capacity, other.capacity)
+                && java.util.Objects.equals(this.licenseType, other.licenseType)
+                && java.util.Objects.equals(this.emailNotification, other.emailNotification)
+                && java.util.Objects.equals(
+                        this.networkEndpointDetails, other.networkEndpointDetails)
+                && java.util.Objects.equals(this.serviceUrl, other.serviceUrl)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.featureSet == null ? 43 : this.featureSet.hashCode());
+        result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
+        result = (result * PRIME) + (this.licenseType == null ? 43 : this.licenseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.emailNotification == null ? 43 : this.emailNotification.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkEndpointDetails == null
+                                ? 43
+                                : this.networkEndpointDetails.hashCode());
+        result = (result * PRIME) + (this.serviceUrl == null ? 43 : this.serviceUrl.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

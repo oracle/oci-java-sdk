@@ -15,14 +15,20 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaxSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TaxSummary {
+public final class TaxSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"code", "name", "country", "url"})
+    public TaxSummary(java.util.UUID code, String name, String country, String url) {
+        super();
+        this.code = code;
+        this.name = name;
+        this.country = country;
+        this.url = url;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private java.util.UUID code;
@@ -86,30 +92,98 @@ public class TaxSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique code for the tax.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
-    java.util.UUID code;
+    private final java.util.UUID code;
+
+    public java.util.UUID getCode() {
+        return code;
+    }
 
     /**
      * Name of the tax code.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Country, which imposes the tax.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
-    String country;
+    private final String country;
+
+    public String getCountry() {
+        return country;
+    }
 
     /**
      * The URL with more details about this tax.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TaxSummary(");
+        sb.append("code=").append(String.valueOf(this.code));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", country=").append(String.valueOf(this.country));
+        sb.append(", url=").append(String.valueOf(this.url));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TaxSummary)) {
+            return false;
+        }
+
+        TaxSummary other = (TaxSummary) o;
+        return java.util.Objects.equals(this.code, other.code)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.country, other.country)
+                && java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

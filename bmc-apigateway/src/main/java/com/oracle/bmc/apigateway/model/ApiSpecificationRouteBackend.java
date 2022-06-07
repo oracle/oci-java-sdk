@@ -16,12 +16,6 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -44,11 +38,43 @@ package com.oracle.bmc.apigateway.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ApiSpecificationRouteBackend {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected ApiSpecificationRouteBackend() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApiSpecificationRouteBackend(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApiSpecificationRouteBackend)) {
+            return false;
+        }
+
+        ApiSpecificationRouteBackend other = (ApiSpecificationRouteBackend) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * Type of the API backend.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         OracleFunctionsBackend("ORACLE_FUNCTIONS_BACKEND"),
         HttpBackend("HTTP_BACKEND"),
@@ -59,6 +85,8 @@ public class ApiSpecificationRouteBackend {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;

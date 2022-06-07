@@ -15,16 +15,55 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSensitiveColumnDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSensitiveColumnDetails {
+public final class CreateSensitiveColumnDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "appName",
+        "schemaName",
+        "objectName",
+        "columnName",
+        "objectType",
+        "dataType",
+        "status",
+        "sensitiveTypeId",
+        "parentColumnKeys",
+        "relationType",
+        "appDefinedChildColumnKeys",
+        "dbDefinedChildColumnKeys"
+    })
+    public CreateSensitiveColumnDetails(
+            String appName,
+            String schemaName,
+            String objectName,
+            String columnName,
+            ObjectType objectType,
+            String dataType,
+            Status status,
+            String sensitiveTypeId,
+            java.util.List<String> parentColumnKeys,
+            RelationType relationType,
+            java.util.List<String> appDefinedChildColumnKeys,
+            java.util.List<String> dbDefinedChildColumnKeys) {
+        super();
+        this.appName = appName;
+        this.schemaName = schemaName;
+        this.objectName = objectName;
+        this.columnName = columnName;
+        this.objectType = objectType;
+        this.dataType = dataType;
+        this.status = status;
+        this.sensitiveTypeId = sensitiveTypeId;
+        this.parentColumnKeys = parentColumnKeys;
+        this.relationType = relationType;
+        this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
+        this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("appName")
         private String appName;
@@ -184,6 +223,10 @@ public class CreateSensitiveColumnDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the application associated with the sensitive column. It's useful when the application name is
      * different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it's automatically
@@ -191,25 +234,42 @@ public class CreateSensitiveColumnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("appName")
-    String appName;
+    private final String appName;
+
+    public String getAppName() {
+        return appName;
+    }
 
     /**
      * The database schema that contains the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
-    String schemaName;
+    private final String schemaName;
+
+    public String getSchemaName() {
+        return schemaName;
+    }
 
     /**
      * The database object that contains the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * The name of the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
-    String columnName;
+    private final String columnName;
+
+    public String getColumnName() {
+        return columnName;
+    }
+
     /**
      * The type of the database object that contains the sensitive column.
      **/
@@ -249,13 +309,22 @@ public class CreateSensitiveColumnDetails {
      * The type of the database object that contains the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
-    ObjectType objectType;
+    private final ObjectType objectType;
+
+    public ObjectType getObjectType() {
+        return objectType;
+    }
 
     /**
      * The data type of the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    String dataType;
+    private final String dataType;
+
+    public String getDataType() {
+        return dataType;
+    }
+
     /**
      * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
      * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental
@@ -301,13 +370,21 @@ public class CreateSensitiveColumnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The OCID of the sensitive type to be associated with the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
-    String sensitiveTypeId;
+    private final String sensitiveTypeId;
+
+    public String getSensitiveTypeId() {
+        return sensitiveTypeId;
+    }
 
     /**
      * Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one
@@ -318,7 +395,12 @@ public class CreateSensitiveColumnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentColumnKeys")
-    java.util.List<String> parentColumnKeys;
+    private final java.util.List<String> parentColumnKeys;
+
+    public java.util.List<String> getParentColumnKeys() {
+        return parentColumnKeys;
+    }
+
     /**
      * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive
      * column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary.
@@ -365,7 +447,11 @@ public class CreateSensitiveColumnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relationType")
-    RelationType relationType;
+    private final RelationType relationType;
+
+    public RelationType getRelationType() {
+        return relationType;
+    }
 
     /**
      * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -375,7 +461,11 @@ public class CreateSensitiveColumnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("appDefinedChildColumnKeys")
-    java.util.List<String> appDefinedChildColumnKeys;
+    private final java.util.List<String> appDefinedChildColumnKeys;
+
+    public java.util.List<String> getAppDefinedChildColumnKeys() {
+        return appDefinedChildColumnKeys;
+    }
 
     /**
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
@@ -385,8 +475,100 @@ public class CreateSensitiveColumnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbDefinedChildColumnKeys")
-    java.util.List<String> dbDefinedChildColumnKeys;
+    private final java.util.List<String> dbDefinedChildColumnKeys;
+
+    public java.util.List<String> getDbDefinedChildColumnKeys() {
+        return dbDefinedChildColumnKeys;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSensitiveColumnDetails(");
+        sb.append("appName=").append(String.valueOf(this.appName));
+        sb.append(", schemaName=").append(String.valueOf(this.schemaName));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", columnName=").append(String.valueOf(this.columnName));
+        sb.append(", objectType=").append(String.valueOf(this.objectType));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
+        sb.append(", parentColumnKeys=").append(String.valueOf(this.parentColumnKeys));
+        sb.append(", relationType=").append(String.valueOf(this.relationType));
+        sb.append(", appDefinedChildColumnKeys=")
+                .append(String.valueOf(this.appDefinedChildColumnKeys));
+        sb.append(", dbDefinedChildColumnKeys=")
+                .append(String.valueOf(this.dbDefinedChildColumnKeys));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSensitiveColumnDetails)) {
+            return false;
+        }
+
+        CreateSensitiveColumnDetails other = (CreateSensitiveColumnDetails) o;
+        return java.util.Objects.equals(this.appName, other.appName)
+                && java.util.Objects.equals(this.schemaName, other.schemaName)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.columnName, other.columnName)
+                && java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
+                && java.util.Objects.equals(this.parentColumnKeys, other.parentColumnKeys)
+                && java.util.Objects.equals(this.relationType, other.relationType)
+                && java.util.Objects.equals(
+                        this.appDefinedChildColumnKeys, other.appDefinedChildColumnKeys)
+                && java.util.Objects.equals(
+                        this.dbDefinedChildColumnKeys, other.dbDefinedChildColumnKeys)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.appName == null ? 43 : this.appName.hashCode());
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeId == null ? 43 : this.sensitiveTypeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentColumnKeys == null ? 43 : this.parentColumnKeys.hashCode());
+        result = (result * PRIME) + (this.relationType == null ? 43 : this.relationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.appDefinedChildColumnKeys == null
+                                ? 43
+                                : this.appDefinedChildColumnKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbDefinedChildColumnKeys == null
+                                ? 43
+                                : this.dbDefinedChildColumnKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

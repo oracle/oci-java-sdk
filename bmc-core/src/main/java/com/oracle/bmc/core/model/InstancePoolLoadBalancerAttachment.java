@@ -15,16 +15,40 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstancePoolLoadBalancerAttachment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstancePoolLoadBalancerAttachment {
+public final class InstancePoolLoadBalancerAttachment {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "instancePoolId",
+        "loadBalancerId",
+        "backendSetName",
+        "port",
+        "vnicSelection",
+        "lifecycleState"
+    })
+    public InstancePoolLoadBalancerAttachment(
+            String id,
+            String instancePoolId,
+            String loadBalancerId,
+            String backendSetName,
+            Integer port,
+            String vnicSelection,
+            LifecycleState lifecycleState) {
+        super();
+        this.id = id;
+        this.instancePoolId = instancePoolId;
+        this.loadBalancerId = loadBalancerId;
+        this.backendSetName = backendSetName;
+        this.port = port;
+        this.vnicSelection = vnicSelection;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -129,37 +153,61 @@ public class InstancePoolLoadBalancerAttachment {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instancePoolId")
-    String instancePoolId;
+    private final String instancePoolId;
+
+    public String getInstancePoolId() {
+        return instancePoolId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
-    String loadBalancerId;
+    private final String loadBalancerId;
+
+    public String getLoadBalancerId() {
+        return loadBalancerId;
+    }
 
     /**
      * The name of the backend set on the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
-    String backendSetName;
+    private final String backendSetName;
+
+    public String getBackendSetName() {
+        return backendSetName;
+    }
 
     /**
      * The port value used for the backends.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer.
@@ -168,11 +216,15 @@ public class InstancePoolLoadBalancerAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicSelection")
-    String vnicSelection;
+    private final String vnicSelection;
+
+    public String getVnicSelection() {
+        return vnicSelection;
+    }
+
     /**
      * The status of the interaction between the instance pool and the load balancer.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Attaching("ATTACHING"),
         Attached("ATTACHED"),
@@ -184,6 +236,9 @@ public class InstancePoolLoadBalancerAttachment {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -221,8 +276,79 @@ public class InstancePoolLoadBalancerAttachment {
      * The status of the interaction between the instance pool and the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstancePoolLoadBalancerAttachment(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", instancePoolId=").append(String.valueOf(this.instancePoolId));
+        sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
+        sb.append(", backendSetName=").append(String.valueOf(this.backendSetName));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", vnicSelection=").append(String.valueOf(this.vnicSelection));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstancePoolLoadBalancerAttachment)) {
+            return false;
+        }
+
+        InstancePoolLoadBalancerAttachment other = (InstancePoolLoadBalancerAttachment) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.instancePoolId, other.instancePoolId)
+                && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
+                && java.util.Objects.equals(this.backendSetName, other.backendSetName)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.vnicSelection, other.vnicSelection)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instancePoolId == null ? 43 : this.instancePoolId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vnicSelection == null ? 43 : this.vnicSelection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

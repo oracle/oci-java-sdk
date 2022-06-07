@@ -16,16 +16,34 @@ package com.oracle.bmc.goldengate.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateOggDeploymentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateOggDeploymentDetails {
+public final class CreateOggDeploymentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "deploymentName",
+        "adminUsername",
+        "adminPassword",
+        "certificate",
+        "key"
+    })
+    public CreateOggDeploymentDetails(
+            String deploymentName,
+            String adminUsername,
+            String adminPassword,
+            String certificate,
+            String key) {
+        super();
+        this.deploymentName = deploymentName;
+        this.adminUsername = adminUsername;
+        this.adminPassword = adminPassword;
+        this.certificate = certificate;
+        this.key = key;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
         private String deploymentName;
@@ -104,41 +122,122 @@ public class CreateOggDeploymentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
-    String deploymentName;
+    private final String deploymentName;
+
+    public String getDeploymentName() {
+        return deploymentName;
+    }
 
     /**
      * The GoldenGate deployment console username.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
-    String adminUsername;
+    private final String adminUsername;
+
+    public String getAdminUsername() {
+        return adminUsername;
+    }
 
     /**
      * The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    String adminPassword;
+    private final String adminPassword;
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
 
     /**
      * A PEM-encoded SSL certificate.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
-    String certificate;
+    private final String certificate;
+
+    public String getCertificate() {
+        return certificate;
+    }
 
     /**
      * A PEM-encoded private key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateOggDeploymentDetails(");
+        sb.append("deploymentName=").append(String.valueOf(this.deploymentName));
+        sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
+        sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", certificate=").append(String.valueOf(this.certificate));
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOggDeploymentDetails)) {
+            return false;
+        }
+
+        CreateOggDeploymentDetails other = (CreateOggDeploymentDetails) o;
+        return java.util.Objects.equals(this.deploymentName, other.deploymentName)
+                && java.util.Objects.equals(this.adminUsername, other.adminUsername)
+                && java.util.Objects.equals(this.adminPassword, other.adminPassword)
+                && java.util.Objects.equals(this.certificate, other.certificate)
+                && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.deploymentName == null ? 43 : this.deploymentName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminUsername == null ? 43 : this.adminUsername.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
+        result = (result * PRIME) + (this.certificate == null ? 43 : this.certificate.hashCode());
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

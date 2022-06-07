@@ -15,16 +15,61 @@ package com.oracle.bmc.aispeech.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TranscriptionTask.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TranscriptionTask {
+public final class TranscriptionTask {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "timeStarted",
+        "timeFinished",
+        "percentComplete",
+        "ttlInDays",
+        "modelDetails",
+        "audioFormatDetails",
+        "fileSizeInBytes",
+        "fileDurationInSeconds",
+        "inputLocation",
+        "outputLocation",
+        "lifecycleState",
+        "lifecycleDetails"
+    })
+    public TranscriptionTask(
+            String id,
+            String displayName,
+            java.util.Date timeStarted,
+            java.util.Date timeFinished,
+            Integer percentComplete,
+            Integer ttlInDays,
+            TranscriptionModelDetails modelDetails,
+            AudioFormatDetails audioFormatDetails,
+            Integer fileSizeInBytes,
+            Integer fileDurationInSeconds,
+            ObjectLocation inputLocation,
+            ObjectLocation outputLocation,
+            LifecycleState lifecycleState,
+            String lifecycleDetails) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.timeStarted = timeStarted;
+        this.timeFinished = timeFinished;
+        this.percentComplete = percentComplete;
+        this.ttlInDays = ttlInDays;
+        this.modelDetails = modelDetails;
+        this.audioFormatDetails = audioFormatDetails;
+        this.fileSizeInBytes = fileSizeInBytes;
+        this.fileDurationInSeconds = fileDurationInSeconds;
+        this.inputLocation = inputLocation;
+        this.outputLocation = outputLocation;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -206,69 +251,121 @@ public class TranscriptionTask {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A user-friendly display name for the task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Task started time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * Task finished time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
 
     /**
      * How much progress the operation has made, vs the total amount of work that must be performed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
-    Integer percentComplete;
+    private final Integer percentComplete;
+
+    public Integer getPercentComplete() {
+        return percentComplete;
+    }
 
     /**
      * Time to live duration in days for tasks. Task will be available till max 90 days.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttlInDays")
-    Integer ttlInDays;
+    private final Integer ttlInDays;
+
+    public Integer getTtlInDays() {
+        return ttlInDays;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("modelDetails")
-    TranscriptionModelDetails modelDetails;
+    private final TranscriptionModelDetails modelDetails;
+
+    public TranscriptionModelDetails getModelDetails() {
+        return modelDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("audioFormatDetails")
-    AudioFormatDetails audioFormatDetails;
+    private final AudioFormatDetails audioFormatDetails;
+
+    public AudioFormatDetails getAudioFormatDetails() {
+        return audioFormatDetails;
+    }
 
     /**
      * Size of input file in Bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSizeInBytes")
-    Integer fileSizeInBytes;
+    private final Integer fileSizeInBytes;
+
+    public Integer getFileSizeInBytes() {
+        return fileSizeInBytes;
+    }
 
     /**
      * Duration of input file in Seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileDurationInSeconds")
-    Integer fileDurationInSeconds;
+    private final Integer fileDurationInSeconds;
+
+    public Integer getFileDurationInSeconds() {
+        return fileDurationInSeconds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
-    ObjectLocation inputLocation;
+    private final ObjectLocation inputLocation;
+
+    public ObjectLocation getInputLocation() {
+        return inputLocation;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("outputLocation")
-    ObjectLocation outputLocation;
+    private final ObjectLocation outputLocation;
+
+    public ObjectLocation getOutputLocation() {
+        return outputLocation;
+    }
+
     /**
      * The current state of the Task.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -281,6 +378,9 @@ public class TranscriptionTask {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -318,14 +418,120 @@ public class TranscriptionTask {
      * The current state of the Task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TranscriptionTask(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
+        sb.append(", ttlInDays=").append(String.valueOf(this.ttlInDays));
+        sb.append(", modelDetails=").append(String.valueOf(this.modelDetails));
+        sb.append(", audioFormatDetails=").append(String.valueOf(this.audioFormatDetails));
+        sb.append(", fileSizeInBytes=").append(String.valueOf(this.fileSizeInBytes));
+        sb.append(", fileDurationInSeconds=").append(String.valueOf(this.fileDurationInSeconds));
+        sb.append(", inputLocation=").append(String.valueOf(this.inputLocation));
+        sb.append(", outputLocation=").append(String.valueOf(this.outputLocation));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TranscriptionTask)) {
+            return false;
+        }
+
+        TranscriptionTask other = (TranscriptionTask) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.percentComplete, other.percentComplete)
+                && java.util.Objects.equals(this.ttlInDays, other.ttlInDays)
+                && java.util.Objects.equals(this.modelDetails, other.modelDetails)
+                && java.util.Objects.equals(this.audioFormatDetails, other.audioFormatDetails)
+                && java.util.Objects.equals(this.fileSizeInBytes, other.fileSizeInBytes)
+                && java.util.Objects.equals(this.fileDurationInSeconds, other.fileDurationInSeconds)
+                && java.util.Objects.equals(this.inputLocation, other.inputLocation)
+                && java.util.Objects.equals(this.outputLocation, other.outputLocation)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
+        result = (result * PRIME) + (this.ttlInDays == null ? 43 : this.ttlInDays.hashCode());
+        result = (result * PRIME) + (this.modelDetails == null ? 43 : this.modelDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.audioFormatDetails == null
+                                ? 43
+                                : this.audioFormatDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSizeInBytes == null ? 43 : this.fileSizeInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileDurationInSeconds == null
+                                ? 43
+                                : this.fileDurationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inputLocation == null ? 43 : this.inputLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputLocation == null ? 43 : this.outputLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,34 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestResource {
+public final class WorkRequestResource {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "actionType",
+        "entityType",
+        "identifier",
+        "entityUri",
+        "metadata"
+    })
+    public WorkRequestResource(
+            ActionType actionType,
+            String entityType,
+            String identifier,
+            String entityUri,
+            java.util.Map<String, String> metadata) {
+        super();
+        this.actionType = actionType;
+        this.entityType = entityType;
+        this.identifier = identifier;
+        this.entityUri = entityUri;
+        this.metadata = metadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionType actionType;
@@ -103,10 +121,13 @@ public class WorkRequestResource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The status of the work request.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ActionType {
         Created("CREATED"),
         Updated("UPDATED"),
@@ -121,6 +142,9 @@ public class WorkRequestResource {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ActionType.class);
 
         private final String value;
         private static java.util.Map<String, ActionType> map;
@@ -158,32 +182,103 @@ public class WorkRequestResource {
      * The status of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
-    ActionType actionType;
+    private final ActionType actionType;
+
+    public ActionType getActionType() {
+        return actionType;
+    }
 
     /**
      * The resource type the work request affects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    String entityType;
+    private final String entityType;
+
+    public String getEntityType() {
+        return entityType;
+    }
 
     /**
      * The resource type identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * The URI path that you can use for a GET request to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
-    String entityUri;
+    private final String entityUri;
+
+    public String getEntityUri() {
+        return entityUri;
+    }
 
     /**
      * The metadata of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    java.util.Map<String, String> metadata;
+    private final java.util.Map<String, String> metadata;
+
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestResource(");
+        sb.append("actionType=").append(String.valueOf(this.actionType));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", entityUri=").append(String.valueOf(this.entityUri));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestResource)) {
+            return false;
+        }
+
+        WorkRequestResource other = (WorkRequestResource) o;
+        return java.util.Objects.equals(this.actionType, other.actionType)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.entityUri, other.entityUri)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.entityUri == null ? 43 : this.entityUri.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

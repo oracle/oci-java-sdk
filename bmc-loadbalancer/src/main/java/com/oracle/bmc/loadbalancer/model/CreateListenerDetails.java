@@ -20,16 +20,49 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateListenerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateListenerDetails {
+public final class CreateListenerDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "defaultBackendSetName",
+        "port",
+        "protocol",
+        "hostnameNames",
+        "pathRouteSetName",
+        "sslConfiguration",
+        "connectionConfiguration",
+        "name",
+        "routingPolicyName",
+        "ruleSetNames"
+    })
+    public CreateListenerDetails(
+            String defaultBackendSetName,
+            Integer port,
+            String protocol,
+            java.util.List<String> hostnameNames,
+            String pathRouteSetName,
+            SSLConfigurationDetails sslConfiguration,
+            ConnectionConfiguration connectionConfiguration,
+            String name,
+            String routingPolicyName,
+            java.util.List<String> ruleSetNames) {
+        super();
+        this.defaultBackendSetName = defaultBackendSetName;
+        this.port = port;
+        this.protocol = protocol;
+        this.hostnameNames = hostnameNames;
+        this.pathRouteSetName = pathRouteSetName;
+        this.sslConfiguration = sslConfiguration;
+        this.connectionConfiguration = connectionConfiguration;
+        this.name = name;
+        this.routingPolicyName = routingPolicyName;
+        this.ruleSetNames = ruleSetNames;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
         private String defaultBackendSetName;
@@ -167,6 +200,10 @@ public class CreateListenerDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the associated backend set.
      * <p>
@@ -174,7 +211,11 @@ public class CreateListenerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
-    String defaultBackendSetName;
+    private final String defaultBackendSetName;
+
+    public String getDefaultBackendSetName() {
+        return defaultBackendSetName;
+    }
 
     /**
      * The communication port for the listener.
@@ -183,7 +224,11 @@ public class CreateListenerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The protocol on which the listener accepts connection requests.
@@ -194,13 +239,21 @@ public class CreateListenerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    String protocol;
+    private final String protocol;
+
+    public String getProtocol() {
+        return protocol;
+    }
 
     /**
      * An array of hostname resource names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
-    java.util.List<String> hostnameNames;
+    private final java.util.List<String> hostnameNames;
+
+    public java.util.List<String> getHostnameNames() {
+        return hostnameNames;
+    }
 
     /**
      * Deprecated. Please use {@code routingPolicies} instead.
@@ -212,13 +265,25 @@ public class CreateListenerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
-    String pathRouteSetName;
+    private final String pathRouteSetName;
+
+    public String getPathRouteSetName() {
+        return pathRouteSetName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
-    SSLConfigurationDetails sslConfiguration;
+    private final SSLConfigurationDetails sslConfiguration;
+
+    public SSLConfigurationDetails getSslConfiguration() {
+        return sslConfiguration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectionConfiguration")
-    ConnectionConfiguration connectionConfiguration;
+    private final ConnectionConfiguration connectionConfiguration;
+
+    public ConnectionConfiguration getConnectionConfiguration() {
+        return connectionConfiguration;
+    }
 
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.
@@ -228,7 +293,11 @@ public class CreateListenerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The name of the routing policy applied to this listener's traffic.
@@ -237,7 +306,11 @@ public class CreateListenerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")
-    String routingPolicyName;
+    private final String routingPolicyName;
+
+    public String getRoutingPolicyName() {
+        return routingPolicyName;
+    }
 
     /**
      * The names of the {@link RuleSet} to apply to the listener.
@@ -246,8 +319,96 @@ public class CreateListenerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")
-    java.util.List<String> ruleSetNames;
+    private final java.util.List<String> ruleSetNames;
+
+    public java.util.List<String> getRuleSetNames() {
+        return ruleSetNames;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateListenerDetails(");
+        sb.append("defaultBackendSetName=").append(String.valueOf(this.defaultBackendSetName));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", hostnameNames=").append(String.valueOf(this.hostnameNames));
+        sb.append(", pathRouteSetName=").append(String.valueOf(this.pathRouteSetName));
+        sb.append(", sslConfiguration=").append(String.valueOf(this.sslConfiguration));
+        sb.append(", connectionConfiguration=")
+                .append(String.valueOf(this.connectionConfiguration));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", routingPolicyName=").append(String.valueOf(this.routingPolicyName));
+        sb.append(", ruleSetNames=").append(String.valueOf(this.ruleSetNames));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateListenerDetails)) {
+            return false;
+        }
+
+        CreateListenerDetails other = (CreateListenerDetails) o;
+        return java.util.Objects.equals(this.defaultBackendSetName, other.defaultBackendSetName)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.hostnameNames, other.hostnameNames)
+                && java.util.Objects.equals(this.pathRouteSetName, other.pathRouteSetName)
+                && java.util.Objects.equals(this.sslConfiguration, other.sslConfiguration)
+                && java.util.Objects.equals(
+                        this.connectionConfiguration, other.connectionConfiguration)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.routingPolicyName, other.routingPolicyName)
+                && java.util.Objects.equals(this.ruleSetNames, other.ruleSetNames)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.defaultBackendSetName == null
+                                ? 43
+                                : this.defaultBackendSetName.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostnameNames == null ? 43 : this.hostnameNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pathRouteSetName == null ? 43 : this.pathRouteSetName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslConfiguration == null ? 43 : this.sslConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionConfiguration == null
+                                ? 43
+                                : this.connectionConfiguration.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.routingPolicyName == null ? 43 : this.routingPolicyName.hashCode());
+        result = (result * PRIME) + (this.ruleSetNames == null ? 43 : this.ruleSetNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

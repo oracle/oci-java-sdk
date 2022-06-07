@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateTaskFromSQLTask.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateTaskFromSQLTask extends CreateTaskDetails {
+public final class CreateTaskFromSQLTask extends CreateTaskDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -234,6 +229,10 @@ public class CreateTaskFromSQLTask extends CreateTaskDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateTaskFromSQLTask(
             String key,
@@ -272,7 +271,12 @@ public class CreateTaskFromSQLTask extends CreateTaskDetails {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("script")
-    Script script;
+    private final Script script;
+
+    public Script getScript() {
+        return script;
+    }
+
     /**
      * Indicates whether the task is invoking a custom SQL script or stored procedure.
      **/
@@ -312,14 +316,71 @@ public class CreateTaskFromSQLTask extends CreateTaskDetails {
      * Indicates whether the task is invoking a custom SQL script or stored procedure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlScriptType")
-    SqlScriptType sqlScriptType;
+    private final SqlScriptType sqlScriptType;
+
+    public SqlScriptType getSqlScriptType() {
+        return sqlScriptType;
+    }
 
     /**
      * Describes the shape of the execution result
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
-    Object operation;
+    private final Object operation;
+
+    public Object getOperation() {
+        return operation;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateTaskFromSQLTask(");
+        sb.append("super=").append(super.toString());
+        sb.append(", script=").append(String.valueOf(this.script));
+        sb.append(", sqlScriptType=").append(String.valueOf(this.sqlScriptType));
+        sb.append(", operation=").append(String.valueOf(this.operation));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTaskFromSQLTask)) {
+            return false;
+        }
+
+        CreateTaskFromSQLTask other = (CreateTaskFromSQLTask) o;
+        return java.util.Objects.equals(this.script, other.script)
+                && java.util.Objects.equals(this.sqlScriptType, other.sqlScriptType)
+                && java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.script == null ? 43 : this.script.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sqlScriptType == null ? 43 : this.sqlScriptType.hashCode());
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

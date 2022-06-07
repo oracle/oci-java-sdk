@@ -26,14 +26,44 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TagDefault.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TagDefault {
+public final class TagDefault {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "tagNamespaceId",
+        "tagDefinitionId",
+        "tagDefinitionName",
+        "value",
+        "timeCreated",
+        "lifecycleState",
+        "isRequired"
+    })
+    public TagDefault(
+            String id,
+            String compartmentId,
+            String tagNamespaceId,
+            String tagDefinitionId,
+            String tagDefinitionName,
+            String value,
+            java.util.Date timeCreated,
+            LifecycleState lifecycleState,
+            Boolean isRequired) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.tagNamespaceId = tagNamespaceId;
+        this.tagDefinitionId = tagDefinitionId;
+        this.tagDefinitionName = tagDefinitionName;
+        this.value = value;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+        this.isRequired = isRequired;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -160,11 +190,19 @@ public class TagDefault {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the tag default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment. The tag default applies to all new resources that get created in the
@@ -172,35 +210,55 @@ public class TagDefault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the tag namespace that contains the tag definition.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagNamespaceId")
-    String tagNamespaceId;
+    private final String tagNamespaceId;
+
+    public String getTagNamespaceId() {
+        return tagNamespaceId;
+    }
 
     /**
      * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionId")
-    String tagDefinitionId;
+    private final String tagDefinitionId;
+
+    public String getTagDefinitionId() {
+        return tagDefinitionId;
+    }
 
     /**
      * The name used in the tag definition. This field is informational in the context of the tag default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
-    String tagDefinitionName;
+    private final String tagDefinitionName;
+
+    public String getTagDefinitionName() {
+        return tagDefinitionName;
+    }
 
     /**
      * The default value for the tag definition. This will be applied to all resources created in the compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
 
     /**
      * Date and time the {@code TagDefault} object was created, in the format defined by RFC3339.
@@ -209,12 +267,16 @@ public class TagDefault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code lifecycleState} is ACTIVE before using it.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
 
@@ -223,6 +285,9 @@ public class TagDefault {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -261,7 +326,11 @@ public class TagDefault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * If you specify that a value is required, a value is set during resource creation (either by the
@@ -275,8 +344,85 @@ public class TagDefault {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
-    Boolean isRequired;
+    private final Boolean isRequired;
+
+    public Boolean getIsRequired() {
+        return isRequired;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TagDefault(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
+        sb.append(", tagDefinitionId=").append(String.valueOf(this.tagDefinitionId));
+        sb.append(", tagDefinitionName=").append(String.valueOf(this.tagDefinitionName));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", isRequired=").append(String.valueOf(this.isRequired));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TagDefault)) {
+            return false;
+        }
+
+        TagDefault other = (TagDefault) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.tagNamespaceId, other.tagNamespaceId)
+                && java.util.Objects.equals(this.tagDefinitionId, other.tagDefinitionId)
+                && java.util.Objects.equals(this.tagDefinitionName, other.tagDefinitionName)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isRequired, other.isRequired)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tagNamespaceId == null ? 43 : this.tagNamespaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tagDefinitionId == null ? 43 : this.tagDefinitionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tagDefinitionName == null ? 43 : this.tagDefinitionName.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.isRequired == null ? 43 : this.isRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

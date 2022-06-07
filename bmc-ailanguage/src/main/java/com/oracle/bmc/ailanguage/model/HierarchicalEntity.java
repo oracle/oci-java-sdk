@@ -15,16 +15,30 @@ package com.oracle.bmc.ailanguage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HierarchicalEntity.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HierarchicalEntity {
+public final class HierarchicalEntity {
+    @Deprecated
+    @java.beans.ConstructorProperties({"offset", "length", "text", "type", "subType", "score"})
+    public HierarchicalEntity(
+            Integer offset,
+            Integer length,
+            String text,
+            String type,
+            String subType,
+            Double score) {
+        super();
+        this.offset = offset;
+        this.length = length;
+        this.text = text;
+        this.type = type;
+        this.subType = subType;
+        this.score = score;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
@@ -112,42 +126,124 @@ public class HierarchicalEntity {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of Unicode code points preceding this entity in the submitted text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
-    Integer offset;
+    private final Integer offset;
+
+    public Integer getOffset() {
+        return offset;
+    }
 
     /**
      * Length of entity text
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
-    Integer length;
+    private final Integer length;
+
+    public Integer getLength() {
+        return length;
+    }
 
     /**
      * Entity text like name of person, location, and so on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
-    String text;
+    private final String text;
+
+    public String getText() {
+        return text;
+    }
 
     /**
      * Type of entity text like PER, LOC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * Sub-type of entity text like GPE for LOCATION type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subType")
-    String subType;
+    private final String subType;
+
+    public String getSubType() {
+        return subType;
+    }
 
     /**
      * Score or confidence for detected entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
-    Double score;
+    private final Double score;
+
+    public Double getScore() {
+        return score;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HierarchicalEntity(");
+        sb.append("offset=").append(String.valueOf(this.offset));
+        sb.append(", length=").append(String.valueOf(this.length));
+        sb.append(", text=").append(String.valueOf(this.text));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", subType=").append(String.valueOf(this.subType));
+        sb.append(", score=").append(String.valueOf(this.score));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HierarchicalEntity)) {
+            return false;
+        }
+
+        HierarchicalEntity other = (HierarchicalEntity) o;
+        return java.util.Objects.equals(this.offset, other.offset)
+                && java.util.Objects.equals(this.length, other.length)
+                && java.util.Objects.equals(this.text, other.text)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.subType, other.subType)
+                && java.util.Objects.equals(this.score, other.score)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
+        result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
+        result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.subType == null ? 43 : this.subType.hashCode());
+        result = (result * PRIME) + (this.score == null ? 43 : this.score.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

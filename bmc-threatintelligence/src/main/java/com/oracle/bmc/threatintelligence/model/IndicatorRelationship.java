@@ -15,16 +15,24 @@ package com.oracle.bmc.threatintelligence.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IndicatorRelationship.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IndicatorRelationship {
+public final class IndicatorRelationship {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "relatedEntity", "attribution"})
+    public IndicatorRelationship(
+            String name,
+            EntityReference relatedEntity,
+            java.util.List<DataAttribution> attribution) {
+        super();
+        this.name = name;
+        this.relatedEntity = relatedEntity;
+        this.attribution = attribution;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -82,21 +90,84 @@ public class IndicatorRelationship {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the attribute
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("relatedEntity")
-    EntityReference relatedEntity;
+    private final EntityReference relatedEntity;
+
+    public EntityReference getRelatedEntity() {
+        return relatedEntity;
+    }
 
     /**
      * The array of attribution data that support this SourcedRelationship
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attribution")
-    java.util.List<DataAttribution> attribution;
+    private final java.util.List<DataAttribution> attribution;
+
+    public java.util.List<DataAttribution> getAttribution() {
+        return attribution;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IndicatorRelationship(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", relatedEntity=").append(String.valueOf(this.relatedEntity));
+        sb.append(", attribution=").append(String.valueOf(this.attribution));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IndicatorRelationship)) {
+            return false;
+        }
+
+        IndicatorRelationship other = (IndicatorRelationship) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.relatedEntity, other.relatedEntity)
+                && java.util.Objects.equals(this.attribution, other.attribution)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.relatedEntity == null ? 43 : this.relatedEntity.hashCode());
+        result = (result * PRIME) + (this.attribution == null ? 43 : this.attribution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

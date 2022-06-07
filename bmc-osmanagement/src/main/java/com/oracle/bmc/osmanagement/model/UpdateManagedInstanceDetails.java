@@ -15,16 +15,21 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateManagedInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateManagedInstanceDetails {
+public final class UpdateManagedInstanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"notificationTopicId", "isDataCollectionAuthorized"})
+    public UpdateManagedInstanceDetails(
+            String notificationTopicId, Boolean isDataCollectionAuthorized) {
+        super();
+        this.notificationTopicId = notificationTopicId;
+        this.isDataCollectionAuthorized = isDataCollectionAuthorized;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
         private String notificationTopicId;
@@ -73,18 +78,82 @@ public class UpdateManagedInstanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID of the ONS topic used to send notification to users
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
-    String notificationTopicId;
+    private final String notificationTopicId;
+
+    public String getNotificationTopicId() {
+        return notificationTopicId;
+    }
 
     /**
      * True if user allow data collection for this instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
-    Boolean isDataCollectionAuthorized;
+    private final Boolean isDataCollectionAuthorized;
+
+    public Boolean getIsDataCollectionAuthorized() {
+        return isDataCollectionAuthorized;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateManagedInstanceDetails(");
+        sb.append("notificationTopicId=").append(String.valueOf(this.notificationTopicId));
+        sb.append(", isDataCollectionAuthorized=")
+                .append(String.valueOf(this.isDataCollectionAuthorized));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateManagedInstanceDetails)) {
+            return false;
+        }
+
+        UpdateManagedInstanceDetails other = (UpdateManagedInstanceDetails) o;
+        return java.util.Objects.equals(this.notificationTopicId, other.notificationTopicId)
+                && java.util.Objects.equals(
+                        this.isDataCollectionAuthorized, other.isDataCollectionAuthorized)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.notificationTopicId == null
+                                ? 43
+                                : this.notificationTopicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDataCollectionAuthorized == null
+                                ? 43
+                                : this.isDataCollectionAuthorized.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

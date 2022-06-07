@@ -16,16 +16,22 @@ package com.oracle.bmc.databasetools.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseToolsAllowedNetworkSources.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseToolsAllowedNetworkSources {
+public final class DatabaseToolsAllowedNetworkSources {
+    @Deprecated
+    @java.beans.ConstructorProperties({"publicSourceList", "virtualSourceList"})
+    public DatabaseToolsAllowedNetworkSources(
+            java.util.List<String> publicSourceList,
+            java.util.List<DatabaseToolsVirtualSource> virtualSourceList) {
+        super();
+        this.publicSourceList = publicSourceList;
+        this.virtualSourceList = virtualSourceList;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("publicSourceList")
         private java.util.List<String> publicSourceList;
@@ -74,12 +80,20 @@ public class DatabaseToolsAllowedNetworkSources {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A list of allowed public IPs and CIDR blocks.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicSourceList")
-    java.util.List<String> publicSourceList;
+    private final java.util.List<String> publicSourceList;
+
+    public java.util.List<String> getPublicSourceList() {
+        return publicSourceList;
+    }
 
     /**
      * A list of allowed VCN [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) and IP ranges pairs.
@@ -87,8 +101,58 @@ public class DatabaseToolsAllowedNetworkSources {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualSourceList")
-    java.util.List<DatabaseToolsVirtualSource> virtualSourceList;
+    private final java.util.List<DatabaseToolsVirtualSource> virtualSourceList;
+
+    public java.util.List<DatabaseToolsVirtualSource> getVirtualSourceList() {
+        return virtualSourceList;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseToolsAllowedNetworkSources(");
+        sb.append("publicSourceList=").append(String.valueOf(this.publicSourceList));
+        sb.append(", virtualSourceList=").append(String.valueOf(this.virtualSourceList));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseToolsAllowedNetworkSources)) {
+            return false;
+        }
+
+        DatabaseToolsAllowedNetworkSources other = (DatabaseToolsAllowedNetworkSources) o;
+        return java.util.Objects.equals(this.publicSourceList, other.publicSourceList)
+                && java.util.Objects.equals(this.virtualSourceList, other.virtualSourceList)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.publicSourceList == null ? 43 : this.publicSourceList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualSourceList == null ? 43 : this.virtualSourceList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

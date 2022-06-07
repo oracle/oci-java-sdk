@@ -9,14 +9,6 @@ import com.oracle.bmc.waf.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListNetworkAddressListsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListNetworkAddressListsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListNetworkAddressListsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,26 +17,41 @@ public class ListNetworkAddressListsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
     private java.util.List<NetworkAddressList.LifecycleState> lifecycleState;
 
+    public java.util.List<NetworkAddressList.LifecycleState> getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * A filter to return only resources that match the entire display name given.
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * A token representing the position at which to start retrieving results.
      * This must come from the {@code opc-next-page} header field of a previous response.
@@ -52,11 +59,17 @@ public class ListNetworkAddressListsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'ASC' or 'DESC'.
      */
     private com.oracle.bmc.waf.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.waf.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided.
      * Default order for timeCreated is descending.
@@ -105,10 +118,18 @@ public class ListNetworkAddressListsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -116,6 +137,17 @@ public class ListNetworkAddressListsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         private java.util.List<NetworkAddressList.LifecycleState> lifecycleState = null;
 
@@ -135,6 +167,89 @@ public class ListNetworkAddressListsRequest
          */
         public Builder lifecycleState(NetworkAddressList.LifecycleState singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
+        }
+
+        private String displayName = null;
+
+        /**
+         * A filter to return only resources that match the entire display name given.
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private String id = null;
+
+        /**
+         * A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * A token representing the position at which to start retrieving results.
+         * This must come from the {@code opc-next-page} header field of a previous response.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.waf.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.waf.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for timeCreated is descending.
+         * Default order for displayName is ascending.
+         * If no value is specified timeCreated is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -195,5 +310,108 @@ public class ListNetworkAddressListsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListNetworkAddressListsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListNetworkAddressListsRequest
+         */
+        public ListNetworkAddressListsRequest buildWithoutInvocationCallback() {
+            ListNetworkAddressListsRequest request = new ListNetworkAddressListsRequest();
+            request.compartmentId = compartmentId;
+            request.lifecycleState = lifecycleState;
+            request.displayName = displayName;
+            request.id = id;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListNetworkAddressListsRequest(compartmentId, lifecycleState, displayName, id, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .lifecycleState(lifecycleState)
+                .displayName(displayName)
+                .id(id)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListNetworkAddressListsRequest)) {
+            return false;
+        }
+
+        ListNetworkAddressListsRequest other = (ListNetworkAddressListsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

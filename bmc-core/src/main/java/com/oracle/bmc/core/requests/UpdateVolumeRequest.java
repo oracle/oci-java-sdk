@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateVolumeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateVolumeRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateVolumeDetails> {
 
@@ -25,11 +17,17 @@ public class UpdateVolumeRequest
      */
     private String volumeId;
 
+    public String getVolumeId() {
+        return volumeId;
+    }
     /**
      * Update volume's display name. Avoid entering confidential information.
      */
     private com.oracle.bmc.core.model.UpdateVolumeDetails updateVolumeDetails;
 
+    public com.oracle.bmc.core.model.UpdateVolumeDetails getUpdateVolumeDetails() {
+        return updateVolumeDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -37,6 +35,10 @@ public class UpdateVolumeRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -54,6 +56,43 @@ public class UpdateVolumeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String volumeId = null;
+
+        /**
+         * The OCID of the volume.
+         * @return this builder instance
+         */
+        public Builder volumeId(String volumeId) {
+            this.volumeId = volumeId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateVolumeDetails updateVolumeDetails = null;
+
+        /**
+         * Update volume's display name. Avoid entering confidential information.
+         * @return this builder instance
+         */
+        public Builder updateVolumeDetails(
+                com.oracle.bmc.core.model.UpdateVolumeDetails updateVolumeDetails) {
+            this.updateVolumeDetails = updateVolumeDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -118,5 +157,78 @@ public class UpdateVolumeRequest
             updateVolumeDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateVolumeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateVolumeRequest
+         */
+        public UpdateVolumeRequest buildWithoutInvocationCallback() {
+            UpdateVolumeRequest request = new UpdateVolumeRequest();
+            request.volumeId = volumeId;
+            request.updateVolumeDetails = updateVolumeDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateVolumeRequest(volumeId, updateVolumeDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .volumeId(volumeId)
+                .updateVolumeDetails(updateVolumeDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",volumeId=").append(String.valueOf(this.volumeId));
+        sb.append(",updateVolumeDetails=").append(String.valueOf(this.updateVolumeDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateVolumeRequest)) {
+            return false;
+        }
+
+        UpdateVolumeRequest other = (UpdateVolumeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.volumeId, other.volumeId)
+                && java.util.Objects.equals(this.updateVolumeDetails, other.updateVolumeDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.volumeId == null ? 43 : this.volumeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateVolumeDetails == null
+                                ? 43
+                                : this.updateVolumeDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

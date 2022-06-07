@@ -15,14 +15,38 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserCapabilities.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UserCapabilities {
+public final class UserCapabilities {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "canUseConsolePassword",
+        "canUseApiKeys",
+        "canUseAuthTokens",
+        "canUseSmtpCredentials",
+        "canUseDbCredentials",
+        "canUseCustomerSecretKeys",
+        "canUseOAuth2ClientCredentials"
+    })
+    public UserCapabilities(
+            Boolean canUseConsolePassword,
+            Boolean canUseApiKeys,
+            Boolean canUseAuthTokens,
+            Boolean canUseSmtpCredentials,
+            Boolean canUseDbCredentials,
+            Boolean canUseCustomerSecretKeys,
+            Boolean canUseOAuth2ClientCredentials) {
+        super();
+        this.canUseConsolePassword = canUseConsolePassword;
+        this.canUseApiKeys = canUseApiKeys;
+        this.canUseAuthTokens = canUseAuthTokens;
+        this.canUseSmtpCredentials = canUseSmtpCredentials;
+        this.canUseDbCredentials = canUseDbCredentials;
+        this.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
+        this.canUseOAuth2ClientCredentials = canUseOAuth2ClientCredentials;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("canUseConsolePassword")
         private Boolean canUseConsolePassword;
@@ -127,50 +151,167 @@ public class UserCapabilities {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates if the user can log in to the console.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseConsolePassword")
-    Boolean canUseConsolePassword;
+    private final Boolean canUseConsolePassword;
+
+    public Boolean getCanUseConsolePassword() {
+        return canUseConsolePassword;
+    }
 
     /**
      * Indicates if the user can use API keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseApiKeys")
-    Boolean canUseApiKeys;
+    private final Boolean canUseApiKeys;
+
+    public Boolean getCanUseApiKeys() {
+        return canUseApiKeys;
+    }
 
     /**
      * Indicates if the user can use SWIFT passwords / auth tokens.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseAuthTokens")
-    Boolean canUseAuthTokens;
+    private final Boolean canUseAuthTokens;
+
+    public Boolean getCanUseAuthTokens() {
+        return canUseAuthTokens;
+    }
 
     /**
      * Indicates if the user can use SMTP passwords.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseSmtpCredentials")
-    Boolean canUseSmtpCredentials;
+    private final Boolean canUseSmtpCredentials;
+
+    public Boolean getCanUseSmtpCredentials() {
+        return canUseSmtpCredentials;
+    }
 
     /**
      * Indicates if the user can use DB passwords.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseDbCredentials")
-    Boolean canUseDbCredentials;
+    private final Boolean canUseDbCredentials;
+
+    public Boolean getCanUseDbCredentials() {
+        return canUseDbCredentials;
+    }
 
     /**
      * Indicates if the user can use SigV4 symmetric keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseCustomerSecretKeys")
-    Boolean canUseCustomerSecretKeys;
+    private final Boolean canUseCustomerSecretKeys;
+
+    public Boolean getCanUseCustomerSecretKeys() {
+        return canUseCustomerSecretKeys;
+    }
 
     /**
      * Indicates if the user can use OAuth2 credentials and tokens.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseOAuth2ClientCredentials")
-    Boolean canUseOAuth2ClientCredentials;
+    private final Boolean canUseOAuth2ClientCredentials;
+
+    public Boolean getCanUseOAuth2ClientCredentials() {
+        return canUseOAuth2ClientCredentials;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UserCapabilities(");
+        sb.append("canUseConsolePassword=").append(String.valueOf(this.canUseConsolePassword));
+        sb.append(", canUseApiKeys=").append(String.valueOf(this.canUseApiKeys));
+        sb.append(", canUseAuthTokens=").append(String.valueOf(this.canUseAuthTokens));
+        sb.append(", canUseSmtpCredentials=").append(String.valueOf(this.canUseSmtpCredentials));
+        sb.append(", canUseDbCredentials=").append(String.valueOf(this.canUseDbCredentials));
+        sb.append(", canUseCustomerSecretKeys=")
+                .append(String.valueOf(this.canUseCustomerSecretKeys));
+        sb.append(", canUseOAuth2ClientCredentials=")
+                .append(String.valueOf(this.canUseOAuth2ClientCredentials));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UserCapabilities)) {
+            return false;
+        }
+
+        UserCapabilities other = (UserCapabilities) o;
+        return java.util.Objects.equals(this.canUseConsolePassword, other.canUseConsolePassword)
+                && java.util.Objects.equals(this.canUseApiKeys, other.canUseApiKeys)
+                && java.util.Objects.equals(this.canUseAuthTokens, other.canUseAuthTokens)
+                && java.util.Objects.equals(this.canUseSmtpCredentials, other.canUseSmtpCredentials)
+                && java.util.Objects.equals(this.canUseDbCredentials, other.canUseDbCredentials)
+                && java.util.Objects.equals(
+                        this.canUseCustomerSecretKeys, other.canUseCustomerSecretKeys)
+                && java.util.Objects.equals(
+                        this.canUseOAuth2ClientCredentials, other.canUseOAuth2ClientCredentials)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.canUseConsolePassword == null
+                                ? 43
+                                : this.canUseConsolePassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUseApiKeys == null ? 43 : this.canUseApiKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUseAuthTokens == null ? 43 : this.canUseAuthTokens.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUseSmtpCredentials == null
+                                ? 43
+                                : this.canUseSmtpCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUseDbCredentials == null
+                                ? 43
+                                : this.canUseDbCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUseCustomerSecretKeys == null
+                                ? 43
+                                : this.canUseCustomerSecretKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUseOAuth2ClientCredentials == null
+                                ? 43
+                                : this.canUseOAuth2ClientCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

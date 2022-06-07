@@ -15,16 +15,20 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceTypeMetadata.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceTypeMetadata {
+public final class ResourceTypeMetadata {
+    @Deprecated
+    @java.beans.ConstructorProperties({"resourceType", "properties"})
+    public ResourceTypeMetadata(String resourceType, java.util.List<MetadataProperty> properties) {
+        super();
+        this.resourceType = resourceType;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
@@ -69,18 +73,72 @@ public class ResourceTypeMetadata {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of the resource described by this metadata object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     /**
      * Any properties needed to describe the content and its usage for this resource type, and within the containing package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.List<MetadataProperty> properties;
+    private final java.util.List<MetadataProperty> properties;
+
+    public java.util.List<MetadataProperty> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceTypeMetadata(");
+        sb.append("resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceTypeMetadata)) {
+            return false;
+        }
+
+        ResourceTypeMetadata other = (ResourceTypeMetadata) o;
+        return java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

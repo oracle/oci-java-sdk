@@ -7,25 +7,33 @@ package com.oracle.bmc.resourcemanager.responses;
 import com.oracle.bmc.resourcemanager.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * The returned Stack instance.
      */
     private com.oracle.bmc.resourcemanager.model.Stack stack;
+
+    public com.oracle.bmc.resourcemanager.model.Stack getStack() {
+        return stack;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "stack"})
     private GetStackResponse(
@@ -47,6 +55,27 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private com.oracle.bmc.resourcemanager.model.Stack stack;
+
+        public Builder stack(com.oracle.bmc.resourcemanager.model.Stack stack) {
+            this.stack = stack;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -63,5 +92,47 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
         public GetStackResponse build() {
             return new GetStackResponse(__httpStatusCode__, opcRequestId, etag, stack);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",stack=").append(String.valueOf(stack));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetStackResponse)) {
+            return false;
+        }
+
+        GetStackResponse other = (GetStackResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.stack, other.stack);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.stack == null ? 43 : this.stack.hashCode());
+        return result;
     }
 }

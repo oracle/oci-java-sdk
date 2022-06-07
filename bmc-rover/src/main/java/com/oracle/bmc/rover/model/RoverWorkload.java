@@ -15,14 +15,47 @@ package com.oracle.bmc.rover.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoverWorkload.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RoverWorkload {
+public final class RoverWorkload {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "compartmentId",
+        "id",
+        "size",
+        "objectCount",
+        "prefix",
+        "rangeStart",
+        "rangeEnd",
+        "workloadType",
+        "workRequestId"
+    })
+    public RoverWorkload(
+            String name,
+            String compartmentId,
+            String id,
+            String size,
+            String objectCount,
+            String prefix,
+            String rangeStart,
+            String rangeEnd,
+            String workloadType,
+            String workRequestId) {
+        super();
+        this.name = name;
+        this.compartmentId = compartmentId;
+        this.id = id;
+        this.size = size;
+        this.objectCount = objectCount;
+        this.prefix = prefix;
+        this.rangeStart = rangeStart;
+        this.rangeEnd = rangeEnd;
+        this.workloadType = workloadType;
+        this.workRequestId = workRequestId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -160,66 +193,180 @@ public class RoverWorkload {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the Rover Workload
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The OCID of the compartment containing the workload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The Unique Oracle ID (OCID) that is immutable on creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Size of the workload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
-    String size;
+    private final String size;
+
+    public String getSize() {
+        return size;
+    }
 
     /**
      * Number of objects in a workload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
-    String objectCount;
+    private final String objectCount;
+
+    public String getObjectCount() {
+        return objectCount;
+    }
 
     /**
      * Prefix to filter objects in case it is a bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
-    String prefix;
+    private final String prefix;
+
+    public String getPrefix() {
+        return prefix;
+    }
 
     /**
      * Start of the range in a bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeStart")
-    String rangeStart;
+    private final String rangeStart;
+
+    public String getRangeStart() {
+        return rangeStart;
+    }
 
     /**
      * End of the range in a bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeEnd")
-    String rangeEnd;
+    private final String rangeEnd;
+
+    public String getRangeEnd() {
+        return rangeEnd;
+    }
 
     /**
      * The type of workload
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
-    String workloadType;
+    private final String workloadType;
+
+    public String getWorkloadType() {
+        return workloadType;
+    }
 
     /**
      * The compute work request id to track progress of custom image exports.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
-    String workRequestId;
+    private final String workRequestId;
+
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RoverWorkload(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", size=").append(String.valueOf(this.size));
+        sb.append(", objectCount=").append(String.valueOf(this.objectCount));
+        sb.append(", prefix=").append(String.valueOf(this.prefix));
+        sb.append(", rangeStart=").append(String.valueOf(this.rangeStart));
+        sb.append(", rangeEnd=").append(String.valueOf(this.rangeEnd));
+        sb.append(", workloadType=").append(String.valueOf(this.workloadType));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RoverWorkload)) {
+            return false;
+        }
+
+        RoverWorkload other = (RoverWorkload) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(this.objectCount, other.objectCount)
+                && java.util.Objects.equals(this.prefix, other.prefix)
+                && java.util.Objects.equals(this.rangeStart, other.rangeStart)
+                && java.util.Objects.equals(this.rangeEnd, other.rangeEnd)
+                && java.util.Objects.equals(this.workloadType, other.workloadType)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result = (result * PRIME) + (this.objectCount == null ? 43 : this.objectCount.hashCode());
+        result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
+        result = (result * PRIME) + (this.rangeStart == null ? 43 : this.rangeStart.hashCode());
+        result = (result * PRIME) + (this.rangeEnd == null ? 43 : this.rangeEnd.hashCode());
+        result = (result * PRIME) + (this.workloadType == null ? 43 : this.workloadType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -26,9 +26,12 @@ import com.oracle.bmc.limits.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
-@lombok.RequiredArgsConstructor
 public class QuotasPaginators {
     private final Quotas client;
+
+    public QuotasPaginators(Quotas client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listQuotas operation. This iterable

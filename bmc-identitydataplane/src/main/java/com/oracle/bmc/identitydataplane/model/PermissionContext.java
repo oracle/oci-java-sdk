@@ -15,16 +15,20 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PermissionContext.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PermissionContext {
+public final class PermissionContext {
+    @Deprecated
+    @java.beans.ConstructorProperties({"permission", "variables"})
+    public PermissionContext(Permission permission, java.util.List<ContextVariable> variables) {
+        super();
+        this.permission = permission;
+        this.variables = variables;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("permission")
         private Permission permission;
@@ -69,18 +73,72 @@ public class PermissionContext {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The permission context.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("permission")
-    Permission permission;
+    private final Permission permission;
+
+    public Permission getPermission() {
+        return permission;
+    }
 
     /**
      * The set of variables in this permission context.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
-    java.util.List<ContextVariable> variables;
+    private final java.util.List<ContextVariable> variables;
+
+    public java.util.List<ContextVariable> getVariables() {
+        return variables;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PermissionContext(");
+        sb.append("permission=").append(String.valueOf(this.permission));
+        sb.append(", variables=").append(String.valueOf(this.variables));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PermissionContext)) {
+            return false;
+        }
+
+        PermissionContext other = (PermissionContext) o;
+        return java.util.Objects.equals(this.permission, other.permission)
+                && java.util.Objects.equals(this.variables, other.variables)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.permission == null ? 43 : this.permission.hashCode());
+        result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

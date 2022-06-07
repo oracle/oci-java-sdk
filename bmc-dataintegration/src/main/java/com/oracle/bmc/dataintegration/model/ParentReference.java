@@ -15,14 +15,18 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParentReference.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ParentReference {
+public final class ParentReference {
+    @Deprecated
+    @java.beans.ConstructorProperties({"parent", "rootDocId"})
+    public ParentReference(String parent, String rootDocId) {
+        super();
+        this.parent = parent;
+        this.rootDocId = rootDocId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("parent")
         private String parent;
@@ -67,18 +71,72 @@ public class ParentReference {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Key of the parent object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parent")
-    String parent;
+    private final String parent;
+
+    public String getParent() {
+        return parent;
+    }
 
     /**
      * Key of the root document object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootDocId")
-    String rootDocId;
+    private final String rootDocId;
+
+    public String getRootDocId() {
+        return rootDocId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ParentReference(");
+        sb.append("parent=").append(String.valueOf(this.parent));
+        sb.append(", rootDocId=").append(String.valueOf(this.rootDocId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ParentReference)) {
+            return false;
+        }
+
+        ParentReference other = (ParentReference) o;
+        return java.util.Objects.equals(this.parent, other.parent)
+                && java.util.Objects.equals(this.rootDocId, other.rootDocId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.parent == null ? 43 : this.parent.hashCode());
+        result = (result * PRIME) + (this.rootDocId == null ? 43 : this.rootDocId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

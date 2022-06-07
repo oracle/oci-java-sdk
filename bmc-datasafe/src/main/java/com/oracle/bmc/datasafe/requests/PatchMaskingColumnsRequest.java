@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/PatchMaskingColumnsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PatchMaskingColumnsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class PatchMaskingColumnsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.PatchMaskingColumnsDetails> {
@@ -26,16 +18,26 @@ public class PatchMaskingColumnsRequest
      */
     private String maskingPolicyId;
 
+    public String getMaskingPolicyId() {
+        return maskingPolicyId;
+    }
     /**
      * Details to patch masking columns.
      */
     private com.oracle.bmc.datasafe.model.PatchMaskingColumnsDetails patchMaskingColumnsDetails;
 
+    public com.oracle.bmc.datasafe.model.PatchMaskingColumnsDetails
+            getPatchMaskingColumnsDetails() {
+        return patchMaskingColumnsDetails;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the if-match parameter to the value of the
@@ -45,6 +47,10 @@ public class PatchMaskingColumnsRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +69,58 @@ public class PatchMaskingColumnsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String maskingPolicyId = null;
+
+        /**
+         * The OCID of the masking policy.
+         * @return this builder instance
+         */
+        public Builder maskingPolicyId(String maskingPolicyId) {
+            this.maskingPolicyId = maskingPolicyId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.PatchMaskingColumnsDetails
+                patchMaskingColumnsDetails = null;
+
+        /**
+         * Details to patch masking columns.
+         * @return this builder instance
+         */
+        public Builder patchMaskingColumnsDetails(
+                com.oracle.bmc.datasafe.model.PatchMaskingColumnsDetails
+                        patchMaskingColumnsDetails) {
+            this.patchMaskingColumnsDetails = patchMaskingColumnsDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +186,87 @@ public class PatchMaskingColumnsRequest
             patchMaskingColumnsDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of PatchMaskingColumnsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of PatchMaskingColumnsRequest
+         */
+        public PatchMaskingColumnsRequest buildWithoutInvocationCallback() {
+            PatchMaskingColumnsRequest request = new PatchMaskingColumnsRequest();
+            request.maskingPolicyId = maskingPolicyId;
+            request.patchMaskingColumnsDetails = patchMaskingColumnsDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new PatchMaskingColumnsRequest(maskingPolicyId, patchMaskingColumnsDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .maskingPolicyId(maskingPolicyId)
+                .patchMaskingColumnsDetails(patchMaskingColumnsDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
+        sb.append(",patchMaskingColumnsDetails=")
+                .append(String.valueOf(this.patchMaskingColumnsDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PatchMaskingColumnsRequest)) {
+            return false;
+        }
+
+        PatchMaskingColumnsRequest other = (PatchMaskingColumnsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.maskingPolicyId, other.maskingPolicyId)
+                && java.util.Objects.equals(
+                        this.patchMaskingColumnsDetails, other.patchMaskingColumnsDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.maskingPolicyId == null ? 43 : this.maskingPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchMaskingColumnsDetails == null
+                                ? 43
+                                : this.patchMaskingColumnsDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

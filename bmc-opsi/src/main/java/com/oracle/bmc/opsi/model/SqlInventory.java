@@ -15,14 +15,19 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlInventory.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlInventory {
+public final class SqlInventory {
+    @Deprecated
+    @java.beans.ConstructorProperties({"totalSqls", "totalDatabases", "sqlsAnalyzed"})
+    public SqlInventory(Long totalSqls, Integer totalDatabases, Long sqlsAnalyzed) {
+        super();
+        this.totalSqls = totalSqls;
+        this.totalDatabases = totalDatabases;
+        this.sqlsAnalyzed = sqlsAnalyzed;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("totalSqls")
         private Long totalSqls;
@@ -79,24 +84,87 @@ public class SqlInventory {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Total number of sqls. Example {@code 2000}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSqls")
-    Long totalSqls;
+    private final Long totalSqls;
+
+    public Long getTotalSqls() {
+        return totalSqls;
+    }
 
     /**
      * Total number of Databases. Example {@code 400}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalDatabases")
-    Integer totalDatabases;
+    private final Integer totalDatabases;
+
+    public Integer getTotalDatabases() {
+        return totalDatabases;
+    }
 
     /**
      * Total number of sqls analyzed by the query. Example {@code 120}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlsAnalyzed")
-    Long sqlsAnalyzed;
+    private final Long sqlsAnalyzed;
+
+    public Long getSqlsAnalyzed() {
+        return sqlsAnalyzed;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlInventory(");
+        sb.append("totalSqls=").append(String.valueOf(this.totalSqls));
+        sb.append(", totalDatabases=").append(String.valueOf(this.totalDatabases));
+        sb.append(", sqlsAnalyzed=").append(String.valueOf(this.sqlsAnalyzed));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlInventory)) {
+            return false;
+        }
+
+        SqlInventory other = (SqlInventory) o;
+        return java.util.Objects.equals(this.totalSqls, other.totalSqls)
+                && java.util.Objects.equals(this.totalDatabases, other.totalDatabases)
+                && java.util.Objects.equals(this.sqlsAnalyzed, other.sqlsAnalyzed)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.totalSqls == null ? 43 : this.totalSqls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalDatabases == null ? 43 : this.totalDatabases.hashCode());
+        result = (result * PRIME) + (this.sqlsAnalyzed == null ? 43 : this.sqlsAnalyzed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

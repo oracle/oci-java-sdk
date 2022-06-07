@@ -15,16 +15,43 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateUserDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateUserDetails {
+public final class CreateUserDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "firstName",
+        "lastName",
+        "country",
+        "csi",
+        "phone",
+        "timezone",
+        "organizationName"
+    })
+    public CreateUserDetails(
+            String compartmentId,
+            String firstName,
+            String lastName,
+            String country,
+            String csi,
+            String phone,
+            String timezone,
+            String organizationName) {
+        super();
+        this.compartmentId = compartmentId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.country = country;
+        this.csi = csi;
+        this.phone = phone;
+        this.timezone = timezone;
+        this.organizationName = organizationName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -140,54 +167,154 @@ public class CreateUserDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * First name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
-    String firstName;
+    private final String firstName;
+
+    public String getFirstName() {
+        return firstName;
+    }
 
     /**
      * Last name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
-    String lastName;
+    private final String lastName;
+
+    public String getLastName() {
+        return lastName;
+    }
 
     /**
      * Country of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
-    String country;
+    private final String country;
+
+    public String getCountry() {
+        return country;
+    }
 
     /**
      * CSI to be associated to the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
-    String csi;
+    private final String csi;
+
+    public String getCsi() {
+        return csi;
+    }
 
     /**
      * Contact number of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("phone")
-    String phone;
+    private final String phone;
+
+    public String getPhone() {
+        return phone;
+    }
 
     /**
      * Timezone of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
-    String timezone;
+    private final String timezone;
+
+    public String getTimezone() {
+        return timezone;
+    }
 
     /**
      * Organization of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("organizationName")
-    String organizationName;
+    private final String organizationName;
+
+    public String getOrganizationName() {
+        return organizationName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateUserDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", firstName=").append(String.valueOf(this.firstName));
+        sb.append(", lastName=").append(String.valueOf(this.lastName));
+        sb.append(", country=").append(String.valueOf(this.country));
+        sb.append(", csi=").append(String.valueOf(this.csi));
+        sb.append(", phone=").append(String.valueOf(this.phone));
+        sb.append(", timezone=").append(String.valueOf(this.timezone));
+        sb.append(", organizationName=").append(String.valueOf(this.organizationName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateUserDetails)) {
+            return false;
+        }
+
+        CreateUserDetails other = (CreateUserDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.firstName, other.firstName)
+                && java.util.Objects.equals(this.lastName, other.lastName)
+                && java.util.Objects.equals(this.country, other.country)
+                && java.util.Objects.equals(this.csi, other.csi)
+                && java.util.Objects.equals(this.phone, other.phone)
+                && java.util.Objects.equals(this.timezone, other.timezone)
+                && java.util.Objects.equals(this.organizationName, other.organizationName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.firstName == null ? 43 : this.firstName.hashCode());
+        result = (result * PRIME) + (this.lastName == null ? 43 : this.lastName.hashCode());
+        result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
+        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
+        result = (result * PRIME) + (this.phone == null ? 43 : this.phone.hashCode());
+        result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.organizationName == null ? 43 : this.organizationName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

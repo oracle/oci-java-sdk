@@ -9,14 +9,6 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAccessRequestsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,21 +16,34 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * A filter to return only resources that match the given ResourceName.
      */
     private String resourceName;
 
+    public String getResourceName() {
+        return resourceName;
+    }
     /**
      * A filter to return only lists of resources that match the entire given service type.
      */
     private String resourceType;
 
+    public String getResourceType() {
+        return resourceType;
+    }
     /**
      * A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
      */
     private com.oracle.bmc.operatoraccesscontrol.model.AccessRequestLifecycleStates lifecycleState;
 
+    public com.oracle.bmc.operatoraccesscontrol.model.AccessRequestLifecycleStates
+            getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * Query start time in UTC in ISO 8601 format(inclusive).
      * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
@@ -47,6 +52,9 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private java.util.Date timeStart;
 
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
     /**
      * Query start time in UTC in ISO 8601 format(inclusive).
      * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
@@ -55,21 +63,33 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private java.util.Date timeEnd;
 
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
     private com.oracle.bmc.operatoraccesscontrol.model.SortOrders sortOrder;
 
+    public com.oracle.bmc.operatoraccesscontrol.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
      *
@@ -112,10 +132,18 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -123,6 +151,137 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String resourceName = null;
+
+        /**
+         * A filter to return only resources that match the given ResourceName.
+         * @return this builder instance
+         */
+        public Builder resourceName(String resourceName) {
+            this.resourceName = resourceName;
+            return this;
+        }
+
+        private String resourceType = null;
+
+        /**
+         * A filter to return only lists of resources that match the entire given service type.
+         * @return this builder instance
+         */
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
+            return this;
+        }
+
+        private com.oracle.bmc.operatoraccesscontrol.model.AccessRequestLifecycleStates
+                lifecycleState = null;
+
+        /**
+         * A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.operatoraccesscontrol.model.AccessRequestLifecycleStates
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private java.util.Date timeStart = null;
+
+        /**
+         * Query start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         *
+         * @return this builder instance
+         */
+        public Builder timeStart(java.util.Date timeStart) {
+            this.timeStart = timeStart;
+            return this;
+        }
+
+        private java.util.Date timeEnd = null;
+
+        /**
+         * Query start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         *
+         * @return this builder instance
+         */
+        public Builder timeEnd(java.util.Date timeEnd) {
+            this.timeEnd = timeEnd;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.operatoraccesscontrol.model.SortOrders sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.operatoraccesscontrol.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -184,5 +343,118 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListAccessRequestsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListAccessRequestsRequest
+         */
+        public ListAccessRequestsRequest buildWithoutInvocationCallback() {
+            ListAccessRequestsRequest request = new ListAccessRequestsRequest();
+            request.compartmentId = compartmentId;
+            request.resourceName = resourceName;
+            request.resourceType = resourceType;
+            request.lifecycleState = lifecycleState;
+            request.timeStart = timeStart;
+            request.timeEnd = timeEnd;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListAccessRequestsRequest(compartmentId, resourceName, resourceType, lifecycleState, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .resourceName(resourceName)
+                .resourceType(resourceType)
+                .lifecycleState(lifecycleState)
+                .timeStart(timeStart)
+                .timeEnd(timeEnd)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(",resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAccessRequestsRequest)) {
+            return false;
+        }
+
+        ListAccessRequestsRequest other = (ListAccessRequestsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

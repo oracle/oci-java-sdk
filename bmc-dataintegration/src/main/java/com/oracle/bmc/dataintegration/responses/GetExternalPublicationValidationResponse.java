@@ -7,16 +7,16 @@ package com.oracle.bmc.dataintegration.responses;
 import com.oracle.bmc.dataintegration.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetExternalPublicationValidationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -25,11 +25,20 @@ public class GetExternalPublicationValidationResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned ExternalPublicationValidation instance.
      */
     private com.oracle.bmc.dataintegration.model.ExternalPublicationValidation
             externalPublicationValidation;
+
+    public com.oracle.bmc.dataintegration.model.ExternalPublicationValidation
+            getExternalPublicationValidation() {
+        return externalPublicationValidation;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -57,6 +66,30 @@ public class GetExternalPublicationValidationResponse extends com.oracle.bmc.res
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.dataintegration.model.ExternalPublicationValidation
+                externalPublicationValidation;
+
+        public Builder externalPublicationValidation(
+                com.oracle.bmc.dataintegration.model.ExternalPublicationValidation
+                        externalPublicationValidation) {
+            this.externalPublicationValidation = externalPublicationValidation;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -74,5 +107,54 @@ public class GetExternalPublicationValidationResponse extends com.oracle.bmc.res
             return new GetExternalPublicationValidationResponse(
                     __httpStatusCode__, etag, opcRequestId, externalPublicationValidation);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",externalPublicationValidation=")
+                .append(String.valueOf(externalPublicationValidation));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetExternalPublicationValidationResponse)) {
+            return false;
+        }
+
+        GetExternalPublicationValidationResponse other =
+                (GetExternalPublicationValidationResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.externalPublicationValidation, other.externalPublicationValidation);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalPublicationValidation == null
+                                ? 43
+                                : this.externalPublicationValidation.hashCode());
+        return result;
     }
 }

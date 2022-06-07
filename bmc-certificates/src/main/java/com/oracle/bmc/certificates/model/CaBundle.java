@@ -16,14 +16,19 @@ package com.oracle.bmc.certificates.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CaBundle.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CaBundle {
+public final class CaBundle {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "name", "caBundlePem"})
+    public CaBundle(String id, String name, String caBundlePem) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.caBundlePem = caBundlePem;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -77,25 +82,86 @@ public class CaBundle {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the CA bundle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A user-friendly name for the CA bundle. Names are unique within a compartment. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Certificates (in PEM format) in the CA bundle. Can be of arbitrary length.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("caBundlePem")
-    String caBundlePem;
+    private final String caBundlePem;
+
+    public String getCaBundlePem() {
+        return caBundlePem;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CaBundle(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", caBundlePem=").append(String.valueOf(this.caBundlePem));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CaBundle)) {
+            return false;
+        }
+
+        CaBundle other = (CaBundle) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.caBundlePem, other.caBundlePem)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.caBundlePem == null ? 43 : this.caBundlePem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

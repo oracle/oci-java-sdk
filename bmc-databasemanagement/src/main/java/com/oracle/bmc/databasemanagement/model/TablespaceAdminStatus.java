@@ -15,16 +15,21 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TablespaceAdminStatus.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TablespaceAdminStatus {
+public final class TablespaceAdminStatus {
+    @Deprecated
+    @java.beans.ConstructorProperties({"status", "errorCode", "errorMessage"})
+    public TablespaceAdminStatus(Status status, Integer errorCode, String errorMessage) {
+        super();
+        this.status = status;
+        this.errorCode = errorCode;
+        this.errorMessage = errorMessage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
@@ -82,11 +87,14 @@ public class TablespaceAdminStatus {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The status of a tablespace admin action.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
@@ -96,6 +104,8 @@ public class TablespaceAdminStatus {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -134,22 +144,79 @@ public class TablespaceAdminStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The error code that denotes failure if the tablespace admin action is not successful. The error code is "null" if the admin action is successful.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
-    Integer errorCode;
+    private final Integer errorCode;
+
+    public Integer getErrorCode() {
+        return errorCode;
+    }
 
     /**
      * The error message that indicates the reason for failure if the tablespace admin action is not successful. The error message is "null" if the admin action is successful.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TablespaceAdminStatus(");
+        sb.append("status=").append(String.valueOf(this.status));
+        sb.append(", errorCode=").append(String.valueOf(this.errorCode));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TablespaceAdminStatus)) {
+            return false;
+        }
+
+        TablespaceAdminStatus other = (TablespaceAdminStatus) o;
+        return java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.errorCode, other.errorCode)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.errorCode == null ? 43 : this.errorCode.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

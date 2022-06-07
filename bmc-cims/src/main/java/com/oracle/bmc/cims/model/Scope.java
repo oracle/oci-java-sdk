@@ -8,7 +8,6 @@ package com.oracle.bmc.cims.model;
  * The scope of the service category or resource.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.extern.slf4j.Slf4j
 public enum Scope {
     Ad("AD"),
     Region("REGION"),
@@ -20,6 +19,8 @@ public enum Scope {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Scope.class);
 
     private final String value;
     private static java.util.Map<String, Scope> map;

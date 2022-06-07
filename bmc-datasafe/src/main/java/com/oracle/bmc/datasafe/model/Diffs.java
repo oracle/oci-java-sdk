@@ -16,14 +16,35 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Diffs.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Diffs {
+public final class Diffs {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "current",
+        "baseline",
+        "removedItems",
+        "addedItems",
+        "modifiedItems",
+        "severity"
+    })
+    public Diffs(
+            Finding current,
+            Finding baseline,
+            java.util.List<String> removedItems,
+            java.util.List<String> addedItems,
+            java.util.List<String> modifiedItems,
+            Severity severity) {
+        super();
+        this.current = current;
+        this.baseline = baseline;
+        this.removedItems = removedItems;
+        this.addedItems = addedItems;
+        this.modifiedItems = modifiedItems;
+        this.severity = severity;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("current")
         private Finding current;
@@ -111,34 +132,58 @@ public class Diffs {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("current")
-    Finding current;
+    private final Finding current;
+
+    public Finding getCurrent() {
+        return current;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("baseline")
-    Finding baseline;
+    private final Finding baseline;
+
+    public Finding getBaseline() {
+        return baseline;
+    }
 
     /**
      * This array identifies the items that are present in the baseline, but are missing from the current assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("removedItems")
-    java.util.List<String> removedItems;
+    private final java.util.List<String> removedItems;
+
+    public java.util.List<String> getRemovedItems() {
+        return removedItems;
+    }
 
     /**
      * This array identifies the items that are present in the current assessment, but are missing from the baseline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addedItems")
-    java.util.List<String> addedItems;
+    private final java.util.List<String> addedItems;
+
+    public java.util.List<String> getAddedItems() {
+        return addedItems;
+    }
 
     /**
      * This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modifiedItems")
-    java.util.List<String> modifiedItems;
+    private final java.util.List<String> modifiedItems;
+
+    public java.util.List<String> getModifiedItems() {
+        return modifiedItems;
+    }
+
     /**
      * The severity of this diff.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Severity {
         High("HIGH"),
         Medium("MEDIUM"),
@@ -152,6 +197,9 @@ public class Diffs {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Severity.class);
 
         private final String value;
         private static java.util.Map<String, Severity> map;
@@ -189,8 +237,68 @@ public class Diffs {
      * The severity of this diff.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Severity severity;
+    private final Severity severity;
+
+    public Severity getSeverity() {
+        return severity;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Diffs(");
+        sb.append("current=").append(String.valueOf(this.current));
+        sb.append(", baseline=").append(String.valueOf(this.baseline));
+        sb.append(", removedItems=").append(String.valueOf(this.removedItems));
+        sb.append(", addedItems=").append(String.valueOf(this.addedItems));
+        sb.append(", modifiedItems=").append(String.valueOf(this.modifiedItems));
+        sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Diffs)) {
+            return false;
+        }
+
+        Diffs other = (Diffs) o;
+        return java.util.Objects.equals(this.current, other.current)
+                && java.util.Objects.equals(this.baseline, other.baseline)
+                && java.util.Objects.equals(this.removedItems, other.removedItems)
+                && java.util.Objects.equals(this.addedItems, other.addedItems)
+                && java.util.Objects.equals(this.modifiedItems, other.modifiedItems)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.current == null ? 43 : this.current.hashCode());
+        result = (result * PRIME) + (this.baseline == null ? 43 : this.baseline.hashCode());
+        result = (result * PRIME) + (this.removedItems == null ? 43 : this.removedItems.hashCode());
+        result = (result * PRIME) + (this.addedItems == null ? 43 : this.addedItems.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modifiedItems == null ? 43 : this.modifiedItems.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

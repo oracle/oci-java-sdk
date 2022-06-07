@@ -16,16 +16,21 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AdvisorReportBucketDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AdvisorReportBucketDetails {
+public final class AdvisorReportBucketDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"bucketName", "namespace", "objectName"})
+    public AdvisorReportBucketDetails(String bucketName, String namespace, String objectName) {
+        super();
+        this.bucketName = bucketName;
+        this.namespace = namespace;
+        this.objectName = objectName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
@@ -83,27 +88,88 @@ public class AdvisorReportBucketDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the bucket containing the Pre-Migration Advisor report.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    private final String bucketName;
+
+    public String getBucketName() {
+        return bucketName;
+    }
 
     /**
      * Object Storage namespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * Pre-Migration Advisor report object name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AdvisorReportBucketDetails(");
+        sb.append("bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AdvisorReportBucketDetails)) {
+            return false;
+        }
+
+        AdvisorReportBucketDetails other = (AdvisorReportBucketDetails) o;
+        return java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

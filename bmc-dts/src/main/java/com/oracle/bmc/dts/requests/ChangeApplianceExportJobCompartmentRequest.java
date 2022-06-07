@@ -9,14 +9,6 @@ import com.oracle.bmc.dts.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ChangeApplianceExportJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeApplianceExportJobCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeApplianceExportJobCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails> {
@@ -26,12 +18,19 @@ public class ChangeApplianceExportJobCompartmentRequest
      */
     private String applianceExportJobId;
 
+    public String getApplianceExportJobId() {
+        return applianceExportJobId;
+    }
     /**
      * CompartmentId of the destination compartment
      */
     private com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails
             changeApplianceExportJobCompartmentDetails;
 
+    public com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails
+            getChangeApplianceExportJobCompartmentDetails() {
+        return changeApplianceExportJobCompartmentDetails;
+    }
     /**
      * The entity tag to match. Optional, if set, the update will be successful only if the
      * object's tag matches the tag specified in the request.
@@ -39,6 +38,9 @@ public class ChangeApplianceExportJobCompartmentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -46,6 +48,9 @@ public class ChangeApplianceExportJobCompartmentRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -55,6 +60,10 @@ public class ChangeApplianceExportJobCompartmentRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -73,6 +82,74 @@ public class ChangeApplianceExportJobCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String applianceExportJobId = null;
+
+        /**
+         * ID of the Appliance Export Job
+         * @return this builder instance
+         */
+        public Builder applianceExportJobId(String applianceExportJobId) {
+            this.applianceExportJobId = applianceExportJobId;
+            return this;
+        }
+
+        private com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails
+                changeApplianceExportJobCompartmentDetails = null;
+
+        /**
+         * CompartmentId of the destination compartment
+         * @return this builder instance
+         */
+        public Builder changeApplianceExportJobCompartmentDetails(
+                com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails
+                        changeApplianceExportJobCompartmentDetails) {
+            this.changeApplianceExportJobCompartmentDetails =
+                    changeApplianceExportJobCompartmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * The entity tag to match. Optional, if set, the update will be successful only if the
+         * object's tag matches the tag specified in the request.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -141,5 +218,101 @@ public class ChangeApplianceExportJobCompartmentRequest
             changeApplianceExportJobCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeApplianceExportJobCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeApplianceExportJobCompartmentRequest
+         */
+        public ChangeApplianceExportJobCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeApplianceExportJobCompartmentRequest request =
+                    new ChangeApplianceExportJobCompartmentRequest();
+            request.applianceExportJobId = applianceExportJobId;
+            request.changeApplianceExportJobCompartmentDetails =
+                    changeApplianceExportJobCompartmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new ChangeApplianceExportJobCompartmentRequest(applianceExportJobId, changeApplianceExportJobCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .applianceExportJobId(applianceExportJobId)
+                .changeApplianceExportJobCompartmentDetails(
+                        changeApplianceExportJobCompartmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",applianceExportJobId=").append(String.valueOf(this.applianceExportJobId));
+        sb.append(",changeApplianceExportJobCompartmentDetails=")
+                .append(String.valueOf(this.changeApplianceExportJobCompartmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeApplianceExportJobCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeApplianceExportJobCompartmentRequest other =
+                (ChangeApplianceExportJobCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.applianceExportJobId, other.applianceExportJobId)
+                && java.util.Objects.equals(
+                        this.changeApplianceExportJobCompartmentDetails,
+                        other.changeApplianceExportJobCompartmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.applianceExportJobId == null
+                                ? 43
+                                : this.applianceExportJobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeApplianceExportJobCompartmentDetails == null
+                                ? 43
+                                : this.changeApplianceExportJobCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

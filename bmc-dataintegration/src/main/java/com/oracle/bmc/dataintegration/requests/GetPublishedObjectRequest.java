@@ -9,14 +9,6 @@ import com.oracle.bmc.dataintegration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPublishedObjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPublishedObjectRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,16 +16,25 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String workspaceId;
 
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
     /**
      * The application key.
      */
     private String applicationKey;
 
+    public String getApplicationKey() {
+        return applicationKey;
+    }
     /**
      * The published object key.
      */
     private String publishedObjectKey;
 
+    public String getPublishedObjectKey() {
+        return publishedObjectKey;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -42,10 +43,17 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
      */
     private String expandReferences;
+
+    public String getExpandReferences() {
+        return expandReferences;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -53,6 +61,64 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String workspaceId = null;
+
+        /**
+         * The workspace ID.
+         * @return this builder instance
+         */
+        public Builder workspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+
+        private String applicationKey = null;
+
+        /**
+         * The application key.
+         * @return this builder instance
+         */
+        public Builder applicationKey(String applicationKey) {
+            this.applicationKey = applicationKey;
+            return this;
+        }
+
+        private String publishedObjectKey = null;
+
+        /**
+         * The published object key.
+         * @return this builder instance
+         */
+        public Builder publishedObjectKey(String publishedObjectKey) {
+            this.publishedObjectKey = publishedObjectKey;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String expandReferences = null;
+
+        /**
+         * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+         * @return this builder instance
+         */
+        public Builder expandReferences(String expandReferences) {
+            this.expandReferences = expandReferences;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -108,5 +174,92 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetPublishedObjectRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetPublishedObjectRequest
+         */
+        public GetPublishedObjectRequest buildWithoutInvocationCallback() {
+            GetPublishedObjectRequest request = new GetPublishedObjectRequest();
+            request.workspaceId = workspaceId;
+            request.applicationKey = applicationKey;
+            request.publishedObjectKey = publishedObjectKey;
+            request.opcRequestId = opcRequestId;
+            request.expandReferences = expandReferences;
+            return request;
+            // new GetPublishedObjectRequest(workspaceId, applicationKey, publishedObjectKey, opcRequestId, expandReferences);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .workspaceId(workspaceId)
+                .applicationKey(applicationKey)
+                .publishedObjectKey(publishedObjectKey)
+                .opcRequestId(opcRequestId)
+                .expandReferences(expandReferences);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",workspaceId=").append(String.valueOf(this.workspaceId));
+        sb.append(",applicationKey=").append(String.valueOf(this.applicationKey));
+        sb.append(",publishedObjectKey=").append(String.valueOf(this.publishedObjectKey));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",expandReferences=").append(String.valueOf(this.expandReferences));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetPublishedObjectRequest)) {
+            return false;
+        }
+
+        GetPublishedObjectRequest other = (GetPublishedObjectRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.workspaceId, other.workspaceId)
+                && java.util.Objects.equals(this.applicationKey, other.applicationKey)
+                && java.util.Objects.equals(this.publishedObjectKey, other.publishedObjectKey)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.expandReferences, other.expandReferences);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.workspaceId == null ? 43 : this.workspaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationKey == null ? 43 : this.applicationKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publishedObjectKey == null
+                                ? 43
+                                : this.publishedObjectKey.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expandReferences == null ? 43 : this.expandReferences.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,34 @@ package com.oracle.bmc.computeinstanceagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateInstanceAgentCommandDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateInstanceAgentCommandDetails {
+public final class CreateInstanceAgentCommandDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "executionTimeOutInSeconds",
+        "displayName",
+        "target",
+        "content"
+    })
+    public CreateInstanceAgentCommandDetails(
+            String compartmentId,
+            Integer executionTimeOutInSeconds,
+            String displayName,
+            InstanceAgentCommandTarget target,
+            InstanceAgentCommandContent content) {
+        super();
+        this.compartmentId = compartmentId;
+        this.executionTimeOutInSeconds = executionTimeOutInSeconds;
+        this.displayName = displayName;
+        this.target = target;
+        this.content = content;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -103,11 +121,19 @@ public class CreateInstanceAgentCommandDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to create the command in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
@@ -115,7 +141,11 @@ public class CreateInstanceAgentCommandDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionTimeOutInSeconds")
-    Integer executionTimeOutInSeconds;
+    private final Integer executionTimeOutInSeconds;
+
+    public Integer getExecutionTimeOutInSeconds() {
+        return executionTimeOutInSeconds;
+    }
 
     /**
      * A user-friendly name for the command. It does not have to be unique.
@@ -125,20 +155,91 @@ public class CreateInstanceAgentCommandDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The target instance to run the command on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    InstanceAgentCommandTarget target;
+    private final InstanceAgentCommandTarget target;
+
+    public InstanceAgentCommandTarget getTarget() {
+        return target;
+    }
 
     /**
      * The contents of the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
-    InstanceAgentCommandContent content;
+    private final InstanceAgentCommandContent content;
+
+    public InstanceAgentCommandContent getContent() {
+        return content;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateInstanceAgentCommandDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", executionTimeOutInSeconds=")
+                .append(String.valueOf(this.executionTimeOutInSeconds));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", content=").append(String.valueOf(this.content));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateInstanceAgentCommandDetails)) {
+            return false;
+        }
+
+        CreateInstanceAgentCommandDetails other = (CreateInstanceAgentCommandDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.executionTimeOutInSeconds, other.executionTimeOutInSeconds)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.content, other.content)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionTimeOutInSeconds == null
+                                ? 43
+                                : this.executionTimeOutInSeconds.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

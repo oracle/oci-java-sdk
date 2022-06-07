@@ -7,16 +7,16 @@ package com.oracle.bmc.core.responses;
 import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateConsoleHistoryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -25,10 +25,18 @@ public class UpdateConsoleHistoryResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned ConsoleHistory instance.
      */
     private com.oracle.bmc.core.model.ConsoleHistory consoleHistory;
+
+    public com.oracle.bmc.core.model.ConsoleHistory getConsoleHistory() {
+        return consoleHistory;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -55,6 +63,27 @@ public class UpdateConsoleHistoryResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.ConsoleHistory consoleHistory;
+
+        public Builder consoleHistory(com.oracle.bmc.core.model.ConsoleHistory consoleHistory) {
+            this.consoleHistory = consoleHistory;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -72,5 +101,49 @@ public class UpdateConsoleHistoryResponse extends com.oracle.bmc.responses.BmcRe
             return new UpdateConsoleHistoryResponse(
                     __httpStatusCode__, etag, opcRequestId, consoleHistory);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",consoleHistory=").append(String.valueOf(consoleHistory));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateConsoleHistoryResponse)) {
+            return false;
+        }
+
+        UpdateConsoleHistoryResponse other = (UpdateConsoleHistoryResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.consoleHistory, other.consoleHistory);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consoleHistory == null ? 43 : this.consoleHistory.hashCode());
+        return result;
     }
 }

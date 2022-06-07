@@ -15,14 +15,56 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SoftwarePackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SoftwarePackage {
+public final class SoftwarePackage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "name",
+        "type",
+        "version",
+        "architecture",
+        "lastModifiedDate",
+        "checksum",
+        "checksumType",
+        "description",
+        "sizeInBytes",
+        "dependencies",
+        "files",
+        "softwareSources"
+    })
+    public SoftwarePackage(
+            String displayName,
+            String name,
+            String type,
+            String version,
+            String architecture,
+            String lastModifiedDate,
+            String checksum,
+            String checksumType,
+            String description,
+            Long sizeInBytes,
+            java.util.List<SoftwarePackageDependency> dependencies,
+            java.util.List<SoftwarePackageFile> files,
+            java.util.List<SoftwareSourceId> softwareSources) {
+        super();
+        this.displayName = displayName;
+        this.name = name;
+        this.type = type;
+        this.version = version;
+        this.architecture = architecture;
+        this.lastModifiedDate = lastModifiedDate;
+        this.checksum = checksum;
+        this.checksumType = checksumType;
+        this.description = description;
+        this.sizeInBytes = sizeInBytes;
+        this.dependencies = dependencies;
+        this.files = files;
+        this.softwareSources = softwareSources;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -193,84 +235,219 @@ public class SoftwarePackage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Package name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Unique identifier for the package. NOTE - This is not an OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Type of the package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * Version of the package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * the architecture for which this software was built
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
-    String architecture;
+    private final String architecture;
+
+    public String getArchitecture() {
+        return architecture;
+    }
 
     /**
      * date of the last update to the package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedDate")
-    String lastModifiedDate;
+    private final String lastModifiedDate;
+
+    public String getLastModifiedDate() {
+        return lastModifiedDate;
+    }
 
     /**
      * checksum of the package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
-    String checksum;
+    private final String checksum;
+
+    public String getChecksum() {
+        return checksum;
+    }
 
     /**
      * type of the checksum
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
-    String checksumType;
+    private final String checksumType;
+
+    public String getChecksumType() {
+        return checksumType;
+    }
 
     /**
      * description of the package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * size of the package in bytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-    Long sizeInBytes;
+    private final Long sizeInBytes;
+
+    public Long getSizeInBytes() {
+        return sizeInBytes;
+    }
 
     /**
      * list of dependencies for the software package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependencies")
-    java.util.List<SoftwarePackageDependency> dependencies;
+    private final java.util.List<SoftwarePackageDependency> dependencies;
+
+    public java.util.List<SoftwarePackageDependency> getDependencies() {
+        return dependencies;
+    }
 
     /**
      * list of files for the software package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("files")
-    java.util.List<SoftwarePackageFile> files;
+    private final java.util.List<SoftwarePackageFile> files;
+
+    public java.util.List<SoftwarePackageFile> getFiles() {
+        return files;
+    }
 
     /**
      * list of software sources that provide the software package
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
-    java.util.List<SoftwareSourceId> softwareSources;
+    private final java.util.List<SoftwareSourceId> softwareSources;
+
+    public java.util.List<SoftwareSourceId> getSoftwareSources() {
+        return softwareSources;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SoftwarePackage(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", architecture=").append(String.valueOf(this.architecture));
+        sb.append(", lastModifiedDate=").append(String.valueOf(this.lastModifiedDate));
+        sb.append(", checksum=").append(String.valueOf(this.checksum));
+        sb.append(", checksumType=").append(String.valueOf(this.checksumType));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", sizeInBytes=").append(String.valueOf(this.sizeInBytes));
+        sb.append(", dependencies=").append(String.valueOf(this.dependencies));
+        sb.append(", files=").append(String.valueOf(this.files));
+        sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SoftwarePackage)) {
+            return false;
+        }
+
+        SoftwarePackage other = (SoftwarePackage) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.architecture, other.architecture)
+                && java.util.Objects.equals(this.lastModifiedDate, other.lastModifiedDate)
+                && java.util.Objects.equals(this.checksum, other.checksum)
+                && java.util.Objects.equals(this.checksumType, other.checksumType)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.sizeInBytes, other.sizeInBytes)
+                && java.util.Objects.equals(this.dependencies, other.dependencies)
+                && java.util.Objects.equals(this.files, other.files)
+                && java.util.Objects.equals(this.softwareSources, other.softwareSources)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastModifiedDate == null ? 43 : this.lastModifiedDate.hashCode());
+        result = (result * PRIME) + (this.checksum == null ? 43 : this.checksum.hashCode());
+        result = (result * PRIME) + (this.checksumType == null ? 43 : this.checksumType.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.sizeInBytes == null ? 43 : this.sizeInBytes.hashCode());
+        result = (result * PRIME) + (this.dependencies == null ? 43 : this.dependencies.hashCode());
+        result = (result * PRIME) + (this.files == null ? 43 : this.files.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

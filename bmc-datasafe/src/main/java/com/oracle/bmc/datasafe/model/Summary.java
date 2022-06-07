@@ -15,14 +15,35 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Summary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Summary {
+public final class Summary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "isHidden",
+        "displayOrder",
+        "groupByFieldName",
+        "countOf",
+        "scimFilter"
+    })
+    public Summary(
+            String name,
+            Boolean isHidden,
+            Integer displayOrder,
+            String groupByFieldName,
+            String countOf,
+            String scimFilter) {
+        super();
+        this.name = name;
+        this.isHidden = isHidden;
+        this.displayOrder = displayOrder;
+        this.groupByFieldName = groupByFieldName;
+        this.countOf = countOf;
+        this.scimFilter = scimFilter;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -111,42 +132,126 @@ public class Summary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the report summary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Indicates if the summary is hidden. Values can either be 'true' or 'false'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
-    Boolean isHidden;
+    private final Boolean isHidden;
+
+    public Boolean getIsHidden() {
+        return isHidden;
+    }
 
     /**
      * Specifies the order in which the summary must be displayed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
-    Integer displayOrder;
+    private final Integer displayOrder;
+
+    public Integer getDisplayOrder() {
+        return displayOrder;
+    }
 
     /**
      * A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFieldName")
-    String groupByFieldName;
+    private final String groupByFieldName;
+
+    public String getGroupByFieldName() {
+        return groupByFieldName;
+    }
 
     /**
      * Name of the key or count of object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countOf")
-    String countOf;
+    private final String countOf;
+
+    public String getCountOf() {
+        return countOf;
+    }
 
     /**
      * Additional scim filters used to get the specific summary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
-    String scimFilter;
+    private final String scimFilter;
+
+    public String getScimFilter() {
+        return scimFilter;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Summary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", isHidden=").append(String.valueOf(this.isHidden));
+        sb.append(", displayOrder=").append(String.valueOf(this.displayOrder));
+        sb.append(", groupByFieldName=").append(String.valueOf(this.groupByFieldName));
+        sb.append(", countOf=").append(String.valueOf(this.countOf));
+        sb.append(", scimFilter=").append(String.valueOf(this.scimFilter));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Summary)) {
+            return false;
+        }
+
+        Summary other = (Summary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.isHidden, other.isHidden)
+                && java.util.Objects.equals(this.displayOrder, other.displayOrder)
+                && java.util.Objects.equals(this.groupByFieldName, other.groupByFieldName)
+                && java.util.Objects.equals(this.countOf, other.countOf)
+                && java.util.Objects.equals(this.scimFilter, other.scimFilter)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
+        result = (result * PRIME) + (this.displayOrder == null ? 43 : this.displayOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupByFieldName == null ? 43 : this.groupByFieldName.hashCode());
+        result = (result * PRIME) + (this.countOf == null ? 43 : this.countOf.hashCode());
+        result = (result * PRIME) + (this.scimFilter == null ? 43 : this.scimFilter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

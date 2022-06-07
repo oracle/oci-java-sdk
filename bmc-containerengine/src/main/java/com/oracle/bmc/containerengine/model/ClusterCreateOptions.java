@@ -15,16 +15,37 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ClusterCreateOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClusterCreateOptions {
+public final class ClusterCreateOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "serviceLbSubnetIds",
+        "kubernetesNetworkConfig",
+        "addOns",
+        "admissionControllerOptions",
+        "persistentVolumeConfig",
+        "serviceLbConfig"
+    })
+    public ClusterCreateOptions(
+            java.util.List<String> serviceLbSubnetIds,
+            KubernetesNetworkConfig kubernetesNetworkConfig,
+            AddOnOptions addOns,
+            AdmissionControllerOptions admissionControllerOptions,
+            PersistentVolumeConfigDetails persistentVolumeConfig,
+            ServiceLbConfigDetails serviceLbConfig) {
+        super();
+        this.serviceLbSubnetIds = serviceLbSubnetIds;
+        this.kubernetesNetworkConfig = kubernetesNetworkConfig;
+        this.addOns = addOns;
+        this.admissionControllerOptions = admissionControllerOptions;
+        this.persistentVolumeConfig = persistentVolumeConfig;
+        this.serviceLbConfig = serviceLbConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("serviceLbSubnetIds")
         private java.util.List<String> serviceLbSubnetIds;
@@ -120,36 +141,141 @@ public class ClusterCreateOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCIDs of the subnets used for Kubernetes services load balancers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLbSubnetIds")
-    java.util.List<String> serviceLbSubnetIds;
+    private final java.util.List<String> serviceLbSubnetIds;
+
+    public java.util.List<String> getServiceLbSubnetIds() {
+        return serviceLbSubnetIds;
+    }
 
     /**
      * Network configuration for Kubernetes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesNetworkConfig")
-    KubernetesNetworkConfig kubernetesNetworkConfig;
+    private final KubernetesNetworkConfig kubernetesNetworkConfig;
+
+    public KubernetesNetworkConfig getKubernetesNetworkConfig() {
+        return kubernetesNetworkConfig;
+    }
 
     /**
      * Configurable cluster add-ons
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addOns")
-    AddOnOptions addOns;
+    private final AddOnOptions addOns;
+
+    public AddOnOptions getAddOns() {
+        return addOns;
+    }
 
     /**
      * Configurable cluster admission controllers
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
-    AdmissionControllerOptions admissionControllerOptions;
+    private final AdmissionControllerOptions admissionControllerOptions;
+
+    public AdmissionControllerOptions getAdmissionControllerOptions() {
+        return admissionControllerOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("persistentVolumeConfig")
-    PersistentVolumeConfigDetails persistentVolumeConfig;
+    private final PersistentVolumeConfigDetails persistentVolumeConfig;
+
+    public PersistentVolumeConfigDetails getPersistentVolumeConfig() {
+        return persistentVolumeConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLbConfig")
-    ServiceLbConfigDetails serviceLbConfig;
+    private final ServiceLbConfigDetails serviceLbConfig;
+
+    public ServiceLbConfigDetails getServiceLbConfig() {
+        return serviceLbConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClusterCreateOptions(");
+        sb.append("serviceLbSubnetIds=").append(String.valueOf(this.serviceLbSubnetIds));
+        sb.append(", kubernetesNetworkConfig=")
+                .append(String.valueOf(this.kubernetesNetworkConfig));
+        sb.append(", addOns=").append(String.valueOf(this.addOns));
+        sb.append(", admissionControllerOptions=")
+                .append(String.valueOf(this.admissionControllerOptions));
+        sb.append(", persistentVolumeConfig=").append(String.valueOf(this.persistentVolumeConfig));
+        sb.append(", serviceLbConfig=").append(String.valueOf(this.serviceLbConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClusterCreateOptions)) {
+            return false;
+        }
+
+        ClusterCreateOptions other = (ClusterCreateOptions) o;
+        return java.util.Objects.equals(this.serviceLbSubnetIds, other.serviceLbSubnetIds)
+                && java.util.Objects.equals(
+                        this.kubernetesNetworkConfig, other.kubernetesNetworkConfig)
+                && java.util.Objects.equals(this.addOns, other.addOns)
+                && java.util.Objects.equals(
+                        this.admissionControllerOptions, other.admissionControllerOptions)
+                && java.util.Objects.equals(
+                        this.persistentVolumeConfig, other.persistentVolumeConfig)
+                && java.util.Objects.equals(this.serviceLbConfig, other.serviceLbConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.serviceLbSubnetIds == null
+                                ? 43
+                                : this.serviceLbSubnetIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kubernetesNetworkConfig == null
+                                ? 43
+                                : this.kubernetesNetworkConfig.hashCode());
+        result = (result * PRIME) + (this.addOns == null ? 43 : this.addOns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.admissionControllerOptions == null
+                                ? 43
+                                : this.admissionControllerOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.persistentVolumeConfig == null
+                                ? 43
+                                : this.persistentVolumeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceLbConfig == null ? 43 : this.serviceLbConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

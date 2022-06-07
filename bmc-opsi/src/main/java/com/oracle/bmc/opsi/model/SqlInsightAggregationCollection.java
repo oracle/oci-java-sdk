@@ -16,16 +16,34 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlInsightAggregationCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlInsightAggregationCollection {
+public final class SqlInsightAggregationCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeIntervalStart",
+        "timeIntervalEnd",
+        "inventory",
+        "items",
+        "thresholds"
+    })
+    public SqlInsightAggregationCollection(
+            java.util.Date timeIntervalStart,
+            java.util.Date timeIntervalEnd,
+            SqlInventory inventory,
+            java.util.List<SqlInsightAggregation> items,
+            SqlInsightThresholds thresholds) {
+        super();
+        this.timeIntervalStart = timeIntervalStart;
+        this.timeIntervalEnd = timeIntervalEnd;
+        this.inventory = inventory;
+        this.items = items;
+        this.thresholds = thresholds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
@@ -104,30 +122,109 @@ public class SqlInsightAggregationCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The start timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
-    java.util.Date timeIntervalStart;
+    private final java.util.Date timeIntervalStart;
+
+    public java.util.Date getTimeIntervalStart() {
+        return timeIntervalStart;
+    }
 
     /**
      * The end timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
-    java.util.Date timeIntervalEnd;
+    private final java.util.Date timeIntervalEnd;
+
+    public java.util.Date getTimeIntervalEnd() {
+        return timeIntervalEnd;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("inventory")
-    SqlInventory inventory;
+    private final SqlInventory inventory;
+
+    public SqlInventory getInventory() {
+        return inventory;
+    }
 
     /**
      * List of insights.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<SqlInsightAggregation> items;
+    private final java.util.List<SqlInsightAggregation> items;
+
+    public java.util.List<SqlInsightAggregation> getItems() {
+        return items;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("thresholds")
-    SqlInsightThresholds thresholds;
+    private final SqlInsightThresholds thresholds;
+
+    public SqlInsightThresholds getThresholds() {
+        return thresholds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlInsightAggregationCollection(");
+        sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
+        sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(", inventory=").append(String.valueOf(this.inventory));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append(", thresholds=").append(String.valueOf(this.thresholds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlInsightAggregationCollection)) {
+            return false;
+        }
+
+        SqlInsightAggregationCollection other = (SqlInsightAggregationCollection) o;
+        return java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
+                && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(this.inventory, other.inventory)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.thresholds, other.thresholds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalStart == null ? 43 : this.timeIntervalStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result = (result * PRIME) + (this.inventory == null ? 43 : this.inventory.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result = (result * PRIME) + (this.thresholds == null ? 43 : this.thresholds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -17,14 +17,38 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Record.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Record {
+public final class Record {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "domain",
+        "recordHash",
+        "isProtected",
+        "rdata",
+        "rrsetVersion",
+        "rtype",
+        "ttl"
+    })
+    public Record(
+            String domain,
+            String recordHash,
+            Boolean isProtected,
+            String rdata,
+            String rrsetVersion,
+            String rtype,
+            Integer ttl) {
+        super();
+        this.domain = domain;
+        this.recordHash = recordHash;
+        this.isProtected = isProtected;
+        this.rdata = rdata;
+        this.rrsetVersion = rrsetVersion;
+        this.rtype = rtype;
+        this.ttl = ttl;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
@@ -122,19 +146,31 @@ public class Record {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The fully qualified domain name where the record can be located.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    String domain;
+    private final String domain;
+
+    public String getDomain() {
+        return domain;
+    }
 
     /**
      * A unique identifier for the record within its zone.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordHash")
-    String recordHash;
+    private final String recordHash;
+
+    public String getRecordHash() {
+        return recordHash;
+    }
 
     /**
      * A Boolean flag indicating whether or not parts of the record
@@ -142,7 +178,11 @@ public class Record {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
-    Boolean isProtected;
+    private final Boolean isProtected;
+
+    public Boolean getIsProtected() {
+        return isProtected;
+    }
 
     /**
      * The record's data, as whitespace-delimited tokens in
@@ -152,7 +192,11 @@ public class Record {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
-    String rdata;
+    private final String rdata;
+
+    public String getRdata() {
+        return rdata;
+    }
 
     /**
      * The latest version of the record's zone in which its RRSet differs
@@ -160,22 +204,91 @@ public class Record {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rrsetVersion")
-    String rrsetVersion;
+    private final String rrsetVersion;
+
+    public String getRrsetVersion() {
+        return rrsetVersion;
+    }
 
     /**
      * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rtype")
-    String rtype;
+    private final String rtype;
+
+    public String getRtype() {
+        return rtype;
+    }
 
     /**
      * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
-    Integer ttl;
+    private final Integer ttl;
+
+    public Integer getTtl() {
+        return ttl;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Record(");
+        sb.append("domain=").append(String.valueOf(this.domain));
+        sb.append(", recordHash=").append(String.valueOf(this.recordHash));
+        sb.append(", isProtected=").append(String.valueOf(this.isProtected));
+        sb.append(", rdata=").append(String.valueOf(this.rdata));
+        sb.append(", rrsetVersion=").append(String.valueOf(this.rrsetVersion));
+        sb.append(", rtype=").append(String.valueOf(this.rtype));
+        sb.append(", ttl=").append(String.valueOf(this.ttl));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Record)) {
+            return false;
+        }
+
+        Record other = (Record) o;
+        return java.util.Objects.equals(this.domain, other.domain)
+                && java.util.Objects.equals(this.recordHash, other.recordHash)
+                && java.util.Objects.equals(this.isProtected, other.isProtected)
+                && java.util.Objects.equals(this.rdata, other.rdata)
+                && java.util.Objects.equals(this.rrsetVersion, other.rrsetVersion)
+                && java.util.Objects.equals(this.rtype, other.rtype)
+                && java.util.Objects.equals(this.ttl, other.ttl)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
+        result = (result * PRIME) + (this.recordHash == null ? 43 : this.recordHash.hashCode());
+        result = (result * PRIME) + (this.isProtected == null ? 43 : this.isProtected.hashCode());
+        result = (result * PRIME) + (this.rdata == null ? 43 : this.rdata.hashCode());
+        result = (result * PRIME) + (this.rrsetVersion == null ? 43 : this.rrsetVersion.hashCode());
+        result = (result * PRIME) + (this.rtype == null ? 43 : this.rtype.hashCode());
+        result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

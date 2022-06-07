@@ -15,22 +15,17 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ReturnHttpResponseAction.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ReturnHttpResponseAction extends Action {
+public final class ReturnHttpResponseAction extends Action {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -93,6 +88,10 @@ public class ReturnHttpResponseAction extends Action {
      */
     public static Builder builder() {
         return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
     }
 
     @Deprecated
@@ -162,7 +161,11 @@ public class ReturnHttpResponseAction extends Action {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
-    Integer code;
+    private final Integer code;
+
+    public Integer getCode() {
+        return code;
+    }
 
     /**
      * Adds headers defined in this array for HTTP response.
@@ -180,11 +183,66 @@ public class ReturnHttpResponseAction extends Action {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
-    java.util.List<ResponseHeader> headers;
+    private final java.util.List<ResponseHeader> headers;
+
+    public java.util.List<ResponseHeader> getHeaders() {
+        return headers;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("body")
-    HttpResponseBody body;
+    private final HttpResponseBody body;
+
+    public HttpResponseBody getBody() {
+        return body;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ReturnHttpResponseAction(");
+        sb.append("super=").append(super.toString());
+        sb.append(", code=").append(String.valueOf(this.code));
+        sb.append(", headers=").append(String.valueOf(this.headers));
+        sb.append(", body=").append(String.valueOf(this.body));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ReturnHttpResponseAction)) {
+            return false;
+        }
+
+        ReturnHttpResponseAction other = (ReturnHttpResponseAction) o;
+        return java.util.Objects.equals(this.code, other.code)
+                && java.util.Objects.equals(this.headers, other.headers)
+                && java.util.Objects.equals(this.body, other.body)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
+        result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
+        result = (result * PRIME) + (this.body == null ? 43 : this.body.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

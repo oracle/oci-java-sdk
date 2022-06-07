@@ -15,14 +15,19 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReplicaDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ReplicaDetails {
+public final class ReplicaDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"proxyCount", "caCount", "consoleCount"})
+    public ReplicaDetails(Integer proxyCount, Integer caCount, Integer consoleCount) {
+        super();
+        this.proxyCount = proxyCount;
+        this.caCount = caCount;
+        this.consoleCount = consoleCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("proxyCount")
         private Integer proxyCount;
@@ -79,24 +84,85 @@ public class ReplicaDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Number of REST proxy replicas
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("proxyCount")
-    Integer proxyCount;
+    private final Integer proxyCount;
+
+    public Integer getProxyCount() {
+        return proxyCount;
+    }
 
     /**
      * Number of CA replicas
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("caCount")
-    Integer caCount;
+    private final Integer caCount;
+
+    public Integer getCaCount() {
+        return caCount;
+    }
 
     /**
      * Number of console replicas
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consoleCount")
-    Integer consoleCount;
+    private final Integer consoleCount;
+
+    public Integer getConsoleCount() {
+        return consoleCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ReplicaDetails(");
+        sb.append("proxyCount=").append(String.valueOf(this.proxyCount));
+        sb.append(", caCount=").append(String.valueOf(this.caCount));
+        sb.append(", consoleCount=").append(String.valueOf(this.consoleCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ReplicaDetails)) {
+            return false;
+        }
+
+        ReplicaDetails other = (ReplicaDetails) o;
+        return java.util.Objects.equals(this.proxyCount, other.proxyCount)
+                && java.util.Objects.equals(this.caCount, other.caCount)
+                && java.util.Objects.equals(this.consoleCount, other.consoleCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.proxyCount == null ? 43 : this.proxyCount.hashCode());
+        result = (result * PRIME) + (this.caCount == null ? 43 : this.caCount.hashCode());
+        result = (result * PRIME) + (this.consoleCount == null ? 43 : this.consoleCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

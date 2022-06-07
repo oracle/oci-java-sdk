@@ -18,14 +18,56 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SteeringPolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SteeringPolicy {
+public final class SteeringPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "ttl",
+        "healthCheckMonitorId",
+        "template",
+        "freeformTags",
+        "definedTags",
+        "answers",
+        "rules",
+        "self",
+        "id",
+        "timeCreated",
+        "lifecycleState"
+    })
+    public SteeringPolicy(
+            String compartmentId,
+            String displayName,
+            Integer ttl,
+            String healthCheckMonitorId,
+            Template template,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<SteeringPolicyAnswer> answers,
+            java.util.List<SteeringPolicyRule> rules,
+            String self,
+            String id,
+            java.util.Date timeCreated,
+            LifecycleState lifecycleState) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.ttl = ttl;
+        this.healthCheckMonitorId = healthCheckMonitorId;
+        this.template = template;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.answers = answers;
+        this.rules = rules;
+        this.self = self;
+        this.id = id;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -197,11 +239,19 @@ public class SteeringPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment containing the steering policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name for the steering policy. Does not have to be unique and can be changed.
@@ -209,7 +259,11 @@ public class SteeringPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The Time To Live (TTL) for responses from the steering policy, in seconds.
@@ -217,7 +271,11 @@ public class SteeringPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
-    Integer ttl;
+    private final Integer ttl;
+
+    public Integer getTtl() {
+        return ttl;
+    }
 
     /**
      * The OCID of the health check monitor providing health data about the answers of the
@@ -232,7 +290,12 @@ public class SteeringPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckMonitorId")
-    String healthCheckMonitorId;
+    private final String healthCheckMonitorId;
+
+    public String getHealthCheckMonitorId() {
+        return healthCheckMonitorId;
+    }
+
     /**
      * A set of predefined rules based on the desired purpose of the steering policy. Each
      * template utilizes Traffic Management's rules in a different order to produce the desired
@@ -277,7 +340,6 @@ public class SteeringPolicy {
      * * {@code CUSTOM} - Allows a customized configuration of rules.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Template {
         Failover("FAILOVER"),
         LoadBalance("LOAD_BALANCE"),
@@ -291,6 +353,9 @@ public class SteeringPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Template.class);
 
         private final String value;
         private static java.util.Map<String, Template> map;
@@ -369,7 +434,11 @@ public class SteeringPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("template")
-    Template template;
+    private final Template template;
+
+    public Template getTemplate() {
+        return template;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -380,7 +449,11 @@ public class SteeringPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -391,14 +464,22 @@ public class SteeringPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The set of all answers that can potentially issue from the steering policy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("answers")
-    java.util.List<SteeringPolicyAnswer> answers;
+    private final java.util.List<SteeringPolicyAnswer> answers;
+
+    public java.util.List<SteeringPolicyAnswer> getAnswers() {
+        return answers;
+    }
 
     /**
      * The series of rules that will be processed in sequence to reduce the pool of answers
@@ -411,19 +492,31 @@ public class SteeringPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
-    java.util.List<SteeringPolicyRule> rules;
+    private final java.util.List<SteeringPolicyRule> rules;
+
+    public java.util.List<SteeringPolicyRule> getRules() {
+        return rules;
+    }
 
     /**
      * The canonical absolute URL of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("self")
-    String self;
+    private final String self;
+
+    public String getSelf() {
+        return self;
+    }
 
     /**
      * The OCID of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
@@ -432,11 +525,15 @@ public class SteeringPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * The current state of the resource.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
@@ -448,6 +545,9 @@ public class SteeringPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -485,8 +585,95 @@ public class SteeringPolicy {
      * The current state of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SteeringPolicy(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", ttl=").append(String.valueOf(this.ttl));
+        sb.append(", healthCheckMonitorId=").append(String.valueOf(this.healthCheckMonitorId));
+        sb.append(", template=").append(String.valueOf(this.template));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", answers=").append(String.valueOf(this.answers));
+        sb.append(", rules=").append(String.valueOf(this.rules));
+        sb.append(", self=").append(String.valueOf(this.self));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SteeringPolicy)) {
+            return false;
+        }
+
+        SteeringPolicy other = (SteeringPolicy) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.ttl, other.ttl)
+                && java.util.Objects.equals(this.healthCheckMonitorId, other.healthCheckMonitorId)
+                && java.util.Objects.equals(this.template, other.template)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.answers, other.answers)
+                && java.util.Objects.equals(this.rules, other.rules)
+                && java.util.Objects.equals(this.self, other.self)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.healthCheckMonitorId == null
+                                ? 43
+                                : this.healthCheckMonitorId.hashCode());
+        result = (result * PRIME) + (this.template == null ? 43 : this.template.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.answers == null ? 43 : this.answers.hashCode());
+        result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
+        result = (result * PRIME) + (this.self == null ? 43 : this.self.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

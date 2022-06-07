@@ -9,14 +9,6 @@ import com.oracle.bmc.osmanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/AttachParentSoftwareSourceToManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AttachParentSoftwareSourceToManagedInstanceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AttachParentSoftwareSourceToManagedInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagement.model
@@ -27,17 +19,27 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
      */
     private String managedInstanceId;
 
+    public String getManagedInstanceId() {
+        return managedInstanceId;
+    }
     /**
      * Details for attaching a Software Source to a Managed Instance
      */
     private com.oracle.bmc.osmanagement.model.AttachParentSoftwareSourceToManagedInstanceDetails
             attachParentSoftwareSourceToManagedInstanceDetails;
 
+    public com.oracle.bmc.osmanagement.model.AttachParentSoftwareSourceToManagedInstanceDetails
+            getAttachParentSoftwareSourceToManagedInstanceDetails() {
+        return attachParentSoftwareSourceToManagedInstanceDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -47,6 +49,10 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -67,6 +73,59 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedInstanceId = null;
+
+        /**
+         * OCID for the managed instance
+         * @return this builder instance
+         */
+        public Builder managedInstanceId(String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.AttachParentSoftwareSourceToManagedInstanceDetails
+                attachParentSoftwareSourceToManagedInstanceDetails = null;
+
+        /**
+         * Details for attaching a Software Source to a Managed Instance
+         * @return this builder instance
+         */
+        public Builder attachParentSoftwareSourceToManagedInstanceDetails(
+                com.oracle.bmc.osmanagement.model.AttachParentSoftwareSourceToManagedInstanceDetails
+                        attachParentSoftwareSourceToManagedInstanceDetails) {
+            this.attachParentSoftwareSourceToManagedInstanceDetails =
+                    attachParentSoftwareSourceToManagedInstanceDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -136,5 +195,95 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
             attachParentSoftwareSourceToManagedInstanceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of AttachParentSoftwareSourceToManagedInstanceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of AttachParentSoftwareSourceToManagedInstanceRequest
+         */
+        public AttachParentSoftwareSourceToManagedInstanceRequest buildWithoutInvocationCallback() {
+            AttachParentSoftwareSourceToManagedInstanceRequest request =
+                    new AttachParentSoftwareSourceToManagedInstanceRequest();
+            request.managedInstanceId = managedInstanceId;
+            request.attachParentSoftwareSourceToManagedInstanceDetails =
+                    attachParentSoftwareSourceToManagedInstanceDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new AttachParentSoftwareSourceToManagedInstanceRequest(managedInstanceId, attachParentSoftwareSourceToManagedInstanceDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedInstanceId(managedInstanceId)
+                .attachParentSoftwareSourceToManagedInstanceDetails(
+                        attachParentSoftwareSourceToManagedInstanceDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(",attachParentSoftwareSourceToManagedInstanceDetails=")
+                .append(String.valueOf(this.attachParentSoftwareSourceToManagedInstanceDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AttachParentSoftwareSourceToManagedInstanceRequest)) {
+            return false;
+        }
+
+        AttachParentSoftwareSourceToManagedInstanceRequest other =
+                (AttachParentSoftwareSourceToManagedInstanceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(
+                        this.attachParentSoftwareSourceToManagedInstanceDetails,
+                        other.attachParentSoftwareSourceToManagedInstanceDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachParentSoftwareSourceToManagedInstanceDetails == null
+                                ? 43
+                                : this.attachParentSoftwareSourceToManagedInstanceDetails
+                                        .hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,61 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScheduledTaskSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScheduledTaskSummary {
+public final class ScheduledTaskSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "taskType",
+        "compartmentId",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "taskStatus",
+        "pauseReason",
+        "workRequestId",
+        "displayName",
+        "freeformTags",
+        "definedTags",
+        "lastExecutionStatus",
+        "timeLastExecuted"
+    })
+    public ScheduledTaskSummary(
+            String id,
+            TaskType taskType,
+            String compartmentId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            ScheduledTask.LifecycleState lifecycleState,
+            TaskStatus taskStatus,
+            ScheduledTask.PauseReason pauseReason,
+            String workRequestId,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            LastExecutionStatus lastExecutionStatus,
+            java.util.Date timeLastExecuted) {
+        super();
+        this.id = id;
+        this.taskType = taskType;
+        this.compartmentId = compartmentId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.taskStatus = taskStatus;
+        this.pauseReason = pauseReason;
+        this.workRequestId = workRequestId;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.lastExecutionStatus = lastExecutionStatus;
+        this.timeLastExecuted = timeLastExecuted;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -207,48 +252,76 @@ public class ScheduledTaskSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Task type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
-    TaskType taskType;
+    private final TaskType taskType;
+
+    public TaskType getTaskType() {
+        return taskType;
+    }
 
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The date and time the schedule task was created, in the format defined by RFC3339.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the scheduled task was last updated, in the format defined by RFC3339.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the scheduled task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ScheduledTask.LifecycleState lifecycleState;
+    private final ScheduledTask.LifecycleState lifecycleState;
+
+    public ScheduledTask.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     /**
      * Status of the scheduled task.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TaskStatus {
         Ready("READY"),
         Paused("PAUSED"),
@@ -260,6 +333,9 @@ public class ScheduledTaskSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TaskStatus.class);
 
         private final String value;
         private static java.util.Map<String, TaskStatus> map;
@@ -297,19 +373,31 @@ public class ScheduledTaskSummary {
      * Status of the scheduled task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
-    TaskStatus taskStatus;
+    private final TaskStatus taskStatus;
+
+    public TaskStatus getTaskStatus() {
+        return taskStatus;
+    }
 
     /**
      * reason for taskStatus PAUSED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pauseReason")
-    ScheduledTask.PauseReason pauseReason;
+    private final ScheduledTask.PauseReason pauseReason;
+
+    public ScheduledTask.PauseReason getPauseReason() {
+        return pauseReason;
+    }
 
     /**
      * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
-    String workRequestId;
+    private final String workRequestId;
+
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
 
     /**
      * A user-friendly name that is changeable and that does not have to be unique.
@@ -319,7 +407,11 @@ public class ScheduledTaskSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -327,7 +419,11 @@ public class ScheduledTaskSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -335,11 +431,15 @@ public class ScheduledTaskSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     /**
      * The most recent task execution status.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LastExecutionStatus {
         Failed("FAILED"),
         Succeeded("SUCCEEDED"),
@@ -349,6 +449,9 @@ public class ScheduledTaskSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LastExecutionStatus.class);
 
         private final String value;
         private static java.util.Map<String, LastExecutionStatus> map;
@@ -386,14 +489,112 @@ public class ScheduledTaskSummary {
      * The most recent task execution status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
-    LastExecutionStatus lastExecutionStatus;
+    private final LastExecutionStatus lastExecutionStatus;
+
+    public LastExecutionStatus getLastExecutionStatus() {
+        return lastExecutionStatus;
+    }
 
     /**
      * The date and time the scheduled task last executed, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
-    java.util.Date timeLastExecuted;
+    private final java.util.Date timeLastExecuted;
+
+    public java.util.Date getTimeLastExecuted() {
+        return timeLastExecuted;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScheduledTaskSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", taskType=").append(String.valueOf(this.taskType));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", taskStatus=").append(String.valueOf(this.taskStatus));
+        sb.append(", pauseReason=").append(String.valueOf(this.pauseReason));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", lastExecutionStatus=").append(String.valueOf(this.lastExecutionStatus));
+        sb.append(", timeLastExecuted=").append(String.valueOf(this.timeLastExecuted));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScheduledTaskSummary)) {
+            return false;
+        }
+
+        ScheduledTaskSummary other = (ScheduledTaskSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.taskType, other.taskType)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.taskStatus, other.taskStatus)
+                && java.util.Objects.equals(this.pauseReason, other.pauseReason)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.lastExecutionStatus, other.lastExecutionStatus)
+                && java.util.Objects.equals(this.timeLastExecuted, other.timeLastExecuted)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.taskStatus == null ? 43 : this.taskStatus.hashCode());
+        result = (result * PRIME) + (this.pauseReason == null ? 43 : this.pauseReason.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastExecutionStatus == null
+                                ? 43
+                                : this.lastExecutionStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastExecuted == null ? 43 : this.timeLastExecuted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

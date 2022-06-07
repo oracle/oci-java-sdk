@@ -15,16 +15,40 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AccessRequestHistorySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AccessRequestHistorySummary {
+public final class AccessRequestHistorySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "lifecycleState",
+        "userId",
+        "description",
+        "duration",
+        "isAutoApproved",
+        "actionsList",
+        "timeOfAction"
+    })
+    public AccessRequestHistorySummary(
+            AccessRequestLifecycleStates lifecycleState,
+            String userId,
+            String description,
+            Integer duration,
+            Boolean isAutoApproved,
+            java.util.List<String> actionsList,
+            java.util.Date timeOfAction) {
+        super();
+        this.lifecycleState = lifecycleState;
+        this.userId = userId;
+        this.description = description;
+        this.duration = duration;
+        this.isAutoApproved = isAutoApproved;
+        this.actionsList = actionsList;
+        this.timeOfAction = timeOfAction;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AccessRequestLifecycleStates lifecycleState;
@@ -129,49 +153,142 @@ public class AccessRequestHistorySummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The current state of the AccessRequest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    AccessRequestLifecycleStates lifecycleState;
+    private final AccessRequestLifecycleStates lifecycleState;
+
+    public AccessRequestLifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Approver who modified the access request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * Reason or description about the cause of change.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Duration for approval of request or extension depending on the type of action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
-    Integer duration;
+    private final Integer duration;
+
+    public Integer getDuration() {
+        return duration;
+    }
 
     /**
      * Whether the access request was automatically approved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproved")
-    Boolean isAutoApproved;
+    private final Boolean isAutoApproved;
+
+    public Boolean getIsAutoApproved() {
+        return isAutoApproved;
+    }
 
     /**
      * List of operator actions for which approvals were requested by the operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionsList")
-    java.util.List<String> actionsList;
+    private final java.util.List<String> actionsList;
+
+    public java.util.List<String> getActionsList() {
+        return actionsList;
+    }
 
     /**
      * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfAction")
-    java.util.Date timeOfAction;
+    private final java.util.Date timeOfAction;
+
+    public java.util.Date getTimeOfAction() {
+        return timeOfAction;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AccessRequestHistorySummary(");
+        sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", duration=").append(String.valueOf(this.duration));
+        sb.append(", isAutoApproved=").append(String.valueOf(this.isAutoApproved));
+        sb.append(", actionsList=").append(String.valueOf(this.actionsList));
+        sb.append(", timeOfAction=").append(String.valueOf(this.timeOfAction));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AccessRequestHistorySummary)) {
+            return false;
+        }
+
+        AccessRequestHistorySummary other = (AccessRequestHistorySummary) o;
+        return java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.duration, other.duration)
+                && java.util.Objects.equals(this.isAutoApproved, other.isAutoApproved)
+                && java.util.Objects.equals(this.actionsList, other.actionsList)
+                && java.util.Objects.equals(this.timeOfAction, other.timeOfAction)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.duration == null ? 43 : this.duration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoApproved == null ? 43 : this.isAutoApproved.hashCode());
+        result = (result * PRIME) + (this.actionsList == null ? 43 : this.actionsList.hashCode());
+        result = (result * PRIME) + (this.timeOfAction == null ? 43 : this.timeOfAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,24 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DocumentField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DocumentField {
+public final class DocumentField {
+    @Deprecated
+    @java.beans.ConstructorProperties({"fieldType", "fieldLabel", "fieldName", "fieldValue"})
+    public DocumentField(
+            FieldType fieldType,
+            FieldLabel fieldLabel,
+            FieldName fieldName,
+            FieldValue fieldValue) {
+        super();
+        this.fieldType = fieldType;
+        this.fieldLabel = fieldLabel;
+        this.fieldName = fieldName;
+        this.fieldValue = fieldValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
         private FieldType fieldType;
@@ -90,10 +100,13 @@ public class DocumentField {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The field type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum FieldType {
         LineItemGroup("LINE_ITEM_GROUP"),
         LineItem("LINE_ITEM"),
@@ -105,6 +118,9 @@ public class DocumentField {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FieldType.class);
 
         private final String value;
         private static java.util.Map<String, FieldType> map;
@@ -142,17 +158,81 @@ public class DocumentField {
      * The field type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
-    FieldType fieldType;
+    private final FieldType fieldType;
+
+    public FieldType getFieldType() {
+        return fieldType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fieldLabel")
-    FieldLabel fieldLabel;
+    private final FieldLabel fieldLabel;
+
+    public FieldLabel getFieldLabel() {
+        return fieldLabel;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
-    FieldName fieldName;
+    private final FieldName fieldName;
+
+    public FieldName getFieldName() {
+        return fieldName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValue")
-    FieldValue fieldValue;
+    private final FieldValue fieldValue;
+
+    public FieldValue getFieldValue() {
+        return fieldValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DocumentField(");
+        sb.append("fieldType=").append(String.valueOf(this.fieldType));
+        sb.append(", fieldLabel=").append(String.valueOf(this.fieldLabel));
+        sb.append(", fieldName=").append(String.valueOf(this.fieldName));
+        sb.append(", fieldValue=").append(String.valueOf(this.fieldValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DocumentField)) {
+            return false;
+        }
+
+        DocumentField other = (DocumentField) o;
+        return java.util.Objects.equals(this.fieldType, other.fieldType)
+                && java.util.Objects.equals(this.fieldLabel, other.fieldLabel)
+                && java.util.Objects.equals(this.fieldName, other.fieldName)
+                && java.util.Objects.equals(this.fieldValue, other.fieldValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fieldType == null ? 43 : this.fieldType.hashCode());
+        result = (result * PRIME) + (this.fieldLabel == null ? 43 : this.fieldLabel.hashCode());
+        result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
+        result = (result * PRIME) + (this.fieldValue == null ? 43 : this.fieldValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,24 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReportSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ReportSummary {
+public final class ReportSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"reportType", "date", "columns", "content"})
+    public ReportSummary(
+            String reportType,
+            java.util.Date date,
+            java.util.List<String> columns,
+            String content) {
+        super();
+        this.reportType = reportType;
+        this.date = date;
+        this.columns = columns;
+        this.content = content;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("reportType")
         private String reportType;
@@ -89,30 +99,98 @@ public class ReportSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reportType")
-    String reportType;
+    private final String reportType;
+
+    public String getReportType() {
+        return reportType;
+    }
 
     /**
      * The date of the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("date")
-    java.util.Date date;
+    private final java.util.Date date;
+
+    public java.util.Date getDate() {
+        return date;
+    }
 
     /**
      * The columns in the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
-    java.util.List<String> columns;
+    private final java.util.List<String> columns;
+
+    public java.util.List<String> getColumns() {
+        return columns;
+    }
 
     /**
      * The contents of the report in comma-separated values (CSV) file format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
-    String content;
+    private final String content;
+
+    public String getContent() {
+        return content;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ReportSummary(");
+        sb.append("reportType=").append(String.valueOf(this.reportType));
+        sb.append(", date=").append(String.valueOf(this.date));
+        sb.append(", columns=").append(String.valueOf(this.columns));
+        sb.append(", content=").append(String.valueOf(this.content));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ReportSummary)) {
+            return false;
+        }
+
+        ReportSummary other = (ReportSummary) o;
+        return java.util.Objects.equals(this.reportType, other.reportType)
+                && java.util.Objects.equals(this.date, other.date)
+                && java.util.Objects.equals(this.columns, other.columns)
+                && java.util.Objects.equals(this.content, other.content)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.reportType == null ? 43 : this.reportType.hashCode());
+        result = (result * PRIME) + (this.date == null ? 43 : this.date.hashCode());
+        result = (result * PRIME) + (this.columns == null ? 43 : this.columns.hashCode());
+        result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

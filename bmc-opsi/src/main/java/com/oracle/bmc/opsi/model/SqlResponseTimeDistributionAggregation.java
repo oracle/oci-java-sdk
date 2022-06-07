@@ -15,16 +15,20 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlResponseTimeDistributionAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlResponseTimeDistributionAggregation {
+public final class SqlResponseTimeDistributionAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"bucketId", "executionsCount"})
+    public SqlResponseTimeDistributionAggregation(String bucketId, Long executionsCount) {
+        super();
+        this.bucketId = bucketId;
+        this.executionsCount = executionsCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
         private String bucketId;
@@ -71,18 +75,74 @@ public class SqlResponseTimeDistributionAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Response time bucket id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
-    String bucketId;
+    private final String bucketId;
+
+    public String getBucketId() {
+        return bucketId;
+    }
 
     /**
      * Total number of SQL executions
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
-    Long executionsCount;
+    private final Long executionsCount;
+
+    public Long getExecutionsCount() {
+        return executionsCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlResponseTimeDistributionAggregation(");
+        sb.append("bucketId=").append(String.valueOf(this.bucketId));
+        sb.append(", executionsCount=").append(String.valueOf(this.executionsCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlResponseTimeDistributionAggregation)) {
+            return false;
+        }
+
+        SqlResponseTimeDistributionAggregation other = (SqlResponseTimeDistributionAggregation) o;
+        return java.util.Objects.equals(this.bucketId, other.bucketId)
+                && java.util.Objects.equals(this.executionsCount, other.executionsCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.bucketId == null ? 43 : this.bucketId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionsCount == null ? 43 : this.executionsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

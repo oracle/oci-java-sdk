@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSensitiveDataModelExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSensitiveDataModelRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateSensitiveDataModelRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateSensitiveDataModelDetails> {
@@ -26,12 +18,19 @@ public class UpdateSensitiveDataModelRequest
      */
     private String sensitiveDataModelId;
 
+    public String getSensitiveDataModelId() {
+        return sensitiveDataModelId;
+    }
     /**
      * Details to update a sensitive data model.
      */
     private com.oracle.bmc.datasafe.model.UpdateSensitiveDataModelDetails
             updateSensitiveDataModelDetails;
 
+    public com.oracle.bmc.datasafe.model.UpdateSensitiveDataModelDetails
+            getUpdateSensitiveDataModelDetails() {
+        return updateSensitiveDataModelDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the if-match parameter to the value of the
@@ -42,10 +41,17 @@ public class UpdateSensitiveDataModelRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +70,58 @@ public class UpdateSensitiveDataModelRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String sensitiveDataModelId = null;
+
+        /**
+         * The OCID of the sensitive data model.
+         * @return this builder instance
+         */
+        public Builder sensitiveDataModelId(String sensitiveDataModelId) {
+            this.sensitiveDataModelId = sensitiveDataModelId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.UpdateSensitiveDataModelDetails
+                updateSensitiveDataModelDetails = null;
+
+        /**
+         * Details to update a sensitive data model.
+         * @return this builder instance
+         */
+        public Builder updateSensitiveDataModelDetails(
+                com.oracle.bmc.datasafe.model.UpdateSensitiveDataModelDetails
+                        updateSensitiveDataModelDetails) {
+            this.updateSensitiveDataModelDetails = updateSensitiveDataModelDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -129,5 +187,89 @@ public class UpdateSensitiveDataModelRequest
             updateSensitiveDataModelDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateSensitiveDataModelRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateSensitiveDataModelRequest
+         */
+        public UpdateSensitiveDataModelRequest buildWithoutInvocationCallback() {
+            UpdateSensitiveDataModelRequest request = new UpdateSensitiveDataModelRequest();
+            request.sensitiveDataModelId = sensitiveDataModelId;
+            request.updateSensitiveDataModelDetails = updateSensitiveDataModelDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateSensitiveDataModelRequest(sensitiveDataModelId, updateSensitiveDataModelDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .sensitiveDataModelId(sensitiveDataModelId)
+                .updateSensitiveDataModelDetails(updateSensitiveDataModelDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
+        sb.append(",updateSensitiveDataModelDetails=")
+                .append(String.valueOf(this.updateSensitiveDataModelDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSensitiveDataModelRequest)) {
+            return false;
+        }
+
+        UpdateSensitiveDataModelRequest other = (UpdateSensitiveDataModelRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.sensitiveDataModelId, other.sensitiveDataModelId)
+                && java.util.Objects.equals(
+                        this.updateSensitiveDataModelDetails, other.updateSensitiveDataModelDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.sensitiveDataModelId == null
+                                ? 43
+                                : this.sensitiveDataModelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateSensitiveDataModelDetails == null
+                                ? 43
+                                : this.updateSensitiveDataModelDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

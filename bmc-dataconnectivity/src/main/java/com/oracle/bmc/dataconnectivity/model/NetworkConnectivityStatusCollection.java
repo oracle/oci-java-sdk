@@ -15,16 +15,20 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = NetworkConnectivityStatusCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NetworkConnectivityStatusCollection {
+public final class NetworkConnectivityStatusCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({"networkConnectivityStatusList"})
+    public NetworkConnectivityStatusCollection(
+            java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList) {
+        super();
+        this.networkConnectivityStatusList = networkConnectivityStatusList;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("networkConnectivityStatusList")
         private java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList;
@@ -63,12 +67,65 @@ public class NetworkConnectivityStatusCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The array of NetworkConnectivityStatus.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkConnectivityStatusList")
-    java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList;
+    private final java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList;
+
+    public java.util.List<NetworkConnectivityStatus> getNetworkConnectivityStatusList() {
+        return networkConnectivityStatusList;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NetworkConnectivityStatusCollection(");
+        sb.append("networkConnectivityStatusList=")
+                .append(String.valueOf(this.networkConnectivityStatusList));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NetworkConnectivityStatusCollection)) {
+            return false;
+        }
+
+        NetworkConnectivityStatusCollection other = (NetworkConnectivityStatusCollection) o;
+        return java.util.Objects.equals(
+                        this.networkConnectivityStatusList, other.networkConnectivityStatusList)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.networkConnectivityStatusList == null
+                                ? 43
+                                : this.networkConnectivityStatusList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

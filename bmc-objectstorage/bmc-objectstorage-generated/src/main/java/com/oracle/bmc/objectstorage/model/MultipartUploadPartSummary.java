@@ -20,16 +20,22 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MultipartUploadPartSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MultipartUploadPartSummary {
+public final class MultipartUploadPartSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"etag", "md5", "size", "partNumber"})
+    public MultipartUploadPartSummary(String etag, String md5, Long size, Integer partNumber) {
+        super();
+        this.etag = etag;
+        this.md5 = md5;
+        this.size = size;
+        this.partNumber = partNumber;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
@@ -97,30 +103,98 @@ public class MultipartUploadPartSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The current entity tag (ETag) for the part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
-    String etag;
+    private final String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * The MD5 hash of the bytes of the part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("md5")
-    String md5;
+    private final String md5;
+
+    public String getMd5() {
+        return md5;
+    }
 
     /**
      * The size of the part in bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
-    Long size;
+    private final Long size;
+
+    public Long getSize() {
+        return size;
+    }
 
     /**
      * The part number for this part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
-    Integer partNumber;
+    private final Integer partNumber;
+
+    public Integer getPartNumber() {
+        return partNumber;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MultipartUploadPartSummary(");
+        sb.append("etag=").append(String.valueOf(this.etag));
+        sb.append(", md5=").append(String.valueOf(this.md5));
+        sb.append(", size=").append(String.valueOf(this.size));
+        sb.append(", partNumber=").append(String.valueOf(this.partNumber));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MultipartUploadPartSummary)) {
+            return false;
+        }
+
+        MultipartUploadPartSummary other = (MultipartUploadPartSummary) o;
+        return java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.md5, other.md5)
+                && java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(this.partNumber, other.partNumber)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.md5 == null ? 43 : this.md5.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result = (result * PRIME) + (this.partNumber == null ? 43 : this.partNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

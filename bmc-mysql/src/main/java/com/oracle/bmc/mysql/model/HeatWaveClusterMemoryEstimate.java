@@ -18,16 +18,34 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HeatWaveClusterMemoryEstimate.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HeatWaveClusterMemoryEstimate {
+public final class HeatWaveClusterMemoryEstimate {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "dbSystemId",
+        "status",
+        "timeCreated",
+        "timeUpdated",
+        "tableSchemas"
+    })
+    public HeatWaveClusterMemoryEstimate(
+            String dbSystemId,
+            HeatWaveClusterMemoryEstimateStatus status,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.List<HeatWaveClusterSchemaMemoryEstimate> tableSchemas) {
+        super();
+        this.dbSystemId = dbSystemId;
+        this.status = status;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.tableSchemas = tableSchemas;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
@@ -107,30 +125,50 @@ public class HeatWaveClusterMemoryEstimate {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the DB System the HeatWave cluster memory estimate is associated with.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
+    private final String dbSystemId;
+
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
 
     /**
      * Current status of the Work Request generating the HeatWave cluster memory estimate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    HeatWaveClusterMemoryEstimateStatus status;
+    private final HeatWaveClusterMemoryEstimateStatus status;
+
+    public HeatWaveClusterMemoryEstimateStatus getStatus() {
+        return status;
+    }
 
     /**
      * The date and time that the Work Request to generate the HeatWave cluster memory estimate was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time that the HeatWave cluster memory estimate was generated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Collection of schemas with estimated memory footprints for MySQL user tables of each schema
@@ -138,8 +176,63 @@ public class HeatWaveClusterMemoryEstimate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableSchemas")
-    java.util.List<HeatWaveClusterSchemaMemoryEstimate> tableSchemas;
+    private final java.util.List<HeatWaveClusterSchemaMemoryEstimate> tableSchemas;
+
+    public java.util.List<HeatWaveClusterSchemaMemoryEstimate> getTableSchemas() {
+        return tableSchemas;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HeatWaveClusterMemoryEstimate(");
+        sb.append("dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", tableSchemas=").append(String.valueOf(this.tableSchemas));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HeatWaveClusterMemoryEstimate)) {
+            return false;
+        }
+
+        HeatWaveClusterMemoryEstimate other = (HeatWaveClusterMemoryEstimate) o;
+        return java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.tableSchemas, other.tableSchemas)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.tableSchemas == null ? 43 : this.tableSchemas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

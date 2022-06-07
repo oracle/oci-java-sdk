@@ -16,14 +16,74 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OperatorControl.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OperatorControl {
+public final class OperatorControl {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "operatorControlName",
+        "description",
+        "approversList",
+        "approverGroupsList",
+        "preApprovedOpActionList",
+        "approvalRequiredOpActionList",
+        "isFullyPreApproved",
+        "emailIdList",
+        "resourceType",
+        "systemMessage",
+        "compartmentId",
+        "lifecycleState",
+        "timeOfCreation",
+        "timeOfModification",
+        "timeOfDeletion",
+        "lastModifiedInfo",
+        "freeformTags",
+        "definedTags"
+    })
+    public OperatorControl(
+            String id,
+            String operatorControlName,
+            String description,
+            java.util.List<String> approversList,
+            java.util.List<String> approverGroupsList,
+            java.util.List<String> preApprovedOpActionList,
+            java.util.List<String> approvalRequiredOpActionList,
+            Boolean isFullyPreApproved,
+            java.util.List<String> emailIdList,
+            ResourceTypes resourceType,
+            String systemMessage,
+            String compartmentId,
+            OperatorControlLifecycleStates lifecycleState,
+            java.util.Date timeOfCreation,
+            java.util.Date timeOfModification,
+            java.util.Date timeOfDeletion,
+            String lastModifiedInfo,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.operatorControlName = operatorControlName;
+        this.description = description;
+        this.approversList = approversList;
+        this.approverGroupsList = approverGroupsList;
+        this.preApprovedOpActionList = preApprovedOpActionList;
+        this.approvalRequiredOpActionList = approvalRequiredOpActionList;
+        this.isFullyPreApproved = isFullyPreApproved;
+        this.emailIdList = emailIdList;
+        this.resourceType = resourceType;
+        this.systemMessage = systemMessage;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+        this.timeOfCreation = timeOfCreation;
+        this.timeOfModification = timeOfModification;
+        this.timeOfDeletion = timeOfDeletion;
+        this.lastModifiedInfo = lastModifiedInfo;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -262,35 +322,59 @@ public class OperatorControl {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Name of the operator control. The name must be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatorControlName")
-    String operatorControlName;
+    private final String operatorControlName;
+
+    public String getOperatorControlName() {
+        return operatorControlName;
+    }
 
     /**
      * Description of operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * List of users who can approve an access request associated with a target resource under the governance of this operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approversList")
-    java.util.List<String> approversList;
+    private final java.util.List<String> approversList;
+
+    public java.util.List<String> getApproversList() {
+        return approversList;
+    }
 
     /**
      * List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approverGroupsList")
-    java.util.List<String> approverGroupsList;
+    private final java.util.List<String> approverGroupsList;
+
+    public java.util.List<String> getApproverGroupsList() {
+        return approverGroupsList;
+    }
 
     /**
      * List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be
@@ -298,7 +382,11 @@ public class OperatorControl {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preApprovedOpActionList")
-    java.util.List<String> preApprovedOpActionList;
+    private final java.util.List<String> preApprovedOpActionList;
+
+    public java.util.List<String> getPreApprovedOpActionList() {
+        return preApprovedOpActionList;
+    }
 
     /**
      * List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit
@@ -307,7 +395,11 @@ public class OperatorControl {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approvalRequiredOpActionList")
-    java.util.List<String> approvalRequiredOpActionList;
+    private final java.util.List<String> approvalRequiredOpActionList;
+
+    public java.util.List<String> getApprovalRequiredOpActionList() {
+        return approvalRequiredOpActionList;
+    }
 
     /**
      * Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control
@@ -315,52 +407,84 @@ public class OperatorControl {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFullyPreApproved")
-    Boolean isFullyPreApproved;
+    private final Boolean isFullyPreApproved;
+
+    public Boolean getIsFullyPreApproved() {
+        return isFullyPreApproved;
+    }
 
     /**
      * List of emailId.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
-    java.util.List<String> emailIdList;
+    private final java.util.List<String> emailIdList;
+
+    public java.util.List<String> getEmailIdList() {
+        return emailIdList;
+    }
 
     /**
      * resourceType for which the OperatorControl is applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    ResourceTypes resourceType;
+    private final ResourceTypes resourceType;
+
+    public ResourceTypes getResourceType() {
+        return resourceType;
+    }
 
     /**
      * System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemMessage")
-    String systemMessage;
+    private final String systemMessage;
+
+    public String getSystemMessage() {
+        return systemMessage;
+    }
 
     /**
      * The OCID of the compartment that contains the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The current lifecycle state of the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    OperatorControlLifecycleStates lifecycleState;
+    private final OperatorControlLifecycleStates lifecycleState;
+
+    public OperatorControlLifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfCreation")
-    java.util.Date timeOfCreation;
+    private final java.util.Date timeOfCreation;
+
+    public java.util.Date getTimeOfCreation() {
+        return timeOfCreation;
+    }
 
     /**
      * Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfModification")
-    java.util.Date timeOfModification;
+    private final java.util.Date timeOfModification;
+
+    public java.util.Date getTimeOfModification() {
+        return timeOfModification;
+    }
 
     /**
      * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
@@ -369,28 +493,179 @@ public class OperatorControl {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
 
     /**
      * Description associated with the latest modification of the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedInfo")
-    String lastModifiedInfo;
+    private final String lastModifiedInfo;
+
+    public String getLastModifiedInfo() {
+        return lastModifiedInfo;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OperatorControl(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", operatorControlName=").append(String.valueOf(this.operatorControlName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", approversList=").append(String.valueOf(this.approversList));
+        sb.append(", approverGroupsList=").append(String.valueOf(this.approverGroupsList));
+        sb.append(", preApprovedOpActionList=")
+                .append(String.valueOf(this.preApprovedOpActionList));
+        sb.append(", approvalRequiredOpActionList=")
+                .append(String.valueOf(this.approvalRequiredOpActionList));
+        sb.append(", isFullyPreApproved=").append(String.valueOf(this.isFullyPreApproved));
+        sb.append(", emailIdList=").append(String.valueOf(this.emailIdList));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", systemMessage=").append(String.valueOf(this.systemMessage));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeOfCreation=").append(String.valueOf(this.timeOfCreation));
+        sb.append(", timeOfModification=").append(String.valueOf(this.timeOfModification));
+        sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append(", lastModifiedInfo=").append(String.valueOf(this.lastModifiedInfo));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OperatorControl)) {
+            return false;
+        }
+
+        OperatorControl other = (OperatorControl) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.operatorControlName, other.operatorControlName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.approversList, other.approversList)
+                && java.util.Objects.equals(this.approverGroupsList, other.approverGroupsList)
+                && java.util.Objects.equals(
+                        this.preApprovedOpActionList, other.preApprovedOpActionList)
+                && java.util.Objects.equals(
+                        this.approvalRequiredOpActionList, other.approvalRequiredOpActionList)
+                && java.util.Objects.equals(this.isFullyPreApproved, other.isFullyPreApproved)
+                && java.util.Objects.equals(this.emailIdList, other.emailIdList)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.systemMessage, other.systemMessage)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeOfCreation, other.timeOfCreation)
+                && java.util.Objects.equals(this.timeOfModification, other.timeOfModification)
+                && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.lastModifiedInfo, other.lastModifiedInfo)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatorControlName == null
+                                ? 43
+                                : this.operatorControlName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approversList == null ? 43 : this.approversList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approverGroupsList == null
+                                ? 43
+                                : this.approverGroupsList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preApprovedOpActionList == null
+                                ? 43
+                                : this.preApprovedOpActionList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approvalRequiredOpActionList == null
+                                ? 43
+                                : this.approvalRequiredOpActionList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isFullyPreApproved == null
+                                ? 43
+                                : this.isFullyPreApproved.hashCode());
+        result = (result * PRIME) + (this.emailIdList == null ? 43 : this.emailIdList.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemMessage == null ? 43 : this.systemMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfCreation == null ? 43 : this.timeOfCreation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfModification == null
+                                ? 43
+                                : this.timeOfModification.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastModifiedInfo == null ? 43 : this.lastModifiedInfo.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

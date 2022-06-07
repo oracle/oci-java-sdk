@@ -17,16 +17,79 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateExadataInfrastructureDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateExadataInfrastructureDetails {
+public final class CreateExadataInfrastructureDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "shape",
+        "timeZone",
+        "cloudControlPlaneServer1",
+        "cloudControlPlaneServer2",
+        "netmask",
+        "gateway",
+        "adminNetworkCIDR",
+        "infiniBandNetworkCIDR",
+        "corporateProxy",
+        "contacts",
+        "maintenanceWindow",
+        "storageCount",
+        "computeCount",
+        "dnsServer",
+        "ntpServer",
+        "isCpsOfflineReportEnabled",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateExadataInfrastructureDetails(
+            String compartmentId,
+            String displayName,
+            String shape,
+            String timeZone,
+            String cloudControlPlaneServer1,
+            String cloudControlPlaneServer2,
+            String netmask,
+            String gateway,
+            String adminNetworkCIDR,
+            String infiniBandNetworkCIDR,
+            String corporateProxy,
+            java.util.List<ExadataInfrastructureContact> contacts,
+            MaintenanceWindow maintenanceWindow,
+            Integer storageCount,
+            Integer computeCount,
+            java.util.List<String> dnsServer,
+            java.util.List<String> ntpServer,
+            Boolean isCpsOfflineReportEnabled,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.shape = shape;
+        this.timeZone = timeZone;
+        this.cloudControlPlaneServer1 = cloudControlPlaneServer1;
+        this.cloudControlPlaneServer2 = cloudControlPlaneServer2;
+        this.netmask = netmask;
+        this.gateway = gateway;
+        this.adminNetworkCIDR = adminNetworkCIDR;
+        this.infiniBandNetworkCIDR = infiniBandNetworkCIDR;
+        this.corporateProxy = corporateProxy;
+        this.contacts = contacts;
+        this.maintenanceWindow = maintenanceWindow;
+        this.storageCount = storageCount;
+        this.computeCount = computeCount;
+        this.dnsServer = dnsServer;
+        this.ntpServer = ntpServer;
+        this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -275,69 +338,113 @@ public class CreateExadataInfrastructureDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
-    String timeZone;
+    private final String timeZone;
+
+    public String getTimeZone() {
+        return timeZone;
+    }
 
     /**
      * The IP address for the first control plane server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudControlPlaneServer1")
-    String cloudControlPlaneServer1;
+    private final String cloudControlPlaneServer1;
+
+    public String getCloudControlPlaneServer1() {
+        return cloudControlPlaneServer1;
+    }
 
     /**
      * The IP address for the second control plane server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudControlPlaneServer2")
-    String cloudControlPlaneServer2;
+    private final String cloudControlPlaneServer2;
+
+    public String getCloudControlPlaneServer2() {
+        return cloudControlPlaneServer2;
+    }
 
     /**
      * The netmask for the control plane network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("netmask")
-    String netmask;
+    private final String netmask;
+
+    public String getNetmask() {
+        return netmask;
+    }
 
     /**
      * The gateway for the control plane network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gateway")
-    String gateway;
+    private final String gateway;
+
+    public String getGateway() {
+        return gateway;
+    }
 
     /**
      * The CIDR block for the Exadata administration network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminNetworkCIDR")
-    String adminNetworkCIDR;
+    private final String adminNetworkCIDR;
+
+    public String getAdminNetworkCIDR() {
+        return adminNetworkCIDR;
+    }
 
     /**
      * The CIDR block for the Exadata InfiniBand interconnect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infiniBandNetworkCIDR")
-    String infiniBandNetworkCIDR;
+    private final String infiniBandNetworkCIDR;
+
+    public String getInfiniBandNetworkCIDR() {
+        return infiniBandNetworkCIDR;
+    }
 
     /**
      * The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible
@@ -345,40 +452,68 @@ public class CreateExadataInfrastructureDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("corporateProxy")
-    String corporateProxy;
+    private final String corporateProxy;
+
+    public String getCorporateProxy() {
+        return corporateProxy;
+    }
 
     /**
      * The list of contacts for the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
-    java.util.List<ExadataInfrastructureContact> contacts;
+    private final java.util.List<ExadataInfrastructureContact> contacts;
+
+    public java.util.List<ExadataInfrastructureContact> getContacts() {
+        return contacts;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
-    MaintenanceWindow maintenanceWindow;
+    private final MaintenanceWindow maintenanceWindow;
+
+    public MaintenanceWindow getMaintenanceWindow() {
+        return maintenanceWindow;
+    }
 
     /**
      * The number of storage servers for the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
-    Integer storageCount;
+    private final Integer storageCount;
+
+    public Integer getStorageCount() {
+        return storageCount;
+    }
 
     /**
      * The number of compute servers for the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
-    Integer computeCount;
+    private final Integer computeCount;
+
+    public Integer getComputeCount() {
+        return computeCount;
+    }
 
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
-    java.util.List<String> dnsServer;
+    private final java.util.List<String> dnsServer;
+
+    public java.util.List<String> getDnsServer() {
+        return dnsServer;
+    }
 
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ntpServer")
-    java.util.List<String> ntpServer;
+    private final java.util.List<String> ntpServer;
+
+    public java.util.List<String> getNtpServer() {
+        return ntpServer;
+    }
 
     /**
      * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
@@ -387,7 +522,11 @@ public class CreateExadataInfrastructureDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCpsOfflineReportEnabled")
-    Boolean isCpsOfflineReportEnabled;
+    private final Boolean isCpsOfflineReportEnabled;
+
+    public Boolean getIsCpsOfflineReportEnabled() {
+        return isCpsOfflineReportEnabled;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -397,7 +536,11 @@ public class CreateExadataInfrastructureDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -405,8 +548,138 @@ public class CreateExadataInfrastructureDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateExadataInfrastructureDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", cloudControlPlaneServer1=")
+                .append(String.valueOf(this.cloudControlPlaneServer1));
+        sb.append(", cloudControlPlaneServer2=")
+                .append(String.valueOf(this.cloudControlPlaneServer2));
+        sb.append(", netmask=").append(String.valueOf(this.netmask));
+        sb.append(", gateway=").append(String.valueOf(this.gateway));
+        sb.append(", adminNetworkCIDR=").append(String.valueOf(this.adminNetworkCIDR));
+        sb.append(", infiniBandNetworkCIDR=").append(String.valueOf(this.infiniBandNetworkCIDR));
+        sb.append(", corporateProxy=").append(String.valueOf(this.corporateProxy));
+        sb.append(", contacts=").append(String.valueOf(this.contacts));
+        sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", storageCount=").append(String.valueOf(this.storageCount));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
+        sb.append(", dnsServer=").append(String.valueOf(this.dnsServer));
+        sb.append(", ntpServer=").append(String.valueOf(this.ntpServer));
+        sb.append(", isCpsOfflineReportEnabled=")
+                .append(String.valueOf(this.isCpsOfflineReportEnabled));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateExadataInfrastructureDetails)) {
+            return false;
+        }
+
+        CreateExadataInfrastructureDetails other = (CreateExadataInfrastructureDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(
+                        this.cloudControlPlaneServer1, other.cloudControlPlaneServer1)
+                && java.util.Objects.equals(
+                        this.cloudControlPlaneServer2, other.cloudControlPlaneServer2)
+                && java.util.Objects.equals(this.netmask, other.netmask)
+                && java.util.Objects.equals(this.gateway, other.gateway)
+                && java.util.Objects.equals(this.adminNetworkCIDR, other.adminNetworkCIDR)
+                && java.util.Objects.equals(this.infiniBandNetworkCIDR, other.infiniBandNetworkCIDR)
+                && java.util.Objects.equals(this.corporateProxy, other.corporateProxy)
+                && java.util.Objects.equals(this.contacts, other.contacts)
+                && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(this.storageCount, other.storageCount)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
+                && java.util.Objects.equals(this.dnsServer, other.dnsServer)
+                && java.util.Objects.equals(this.ntpServer, other.ntpServer)
+                && java.util.Objects.equals(
+                        this.isCpsOfflineReportEnabled, other.isCpsOfflineReportEnabled)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudControlPlaneServer1 == null
+                                ? 43
+                                : this.cloudControlPlaneServer1.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudControlPlaneServer2 == null
+                                ? 43
+                                : this.cloudControlPlaneServer2.hashCode());
+        result = (result * PRIME) + (this.netmask == null ? 43 : this.netmask.hashCode());
+        result = (result * PRIME) + (this.gateway == null ? 43 : this.gateway.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminNetworkCIDR == null ? 43 : this.adminNetworkCIDR.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infiniBandNetworkCIDR == null
+                                ? 43
+                                : this.infiniBandNetworkCIDR.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.corporateProxy == null ? 43 : this.corporateProxy.hashCode());
+        result = (result * PRIME) + (this.contacts == null ? 43 : this.contacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result = (result * PRIME) + (this.storageCount == null ? 43 : this.storageCount.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
+        result = (result * PRIME) + (this.dnsServer == null ? 43 : this.dnsServer.hashCode());
+        result = (result * PRIME) + (this.ntpServer == null ? 43 : this.ntpServer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCpsOfflineReportEnabled == null
+                                ? 43
+                                : this.isCpsOfflineReportEnabled.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

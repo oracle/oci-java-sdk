@@ -16,22 +16,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HostNetworkConfiguration.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "metricName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HostNetworkConfiguration extends HostConfigurationMetricGroup {
+public final class HostNetworkConfiguration extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
@@ -100,6 +95,10 @@ public class HostNetworkConfiguration extends HostConfigurationMetricGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HostNetworkConfiguration(
             java.util.Date timeCollected,
@@ -116,20 +115,81 @@ public class HostNetworkConfiguration extends HostConfigurationMetricGroup {
      * Name of the network interface
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("interfaceName")
-    String interfaceName;
+    private final String interfaceName;
+
+    public String getInterfaceName() {
+        return interfaceName;
+    }
 
     /**
      * IP address (IPv4 or IPv6) of the network interface
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * MAC address of the network interface. MAC address is a 12-digit hexadecimal number separated by colons or dashes or dots. Following formats are accepted: MM:MM:MM:SS:SS:SS, MM-MM-MM-SS-SS-SS, MM.MM.MM.SS.SS.SS, MMM:MMM:SSS:SSS, MMM-MMM-SSS-SSS, MMM.MMM.SSS.SSS, MMMM:MMSS:SSSS, MMMM-MMSS-SSSS, MMMM.MMSS.SSSS
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
-    String macAddress;
+    private final String macAddress;
+
+    public String getMacAddress() {
+        return macAddress;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostNetworkConfiguration(");
+        sb.append("super=").append(super.toString());
+        sb.append(", interfaceName=").append(String.valueOf(this.interfaceName));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", macAddress=").append(String.valueOf(this.macAddress));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostNetworkConfiguration)) {
+            return false;
+        }
+
+        HostNetworkConfiguration other = (HostNetworkConfiguration) o;
+        return java.util.Objects.equals(this.interfaceName, other.interfaceName)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.macAddress, other.macAddress)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.interfaceName == null ? 43 : this.interfaceName.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.macAddress == null ? 43 : this.macAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

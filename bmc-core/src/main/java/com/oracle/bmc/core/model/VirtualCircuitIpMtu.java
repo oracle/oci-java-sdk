@@ -8,7 +8,6 @@ package com.oracle.bmc.core.model;
  * The layer 3 IP MTU to use with this virtual circuit.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.extern.slf4j.Slf4j
 public enum VirtualCircuitIpMtu {
     Mtu1500("MTU_1500"),
     Mtu9000("MTU_9000"),
@@ -18,6 +17,9 @@ public enum VirtualCircuitIpMtu {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(VirtualCircuitIpMtu.class);
 
     private final String value;
     private static java.util.Map<String, VirtualCircuitIpMtu> map;

@@ -15,14 +15,17 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OriginGroup.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OriginGroup {
+public final class OriginGroup {
+    @Deprecated
+    @java.beans.ConstructorProperties({"origins"})
+    public OriginGroup(java.util.List<OriginGroup_origins> origins) {
+        super();
+        this.origins = origins;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("origins")
         private java.util.List<OriginGroup_origins> origins;
@@ -58,12 +61,59 @@ public class OriginGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The list of objects containing origin references and additional properties.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origins")
-    java.util.List<OriginGroup_origins> origins;
+    private final java.util.List<OriginGroup_origins> origins;
+
+    public java.util.List<OriginGroup_origins> getOrigins() {
+        return origins;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OriginGroup(");
+        sb.append("origins=").append(String.valueOf(this.origins));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OriginGroup)) {
+            return false;
+        }
+
+        OriginGroup other = (OriginGroup) o;
+        return java.util.Objects.equals(this.origins, other.origins)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.origins == null ? 43 : this.origins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

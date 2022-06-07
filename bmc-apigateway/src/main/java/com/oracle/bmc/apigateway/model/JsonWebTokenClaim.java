@@ -15,16 +15,21 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = JsonWebTokenClaim.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JsonWebTokenClaim {
+public final class JsonWebTokenClaim {
+    @Deprecated
+    @java.beans.ConstructorProperties({"key", "values", "isRequired"})
+    public JsonWebTokenClaim(String key, java.util.List<String> values, Boolean isRequired) {
+        super();
+        this.key = key;
+        this.values = values;
+        this.isRequired = isRequired;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -79,11 +84,19 @@ public class JsonWebTokenClaim {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the claim.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The list of acceptable values for a given claim.
@@ -92,7 +105,11 @@ public class JsonWebTokenClaim {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
-    java.util.List<String> values;
+    private final java.util.List<String> values;
+
+    public java.util.List<String> getValues() {
+        return values;
+    }
 
     /**
      * Whether the claim is required to be present in the JWT or not. If set
@@ -101,8 +118,57 @@ public class JsonWebTokenClaim {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
-    Boolean isRequired;
+    private final Boolean isRequired;
+
+    public Boolean getIsRequired() {
+        return isRequired;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JsonWebTokenClaim(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", values=").append(String.valueOf(this.values));
+        sb.append(", isRequired=").append(String.valueOf(this.isRequired));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JsonWebTokenClaim)) {
+            return false;
+        }
+
+        JsonWebTokenClaim other = (JsonWebTokenClaim) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.values, other.values)
+                && java.util.Objects.equals(this.isRequired, other.isRequired)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.values == null ? 43 : this.values.hashCode());
+        result = (result * PRIME) + (this.isRequired == null ? 43 : this.isRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

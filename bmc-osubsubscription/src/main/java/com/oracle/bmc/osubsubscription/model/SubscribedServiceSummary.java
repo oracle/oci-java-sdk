@@ -16,16 +16,85 @@ package com.oracle.bmc.osubsubscription.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SubscribedServiceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SubscribedServiceSummary {
+public final class SubscribedServiceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "product",
+        "quantity",
+        "status",
+        "operationType",
+        "netUnitPrice",
+        "fundedAllocationValue",
+        "partnerTransactionType",
+        "termValue",
+        "termValueUOM",
+        "bookingOptyNumber",
+        "totalValue",
+        "orderNumber",
+        "dataCenterRegion",
+        "pricingModel",
+        "programType",
+        "promoType",
+        "csi",
+        "isIntentToPay",
+        "timeStart",
+        "timeEnd",
+        "commitmentServices"
+    })
+    public SubscribedServiceSummary(
+            String id,
+            SubscriptionProduct product,
+            String quantity,
+            String status,
+            String operationType,
+            String netUnitPrice,
+            String fundedAllocationValue,
+            String partnerTransactionType,
+            Long termValue,
+            String termValueUOM,
+            String bookingOptyNumber,
+            String totalValue,
+            Long orderNumber,
+            String dataCenterRegion,
+            String pricingModel,
+            String programType,
+            String promoType,
+            Long csi,
+            Boolean isIntentToPay,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            java.util.List<Commitment> commitmentServices) {
+        super();
+        this.id = id;
+        this.product = product;
+        this.quantity = quantity;
+        this.status = status;
+        this.operationType = operationType;
+        this.netUnitPrice = netUnitPrice;
+        this.fundedAllocationValue = fundedAllocationValue;
+        this.partnerTransactionType = partnerTransactionType;
+        this.termValue = termValue;
+        this.termValueUOM = termValueUOM;
+        this.bookingOptyNumber = bookingOptyNumber;
+        this.totalValue = totalValue;
+        this.orderNumber = orderNumber;
+        this.dataCenterRegion = dataCenterRegion;
+        this.pricingModel = pricingModel;
+        this.programType = programType;
+        this.promoType = promoType;
+        this.csi = csi;
+        this.isIntentToPay = isIntentToPay;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.commitmentServices = commitmentServices;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -295,43 +364,71 @@ public class SubscribedServiceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * SPM internal Subscribed Service ID
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("product")
-    SubscriptionProduct product;
+    private final SubscriptionProduct product;
+
+    public SubscriptionProduct getProduct() {
+        return product;
+    }
 
     /**
      * Subscribed service quantity
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
-    String quantity;
+    private final String quantity;
+
+    public String getQuantity() {
+        return quantity;
+    }
 
     /**
      * Subscribed service status
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * Subscribed service operation type
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
-    String operationType;
+    private final String operationType;
+
+    public String getOperationType() {
+        return operationType;
+    }
 
     /**
      * Subscribed service net unit price
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
-    String netUnitPrice;
+    private final String netUnitPrice;
+
+    public String getNetUnitPrice() {
+        return netUnitPrice;
+    }
 
     /**
      * Funded Allocation line value
@@ -339,113 +436,300 @@ public class SubscribedServiceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fundedAllocationValue")
-    String fundedAllocationValue;
+    private final String fundedAllocationValue;
+
+    public String getFundedAllocationValue() {
+        return fundedAllocationValue;
+    }
 
     /**
      * This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partnerTransactionType")
-    String partnerTransactionType;
+    private final String partnerTransactionType;
+
+    public String getPartnerTransactionType() {
+        return partnerTransactionType;
+    }
 
     /**
      * Term value in Months
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("termValue")
-    Long termValue;
+    private final Long termValue;
+
+    public Long getTermValue() {
+        return termValue;
+    }
 
     /**
      * Term value UOM
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("termValueUOM")
-    String termValueUOM;
+    private final String termValueUOM;
+
+    public String getTermValueUOM() {
+        return termValueUOM;
+    }
 
     /**
      * Booking Opportunity Number of Subscribed Service
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bookingOptyNumber")
-    String bookingOptyNumber;
+    private final String bookingOptyNumber;
+
+    public String getBookingOptyNumber() {
+        return bookingOptyNumber;
+    }
 
     /**
      * Subscribed service total value
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalValue")
-    String totalValue;
+    private final String totalValue;
+
+    public String getTotalValue() {
+        return totalValue;
+    }
 
     /**
      * Sales Order Number associated to the subscribed service
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
-    Long orderNumber;
+    private final Long orderNumber;
+
+    public Long getOrderNumber() {
+        return orderNumber;
+    }
 
     /**
      * Subscribed service data center region
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenterRegion")
-    String dataCenterRegion;
+    private final String dataCenterRegion;
+
+    public String getDataCenterRegion() {
+        return dataCenterRegion;
+    }
 
     /**
      * Subscribed service pricing model
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
-    String pricingModel;
+    private final String pricingModel;
+
+    public String getPricingModel() {
+        return pricingModel;
+    }
 
     /**
      * Subscribed service program type
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("programType")
-    String programType;
+    private final String programType;
+
+    public String getProgramType() {
+        return programType;
+    }
 
     /**
      * Subscribed service promotion type
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("promoType")
-    String promoType;
+    private final String promoType;
+
+    public String getPromoType() {
+        return promoType;
+    }
 
     /**
      * Subscribed service CSI number
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
-    Long csi;
+    private final Long csi;
+
+    public Long getCsi() {
+        return csi;
+    }
 
     /**
      * Subscribed service intent to pay flag
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
-    Boolean isIntentToPay;
+    private final Boolean isIntentToPay;
+
+    public Boolean getIsIntentToPay() {
+        return isIntentToPay;
+    }
 
     /**
      * Subscribed service start date
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Subscribed service end date
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * List of Commitment services of a line
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitmentServices")
-    java.util.List<Commitment> commitmentServices;
+    private final java.util.List<Commitment> commitmentServices;
+
+    public java.util.List<Commitment> getCommitmentServices() {
+        return commitmentServices;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SubscribedServiceSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", product=").append(String.valueOf(this.product));
+        sb.append(", quantity=").append(String.valueOf(this.quantity));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", operationType=").append(String.valueOf(this.operationType));
+        sb.append(", netUnitPrice=").append(String.valueOf(this.netUnitPrice));
+        sb.append(", fundedAllocationValue=").append(String.valueOf(this.fundedAllocationValue));
+        sb.append(", partnerTransactionType=").append(String.valueOf(this.partnerTransactionType));
+        sb.append(", termValue=").append(String.valueOf(this.termValue));
+        sb.append(", termValueUOM=").append(String.valueOf(this.termValueUOM));
+        sb.append(", bookingOptyNumber=").append(String.valueOf(this.bookingOptyNumber));
+        sb.append(", totalValue=").append(String.valueOf(this.totalValue));
+        sb.append(", orderNumber=").append(String.valueOf(this.orderNumber));
+        sb.append(", dataCenterRegion=").append(String.valueOf(this.dataCenterRegion));
+        sb.append(", pricingModel=").append(String.valueOf(this.pricingModel));
+        sb.append(", programType=").append(String.valueOf(this.programType));
+        sb.append(", promoType=").append(String.valueOf(this.promoType));
+        sb.append(", csi=").append(String.valueOf(this.csi));
+        sb.append(", isIntentToPay=").append(String.valueOf(this.isIntentToPay));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", commitmentServices=").append(String.valueOf(this.commitmentServices));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SubscribedServiceSummary)) {
+            return false;
+        }
+
+        SubscribedServiceSummary other = (SubscribedServiceSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.product, other.product)
+                && java.util.Objects.equals(this.quantity, other.quantity)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.netUnitPrice, other.netUnitPrice)
+                && java.util.Objects.equals(this.fundedAllocationValue, other.fundedAllocationValue)
+                && java.util.Objects.equals(
+                        this.partnerTransactionType, other.partnerTransactionType)
+                && java.util.Objects.equals(this.termValue, other.termValue)
+                && java.util.Objects.equals(this.termValueUOM, other.termValueUOM)
+                && java.util.Objects.equals(this.bookingOptyNumber, other.bookingOptyNumber)
+                && java.util.Objects.equals(this.totalValue, other.totalValue)
+                && java.util.Objects.equals(this.orderNumber, other.orderNumber)
+                && java.util.Objects.equals(this.dataCenterRegion, other.dataCenterRegion)
+                && java.util.Objects.equals(this.pricingModel, other.pricingModel)
+                && java.util.Objects.equals(this.programType, other.programType)
+                && java.util.Objects.equals(this.promoType, other.promoType)
+                && java.util.Objects.equals(this.csi, other.csi)
+                && java.util.Objects.equals(this.isIntentToPay, other.isIntentToPay)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.commitmentServices, other.commitmentServices)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.product == null ? 43 : this.product.hashCode());
+        result = (result * PRIME) + (this.quantity == null ? 43 : this.quantity.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.netUnitPrice == null ? 43 : this.netUnitPrice.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fundedAllocationValue == null
+                                ? 43
+                                : this.fundedAllocationValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerTransactionType == null
+                                ? 43
+                                : this.partnerTransactionType.hashCode());
+        result = (result * PRIME) + (this.termValue == null ? 43 : this.termValue.hashCode());
+        result = (result * PRIME) + (this.termValueUOM == null ? 43 : this.termValueUOM.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bookingOptyNumber == null ? 43 : this.bookingOptyNumber.hashCode());
+        result = (result * PRIME) + (this.totalValue == null ? 43 : this.totalValue.hashCode());
+        result = (result * PRIME) + (this.orderNumber == null ? 43 : this.orderNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataCenterRegion == null ? 43 : this.dataCenterRegion.hashCode());
+        result = (result * PRIME) + (this.pricingModel == null ? 43 : this.pricingModel.hashCode());
+        result = (result * PRIME) + (this.programType == null ? 43 : this.programType.hashCode());
+        result = (result * PRIME) + (this.promoType == null ? 43 : this.promoType.hashCode());
+        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIntentToPay == null ? 43 : this.isIntentToPay.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.commitmentServices == null
+                                ? 43
+                                : this.commitmentServices.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

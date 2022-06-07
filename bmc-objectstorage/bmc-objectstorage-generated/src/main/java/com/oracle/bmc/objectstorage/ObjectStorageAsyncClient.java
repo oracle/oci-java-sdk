@@ -7,6 +7,7 @@ package com.oracle.bmc.objectstorage;
 import com.oracle.bmc.objectstorage.internal.http.*;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ObjectStorage service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.objectstorage.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.extern.slf4j.Slf4j
 public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     /**
      * Service instance for ObjectStorage.
@@ -34,7 +34,9 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                     .serviceEndpointTemplate("https://objectstorage.{region}.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ObjectStorageAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -319,9 +321,13 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
          * @return the client
          */
         public ObjectStorageAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new ObjectStorageAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -331,6 +337,10 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

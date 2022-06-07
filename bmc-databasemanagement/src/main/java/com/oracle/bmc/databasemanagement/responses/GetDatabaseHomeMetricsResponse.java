@@ -7,10 +7,6 @@ package com.oracle.bmc.databasemanagement.responses;
 import com.oracle.bmc.databasemanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned DatabaseHomeMetrics instance.
      */
     private com.oracle.bmc.databasemanagement.model.DatabaseHomeMetrics databaseHomeMetrics;
+
+    public com.oracle.bmc.databasemanagement.model.DatabaseHomeMetrics getDatabaseHomeMetrics() {
+        return databaseHomeMetrics;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "databaseHomeMetrics"})
     private GetDatabaseHomeMetricsResponse(
@@ -42,6 +46,21 @@ public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.DatabaseHomeMetrics databaseHomeMetrics;
+
+        public Builder databaseHomeMetrics(
+                com.oracle.bmc.databasemanagement.model.DatabaseHomeMetrics databaseHomeMetrics) {
+            this.databaseHomeMetrics = databaseHomeMetrics;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -58,5 +77,48 @@ public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.Bmc
             return new GetDatabaseHomeMetricsResponse(
                     __httpStatusCode__, opcRequestId, databaseHomeMetrics);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",databaseHomeMetrics=").append(String.valueOf(databaseHomeMetrics));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetDatabaseHomeMetricsResponse)) {
+            return false;
+        }
+
+        GetDatabaseHomeMetricsResponse other = (GetDatabaseHomeMetricsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.databaseHomeMetrics, other.databaseHomeMetrics);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseHomeMetrics == null
+                                ? 43
+                                : this.databaseHomeMetrics.hashCode());
+        return result;
     }
 }

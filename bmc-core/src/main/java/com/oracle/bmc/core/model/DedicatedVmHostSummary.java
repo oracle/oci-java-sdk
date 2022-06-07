@@ -16,16 +16,55 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DedicatedVmHostSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DedicatedVmHostSummary {
+public final class DedicatedVmHostSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "compartmentId",
+        "dedicatedVmHostShape",
+        "displayName",
+        "faultDomain",
+        "id",
+        "lifecycleState",
+        "timeCreated",
+        "remainingOcpus",
+        "totalOcpus",
+        "totalMemoryInGBs",
+        "remainingMemoryInGBs"
+    })
+    public DedicatedVmHostSummary(
+            String availabilityDomain,
+            String compartmentId,
+            String dedicatedVmHostShape,
+            String displayName,
+            String faultDomain,
+            String id,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            Float remainingOcpus,
+            Float totalOcpus,
+            Float totalMemoryInGBs,
+            Float remainingMemoryInGBs) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.compartmentId = compartmentId;
+        this.dedicatedVmHostShape = dedicatedVmHostShape;
+        this.displayName = displayName;
+        this.faultDomain = faultDomain;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.remainingOcpus = remainingOcpus;
+        this.totalOcpus = totalOcpus;
+        this.totalMemoryInGBs = totalMemoryInGBs;
+        this.remainingMemoryInGBs = remainingMemoryInGBs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -185,6 +224,10 @@ public class DedicatedVmHostSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain the dedicated VM host is running in.
      * <p>
@@ -192,14 +235,22 @@ public class DedicatedVmHostSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The OCID of the compartment that contains the dedicated VM host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The shape of the dedicated VM host. The shape determines the number of CPUs and
@@ -207,7 +258,11 @@ public class DedicatedVmHostSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
-    String dedicatedVmHostShape;
+    private final String dedicatedVmHostShape;
+
+    public String getDedicatedVmHostShape() {
+        return dedicatedVmHostShape;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -215,7 +270,11 @@ public class DedicatedVmHostSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The fault domain for the dedicated VM host's assigned instances. For more information, see Fault Domains.
@@ -229,19 +288,27 @@ public class DedicatedVmHostSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The current state of the dedicated VM host.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -255,6 +322,9 @@ public class DedicatedVmHostSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -293,7 +363,11 @@ public class DedicatedVmHostSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -302,36 +376,148 @@ public class DedicatedVmHostSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The current available OCPUs of the dedicated VM host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remainingOcpus")
-    Float remainingOcpus;
+    private final Float remainingOcpus;
+
+    public Float getRemainingOcpus() {
+        return remainingOcpus;
+    }
 
     /**
      * The current total OCPUs of the dedicated VM host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpus")
-    Float totalOcpus;
+    private final Float totalOcpus;
+
+    public Float getTotalOcpus() {
+        return totalOcpus;
+    }
 
     /**
      * The current total memory of the dedicated VM host, in GBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGBs")
-    Float totalMemoryInGBs;
+    private final Float totalMemoryInGBs;
+
+    public Float getTotalMemoryInGBs() {
+        return totalMemoryInGBs;
+    }
 
     /**
      * The current available memory of the dedicated VM host, in GBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remainingMemoryInGBs")
-    Float remainingMemoryInGBs;
+    private final Float remainingMemoryInGBs;
+
+    public Float getRemainingMemoryInGBs() {
+        return remainingMemoryInGBs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DedicatedVmHostSummary(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", dedicatedVmHostShape=").append(String.valueOf(this.dedicatedVmHostShape));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", remainingOcpus=").append(String.valueOf(this.remainingOcpus));
+        sb.append(", totalOcpus=").append(String.valueOf(this.totalOcpus));
+        sb.append(", totalMemoryInGBs=").append(String.valueOf(this.totalMemoryInGBs));
+        sb.append(", remainingMemoryInGBs=").append(String.valueOf(this.remainingMemoryInGBs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DedicatedVmHostSummary)) {
+            return false;
+        }
+
+        DedicatedVmHostSummary other = (DedicatedVmHostSummary) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.dedicatedVmHostShape, other.dedicatedVmHostShape)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.remainingOcpus, other.remainingOcpus)
+                && java.util.Objects.equals(this.totalOcpus, other.totalOcpus)
+                && java.util.Objects.equals(this.totalMemoryInGBs, other.totalMemoryInGBs)
+                && java.util.Objects.equals(this.remainingMemoryInGBs, other.remainingMemoryInGBs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dedicatedVmHostShape == null
+                                ? 43
+                                : this.dedicatedVmHostShape.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remainingOcpus == null ? 43 : this.remainingOcpus.hashCode());
+        result = (result * PRIME) + (this.totalOcpus == null ? 43 : this.totalOcpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMemoryInGBs == null ? 43 : this.totalMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remainingMemoryInGBs == null
+                                ? 43
+                                : this.remainingMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

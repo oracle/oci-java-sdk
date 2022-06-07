@@ -18,16 +18,28 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PutMessagesResultEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PutMessagesResultEntry {
+public final class PutMessagesResultEntry {
+    @Deprecated
+    @java.beans.ConstructorProperties({"partition", "offset", "timestamp", "error", "errorMessage"})
+    public PutMessagesResultEntry(
+            String partition,
+            Long offset,
+            java.util.Date timestamp,
+            String error,
+            String errorMessage) {
+        super();
+        this.partition = partition;
+        this.offset = offset;
+        this.timestamp = timestamp;
+        this.error = error;
+        this.errorMessage = errorMessage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("partition")
         private String partition;
@@ -105,36 +117,111 @@ public class PutMessagesResultEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The ID of the partition where the message was stored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partition")
-    String partition;
+    private final String partition;
+
+    public String getPartition() {
+        return partition;
+    }
 
     /**
      * The offset of the message in the partition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
-    Long offset;
+    private final Long offset;
+
+    public Long getOffset() {
+        return offset;
+    }
 
     /**
      * The timestamp indicating when the server appended the message to the stream.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * The error code, in case the message was not successfully appended to the stream.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("error")
-    String error;
+    private final String error;
+
+    public String getError() {
+        return error;
+    }
 
     /**
      * A human-readable error message associated with the error code.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PutMessagesResultEntry(");
+        sb.append("partition=").append(String.valueOf(this.partition));
+        sb.append(", offset=").append(String.valueOf(this.offset));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", error=").append(String.valueOf(this.error));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PutMessagesResultEntry)) {
+            return false;
+        }
+
+        PutMessagesResultEntry other = (PutMessagesResultEntry) o;
+        return java.util.Objects.equals(this.partition, other.partition)
+                && java.util.Objects.equals(this.offset, other.offset)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.error, other.error)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.partition == null ? 43 : this.partition.hashCode());
+        result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result = (result * PRIME) + (this.error == null ? 43 : this.error.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

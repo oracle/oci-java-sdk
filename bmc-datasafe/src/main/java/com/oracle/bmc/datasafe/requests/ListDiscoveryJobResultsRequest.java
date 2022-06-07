@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListDiscoveryJobResultsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDiscoveryJobResultsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListDiscoveryJobResultsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,36 +17,57 @@ public class ListDiscoveryJobResultsRequest
      */
     private String discoveryJobId;
 
+    public String getDiscoveryJobId() {
+        return discoveryJobId;
+    }
     /**
      * A filter to return only the resources that match the specified discovery type.
      */
     private com.oracle.bmc.datasafe.model.DiscoveryJob.DiscoveryType discoveryType;
 
+    public com.oracle.bmc.datasafe.model.DiscoveryJob.DiscoveryType getDiscoveryType() {
+        return discoveryType;
+    }
     /**
      * A filter to return only the resources that match the specified planned action.
      */
     private com.oracle.bmc.datasafe.model.DiscoveryJobResult.PlannedAction plannedAction;
 
+    public com.oracle.bmc.datasafe.model.DiscoveryJobResult.PlannedAction getPlannedAction() {
+        return plannedAction;
+    }
     /**
      * A filter to return the discovery result resources based on the value of their isResultApplied attribute.
      */
     private Boolean isResultApplied;
 
+    public Boolean getIsResultApplied() {
+        return isResultApplied;
+    }
     /**
      * A filter to return only items related to specific schema name.
      */
     private java.util.List<String> schemaName;
 
+    public java.util.List<String> getSchemaName() {
+        return schemaName;
+    }
     /**
      * A filter to return only items related to a specific object name.
      */
     private java.util.List<String> objectName;
 
+    public java.util.List<String> getObjectName() {
+        return objectName;
+    }
     /**
      * A filter to return only a specific column based on column name.
      */
     private java.util.List<String> columnName;
 
+    public java.util.List<String> getColumnName() {
+        return columnName;
+    }
     /**
      * The sort order to use, either ascending (ASC) or descending (DESC).
      */
@@ -95,6 +108,10 @@ public class ListDiscoveryJobResultsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
      * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
@@ -143,20 +160,34 @@ public class ListDiscoveryJobResultsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
+
+    public String getPage() {
+        return page;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -164,6 +195,52 @@ public class ListDiscoveryJobResultsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String discoveryJobId = null;
+
+        /**
+         * The OCID of the discovery job.
+         * @return this builder instance
+         */
+        public Builder discoveryJobId(String discoveryJobId) {
+            this.discoveryJobId = discoveryJobId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.DiscoveryJob.DiscoveryType discoveryType = null;
+
+        /**
+         * A filter to return only the resources that match the specified discovery type.
+         * @return this builder instance
+         */
+        public Builder discoveryType(
+                com.oracle.bmc.datasafe.model.DiscoveryJob.DiscoveryType discoveryType) {
+            this.discoveryType = discoveryType;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.DiscoveryJobResult.PlannedAction plannedAction = null;
+
+        /**
+         * A filter to return only the resources that match the specified planned action.
+         * @return this builder instance
+         */
+        public Builder plannedAction(
+                com.oracle.bmc.datasafe.model.DiscoveryJobResult.PlannedAction plannedAction) {
+            this.plannedAction = plannedAction;
+            return this;
+        }
+
+        private Boolean isResultApplied = null;
+
+        /**
+         * A filter to return the discovery result resources based on the value of their isResultApplied attribute.
+         * @return this builder instance
+         */
+        public Builder isResultApplied(Boolean isResultApplied) {
+            this.isResultApplied = isResultApplied;
+            return this;
+        }
 
         private java.util.List<String> schemaName = null;
 
@@ -220,6 +297,63 @@ public class ListDiscoveryJobResultsRequest
          */
         public Builder columnName(String singularValue) {
             return this.columnName(java.util.Arrays.asList(singularValue));
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
+         * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
         }
 
         /**
@@ -283,5 +417,127 @@ public class ListDiscoveryJobResultsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListDiscoveryJobResultsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListDiscoveryJobResultsRequest
+         */
+        public ListDiscoveryJobResultsRequest buildWithoutInvocationCallback() {
+            ListDiscoveryJobResultsRequest request = new ListDiscoveryJobResultsRequest();
+            request.discoveryJobId = discoveryJobId;
+            request.discoveryType = discoveryType;
+            request.plannedAction = plannedAction;
+            request.isResultApplied = isResultApplied;
+            request.schemaName = schemaName;
+            request.objectName = objectName;
+            request.columnName = columnName;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            return request;
+            // new ListDiscoveryJobResultsRequest(discoveryJobId, discoveryType, plannedAction, isResultApplied, schemaName, objectName, columnName, sortOrder, sortBy, opcRequestId, limit, page);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .discoveryJobId(discoveryJobId)
+                .discoveryType(discoveryType)
+                .plannedAction(plannedAction)
+                .isResultApplied(isResultApplied)
+                .schemaName(schemaName)
+                .objectName(objectName)
+                .columnName(columnName)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",discoveryJobId=").append(String.valueOf(this.discoveryJobId));
+        sb.append(",discoveryType=").append(String.valueOf(this.discoveryType));
+        sb.append(",plannedAction=").append(String.valueOf(this.plannedAction));
+        sb.append(",isResultApplied=").append(String.valueOf(this.isResultApplied));
+        sb.append(",schemaName=").append(String.valueOf(this.schemaName));
+        sb.append(",objectName=").append(String.valueOf(this.objectName));
+        sb.append(",columnName=").append(String.valueOf(this.columnName));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListDiscoveryJobResultsRequest)) {
+            return false;
+        }
+
+        ListDiscoveryJobResultsRequest other = (ListDiscoveryJobResultsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.discoveryJobId, other.discoveryJobId)
+                && java.util.Objects.equals(this.discoveryType, other.discoveryType)
+                && java.util.Objects.equals(this.plannedAction, other.plannedAction)
+                && java.util.Objects.equals(this.isResultApplied, other.isResultApplied)
+                && java.util.Objects.equals(this.schemaName, other.schemaName)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.columnName, other.columnName)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.discoveryJobId == null ? 43 : this.discoveryJobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryType == null ? 43 : this.discoveryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.plannedAction == null ? 43 : this.plannedAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isResultApplied == null ? 43 : this.isResultApplied.hashCode());
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        return result;
     }
 }

@@ -24,14 +24,41 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SwiftPassword.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SwiftPassword {
+public final class SwiftPassword {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "password",
+        "id",
+        "userId",
+        "description",
+        "timeCreated",
+        "expiresOn",
+        "lifecycleState",
+        "inactiveStatus"
+    })
+    public SwiftPassword(
+            String password,
+            String id,
+            String userId,
+            String description,
+            java.util.Date timeCreated,
+            java.util.Date expiresOn,
+            LifecycleState lifecycleState,
+            Long inactiveStatus) {
+        super();
+        this.password = password;
+        this.id = id;
+        this.userId = userId;
+        this.description = description;
+        this.timeCreated = timeCreated;
+        this.expiresOn = expiresOn;
+        this.lifecycleState = lifecycleState;
+        this.inactiveStatus = inactiveStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
@@ -147,31 +174,51 @@ public class SwiftPassword {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The Swift password. The value is available only in the response for {@code CreateSwiftPassword}, and not
      * for {@code ListSwiftPasswords} or {@code UpdateSwiftPassword}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    String password;
+    private final String password;
+
+    public String getPassword() {
+        return password;
+    }
 
     /**
      * The OCID of the Swift password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the user the password belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * The description you assign to the Swift password. Does not have to be unique, and it's changeable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Date and time the {@code SwiftPassword} object was created, in the format defined by RFC3339.
@@ -180,7 +227,11 @@ public class SwiftPassword {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Date and time when this password will expire, in the format defined by RFC3339.
@@ -190,13 +241,17 @@ public class SwiftPassword {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expiresOn")
-    java.util.Date expiresOn;
+    private final java.util.Date expiresOn;
+
+    public java.util.Date getExpiresOn() {
+        return expiresOn;
+    }
+
     /**
      * The password's current state. After creating a password, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -209,6 +264,9 @@ public class SwiftPassword {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -248,14 +306,86 @@ public class SwiftPassword {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
-    Long inactiveStatus;
+    private final Long inactiveStatus;
+
+    public Long getInactiveStatus() {
+        return inactiveStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SwiftPassword(");
+        sb.append("password=").append(String.valueOf(this.password));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", expiresOn=").append(String.valueOf(this.expiresOn));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", inactiveStatus=").append(String.valueOf(this.inactiveStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SwiftPassword)) {
+            return false;
+        }
+
+        SwiftPassword other = (SwiftPassword) o;
+        return java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.expiresOn, other.expiresOn)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.inactiveStatus, other.inactiveStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.expiresOn == null ? 43 : this.expiresOn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inactiveStatus == null ? 43 : this.inactiveStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.loggingingestion.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loggingingestion/PutLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PutLogsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class PutLogsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loggingingestion.model.PutLogsDetails> {
@@ -26,11 +18,17 @@ public class PutLogsRequest
      */
     private String logId;
 
+    public String getLogId() {
+        return logId;
+    }
     /**
      * The logs to emit.
      */
     private com.oracle.bmc.loggingingestion.model.PutLogsDetails putLogsDetails;
 
+    public com.oracle.bmc.loggingingestion.model.PutLogsDetails getPutLogsDetails() {
+        return putLogsDetails;
+    }
     /**
      * Effective timestamp, for when the agent started processing the log
      * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
@@ -38,17 +36,27 @@ public class PutLogsRequest
      */
     private java.util.Date timestampOpcAgentProcessing;
 
+    public java.util.Date getTimestampOpcAgentProcessing() {
+        return timestampOpcAgentProcessing;
+    }
     /**
      * Version of the agent sending the request.
      */
     private String opcAgentVersion;
 
+    public String getOpcAgentVersion() {
+        return opcAgentVersion;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -66,6 +74,66 @@ public class PutLogsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String logId = null;
+
+        /**
+         * OCID of a log to work with.
+         * @return this builder instance
+         */
+        public Builder logId(String logId) {
+            this.logId = logId;
+            return this;
+        }
+
+        private com.oracle.bmc.loggingingestion.model.PutLogsDetails putLogsDetails = null;
+
+        /**
+         * The logs to emit.
+         * @return this builder instance
+         */
+        public Builder putLogsDetails(
+                com.oracle.bmc.loggingingestion.model.PutLogsDetails putLogsDetails) {
+            this.putLogsDetails = putLogsDetails;
+            return this;
+        }
+
+        private java.util.Date timestampOpcAgentProcessing = null;
+
+        /**
+         * Effective timestamp, for when the agent started processing the log
+         * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
+         *
+         * @return this builder instance
+         */
+        public Builder timestampOpcAgentProcessing(java.util.Date timestampOpcAgentProcessing) {
+            this.timestampOpcAgentProcessing = timestampOpcAgentProcessing;
+            return this;
+        }
+
+        private String opcAgentVersion = null;
+
+        /**
+         * Version of the agent sending the request.
+         * @return this builder instance
+         */
+        public Builder opcAgentVersion(String opcAgentVersion) {
+            this.opcAgentVersion = opcAgentVersion;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -132,5 +200,94 @@ public class PutLogsRequest
             putLogsDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of PutLogsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of PutLogsRequest
+         */
+        public PutLogsRequest buildWithoutInvocationCallback() {
+            PutLogsRequest request = new PutLogsRequest();
+            request.logId = logId;
+            request.putLogsDetails = putLogsDetails;
+            request.timestampOpcAgentProcessing = timestampOpcAgentProcessing;
+            request.opcAgentVersion = opcAgentVersion;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new PutLogsRequest(logId, putLogsDetails, timestampOpcAgentProcessing, opcAgentVersion, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .logId(logId)
+                .putLogsDetails(putLogsDetails)
+                .timestampOpcAgentProcessing(timestampOpcAgentProcessing)
+                .opcAgentVersion(opcAgentVersion)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",logId=").append(String.valueOf(this.logId));
+        sb.append(",putLogsDetails=").append(String.valueOf(this.putLogsDetails));
+        sb.append(",timestampOpcAgentProcessing=")
+                .append(String.valueOf(this.timestampOpcAgentProcessing));
+        sb.append(",opcAgentVersion=").append(String.valueOf(this.opcAgentVersion));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PutLogsRequest)) {
+            return false;
+        }
+
+        PutLogsRequest other = (PutLogsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.logId, other.logId)
+                && java.util.Objects.equals(this.putLogsDetails, other.putLogsDetails)
+                && java.util.Objects.equals(
+                        this.timestampOpcAgentProcessing, other.timestampOpcAgentProcessing)
+                && java.util.Objects.equals(this.opcAgentVersion, other.opcAgentVersion)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.logId == null ? 43 : this.logId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.putLogsDetails == null ? 43 : this.putLogsDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timestampOpcAgentProcessing == null
+                                ? 43
+                                : this.timestampOpcAgentProcessing.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcAgentVersion == null ? 43 : this.opcAgentVersion.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

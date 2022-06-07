@@ -9,14 +9,6 @@ import com.oracle.bmc.dataintegration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetFunctionLibraryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetFunctionLibraryRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +16,17 @@ public class GetFunctionLibraryRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String workspaceId;
 
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
     /**
      * The functionLibrary key.
      */
     private String functionLibraryKey;
 
+    public String getFunctionLibraryKey() {
+        return functionLibraryKey;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -37,6 +35,9 @@ public class GetFunctionLibraryRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * This parameter allows users to specify which view of the object to return. CHILD_COUNT_STATISTICS - This option is used to get statistics on immediate children of the object by their type.
      */
@@ -77,12 +78,52 @@ public class GetFunctionLibraryRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    public java.util.List<Projection> getProjection() {
+        return projection;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetFunctionLibraryRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String workspaceId = null;
+
+        /**
+         * The workspace ID.
+         * @return this builder instance
+         */
+        public Builder workspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+
+        private String functionLibraryKey = null;
+
+        /**
+         * The functionLibrary key.
+         * @return this builder instance
+         */
+        public Builder functionLibraryKey(String functionLibraryKey) {
+            this.functionLibraryKey = functionLibraryKey;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         private java.util.List<Projection> projection = null;
 
@@ -156,5 +197,83 @@ public class GetFunctionLibraryRequest extends com.oracle.bmc.requests.BmcReques
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetFunctionLibraryRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetFunctionLibraryRequest
+         */
+        public GetFunctionLibraryRequest buildWithoutInvocationCallback() {
+            GetFunctionLibraryRequest request = new GetFunctionLibraryRequest();
+            request.workspaceId = workspaceId;
+            request.functionLibraryKey = functionLibraryKey;
+            request.opcRequestId = opcRequestId;
+            request.projection = projection;
+            return request;
+            // new GetFunctionLibraryRequest(workspaceId, functionLibraryKey, opcRequestId, projection);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .workspaceId(workspaceId)
+                .functionLibraryKey(functionLibraryKey)
+                .opcRequestId(opcRequestId)
+                .projection(projection);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",workspaceId=").append(String.valueOf(this.workspaceId));
+        sb.append(",functionLibraryKey=").append(String.valueOf(this.functionLibraryKey));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",projection=").append(String.valueOf(this.projection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetFunctionLibraryRequest)) {
+            return false;
+        }
+
+        GetFunctionLibraryRequest other = (GetFunctionLibraryRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.workspaceId, other.workspaceId)
+                && java.util.Objects.equals(this.functionLibraryKey, other.functionLibraryKey)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.projection, other.projection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.workspaceId == null ? 43 : this.workspaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.functionLibraryKey == null
+                                ? 43
+                                : this.functionLibraryKey.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.projection == null ? 43 : this.projection.hashCode());
+        return result;
     }
 }

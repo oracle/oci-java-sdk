@@ -7,20 +7,24 @@ package com.oracle.bmc.osmanagement.responses;
 import com.oracle.bmc.osmanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * identifier for the request
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned EventReport instance.
      */
     private com.oracle.bmc.osmanagement.model.EventReport eventReport;
+
+    public com.oracle.bmc.osmanagement.model.EventReport getEventReport() {
+        return eventReport;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "eventReport"})
     private GetEventReportResponse(
@@ -40,6 +44,20 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.EventReport eventReport;
+
+        public Builder eventReport(com.oracle.bmc.osmanagement.model.EventReport eventReport) {
+            this.eventReport = eventReport;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -55,5 +73,44 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
         public GetEventReportResponse build() {
             return new GetEventReportResponse(__httpStatusCode__, opcRequestId, eventReport);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",eventReport=").append(String.valueOf(eventReport));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetEventReportResponse)) {
+            return false;
+        }
+
+        GetEventReportResponse other = (GetEventReportResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.eventReport, other.eventReport);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.eventReport == null ? 43 : this.eventReport.hashCode());
+        return result;
     }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNetworkSecurityGroupSecurityRulesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateNetworkSecurityGroupSecurityRulesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateNetworkSecurityGroupSecurityRulesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails> {
@@ -26,6 +18,9 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
      */
     private String networkSecurityGroupId;
 
+    public String getNetworkSecurityGroupId() {
+        return networkSecurityGroupId;
+    }
     /**
      * Request with one or more security rules associated with the network security group that
      * will be updated.
@@ -33,6 +28,11 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
      */
     private com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails
             updateNetworkSecurityGroupSecurityRulesDetails;
+
+    public com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails
+            getUpdateNetworkSecurityGroupSecurityRulesDetails() {
+        return updateNetworkSecurityGroupSecurityRulesDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -51,6 +51,34 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String networkSecurityGroupId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         * @return this builder instance
+         */
+        public Builder networkSecurityGroupId(String networkSecurityGroupId) {
+            this.networkSecurityGroupId = networkSecurityGroupId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails
+                updateNetworkSecurityGroupSecurityRulesDetails = null;
+
+        /**
+         * Request with one or more security rules associated with the network security group that
+         * will be updated.
+         *
+         * @return this builder instance
+         */
+        public Builder updateNetworkSecurityGroupSecurityRulesDetails(
+                com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails
+                        updateNetworkSecurityGroupSecurityRulesDetails) {
+            this.updateNetworkSecurityGroupSecurityRulesDetails =
+                    updateNetworkSecurityGroupSecurityRulesDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -117,5 +145,85 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
             updateNetworkSecurityGroupSecurityRulesDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateNetworkSecurityGroupSecurityRulesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateNetworkSecurityGroupSecurityRulesRequest
+         */
+        public UpdateNetworkSecurityGroupSecurityRulesRequest buildWithoutInvocationCallback() {
+            UpdateNetworkSecurityGroupSecurityRulesRequest request =
+                    new UpdateNetworkSecurityGroupSecurityRulesRequest();
+            request.networkSecurityGroupId = networkSecurityGroupId;
+            request.updateNetworkSecurityGroupSecurityRulesDetails =
+                    updateNetworkSecurityGroupSecurityRulesDetails;
+            return request;
+            // new UpdateNetworkSecurityGroupSecurityRulesRequest(networkSecurityGroupId, updateNetworkSecurityGroupSecurityRulesDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .networkSecurityGroupId(networkSecurityGroupId)
+                .updateNetworkSecurityGroupSecurityRulesDetails(
+                        updateNetworkSecurityGroupSecurityRulesDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",networkSecurityGroupId=").append(String.valueOf(this.networkSecurityGroupId));
+        sb.append(",updateNetworkSecurityGroupSecurityRulesDetails=")
+                .append(String.valueOf(this.updateNetworkSecurityGroupSecurityRulesDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateNetworkSecurityGroupSecurityRulesRequest)) {
+            return false;
+        }
+
+        UpdateNetworkSecurityGroupSecurityRulesRequest other =
+                (UpdateNetworkSecurityGroupSecurityRulesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupId, other.networkSecurityGroupId)
+                && java.util.Objects.equals(
+                        this.updateNetworkSecurityGroupSecurityRulesDetails,
+                        other.updateNetworkSecurityGroupSecurityRulesDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupId == null
+                                ? 43
+                                : this.networkSecurityGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateNetworkSecurityGroupSecurityRulesDetails == null
+                                ? 43
+                                : this.updateNetworkSecurityGroupSecurityRulesDetails.hashCode());
+        return result;
     }
 }

@@ -16,16 +16,71 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousContainerDatabaseDataguardAssociation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousContainerDatabaseDataguardAssociation {
+public final class AutonomousContainerDatabaseDataguardAssociation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "autonomousContainerDatabaseId",
+        "role",
+        "lifecycleState",
+        "lifecycleDetails",
+        "peerAutonomousContainerDatabaseDataguardAssociationId",
+        "peerAutonomousContainerDatabaseId",
+        "peerRole",
+        "peerLifecycleState",
+        "protectionMode",
+        "applyLag",
+        "applyRate",
+        "isAutomaticFailoverEnabled",
+        "transportLag",
+        "timeLastSynced",
+        "timeCreated",
+        "timeLastRoleChanged"
+    })
+    public AutonomousContainerDatabaseDataguardAssociation(
+            String id,
+            String autonomousContainerDatabaseId,
+            Role role,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            String peerAutonomousContainerDatabaseDataguardAssociationId,
+            String peerAutonomousContainerDatabaseId,
+            PeerRole peerRole,
+            PeerLifecycleState peerLifecycleState,
+            ProtectionMode protectionMode,
+            String applyLag,
+            String applyRate,
+            Boolean isAutomaticFailoverEnabled,
+            String transportLag,
+            java.util.Date timeLastSynced,
+            java.util.Date timeCreated,
+            java.util.Date timeLastRoleChanged) {
+        super();
+        this.id = id;
+        this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+        this.role = role;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.peerAutonomousContainerDatabaseDataguardAssociationId =
+                peerAutonomousContainerDatabaseDataguardAssociationId;
+        this.peerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
+        this.peerRole = peerRole;
+        this.peerLifecycleState = peerLifecycleState;
+        this.protectionMode = protectionMode;
+        this.applyLag = applyLag;
+        this.applyRate = applyRate;
+        this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+        this.transportLag = transportLag;
+        this.timeLastSynced = timeLastSynced;
+        this.timeCreated = timeCreated;
+        this.timeLastRoleChanged = timeLastRoleChanged;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -245,23 +300,35 @@ public class AutonomousContainerDatabaseDataguardAssociation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
-    String autonomousContainerDatabaseId;
+    private final String autonomousContainerDatabaseId;
+
+    public String getAutonomousContainerDatabaseId() {
+        return autonomousContainerDatabaseId;
+    }
+
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Role {
         Primary("PRIMARY"),
         Standby("STANDBY"),
@@ -272,6 +339,8 @@ public class AutonomousContainerDatabaseDataguardAssociation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Role.class);
 
         private final String value;
         private static java.util.Map<String, Role> map;
@@ -309,11 +378,15 @@ public class AutonomousContainerDatabaseDataguardAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    Role role;
+    private final Role role;
+
+    public Role getRole() {
+        return role;
+    }
+
     /**
      * The current state of Autonomous Data Guard.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -328,6 +401,9 @@ public class AutonomousContainerDatabaseDataguardAssociation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -365,33 +441,49 @@ public class AutonomousContainerDatabaseDataguardAssociation {
      * The current state of Autonomous Data Guard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current lifecycleState, if available.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty(
             "peerAutonomousContainerDatabaseDataguardAssociationId")
-    String peerAutonomousContainerDatabaseDataguardAssociationId;
+    private final String peerAutonomousContainerDatabaseDataguardAssociationId;
+
+    public String getPeerAutonomousContainerDatabaseDataguardAssociationId() {
+        return peerAutonomousContainerDatabaseDataguardAssociationId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseId")
-    String peerAutonomousContainerDatabaseId;
+    private final String peerAutonomousContainerDatabaseId;
+
+    public String getPeerAutonomousContainerDatabaseId() {
+        return peerAutonomousContainerDatabaseId;
+    }
+
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PeerRole {
         Primary("PRIMARY"),
         Standby("STANDBY"),
@@ -402,6 +494,9 @@ public class AutonomousContainerDatabaseDataguardAssociation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PeerRole.class);
 
         private final String value;
         private static java.util.Map<String, PeerRole> map;
@@ -440,11 +535,15 @@ public class AutonomousContainerDatabaseDataguardAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
-    PeerRole peerRole;
+    private final PeerRole peerRole;
+
+    public PeerRole getPeerRole() {
+        return peerRole;
+    }
+
     /**
      * The current state of Autonomous Data Guard.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PeerLifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -459,6 +558,9 @@ public class AutonomousContainerDatabaseDataguardAssociation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PeerLifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, PeerLifecycleState> map;
@@ -496,14 +598,18 @@ public class AutonomousContainerDatabaseDataguardAssociation {
      * The current state of Autonomous Data Guard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerLifecycleState")
-    PeerLifecycleState peerLifecycleState;
+    private final PeerLifecycleState peerLifecycleState;
+
+    public PeerLifecycleState getPeerLifecycleState() {
+        return peerLifecycleState;
+    }
+
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ProtectionMode {
         MaximumAvailability("MAXIMUM_AVAILABILITY"),
         MaximumPerformance("MAXIMUM_PERFORMANCE"),
@@ -513,6 +619,9 @@ public class AutonomousContainerDatabaseDataguardAssociation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ProtectionMode.class);
 
         private final String value;
         private static java.util.Map<String, ProtectionMode> map;
@@ -553,7 +662,11 @@ public class AutonomousContainerDatabaseDataguardAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
-    ProtectionMode protectionMode;
+    private final ProtectionMode protectionMode;
+
+    public ProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
 
     /**
      * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database,
@@ -563,7 +676,11 @@ public class AutonomousContainerDatabaseDataguardAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyLag")
-    String applyLag;
+    private final String applyLag;
+
+    public String getApplyLag() {
+        return applyLag;
+    }
 
     /**
      * The rate at which redo logs are synchronized between the associated Autonomous Container Databases.
@@ -572,14 +689,22 @@ public class AutonomousContainerDatabaseDataguardAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyRate")
-    String applyRate;
+    private final String applyRate;
+
+    public String getApplyRate() {
+        return applyRate;
+    }
 
     /**
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
-    Boolean isAutomaticFailoverEnabled;
+    private final Boolean isAutomaticFailoverEnabled;
+
+    public Boolean getIsAutomaticFailoverEnabled() {
+        return isAutomaticFailoverEnabled;
+    }
 
     /**
      * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database,
@@ -589,26 +714,173 @@ public class AutonomousContainerDatabaseDataguardAssociation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportLag")
-    String transportLag;
+    private final String transportLag;
+
+    public String getTransportLag() {
+        return transportLag;
+    }
 
     /**
      * The date and time of the last update to the apply lag, apply rate, and transport lag values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
-    java.util.Date timeLastSynced;
+    private final java.util.Date timeLastSynced;
+
+    public java.util.Date getTimeLastSynced() {
+        return timeLastSynced;
+    }
 
     /**
      * The date and time the Autonomous DataGuard association was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time when the last role change action happened.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastRoleChanged")
-    java.util.Date timeLastRoleChanged;
+    private final java.util.Date timeLastRoleChanged;
+
+    public java.util.Date getTimeLastRoleChanged() {
+        return timeLastRoleChanged;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousContainerDatabaseDataguardAssociation(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", autonomousContainerDatabaseId=")
+                .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(", role=").append(String.valueOf(this.role));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", peerAutonomousContainerDatabaseDataguardAssociationId=")
+                .append(String.valueOf(this.peerAutonomousContainerDatabaseDataguardAssociationId));
+        sb.append(", peerAutonomousContainerDatabaseId=")
+                .append(String.valueOf(this.peerAutonomousContainerDatabaseId));
+        sb.append(", peerRole=").append(String.valueOf(this.peerRole));
+        sb.append(", peerLifecycleState=").append(String.valueOf(this.peerLifecycleState));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", applyLag=").append(String.valueOf(this.applyLag));
+        sb.append(", applyRate=").append(String.valueOf(this.applyRate));
+        sb.append(", isAutomaticFailoverEnabled=")
+                .append(String.valueOf(this.isAutomaticFailoverEnabled));
+        sb.append(", transportLag=").append(String.valueOf(this.transportLag));
+        sb.append(", timeLastSynced=").append(String.valueOf(this.timeLastSynced));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeLastRoleChanged=").append(String.valueOf(this.timeLastRoleChanged));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousContainerDatabaseDataguardAssociation)) {
+            return false;
+        }
+
+        AutonomousContainerDatabaseDataguardAssociation other =
+                (AutonomousContainerDatabaseDataguardAssociation) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(
+                        this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.peerAutonomousContainerDatabaseDataguardAssociationId,
+                        other.peerAutonomousContainerDatabaseDataguardAssociationId)
+                && java.util.Objects.equals(
+                        this.peerAutonomousContainerDatabaseId,
+                        other.peerAutonomousContainerDatabaseId)
+                && java.util.Objects.equals(this.peerRole, other.peerRole)
+                && java.util.Objects.equals(this.peerLifecycleState, other.peerLifecycleState)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.applyLag, other.applyLag)
+                && java.util.Objects.equals(this.applyRate, other.applyRate)
+                && java.util.Objects.equals(
+                        this.isAutomaticFailoverEnabled, other.isAutomaticFailoverEnabled)
+                && java.util.Objects.equals(this.transportLag, other.transportLag)
+                && java.util.Objects.equals(this.timeLastSynced, other.timeLastSynced)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeLastRoleChanged, other.timeLastRoleChanged)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousContainerDatabaseId == null
+                                ? 43
+                                : this.autonomousContainerDatabaseId.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAutonomousContainerDatabaseDataguardAssociationId == null
+                                ? 43
+                                : this.peerAutonomousContainerDatabaseDataguardAssociationId
+                                        .hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAutonomousContainerDatabaseId == null
+                                ? 43
+                                : this.peerAutonomousContainerDatabaseId.hashCode());
+        result = (result * PRIME) + (this.peerRole == null ? 43 : this.peerRole.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerLifecycleState == null
+                                ? 43
+                                : this.peerLifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result = (result * PRIME) + (this.applyLag == null ? 43 : this.applyLag.hashCode());
+        result = (result * PRIME) + (this.applyRate == null ? 43 : this.applyRate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutomaticFailoverEnabled == null
+                                ? 43
+                                : this.isAutomaticFailoverEnabled.hashCode());
+        result = (result * PRIME) + (this.transportLag == null ? 43 : this.transportLag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastSynced == null ? 43 : this.timeLastSynced.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastRoleChanged == null
+                                ? 43
+                                : this.timeLastRoleChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

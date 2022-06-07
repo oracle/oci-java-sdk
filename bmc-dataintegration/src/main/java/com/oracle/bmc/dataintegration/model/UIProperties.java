@@ -15,14 +15,18 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UIProperties.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UIProperties {
+public final class UIProperties {
+    @Deprecated
+    @java.beans.ConstructorProperties({"coordinateX", "coordinateY"})
+    public UIProperties(java.math.BigDecimal coordinateX, java.math.BigDecimal coordinateY) {
+        super();
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("coordinateX")
         private java.math.BigDecimal coordinateX;
@@ -67,18 +71,72 @@ public class UIProperties {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The X coordinate of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coordinateX")
-    java.math.BigDecimal coordinateX;
+    private final java.math.BigDecimal coordinateX;
+
+    public java.math.BigDecimal getCoordinateX() {
+        return coordinateX;
+    }
 
     /**
      * The Y coordinate of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coordinateY")
-    java.math.BigDecimal coordinateY;
+    private final java.math.BigDecimal coordinateY;
+
+    public java.math.BigDecimal getCoordinateY() {
+        return coordinateY;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UIProperties(");
+        sb.append("coordinateX=").append(String.valueOf(this.coordinateX));
+        sb.append(", coordinateY=").append(String.valueOf(this.coordinateY));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UIProperties)) {
+            return false;
+        }
+
+        UIProperties other = (UIProperties) o;
+        return java.util.Objects.equals(this.coordinateX, other.coordinateX)
+                && java.util.Objects.equals(this.coordinateY, other.coordinateY)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.coordinateX == null ? 43 : this.coordinateX.hashCode());
+        result = (result * PRIME) + (this.coordinateY == null ? 43 : this.coordinateY.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

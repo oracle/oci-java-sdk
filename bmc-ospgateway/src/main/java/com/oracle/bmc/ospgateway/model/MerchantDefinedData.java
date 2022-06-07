@@ -15,16 +15,20 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MerchantDefinedData.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MerchantDefinedData {
+public final class MerchantDefinedData {
+    @Deprecated
+    @java.beans.ConstructorProperties({"promoType", "cloudAccountName"})
+    public MerchantDefinedData(String promoType, String cloudAccountName) {
+        super();
+        this.promoType = promoType;
+        this.cloudAccountName = cloudAccountName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("promoType")
         private String promoType;
@@ -70,18 +74,74 @@ public class MerchantDefinedData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Promotion type code.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("promoType")
-    String promoType;
+    private final String promoType;
+
+    public String getPromoType() {
+        return promoType;
+    }
 
     /**
      * Cloud account name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAccountName")
-    String cloudAccountName;
+    private final String cloudAccountName;
+
+    public String getCloudAccountName() {
+        return cloudAccountName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MerchantDefinedData(");
+        sb.append("promoType=").append(String.valueOf(this.promoType));
+        sb.append(", cloudAccountName=").append(String.valueOf(this.cloudAccountName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MerchantDefinedData)) {
+            return false;
+        }
+
+        MerchantDefinedData other = (MerchantDefinedData) o;
+        return java.util.Objects.equals(this.promoType, other.promoType)
+                && java.util.Objects.equals(this.cloudAccountName, other.cloudAccountName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.promoType == null ? 43 : this.promoType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAccountName == null ? 43 : this.cloudAccountName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

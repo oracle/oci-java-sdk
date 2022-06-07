@@ -15,22 +15,17 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IScsiVolumeAttachment.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "attachmentType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IScsiVolumeAttachment extends VolumeAttachment {
+public final class IScsiVolumeAttachment extends VolumeAttachment {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -300,6 +295,10 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public IScsiVolumeAttachment(
             String availabilityDomain,
@@ -356,7 +355,11 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chapSecret")
-    String chapSecret;
+    private final String chapSecret;
+
+    public String getChapSecret() {
+        return chapSecret;
+    }
 
     /**
      * The volume's system-generated Challenge-Handshake-Authentication-Protocol
@@ -366,7 +369,11 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chapUsername")
-    String chapUsername;
+    private final String chapUsername;
+
+    public String getChapUsername() {
+        return chapUsername;
+    }
 
     /**
      * The volume's iSCSI IP address.
@@ -375,7 +382,11 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
-    String ipv4;
+    private final String ipv4;
+
+    public String getIpv4() {
+        return ipv4;
+    }
 
     /**
      * The target volume's iSCSI Qualified Name in the format defined
@@ -385,7 +396,11 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iqn")
-    String iqn;
+    private final String iqn;
+
+    public String getIqn() {
+        return iqn;
+    }
 
     /**
      * The volume's iSCSI port, usually port 860 or 3260.
@@ -394,13 +409,21 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * A list of secondary multipath devices
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("multipathDevices")
-    java.util.List<MultipathDevice> multipathDevices;
+    private final java.util.List<MultipathDevice> multipathDevices;
+
+    public java.util.List<MultipathDevice> getMultipathDevices() {
+        return multipathDevices;
+    }
 
     /**
      * Refer the top-level definition of encryptionInTransitType.
@@ -408,15 +431,99 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
-    EncryptionInTransitType encryptionInTransitType;
+    private final EncryptionInTransitType encryptionInTransitType;
+
+    public EncryptionInTransitType getEncryptionInTransitType() {
+        return encryptionInTransitType;
+    }
 
     /**
      * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoIscsiLoginEnabled")
-    Boolean isAgentAutoIscsiLoginEnabled;
+    private final Boolean isAgentAutoIscsiLoginEnabled;
+
+    public Boolean getIsAgentAutoIscsiLoginEnabled() {
+        return isAgentAutoIscsiLoginEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IScsiVolumeAttachment(");
+        sb.append("super=").append(super.toString());
+        sb.append(", chapSecret=").append(String.valueOf(this.chapSecret));
+        sb.append(", chapUsername=").append(String.valueOf(this.chapUsername));
+        sb.append(", ipv4=").append(String.valueOf(this.ipv4));
+        sb.append(", iqn=").append(String.valueOf(this.iqn));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", multipathDevices=").append(String.valueOf(this.multipathDevices));
+        sb.append(", encryptionInTransitType=")
+                .append(String.valueOf(this.encryptionInTransitType));
+        sb.append(", isAgentAutoIscsiLoginEnabled=")
+                .append(String.valueOf(this.isAgentAutoIscsiLoginEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IScsiVolumeAttachment)) {
+            return false;
+        }
+
+        IScsiVolumeAttachment other = (IScsiVolumeAttachment) o;
+        return java.util.Objects.equals(this.chapSecret, other.chapSecret)
+                && java.util.Objects.equals(this.chapUsername, other.chapUsername)
+                && java.util.Objects.equals(this.ipv4, other.ipv4)
+                && java.util.Objects.equals(this.iqn, other.iqn)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.multipathDevices, other.multipathDevices)
+                && java.util.Objects.equals(
+                        this.encryptionInTransitType, other.encryptionInTransitType)
+                && java.util.Objects.equals(
+                        this.isAgentAutoIscsiLoginEnabled, other.isAgentAutoIscsiLoginEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.chapSecret == null ? 43 : this.chapSecret.hashCode());
+        result = (result * PRIME) + (this.chapUsername == null ? 43 : this.chapUsername.hashCode());
+        result = (result * PRIME) + (this.ipv4 == null ? 43 : this.ipv4.hashCode());
+        result = (result * PRIME) + (this.iqn == null ? 43 : this.iqn.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multipathDevices == null ? 43 : this.multipathDevices.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionInTransitType == null
+                                ? 43
+                                : this.encryptionInTransitType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAgentAutoIscsiLoginEnabled == null
+                                ? 43
+                                : this.isAgentAutoIscsiLoginEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

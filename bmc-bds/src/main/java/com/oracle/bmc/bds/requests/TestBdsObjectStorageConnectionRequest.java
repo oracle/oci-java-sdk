@@ -9,14 +9,6 @@ import com.oracle.bmc.bds.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/TestBdsObjectStorageConnectionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use TestBdsObjectStorageConnectionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class TestBdsObjectStorageConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.bds.model.TestBdsObjectStorageConnectionDetails> {
@@ -26,21 +18,35 @@ public class TestBdsObjectStorageConnectionRequest
      */
     private String bdsInstanceId;
 
+    public String getBdsInstanceId() {
+        return bdsInstanceId;
+    }
     /**
      * The API key identifier.
      */
     private String apiKeyId;
 
+    public String getApiKeyId() {
+        return apiKeyId;
+    }
     /**
      * Parameters required to validate access to the specified Object Storage bucket using the API key.
      */
     private com.oracle.bmc.bds.model.TestBdsObjectStorageConnectionDetails
             testBdsObjectStorageConnectionDetails;
 
+    public com.oracle.bmc.bds.model.TestBdsObjectStorageConnectionDetails
+            getTestBdsObjectStorageConnectionDetails() {
+        return testBdsObjectStorageConnectionDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -59,6 +65,53 @@ public class TestBdsObjectStorageConnectionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String bdsInstanceId = null;
+
+        /**
+         * The OCID of the cluster.
+         * @return this builder instance
+         */
+        public Builder bdsInstanceId(String bdsInstanceId) {
+            this.bdsInstanceId = bdsInstanceId;
+            return this;
+        }
+
+        private String apiKeyId = null;
+
+        /**
+         * The API key identifier.
+         * @return this builder instance
+         */
+        public Builder apiKeyId(String apiKeyId) {
+            this.apiKeyId = apiKeyId;
+            return this;
+        }
+
+        private com.oracle.bmc.bds.model.TestBdsObjectStorageConnectionDetails
+                testBdsObjectStorageConnectionDetails = null;
+
+        /**
+         * Parameters required to validate access to the specified Object Storage bucket using the API key.
+         * @return this builder instance
+         */
+        public Builder testBdsObjectStorageConnectionDetails(
+                com.oracle.bmc.bds.model.TestBdsObjectStorageConnectionDetails
+                        testBdsObjectStorageConnectionDetails) {
+            this.testBdsObjectStorageConnectionDetails = testBdsObjectStorageConnectionDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -124,5 +177,89 @@ public class TestBdsObjectStorageConnectionRequest
             testBdsObjectStorageConnectionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of TestBdsObjectStorageConnectionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of TestBdsObjectStorageConnectionRequest
+         */
+        public TestBdsObjectStorageConnectionRequest buildWithoutInvocationCallback() {
+            TestBdsObjectStorageConnectionRequest request =
+                    new TestBdsObjectStorageConnectionRequest();
+            request.bdsInstanceId = bdsInstanceId;
+            request.apiKeyId = apiKeyId;
+            request.testBdsObjectStorageConnectionDetails = testBdsObjectStorageConnectionDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new TestBdsObjectStorageConnectionRequest(bdsInstanceId, apiKeyId, testBdsObjectStorageConnectionDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .bdsInstanceId(bdsInstanceId)
+                .apiKeyId(apiKeyId)
+                .testBdsObjectStorageConnectionDetails(testBdsObjectStorageConnectionDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",bdsInstanceId=").append(String.valueOf(this.bdsInstanceId));
+        sb.append(",apiKeyId=").append(String.valueOf(this.apiKeyId));
+        sb.append(",testBdsObjectStorageConnectionDetails=")
+                .append(String.valueOf(this.testBdsObjectStorageConnectionDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TestBdsObjectStorageConnectionRequest)) {
+            return false;
+        }
+
+        TestBdsObjectStorageConnectionRequest other = (TestBdsObjectStorageConnectionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.bdsInstanceId, other.bdsInstanceId)
+                && java.util.Objects.equals(this.apiKeyId, other.apiKeyId)
+                && java.util.Objects.equals(
+                        this.testBdsObjectStorageConnectionDetails,
+                        other.testBdsObjectStorageConnectionDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.bdsInstanceId == null ? 43 : this.bdsInstanceId.hashCode());
+        result = (result * PRIME) + (this.apiKeyId == null ? 43 : this.apiKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.testBdsObjectStorageConnectionDetails == null
+                                ? 43
+                                : this.testBdsObjectStorageConnectionDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

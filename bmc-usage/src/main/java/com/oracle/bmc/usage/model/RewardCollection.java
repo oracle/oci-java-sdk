@@ -15,14 +15,18 @@ package com.oracle.bmc.usage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RewardCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RewardCollection {
+public final class RewardCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({"summary", "items"})
+    public RewardCollection(RewardDetails summary, java.util.List<MonthlyRewardSummary> items) {
+        super();
+        this.summary = summary;
+        this.items = items;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private RewardDetails summary;
@@ -67,15 +71,69 @@ public class RewardCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
-    RewardDetails summary;
+    private final RewardDetails summary;
+
+    public RewardDetails getSummary() {
+        return summary;
+    }
 
     /**
      * The monthly summary of rewards.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<MonthlyRewardSummary> items;
+    private final java.util.List<MonthlyRewardSummary> items;
+
+    public java.util.List<MonthlyRewardSummary> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RewardCollection(");
+        sb.append("summary=").append(String.valueOf(this.summary));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RewardCollection)) {
+            return false;
+        }
+
+        RewardCollection other = (RewardCollection) o;
+        return java.util.Objects.equals(this.summary, other.summary)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

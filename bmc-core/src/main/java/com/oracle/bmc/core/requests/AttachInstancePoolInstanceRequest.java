@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachInstancePoolInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AttachInstancePoolInstanceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AttachInstancePoolInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails> {
@@ -26,12 +18,19 @@ public class AttachInstancePoolInstanceRequest
      */
     private String instancePoolId;
 
+    public String getInstancePoolId() {
+        return instancePoolId;
+    }
     /**
      * Attach an instance to a pool
      */
     private com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails
             attachInstancePoolInstanceDetails;
 
+    public com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails
+            getAttachInstancePoolInstanceDetails() {
+        return attachInstancePoolInstanceDetails;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -41,6 +40,10 @@ public class AttachInstancePoolInstanceRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -59,6 +62,47 @@ public class AttachInstancePoolInstanceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String instancePoolId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         * @return this builder instance
+         */
+        public Builder instancePoolId(String instancePoolId) {
+            this.instancePoolId = instancePoolId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails
+                attachInstancePoolInstanceDetails = null;
+
+        /**
+         * Attach an instance to a pool
+         * @return this builder instance
+         */
+        public Builder attachInstancePoolInstanceDetails(
+                com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails
+                        attachInstancePoolInstanceDetails) {
+            this.attachInstancePoolInstanceDetails = attachInstancePoolInstanceDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -123,5 +167,85 @@ public class AttachInstancePoolInstanceRequest
             attachInstancePoolInstanceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of AttachInstancePoolInstanceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of AttachInstancePoolInstanceRequest
+         */
+        public AttachInstancePoolInstanceRequest buildWithoutInvocationCallback() {
+            AttachInstancePoolInstanceRequest request = new AttachInstancePoolInstanceRequest();
+            request.instancePoolId = instancePoolId;
+            request.attachInstancePoolInstanceDetails = attachInstancePoolInstanceDetails;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new AttachInstancePoolInstanceRequest(instancePoolId, attachInstancePoolInstanceDetails, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .instancePoolId(instancePoolId)
+                .attachInstancePoolInstanceDetails(attachInstancePoolInstanceDetails)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",instancePoolId=").append(String.valueOf(this.instancePoolId));
+        sb.append(",attachInstancePoolInstanceDetails=")
+                .append(String.valueOf(this.attachInstancePoolInstanceDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AttachInstancePoolInstanceRequest)) {
+            return false;
+        }
+
+        AttachInstancePoolInstanceRequest other = (AttachInstancePoolInstanceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.instancePoolId, other.instancePoolId)
+                && java.util.Objects.equals(
+                        this.attachInstancePoolInstanceDetails,
+                        other.attachInstancePoolInstanceDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.instancePoolId == null ? 43 : this.instancePoolId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachInstancePoolInstanceDetails == null
+                                ? 43
+                                : this.attachInstancePoolInstanceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

@@ -15,14 +15,38 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateJobDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateJobDetails {
+public final class CreateJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "scheduleCronExpression",
+        "timeScheduleBegin",
+        "timeScheduleEnd",
+        "connectionKey",
+        "jobDefinitionKey"
+    })
+    public CreateJobDetails(
+            String displayName,
+            String description,
+            String scheduleCronExpression,
+            java.util.Date timeScheduleBegin,
+            java.util.Date timeScheduleEnd,
+            String connectionKey,
+            String jobDefinitionKey) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.scheduleCronExpression = scheduleCronExpression;
+        this.timeScheduleBegin = timeScheduleBegin;
+        this.timeScheduleEnd = timeScheduleEnd;
+        this.connectionKey = connectionKey;
+        this.jobDefinitionKey = jobDefinitionKey;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -127,19 +151,31 @@ public class CreateJobDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Detailed description of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
@@ -147,19 +183,31 @@ public class CreateJobDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
-    String scheduleCronExpression;
+    private final String scheduleCronExpression;
+
+    public String getScheduleCronExpression() {
+        return scheduleCronExpression;
+    }
 
     /**
      * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleBegin")
-    java.util.Date timeScheduleBegin;
+    private final java.util.Date timeScheduleBegin;
+
+    public java.util.Date getTimeScheduleBegin() {
+        return timeScheduleBegin;
+    }
 
     /**
      * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleEnd")
-    java.util.Date timeScheduleEnd;
+    private final java.util.Date timeScheduleEnd;
+
+    public java.util.Date getTimeScheduleEnd() {
+        return timeScheduleEnd;
+    }
 
     /**
      * The key of the connection used by the job. This connection will override the default connection specified in
@@ -167,14 +215,92 @@ public class CreateJobDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
-    String connectionKey;
+    private final String connectionKey;
+
+    public String getConnectionKey() {
+        return connectionKey;
+    }
 
     /**
      * The unique key of the job definition that defined the scope of this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
-    String jobDefinitionKey;
+    private final String jobDefinitionKey;
+
+    public String getJobDefinitionKey() {
+        return jobDefinitionKey;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateJobDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", scheduleCronExpression=").append(String.valueOf(this.scheduleCronExpression));
+        sb.append(", timeScheduleBegin=").append(String.valueOf(this.timeScheduleBegin));
+        sb.append(", timeScheduleEnd=").append(String.valueOf(this.timeScheduleEnd));
+        sb.append(", connectionKey=").append(String.valueOf(this.connectionKey));
+        sb.append(", jobDefinitionKey=").append(String.valueOf(this.jobDefinitionKey));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateJobDetails)) {
+            return false;
+        }
+
+        CreateJobDetails other = (CreateJobDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(
+                        this.scheduleCronExpression, other.scheduleCronExpression)
+                && java.util.Objects.equals(this.timeScheduleBegin, other.timeScheduleBegin)
+                && java.util.Objects.equals(this.timeScheduleEnd, other.timeScheduleEnd)
+                && java.util.Objects.equals(this.connectionKey, other.connectionKey)
+                && java.util.Objects.equals(this.jobDefinitionKey, other.jobDefinitionKey)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduleCronExpression == null
+                                ? 43
+                                : this.scheduleCronExpression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduleBegin == null ? 43 : this.timeScheduleBegin.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduleEnd == null ? 43 : this.timeScheduleEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionKey == null ? 43 : this.connectionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobDefinitionKey == null ? 43 : this.jobDefinitionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

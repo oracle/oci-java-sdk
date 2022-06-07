@@ -16,16 +16,40 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateAutonomousContainerDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateAutonomousContainerDatabaseDetails {
+public final class UpdateAutonomousContainerDatabaseDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "patchModel",
+        "maintenanceWindowDetails",
+        "standbyMaintenanceBufferInDays",
+        "freeformTags",
+        "definedTags",
+        "backupConfig"
+    })
+    public UpdateAutonomousContainerDatabaseDetails(
+            String displayName,
+            PatchModel patchModel,
+            MaintenanceWindow maintenanceWindowDetails,
+            Integer standbyMaintenanceBufferInDays,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            AutonomousContainerDatabaseBackupConfig backupConfig) {
+        super();
+        this.displayName = displayName;
+        this.patchModel = patchModel;
+        this.maintenanceWindowDetails = maintenanceWindowDetails;
+        this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.backupConfig = backupConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -131,11 +155,20 @@ public class UpdateAutonomousContainerDatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The display name for the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * Database Patch model preference.
      **/
@@ -175,10 +208,18 @@ public class UpdateAutonomousContainerDatabaseDetails {
      * Database Patch model preference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
-    PatchModel patchModel;
+    private final PatchModel patchModel;
+
+    public PatchModel getPatchModel() {
+        return patchModel;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
-    MaintenanceWindow maintenanceWindowDetails;
+    private final MaintenanceWindow maintenanceWindowDetails;
+
+    public MaintenanceWindow getMaintenanceWindowDetails() {
+        return maintenanceWindowDetails;
+    }
 
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
@@ -186,7 +227,11 @@ public class UpdateAutonomousContainerDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
-    Integer standbyMaintenanceBufferInDays;
+    private final Integer standbyMaintenanceBufferInDays;
+
+    public Integer getStandbyMaintenanceBufferInDays() {
+        return standbyMaintenanceBufferInDays;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -196,7 +241,11 @@ public class UpdateAutonomousContainerDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -204,11 +253,89 @@ public class UpdateAutonomousContainerDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backupConfig")
-    AutonomousContainerDatabaseBackupConfig backupConfig;
+    private final AutonomousContainerDatabaseBackupConfig backupConfig;
+
+    public AutonomousContainerDatabaseBackupConfig getBackupConfig() {
+        return backupConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateAutonomousContainerDatabaseDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", patchModel=").append(String.valueOf(this.patchModel));
+        sb.append(", maintenanceWindowDetails=")
+                .append(String.valueOf(this.maintenanceWindowDetails));
+        sb.append(", standbyMaintenanceBufferInDays=")
+                .append(String.valueOf(this.standbyMaintenanceBufferInDays));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAutonomousContainerDatabaseDetails)) {
+            return false;
+        }
+
+        UpdateAutonomousContainerDatabaseDetails other =
+                (UpdateAutonomousContainerDatabaseDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.patchModel, other.patchModel)
+                && java.util.Objects.equals(
+                        this.maintenanceWindowDetails, other.maintenanceWindowDetails)
+                && java.util.Objects.equals(
+                        this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.backupConfig, other.backupConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.patchModel == null ? 43 : this.patchModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindowDetails == null
+                                ? 43
+                                : this.maintenanceWindowDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standbyMaintenanceBufferInDays == null
+                                ? 43
+                                : this.standbyMaintenanceBufferInDays.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,35 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParsedContent.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ParsedContent {
+public final class ParsedContent {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "fieldNames",
+        "fieldDisplayNames",
+        "parsedFieldValues",
+        "logContent",
+        "sampleSize",
+        "matchStatus"
+    })
+    public ParsedContent(
+            java.util.List<String> fieldNames,
+            java.util.List<String> fieldDisplayNames,
+            java.util.List<ParsedField> parsedFieldValues,
+            String logContent,
+            Integer sampleSize,
+            String matchStatus) {
+        super();
+        this.fieldNames = fieldNames;
+        this.fieldDisplayNames = fieldDisplayNames;
+        this.parsedFieldValues = parsedFieldValues;
+        this.logContent = logContent;
+        this.sampleSize = sampleSize;
+        this.matchStatus = matchStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
         private java.util.List<String> fieldNames;
@@ -116,42 +137,128 @@ public class ParsedContent {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of field names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
-    java.util.List<String> fieldNames;
+    private final java.util.List<String> fieldNames;
+
+    public java.util.List<String> getFieldNames() {
+        return fieldNames;
+    }
 
     /**
      * List of field display names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayNames")
-    java.util.List<String> fieldDisplayNames;
+    private final java.util.List<String> fieldDisplayNames;
+
+    public java.util.List<String> getFieldDisplayNames() {
+        return fieldDisplayNames;
+    }
 
     /**
      * Parsed field values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldValues")
-    java.util.List<ParsedField> parsedFieldValues;
+    private final java.util.List<ParsedField> parsedFieldValues;
+
+    public java.util.List<ParsedField> getParsedFieldValues() {
+        return parsedFieldValues;
+    }
 
     /**
      * Sample log entries picked up from the given file for validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logContent")
-    String logContent;
+    private final String logContent;
+
+    public String getLogContent() {
+        return logContent;
+    }
 
     /**
      * Sample Size taken for validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleSize")
-    Integer sampleSize;
+    private final Integer sampleSize;
+
+    public Integer getSampleSize() {
+        return sampleSize;
+    }
 
     /**
      * Match Status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
-    String matchStatus;
+    private final String matchStatus;
+
+    public String getMatchStatus() {
+        return matchStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ParsedContent(");
+        sb.append("fieldNames=").append(String.valueOf(this.fieldNames));
+        sb.append(", fieldDisplayNames=").append(String.valueOf(this.fieldDisplayNames));
+        sb.append(", parsedFieldValues=").append(String.valueOf(this.parsedFieldValues));
+        sb.append(", logContent=").append(String.valueOf(this.logContent));
+        sb.append(", sampleSize=").append(String.valueOf(this.sampleSize));
+        sb.append(", matchStatus=").append(String.valueOf(this.matchStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ParsedContent)) {
+            return false;
+        }
+
+        ParsedContent other = (ParsedContent) o;
+        return java.util.Objects.equals(this.fieldNames, other.fieldNames)
+                && java.util.Objects.equals(this.fieldDisplayNames, other.fieldDisplayNames)
+                && java.util.Objects.equals(this.parsedFieldValues, other.parsedFieldValues)
+                && java.util.Objects.equals(this.logContent, other.logContent)
+                && java.util.Objects.equals(this.sampleSize, other.sampleSize)
+                && java.util.Objects.equals(this.matchStatus, other.matchStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fieldNames == null ? 43 : this.fieldNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fieldDisplayNames == null ? 43 : this.fieldDisplayNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parsedFieldValues == null ? 43 : this.parsedFieldValues.hashCode());
+        result = (result * PRIME) + (this.logContent == null ? 43 : this.logContent.hashCode());
+        result = (result * PRIME) + (this.sampleSize == null ? 43 : this.sampleSize.hashCode());
+        result = (result * PRIME) + (this.matchStatus == null ? 43 : this.matchStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

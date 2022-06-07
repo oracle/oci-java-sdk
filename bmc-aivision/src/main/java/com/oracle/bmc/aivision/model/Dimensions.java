@@ -15,14 +15,19 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Dimensions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Dimensions {
+public final class Dimensions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"width", "height", "unit"})
+    public Dimensions(Double width, Double height, Unit unit) {
+        super();
+        this.width = width;
+        this.height = height;
+        this.unit = unit;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("width")
         private Double width;
@@ -76,21 +81,33 @@ public class Dimensions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * the width of a page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("width")
-    Double width;
+    private final Double width;
+
+    public Double getWidth() {
+        return width;
+    }
 
     /**
      * The height of a page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("height")
-    Double height;
+    private final Double height;
+
+    public Double getHeight() {
+        return height;
+    }
+
     /**
      * The unit of length.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Unit {
         Pixel("PIXEL"),
         Inch("INCH"),
@@ -100,6 +117,8 @@ public class Dimensions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Unit.class);
 
         private final String value;
         private static java.util.Map<String, Unit> map;
@@ -136,8 +155,57 @@ public class Dimensions {
      * The unit of length.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    Unit unit;
+    private final Unit unit;
+
+    public Unit getUnit() {
+        return unit;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Dimensions(");
+        sb.append("width=").append(String.valueOf(this.width));
+        sb.append(", height=").append(String.valueOf(this.height));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Dimensions)) {
+            return false;
+        }
+
+        Dimensions other = (Dimensions) o;
+        return java.util.Objects.equals(this.width, other.width)
+                && java.util.Objects.equals(this.height, other.height)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.width == null ? 43 : this.width.hashCode());
+        result = (result * PRIME) + (this.height == null ? 43 : this.height.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

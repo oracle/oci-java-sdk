@@ -11,7 +11,6 @@ package com.oracle.bmc.core.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.extern.slf4j.Slf4j
 public enum EncryptionInTransitType {
     None("NONE"),
     BmEncryptionInTransit("BM_ENCRYPTION_IN_TRANSIT"),
@@ -21,6 +20,9 @@ public enum EncryptionInTransitType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(EncryptionInTransitType.class);
 
     private final String value;
     private static java.util.Map<String, EncryptionInTransitType> map;

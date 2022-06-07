@@ -15,14 +15,128 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlPlanLine.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlPlanLine {
+public final class SqlPlanLine {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "version",
+        "sqlIdentifier",
+        "planHash",
+        "timeCollected",
+        "operation",
+        "remark",
+        "options",
+        "objectNode",
+        "objectOwner",
+        "objectName",
+        "objectAlias",
+        "objectInstance",
+        "objectType",
+        "optimizer",
+        "searchColumns",
+        "identifier",
+        "parentIdentifier",
+        "depth",
+        "position",
+        "cost",
+        "cardinality",
+        "bytes",
+        "other",
+        "otherTag",
+        "partitionStart",
+        "partitionStop",
+        "partitionIdentifier",
+        "distribution",
+        "cpuCost",
+        "ioCost",
+        "tempSpace",
+        "accessPredicates",
+        "filterPredicates",
+        "projection",
+        "qblockName",
+        "elapsedTimeInSec",
+        "otherXML"
+    })
+    public SqlPlanLine(
+            Float version,
+            String sqlIdentifier,
+            Long planHash,
+            java.util.Date timeCollected,
+            String operation,
+            String remark,
+            String options,
+            String objectNode,
+            String objectOwner,
+            String objectName,
+            String objectAlias,
+            Long objectInstance,
+            String objectType,
+            String optimizer,
+            Long searchColumns,
+            Long identifier,
+            Long parentIdentifier,
+            Long depth,
+            Long position,
+            Long cost,
+            Long cardinality,
+            Long bytes,
+            String other,
+            String otherTag,
+            String partitionStart,
+            String partitionStop,
+            Long partitionIdentifier,
+            String distribution,
+            Long cpuCost,
+            Long ioCost,
+            Long tempSpace,
+            String accessPredicates,
+            String filterPredicates,
+            String projection,
+            String qblockName,
+            Float elapsedTimeInSec,
+            String otherXML) {
+        super();
+        this.version = version;
+        this.sqlIdentifier = sqlIdentifier;
+        this.planHash = planHash;
+        this.timeCollected = timeCollected;
+        this.operation = operation;
+        this.remark = remark;
+        this.options = options;
+        this.objectNode = objectNode;
+        this.objectOwner = objectOwner;
+        this.objectName = objectName;
+        this.objectAlias = objectAlias;
+        this.objectInstance = objectInstance;
+        this.objectType = objectType;
+        this.optimizer = optimizer;
+        this.searchColumns = searchColumns;
+        this.identifier = identifier;
+        this.parentIdentifier = parentIdentifier;
+        this.depth = depth;
+        this.position = position;
+        this.cost = cost;
+        this.cardinality = cardinality;
+        this.bytes = bytes;
+        this.other = other;
+        this.otherTag = otherTag;
+        this.partitionStart = partitionStart;
+        this.partitionStop = partitionStop;
+        this.partitionIdentifier = partitionIdentifier;
+        this.distribution = distribution;
+        this.cpuCost = cpuCost;
+        this.ioCost = ioCost;
+        this.tempSpace = tempSpace;
+        this.accessPredicates = accessPredicates;
+        this.filterPredicates = filterPredicates;
+        this.projection = projection;
+        this.qblockName = qblockName;
+        this.elapsedTimeInSec = elapsedTimeInSec;
+        this.otherXML = otherXML;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Float version;
@@ -457,26 +571,42 @@ public class SqlPlanLine {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Version
      * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    Float version;
+    private final Float version;
+
+    public Float getVersion() {
+        return version;
+    }
 
     /**
      * Unique SQL_ID for a SQL Statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
-    String sqlIdentifier;
+    private final String sqlIdentifier;
+
+    public String getSqlIdentifier() {
+        return sqlIdentifier;
+    }
 
     /**
      * Plan hash value for the SQL Execution Plan
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
-    Long planHash;
+    private final Long planHash;
+
+    public Long getPlanHash() {
+        return planHash;
+    }
 
     /**
      * Collection time stamp
@@ -484,7 +614,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
-    java.util.Date timeCollected;
+    private final java.util.Date timeCollected;
+
+    public java.util.Date getTimeCollected() {
+        return timeCollected;
+    }
 
     /**
      * Operation
@@ -492,7 +626,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
-    String operation;
+    private final String operation;
+
+    public String getOperation() {
+        return operation;
+    }
 
     /**
      * Remark
@@ -500,7 +638,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remark")
-    String remark;
+    private final String remark;
+
+    public String getRemark() {
+        return remark;
+    }
 
     /**
      * Options
@@ -508,7 +650,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
-    String options;
+    private final String options;
+
+    public String getOptions() {
+        return options;
+    }
 
     /**
      * Object Node
@@ -516,7 +662,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNode")
-    String objectNode;
+    private final String objectNode;
+
+    public String getObjectNode() {
+        return objectNode;
+    }
 
     /**
      * Object Owner
@@ -524,7 +674,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
-    String objectOwner;
+    private final String objectOwner;
+
+    public String getObjectOwner() {
+        return objectOwner;
+    }
 
     /**
      * Object Name
@@ -532,7 +686,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * Object Alias
@@ -540,7 +698,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectAlias")
-    String objectAlias;
+    private final String objectAlias;
+
+    public String getObjectAlias() {
+        return objectAlias;
+    }
 
     /**
      * Object Instance
@@ -548,7 +710,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectInstance")
-    Long objectInstance;
+    private final Long objectInstance;
+
+    public Long getObjectInstance() {
+        return objectInstance;
+    }
 
     /**
      * Object Type
@@ -556,7 +722,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
-    String objectType;
+    private final String objectType;
+
+    public String getObjectType() {
+        return objectType;
+    }
 
     /**
      * Optimizer
@@ -564,7 +734,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("optimizer")
-    String optimizer;
+    private final String optimizer;
+
+    public String getOptimizer() {
+        return optimizer;
+    }
 
     /**
      * Search Columns
@@ -572,7 +746,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchColumns")
-    Long searchColumns;
+    private final Long searchColumns;
+
+    public Long getSearchColumns() {
+        return searchColumns;
+    }
 
     /**
      * Identifier
@@ -580,7 +758,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    Long identifier;
+    private final Long identifier;
+
+    public Long getIdentifier() {
+        return identifier;
+    }
 
     /**
      * Parent Identifier
@@ -588,7 +770,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentIdentifier")
-    Long parentIdentifier;
+    private final Long parentIdentifier;
+
+    public Long getParentIdentifier() {
+        return parentIdentifier;
+    }
 
     /**
      * Depth
@@ -596,7 +782,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("depth")
-    Long depth;
+    private final Long depth;
+
+    public Long getDepth() {
+        return depth;
+    }
 
     /**
      * Position
@@ -604,7 +794,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
-    Long position;
+    private final Long position;
+
+    public Long getPosition() {
+        return position;
+    }
 
     /**
      * Cost
@@ -612,7 +806,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
-    Long cost;
+    private final Long cost;
+
+    public Long getCost() {
+        return cost;
+    }
 
     /**
      * Cardinality
@@ -620,7 +818,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cardinality")
-    Long cardinality;
+    private final Long cardinality;
+
+    public Long getCardinality() {
+        return cardinality;
+    }
 
     /**
      * Bytes
@@ -628,7 +830,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bytes")
-    Long bytes;
+    private final Long bytes;
+
+    public Long getBytes() {
+        return bytes;
+    }
 
     /**
      * Other
@@ -636,7 +842,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("other")
-    String other;
+    private final String other;
+
+    public String getOther() {
+        return other;
+    }
 
     /**
      * Other Tag
@@ -644,7 +854,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherTag")
-    String otherTag;
+    private final String otherTag;
+
+    public String getOtherTag() {
+        return otherTag;
+    }
 
     /**
      * Partition start
@@ -652,7 +866,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStart")
-    String partitionStart;
+    private final String partitionStart;
+
+    public String getPartitionStart() {
+        return partitionStart;
+    }
 
     /**
      * Partition stop
@@ -660,7 +878,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStop")
-    String partitionStop;
+    private final String partitionStop;
+
+    public String getPartitionStop() {
+        return partitionStop;
+    }
 
     /**
      * Partition identifier
@@ -668,7 +890,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionIdentifier")
-    Long partitionIdentifier;
+    private final Long partitionIdentifier;
+
+    public Long getPartitionIdentifier() {
+        return partitionIdentifier;
+    }
 
     /**
      * Distribution
@@ -676,7 +902,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("distribution")
-    String distribution;
+    private final String distribution;
+
+    public String getDistribution() {
+        return distribution;
+    }
 
     /**
      * CPU cost
@@ -684,7 +914,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCost")
-    Long cpuCost;
+    private final Long cpuCost;
+
+    public Long getCpuCost() {
+        return cpuCost;
+    }
 
     /**
      * IO cost
@@ -692,7 +926,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioCost")
-    Long ioCost;
+    private final Long ioCost;
+
+    public Long getIoCost() {
+        return ioCost;
+    }
 
     /**
      * Time space
@@ -700,7 +938,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempSpace")
-    Long tempSpace;
+    private final Long tempSpace;
+
+    public Long getTempSpace() {
+        return tempSpace;
+    }
 
     /**
      * Access predicates
@@ -708,7 +950,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessPredicates")
-    String accessPredicates;
+    private final String accessPredicates;
+
+    public String getAccessPredicates() {
+        return accessPredicates;
+    }
 
     /**
      * Filter predicates
@@ -716,7 +962,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterPredicates")
-    String filterPredicates;
+    private final String filterPredicates;
+
+    public String getFilterPredicates() {
+        return filterPredicates;
+    }
 
     /**
      * Projection
@@ -724,7 +974,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projection")
-    String projection;
+    private final String projection;
+
+    public String getProjection() {
+        return projection;
+    }
 
     /**
      * Qblock Name
@@ -732,7 +986,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("qblockName")
-    String qblockName;
+    private final String qblockName;
+
+    public String getQblockName() {
+        return qblockName;
+    }
 
     /**
      * Total elapsed time
@@ -740,7 +998,11 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("elapsedTimeInSec")
-    Float elapsedTimeInSec;
+    private final Float elapsedTimeInSec;
+
+    public Float getElapsedTimeInSec() {
+        return elapsedTimeInSec;
+    }
 
     /**
      * Other SQL
@@ -748,8 +1010,183 @@ public class SqlPlanLine {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherXML")
-    String otherXML;
+    private final String otherXML;
+
+    public String getOtherXML() {
+        return otherXML;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlPlanLine(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
+        sb.append(", planHash=").append(String.valueOf(this.planHash));
+        sb.append(", timeCollected=").append(String.valueOf(this.timeCollected));
+        sb.append(", operation=").append(String.valueOf(this.operation));
+        sb.append(", remark=").append(String.valueOf(this.remark));
+        sb.append(", options=").append(String.valueOf(this.options));
+        sb.append(", objectNode=").append(String.valueOf(this.objectNode));
+        sb.append(", objectOwner=").append(String.valueOf(this.objectOwner));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", objectAlias=").append(String.valueOf(this.objectAlias));
+        sb.append(", objectInstance=").append(String.valueOf(this.objectInstance));
+        sb.append(", objectType=").append(String.valueOf(this.objectType));
+        sb.append(", optimizer=").append(String.valueOf(this.optimizer));
+        sb.append(", searchColumns=").append(String.valueOf(this.searchColumns));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", parentIdentifier=").append(String.valueOf(this.parentIdentifier));
+        sb.append(", depth=").append(String.valueOf(this.depth));
+        sb.append(", position=").append(String.valueOf(this.position));
+        sb.append(", cost=").append(String.valueOf(this.cost));
+        sb.append(", cardinality=").append(String.valueOf(this.cardinality));
+        sb.append(", bytes=").append(String.valueOf(this.bytes));
+        sb.append(", other=").append(String.valueOf(this.other));
+        sb.append(", otherTag=").append(String.valueOf(this.otherTag));
+        sb.append(", partitionStart=").append(String.valueOf(this.partitionStart));
+        sb.append(", partitionStop=").append(String.valueOf(this.partitionStop));
+        sb.append(", partitionIdentifier=").append(String.valueOf(this.partitionIdentifier));
+        sb.append(", distribution=").append(String.valueOf(this.distribution));
+        sb.append(", cpuCost=").append(String.valueOf(this.cpuCost));
+        sb.append(", ioCost=").append(String.valueOf(this.ioCost));
+        sb.append(", tempSpace=").append(String.valueOf(this.tempSpace));
+        sb.append(", accessPredicates=").append(String.valueOf(this.accessPredicates));
+        sb.append(", filterPredicates=").append(String.valueOf(this.filterPredicates));
+        sb.append(", projection=").append(String.valueOf(this.projection));
+        sb.append(", qblockName=").append(String.valueOf(this.qblockName));
+        sb.append(", elapsedTimeInSec=").append(String.valueOf(this.elapsedTimeInSec));
+        sb.append(", otherXML=").append(String.valueOf(this.otherXML));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlPlanLine)) {
+            return false;
+        }
+
+        SqlPlanLine other = (SqlPlanLine) o;
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.sqlIdentifier, other.sqlIdentifier)
+                && java.util.Objects.equals(this.planHash, other.planHash)
+                && java.util.Objects.equals(this.timeCollected, other.timeCollected)
+                && java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(this.remark, other.remark)
+                && java.util.Objects.equals(this.options, other.options)
+                && java.util.Objects.equals(this.objectNode, other.objectNode)
+                && java.util.Objects.equals(this.objectOwner, other.objectOwner)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.objectAlias, other.objectAlias)
+                && java.util.Objects.equals(this.objectInstance, other.objectInstance)
+                && java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.optimizer, other.optimizer)
+                && java.util.Objects.equals(this.searchColumns, other.searchColumns)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.parentIdentifier, other.parentIdentifier)
+                && java.util.Objects.equals(this.depth, other.depth)
+                && java.util.Objects.equals(this.position, other.position)
+                && java.util.Objects.equals(this.cost, other.cost)
+                && java.util.Objects.equals(this.cardinality, other.cardinality)
+                && java.util.Objects.equals(this.bytes, other.bytes)
+                && java.util.Objects.equals(this.other, other.other)
+                && java.util.Objects.equals(this.otherTag, other.otherTag)
+                && java.util.Objects.equals(this.partitionStart, other.partitionStart)
+                && java.util.Objects.equals(this.partitionStop, other.partitionStop)
+                && java.util.Objects.equals(this.partitionIdentifier, other.partitionIdentifier)
+                && java.util.Objects.equals(this.distribution, other.distribution)
+                && java.util.Objects.equals(this.cpuCost, other.cpuCost)
+                && java.util.Objects.equals(this.ioCost, other.ioCost)
+                && java.util.Objects.equals(this.tempSpace, other.tempSpace)
+                && java.util.Objects.equals(this.accessPredicates, other.accessPredicates)
+                && java.util.Objects.equals(this.filterPredicates, other.filterPredicates)
+                && java.util.Objects.equals(this.projection, other.projection)
+                && java.util.Objects.equals(this.qblockName, other.qblockName)
+                && java.util.Objects.equals(this.elapsedTimeInSec, other.elapsedTimeInSec)
+                && java.util.Objects.equals(this.otherXML, other.otherXML)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sqlIdentifier == null ? 43 : this.sqlIdentifier.hashCode());
+        result = (result * PRIME) + (this.planHash == null ? 43 : this.planHash.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCollected == null ? 43 : this.timeCollected.hashCode());
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result = (result * PRIME) + (this.remark == null ? 43 : this.remark.hashCode());
+        result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
+        result = (result * PRIME) + (this.objectNode == null ? 43 : this.objectNode.hashCode());
+        result = (result * PRIME) + (this.objectOwner == null ? 43 : this.objectOwner.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.objectAlias == null ? 43 : this.objectAlias.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectInstance == null ? 43 : this.objectInstance.hashCode());
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result = (result * PRIME) + (this.optimizer == null ? 43 : this.optimizer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.searchColumns == null ? 43 : this.searchColumns.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentIdentifier == null ? 43 : this.parentIdentifier.hashCode());
+        result = (result * PRIME) + (this.depth == null ? 43 : this.depth.hashCode());
+        result = (result * PRIME) + (this.position == null ? 43 : this.position.hashCode());
+        result = (result * PRIME) + (this.cost == null ? 43 : this.cost.hashCode());
+        result = (result * PRIME) + (this.cardinality == null ? 43 : this.cardinality.hashCode());
+        result = (result * PRIME) + (this.bytes == null ? 43 : this.bytes.hashCode());
+        result = (result * PRIME) + (this.other == null ? 43 : this.other.hashCode());
+        result = (result * PRIME) + (this.otherTag == null ? 43 : this.otherTag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partitionStart == null ? 43 : this.partitionStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partitionStop == null ? 43 : this.partitionStop.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partitionIdentifier == null
+                                ? 43
+                                : this.partitionIdentifier.hashCode());
+        result = (result * PRIME) + (this.distribution == null ? 43 : this.distribution.hashCode());
+        result = (result * PRIME) + (this.cpuCost == null ? 43 : this.cpuCost.hashCode());
+        result = (result * PRIME) + (this.ioCost == null ? 43 : this.ioCost.hashCode());
+        result = (result * PRIME) + (this.tempSpace == null ? 43 : this.tempSpace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.accessPredicates == null ? 43 : this.accessPredicates.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterPredicates == null ? 43 : this.filterPredicates.hashCode());
+        result = (result * PRIME) + (this.projection == null ? 43 : this.projection.hashCode());
+        result = (result * PRIME) + (this.qblockName == null ? 43 : this.qblockName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.elapsedTimeInSec == null ? 43 : this.elapsedTimeInSec.hashCode());
+        result = (result * PRIME) + (this.otherXML == null ? 43 : this.otherXML.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

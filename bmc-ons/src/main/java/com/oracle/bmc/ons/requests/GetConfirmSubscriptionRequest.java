@@ -9,14 +9,6 @@ import com.oracle.bmc.ons.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetConfirmSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetConfirmSubscriptionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetConfirmSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -26,11 +18,17 @@ public class GetConfirmSubscriptionRequest
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * The subscription confirmation token.
      */
     private String token;
 
+    public String getToken() {
+        return token;
+    }
     /**
      * The protocol used for the subscription.
      * <p>
@@ -49,6 +47,9 @@ public class GetConfirmSubscriptionRequest
      */
     private String protocol;
 
+    public String getProtocol() {
+        return protocol;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -56,12 +57,76 @@ public class GetConfirmSubscriptionRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetConfirmSubscriptionRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String id = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to get the confirmation details for.
+         *
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private String token = null;
+
+        /**
+         * The subscription confirmation token.
+         * @return this builder instance
+         */
+        public Builder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        private String protocol = null;
+
+        /**
+         * The protocol used for the subscription.
+         * <p>
+         * Allowed values:
+         *   * {@code CUSTOM_HTTPS}
+         *   * {@code EMAIL}
+         *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
+         *   * {@code ORACLE_FUNCTIONS}
+         *   * {@code PAGERDUTY}
+         *   * {@code SLACK}
+         *   * {@code SMS}
+         * <p>
+         * For information about subscription protocols, see
+         * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+         *
+         * @return this builder instance
+         */
+        public Builder protocol(String protocol) {
+            this.protocol = protocol;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -116,5 +181,75 @@ public class GetConfirmSubscriptionRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetConfirmSubscriptionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetConfirmSubscriptionRequest
+         */
+        public GetConfirmSubscriptionRequest buildWithoutInvocationCallback() {
+            GetConfirmSubscriptionRequest request = new GetConfirmSubscriptionRequest();
+            request.id = id;
+            request.token = token;
+            request.protocol = protocol;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetConfirmSubscriptionRequest(id, token, protocol, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().id(id).token(token).protocol(protocol).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",token=").append(String.valueOf(this.token));
+        sb.append(",protocol=").append(String.valueOf(this.protocol));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetConfirmSubscriptionRequest)) {
+            return false;
+        }
+
+        GetConfirmSubscriptionRequest other = (GetConfirmSubscriptionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.token, other.token)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.token == null ? 43 : this.token.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

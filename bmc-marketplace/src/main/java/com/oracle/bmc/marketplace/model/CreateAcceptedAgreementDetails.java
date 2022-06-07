@@ -15,16 +15,43 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateAcceptedAgreementDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateAcceptedAgreementDetails {
+public final class CreateAcceptedAgreementDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "listingId",
+        "packageVersion",
+        "agreementId",
+        "signature",
+        "definedTags",
+        "freeformTags"
+    })
+    public CreateAcceptedAgreementDetails(
+            String displayName,
+            String compartmentId,
+            String listingId,
+            String packageVersion,
+            String agreementId,
+            String signature,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.listingId = listingId;
+        this.packageVersion = packageVersion;
+        this.agreementId = agreementId;
+        this.signature = signature;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -141,35 +168,59 @@ public class CreateAcceptedAgreementDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A display name for the accepted agreement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The unique identifier for the compartment where the agreement will be accepted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The unique identifier for the listing associated with the agreement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * The package version associated with the agreement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
-    String packageVersion;
+    private final String packageVersion;
+
+    public String getPackageVersion() {
+        return packageVersion;
+    }
 
     /**
      * The agreement to accept.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agreementId")
-    String agreementId;
+    private final String agreementId;
+
+    public String getAgreementId() {
+        return agreementId;
+    }
 
     /**
      * A signature generated for the listing package agreements that you can retrieve
@@ -177,7 +228,11 @@ public class CreateAcceptedAgreementDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
-    String signature;
+    private final String signature;
+
+    public String getSignature() {
+        return signature;
+    }
 
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
@@ -186,7 +241,11 @@ public class CreateAcceptedAgreementDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
@@ -195,8 +254,76 @@ public class CreateAcceptedAgreementDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateAcceptedAgreementDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", listingId=").append(String.valueOf(this.listingId));
+        sb.append(", packageVersion=").append(String.valueOf(this.packageVersion));
+        sb.append(", agreementId=").append(String.valueOf(this.agreementId));
+        sb.append(", signature=").append(String.valueOf(this.signature));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAcceptedAgreementDetails)) {
+            return false;
+        }
+
+        CreateAcceptedAgreementDetails other = (CreateAcceptedAgreementDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.packageVersion, other.packageVersion)
+                && java.util.Objects.equals(this.agreementId, other.agreementId)
+                && java.util.Objects.equals(this.signature, other.signature)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageVersion == null ? 43 : this.packageVersion.hashCode());
+        result = (result * PRIME) + (this.agreementId == null ? 43 : this.agreementId.hashCode());
+        result = (result * PRIME) + (this.signature == null ? 43 : this.signature.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

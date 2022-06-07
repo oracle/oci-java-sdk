@@ -15,16 +15,31 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CallOperationConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CallOperationConfig {
+public final class CallOperationConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "inFields",
+        "outFields",
+        "callAttribute",
+        "pushDownOperations"
+    })
+    public CallOperationConfig(
+            java.util.List<String> inFields,
+            java.util.List<String> outFields,
+            AbstractCallAttribute callAttribute,
+            java.util.List<PushDownOperation> pushDownOperations) {
+        super();
+        this.inFields = inFields;
+        this.outFields = outFields;
+        this.callAttribute = callAttribute;
+        this.pushDownOperations = pushDownOperations;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("inFields")
         private java.util.List<String> inFields;
@@ -92,27 +107,101 @@ public class CallOperationConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of names of IN/INOUT parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inFields")
-    java.util.List<String> inFields;
+    private final java.util.List<String> inFields;
+
+    public java.util.List<String> getInFields() {
+        return inFields;
+    }
 
     /**
      * List of names of OUT/INOUT parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outFields")
-    java.util.List<String> outFields;
+    private final java.util.List<String> outFields;
+
+    public java.util.List<String> getOutFields() {
+        return outFields;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("callAttribute")
-    AbstractCallAttribute callAttribute;
+    private final AbstractCallAttribute callAttribute;
+
+    public AbstractCallAttribute getCallAttribute() {
+        return callAttribute;
+    }
 
     /**
      * List of push down operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pushDownOperations")
-    java.util.List<PushDownOperation> pushDownOperations;
+    private final java.util.List<PushDownOperation> pushDownOperations;
+
+    public java.util.List<PushDownOperation> getPushDownOperations() {
+        return pushDownOperations;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CallOperationConfig(");
+        sb.append("inFields=").append(String.valueOf(this.inFields));
+        sb.append(", outFields=").append(String.valueOf(this.outFields));
+        sb.append(", callAttribute=").append(String.valueOf(this.callAttribute));
+        sb.append(", pushDownOperations=").append(String.valueOf(this.pushDownOperations));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CallOperationConfig)) {
+            return false;
+        }
+
+        CallOperationConfig other = (CallOperationConfig) o;
+        return java.util.Objects.equals(this.inFields, other.inFields)
+                && java.util.Objects.equals(this.outFields, other.outFields)
+                && java.util.Objects.equals(this.callAttribute, other.callAttribute)
+                && java.util.Objects.equals(this.pushDownOperations, other.pushDownOperations)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.inFields == null ? 43 : this.inFields.hashCode());
+        result = (result * PRIME) + (this.outFields == null ? 43 : this.outFields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.callAttribute == null ? 43 : this.callAttribute.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pushDownOperations == null
+                                ? 43
+                                : this.pushDownOperations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

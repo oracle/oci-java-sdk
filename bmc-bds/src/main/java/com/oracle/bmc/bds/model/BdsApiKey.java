@@ -15,14 +15,44 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BdsApiKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BdsApiKey {
+public final class BdsApiKey {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "userId",
+        "keyAlias",
+        "defaultRegion",
+        "tenantId",
+        "fingerprint",
+        "pemfilepath",
+        "timeCreated",
+        "lifecycleState"
+    })
+    public BdsApiKey(
+            String id,
+            String userId,
+            String keyAlias,
+            String defaultRegion,
+            String tenantId,
+            String fingerprint,
+            String pemfilepath,
+            java.util.Date timeCreated,
+            LifecycleState lifecycleState) {
+        super();
+        this.id = id;
+        this.userId = userId;
+        this.keyAlias = keyAlias;
+        this.defaultRegion = defaultRegion;
+        this.tenantId = tenantId;
+        this.fingerprint = fingerprint;
+        this.pemfilepath = pemfilepath;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -149,17 +179,29 @@ public class BdsApiKey {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Identifier of the user's API key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The user OCID for which this API key was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * User friendly identifier used to uniquely differentiate between different API keys.
@@ -167,25 +209,41 @@ public class BdsApiKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyAlias")
-    String keyAlias;
+    private final String keyAlias;
+
+    public String getKeyAlias() {
+        return keyAlias;
+    }
 
     /**
      * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRegion")
-    String defaultRegion;
+    private final String defaultRegion;
+
+    public String getDefaultRegion() {
+        return defaultRegion;
+    }
 
     /**
      * The OCID of your tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    private final String tenantId;
+
+    public String getTenantId() {
+        return tenantId;
+    }
 
     /**
      * The fingerprint that corresponds to the public API key requested.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
-    String fingerprint;
+    private final String fingerprint;
+
+    public String getFingerprint() {
+        return fingerprint;
+    }
 
     /**
      * The full path and file name of the private key used for authentication. This location will be automatically selected
@@ -193,17 +251,25 @@ public class BdsApiKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pemfilepath")
-    String pemfilepath;
+    private final String pemfilepath;
+
+    public String getPemfilepath() {
+        return pemfilepath;
+    }
 
     /**
      * The time the API key was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * The state of the key.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -216,6 +282,9 @@ public class BdsApiKey {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -253,8 +322,79 @@ public class BdsApiKey {
      * The state of the key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BdsApiKey(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", keyAlias=").append(String.valueOf(this.keyAlias));
+        sb.append(", defaultRegion=").append(String.valueOf(this.defaultRegion));
+        sb.append(", tenantId=").append(String.valueOf(this.tenantId));
+        sb.append(", fingerprint=").append(String.valueOf(this.fingerprint));
+        sb.append(", pemfilepath=").append(String.valueOf(this.pemfilepath));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BdsApiKey)) {
+            return false;
+        }
+
+        BdsApiKey other = (BdsApiKey) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.keyAlias, other.keyAlias)
+                && java.util.Objects.equals(this.defaultRegion, other.defaultRegion)
+                && java.util.Objects.equals(this.tenantId, other.tenantId)
+                && java.util.Objects.equals(this.fingerprint, other.fingerprint)
+                && java.util.Objects.equals(this.pemfilepath, other.pemfilepath)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.keyAlias == null ? 43 : this.keyAlias.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultRegion == null ? 43 : this.defaultRegion.hashCode());
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
+        result = (result * PRIME) + (this.fingerprint == null ? 43 : this.fingerprint.hashCode());
+        result = (result * PRIME) + (this.pemfilepath == null ? 43 : this.pemfilepath.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

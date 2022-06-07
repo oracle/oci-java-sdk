@@ -9,14 +9,6 @@ import com.oracle.bmc.dataintegration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetFolderExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetFolderRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +16,17 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String workspaceId;
 
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
     /**
      * The folder key.
      */
     private String folderKey;
 
+    public String getFolderKey() {
+        return folderKey;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -37,6 +35,9 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * This parameter allows users to specify which view of the object to return. CHILD_COUNT_STATISTICS - This option is used to get statistics on immediate children of the object by their type.
      */
@@ -77,12 +78,52 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    public java.util.List<Projection> getProjection() {
+        return projection;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetFolderRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String workspaceId = null;
+
+        /**
+         * The workspace ID.
+         * @return this builder instance
+         */
+        public Builder workspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+
+        private String folderKey = null;
+
+        /**
+         * The folder key.
+         * @return this builder instance
+         */
+        public Builder folderKey(String folderKey) {
+            this.folderKey = folderKey;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         private java.util.List<Projection> projection = null;
 
@@ -156,5 +197,79 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetFolderRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetFolderRequest
+         */
+        public GetFolderRequest buildWithoutInvocationCallback() {
+            GetFolderRequest request = new GetFolderRequest();
+            request.workspaceId = workspaceId;
+            request.folderKey = folderKey;
+            request.opcRequestId = opcRequestId;
+            request.projection = projection;
+            return request;
+            // new GetFolderRequest(workspaceId, folderKey, opcRequestId, projection);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .workspaceId(workspaceId)
+                .folderKey(folderKey)
+                .opcRequestId(opcRequestId)
+                .projection(projection);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",workspaceId=").append(String.valueOf(this.workspaceId));
+        sb.append(",folderKey=").append(String.valueOf(this.folderKey));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",projection=").append(String.valueOf(this.projection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetFolderRequest)) {
+            return false;
+        }
+
+        GetFolderRequest other = (GetFolderRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.workspaceId, other.workspaceId)
+                && java.util.Objects.equals(this.folderKey, other.folderKey)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.projection, other.projection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.workspaceId == null ? 43 : this.workspaceId.hashCode());
+        result = (result * PRIME) + (this.folderKey == null ? 43 : this.folderKey.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.projection == null ? 43 : this.projection.hashCode());
+        return result;
     }
 }

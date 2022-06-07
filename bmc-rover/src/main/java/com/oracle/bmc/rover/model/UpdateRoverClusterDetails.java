@@ -15,16 +15,88 @@ package com.oracle.bmc.rover.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateRoverClusterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateRoverClusterDetails {
+public final class UpdateRoverClusterDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "clusterSize",
+        "customerShippingAddress",
+        "clusterWorkloads",
+        "superUserPassword",
+        "lifecycleState",
+        "lifecycleStateDetails",
+        "unlockPassphrase",
+        "enclosureType",
+        "pointOfContact",
+        "pointOfContactPhoneNumber",
+        "shippingPreference",
+        "oracleShippingTrackingUrl",
+        "subscriptionId",
+        "shippingVendor",
+        "timePickupExpected",
+        "isImportRequested",
+        "importCompartmentId",
+        "importFileBucket",
+        "dataValidationCode",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public UpdateRoverClusterDetails(
+            String displayName,
+            Integer clusterSize,
+            ShippingAddress customerShippingAddress,
+            java.util.List<RoverWorkload> clusterWorkloads,
+            String superUserPassword,
+            LifecycleState lifecycleState,
+            String lifecycleStateDetails,
+            String unlockPassphrase,
+            EnclosureType enclosureType,
+            String pointOfContact,
+            String pointOfContactPhoneNumber,
+            ShippingPreference shippingPreference,
+            String oracleShippingTrackingUrl,
+            String subscriptionId,
+            String shippingVendor,
+            java.util.Date timePickupExpected,
+            Boolean isImportRequested,
+            String importCompartmentId,
+            String importFileBucket,
+            String dataValidationCode,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.displayName = displayName;
+        this.clusterSize = clusterSize;
+        this.customerShippingAddress = customerShippingAddress;
+        this.clusterWorkloads = clusterWorkloads;
+        this.superUserPassword = superUserPassword;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleStateDetails = lifecycleStateDetails;
+        this.unlockPassphrase = unlockPassphrase;
+        this.enclosureType = enclosureType;
+        this.pointOfContact = pointOfContact;
+        this.pointOfContactPhoneNumber = pointOfContactPhoneNumber;
+        this.shippingPreference = shippingPreference;
+        this.oracleShippingTrackingUrl = oracleShippingTrackingUrl;
+        this.subscriptionId = subscriptionId;
+        this.shippingVendor = shippingVendor;
+        this.timePickupExpected = timePickupExpected;
+        this.isImportRequested = isImportRequested;
+        this.importCompartmentId = importCompartmentId;
+        this.importFileBucket = importFileBucket;
+        this.dataValidationCode = dataValidationCode;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -306,68 +378,117 @@ public class UpdateRoverClusterDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Number of nodes desired in the cluster, in standalone clusters, between 5 and 15 inclusive. In station clusters, between 15 and 30 inclusive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
-    Integer clusterSize;
+    private final Integer clusterSize;
+
+    public Integer getClusterSize() {
+        return clusterSize;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customerShippingAddress")
-    ShippingAddress customerShippingAddress;
+    private final ShippingAddress customerShippingAddress;
+
+    public ShippingAddress getCustomerShippingAddress() {
+        return customerShippingAddress;
+    }
 
     /**
      * List of existing workloads that should be provisioned on the nodes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterWorkloads")
-    java.util.List<RoverWorkload> clusterWorkloads;
+    private final java.util.List<RoverWorkload> clusterWorkloads;
+
+    public java.util.List<RoverWorkload> getClusterWorkloads() {
+        return clusterWorkloads;
+    }
 
     /**
      * Root password for the rover cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("superUserPassword")
-    String superUserPassword;
+    private final String superUserPassword;
+
+    public String getSuperUserPassword() {
+        return superUserPassword;
+    }
 
     /**
      * The current state of the RoverCluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A property that can contain details on the lifecycle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
-    String lifecycleStateDetails;
+    private final String lifecycleStateDetails;
+
+    public String getLifecycleStateDetails() {
+        return lifecycleStateDetails;
+    }
 
     /**
      * Password to unlock the rover cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unlockPassphrase")
-    String unlockPassphrase;
+    private final String unlockPassphrase;
+
+    public String getUnlockPassphrase() {
+        return unlockPassphrase;
+    }
 
     /**
      * The type of enclosure rover nodes in this cluster are shipped in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enclosureType")
-    EnclosureType enclosureType;
+    private final EnclosureType enclosureType;
+
+    public EnclosureType getEnclosureType() {
+        return enclosureType;
+    }
 
     /**
      * Name of point of contact for this order if customer is picking up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pointOfContact")
-    String pointOfContact;
+    private final String pointOfContact;
+
+    public String getPointOfContact() {
+        return pointOfContact;
+    }
 
     /**
      * Phone number of point of contact for this order if customer is picking up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pointOfContactPhoneNumber")
-    String pointOfContactPhoneNumber;
+    private final String pointOfContactPhoneNumber;
+
+    public String getPointOfContactPhoneNumber() {
+        return pointOfContactPhoneNumber;
+    }
+
     /**
      * Preference for device delivery.
      **/
@@ -407,55 +528,91 @@ public class UpdateRoverClusterDetails {
      * Preference for device delivery.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shippingPreference")
-    ShippingPreference shippingPreference;
+    private final ShippingPreference shippingPreference;
+
+    public ShippingPreference getShippingPreference() {
+        return shippingPreference;
+    }
 
     /**
      * Tracking Url for the shipped Rover Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleShippingTrackingUrl")
-    String oracleShippingTrackingUrl;
+    private final String oracleShippingTrackingUrl;
+
+    public String getOracleShippingTrackingUrl() {
+        return oracleShippingTrackingUrl;
+    }
 
     /**
      * ID provided to customer after successful subscription to Rover Stations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
-    String subscriptionId;
+    private final String subscriptionId;
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
 
     /**
      * Shipping vendor of choice for orace to customer shipping.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shippingVendor")
-    String shippingVendor;
+    private final String shippingVendor;
+
+    public String getShippingVendor() {
+        return shippingVendor;
+    }
 
     /**
      * Expected date when customer wants to pickup the device if they chose customer pickup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePickupExpected")
-    java.util.Date timePickupExpected;
+    private final java.util.Date timePickupExpected;
+
+    public java.util.Date getTimePickupExpected() {
+        return timePickupExpected;
+    }
 
     /**
      * The flag indicating that customer requests data to be imported to OCI upon Rover cluster return.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
-    Boolean isImportRequested;
+    private final Boolean isImportRequested;
+
+    public Boolean getIsImportRequested() {
+        return isImportRequested;
+    }
 
     /**
      * An OCID of a compartment where data will be imported to upon Rover cluster return.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
-    String importCompartmentId;
+    private final String importCompartmentId;
+
+    public String getImportCompartmentId() {
+        return importCompartmentId;
+    }
 
     /**
      * Name of a bucket where files from NFS share will be imported to upon Rover cluster return.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
-    String importFileBucket;
+    private final String importFileBucket;
+
+    public String getImportFileBucket() {
+        return importFileBucket;
+    }
 
     /**
      * Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
-    String dataValidationCode;
+    private final String dataValidationCode;
+
+    public String getDataValidationCode() {
+        return dataValidationCode;
+    }
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
@@ -464,7 +621,11 @@ public class UpdateRoverClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
@@ -473,7 +634,11 @@ public class UpdateRoverClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
@@ -482,8 +647,175 @@ public class UpdateRoverClusterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateRoverClusterDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
+        sb.append(", customerShippingAddress=")
+                .append(String.valueOf(this.customerShippingAddress));
+        sb.append(", clusterWorkloads=").append(String.valueOf(this.clusterWorkloads));
+        sb.append(", superUserPassword=").append(String.valueOf(this.superUserPassword));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", unlockPassphrase=").append(String.valueOf(this.unlockPassphrase));
+        sb.append(", enclosureType=").append(String.valueOf(this.enclosureType));
+        sb.append(", pointOfContact=").append(String.valueOf(this.pointOfContact));
+        sb.append(", pointOfContactPhoneNumber=")
+                .append(String.valueOf(this.pointOfContactPhoneNumber));
+        sb.append(", shippingPreference=").append(String.valueOf(this.shippingPreference));
+        sb.append(", oracleShippingTrackingUrl=")
+                .append(String.valueOf(this.oracleShippingTrackingUrl));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", shippingVendor=").append(String.valueOf(this.shippingVendor));
+        sb.append(", timePickupExpected=").append(String.valueOf(this.timePickupExpected));
+        sb.append(", isImportRequested=").append(String.valueOf(this.isImportRequested));
+        sb.append(", importCompartmentId=").append(String.valueOf(this.importCompartmentId));
+        sb.append(", importFileBucket=").append(String.valueOf(this.importFileBucket));
+        sb.append(", dataValidationCode=").append(String.valueOf(this.dataValidationCode));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateRoverClusterDetails)) {
+            return false;
+        }
+
+        UpdateRoverClusterDetails other = (UpdateRoverClusterDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.clusterSize, other.clusterSize)
+                && java.util.Objects.equals(
+                        this.customerShippingAddress, other.customerShippingAddress)
+                && java.util.Objects.equals(this.clusterWorkloads, other.clusterWorkloads)
+                && java.util.Objects.equals(this.superUserPassword, other.superUserPassword)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(this.unlockPassphrase, other.unlockPassphrase)
+                && java.util.Objects.equals(this.enclosureType, other.enclosureType)
+                && java.util.Objects.equals(this.pointOfContact, other.pointOfContact)
+                && java.util.Objects.equals(
+                        this.pointOfContactPhoneNumber, other.pointOfContactPhoneNumber)
+                && java.util.Objects.equals(this.shippingPreference, other.shippingPreference)
+                && java.util.Objects.equals(
+                        this.oracleShippingTrackingUrl, other.oracleShippingTrackingUrl)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.shippingVendor, other.shippingVendor)
+                && java.util.Objects.equals(this.timePickupExpected, other.timePickupExpected)
+                && java.util.Objects.equals(this.isImportRequested, other.isImportRequested)
+                && java.util.Objects.equals(this.importCompartmentId, other.importCompartmentId)
+                && java.util.Objects.equals(this.importFileBucket, other.importFileBucket)
+                && java.util.Objects.equals(this.dataValidationCode, other.dataValidationCode)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.clusterSize == null ? 43 : this.clusterSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerShippingAddress == null
+                                ? 43
+                                : this.customerShippingAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterWorkloads == null ? 43 : this.clusterWorkloads.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.superUserPassword == null ? 43 : this.superUserPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStateDetails == null
+                                ? 43
+                                : this.lifecycleStateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unlockPassphrase == null ? 43 : this.unlockPassphrase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enclosureType == null ? 43 : this.enclosureType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pointOfContact == null ? 43 : this.pointOfContact.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pointOfContactPhoneNumber == null
+                                ? 43
+                                : this.pointOfContactPhoneNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shippingPreference == null
+                                ? 43
+                                : this.shippingPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleShippingTrackingUrl == null
+                                ? 43
+                                : this.oracleShippingTrackingUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shippingVendor == null ? 43 : this.shippingVendor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePickupExpected == null
+                                ? 43
+                                : this.timePickupExpected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isImportRequested == null ? 43 : this.isImportRequested.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importCompartmentId == null
+                                ? 43
+                                : this.importCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importFileBucket == null ? 43 : this.importFileBucket.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataValidationCode == null
+                                ? 43
+                                : this.dataValidationCode.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

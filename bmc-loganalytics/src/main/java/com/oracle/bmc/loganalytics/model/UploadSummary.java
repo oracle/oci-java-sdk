@@ -15,14 +15,38 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UploadSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UploadSummary {
+public final class UploadSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "reference",
+        "name",
+        "timeCreated",
+        "timeUpdated",
+        "timeEarliestLogEntry",
+        "timeLatestLogEntry",
+        "warningsCount"
+    })
+    public UploadSummary(
+            String reference,
+            String name,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.Date timeEarliestLogEntry,
+            java.util.Date timeLatestLogEntry,
+            Integer warningsCount) {
+        super();
+        this.reference = reference;
+        this.name = name;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.timeEarliestLogEntry = timeEarliestLogEntry;
+        this.timeLatestLogEntry = timeLatestLogEntry;
+        this.warningsCount = warningsCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("reference")
         private String reference;
@@ -127,48 +151,147 @@ public class UploadSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique internal identifier to refer the upload container.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reference")
-    String reference;
+    private final String reference;
+
+    public String getReference() {
+        return reference;
+    }
 
     /**
      * The name of the upload container.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The time when this upload container is created. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The latest time when this upload container is modified. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestLogEntry")
-    java.util.Date timeEarliestLogEntry;
+    private final java.util.Date timeEarliestLogEntry;
+
+    public java.util.Date getTimeEarliestLogEntry() {
+        return timeEarliestLogEntry;
+    }
 
     /**
      * This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestLogEntry")
-    java.util.Date timeLatestLogEntry;
+    private final java.util.Date timeLatestLogEntry;
+
+    public java.util.Date getTimeLatestLogEntry() {
+        return timeLatestLogEntry;
+    }
 
     /**
      * Number of warnings associated to the upload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningsCount")
-    Integer warningsCount;
+    private final Integer warningsCount;
+
+    public Integer getWarningsCount() {
+        return warningsCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UploadSummary(");
+        sb.append("reference=").append(String.valueOf(this.reference));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeEarliestLogEntry=").append(String.valueOf(this.timeEarliestLogEntry));
+        sb.append(", timeLatestLogEntry=").append(String.valueOf(this.timeLatestLogEntry));
+        sb.append(", warningsCount=").append(String.valueOf(this.warningsCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UploadSummary)) {
+            return false;
+        }
+
+        UploadSummary other = (UploadSummary) o;
+        return java.util.Objects.equals(this.reference, other.reference)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeEarliestLogEntry, other.timeEarliestLogEntry)
+                && java.util.Objects.equals(this.timeLatestLogEntry, other.timeLatestLogEntry)
+                && java.util.Objects.equals(this.warningsCount, other.warningsCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.reference == null ? 43 : this.reference.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeEarliestLogEntry == null
+                                ? 43
+                                : this.timeEarliestLogEntry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLatestLogEntry == null
+                                ? 43
+                                : this.timeLatestLogEntry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.warningsCount == null ? 43 : this.warningsCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

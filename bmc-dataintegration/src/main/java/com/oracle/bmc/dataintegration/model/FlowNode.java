@@ -15,14 +15,53 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FlowNode.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FlowNode {
+public final class FlowNode {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelType",
+        "modelVersion",
+        "parentRef",
+        "name",
+        "description",
+        "inputLinks",
+        "outputLinks",
+        "operator",
+        "uiProperties",
+        "configProviderDelegate",
+        "objectStatus"
+    })
+    public FlowNode(
+            String key,
+            String modelType,
+            String modelVersion,
+            ParentReference parentRef,
+            String name,
+            String description,
+            java.util.List<InputLink> inputLinks,
+            java.util.List<OutputLink> outputLinks,
+            Operator operator,
+            UIProperties uiProperties,
+            ConfigProvider configProviderDelegate,
+            Integer objectStatus) {
+        super();
+        this.key = key;
+        this.modelType = modelType;
+        this.modelVersion = modelVersion;
+        this.parentRef = parentRef;
+        this.name = name;
+        this.description = description;
+        this.inputLinks = inputLinks;
+        this.outputLinks = outputLinks;
+        this.operator = operator;
+        this.uiProperties = uiProperties;
+        this.configProviderDelegate = configProviderDelegate;
+        this.objectStatus = objectStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -182,66 +221,195 @@ public class FlowNode {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The type of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    String modelType;
+    private final String modelType;
+
+    public String getModelType() {
+        return modelType;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * An array of input links.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputLinks")
-    java.util.List<InputLink> inputLinks;
+    private final java.util.List<InputLink> inputLinks;
+
+    public java.util.List<InputLink> getInputLinks() {
+        return inputLinks;
+    }
 
     /**
      * An array of output links.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputLinks")
-    java.util.List<OutputLink> outputLinks;
+    private final java.util.List<OutputLink> outputLinks;
+
+    public java.util.List<OutputLink> getOutputLinks() {
+        return outputLinks;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
-    Operator operator;
+    private final Operator operator;
+
+    public Operator getOperator() {
+        return operator;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("uiProperties")
-    UIProperties uiProperties;
+    private final UIProperties uiProperties;
+
+    public UIProperties getUiProperties() {
+        return uiProperties;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configProviderDelegate")
-    ConfigProvider configProviderDelegate;
+    private final ConfigProvider configProviderDelegate;
+
+    public ConfigProvider getConfigProviderDelegate() {
+        return configProviderDelegate;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FlowNode(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", inputLinks=").append(String.valueOf(this.inputLinks));
+        sb.append(", outputLinks=").append(String.valueOf(this.outputLinks));
+        sb.append(", operator=").append(String.valueOf(this.operator));
+        sb.append(", uiProperties=").append(String.valueOf(this.uiProperties));
+        sb.append(", configProviderDelegate=").append(String.valueOf(this.configProviderDelegate));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FlowNode)) {
+            return false;
+        }
+
+        FlowNode other = (FlowNode) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.inputLinks, other.inputLinks)
+                && java.util.Objects.equals(this.outputLinks, other.outputLinks)
+                && java.util.Objects.equals(this.operator, other.operator)
+                && java.util.Objects.equals(this.uiProperties, other.uiProperties)
+                && java.util.Objects.equals(
+                        this.configProviderDelegate, other.configProviderDelegate)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.inputLinks == null ? 43 : this.inputLinks.hashCode());
+        result = (result * PRIME) + (this.outputLinks == null ? 43 : this.outputLinks.hashCode());
+        result = (result * PRIME) + (this.operator == null ? 43 : this.operator.hashCode());
+        result = (result * PRIME) + (this.uiProperties == null ? 43 : this.uiProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configProviderDelegate == null
+                                ? 43
+                                : this.configProviderDelegate.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

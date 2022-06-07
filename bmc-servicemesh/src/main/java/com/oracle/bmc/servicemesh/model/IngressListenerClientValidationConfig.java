@@ -16,16 +16,21 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IngressListenerClientValidationConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IngressListenerClientValidationConfig {
+public final class IngressListenerClientValidationConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"trustedCaBundle", "subjectAlternateNames"})
+    public IngressListenerClientValidationConfig(
+            CaBundle trustedCaBundle, java.util.List<String> subjectAlternateNames) {
+        super();
+        this.trustedCaBundle = trustedCaBundle;
+        this.subjectAlternateNames = subjectAlternateNames;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("trustedCaBundle")
         private CaBundle trustedCaBundle;
@@ -74,16 +79,76 @@ public class IngressListenerClientValidationConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("trustedCaBundle")
-    CaBundle trustedCaBundle;
+    private final CaBundle trustedCaBundle;
+
+    public CaBundle getTrustedCaBundle() {
+        return trustedCaBundle;
+    }
 
     /**
      * A list of alternate names to verify the subject identity in the certificate presented by the client.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subjectAlternateNames")
-    java.util.List<String> subjectAlternateNames;
+    private final java.util.List<String> subjectAlternateNames;
+
+    public java.util.List<String> getSubjectAlternateNames() {
+        return subjectAlternateNames;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IngressListenerClientValidationConfig(");
+        sb.append("trustedCaBundle=").append(String.valueOf(this.trustedCaBundle));
+        sb.append(", subjectAlternateNames=").append(String.valueOf(this.subjectAlternateNames));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IngressListenerClientValidationConfig)) {
+            return false;
+        }
+
+        IngressListenerClientValidationConfig other = (IngressListenerClientValidationConfig) o;
+        return java.util.Objects.equals(this.trustedCaBundle, other.trustedCaBundle)
+                && java.util.Objects.equals(this.subjectAlternateNames, other.subjectAlternateNames)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.trustedCaBundle == null ? 43 : this.trustedCaBundle.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subjectAlternateNames == null
+                                ? 43
+                                : this.subjectAlternateNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -17,16 +17,37 @@ package com.oracle.bmc.monitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SummarizeMetricsDataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SummarizeMetricsDataDetails {
+public final class SummarizeMetricsDataDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "namespace",
+        "resourceGroup",
+        "query",
+        "startTime",
+        "endTime",
+        "resolution"
+    })
+    public SummarizeMetricsDataDetails(
+            String namespace,
+            String resourceGroup,
+            String query,
+            java.util.Date startTime,
+            java.util.Date endTime,
+            String resolution) {
+        super();
+        this.namespace = namespace;
+        this.resourceGroup = resourceGroup;
+        this.query = query;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.resolution = resolution;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
@@ -115,6 +136,10 @@ public class SummarizeMetricsDataDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The source service or application to use when searching for metric data points to aggregate.
      * <p>
@@ -122,7 +147,11 @@ public class SummarizeMetricsDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
@@ -132,7 +161,11 @@ public class SummarizeMetricsDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
-    String resourceGroup;
+    private final String resourceGroup;
+
+    public String getResourceGroup() {
+        return resourceGroup;
+    }
 
     /**
      * The Monitoring Query Language (MQL) expression to use when searching for metric data points to
@@ -152,7 +185,11 @@ public class SummarizeMetricsDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
-    String query;
+    private final String query;
+
+    public String getQuery() {
+        return query;
+    }
 
     /**
      * The beginning of the time range to use when searching for metric data points.
@@ -163,7 +200,11 @@ public class SummarizeMetricsDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
-    java.util.Date startTime;
+    private final java.util.Date startTime;
+
+    public java.util.Date getStartTime() {
+        return startTime;
+    }
 
     /**
      * The end of the time range to use when searching for metric data points.
@@ -174,7 +215,11 @@ public class SummarizeMetricsDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTime")
-    java.util.Date endTime;
+    private final java.util.Date endTime;
+
+    public java.util.Date getEndTime() {
+        return endTime;
+    }
 
     /**
      * The time between calculated aggregation windows. Use with the query interval to vary the
@@ -187,8 +232,68 @@ public class SummarizeMetricsDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolution")
-    String resolution;
+    private final String resolution;
+
+    public String getResolution() {
+        return resolution;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SummarizeMetricsDataDetails(");
+        sb.append("namespace=").append(String.valueOf(this.namespace));
+        sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(", query=").append(String.valueOf(this.query));
+        sb.append(", startTime=").append(String.valueOf(this.startTime));
+        sb.append(", endTime=").append(String.valueOf(this.endTime));
+        sb.append(", resolution=").append(String.valueOf(this.resolution));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeMetricsDataDetails)) {
+            return false;
+        }
+
+        SummarizeMetricsDataDetails other = (SummarizeMetricsDataDetails) o;
+        return java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.query, other.query)
+                && java.util.Objects.equals(this.startTime, other.startTime)
+                && java.util.Objects.equals(this.endTime, other.endTime)
+                && java.util.Objects.equals(this.resolution, other.resolution)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
+        result = (result * PRIME) + (this.startTime == null ? 43 : this.startTime.hashCode());
+        result = (result * PRIME) + (this.endTime == null ? 43 : this.endTime.hashCode());
+        result = (result * PRIME) + (this.resolution == null ? 43 : this.resolution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

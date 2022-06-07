@@ -9,7 +9,6 @@ package com.oracle.bmc.databasemigration.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.extern.slf4j.Slf4j
 public enum JobPhaseStatus {
     Pending("PENDING"),
     Started("STARTED"),
@@ -21,6 +20,9 @@ public enum JobPhaseStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(JobPhaseStatus.class);
 
     private final String value;
     private static java.util.Map<String, JobPhaseStatus> map;

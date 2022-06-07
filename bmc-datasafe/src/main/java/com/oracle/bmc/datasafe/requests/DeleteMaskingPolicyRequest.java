@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteMaskingPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteMaskingPolicyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteMaskingPolicyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class DeleteMaskingPolicyRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String maskingPolicyId;
 
+    public String getMaskingPolicyId() {
+        return maskingPolicyId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the if-match parameter to the value of the
@@ -34,10 +29,17 @@ public class DeleteMaskingPolicyRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -45,6 +47,44 @@ public class DeleteMaskingPolicyRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String maskingPolicyId = null;
+
+        /**
+         * The OCID of the masking policy.
+         * @return this builder instance
+         */
+        public Builder maskingPolicyId(String maskingPolicyId) {
+            this.maskingPolicyId = maskingPolicyId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -98,5 +138,76 @@ public class DeleteMaskingPolicyRequest extends com.oracle.bmc.requests.BmcReque
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of DeleteMaskingPolicyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DeleteMaskingPolicyRequest
+         */
+        public DeleteMaskingPolicyRequest buildWithoutInvocationCallback() {
+            DeleteMaskingPolicyRequest request = new DeleteMaskingPolicyRequest();
+            request.maskingPolicyId = maskingPolicyId;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new DeleteMaskingPolicyRequest(maskingPolicyId, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .maskingPolicyId(maskingPolicyId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteMaskingPolicyRequest)) {
+            return false;
+        }
+
+        DeleteMaskingPolicyRequest other = (DeleteMaskingPolicyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.maskingPolicyId, other.maskingPolicyId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.maskingPolicyId == null ? 43 : this.maskingPolicyId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

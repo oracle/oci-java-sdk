@@ -15,16 +15,82 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateTablespaceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateTablespaceDetails {
+public final class CreateTablespaceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "credentialDetails",
+        "name",
+        "type",
+        "isBigfile",
+        "dataFiles",
+        "fileCount",
+        "fileSize",
+        "isReusable",
+        "isAutoExtensible",
+        "autoExtendNextSize",
+        "autoExtendMaxSize",
+        "isMaxSizeUnlimited",
+        "blockSizeInKilobytes",
+        "isEncrypted",
+        "encryptionAlgorithm",
+        "defaultCompress",
+        "status",
+        "extentManagement",
+        "extentUniformSize",
+        "segmentManagement",
+        "isDefault"
+    })
+    public CreateTablespaceDetails(
+            TablespaceAdminCredentialDetails credentialDetails,
+            String name,
+            Type type,
+            Boolean isBigfile,
+            java.util.List<String> dataFiles,
+            Integer fileCount,
+            TablespaceStorageSize fileSize,
+            Boolean isReusable,
+            Boolean isAutoExtensible,
+            TablespaceStorageSize autoExtendNextSize,
+            TablespaceStorageSize autoExtendMaxSize,
+            Boolean isMaxSizeUnlimited,
+            Integer blockSizeInKilobytes,
+            Boolean isEncrypted,
+            String encryptionAlgorithm,
+            DefaultCompress defaultCompress,
+            Status status,
+            ExtentManagement extentManagement,
+            TablespaceStorageSize extentUniformSize,
+            SegmentManagement segmentManagement,
+            Boolean isDefault) {
+        super();
+        this.credentialDetails = credentialDetails;
+        this.name = name;
+        this.type = type;
+        this.isBigfile = isBigfile;
+        this.dataFiles = dataFiles;
+        this.fileCount = fileCount;
+        this.fileSize = fileSize;
+        this.isReusable = isReusable;
+        this.isAutoExtensible = isAutoExtensible;
+        this.autoExtendNextSize = autoExtendNextSize;
+        this.autoExtendMaxSize = autoExtendMaxSize;
+        this.isMaxSizeUnlimited = isMaxSizeUnlimited;
+        this.blockSizeInKilobytes = blockSizeInKilobytes;
+        this.isEncrypted = isEncrypted;
+        this.encryptionAlgorithm = encryptionAlgorithm;
+        this.defaultCompress = defaultCompress;
+        this.status = status;
+        this.extentManagement = extentManagement;
+        this.extentUniformSize = extentUniformSize;
+        this.segmentManagement = segmentManagement;
+        this.isDefault = isDefault;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
         private TablespaceAdminCredentialDetails credentialDetails;
@@ -283,15 +349,28 @@ public class CreateTablespaceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
-    TablespaceAdminCredentialDetails credentialDetails;
+    private final TablespaceAdminCredentialDetails credentialDetails;
+
+    public TablespaceAdminCredentialDetails getCredentialDetails() {
+        return credentialDetails;
+    }
 
     /**
      * The name of the tablespace. It must be unique within a database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The type of tablespace.
      *
@@ -333,7 +412,11 @@ public class CreateTablespaceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * Specifies whether the tablespace is a bigfile or smallfile tablespace.
@@ -342,83 +425,132 @@ public class CreateTablespaceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBigfile")
-    Boolean isBigfile;
+    private final Boolean isBigfile;
+
+    public Boolean getIsBigfile() {
+        return isBigfile;
+    }
 
     /**
      * The list of data files or temp files created for the tablespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataFiles")
-    java.util.List<String> dataFiles;
+    private final java.util.List<String> dataFiles;
+
+    public java.util.List<String> getDataFiles() {
+        return dataFiles;
+    }
 
     /**
      * The number of data files or temp files created for the tablespace. This is for Oracle Managed Files only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileCount")
-    Integer fileCount;
+    private final Integer fileCount;
+
+    public Integer getFileCount() {
+        return fileCount;
+    }
 
     /**
      * The size of each data file or temp file.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSize")
-    TablespaceStorageSize fileSize;
+    private final TablespaceStorageSize fileSize;
+
+    public TablespaceStorageSize getFileSize() {
+        return fileSize;
+    }
 
     /**
      * Specifies whether Oracle can reuse the data file or temp file. Reuse is only allowed when the file name is provided.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReusable")
-    Boolean isReusable;
+    private final Boolean isReusable;
+
+    public Boolean getIsReusable() {
+        return isReusable;
+    }
 
     /**
      * Specifies whether the data file or temp file can be extended automatically.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
-    Boolean isAutoExtensible;
+    private final Boolean isAutoExtensible;
+
+    public Boolean getIsAutoExtensible() {
+        return isAutoExtensible;
+    }
 
     /**
      * The size of the next increment of disk space to be allocated automatically when more extents are required.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendNextSize")
-    TablespaceStorageSize autoExtendNextSize;
+    private final TablespaceStorageSize autoExtendNextSize;
+
+    public TablespaceStorageSize getAutoExtendNextSize() {
+        return autoExtendNextSize;
+    }
 
     /**
      * The maximum disk space allowed for automatic extension of the data files or temp files.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendMaxSize")
-    TablespaceStorageSize autoExtendMaxSize;
+    private final TablespaceStorageSize autoExtendMaxSize;
+
+    public TablespaceStorageSize getAutoExtendMaxSize() {
+        return autoExtendMaxSize;
+    }
 
     /**
      * Specifies whether the disk space of the data file or temp file can be limited.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMaxSizeUnlimited")
-    Boolean isMaxSizeUnlimited;
+    private final Boolean isMaxSizeUnlimited;
+
+    public Boolean getIsMaxSizeUnlimited() {
+        return isMaxSizeUnlimited;
+    }
 
     /**
      * Block size for the tablespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockSizeInKilobytes")
-    Integer blockSizeInKilobytes;
+    private final Integer blockSizeInKilobytes;
+
+    public Integer getBlockSizeInKilobytes() {
+        return blockSizeInKilobytes;
+    }
 
     /**
      * Indicates whether the tablespace is encrypted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEncrypted")
-    Boolean isEncrypted;
+    private final Boolean isEncrypted;
+
+    public Boolean getIsEncrypted() {
+        return isEncrypted;
+    }
 
     /**
      * The name of the encryption algorithm to be used for tablespace encryption.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
-    String encryptionAlgorithm;
+    private final String encryptionAlgorithm;
+
+    public String getEncryptionAlgorithm() {
+        return encryptionAlgorithm;
+    }
+
     /**
      * The default compression of data for all tables created in the tablespace.
      *
@@ -460,7 +592,12 @@ public class CreateTablespaceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultCompress")
-    DefaultCompress defaultCompress;
+    private final DefaultCompress defaultCompress;
+
+    public DefaultCompress getDefaultCompress() {
+        return defaultCompress;
+    }
+
     /**
      * The status of the tablespace.
      *
@@ -502,7 +639,12 @@ public class CreateTablespaceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
+
     /**
      * Specifies how the extents of the tablespace should be managed.
      *
@@ -544,14 +686,23 @@ public class CreateTablespaceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extentManagement")
-    ExtentManagement extentManagement;
+    private final ExtentManagement extentManagement;
+
+    public ExtentManagement getExtentManagement() {
+        return extentManagement;
+    }
 
     /**
      * The size of the extent when the tablespace is managed with uniform extents of a specific size.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extentUniformSize")
-    TablespaceStorageSize extentUniformSize;
+    private final TablespaceStorageSize extentUniformSize;
+
+    public TablespaceStorageSize getExtentUniformSize() {
+        return extentUniformSize;
+    }
+
     /**
      * Specifies whether tablespace segment management should be automatic or manual.
      *
@@ -593,15 +744,152 @@ public class CreateTablespaceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("segmentManagement")
-    SegmentManagement segmentManagement;
+    private final SegmentManagement segmentManagement;
+
+    public SegmentManagement getSegmentManagement() {
+        return segmentManagement;
+    }
 
     /**
      * Specifies whether the tablespace is the default tablespace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateTablespaceDetails(");
+        sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", isBigfile=").append(String.valueOf(this.isBigfile));
+        sb.append(", dataFiles=").append(String.valueOf(this.dataFiles));
+        sb.append(", fileCount=").append(String.valueOf(this.fileCount));
+        sb.append(", fileSize=").append(String.valueOf(this.fileSize));
+        sb.append(", isReusable=").append(String.valueOf(this.isReusable));
+        sb.append(", isAutoExtensible=").append(String.valueOf(this.isAutoExtensible));
+        sb.append(", autoExtendNextSize=").append(String.valueOf(this.autoExtendNextSize));
+        sb.append(", autoExtendMaxSize=").append(String.valueOf(this.autoExtendMaxSize));
+        sb.append(", isMaxSizeUnlimited=").append(String.valueOf(this.isMaxSizeUnlimited));
+        sb.append(", blockSizeInKilobytes=").append(String.valueOf(this.blockSizeInKilobytes));
+        sb.append(", isEncrypted=").append(String.valueOf(this.isEncrypted));
+        sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
+        sb.append(", defaultCompress=").append(String.valueOf(this.defaultCompress));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", extentManagement=").append(String.valueOf(this.extentManagement));
+        sb.append(", extentUniformSize=").append(String.valueOf(this.extentUniformSize));
+        sb.append(", segmentManagement=").append(String.valueOf(this.segmentManagement));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTablespaceDetails)) {
+            return false;
+        }
+
+        CreateTablespaceDetails other = (CreateTablespaceDetails) o;
+        return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.isBigfile, other.isBigfile)
+                && java.util.Objects.equals(this.dataFiles, other.dataFiles)
+                && java.util.Objects.equals(this.fileCount, other.fileCount)
+                && java.util.Objects.equals(this.fileSize, other.fileSize)
+                && java.util.Objects.equals(this.isReusable, other.isReusable)
+                && java.util.Objects.equals(this.isAutoExtensible, other.isAutoExtensible)
+                && java.util.Objects.equals(this.autoExtendNextSize, other.autoExtendNextSize)
+                && java.util.Objects.equals(this.autoExtendMaxSize, other.autoExtendMaxSize)
+                && java.util.Objects.equals(this.isMaxSizeUnlimited, other.isMaxSizeUnlimited)
+                && java.util.Objects.equals(this.blockSizeInKilobytes, other.blockSizeInKilobytes)
+                && java.util.Objects.equals(this.isEncrypted, other.isEncrypted)
+                && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
+                && java.util.Objects.equals(this.defaultCompress, other.defaultCompress)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.extentManagement, other.extentManagement)
+                && java.util.Objects.equals(this.extentUniformSize, other.extentUniformSize)
+                && java.util.Objects.equals(this.segmentManagement, other.segmentManagement)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.isBigfile == null ? 43 : this.isBigfile.hashCode());
+        result = (result * PRIME) + (this.dataFiles == null ? 43 : this.dataFiles.hashCode());
+        result = (result * PRIME) + (this.fileCount == null ? 43 : this.fileCount.hashCode());
+        result = (result * PRIME) + (this.fileSize == null ? 43 : this.fileSize.hashCode());
+        result = (result * PRIME) + (this.isReusable == null ? 43 : this.isReusable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoExtensible == null ? 43 : this.isAutoExtensible.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoExtendNextSize == null
+                                ? 43
+                                : this.autoExtendNextSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoExtendMaxSize == null ? 43 : this.autoExtendMaxSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaxSizeUnlimited == null
+                                ? 43
+                                : this.isMaxSizeUnlimited.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockSizeInKilobytes == null
+                                ? 43
+                                : this.blockSizeInKilobytes.hashCode());
+        result = (result * PRIME) + (this.isEncrypted == null ? 43 : this.isEncrypted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionAlgorithm == null
+                                ? 43
+                                : this.encryptionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultCompress == null ? 43 : this.defaultCompress.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extentManagement == null ? 43 : this.extentManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extentUniformSize == null ? 43 : this.extentUniformSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.segmentManagement == null ? 43 : this.segmentManagement.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

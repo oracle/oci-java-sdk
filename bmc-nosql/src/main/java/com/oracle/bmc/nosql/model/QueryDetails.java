@@ -17,14 +17,38 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class QueryDetails {
+public final class QueryDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "statement",
+        "isPrepared",
+        "consistency",
+        "maxReadInKBs",
+        "variables",
+        "timeoutInMs"
+    })
+    public QueryDetails(
+            String compartmentId,
+            String statement,
+            Boolean isPrepared,
+            Consistency consistency,
+            Integer maxReadInKBs,
+            java.util.Map<String, Object> variables,
+            Integer timeoutInMs) {
+        super();
+        this.compartmentId = compartmentId;
+        this.statement = statement;
+        this.isPrepared = isPrepared;
+        this.consistency = consistency;
+        this.maxReadInKBs = maxReadInKBs;
+        this.variables = variables;
+        this.timeoutInMs = timeoutInMs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -129,26 +153,43 @@ public class QueryDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Compartment OCID, to provide context for a table name in
      * the given statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A NoSQL SQL query statement; or a Base64-encoded prepared statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statement")
-    String statement;
+    private final String statement;
+
+    public String getStatement() {
+        return statement;
+    }
 
     /**
      * If true, the statement is a prepared statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrepared")
-    Boolean isPrepared;
+    private final Boolean isPrepared;
+
+    public Boolean getIsPrepared() {
+        return isPrepared;
+    }
+
     /**
      * Consistency requirement for a read operation.
      **/
@@ -188,27 +229,102 @@ public class QueryDetails {
      * Consistency requirement for a read operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consistency")
-    Consistency consistency;
+    private final Consistency consistency;
+
+    public Consistency getConsistency() {
+        return consistency;
+    }
 
     /**
      * A limit on the total amount of data read during this operation, in KB.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxReadInKBs")
-    Integer maxReadInKBs;
+    private final Integer maxReadInKBs;
+
+    public Integer getMaxReadInKBs() {
+        return maxReadInKBs;
+    }
 
     /**
      * A map of prepared statement variables to values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
-    java.util.Map<String, Object> variables;
+    private final java.util.Map<String, Object> variables;
+
+    public java.util.Map<String, Object> getVariables() {
+        return variables;
+    }
 
     /**
      * Timeout setting for the query.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMs")
-    Integer timeoutInMs;
+    private final Integer timeoutInMs;
+
+    public Integer getTimeoutInMs() {
+        return timeoutInMs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("QueryDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", statement=").append(String.valueOf(this.statement));
+        sb.append(", isPrepared=").append(String.valueOf(this.isPrepared));
+        sb.append(", consistency=").append(String.valueOf(this.consistency));
+        sb.append(", maxReadInKBs=").append(String.valueOf(this.maxReadInKBs));
+        sb.append(", variables=").append(String.valueOf(this.variables));
+        sb.append(", timeoutInMs=").append(String.valueOf(this.timeoutInMs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof QueryDetails)) {
+            return false;
+        }
+
+        QueryDetails other = (QueryDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.statement, other.statement)
+                && java.util.Objects.equals(this.isPrepared, other.isPrepared)
+                && java.util.Objects.equals(this.consistency, other.consistency)
+                && java.util.Objects.equals(this.maxReadInKBs, other.maxReadInKBs)
+                && java.util.Objects.equals(this.variables, other.variables)
+                && java.util.Objects.equals(this.timeoutInMs, other.timeoutInMs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.statement == null ? 43 : this.statement.hashCode());
+        result = (result * PRIME) + (this.isPrepared == null ? 43 : this.isPrepared.hashCode());
+        result = (result * PRIME) + (this.consistency == null ? 43 : this.consistency.hashCode());
+        result = (result * PRIME) + (this.maxReadInKBs == null ? 43 : this.maxReadInKBs.hashCode());
+        result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
+        result = (result * PRIME) + (this.timeoutInMs == null ? 43 : this.timeoutInMs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

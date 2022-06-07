@@ -8,7 +8,6 @@ package com.oracle.bmc.objectstorage.model;
  * Archival state of an object which is in Archive tier.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.extern.slf4j.Slf4j
 public enum ArchivalState {
     Archived("Archived"),
     Restoring("Restoring"),
@@ -19,6 +18,9 @@ public enum ArchivalState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ArchivalState.class);
 
     private final String value;
     private static java.util.Map<String, ArchivalState> map;

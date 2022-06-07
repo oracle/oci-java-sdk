@@ -15,14 +15,18 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EntityStatus.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EntityStatus {
+public final class EntityStatus {
+    @Deprecated
+    @java.beans.ConstructorProperties({"status", "inactiveBitMask"})
+    public EntityStatus(String status, Long inactiveBitMask) {
+        super();
+        this.status = status;
+        this.inactiveBitMask = inactiveBitMask;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
@@ -67,11 +71,19 @@ public class EntityStatus {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The entity status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    String status;
+    private final String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     /**
      * A bit mask showing the reason why the entity is inactive:
@@ -83,8 +95,56 @@ public class EntityStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveBitMask")
-    Long inactiveBitMask;
+    private final Long inactiveBitMask;
+
+    public Long getInactiveBitMask() {
+        return inactiveBitMask;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EntityStatus(");
+        sb.append("status=").append(String.valueOf(this.status));
+        sb.append(", inactiveBitMask=").append(String.valueOf(this.inactiveBitMask));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EntityStatus)) {
+            return false;
+        }
+
+        EntityStatus other = (EntityStatus) o;
+        return java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.inactiveBitMask, other.inactiveBitMask)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inactiveBitMask == null ? 43 : this.inactiveBitMask.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

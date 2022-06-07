@@ -15,16 +15,61 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDomainDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDomainDetails {
+public final class CreateDomainDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "description",
+        "homeRegion",
+        "licenseType",
+        "isHiddenOnLogin",
+        "adminFirstName",
+        "adminLastName",
+        "adminUserName",
+        "adminEmail",
+        "isNotificationBypassed",
+        "isPrimaryEmailRequired",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateDomainDetails(
+            String compartmentId,
+            String displayName,
+            String description,
+            String homeRegion,
+            String licenseType,
+            Boolean isHiddenOnLogin,
+            String adminFirstName,
+            String adminLastName,
+            String adminUserName,
+            String adminEmail,
+            Boolean isNotificationBypassed,
+            Boolean isPrimaryEmailRequired,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.description = description;
+        this.homeRegion = homeRegion;
+        this.licenseType = licenseType;
+        this.isHiddenOnLogin = isHiddenOnLogin;
+        this.adminFirstName = adminFirstName;
+        this.adminLastName = adminLastName;
+        this.adminUserName = adminUserName;
+        this.adminEmail = adminEmail;
+        this.isNotificationBypassed = isNotificationBypassed;
+        this.isPrimaryEmailRequired = isPrimaryEmailRequired;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -207,23 +252,39 @@ public class CreateDomainDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment where the identity domain is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The mutable display name of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The identity domain description. You can have an empty description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The region's name identifier. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
@@ -233,44 +294,72 @@ public class CreateDomainDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
-    String homeRegion;
+    private final String homeRegion;
+
+    public String getHomeRegion() {
+        return homeRegion;
+    }
 
     /**
      * The license type of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
-    String licenseType;
+    private final String licenseType;
+
+    public String getLicenseType() {
+        return licenseType;
+    }
 
     /**
      * Indicates whether the identity domain is hidden on the sign-in screen or not.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenOnLogin")
-    Boolean isHiddenOnLogin;
+    private final Boolean isHiddenOnLogin;
+
+    public Boolean getIsHiddenOnLogin() {
+        return isHiddenOnLogin;
+    }
 
     /**
      * The administrator's first name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminFirstName")
-    String adminFirstName;
+    private final String adminFirstName;
+
+    public String getAdminFirstName() {
+        return adminFirstName;
+    }
 
     /**
      * The administrator's last name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminLastName")
-    String adminLastName;
+    private final String adminLastName;
+
+    public String getAdminLastName() {
+        return adminLastName;
+    }
 
     /**
      * The administrator's user name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUserName")
-    String adminUserName;
+    private final String adminUserName;
+
+    public String getAdminUserName() {
+        return adminUserName;
+    }
 
     /**
      * The administrator's email address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
-    String adminEmail;
+    private final String adminEmail;
+
+    public String getAdminEmail() {
+        return adminEmail;
+    }
 
     /**
      * Indicates whether or not the administrator user created in the IDCS stripe would like to receive notifications like a welcome email.
@@ -278,14 +367,22 @@ public class CreateDomainDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNotificationBypassed")
-    Boolean isNotificationBypassed;
+    private final Boolean isNotificationBypassed;
+
+    public Boolean getIsNotificationBypassed() {
+        return isNotificationBypassed;
+    }
 
     /**
      * Optional field to indicate whether users in the identity domain are required to have a primary email address or not. The default is true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimaryEmailRequired")
-    Boolean isPrimaryEmailRequired;
+    private final Boolean isPrimaryEmailRequired;
+
+    public Boolean getIsPrimaryEmailRequired() {
+        return isPrimaryEmailRequired;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -294,7 +391,11 @@ public class CreateDomainDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -303,8 +404,110 @@ public class CreateDomainDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDomainDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", homeRegion=").append(String.valueOf(this.homeRegion));
+        sb.append(", licenseType=").append(String.valueOf(this.licenseType));
+        sb.append(", isHiddenOnLogin=").append(String.valueOf(this.isHiddenOnLogin));
+        sb.append(", adminFirstName=").append(String.valueOf(this.adminFirstName));
+        sb.append(", adminLastName=").append(String.valueOf(this.adminLastName));
+        sb.append(", adminUserName=").append(String.valueOf(this.adminUserName));
+        sb.append(", adminEmail=").append(String.valueOf(this.adminEmail));
+        sb.append(", isNotificationBypassed=").append(String.valueOf(this.isNotificationBypassed));
+        sb.append(", isPrimaryEmailRequired=").append(String.valueOf(this.isPrimaryEmailRequired));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDomainDetails)) {
+            return false;
+        }
+
+        CreateDomainDetails other = (CreateDomainDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.homeRegion, other.homeRegion)
+                && java.util.Objects.equals(this.licenseType, other.licenseType)
+                && java.util.Objects.equals(this.isHiddenOnLogin, other.isHiddenOnLogin)
+                && java.util.Objects.equals(this.adminFirstName, other.adminFirstName)
+                && java.util.Objects.equals(this.adminLastName, other.adminLastName)
+                && java.util.Objects.equals(this.adminUserName, other.adminUserName)
+                && java.util.Objects.equals(this.adminEmail, other.adminEmail)
+                && java.util.Objects.equals(
+                        this.isNotificationBypassed, other.isNotificationBypassed)
+                && java.util.Objects.equals(
+                        this.isPrimaryEmailRequired, other.isPrimaryEmailRequired)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.homeRegion == null ? 43 : this.homeRegion.hashCode());
+        result = (result * PRIME) + (this.licenseType == null ? 43 : this.licenseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHiddenOnLogin == null ? 43 : this.isHiddenOnLogin.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminFirstName == null ? 43 : this.adminFirstName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminLastName == null ? 43 : this.adminLastName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminUserName == null ? 43 : this.adminUserName.hashCode());
+        result = (result * PRIME) + (this.adminEmail == null ? 43 : this.adminEmail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isNotificationBypassed == null
+                                ? 43
+                                : this.isNotificationBypassed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPrimaryEmailRequired == null
+                                ? 43
+                                : this.isPrimaryEmailRequired.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,26 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ModifyGlobalSettingsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModifyGlobalSettingsDetails {
+public final class ModifyGlobalSettingsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isPaidUsage",
+        "onlineRetentionPeriod",
+        "offlineRetentionPeriod"
+    })
+    public ModifyGlobalSettingsDetails(
+            Boolean isPaidUsage, Integer onlineRetentionPeriod, Integer offlineRetentionPeriod) {
+        super();
+        this.isPaidUsage = isPaidUsage;
+        this.onlineRetentionPeriod = onlineRetentionPeriod;
+        this.offlineRetentionPeriod = offlineRetentionPeriod;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsage")
         private Boolean isPaidUsage;
@@ -83,24 +93,94 @@ public class ModifyGlobalSettingsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The paid usage option chosen by the customer admin.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsage")
-    Boolean isPaidUsage;
+    private final Boolean isPaidUsage;
+
+    public Boolean getIsPaidUsage() {
+        return isPaidUsage;
+    }
 
     /**
      * The online retention period in months.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onlineRetentionPeriod")
-    Integer onlineRetentionPeriod;
+    private final Integer onlineRetentionPeriod;
+
+    public Integer getOnlineRetentionPeriod() {
+        return onlineRetentionPeriod;
+    }
 
     /**
      * The offline retention period in months.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offlineRetentionPeriod")
-    Integer offlineRetentionPeriod;
+    private final Integer offlineRetentionPeriod;
+
+    public Integer getOfflineRetentionPeriod() {
+        return offlineRetentionPeriod;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModifyGlobalSettingsDetails(");
+        sb.append("isPaidUsage=").append(String.valueOf(this.isPaidUsage));
+        sb.append(", onlineRetentionPeriod=").append(String.valueOf(this.onlineRetentionPeriod));
+        sb.append(", offlineRetentionPeriod=").append(String.valueOf(this.offlineRetentionPeriod));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModifyGlobalSettingsDetails)) {
+            return false;
+        }
+
+        ModifyGlobalSettingsDetails other = (ModifyGlobalSettingsDetails) o;
+        return java.util.Objects.equals(this.isPaidUsage, other.isPaidUsage)
+                && java.util.Objects.equals(this.onlineRetentionPeriod, other.onlineRetentionPeriod)
+                && java.util.Objects.equals(
+                        this.offlineRetentionPeriod, other.offlineRetentionPeriod)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isPaidUsage == null ? 43 : this.isPaidUsage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onlineRetentionPeriod == null
+                                ? 43
+                                : this.onlineRetentionPeriod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.offlineRetentionPeriod == null
+                                ? 43
+                                : this.offlineRetentionPeriod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,10 +7,6 @@ package com.oracle.bmc.apmtraces.responses;
 import com.oracle.bmc.apmtraces.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned Trace instance.
      */
     private com.oracle.bmc.apmtraces.model.Trace trace;
+
+    public com.oracle.bmc.apmtraces.model.Trace getTrace() {
+        return trace;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "trace"})
     private GetTraceResponse(
@@ -42,6 +46,20 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.apmtraces.model.Trace trace;
+
+        public Builder trace(com.oracle.bmc.apmtraces.model.Trace trace) {
+            this.trace = trace;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +75,44 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
         public GetTraceResponse build() {
             return new GetTraceResponse(__httpStatusCode__, opcRequestId, trace);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",trace=").append(String.valueOf(trace));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetTraceResponse)) {
+            return false;
+        }
+
+        GetTraceResponse other = (GetTraceResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.trace, other.trace);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.trace == null ? 43 : this.trace.hashCode());
+        return result;
     }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.datasafe.model;
  * The current state of audit policies available on the target.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public enum AuditPolicyLifecycleState {
     Creating("CREATING"),
     Updating("UPDATING"),
@@ -23,6 +22,9 @@ public enum AuditPolicyLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AuditPolicyLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, AuditPolicyLifecycleState> map;

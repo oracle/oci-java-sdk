@@ -15,16 +15,37 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ModuleStreamProfile.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModuleStreamProfile {
+public final class ModuleStreamProfile {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "moduleName",
+        "streamName",
+        "profileName",
+        "isDefault",
+        "description",
+        "packages"
+    })
+    public ModuleStreamProfile(
+            String moduleName,
+            String streamName,
+            String profileName,
+            Boolean isDefault,
+            String description,
+            java.util.List<String> packages) {
+        super();
+        this.moduleName = moduleName;
+        this.streamName = streamName;
+        this.profileName = profileName;
+        this.isDefault = isDefault;
+        this.description = description;
+        this.packages = packages;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
@@ -113,35 +134,59 @@ public class ModuleStreamProfile {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the module that contains the stream profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
-    String moduleName;
+    private final String moduleName;
+
+    public String getModuleName() {
+        return moduleName;
+    }
 
     /**
      * The name of the stream that contains the profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
-    String streamName;
+    private final String streamName;
+
+    public String getStreamName() {
+        return streamName;
+    }
 
     /**
      * The name of the profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileName")
-    String profileName;
+    private final String profileName;
+
+    public String getProfileName() {
+        return profileName;
+    }
 
     /**
      * Indicates if this profile is the default for its module stream.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
 
     /**
      * A description of the contents of the module stream profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A list of packages that constitute the profile.  Each element
@@ -151,8 +196,66 @@ public class ModuleStreamProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
-    java.util.List<String> packages;
+    private final java.util.List<String> packages;
+
+    public java.util.List<String> getPackages() {
+        return packages;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModuleStreamProfile(");
+        sb.append("moduleName=").append(String.valueOf(this.moduleName));
+        sb.append(", streamName=").append(String.valueOf(this.streamName));
+        sb.append(", profileName=").append(String.valueOf(this.profileName));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", packages=").append(String.valueOf(this.packages));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModuleStreamProfile)) {
+            return false;
+        }
+
+        ModuleStreamProfile other = (ModuleStreamProfile) o;
+        return java.util.Objects.equals(this.moduleName, other.moduleName)
+                && java.util.Objects.equals(this.streamName, other.streamName)
+                && java.util.Objects.equals(this.profileName, other.profileName)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.packages, other.packages)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.moduleName == null ? 43 : this.moduleName.hashCode());
+        result = (result * PRIME) + (this.streamName == null ? 43 : this.streamName.hashCode());
+        result = (result * PRIME) + (this.profileName == null ? 43 : this.profileName.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

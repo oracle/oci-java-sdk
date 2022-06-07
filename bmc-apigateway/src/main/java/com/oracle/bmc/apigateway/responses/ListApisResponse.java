@@ -7,10 +7,6 @@ package com.oracle.bmc.apigateway.responses;
 import com.oracle.bmc.apigateway.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
@@ -19,6 +15,10 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For list pagination. When this header appears in the response,
@@ -29,6 +29,10 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * For list pagination. When this header appears in the response,
      * additional pages of results were seen previously. For important details
@@ -38,10 +42,18 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcPrevPage;
 
+    public String getOpcPrevPage() {
+        return opcPrevPage;
+    }
+
     /**
      * The returned ApiCollection instance.
      */
     private com.oracle.bmc.apigateway.model.ApiCollection apiCollection;
+
+    public com.oracle.bmc.apigateway.model.ApiCollection getApiCollection() {
+        return apiCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -71,6 +83,34 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcPrevPage;
+
+        public Builder opcPrevPage(String opcPrevPage) {
+            this.opcPrevPage = opcPrevPage;
+            return this;
+        }
+
+        private com.oracle.bmc.apigateway.model.ApiCollection apiCollection;
+
+        public Builder apiCollection(com.oracle.bmc.apigateway.model.ApiCollection apiCollection) {
+            this.apiCollection = apiCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -89,5 +129,52 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
             return new ListApisResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, opcPrevPage, apiCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcPrevPage=").append(String.valueOf(opcPrevPage));
+        sb.append(",apiCollection=").append(String.valueOf(apiCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListApisResponse)) {
+            return false;
+        }
+
+        ListApisResponse other = (ListApisResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcPrevPage, other.opcPrevPage)
+                && java.util.Objects.equals(this.apiCollection, other.apiCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcPrevPage == null ? 43 : this.opcPrevPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.apiCollection == null ? 43 : this.apiCollection.hashCode());
+        return result;
     }
 }

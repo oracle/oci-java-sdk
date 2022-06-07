@@ -15,16 +15,49 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProblemHistorySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProblemHistorySummary {
+public final class ProblemHistorySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "problemId",
+        "actorType",
+        "actorName",
+        "explanation",
+        "lifecycleDetail",
+        "eventStatus",
+        "timeCreated",
+        "delta",
+        "comment"
+    })
+    public ProblemHistorySummary(
+            String id,
+            String problemId,
+            ActorType actorType,
+            String actorName,
+            String explanation,
+            ProblemLifecycleDetail lifecycleDetail,
+            EventStatus eventStatus,
+            java.util.Date timeCreated,
+            String delta,
+            String comment) {
+        super();
+        this.id = id;
+        this.problemId = problemId;
+        this.actorType = actorType;
+        this.actorName = actorName;
+        this.explanation = explanation;
+        this.lifecycleDetail = lifecycleDetail;
+        this.eventStatus = eventStatus;
+        this.timeCreated = timeCreated;
+        this.delta = delta;
+        this.comment = comment;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -162,66 +195,178 @@ public class ProblemHistorySummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier for the history record
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * problemId for which history is associated to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
-    String problemId;
+    private final String problemId;
+
+    public String getProblemId() {
+        return problemId;
+    }
 
     /**
      * Actor type who performed the operation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actorType")
-    ActorType actorType;
+    private final ActorType actorType;
+
+    public ActorType getActorType() {
+        return actorType;
+    }
 
     /**
      * Resource Name who performed activity
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actorName")
-    String actorName;
+    private final String actorName;
+
+    public String getActorName() {
+        return actorName;
+    }
 
     /**
      * Activity explanation details
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("explanation")
-    String explanation;
+    private final String explanation;
+
+    public String getExplanation() {
+        return explanation;
+    }
 
     /**
      * Problem Lifecycle Detail Status
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
-    ProblemLifecycleDetail lifecycleDetail;
+    private final ProblemLifecycleDetail lifecycleDetail;
+
+    public ProblemLifecycleDetail getLifecycleDetail() {
+        return lifecycleDetail;
+    }
 
     /**
      * Event status
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventStatus")
-    EventStatus eventStatus;
+    private final EventStatus eventStatus;
+
+    public EventStatus getEventStatus() {
+        return eventStatus;
+    }
 
     /**
      * Type of the Entity
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Impacted Resource Names in a comma-separated string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("delta")
-    String delta;
+    private final String delta;
+
+    public String getDelta() {
+        return delta;
+    }
 
     /**
      * User Defined Comments
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
-    String comment;
+    private final String comment;
+
+    public String getComment() {
+        return comment;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProblemHistorySummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", problemId=").append(String.valueOf(this.problemId));
+        sb.append(", actorType=").append(String.valueOf(this.actorType));
+        sb.append(", actorName=").append(String.valueOf(this.actorName));
+        sb.append(", explanation=").append(String.valueOf(this.explanation));
+        sb.append(", lifecycleDetail=").append(String.valueOf(this.lifecycleDetail));
+        sb.append(", eventStatus=").append(String.valueOf(this.eventStatus));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", delta=").append(String.valueOf(this.delta));
+        sb.append(", comment=").append(String.valueOf(this.comment));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProblemHistorySummary)) {
+            return false;
+        }
+
+        ProblemHistorySummary other = (ProblemHistorySummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.problemId, other.problemId)
+                && java.util.Objects.equals(this.actorType, other.actorType)
+                && java.util.Objects.equals(this.actorName, other.actorName)
+                && java.util.Objects.equals(this.explanation, other.explanation)
+                && java.util.Objects.equals(this.lifecycleDetail, other.lifecycleDetail)
+                && java.util.Objects.equals(this.eventStatus, other.eventStatus)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.delta, other.delta)
+                && java.util.Objects.equals(this.comment, other.comment)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.problemId == null ? 43 : this.problemId.hashCode());
+        result = (result * PRIME) + (this.actorType == null ? 43 : this.actorType.hashCode());
+        result = (result * PRIME) + (this.actorName == null ? 43 : this.actorName.hashCode());
+        result = (result * PRIME) + (this.explanation == null ? 43 : this.explanation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetail == null ? 43 : this.lifecycleDetail.hashCode());
+        result = (result * PRIME) + (this.eventStatus == null ? 43 : this.eventStatus.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.delta == null ? 43 : this.delta.hashCode());
+        result = (result * PRIME) + (this.comment == null ? 43 : this.comment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

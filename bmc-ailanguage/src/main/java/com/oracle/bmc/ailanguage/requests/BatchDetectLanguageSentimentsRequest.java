@@ -9,14 +9,6 @@ import com.oracle.bmc.ailanguage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageSentimentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use BatchDetectLanguageSentimentsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class BatchDetectLanguageSentimentsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails> {
@@ -28,11 +20,18 @@ public class BatchDetectLanguageSentimentsRequest
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
             batchDetectLanguageSentimentsDetails;
 
+    public com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
+            getBatchDetectLanguageSentimentsDetails() {
+        return batchDetectLanguageSentimentsDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Set this parameter for sentence and aspect level sentiment analysis.
      * Allowed values are:
@@ -82,6 +81,10 @@ public class BatchDetectLanguageSentimentsRequest
         }
     };
 
+    public java.util.List<Level> getLevel() {
+        return level;
+    }
+
     /**
      * Alternative accessor for the body parameter.
      * @return body parameter
@@ -99,6 +102,32 @@ public class BatchDetectLanguageSentimentsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
+                batchDetectLanguageSentimentsDetails = null;
+
+        /**
+         * The details to make sentiment detect call.
+         *
+         * @return this builder instance
+         */
+        public Builder batchDetectLanguageSentimentsDetails(
+                com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
+                        batchDetectLanguageSentimentsDetails) {
+            this.batchDetectLanguageSentimentsDetails = batchDetectLanguageSentimentsDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         private java.util.List<Level> level = null;
 
@@ -191,5 +220,82 @@ public class BatchDetectLanguageSentimentsRequest
             batchDetectLanguageSentimentsDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of BatchDetectLanguageSentimentsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of BatchDetectLanguageSentimentsRequest
+         */
+        public BatchDetectLanguageSentimentsRequest buildWithoutInvocationCallback() {
+            BatchDetectLanguageSentimentsRequest request =
+                    new BatchDetectLanguageSentimentsRequest();
+            request.batchDetectLanguageSentimentsDetails = batchDetectLanguageSentimentsDetails;
+            request.opcRequestId = opcRequestId;
+            request.level = level;
+            return request;
+            // new BatchDetectLanguageSentimentsRequest(batchDetectLanguageSentimentsDetails, opcRequestId, level);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .batchDetectLanguageSentimentsDetails(batchDetectLanguageSentimentsDetails)
+                .opcRequestId(opcRequestId)
+                .level(level);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",batchDetectLanguageSentimentsDetails=")
+                .append(String.valueOf(this.batchDetectLanguageSentimentsDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",level=").append(String.valueOf(this.level));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BatchDetectLanguageSentimentsRequest)) {
+            return false;
+        }
+
+        BatchDetectLanguageSentimentsRequest other = (BatchDetectLanguageSentimentsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.batchDetectLanguageSentimentsDetails,
+                        other.batchDetectLanguageSentimentsDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.level, other.level);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.batchDetectLanguageSentimentsDetails == null
+                                ? 43
+                                : this.batchDetectLanguageSentimentsDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.level == null ? 43 : this.level.hashCode());
+        return result;
     }
 }

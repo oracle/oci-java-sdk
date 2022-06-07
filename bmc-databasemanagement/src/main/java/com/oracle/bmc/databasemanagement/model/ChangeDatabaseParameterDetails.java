@@ -15,16 +15,21 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ChangeDatabaseParameterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ChangeDatabaseParameterDetails {
+public final class ChangeDatabaseParameterDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "value", "updateComment"})
+    public ChangeDatabaseParameterDetails(String name, String value, String updateComment) {
+        super();
+        this.name = name;
+        this.value = value;
+        this.updateComment = updateComment;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -80,17 +85,29 @@ public class ChangeDatabaseParameterDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The parameter name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The parameter value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
 
     /**
      * A comment string to associate with the change in parameter value.
@@ -98,8 +115,59 @@ public class ChangeDatabaseParameterDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateComment")
-    String updateComment;
+    private final String updateComment;
+
+    public String getUpdateComment() {
+        return updateComment;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ChangeDatabaseParameterDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", updateComment=").append(String.valueOf(this.updateComment));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeDatabaseParameterDetails)) {
+            return false;
+        }
+
+        ChangeDatabaseParameterDetails other = (ChangeDatabaseParameterDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.updateComment, other.updateComment)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateComment == null ? 43 : this.updateComment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

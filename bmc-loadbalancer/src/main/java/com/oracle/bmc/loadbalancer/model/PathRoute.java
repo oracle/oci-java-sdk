@@ -18,14 +18,19 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PathRoute.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PathRoute {
+public final class PathRoute {
+    @Deprecated
+    @java.beans.ConstructorProperties({"path", "pathMatchType", "backendSetName"})
+    public PathRoute(String path, PathMatchType pathMatchType, String backendSetName) {
+        super();
+        this.path = path;
+        this.pathMatchType = pathMatchType;
+        this.backendSetName = backendSetName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
@@ -82,6 +87,10 @@ public class PathRoute {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The path string to match against the incoming URI path.
      * <p>
@@ -95,13 +104,21 @@ public class PathRoute {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * The type of matching to apply to incoming URIs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathMatchType")
-    PathMatchType pathMatchType;
+    private final PathMatchType pathMatchType;
+
+    public PathMatchType getPathMatchType() {
+        return pathMatchType;
+    }
 
     /**
      * The name of the target backend set for requests where the incoming URI matches the specified path.
@@ -110,8 +127,61 @@ public class PathRoute {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
-    String backendSetName;
+    private final String backendSetName;
+
+    public String getBackendSetName() {
+        return backendSetName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PathRoute(");
+        sb.append("path=").append(String.valueOf(this.path));
+        sb.append(", pathMatchType=").append(String.valueOf(this.pathMatchType));
+        sb.append(", backendSetName=").append(String.valueOf(this.backendSetName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PathRoute)) {
+            return false;
+        }
+
+        PathRoute other = (PathRoute) o;
+        return java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.pathMatchType, other.pathMatchType)
+                && java.util.Objects.equals(this.backendSetName, other.backendSetName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pathMatchType == null ? 43 : this.pathMatchType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

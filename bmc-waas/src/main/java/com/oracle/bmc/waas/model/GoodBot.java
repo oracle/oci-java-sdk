@@ -15,14 +15,20 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GoodBot.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GoodBot {
+public final class GoodBot {
+    @Deprecated
+    @java.beans.ConstructorProperties({"key", "name", "isEnabled", "description"})
+    public GoodBot(String key, String name, Boolean isEnabled, String description) {
+        super();
+        this.key = key;
+        this.name = name;
+        this.isEnabled = isEnabled;
+        this.description = description;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -89,30 +95,98 @@ public class GoodBot {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key for the bot.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The bot name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Enables or disables the bot.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * The description of the bot.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GoodBot(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GoodBot)) {
+            return false;
+        }
+
+        GoodBot other = (GoodBot) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

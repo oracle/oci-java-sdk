@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDrgRouteTableRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateDrgRouteTableRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateDrgRouteTableDetails> {
@@ -26,11 +18,17 @@ public class UpdateDrgRouteTableRequest
      */
     private String drgRouteTableId;
 
+    public String getDrgRouteTableId() {
+        return drgRouteTableId;
+    }
     /**
      * Details object used to updating a DRG route table.
      */
     private com.oracle.bmc.core.model.UpdateDrgRouteTableDetails updateDrgRouteTableDetails;
 
+    public com.oracle.bmc.core.model.UpdateDrgRouteTableDetails getUpdateDrgRouteTableDetails() {
+        return updateDrgRouteTableDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -38,6 +36,10 @@ public class UpdateDrgRouteTableRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +58,44 @@ public class UpdateDrgRouteTableRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String drgRouteTableId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+         * @return this builder instance
+         */
+        public Builder drgRouteTableId(String drgRouteTableId) {
+            this.drgRouteTableId = drgRouteTableId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateDrgRouteTableDetails updateDrgRouteTableDetails =
+                null;
+
+        /**
+         * Details object used to updating a DRG route table.
+         * @return this builder instance
+         */
+        public Builder updateDrgRouteTableDetails(
+                com.oracle.bmc.core.model.UpdateDrgRouteTableDetails updateDrgRouteTableDetails) {
+            this.updateDrgRouteTableDetails = updateDrgRouteTableDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +160,82 @@ public class UpdateDrgRouteTableRequest
             updateDrgRouteTableDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateDrgRouteTableRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateDrgRouteTableRequest
+         */
+        public UpdateDrgRouteTableRequest buildWithoutInvocationCallback() {
+            UpdateDrgRouteTableRequest request = new UpdateDrgRouteTableRequest();
+            request.drgRouteTableId = drgRouteTableId;
+            request.updateDrgRouteTableDetails = updateDrgRouteTableDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateDrgRouteTableRequest(drgRouteTableId, updateDrgRouteTableDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .drgRouteTableId(drgRouteTableId)
+                .updateDrgRouteTableDetails(updateDrgRouteTableDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",drgRouteTableId=").append(String.valueOf(this.drgRouteTableId));
+        sb.append(",updateDrgRouteTableDetails=")
+                .append(String.valueOf(this.updateDrgRouteTableDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDrgRouteTableRequest)) {
+            return false;
+        }
+
+        UpdateDrgRouteTableRequest other = (UpdateDrgRouteTableRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.drgRouteTableId, other.drgRouteTableId)
+                && java.util.Objects.equals(
+                        this.updateDrgRouteTableDetails, other.updateDrgRouteTableDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.drgRouteTableId == null ? 43 : this.drgRouteTableId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateDrgRouteTableDetails == null
+                                ? 43
+                                : this.updateDrgRouteTableDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

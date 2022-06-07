@@ -50,14 +50,38 @@ package com.oracle.bmc.filestorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Export.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Export {
+public final class Export {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "exportOptions",
+        "exportSetId",
+        "fileSystemId",
+        "id",
+        "lifecycleState",
+        "path",
+        "timeCreated"
+    })
+    public Export(
+            java.util.List<ClientOptions> exportOptions,
+            String exportSetId,
+            String fileSystemId,
+            String id,
+            LifecycleState lifecycleState,
+            String path,
+            java.util.Date timeCreated) {
+        super();
+        this.exportOptions = exportOptions;
+        this.exportSetId = exportSetId;
+        this.fileSystemId = fileSystemId;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.path = path;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
         private java.util.List<ClientOptions> exportOptions;
@@ -162,6 +186,10 @@ public class Export {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Policies that apply to NFS requests made through this
      * export. {@code exportOptions} contains a sequential list of
@@ -191,29 +219,45 @@ public class Export {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
-    java.util.List<ClientOptions> exportOptions;
+    private final java.util.List<ClientOptions> exportOptions;
+
+    public java.util.List<ClientOptions> getExportOptions() {
+        return exportOptions;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
-    String exportSetId;
+    private final String exportSetId;
+
+    public String getExportSetId() {
+        return exportSetId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
-    String fileSystemId;
+    private final String fileSystemId;
+
+    public String getFileSystemId() {
+        return fileSystemId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The current state of this export.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -225,6 +269,9 @@ public class Export {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -262,7 +309,11 @@ public class Export {
      * The current state of this export.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Path used to access the associated file system.
@@ -273,7 +324,11 @@ public class Export {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * The date and time the export was created, expressed
@@ -283,8 +338,73 @@ public class Export {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Export(");
+        sb.append("exportOptions=").append(String.valueOf(this.exportOptions));
+        sb.append(", exportSetId=").append(String.valueOf(this.exportSetId));
+        sb.append(", fileSystemId=").append(String.valueOf(this.fileSystemId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Export)) {
+            return false;
+        }
+
+        Export other = (Export) o;
+        return java.util.Objects.equals(this.exportOptions, other.exportOptions)
+                && java.util.Objects.equals(this.exportSetId, other.exportSetId)
+                && java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.exportOptions == null ? 43 : this.exportOptions.hashCode());
+        result = (result * PRIME) + (this.exportSetId == null ? 43 : this.exportSetId.hashCode());
+        result = (result * PRIME) + (this.fileSystemId == null ? 43 : this.fileSystemId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

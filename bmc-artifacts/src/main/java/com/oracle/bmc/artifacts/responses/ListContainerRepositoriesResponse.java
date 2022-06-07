@@ -7,10 +7,6 @@ package com.oracle.bmc.artifacts.responses;
 import com.oracle.bmc.artifacts.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListContainerRepositoriesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages
@@ -20,6 +16,10 @@ public class ListContainerRepositoriesResponse extends com.oracle.bmc.responses.
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -27,11 +27,20 @@ public class ListContainerRepositoriesResponse extends com.oracle.bmc.responses.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned ContainerRepositoryCollection instance.
      */
     private com.oracle.bmc.artifacts.model.ContainerRepositoryCollection
             containerRepositoryCollection;
+
+    public com.oracle.bmc.artifacts.model.ContainerRepositoryCollection
+            getContainerRepositoryCollection() {
+        return containerRepositoryCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -59,6 +68,30 @@ public class ListContainerRepositoriesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.artifacts.model.ContainerRepositoryCollection
+                containerRepositoryCollection;
+
+        public Builder containerRepositoryCollection(
+                com.oracle.bmc.artifacts.model.ContainerRepositoryCollection
+                        containerRepositoryCollection) {
+            this.containerRepositoryCollection = containerRepositoryCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -76,5 +109,53 @@ public class ListContainerRepositoriesResponse extends com.oracle.bmc.responses.
             return new ListContainerRepositoriesResponse(
                     __httpStatusCode__, opcNextPage, opcRequestId, containerRepositoryCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",containerRepositoryCollection=")
+                .append(String.valueOf(containerRepositoryCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListContainerRepositoriesResponse)) {
+            return false;
+        }
+
+        ListContainerRepositoriesResponse other = (ListContainerRepositoriesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.containerRepositoryCollection, other.containerRepositoryCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containerRepositoryCollection == null
+                                ? 43
+                                : this.containerRepositoryCollection.hashCode());
+        return result;
     }
 }

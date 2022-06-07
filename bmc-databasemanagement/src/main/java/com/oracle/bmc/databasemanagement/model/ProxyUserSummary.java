@@ -15,14 +15,19 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProxyUserSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProxyUserSummary {
+public final class ProxyUserSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "authentication", "flags"})
+    public ProxyUserSummary(String name, Authentication authentication, Flags flags) {
+        super();
+        this.name = name;
+        this.authentication = authentication;
+        this.flags = flags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -77,15 +82,23 @@ public class ProxyUserSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of a proxy user or the name of the client user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Authentication {
         Yes("YES"),
         No("NO"),
@@ -95,6 +108,9 @@ public class ProxyUserSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Authentication.class);
 
         private final String value;
         private static java.util.Map<String, Authentication> map;
@@ -132,11 +148,15 @@ public class ProxyUserSummary {
      * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authentication")
-    Authentication authentication;
+    private final Authentication authentication;
+
+    public Authentication getAuthentication() {
+        return authentication;
+    }
+
     /**
      * The flags associated with the proxy/client pair.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Flags {
         ProxyMayActivateAllClientRoles("PROXY_MAY_ACTIVATE_ALL_CLIENT_ROLES"),
         NoClientRolesMayBeActivated("NO_CLIENT_ROLES_MAY_BE_ACTIVATED"),
@@ -148,6 +168,8 @@ public class ProxyUserSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Flags.class);
 
         private final String value;
         private static java.util.Map<String, Flags> map;
@@ -185,8 +207,59 @@ public class ProxyUserSummary {
      * The flags associated with the proxy/client pair.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("flags")
-    Flags flags;
+    private final Flags flags;
+
+    public Flags getFlags() {
+        return flags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProxyUserSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", authentication=").append(String.valueOf(this.authentication));
+        sb.append(", flags=").append(String.valueOf(this.flags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProxyUserSummary)) {
+            return false;
+        }
+
+        ProxyUserSummary other = (ProxyUserSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.authentication, other.authentication)
+                && java.util.Objects.equals(this.flags, other.flags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authentication == null ? 43 : this.authentication.hashCode());
+        result = (result * PRIME) + (this.flags == null ? 43 : this.flags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

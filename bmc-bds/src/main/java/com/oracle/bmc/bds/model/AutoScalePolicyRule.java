@@ -15,16 +15,20 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutoScalePolicyRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutoScalePolicyRule {
+public final class AutoScalePolicyRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({"action", "metric"})
+    public AutoScalePolicyRule(Action action, AutoScalePolicyMetricRule metric) {
+        super();
+        this.action = action;
+        this.metric = metric;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
@@ -69,10 +73,13 @@ public class AutoScalePolicyRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         ChangeShapeScaleUp("CHANGE_SHAPE_SCALE_UP"),
         ChangeShapeScaleDown("CHANGE_SHAPE_SCALE_DOWN"),
@@ -82,6 +89,8 @@ public class AutoScalePolicyRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -119,11 +128,61 @@ public class AutoScalePolicyRule {
      * The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metric")
-    AutoScalePolicyMetricRule metric;
+    private final AutoScalePolicyMetricRule metric;
+
+    public AutoScalePolicyMetricRule getMetric() {
+        return metric;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutoScalePolicyRule(");
+        sb.append("action=").append(String.valueOf(this.action));
+        sb.append(", metric=").append(String.valueOf(this.metric));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutoScalePolicyRule)) {
+            return false;
+        }
+
+        AutoScalePolicyRule other = (AutoScalePolicyRule) o;
+        return java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.metric, other.metric)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.metric == null ? 43 : this.metric.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

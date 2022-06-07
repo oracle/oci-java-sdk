@@ -16,14 +16,18 @@ package com.oracle.bmc.filestorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SourceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SourceDetails {
+public final class SourceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"parentFileSystemId", "sourceSnapshotId"})
+    public SourceDetails(String parentFileSystemId, String sourceSnapshotId) {
+        super();
+        this.parentFileSystemId = parentFileSystemId;
+        this.sourceSnapshotId = sourceSnapshotId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("parentFileSystemId")
         private String parentFileSystemId;
@@ -70,13 +74,21 @@ public class SourceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system.
      * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentFileSystemId")
-    String parentFileSystemId;
+    private final String parentFileSystemId;
+
+    public String getParentFileSystemId() {
+        return parentFileSystemId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source snapshot used to create a cloned file system.
@@ -84,8 +96,60 @@ public class SourceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceSnapshotId")
-    String sourceSnapshotId;
+    private final String sourceSnapshotId;
+
+    public String getSourceSnapshotId() {
+        return sourceSnapshotId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SourceDetails(");
+        sb.append("parentFileSystemId=").append(String.valueOf(this.parentFileSystemId));
+        sb.append(", sourceSnapshotId=").append(String.valueOf(this.sourceSnapshotId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SourceDetails)) {
+            return false;
+        }
+
+        SourceDetails other = (SourceDetails) o;
+        return java.util.Objects.equals(this.parentFileSystemId, other.parentFileSystemId)
+                && java.util.Objects.equals(this.sourceSnapshotId, other.sourceSnapshotId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.parentFileSystemId == null
+                                ? 43
+                                : this.parentFileSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceSnapshotId == null ? 43 : this.sourceSnapshotId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,41 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScheduleSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScheduleSummary {
+public final class ScheduleSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "scheduleRecurrences",
+        "timeScheduled",
+        "freeformTags",
+        "definedTags",
+        "systemTags",
+        "lifecycleState"
+    })
+    public ScheduleSummary(
+            String id,
+            String name,
+            String scheduleRecurrences,
+            java.util.Date timeScheduled,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            Schedule.LifecycleState lifecycleState) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.scheduleRecurrences = scheduleRecurrences;
+        this.timeScheduled = timeScheduled;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -139,17 +166,29 @@ public class ScheduleSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The schedule OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The unique name of the schedule created by the user
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
@@ -157,13 +196,21 @@ public class ScheduleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
-    String scheduleRecurrences;
+    private final String scheduleRecurrences;
+
+    public String getScheduleRecurrences() {
+        return scheduleRecurrences;
+    }
 
     /**
      * The date and time of the first time job execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
-    java.util.Date timeScheduled;
+    private final java.util.Date timeScheduled;
+
+    public java.util.Date getTimeScheduled() {
+        return timeScheduled;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -171,28 +218,112 @@ public class ScheduleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
 
     /**
      * The lifecycle state of the schedule summary
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    Schedule.LifecycleState lifecycleState;
+    private final Schedule.LifecycleState lifecycleState;
+
+    public Schedule.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScheduleSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", scheduleRecurrences=").append(String.valueOf(this.scheduleRecurrences));
+        sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScheduleSummary)) {
+            return false;
+        }
+
+        ScheduleSummary other = (ScheduleSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.scheduleRecurrences, other.scheduleRecurrences)
+                && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduleRecurrences == null
+                                ? 43
+                                : this.scheduleRecurrences.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduled == null ? 43 : this.timeScheduled.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

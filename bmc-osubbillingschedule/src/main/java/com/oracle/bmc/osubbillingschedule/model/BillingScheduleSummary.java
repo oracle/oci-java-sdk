@@ -16,16 +16,55 @@ package com.oracle.bmc.osubbillingschedule.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BillingScheduleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BillingScheduleSummary {
+public final class BillingScheduleSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeStart",
+        "timeEnd",
+        "timeInvoicing",
+        "invoiceStatus",
+        "quantity",
+        "netUnitPrice",
+        "amount",
+        "billingFrequency",
+        "arInvoiceNumber",
+        "arCustomerTransactionId",
+        "orderNumber",
+        "product"
+    })
+    public BillingScheduleSummary(
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            java.util.Date timeInvoicing,
+            InvoiceStatus invoiceStatus,
+            String quantity,
+            String netUnitPrice,
+            String amount,
+            String billingFrequency,
+            String arInvoiceNumber,
+            String arCustomerTransactionId,
+            String orderNumber,
+            Product product) {
+        super();
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.timeInvoicing = timeInvoicing;
+        this.invoiceStatus = invoiceStatus;
+        this.quantity = quantity;
+        this.netUnitPrice = netUnitPrice;
+        this.amount = amount;
+        this.billingFrequency = billingFrequency;
+        this.arInvoiceNumber = arInvoiceNumber;
+        this.arCustomerTransactionId = arCustomerTransactionId;
+        this.orderNumber = orderNumber;
+        this.product = product;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
@@ -185,31 +224,47 @@ public class BillingScheduleSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Billing schedule start date
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Billing schedule end date
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * Billing schedule invoicing date
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeInvoicing")
-    java.util.Date timeInvoicing;
+    private final java.util.Date timeInvoicing;
+
+    public java.util.Date getTimeInvoicing() {
+        return timeInvoicing;
+    }
+
     /**
      * Billing schedule invoice status
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum InvoiceStatus {
         Invoiced("INVOICED"),
         NotInvoiced("NOT_INVOICED"),
@@ -219,6 +274,9 @@ public class BillingScheduleSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(InvoiceStatus.class);
 
         private final String value;
         private static java.util.Map<String, InvoiceStatus> map;
@@ -257,60 +315,182 @@ public class BillingScheduleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceStatus")
-    InvoiceStatus invoiceStatus;
+    private final InvoiceStatus invoiceStatus;
+
+    public InvoiceStatus getInvoiceStatus() {
+        return invoiceStatus;
+    }
 
     /**
      * Billing schedule quantity
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
-    String quantity;
+    private final String quantity;
+
+    public String getQuantity() {
+        return quantity;
+    }
 
     /**
      * Billing schedule net unit price
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
-    String netUnitPrice;
+    private final String netUnitPrice;
+
+    public String getNetUnitPrice() {
+        return netUnitPrice;
+    }
 
     /**
      * Billing schedule line net amount
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("amount")
-    String amount;
+    private final String amount;
+
+    public String getAmount() {
+        return amount;
+    }
 
     /**
      * Billing frequency
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingFrequency")
-    String billingFrequency;
+    private final String billingFrequency;
+
+    public String getBillingFrequency() {
+        return billingFrequency;
+    }
 
     /**
      * Indicates the associated AR Invoice Number
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arInvoiceNumber")
-    String arInvoiceNumber;
+    private final String arInvoiceNumber;
+
+    public String getArInvoiceNumber() {
+        return arInvoiceNumber;
+    }
 
     /**
      * Indicates the associated AR Customer transaction id a unique identifier existing on AR.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arCustomerTransactionId")
-    String arCustomerTransactionId;
+    private final String arCustomerTransactionId;
+
+    public String getArCustomerTransactionId() {
+        return arCustomerTransactionId;
+    }
 
     /**
      * Order number associated with the Subscribed Service
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
-    String orderNumber;
+    private final String orderNumber;
+
+    public String getOrderNumber() {
+        return orderNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("product")
-    Product product;
+    private final Product product;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BillingScheduleSummary(");
+        sb.append("timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", timeInvoicing=").append(String.valueOf(this.timeInvoicing));
+        sb.append(", invoiceStatus=").append(String.valueOf(this.invoiceStatus));
+        sb.append(", quantity=").append(String.valueOf(this.quantity));
+        sb.append(", netUnitPrice=").append(String.valueOf(this.netUnitPrice));
+        sb.append(", amount=").append(String.valueOf(this.amount));
+        sb.append(", billingFrequency=").append(String.valueOf(this.billingFrequency));
+        sb.append(", arInvoiceNumber=").append(String.valueOf(this.arInvoiceNumber));
+        sb.append(", arCustomerTransactionId=")
+                .append(String.valueOf(this.arCustomerTransactionId));
+        sb.append(", orderNumber=").append(String.valueOf(this.orderNumber));
+        sb.append(", product=").append(String.valueOf(this.product));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BillingScheduleSummary)) {
+            return false;
+        }
+
+        BillingScheduleSummary other = (BillingScheduleSummary) o;
+        return java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.timeInvoicing, other.timeInvoicing)
+                && java.util.Objects.equals(this.invoiceStatus, other.invoiceStatus)
+                && java.util.Objects.equals(this.quantity, other.quantity)
+                && java.util.Objects.equals(this.netUnitPrice, other.netUnitPrice)
+                && java.util.Objects.equals(this.amount, other.amount)
+                && java.util.Objects.equals(this.billingFrequency, other.billingFrequency)
+                && java.util.Objects.equals(this.arInvoiceNumber, other.arInvoiceNumber)
+                && java.util.Objects.equals(
+                        this.arCustomerTransactionId, other.arCustomerTransactionId)
+                && java.util.Objects.equals(this.orderNumber, other.orderNumber)
+                && java.util.Objects.equals(this.product, other.product)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeInvoicing == null ? 43 : this.timeInvoicing.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.invoiceStatus == null ? 43 : this.invoiceStatus.hashCode());
+        result = (result * PRIME) + (this.quantity == null ? 43 : this.quantity.hashCode());
+        result = (result * PRIME) + (this.netUnitPrice == null ? 43 : this.netUnitPrice.hashCode());
+        result = (result * PRIME) + (this.amount == null ? 43 : this.amount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.billingFrequency == null ? 43 : this.billingFrequency.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.arInvoiceNumber == null ? 43 : this.arInvoiceNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.arCustomerTransactionId == null
+                                ? 43
+                                : this.arCustomerTransactionId.hashCode());
+        result = (result * PRIME) + (this.orderNumber == null ? 43 : this.orderNumber.hashCode());
+        result = (result * PRIME) + (this.product == null ? 43 : this.product.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

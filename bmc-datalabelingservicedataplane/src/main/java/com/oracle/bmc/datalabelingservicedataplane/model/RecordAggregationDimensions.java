@@ -15,16 +15,20 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RecordAggregationDimensions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RecordAggregationDimensions {
+public final class RecordAggregationDimensions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isLabeled", "annotationLabelContains"})
+    public RecordAggregationDimensions(Boolean isLabeled, String annotationLabelContains) {
+        super();
+        this.isLabeled = isLabeled;
+        this.annotationLabelContains = annotationLabelContains;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
         private Boolean isLabeled;
@@ -72,18 +76,78 @@ public class RecordAggregationDimensions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Whether or not the record has been labeled and has associated annotations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
-    Boolean isLabeled;
+    private final Boolean isLabeled;
+
+    public Boolean getIsLabeled() {
+        return isLabeled;
+    }
 
     /**
      * Whether or not the annotation contains a label.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("annotationLabelContains")
-    String annotationLabelContains;
+    private final String annotationLabelContains;
+
+    public String getAnnotationLabelContains() {
+        return annotationLabelContains;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RecordAggregationDimensions(");
+        sb.append("isLabeled=").append(String.valueOf(this.isLabeled));
+        sb.append(", annotationLabelContains=")
+                .append(String.valueOf(this.annotationLabelContains));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RecordAggregationDimensions)) {
+            return false;
+        }
+
+        RecordAggregationDimensions other = (RecordAggregationDimensions) o;
+        return java.util.Objects.equals(this.isLabeled, other.isLabeled)
+                && java.util.Objects.equals(
+                        this.annotationLabelContains, other.annotationLabelContains)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isLabeled == null ? 43 : this.isLabeled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.annotationLabelContains == null
+                                ? 43
+                                : this.annotationLabelContains.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,24 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateExecuteOperationJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateExecuteOperationJobDetails {
+public final class CreateExecuteOperationJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"operation", "callOperationConfig", "inputRecords"})
+    public CreateExecuteOperationJobDetails(
+            Operation operation,
+            CallOperationConfig callOperationConfig,
+            java.util.List<OperationInputRecord> inputRecords) {
+        super();
+        this.operation = operation;
+        this.callOperationConfig = callOperationConfig;
+        this.inputRecords = inputRecords;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
@@ -83,18 +91,83 @@ public class CreateExecuteOperationJobDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
-    Operation operation;
+    private final Operation operation;
+
+    public Operation getOperation() {
+        return operation;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("callOperationConfig")
-    CallOperationConfig callOperationConfig;
+    private final CallOperationConfig callOperationConfig;
+
+    public CallOperationConfig getCallOperationConfig() {
+        return callOperationConfig;
+    }
 
     /**
      * Collection of input parameters supplied.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputRecords")
-    java.util.List<OperationInputRecord> inputRecords;
+    private final java.util.List<OperationInputRecord> inputRecords;
+
+    public java.util.List<OperationInputRecord> getInputRecords() {
+        return inputRecords;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateExecuteOperationJobDetails(");
+        sb.append("operation=").append(String.valueOf(this.operation));
+        sb.append(", callOperationConfig=").append(String.valueOf(this.callOperationConfig));
+        sb.append(", inputRecords=").append(String.valueOf(this.inputRecords));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateExecuteOperationJobDetails)) {
+            return false;
+        }
+
+        CreateExecuteOperationJobDetails other = (CreateExecuteOperationJobDetails) o;
+        return java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(this.callOperationConfig, other.callOperationConfig)
+                && java.util.Objects.equals(this.inputRecords, other.inputRecords)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.callOperationConfig == null
+                                ? 43
+                                : this.callOperationConfig.hashCode());
+        result = (result * PRIME) + (this.inputRecords == null ? 43 : this.inputRecords.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

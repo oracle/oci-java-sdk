@@ -7,10 +7,6 @@ package com.oracle.bmc.opsi.responses;
 import com.oracle.bmc.opsi.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SummarizeDatabaseInsightResourceUsageTrendResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -20,6 +16,10 @@ public class SummarizeDatabaseInsightResourceUsageTrendResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then a partial list might have been returned. Include this value as the {@code page} parameter for the
@@ -28,12 +28,21 @@ public class SummarizeDatabaseInsightResourceUsageTrendResponse
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned SummarizeDatabaseInsightResourceUsageTrendAggregationCollection instance.
      */
     private com.oracle.bmc.opsi.model
                     .SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
             summarizeDatabaseInsightResourceUsageTrendAggregationCollection;
+
+    public com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
+            getSummarizeDatabaseInsightResourceUsageTrendAggregationCollection() {
+        return summarizeDatabaseInsightResourceUsageTrendAggregationCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -63,6 +72,33 @@ public class SummarizeDatabaseInsightResourceUsageTrendResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.opsi.model
+                        .SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
+                summarizeDatabaseInsightResourceUsageTrendAggregationCollection;
+
+        public Builder summarizeDatabaseInsightResourceUsageTrendAggregationCollection(
+                com.oracle.bmc.opsi.model
+                                .SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
+                        summarizeDatabaseInsightResourceUsageTrendAggregationCollection) {
+            this.summarizeDatabaseInsightResourceUsageTrendAggregationCollection =
+                    summarizeDatabaseInsightResourceUsageTrendAggregationCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -84,5 +120,60 @@ public class SummarizeDatabaseInsightResourceUsageTrendResponse
                     opcNextPage,
                     summarizeDatabaseInsightResourceUsageTrendAggregationCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",summarizeDatabaseInsightResourceUsageTrendAggregationCollection=")
+                .append(
+                        String.valueOf(
+                                summarizeDatabaseInsightResourceUsageTrendAggregationCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeDatabaseInsightResourceUsageTrendResponse)) {
+            return false;
+        }
+
+        SummarizeDatabaseInsightResourceUsageTrendResponse other =
+                (SummarizeDatabaseInsightResourceUsageTrendResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.summarizeDatabaseInsightResourceUsageTrendAggregationCollection,
+                        other.summarizeDatabaseInsightResourceUsageTrendAggregationCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.summarizeDatabaseInsightResourceUsageTrendAggregationCollection
+                                        == null
+                                ? 43
+                                : this
+                                        .summarizeDatabaseInsightResourceUsageTrendAggregationCollection
+                                        .hashCode());
+        return result;
     }
 }

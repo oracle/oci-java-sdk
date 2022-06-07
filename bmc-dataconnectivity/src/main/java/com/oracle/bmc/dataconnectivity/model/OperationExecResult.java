@@ -15,16 +15,34 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OperationExecResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OperationExecResult {
+public final class OperationExecResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "executionStatus",
+        "errorMessage",
+        "metrics",
+        "outputValues",
+        "isWhitelistedErrorMessage"
+    })
+    public OperationExecResult(
+            ExecutionStatus executionStatus,
+            String errorMessage,
+            Object metrics,
+            java.util.List<java.util.List<Object>> outputValues,
+            Boolean isWhitelistedErrorMessage) {
+        super();
+        this.executionStatus = executionStatus;
+        this.errorMessage = errorMessage;
+        this.metrics = metrics;
+        this.outputValues = outputValues;
+        this.isWhitelistedErrorMessage = isWhitelistedErrorMessage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
         private ExecutionStatus executionStatus;
@@ -107,10 +125,13 @@ public class OperationExecResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Status of the operation job for particular set of input.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ExecutionStatus {
         Failed("FAILED"),
         Success("SUCCESS"),
@@ -122,6 +143,9 @@ public class OperationExecResult {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ExecutionStatus.class);
 
         private final String value;
         private static java.util.Map<String, ExecutionStatus> map;
@@ -159,32 +183,111 @@ public class OperationExecResult {
      * Status of the operation job for particular set of input.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
-    ExecutionStatus executionStatus;
+    private final ExecutionStatus executionStatus;
+
+    public ExecutionStatus getExecutionStatus() {
+        return executionStatus;
+    }
 
     /**
      * Error message if execution of operation is failed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     /**
      * Metrics of operation execution job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
-    Object metrics;
+    private final Object metrics;
+
+    public Object getMetrics() {
+        return metrics;
+    }
 
     /**
      * List of emitted rows for each OUT/INOUT param.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputValues")
-    java.util.List<java.util.List<Object>> outputValues;
+    private final java.util.List<java.util.List<Object>> outputValues;
+
+    public java.util.List<java.util.List<Object>> getOutputValues() {
+        return outputValues;
+    }
 
     /**
      * True, if error message should be displayed on UI.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isWhitelistedErrorMessage")
-    Boolean isWhitelistedErrorMessage;
+    private final Boolean isWhitelistedErrorMessage;
+
+    public Boolean getIsWhitelistedErrorMessage() {
+        return isWhitelistedErrorMessage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OperationExecResult(");
+        sb.append("executionStatus=").append(String.valueOf(this.executionStatus));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append(", outputValues=").append(String.valueOf(this.outputValues));
+        sb.append(", isWhitelistedErrorMessage=")
+                .append(String.valueOf(this.isWhitelistedErrorMessage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OperationExecResult)) {
+            return false;
+        }
+
+        OperationExecResult other = (OperationExecResult) o;
+        return java.util.Objects.equals(this.executionStatus, other.executionStatus)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.outputValues, other.outputValues)
+                && java.util.Objects.equals(
+                        this.isWhitelistedErrorMessage, other.isWhitelistedErrorMessage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.executionStatus == null ? 43 : this.executionStatus.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result = (result * PRIME) + (this.outputValues == null ? 43 : this.outputValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isWhitelistedErrorMessage == null
+                                ? 43
+                                : this.isWhitelistedErrorMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

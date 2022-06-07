@@ -15,16 +15,52 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateCrossConnectDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateCrossConnectDetails {
+public final class CreateCrossConnectDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "crossConnectGroupId",
+        "definedTags",
+        "displayName",
+        "farCrossConnectOrCrossConnectGroupId",
+        "freeformTags",
+        "locationName",
+        "nearCrossConnectOrCrossConnectGroupId",
+        "portSpeedShapeName",
+        "customerReferenceName",
+        "macsecProperties"
+    })
+    public CreateCrossConnectDetails(
+            String compartmentId,
+            String crossConnectGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            String farCrossConnectOrCrossConnectGroupId,
+            java.util.Map<String, String> freeformTags,
+            String locationName,
+            String nearCrossConnectOrCrossConnectGroupId,
+            String portSpeedShapeName,
+            String customerReferenceName,
+            CreateMacsecProperties macsecProperties) {
+        super();
+        this.compartmentId = compartmentId;
+        this.crossConnectGroupId = crossConnectGroupId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.farCrossConnectOrCrossConnectGroupId = farCrossConnectOrCrossConnectGroupId;
+        this.freeformTags = freeformTags;
+        this.locationName = locationName;
+        this.nearCrossConnectOrCrossConnectGroupId = nearCrossConnectOrCrossConnectGroupId;
+        this.portSpeedShapeName = portSpeedShapeName;
+        this.customerReferenceName = customerReferenceName;
+        this.macsecProperties = macsecProperties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -178,18 +214,30 @@ public class CreateCrossConnectDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
-    String crossConnectGroupId;
+    private final String crossConnectGroupId;
+
+    public String getCrossConnectGroupId() {
+        return crossConnectGroupId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -199,7 +247,11 @@ public class CreateCrossConnectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -207,7 +259,11 @@ public class CreateCrossConnectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect
@@ -217,7 +273,11 @@ public class CreateCrossConnectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("farCrossConnectOrCrossConnectGroupId")
-    String farCrossConnectOrCrossConnectGroupId;
+    private final String farCrossConnectOrCrossConnectGroupId;
+
+    public String getFarCrossConnectOrCrossConnectGroupId() {
+        return farCrossConnectOrCrossConnectGroupId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -227,7 +287,11 @@ public class CreateCrossConnectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The name of the FastConnect location where this cross-connect will be installed.
@@ -238,7 +302,11 @@ public class CreateCrossConnectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("locationName")
-    String locationName;
+    private final String locationName;
+
+    public String getLocationName() {
+        return locationName;
+    }
 
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect
@@ -247,7 +315,11 @@ public class CreateCrossConnectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nearCrossConnectOrCrossConnectGroupId")
-    String nearCrossConnectOrCrossConnectGroupId;
+    private final String nearCrossConnectOrCrossConnectGroupId;
+
+    public String getNearCrossConnectOrCrossConnectGroupId() {
+        return nearCrossConnectOrCrossConnectGroupId;
+    }
 
     /**
      * The port speed for this cross-connect. To get a list of the available port speeds, see
@@ -257,7 +329,11 @@ public class CreateCrossConnectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
-    String portSpeedShapeName;
+    private final String portSpeedShapeName;
+
+    public String getPortSpeedShapeName() {
+        return portSpeedShapeName;
+    }
 
     /**
      * A reference name or identifier for the physical fiber connection that this cross-connect
@@ -265,11 +341,118 @@ public class CreateCrossConnectDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
-    String customerReferenceName;
+    private final String customerReferenceName;
+
+    public String getCustomerReferenceName() {
+        return customerReferenceName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
-    CreateMacsecProperties macsecProperties;
+    private final CreateMacsecProperties macsecProperties;
+
+    public CreateMacsecProperties getMacsecProperties() {
+        return macsecProperties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateCrossConnectDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", crossConnectGroupId=").append(String.valueOf(this.crossConnectGroupId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", farCrossConnectOrCrossConnectGroupId=")
+                .append(String.valueOf(this.farCrossConnectOrCrossConnectGroupId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", locationName=").append(String.valueOf(this.locationName));
+        sb.append(", nearCrossConnectOrCrossConnectGroupId=")
+                .append(String.valueOf(this.nearCrossConnectOrCrossConnectGroupId));
+        sb.append(", portSpeedShapeName=").append(String.valueOf(this.portSpeedShapeName));
+        sb.append(", customerReferenceName=").append(String.valueOf(this.customerReferenceName));
+        sb.append(", macsecProperties=").append(String.valueOf(this.macsecProperties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateCrossConnectDetails)) {
+            return false;
+        }
+
+        CreateCrossConnectDetails other = (CreateCrossConnectDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.crossConnectGroupId, other.crossConnectGroupId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.farCrossConnectOrCrossConnectGroupId,
+                        other.farCrossConnectOrCrossConnectGroupId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.locationName, other.locationName)
+                && java.util.Objects.equals(
+                        this.nearCrossConnectOrCrossConnectGroupId,
+                        other.nearCrossConnectOrCrossConnectGroupId)
+                && java.util.Objects.equals(this.portSpeedShapeName, other.portSpeedShapeName)
+                && java.util.Objects.equals(this.customerReferenceName, other.customerReferenceName)
+                && java.util.Objects.equals(this.macsecProperties, other.macsecProperties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.crossConnectGroupId == null
+                                ? 43
+                                : this.crossConnectGroupId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.farCrossConnectOrCrossConnectGroupId == null
+                                ? 43
+                                : this.farCrossConnectOrCrossConnectGroupId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.locationName == null ? 43 : this.locationName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nearCrossConnectOrCrossConnectGroupId == null
+                                ? 43
+                                : this.nearCrossConnectOrCrossConnectGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.portSpeedShapeName == null
+                                ? 43
+                                : this.portSpeedShapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerReferenceName == null
+                                ? 43
+                                : this.customerReferenceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.macsecProperties == null ? 43 : this.macsecProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

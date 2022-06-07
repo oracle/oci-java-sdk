@@ -15,12 +15,6 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,11 +33,43 @@ package com.oracle.bmc.devops.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ComputeInstanceGroupSelector {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected ComputeInstanceGroupSelector() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ComputeInstanceGroupSelector(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ComputeInstanceGroupSelector)) {
+            return false;
+        }
+
+        ComputeInstanceGroupSelector other = (ComputeInstanceGroupSelector) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * Defines the type of the instance selector for the group.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SelectorType {
         InstanceIds("INSTANCE_IDS"),
         InstanceQuery("INSTANCE_QUERY"),
@@ -53,6 +79,9 @@ public class ComputeInstanceGroupSelector {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SelectorType.class);
 
         private final String value;
         private static java.util.Map<String, SelectorType> map;

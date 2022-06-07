@@ -16,16 +16,37 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDataPumpSettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDataPumpSettings {
+public final class CreateDataPumpSettings {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "jobMode",
+        "dataPumpParameters",
+        "metadataRemaps",
+        "tablespaceDetails",
+        "exportDirectoryObject",
+        "importDirectoryObject"
+    })
+    public CreateDataPumpSettings(
+            DataPumpJobMode jobMode,
+            CreateDataPumpParameters dataPumpParameters,
+            java.util.List<MetadataRemap> metadataRemaps,
+            CreateTargetTypeTablespaceDetails tablespaceDetails,
+            CreateDirectoryObject exportDirectoryObject,
+            CreateDirectoryObject importDirectoryObject) {
+        super();
+        this.jobMode = jobMode;
+        this.dataPumpParameters = dataPumpParameters;
+        this.metadataRemaps = metadataRemaps;
+        this.tablespaceDetails = tablespaceDetails;
+        this.exportDirectoryObject = exportDirectoryObject;
+        this.importDirectoryObject = importDirectoryObject;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
         private DataPumpJobMode jobMode;
@@ -119,16 +140,28 @@ public class CreateDataPumpSettings {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Data Pump job mode.
      * Refer to [link text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
-    DataPumpJobMode jobMode;
+    private final DataPumpJobMode jobMode;
+
+    public DataPumpJobMode getJobMode() {
+        return jobMode;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataPumpParameters")
-    CreateDataPumpParameters dataPumpParameters;
+    private final CreateDataPumpParameters dataPumpParameters;
+
+    public CreateDataPumpParameters getDataPumpParameters() {
+        return dataPumpParameters;
+    }
 
     /**
      * Defines remapping to be applied to objects as they are processed.
@@ -136,17 +169,103 @@ public class CreateDataPumpSettings {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataRemaps")
-    java.util.List<MetadataRemap> metadataRemaps;
+    private final java.util.List<MetadataRemap> metadataRemaps;
+
+    public java.util.List<MetadataRemap> getMetadataRemaps() {
+        return metadataRemaps;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceDetails")
-    CreateTargetTypeTablespaceDetails tablespaceDetails;
+    private final CreateTargetTypeTablespaceDetails tablespaceDetails;
+
+    public CreateTargetTypeTablespaceDetails getTablespaceDetails() {
+        return tablespaceDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("exportDirectoryObject")
-    CreateDirectoryObject exportDirectoryObject;
+    private final CreateDirectoryObject exportDirectoryObject;
+
+    public CreateDirectoryObject getExportDirectoryObject() {
+        return exportDirectoryObject;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("importDirectoryObject")
-    CreateDirectoryObject importDirectoryObject;
+    private final CreateDirectoryObject importDirectoryObject;
+
+    public CreateDirectoryObject getImportDirectoryObject() {
+        return importDirectoryObject;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDataPumpSettings(");
+        sb.append("jobMode=").append(String.valueOf(this.jobMode));
+        sb.append(", dataPumpParameters=").append(String.valueOf(this.dataPumpParameters));
+        sb.append(", metadataRemaps=").append(String.valueOf(this.metadataRemaps));
+        sb.append(", tablespaceDetails=").append(String.valueOf(this.tablespaceDetails));
+        sb.append(", exportDirectoryObject=").append(String.valueOf(this.exportDirectoryObject));
+        sb.append(", importDirectoryObject=").append(String.valueOf(this.importDirectoryObject));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDataPumpSettings)) {
+            return false;
+        }
+
+        CreateDataPumpSettings other = (CreateDataPumpSettings) o;
+        return java.util.Objects.equals(this.jobMode, other.jobMode)
+                && java.util.Objects.equals(this.dataPumpParameters, other.dataPumpParameters)
+                && java.util.Objects.equals(this.metadataRemaps, other.metadataRemaps)
+                && java.util.Objects.equals(this.tablespaceDetails, other.tablespaceDetails)
+                && java.util.Objects.equals(this.exportDirectoryObject, other.exportDirectoryObject)
+                && java.util.Objects.equals(this.importDirectoryObject, other.importDirectoryObject)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.jobMode == null ? 43 : this.jobMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataPumpParameters == null
+                                ? 43
+                                : this.dataPumpParameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metadataRemaps == null ? 43 : this.metadataRemaps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tablespaceDetails == null ? 43 : this.tablespaceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportDirectoryObject == null
+                                ? 43
+                                : this.exportDirectoryObject.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importDirectoryObject == null
+                                ? 43
+                                : this.importDirectoryObject.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

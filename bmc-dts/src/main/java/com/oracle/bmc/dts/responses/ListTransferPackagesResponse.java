@@ -7,20 +7,24 @@ package com.oracle.bmc.dts.responses;
 import com.oracle.bmc.dts.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned MultipleTransferPackages instance.
      */
     private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
+
+    public com.oracle.bmc.dts.model.MultipleTransferPackages getMultipleTransferPackages() {
+        return multipleTransferPackages;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -44,6 +48,21 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
+
+        public Builder multipleTransferPackages(
+                com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages) {
+            this.multipleTransferPackages = multipleTransferPackages;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -60,5 +79,49 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
             return new ListTransferPackagesResponse(
                     __httpStatusCode__, opcRequestId, multipleTransferPackages);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",multipleTransferPackages=").append(String.valueOf(multipleTransferPackages));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListTransferPackagesResponse)) {
+            return false;
+        }
+
+        ListTransferPackagesResponse other = (ListTransferPackagesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.multipleTransferPackages, other.multipleTransferPackages);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multipleTransferPackages == null
+                                ? 43
+                                : this.multipleTransferPackages.hashCode());
+        return result;
     }
 }

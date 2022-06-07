@@ -15,16 +15,43 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDocumentJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDocumentJobDetails {
+public final class CreateDocumentJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "inputLocation",
+        "features",
+        "outputLocation",
+        "compartmentId",
+        "displayName",
+        "language",
+        "documentType",
+        "isZipOutputEnabled"
+    })
+    public CreateDocumentJobDetails(
+            InputLocation inputLocation,
+            java.util.List<DocumentFeature> features,
+            OutputLocation outputLocation,
+            String compartmentId,
+            String displayName,
+            DocumentLanguage language,
+            DocumentType documentType,
+            Boolean isZipOutputEnabled) {
+        super();
+        this.inputLocation = inputLocation;
+        this.features = features;
+        this.outputLocation = outputLocation;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.language = language;
+        this.documentType = documentType;
+        this.isZipOutputEnabled = isZipOutputEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
         private InputLocation inputLocation;
@@ -140,48 +167,154 @@ public class CreateDocumentJobDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
-    InputLocation inputLocation;
+    private final InputLocation inputLocation;
+
+    public InputLocation getInputLocation() {
+        return inputLocation;
+    }
 
     /**
      * The list of requested document analysis types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
-    java.util.List<DocumentFeature> features;
+    private final java.util.List<DocumentFeature> features;
+
+    public java.util.List<DocumentFeature> getFeatures() {
+        return features;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("outputLocation")
-    OutputLocation outputLocation;
+    private final OutputLocation outputLocation;
+
+    public OutputLocation getOutputLocation() {
+        return outputLocation;
+    }
 
     /**
      * The compartment identifier from the requester.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The document job display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The language of the document, abbreviated according to ISO 639-2.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
-    DocumentLanguage language;
+    private final DocumentLanguage language;
+
+    public DocumentLanguage getLanguage() {
+        return language;
+    }
 
     /**
      * The type of documents.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
-    DocumentType documentType;
+    private final DocumentType documentType;
+
+    public DocumentType getDocumentType() {
+        return documentType;
+    }
 
     /**
      * Whether or not to generate a ZIP file containing the results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
-    Boolean isZipOutputEnabled;
+    private final Boolean isZipOutputEnabled;
+
+    public Boolean getIsZipOutputEnabled() {
+        return isZipOutputEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDocumentJobDetails(");
+        sb.append("inputLocation=").append(String.valueOf(this.inputLocation));
+        sb.append(", features=").append(String.valueOf(this.features));
+        sb.append(", outputLocation=").append(String.valueOf(this.outputLocation));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", language=").append(String.valueOf(this.language));
+        sb.append(", documentType=").append(String.valueOf(this.documentType));
+        sb.append(", isZipOutputEnabled=").append(String.valueOf(this.isZipOutputEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDocumentJobDetails)) {
+            return false;
+        }
+
+        CreateDocumentJobDetails other = (CreateDocumentJobDetails) o;
+        return java.util.Objects.equals(this.inputLocation, other.inputLocation)
+                && java.util.Objects.equals(this.features, other.features)
+                && java.util.Objects.equals(this.outputLocation, other.outputLocation)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.language, other.language)
+                && java.util.Objects.equals(this.documentType, other.documentType)
+                && java.util.Objects.equals(this.isZipOutputEnabled, other.isZipOutputEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.inputLocation == null ? 43 : this.inputLocation.hashCode());
+        result = (result * PRIME) + (this.features == null ? 43 : this.features.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputLocation == null ? 43 : this.outputLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
+        result = (result * PRIME) + (this.documentType == null ? 43 : this.documentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isZipOutputEnabled == null
+                                ? 43
+                                : this.isZipOutputEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

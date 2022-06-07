@@ -15,16 +15,19 @@ package com.oracle.bmc.visualbuilder.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RequestSummarizedApplicationsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RequestSummarizedApplicationsDetails {
+public final class RequestSummarizedApplicationsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"idcsOpenId"})
+    public RequestSummarizedApplicationsDetails(String idcsOpenId) {
+        super();
+        this.idcsOpenId = idcsOpenId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("idcsOpenId")
         private String idcsOpenId;
@@ -61,12 +64,59 @@ public class RequestSummarizedApplicationsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsOpenId")
-    String idcsOpenId;
+    private final String idcsOpenId;
+
+    public String getIdcsOpenId() {
+        return idcsOpenId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RequestSummarizedApplicationsDetails(");
+        sb.append("idcsOpenId=").append(String.valueOf(this.idcsOpenId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RequestSummarizedApplicationsDetails)) {
+            return false;
+        }
+
+        RequestSummarizedApplicationsDetails other = (RequestSummarizedApplicationsDetails) o;
+        return java.util.Objects.equals(this.idcsOpenId, other.idcsOpenId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.idcsOpenId == null ? 43 : this.idcsOpenId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

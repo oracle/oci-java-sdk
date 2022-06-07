@@ -15,16 +15,24 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateMacsecProperties.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateMacsecProperties {
+public final class CreateMacsecProperties {
+    @Deprecated
+    @java.beans.ConstructorProperties({"state", "primaryKey", "encryptionCipher"})
+    public CreateMacsecProperties(
+            MacsecState state,
+            CreateMacsecKey primaryKey,
+            MacsecEncryptionCipher encryptionCipher) {
+        super();
+        this.state = state;
+        this.primaryKey = primaryKey;
+        this.encryptionCipher = encryptionCipher;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private MacsecState state;
@@ -82,21 +90,84 @@ public class CreateMacsecProperties {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates whether or not MACsec is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
-    MacsecState state;
+    private final MacsecState state;
+
+    public MacsecState getState() {
+        return state;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("primaryKey")
-    CreateMacsecKey primaryKey;
+    private final CreateMacsecKey primaryKey;
+
+    public CreateMacsecKey getPrimaryKey() {
+        return primaryKey;
+    }
 
     /**
      * Type of encryption cipher suite to use for the MACsec connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionCipher")
-    MacsecEncryptionCipher encryptionCipher;
+    private final MacsecEncryptionCipher encryptionCipher;
+
+    public MacsecEncryptionCipher getEncryptionCipher() {
+        return encryptionCipher;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateMacsecProperties(");
+        sb.append("state=").append(String.valueOf(this.state));
+        sb.append(", primaryKey=").append(String.valueOf(this.primaryKey));
+        sb.append(", encryptionCipher=").append(String.valueOf(this.encryptionCipher));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateMacsecProperties)) {
+            return false;
+        }
+
+        CreateMacsecProperties other = (CreateMacsecProperties) o;
+        return java.util.Objects.equals(this.state, other.state)
+                && java.util.Objects.equals(this.primaryKey, other.primaryKey)
+                && java.util.Objects.equals(this.encryptionCipher, other.encryptionCipher)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
+        result = (result * PRIME) + (this.primaryKey == null ? 43 : this.primaryKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionCipher == null ? 43 : this.encryptionCipher.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

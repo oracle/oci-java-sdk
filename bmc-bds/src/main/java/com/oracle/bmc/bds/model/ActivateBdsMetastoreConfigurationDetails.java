@@ -15,16 +15,21 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ActivateBdsMetastoreConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ActivateBdsMetastoreConfigurationDetails {
+public final class ActivateBdsMetastoreConfigurationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"bdsApiKeyPassphrase", "clusterAdminPassword"})
+    public ActivateBdsMetastoreConfigurationDetails(
+            String bdsApiKeyPassphrase, String clusterAdminPassword) {
+        super();
+        this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
+        this.clusterAdminPassword = clusterAdminPassword;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
         private String bdsApiKeyPassphrase;
@@ -73,18 +78,81 @@ public class ActivateBdsMetastoreConfigurationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Base-64 encoded passphrase of the BDS Api Key. Set only if metastore's type is EXTERNAL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
-    String bdsApiKeyPassphrase;
+    private final String bdsApiKeyPassphrase;
+
+    public String getBdsApiKeyPassphrase() {
+        return bdsApiKeyPassphrase;
+    }
 
     /**
      * Base-64 encoded password for the cluster admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    String clusterAdminPassword;
+    private final String clusterAdminPassword;
+
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ActivateBdsMetastoreConfigurationDetails(");
+        sb.append("bdsApiKeyPassphrase=").append(String.valueOf(this.bdsApiKeyPassphrase));
+        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ActivateBdsMetastoreConfigurationDetails)) {
+            return false;
+        }
+
+        ActivateBdsMetastoreConfigurationDetails other =
+                (ActivateBdsMetastoreConfigurationDetails) o;
+        return java.util.Objects.equals(this.bdsApiKeyPassphrase, other.bdsApiKeyPassphrase)
+                && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.bdsApiKeyPassphrase == null
+                                ? 43
+                                : this.bdsApiKeyPassphrase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterAdminPassword == null
+                                ? 43
+                                : this.clusterAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

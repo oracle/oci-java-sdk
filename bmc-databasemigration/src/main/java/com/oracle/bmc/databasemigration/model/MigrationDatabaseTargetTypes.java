@@ -9,7 +9,6 @@ package com.oracle.bmc.databasemigration.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.extern.slf4j.Slf4j
 public enum MigrationDatabaseTargetTypes {
     AdbSRemap("ADB_S_REMAP"),
     AdbDRemap("ADB_D_REMAP"),
@@ -22,6 +21,9 @@ public enum MigrationDatabaseTargetTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MigrationDatabaseTargetTypes.class);
 
     private final String value;
     private static java.util.Map<String, MigrationDatabaseTargetTypes> map;

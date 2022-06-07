@@ -7,10 +7,6 @@ package com.oracle.bmc.dns.responses;
 import com.oracle.bmc.dns.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The current version of the resource, ending with a
@@ -20,6 +16,10 @@ public class GetTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String eTag;
 
+    public String getETag() {
+        return eTag;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
      * contact Oracle about a particular request, please provide the request ID.
@@ -27,10 +27,18 @@ public class GetTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned TsigKey instance, or null if {@link #isNotModified()} is true.
      */
     private com.oracle.bmc.dns.model.TsigKey tsigKey;
+
+    public com.oracle.bmc.dns.model.TsigKey getTsigKey() {
+        return tsigKey;
+    }
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,
@@ -39,6 +47,10 @@ public class GetTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      * response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
+
+    public boolean isNotModified() {
+        return isNotModified;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -68,6 +80,34 @@ public class GetTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String eTag;
+
+        public Builder eTag(String eTag) {
+            this.eTag = eTag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.dns.model.TsigKey tsigKey;
+
+        public Builder tsigKey(com.oracle.bmc.dns.model.TsigKey tsigKey) {
+            this.tsigKey = tsigKey;
+            return this;
+        }
+
+        private boolean isNotModified;
+
+        public Builder isNotModified(boolean isNotModified) {
+            this.isNotModified = isNotModified;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -85,5 +125,50 @@ public class GetTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return new GetTsigKeyResponse(
                     __httpStatusCode__, eTag, opcRequestId, tsigKey, isNotModified);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",eTag=").append(String.valueOf(eTag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",tsigKey=").append(String.valueOf(tsigKey));
+        sb.append(",isNotModified=").append(isNotModified);
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetTsigKeyResponse)) {
+            return false;
+        }
+
+        GetTsigKeyResponse other = (GetTsigKeyResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.eTag, other.eTag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.tsigKey, other.tsigKey)
+                && this.isNotModified == other.isNotModified;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.eTag == null ? 43 : this.eTag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.tsigKey == null ? 43 : this.tsigKey.hashCode());
+        result = (result * PRIME) + (this.isNotModified ? 79 : 97);
+        return result;
     }
 }

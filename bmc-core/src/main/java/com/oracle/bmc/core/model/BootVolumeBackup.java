@@ -25,14 +25,71 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BootVolumeBackup.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BootVolumeBackup {
+public final class BootVolumeBackup {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bootVolumeId",
+        "compartmentId",
+        "definedTags",
+        "systemTags",
+        "displayName",
+        "expirationTime",
+        "freeformTags",
+        "id",
+        "imageId",
+        "kmsKeyId",
+        "lifecycleState",
+        "sizeInGBs",
+        "sourceBootVolumeBackupId",
+        "sourceType",
+        "timeCreated",
+        "timeRequestReceived",
+        "type",
+        "uniqueSizeInGBs"
+    })
+    public BootVolumeBackup(
+            String bootVolumeId,
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String displayName,
+            java.util.Date expirationTime,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            String imageId,
+            String kmsKeyId,
+            LifecycleState lifecycleState,
+            Long sizeInGBs,
+            String sourceBootVolumeBackupId,
+            SourceType sourceType,
+            java.util.Date timeCreated,
+            java.util.Date timeRequestReceived,
+            Type type,
+            Long uniqueSizeInGBs) {
+        super();
+        this.bootVolumeId = bootVolumeId;
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.displayName = displayName;
+        this.expirationTime = expirationTime;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.imageId = imageId;
+        this.kmsKeyId = kmsKeyId;
+        this.lifecycleState = lifecycleState;
+        this.sizeInGBs = sizeInGBs;
+        this.sourceBootVolumeBackupId = sourceBootVolumeBackupId;
+        this.sourceType = sourceType;
+        this.timeCreated = timeCreated;
+        this.timeRequestReceived = timeRequestReceived;
+        this.type = type;
+        this.uniqueSizeInGBs = uniqueSizeInGBs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
         private String bootVolumeId;
@@ -259,17 +316,29 @@ public class BootVolumeBackup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
-    String bootVolumeId;
+    private final String bootVolumeId;
+
+    public String getBootVolumeId() {
+        return bootVolumeId;
+    }
 
     /**
      * The OCID of the compartment that contains the boot volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -279,7 +348,11 @@ public class BootVolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
@@ -287,7 +360,11 @@ public class BootVolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -295,7 +372,11 @@ public class BootVolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The date and time the volume backup will expire and be automatically deleted.
@@ -306,7 +387,11 @@ public class BootVolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
-    java.util.Date expirationTime;
+    private final java.util.Date expirationTime;
+
+    public java.util.Date getExpirationTime() {
+        return expirationTime;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -316,20 +401,32 @@ public class BootVolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The OCID of the boot volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The image OCID used to create the boot volume the backup is taken from.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
-    String imageId;
+    private final String imageId;
+
+    public String getImageId() {
+        return imageId;
+    }
 
     /**
      * The OCID of the Key Management master encryption assigned to the boot volume backup.
@@ -339,11 +436,15 @@ public class BootVolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
     /**
      * The current state of a boot volume backup.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Available("AVAILABLE"),
@@ -357,6 +458,9 @@ public class BootVolumeBackup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -394,25 +498,37 @@ public class BootVolumeBackup {
      * The current state of a boot volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The size of the boot volume, in GBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
-    Long sizeInGBs;
+    private final Long sizeInGBs;
+
+    public Long getSizeInGBs() {
+        return sizeInGBs;
+    }
 
     /**
      * The OCID of the source boot volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceBootVolumeBackupId")
-    String sourceBootVolumeBackupId;
+    private final String sourceBootVolumeBackupId;
+
+    public String getSourceBootVolumeBackupId() {
+        return sourceBootVolumeBackupId;
+    }
+
     /**
      * Specifies whether the backup was created manually, or via scheduled backup policy.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SourceType {
         Manual("MANUAL"),
         Scheduled("SCHEDULED"),
@@ -422,6 +538,9 @@ public class BootVolumeBackup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SourceType.class);
 
         private final String value;
         private static java.util.Map<String, SourceType> map;
@@ -460,7 +579,11 @@ public class BootVolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
-    SourceType sourceType;
+    private final SourceType sourceType;
+
+    public SourceType getSourceType() {
+        return sourceType;
+    }
 
     /**
      * The date and time the boot volume backup was created. This is the time the actual point-in-time image
@@ -468,18 +591,26 @@ public class BootVolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
-    java.util.Date timeRequestReceived;
+    private final java.util.Date timeRequestReceived;
+
+    public java.util.Date getTimeRequestReceived() {
+        return timeRequestReceived;
+    }
+
     /**
      * The type of a volume backup.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Full("FULL"),
         Incremental("INCREMENTAL"),
@@ -489,6 +620,8 @@ public class BootVolumeBackup {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -525,7 +658,11 @@ public class BootVolumeBackup {
      * The type of a volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
@@ -533,8 +670,120 @@ public class BootVolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGBs")
-    Long uniqueSizeInGBs;
+    private final Long uniqueSizeInGBs;
+
+    public Long getUniqueSizeInGBs() {
+        return uniqueSizeInGBs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BootVolumeBackup(");
+        sb.append("bootVolumeId=").append(String.valueOf(this.bootVolumeId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", imageId=").append(String.valueOf(this.imageId));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
+        sb.append(", sourceBootVolumeBackupId=")
+                .append(String.valueOf(this.sourceBootVolumeBackupId));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeRequestReceived=").append(String.valueOf(this.timeRequestReceived));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", uniqueSizeInGBs=").append(String.valueOf(this.uniqueSizeInGBs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BootVolumeBackup)) {
+            return false;
+        }
+
+        BootVolumeBackup other = (BootVolumeBackup) o;
+        return java.util.Objects.equals(this.bootVolumeId, other.bootVolumeId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.expirationTime, other.expirationTime)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
+                && java.util.Objects.equals(
+                        this.sourceBootVolumeBackupId, other.sourceBootVolumeBackupId)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeRequestReceived, other.timeRequestReceived)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.uniqueSizeInGBs, other.uniqueSizeInGBs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.bootVolumeId == null ? 43 : this.bootVolumeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expirationTime == null ? 43 : this.expirationTime.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceBootVolumeBackupId == null
+                                ? 43
+                                : this.sourceBootVolumeBackupId.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRequestReceived == null
+                                ? 43
+                                : this.timeRequestReceived.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uniqueSizeInGBs == null ? 43 : this.uniqueSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

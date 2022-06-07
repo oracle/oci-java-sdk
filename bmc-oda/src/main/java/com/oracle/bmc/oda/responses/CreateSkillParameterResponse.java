@@ -7,15 +7,15 @@ package com.oracle.bmc.oda.responses;
 import com.oracle.bmc.oda.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Fully qualified URL for the newly created resource.
      */
     private String location;
+
+    public String getLocation() {
+        return location;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -24,15 +24,27 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * The returned SkillParameter instance.
      */
     private com.oracle.bmc.oda.model.SkillParameter skillParameter;
+
+    public com.oracle.bmc.oda.model.SkillParameter getSkillParameter() {
+        return skillParameter;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -62,6 +74,34 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        private String location;
+
+        public Builder location(String location) {
+            this.location = location;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private com.oracle.bmc.oda.model.SkillParameter skillParameter;
+
+        public Builder skillParameter(com.oracle.bmc.oda.model.SkillParameter skillParameter) {
+            this.skillParameter = skillParameter;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -80,5 +120,52 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
             return new CreateSkillParameterResponse(
                     __httpStatusCode__, location, opcRequestId, etag, skillParameter);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",location=").append(String.valueOf(location));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",skillParameter=").append(String.valueOf(skillParameter));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSkillParameterResponse)) {
+            return false;
+        }
+
+        CreateSkillParameterResponse other = (CreateSkillParameterResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.skillParameter, other.skillParameter);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.skillParameter == null ? 43 : this.skillParameter.hashCode());
+        return result;
     }
 }

@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConditionalInputLink.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConditionalInputLink extends FlowPortLink {
+public final class ConditionalInputLink extends FlowPortLink {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -157,6 +152,10 @@ public class ConditionalInputLink extends FlowPortLink {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ConditionalInputLink(
             String key,
@@ -175,14 +174,73 @@ public class ConditionalInputLink extends FlowPortLink {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fromLink")
-    OutputLink fromLink;
+    private final OutputLink fromLink;
+
+    public OutputLink getFromLink() {
+        return fromLink;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fieldMap")
-    FieldMap fieldMap;
+    private final FieldMap fieldMap;
+
+    public FieldMap getFieldMap() {
+        return fieldMap;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
-    Expression condition;
+    private final Expression condition;
+
+    public Expression getCondition() {
+        return condition;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConditionalInputLink(");
+        sb.append("super=").append(super.toString());
+        sb.append(", fromLink=").append(String.valueOf(this.fromLink));
+        sb.append(", fieldMap=").append(String.valueOf(this.fieldMap));
+        sb.append(", condition=").append(String.valueOf(this.condition));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConditionalInputLink)) {
+            return false;
+        }
+
+        ConditionalInputLink other = (ConditionalInputLink) o;
+        return java.util.Objects.equals(this.fromLink, other.fromLink)
+                && java.util.Objects.equals(this.fieldMap, other.fieldMap)
+                && java.util.Objects.equals(this.condition, other.condition)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.fromLink == null ? 43 : this.fromLink.hashCode());
+        result = (result * PRIME) + (this.fieldMap == null ? 43 : this.fieldMap.hashCode());
+        result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

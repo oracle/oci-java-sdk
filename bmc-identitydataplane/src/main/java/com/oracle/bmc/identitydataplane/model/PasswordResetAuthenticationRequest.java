@@ -15,16 +15,20 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PasswordResetAuthenticationRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PasswordResetAuthenticationRequest {
+public final class PasswordResetAuthenticationRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({"userId", "passwordResetToken"})
+    public PasswordResetAuthenticationRequest(String userId, String passwordResetToken) {
+        super();
+        this.userId = userId;
+        this.passwordResetToken = passwordResetToken;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
@@ -71,18 +75,76 @@ public class PasswordResetAuthenticationRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The id of the user
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * The password reset token
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordResetToken")
-    String passwordResetToken;
+    private final String passwordResetToken;
+
+    public String getPasswordResetToken() {
+        return passwordResetToken;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PasswordResetAuthenticationRequest(");
+        sb.append("userId=").append(String.valueOf(this.userId));
+        sb.append(", passwordResetToken=").append(String.valueOf(this.passwordResetToken));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PasswordResetAuthenticationRequest)) {
+            return false;
+        }
+
+        PasswordResetAuthenticationRequest other = (PasswordResetAuthenticationRequest) o;
+        return java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.passwordResetToken, other.passwordResetToken)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordResetToken == null
+                                ? 43
+                                : this.passwordResetToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

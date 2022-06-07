@@ -15,16 +15,58 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DomainGovernanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DomainGovernanceSummary {
+public final class DomainGovernanceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "ownerId",
+        "domainId",
+        "lifecycleState",
+        "isGovernanceEnabled",
+        "subscriptionEmail",
+        "onsTopicId",
+        "onsSubscriptionId",
+        "timeCreated",
+        "timeUpdated",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public DomainGovernanceSummary(
+            String id,
+            String ownerId,
+            String domainId,
+            DomainGovernance.LifecycleState lifecycleState,
+            Boolean isGovernanceEnabled,
+            String subscriptionEmail,
+            String onsTopicId,
+            String onsSubscriptionId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.id = id;
+        this.ownerId = ownerId;
+        this.domainId = domainId;
+        this.lifecycleState = lifecycleState;
+        this.isGovernanceEnabled = isGovernanceEnabled;
+        this.subscriptionEmail = subscriptionEmail;
+        this.onsTopicId = onsTopicId;
+        this.onsSubscriptionId = onsSubscriptionId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -196,65 +238,109 @@ public class DomainGovernanceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the domain governance entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the tenancy that owns this domain governance entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerId")
-    String ownerId;
+    private final String ownerId;
+
+    public String getOwnerId() {
+        return ownerId;
+    }
 
     /**
      * The OCID of the domain associated with this domain governance entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
-    String domainId;
+    private final String domainId;
+
+    public String getDomainId() {
+        return domainId;
+    }
 
     /**
      * The lifecycle state of the domain governance entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    DomainGovernance.LifecycleState lifecycleState;
+    private final DomainGovernance.LifecycleState lifecycleState;
+
+    public DomainGovernance.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Indicates whether governance is enabled for this domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGovernanceEnabled")
-    Boolean isGovernanceEnabled;
+    private final Boolean isGovernanceEnabled;
+
+    public Boolean getIsGovernanceEnabled() {
+        return isGovernanceEnabled;
+    }
 
     /**
      * The email to notify the user, and that the ONS subscription will be created with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
-    String subscriptionEmail;
+    private final String subscriptionEmail;
+
+    public String getSubscriptionEmail() {
+        return subscriptionEmail;
+    }
 
     /**
      * The ONS topic associated with this domain governance entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
-    String onsTopicId;
+    private final String onsTopicId;
+
+    public String getOnsTopicId() {
+        return onsTopicId;
+    }
 
     /**
      * The ONS subscription associated with this domain governance entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onsSubscriptionId")
-    String onsSubscriptionId;
+    private final String onsSubscriptionId;
+
+    public String getOnsSubscriptionId() {
+        return onsSubscriptionId;
+    }
 
     /**
      * Date-time when this domain governance was created. An RFC 3339-formatted date and time string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Date-time when this domain governance was last updated. An RFC 3339-formatted date and time string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -262,7 +348,11 @@ public class DomainGovernanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -270,7 +360,11 @@ public class DomainGovernanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
@@ -278,8 +372,97 @@ public class DomainGovernanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DomainGovernanceSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", ownerId=").append(String.valueOf(this.ownerId));
+        sb.append(", domainId=").append(String.valueOf(this.domainId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", isGovernanceEnabled=").append(String.valueOf(this.isGovernanceEnabled));
+        sb.append(", subscriptionEmail=").append(String.valueOf(this.subscriptionEmail));
+        sb.append(", onsTopicId=").append(String.valueOf(this.onsTopicId));
+        sb.append(", onsSubscriptionId=").append(String.valueOf(this.onsSubscriptionId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DomainGovernanceSummary)) {
+            return false;
+        }
+
+        DomainGovernanceSummary other = (DomainGovernanceSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.ownerId, other.ownerId)
+                && java.util.Objects.equals(this.domainId, other.domainId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isGovernanceEnabled, other.isGovernanceEnabled)
+                && java.util.Objects.equals(this.subscriptionEmail, other.subscriptionEmail)
+                && java.util.Objects.equals(this.onsTopicId, other.onsTopicId)
+                && java.util.Objects.equals(this.onsSubscriptionId, other.onsSubscriptionId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.ownerId == null ? 43 : this.ownerId.hashCode());
+        result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isGovernanceEnabled == null
+                                ? 43
+                                : this.isGovernanceEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionEmail == null ? 43 : this.subscriptionEmail.hashCode());
+        result = (result * PRIME) + (this.onsTopicId == null ? 43 : this.onsTopicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onsSubscriptionId == null ? 43 : this.onsSubscriptionId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

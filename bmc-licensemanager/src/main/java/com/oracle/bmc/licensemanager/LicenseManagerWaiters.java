@@ -6,6 +6,7 @@ package com.oracle.bmc.licensemanager;
 
 import com.oracle.bmc.licensemanager.requests.*;
 import com.oracle.bmc.licensemanager.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,15 @@ import com.oracle.bmc.licensemanager.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.RequiredArgsConstructor
 public class LicenseManagerWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final LicenseManager client;
+
+    public LicenseManagerWaiters(
+            java.util.concurrent.ExecutorService executorService, LicenseManager client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

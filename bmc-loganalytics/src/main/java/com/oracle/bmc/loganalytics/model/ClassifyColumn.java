@@ -16,20 +16,15 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClassifyColumn.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClassifyColumn extends AbstractColumn {
+public final class ClassifyColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -259,6 +254,10 @@ public class ClassifyColumn extends AbstractColumn {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ClassifyColumn(
             String displayName,
@@ -305,50 +304,168 @@ public class ClassifyColumn extends AbstractColumn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyFieldNames")
-    java.util.List<String> classifyFieldNames;
+    private final java.util.List<String> classifyFieldNames;
+
+    public java.util.List<String> getClassifyFieldNames() {
+        return classifyFieldNames;
+    }
 
     /**
      * Count of nulls found in each of the fields specified in the classify command in the query string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyFieldNullCount")
-    java.util.List<Long> classifyFieldNullCount;
+    private final java.util.List<Long> classifyFieldNullCount;
+
+    public java.util.List<Long> getClassifyFieldNullCount() {
+        return classifyFieldNullCount;
+    }
 
     /**
      * Count of anomalies for each timeseries datapoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyAnomalyIntervalCounts")
-    java.util.List<Long> classifyAnomalyIntervalCounts;
+    private final java.util.List<Long> classifyAnomalyIntervalCounts;
+
+    public java.util.List<Long> getClassifyAnomalyIntervalCounts() {
+        return classifyAnomalyIntervalCounts;
+    }
 
     /**
      * Column descriptors for the classify result.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyColumns")
-    java.util.List<AbstractColumn> classifyColumns;
+    private final java.util.List<AbstractColumn> classifyColumns;
+
+    public java.util.List<AbstractColumn> getClassifyColumns() {
+        return classifyColumns;
+    }
 
     /**
      * Results of the classify command.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyResult")
-    java.util.List<java.util.Map<String, Object>> classifyResult;
+    private final java.util.List<java.util.Map<String, Object>> classifyResult;
+
+    public java.util.List<java.util.Map<String, Object>> getClassifyResult() {
+        return classifyResult;
+    }
 
     /**
      * Column descriptors of fields with strong correlation with the classify fields.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyCorrelateColumns")
-    java.util.List<AbstractColumn> classifyCorrelateColumns;
+    private final java.util.List<AbstractColumn> classifyCorrelateColumns;
+
+    public java.util.List<AbstractColumn> getClassifyCorrelateColumns() {
+        return classifyCorrelateColumns;
+    }
 
     /**
      * Correlation results of the classify command.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyCorrelateResult")
-    java.util.List<java.util.Map<String, Object>> classifyCorrelateResult;
+    private final java.util.List<java.util.Map<String, Object>> classifyCorrelateResult;
+
+    public java.util.List<java.util.Map<String, Object>> getClassifyCorrelateResult() {
+        return classifyCorrelateResult;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClassifyColumn(");
+        sb.append("super=").append(super.toString());
+        sb.append(", classifyFieldNames=").append(String.valueOf(this.classifyFieldNames));
+        sb.append(", classifyFieldNullCount=").append(String.valueOf(this.classifyFieldNullCount));
+        sb.append(", classifyAnomalyIntervalCounts=")
+                .append(String.valueOf(this.classifyAnomalyIntervalCounts));
+        sb.append(", classifyColumns=").append(String.valueOf(this.classifyColumns));
+        sb.append(", classifyResult=").append(String.valueOf(this.classifyResult));
+        sb.append(", classifyCorrelateColumns=")
+                .append(String.valueOf(this.classifyCorrelateColumns));
+        sb.append(", classifyCorrelateResult=")
+                .append(String.valueOf(this.classifyCorrelateResult));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClassifyColumn)) {
+            return false;
+        }
+
+        ClassifyColumn other = (ClassifyColumn) o;
+        return java.util.Objects.equals(this.classifyFieldNames, other.classifyFieldNames)
+                && java.util.Objects.equals(
+                        this.classifyFieldNullCount, other.classifyFieldNullCount)
+                && java.util.Objects.equals(
+                        this.classifyAnomalyIntervalCounts, other.classifyAnomalyIntervalCounts)
+                && java.util.Objects.equals(this.classifyColumns, other.classifyColumns)
+                && java.util.Objects.equals(this.classifyResult, other.classifyResult)
+                && java.util.Objects.equals(
+                        this.classifyCorrelateColumns, other.classifyCorrelateColumns)
+                && java.util.Objects.equals(
+                        this.classifyCorrelateResult, other.classifyCorrelateResult)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.classifyFieldNames == null
+                                ? 43
+                                : this.classifyFieldNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.classifyFieldNullCount == null
+                                ? 43
+                                : this.classifyFieldNullCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.classifyAnomalyIntervalCounts == null
+                                ? 43
+                                : this.classifyAnomalyIntervalCounts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.classifyColumns == null ? 43 : this.classifyColumns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.classifyResult == null ? 43 : this.classifyResult.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.classifyCorrelateColumns == null
+                                ? 43
+                                : this.classifyCorrelateColumns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.classifyCorrelateResult == null
+                                ? 43
+                                : this.classifyCorrelateResult.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

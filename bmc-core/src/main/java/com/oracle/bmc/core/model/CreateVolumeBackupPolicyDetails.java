@@ -19,16 +19,37 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateVolumeBackupPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateVolumeBackupPolicyDetails {
+public final class CreateVolumeBackupPolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "destinationRegion",
+        "schedules",
+        "definedTags",
+        "freeformTags"
+    })
+    public CreateVolumeBackupPolicyDetails(
+            String compartmentId,
+            String displayName,
+            String destinationRegion,
+            java.util.List<VolumeBackupSchedule> schedules,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.destinationRegion = destinationRegion;
+        this.schedules = schedules;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -123,11 +144,19 @@ public class CreateVolumeBackupPolicyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -135,7 +164,11 @@ public class CreateVolumeBackupPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The paired destination region for copying scheduled backups to. Example: {@code us-ashburn-1}.
@@ -143,7 +176,11 @@ public class CreateVolumeBackupPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
-    String destinationRegion;
+    private final String destinationRegion;
+
+    public String getDestinationRegion() {
+        return destinationRegion;
+    }
 
     /**
      * The collection of schedules for the volume backup policy. See
@@ -152,7 +189,11 @@ public class CreateVolumeBackupPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
-    java.util.List<VolumeBackupSchedule> schedules;
+    private final java.util.List<VolumeBackupSchedule> schedules;
+
+    public java.util.List<VolumeBackupSchedule> getSchedules() {
+        return schedules;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -162,7 +203,11 @@ public class CreateVolumeBackupPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -172,8 +217,70 @@ public class CreateVolumeBackupPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateVolumeBackupPolicyDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", destinationRegion=").append(String.valueOf(this.destinationRegion));
+        sb.append(", schedules=").append(String.valueOf(this.schedules));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateVolumeBackupPolicyDetails)) {
+            return false;
+        }
+
+        CreateVolumeBackupPolicyDetails other = (CreateVolumeBackupPolicyDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.destinationRegion, other.destinationRegion)
+                && java.util.Objects.equals(this.schedules, other.schedules)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationRegion == null ? 43 : this.destinationRegion.hashCode());
+        result = (result * PRIME) + (this.schedules == null ? 43 : this.schedules.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

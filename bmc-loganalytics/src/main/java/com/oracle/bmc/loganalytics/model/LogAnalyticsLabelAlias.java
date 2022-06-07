@@ -15,16 +15,37 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsLabelAlias.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsLabelAlias {
+public final class LogAnalyticsLabelAlias {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "alias",
+        "aliasDisplayName",
+        "isSystem",
+        "displayName",
+        "name",
+        "priority"
+    })
+    public LogAnalyticsLabelAlias(
+            String alias,
+            String aliasDisplayName,
+            Boolean isSystem,
+            String displayName,
+            String name,
+            Priority priority) {
+        super();
+        this.alias = alias;
+        this.aliasDisplayName = aliasDisplayName;
+        this.isSystem = isSystem;
+        this.displayName = displayName;
+        this.name = name;
+        this.priority = priority;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
@@ -113,17 +134,29 @@ public class LogAnalyticsLabelAlias {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The alias.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
-    String alias;
+    private final String alias;
+
+    public String getAlias() {
+        return alias;
+    }
 
     /**
      * The alias display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliasDisplayName")
-    String aliasDisplayName;
+    private final String aliasDisplayName;
+
+    public String getAliasDisplayName() {
+        return aliasDisplayName;
+    }
 
     /**
      * The system flag.  A value of false denotes a custom, or user
@@ -131,23 +164,35 @@ public class LogAnalyticsLabelAlias {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The label display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The label priority. Default value is NONE.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Priority {
         None("NONE"),
         Low("LOW"),
@@ -159,6 +204,9 @@ public class LogAnalyticsLabelAlias {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Priority.class);
 
         private final String value;
         private static java.util.Map<String, Priority> map;
@@ -196,8 +244,68 @@ public class LogAnalyticsLabelAlias {
      * The label priority. Default value is NONE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
-    Priority priority;
+    private final Priority priority;
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsLabelAlias(");
+        sb.append("alias=").append(String.valueOf(this.alias));
+        sb.append(", aliasDisplayName=").append(String.valueOf(this.aliasDisplayName));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", priority=").append(String.valueOf(this.priority));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsLabelAlias)) {
+            return false;
+        }
+
+        LogAnalyticsLabelAlias other = (LogAnalyticsLabelAlias) o;
+        return java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.aliasDisplayName, other.aliasDisplayName)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.priority, other.priority)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aliasDisplayName == null ? 43 : this.aliasDisplayName.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.priority == null ? 43 : this.priority.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

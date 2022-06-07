@@ -7,10 +7,6 @@ package com.oracle.bmc.datacatalog.responses;
 import com.oracle.bmc.datacatalog.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned SuggestResults instance.
      */
     private com.oracle.bmc.datacatalog.model.SuggestResults suggestResults;
+
+    public com.oracle.bmc.datacatalog.model.SuggestResults getSuggestResults() {
+        return suggestResults;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "suggestResults"})
     private SuggestMatchesResponse(
@@ -42,6 +46,21 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.SuggestResults suggestResults;
+
+        public Builder suggestResults(
+                com.oracle.bmc.datacatalog.model.SuggestResults suggestResults) {
+            this.suggestResults = suggestResults;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +76,46 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
         public SuggestMatchesResponse build() {
             return new SuggestMatchesResponse(__httpStatusCode__, opcRequestId, suggestResults);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",suggestResults=").append(String.valueOf(suggestResults));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SuggestMatchesResponse)) {
+            return false;
+        }
+
+        SuggestMatchesResponse other = (SuggestMatchesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.suggestResults, other.suggestResults);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.suggestResults == null ? 43 : this.suggestResults.hashCode());
+        return result;
     }
 }

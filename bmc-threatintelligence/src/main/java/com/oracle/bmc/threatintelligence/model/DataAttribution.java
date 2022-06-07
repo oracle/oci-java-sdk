@@ -15,14 +15,32 @@ package com.oracle.bmc.threatintelligence.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataAttribution.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataAttribution {
+public final class DataAttribution {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "confidence",
+        "source",
+        "visibility",
+        "timeFirstSeen",
+        "timeLastSeen"
+    })
+    public DataAttribution(
+            Integer confidence,
+            IndicatorSourceSummary source,
+            DataVisibility visibility,
+            java.util.Date timeFirstSeen,
+            java.util.Date timeLastSeen) {
+        super();
+        this.confidence = confidence;
+        this.source = source;
+        this.visibility = visibility;
+        this.timeFirstSeen = timeFirstSeen;
+        this.timeLastSeen = timeLastSeen;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Integer confidence;
@@ -101,30 +119,107 @@ public class DataAttribution {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of data attributed to an indicator.  For example, if the source of the data being attributed is the Tor Project, our confidence that the associated indicator is a tor exit node would be 100.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
-    Integer confidence;
+    private final Integer confidence;
+
+    public Integer getConfidence() {
+        return confidence;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    IndicatorSourceSummary source;
+    private final IndicatorSourceSummary source;
+
+    public IndicatorSourceSummary getSource() {
+        return source;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("visibility")
-    DataVisibility visibility;
+    private final DataVisibility visibility;
+
+    public DataVisibility getVisibility() {
+        return visibility;
+    }
 
     /**
      * The time the data was first seen for this entity. Defaults to time last seen if no time first seen is provided from the data source. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
-    java.util.Date timeFirstSeen;
+    private final java.util.Date timeFirstSeen;
+
+    public java.util.Date getTimeFirstSeen() {
+        return timeFirstSeen;
+    }
 
     /**
      * The last time this data was seen for this entity. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
-    java.util.Date timeLastSeen;
+    private final java.util.Date timeLastSeen;
+
+    public java.util.Date getTimeLastSeen() {
+        return timeLastSeen;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataAttribution(");
+        sb.append("confidence=").append(String.valueOf(this.confidence));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", visibility=").append(String.valueOf(this.visibility));
+        sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
+        sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataAttribution)) {
+            return false;
+        }
+
+        DataAttribution other = (DataAttribution) o;
+        return java.util.Objects.equals(this.confidence, other.confidence)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.visibility, other.visibility)
+                && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
+                && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.confidence == null ? 43 : this.confidence.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.visibility == null ? 43 : this.visibility.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstSeen == null ? 43 : this.timeFirstSeen.hashCode());
+        result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

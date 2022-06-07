@@ -21,12 +21,6 @@ package com.oracle.bmc.sch.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -45,12 +39,44 @@ package com.oracle.bmc.sch.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class TaskDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected TaskDetails() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TaskDetails(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TaskDetails)) {
+            return false;
+        }
+
+        TaskDetails other = (TaskDetails) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * The type descriminator.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Kind {
         Function("function"),
         LogRule("logRule"),
@@ -60,6 +86,8 @@ public class TaskDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Kind.class);
 
         private final String value;
         private static java.util.Map<String, Kind> map;

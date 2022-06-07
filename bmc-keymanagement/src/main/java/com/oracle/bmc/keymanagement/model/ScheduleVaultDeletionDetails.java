@@ -15,16 +15,19 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScheduleVaultDeletionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScheduleVaultDeletionDetails {
+public final class ScheduleVaultDeletionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeOfDeletion"})
+    public ScheduleVaultDeletionDetails(java.util.Date timeOfDeletion) {
+        super();
+        this.timeOfDeletion = timeOfDeletion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
@@ -61,6 +64,10 @@ public class ScheduleVaultDeletionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An optional property indicating when to delete the vault, expressed in
      * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The specified
@@ -70,8 +77,53 @@ public class ScheduleVaultDeletionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScheduleVaultDeletionDetails(");
+        sb.append("timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScheduleVaultDeletionDetails)) {
+            return false;
+        }
+
+        ScheduleVaultDeletionDetails other = (ScheduleVaultDeletionDetails) o;
+        return java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

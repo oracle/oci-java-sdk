@@ -6,6 +6,7 @@ package com.oracle.bmc.dashboardservice;
 
 import com.oracle.bmc.dashboardservice.requests.*;
 import com.oracle.bmc.dashboardservice.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,15 @@ import com.oracle.bmc.dashboardservice.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
-@lombok.RequiredArgsConstructor
 public class DashboardGroupWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final DashboardGroup client;
+
+    public DashboardGroupWaiters(
+            java.util.concurrent.ExecutorService executorService, DashboardGroup client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

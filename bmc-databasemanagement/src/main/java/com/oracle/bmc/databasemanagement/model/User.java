@@ -15,14 +15,89 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = User.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class User {
+public final class User {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "status",
+        "timeLocked",
+        "timeExpiring",
+        "defaultTablespace",
+        "tempTablespace",
+        "localTempTablespace",
+        "timeCreated",
+        "profile",
+        "consumerGroup",
+        "externalName",
+        "passwordVersions",
+        "editionsEnabled",
+        "authentication",
+        "proxyConnect",
+        "common",
+        "timeLastLogin",
+        "oracleMaintained",
+        "inherited",
+        "defaultCollation",
+        "implicit",
+        "allShared",
+        "externalShared",
+        "timePasswordChanged"
+    })
+    public User(
+            String name,
+            Status status,
+            java.util.Date timeLocked,
+            java.util.Date timeExpiring,
+            String defaultTablespace,
+            String tempTablespace,
+            String localTempTablespace,
+            java.util.Date timeCreated,
+            String profile,
+            String consumerGroup,
+            String externalName,
+            String passwordVersions,
+            EditionsEnabled editionsEnabled,
+            Authentication authentication,
+            ProxyConnect proxyConnect,
+            Common common,
+            java.util.Date timeLastLogin,
+            OracleMaintained oracleMaintained,
+            Inherited inherited,
+            String defaultCollation,
+            Implicit implicit,
+            AllShared allShared,
+            ExternalShared externalShared,
+            java.util.Date timePasswordChanged) {
+        super();
+        this.name = name;
+        this.status = status;
+        this.timeLocked = timeLocked;
+        this.timeExpiring = timeExpiring;
+        this.defaultTablespace = defaultTablespace;
+        this.tempTablespace = tempTablespace;
+        this.localTempTablespace = localTempTablespace;
+        this.timeCreated = timeCreated;
+        this.profile = profile;
+        this.consumerGroup = consumerGroup;
+        this.externalName = externalName;
+        this.passwordVersions = passwordVersions;
+        this.editionsEnabled = editionsEnabled;
+        this.authentication = authentication;
+        this.proxyConnect = proxyConnect;
+        this.common = common;
+        this.timeLastLogin = timeLastLogin;
+        this.oracleMaintained = oracleMaintained;
+        this.inherited = inherited;
+        this.defaultCollation = defaultCollation;
+        this.implicit = implicit;
+        this.allShared = allShared;
+        this.externalShared = externalShared;
+        this.timePasswordChanged = timePasswordChanged;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -314,15 +389,23 @@ public class User {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the User.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The status of the user account.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Open("OPEN"),
         Expired("EXPIRED"),
@@ -345,6 +428,8 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -382,71 +467,115 @@ public class User {
      * The status of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The date the account was locked, if the status of the account is LOCKED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
-    java.util.Date timeLocked;
+    private final java.util.Date timeLocked;
+
+    public java.util.Date getTimeLocked() {
+        return timeLocked;
+    }
 
     /**
      * The date and time of the expiration of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
-    java.util.Date timeExpiring;
+    private final java.util.Date timeExpiring;
+
+    public java.util.Date getTimeExpiring() {
+        return timeExpiring;
+    }
 
     /**
      * The default tablespace for data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultTablespace")
-    String defaultTablespace;
+    private final String defaultTablespace;
+
+    public String getDefaultTablespace() {
+        return defaultTablespace;
+    }
 
     /**
      * The name of the default tablespace for temporary tables or the name of a tablespace group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempTablespace")
-    String tempTablespace;
+    private final String tempTablespace;
+
+    public String getTempTablespace() {
+        return tempTablespace;
+    }
 
     /**
      * The default local temporary tablespace for the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localTempTablespace")
-    String localTempTablespace;
+    private final String localTempTablespace;
+
+    public String getLocalTempTablespace() {
+        return localTempTablespace;
+    }
 
     /**
      * The date and time the user was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The profile name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
-    String profile;
+    private final String profile;
+
+    public String getProfile() {
+        return profile;
+    }
 
     /**
      * The initial resource consumer group for the User.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumerGroup")
-    String consumerGroup;
+    private final String consumerGroup;
+
+    public String getConsumerGroup() {
+        return consumerGroup;
+    }
 
     /**
      * The external name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalName")
-    String externalName;
+    private final String externalName;
+
+    public String getExternalName() {
+        return externalName;
+    }
 
     /**
      * The list of existing versions of the password hashes (also known as "verifiers") for the account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVersions")
-    String passwordVersions;
+    private final String passwordVersions;
+
+    public String getPasswordVersions() {
+        return passwordVersions;
+    }
+
     /**
      * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EditionsEnabled {
         Yes("YES"),
         No("NO"),
@@ -456,6 +585,9 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EditionsEnabled.class);
 
         private final String value;
         private static java.util.Map<String, EditionsEnabled> map;
@@ -493,11 +625,15 @@ public class User {
      * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editionsEnabled")
-    EditionsEnabled editionsEnabled;
+    private final EditionsEnabled editionsEnabled;
+
+    public EditionsEnabled getEditionsEnabled() {
+        return editionsEnabled;
+    }
+
     /**
      * The authentication mechanism for the user.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Authentication {
         None("NONE"),
         External("EXTERNAL"),
@@ -509,6 +645,9 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Authentication.class);
 
         private final String value;
         private static java.util.Map<String, Authentication> map;
@@ -546,13 +685,17 @@ public class User {
      * The authentication mechanism for the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authentication")
-    Authentication authentication;
+    private final Authentication authentication;
+
+    public Authentication getAuthentication() {
+        return authentication;
+    }
+
     /**
      * Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges
      * for this account (that is, by users who have been granted the "connect through" privilege for this account).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ProxyConnect {
         Yes("YES"),
         No("NO"),
@@ -562,6 +705,9 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ProxyConnect.class);
 
         private final String value;
         private static java.util.Map<String, ProxyConnect> map;
@@ -601,11 +747,15 @@ public class User {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("proxyConnect")
-    ProxyConnect proxyConnect;
+    private final ProxyConnect proxyConnect;
+
+    public ProxyConnect getProxyConnect() {
+        return proxyConnect;
+    }
+
     /**
      * Indicates whether a given user is common(Y) or local(N).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Common {
         Yes("YES"),
         No("NO"),
@@ -615,6 +765,8 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Common.class);
 
         private final String value;
         private static java.util.Map<String, Common> map;
@@ -652,7 +804,11 @@ public class User {
      * Indicates whether a given user is common(Y) or local(N).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("common")
-    Common common;
+    private final Common common;
+
+    public Common getCommon() {
+        return common;
+    }
 
     /**
      * The date and time of the last user login.
@@ -660,11 +816,15 @@ public class User {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
-    java.util.Date timeLastLogin;
+    private final java.util.Date timeLastLogin;
+
+    public java.util.Date getTimeLastLogin() {
+        return timeLastLogin;
+    }
+
     /**
      * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OracleMaintained {
         Yes("YES"),
         No("NO"),
@@ -674,6 +834,9 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OracleMaintained.class);
 
         private final String value;
         private static java.util.Map<String, OracleMaintained> map;
@@ -711,11 +874,15 @@ public class User {
      * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleMaintained")
-    OracleMaintained oracleMaintained;
+    private final OracleMaintained oracleMaintained;
+
+    public OracleMaintained getOracleMaintained() {
+        return oracleMaintained;
+    }
+
     /**
      * Indicates whether the user definition is inherited from another container (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Inherited {
         Yes("YES"),
         No("NO"),
@@ -725,6 +892,9 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Inherited.class);
 
         private final String value;
         private static java.util.Map<String, Inherited> map;
@@ -762,17 +932,25 @@ public class User {
      * Indicates whether the user definition is inherited from another container (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
-    Inherited inherited;
+    private final Inherited inherited;
+
+    public Inherited getInherited() {
+        return inherited;
+    }
 
     /**
      * The default collation for the user schema.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultCollation")
-    String defaultCollation;
+    private final String defaultCollation;
+
+    public String getDefaultCollation() {
+        return defaultCollation;
+    }
+
     /**
      * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Implicit {
         Yes("YES"),
         No("NO"),
@@ -782,6 +960,9 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Implicit.class);
 
         private final String value;
         private static java.util.Map<String, Implicit> map;
@@ -819,11 +1000,15 @@ public class User {
      * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("implicit")
-    Implicit implicit;
+    private final Implicit implicit;
+
+    public Implicit getImplicit() {
+        return implicit;
+    }
+
     /**
      * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AllShared {
         Yes("YES"),
         No("NO"),
@@ -833,6 +1018,9 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AllShared.class);
 
         private final String value;
         private static java.util.Map<String, AllShared> map;
@@ -870,11 +1058,15 @@ public class User {
      * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allShared")
-    AllShared allShared;
+    private final AllShared allShared;
+
+    public AllShared getAllShared() {
+        return allShared;
+    }
+
     /**
      * In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ExternalShared {
         Yes("YES"),
         No("NO"),
@@ -884,6 +1076,9 @@ public class User {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ExternalShared.class);
 
         private final String value;
         private static java.util.Map<String, ExternalShared> map;
@@ -921,7 +1116,11 @@ public class User {
      * In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalShared")
-    ExternalShared externalShared;
+    private final ExternalShared externalShared;
+
+    public ExternalShared getExternalShared() {
+        return externalShared;
+    }
 
     /**
      * The date and time when the user password was last set.
@@ -929,8 +1128,148 @@ public class User {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
-    java.util.Date timePasswordChanged;
+    private final java.util.Date timePasswordChanged;
+
+    public java.util.Date getTimePasswordChanged() {
+        return timePasswordChanged;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("User(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeLocked=").append(String.valueOf(this.timeLocked));
+        sb.append(", timeExpiring=").append(String.valueOf(this.timeExpiring));
+        sb.append(", defaultTablespace=").append(String.valueOf(this.defaultTablespace));
+        sb.append(", tempTablespace=").append(String.valueOf(this.tempTablespace));
+        sb.append(", localTempTablespace=").append(String.valueOf(this.localTempTablespace));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", profile=").append(String.valueOf(this.profile));
+        sb.append(", consumerGroup=").append(String.valueOf(this.consumerGroup));
+        sb.append(", externalName=").append(String.valueOf(this.externalName));
+        sb.append(", passwordVersions=").append(String.valueOf(this.passwordVersions));
+        sb.append(", editionsEnabled=").append(String.valueOf(this.editionsEnabled));
+        sb.append(", authentication=").append(String.valueOf(this.authentication));
+        sb.append(", proxyConnect=").append(String.valueOf(this.proxyConnect));
+        sb.append(", common=").append(String.valueOf(this.common));
+        sb.append(", timeLastLogin=").append(String.valueOf(this.timeLastLogin));
+        sb.append(", oracleMaintained=").append(String.valueOf(this.oracleMaintained));
+        sb.append(", inherited=").append(String.valueOf(this.inherited));
+        sb.append(", defaultCollation=").append(String.valueOf(this.defaultCollation));
+        sb.append(", implicit=").append(String.valueOf(this.implicit));
+        sb.append(", allShared=").append(String.valueOf(this.allShared));
+        sb.append(", externalShared=").append(String.valueOf(this.externalShared));
+        sb.append(", timePasswordChanged=").append(String.valueOf(this.timePasswordChanged));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof User)) {
+            return false;
+        }
+
+        User other = (User) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeLocked, other.timeLocked)
+                && java.util.Objects.equals(this.timeExpiring, other.timeExpiring)
+                && java.util.Objects.equals(this.defaultTablespace, other.defaultTablespace)
+                && java.util.Objects.equals(this.tempTablespace, other.tempTablespace)
+                && java.util.Objects.equals(this.localTempTablespace, other.localTempTablespace)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.profile, other.profile)
+                && java.util.Objects.equals(this.consumerGroup, other.consumerGroup)
+                && java.util.Objects.equals(this.externalName, other.externalName)
+                && java.util.Objects.equals(this.passwordVersions, other.passwordVersions)
+                && java.util.Objects.equals(this.editionsEnabled, other.editionsEnabled)
+                && java.util.Objects.equals(this.authentication, other.authentication)
+                && java.util.Objects.equals(this.proxyConnect, other.proxyConnect)
+                && java.util.Objects.equals(this.common, other.common)
+                && java.util.Objects.equals(this.timeLastLogin, other.timeLastLogin)
+                && java.util.Objects.equals(this.oracleMaintained, other.oracleMaintained)
+                && java.util.Objects.equals(this.inherited, other.inherited)
+                && java.util.Objects.equals(this.defaultCollation, other.defaultCollation)
+                && java.util.Objects.equals(this.implicit, other.implicit)
+                && java.util.Objects.equals(this.allShared, other.allShared)
+                && java.util.Objects.equals(this.externalShared, other.externalShared)
+                && java.util.Objects.equals(this.timePasswordChanged, other.timePasswordChanged)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeLocked == null ? 43 : this.timeLocked.hashCode());
+        result = (result * PRIME) + (this.timeExpiring == null ? 43 : this.timeExpiring.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultTablespace == null ? 43 : this.defaultTablespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tempTablespace == null ? 43 : this.tempTablespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localTempTablespace == null
+                                ? 43
+                                : this.localTempTablespace.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.profile == null ? 43 : this.profile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroup == null ? 43 : this.consumerGroup.hashCode());
+        result = (result * PRIME) + (this.externalName == null ? 43 : this.externalName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordVersions == null ? 43 : this.passwordVersions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.editionsEnabled == null ? 43 : this.editionsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authentication == null ? 43 : this.authentication.hashCode());
+        result = (result * PRIME) + (this.proxyConnect == null ? 43 : this.proxyConnect.hashCode());
+        result = (result * PRIME) + (this.common == null ? 43 : this.common.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastLogin == null ? 43 : this.timeLastLogin.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleMaintained == null ? 43 : this.oracleMaintained.hashCode());
+        result = (result * PRIME) + (this.inherited == null ? 43 : this.inherited.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultCollation == null ? 43 : this.defaultCollation.hashCode());
+        result = (result * PRIME) + (this.implicit == null ? 43 : this.implicit.hashCode());
+        result = (result * PRIME) + (this.allShared == null ? 43 : this.allShared.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalShared == null ? 43 : this.externalShared.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePasswordChanged == null
+                                ? 43
+                                : this.timePasswordChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

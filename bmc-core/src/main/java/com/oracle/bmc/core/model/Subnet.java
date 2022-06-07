@@ -24,14 +24,83 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subnet.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Subnet {
+public final class Subnet {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "cidrBlock",
+        "compartmentId",
+        "definedTags",
+        "dhcpOptionsId",
+        "displayName",
+        "dnsLabel",
+        "freeformTags",
+        "id",
+        "ipv6CidrBlock",
+        "ipv6CidrBlocks",
+        "ipv6VirtualRouterIp",
+        "lifecycleState",
+        "prohibitInternetIngress",
+        "prohibitPublicIpOnVnic",
+        "routeTableId",
+        "securityListIds",
+        "subnetDomainName",
+        "timeCreated",
+        "vcnId",
+        "virtualRouterIp",
+        "virtualRouterMac"
+    })
+    public Subnet(
+            String availabilityDomain,
+            String cidrBlock,
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String dhcpOptionsId,
+            String displayName,
+            String dnsLabel,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            String ipv6CidrBlock,
+            java.util.List<String> ipv6CidrBlocks,
+            String ipv6VirtualRouterIp,
+            LifecycleState lifecycleState,
+            Boolean prohibitInternetIngress,
+            Boolean prohibitPublicIpOnVnic,
+            String routeTableId,
+            java.util.List<String> securityListIds,
+            String subnetDomainName,
+            java.util.Date timeCreated,
+            String vcnId,
+            String virtualRouterIp,
+            String virtualRouterMac) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.cidrBlock = cidrBlock;
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.dhcpOptionsId = dhcpOptionsId;
+        this.displayName = displayName;
+        this.dnsLabel = dnsLabel;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.ipv6CidrBlock = ipv6CidrBlock;
+        this.ipv6CidrBlocks = ipv6CidrBlocks;
+        this.ipv6VirtualRouterIp = ipv6VirtualRouterIp;
+        this.lifecycleState = lifecycleState;
+        this.prohibitInternetIngress = prohibitInternetIngress;
+        this.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
+        this.routeTableId = routeTableId;
+        this.securityListIds = securityListIds;
+        this.subnetDomainName = subnetDomainName;
+        this.timeCreated = timeCreated;
+        this.vcnId = vcnId;
+        this.virtualRouterIp = virtualRouterIp;
+        this.virtualRouterMac = virtualRouterMac;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -302,6 +371,10 @@ public class Subnet {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The subnet's availability domain. This attribute will be null if this is a regional subnet
      * instead of an AD-specific subnet. Oracle recommends creating regional subnets.
@@ -310,7 +383,11 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The subnet's CIDR block.
@@ -319,13 +396,21 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
-    String cidrBlock;
+    private final String cidrBlock;
+
+    public String getCidrBlock() {
+        return cidrBlock;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -335,14 +420,22 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
-    String dhcpOptionsId;
+    private final String dhcpOptionsId;
+
+    public String getDhcpOptionsId() {
+        return dhcpOptionsId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -350,7 +443,11 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
@@ -369,7 +466,11 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
-    String dnsLabel;
+    private final String dnsLabel;
+
+    public String getDnsLabel() {
+        return dnsLabel;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -379,13 +480,21 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
@@ -395,14 +504,22 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
-    String ipv6CidrBlock;
+    private final String ipv6CidrBlock;
+
+    public String getIpv6CidrBlock() {
+        return ipv6CidrBlock;
+    }
 
     /**
      * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
-    java.util.List<String> ipv6CidrBlocks;
+    private final java.util.List<String> ipv6CidrBlocks;
+
+    public java.util.List<String> getIpv6CidrBlocks() {
+        return ipv6CidrBlocks;
+    }
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
@@ -411,11 +528,15 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6VirtualRouterIp")
-    String ipv6VirtualRouterIp;
+    private final String ipv6VirtualRouterIp;
+
+    public String getIpv6VirtualRouterIp() {
+        return ipv6VirtualRouterIp;
+    }
+
     /**
      * The subnet's current state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -428,6 +549,9 @@ public class Subnet {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -465,7 +589,11 @@ public class Subnet {
      * The subnet's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
@@ -484,7 +612,11 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
-    Boolean prohibitInternetIngress;
+    private final Boolean prohibitInternetIngress;
+
+    public Boolean getProhibitInternetIngress() {
+        return prohibitInternetIngress;
+    }
 
     /**
      * Whether VNICs within this subnet can have public IP addresses.
@@ -501,13 +633,21 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
-    Boolean prohibitPublicIpOnVnic;
+    private final Boolean prohibitPublicIpOnVnic;
+
+    public Boolean getProhibitPublicIpOnVnic() {
+        return prohibitPublicIpOnVnic;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    String routeTableId;
+    private final String routeTableId;
+
+    public String getRouteTableId() {
+        return routeTableId;
+    }
 
     /**
      * The OCIDs of the security list or lists that the subnet uses. Remember
@@ -516,7 +656,11 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
-    java.util.List<String> securityListIds;
+    private final java.util.List<String> securityListIds;
+
+    public java.util.List<String> getSecurityListIds() {
+        return securityListIds;
+    }
 
     /**
      * The subnet's domain name, which consists of the subnet's DNS label,
@@ -529,7 +673,11 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetDomainName")
-    String subnetDomainName;
+    private final String subnetDomainName;
+
+    public String getSubnetDomainName() {
+        return subnetDomainName;
+    }
 
     /**
      * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -538,13 +686,21 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    String vcnId;
+    private final String vcnId;
+
+    public String getVcnId() {
+        return vcnId;
+    }
 
     /**
      * The IP address of the virtual router.
@@ -553,7 +709,11 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterIp")
-    String virtualRouterIp;
+    private final String virtualRouterIp;
+
+    public String getVirtualRouterIp() {
+        return virtualRouterIp;
+    }
 
     /**
      * The MAC address of the virtual router.
@@ -562,8 +722,151 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterMac")
-    String virtualRouterMac;
+    private final String virtualRouterMac;
+
+    public String getVirtualRouterMac() {
+        return virtualRouterMac;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Subnet(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", dhcpOptionsId=").append(String.valueOf(this.dhcpOptionsId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
+        sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
+        sb.append(", ipv6VirtualRouterIp=").append(String.valueOf(this.ipv6VirtualRouterIp));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", prohibitInternetIngress=")
+                .append(String.valueOf(this.prohibitInternetIngress));
+        sb.append(", prohibitPublicIpOnVnic=").append(String.valueOf(this.prohibitPublicIpOnVnic));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", securityListIds=").append(String.valueOf(this.securityListIds));
+        sb.append(", subnetDomainName=").append(String.valueOf(this.subnetDomainName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", virtualRouterIp=").append(String.valueOf(this.virtualRouterIp));
+        sb.append(", virtualRouterMac=").append(String.valueOf(this.virtualRouterMac));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Subnet)) {
+            return false;
+        }
+
+        Subnet other = (Subnet) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.dhcpOptionsId, other.dhcpOptionsId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
+                && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
+                && java.util.Objects.equals(this.ipv6VirtualRouterIp, other.ipv6VirtualRouterIp)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.prohibitInternetIngress, other.prohibitInternetIngress)
+                && java.util.Objects.equals(
+                        this.prohibitPublicIpOnVnic, other.prohibitPublicIpOnVnic)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.securityListIds, other.securityListIds)
+                && java.util.Objects.equals(this.subnetDomainName, other.subnetDomainName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.virtualRouterIp, other.virtualRouterIp)
+                && java.util.Objects.equals(this.virtualRouterMac, other.virtualRouterMac)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.cidrBlock == null ? 43 : this.cidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dhcpOptionsId == null ? 43 : this.dhcpOptionsId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.dnsLabel == null ? 43 : this.dnsLabel.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6CidrBlocks == null ? 43 : this.ipv6CidrBlocks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6VirtualRouterIp == null
+                                ? 43
+                                : this.ipv6VirtualRouterIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.prohibitInternetIngress == null
+                                ? 43
+                                : this.prohibitInternetIngress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.prohibitPublicIpOnVnic == null
+                                ? 43
+                                : this.prohibitPublicIpOnVnic.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityListIds == null ? 43 : this.securityListIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subnetDomainName == null ? 43 : this.subnetDomainName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualRouterIp == null ? 43 : this.virtualRouterIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualRouterMac == null ? 43 : this.virtualRouterMac.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,28 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManageModuleStreamsOnManagedInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManageModuleStreamsOnManagedInstanceDetails {
+public final class ManageModuleStreamsOnManagedInstanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isDryRun", "enable", "disable", "install", "remove"})
+    public ManageModuleStreamsOnManagedInstanceDetails(
+            Boolean isDryRun,
+            java.util.List<ModuleStreamDetails> enable,
+            java.util.List<ModuleStreamDetails> disable,
+            java.util.List<ModuleStreamProfileDetails> install,
+            java.util.List<ModuleStreamProfileDetails> remove) {
+        super();
+        this.isDryRun = isDryRun;
+        this.enable = enable;
+        this.disable = disable;
+        this.install = install;
+        this.remove = remove;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isDryRun")
         private Boolean isDryRun;
@@ -103,6 +115,10 @@ public class ManageModuleStreamsOnManagedInstanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates if this operation is a dry run or if the operation
      * should be commited.  If set to true, the result of the operation
@@ -112,32 +128,104 @@ public class ManageModuleStreamsOnManagedInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDryRun")
-    Boolean isDryRun;
+    private final Boolean isDryRun;
+
+    public Boolean getIsDryRun() {
+        return isDryRun;
+    }
 
     /**
      * The set of module streams to enable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enable")
-    java.util.List<ModuleStreamDetails> enable;
+    private final java.util.List<ModuleStreamDetails> enable;
+
+    public java.util.List<ModuleStreamDetails> getEnable() {
+        return enable;
+    }
 
     /**
      * The set of module streams to disable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("disable")
-    java.util.List<ModuleStreamDetails> disable;
+    private final java.util.List<ModuleStreamDetails> disable;
+
+    public java.util.List<ModuleStreamDetails> getDisable() {
+        return disable;
+    }
 
     /**
      * The set of module stream profiles to install.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("install")
-    java.util.List<ModuleStreamProfileDetails> install;
+    private final java.util.List<ModuleStreamProfileDetails> install;
+
+    public java.util.List<ModuleStreamProfileDetails> getInstall() {
+        return install;
+    }
 
     /**
      * The set of module stream profiles to remove.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remove")
-    java.util.List<ModuleStreamProfileDetails> remove;
+    private final java.util.List<ModuleStreamProfileDetails> remove;
+
+    public java.util.List<ModuleStreamProfileDetails> getRemove() {
+        return remove;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManageModuleStreamsOnManagedInstanceDetails(");
+        sb.append("isDryRun=").append(String.valueOf(this.isDryRun));
+        sb.append(", enable=").append(String.valueOf(this.enable));
+        sb.append(", disable=").append(String.valueOf(this.disable));
+        sb.append(", install=").append(String.valueOf(this.install));
+        sb.append(", remove=").append(String.valueOf(this.remove));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManageModuleStreamsOnManagedInstanceDetails)) {
+            return false;
+        }
+
+        ManageModuleStreamsOnManagedInstanceDetails other =
+                (ManageModuleStreamsOnManagedInstanceDetails) o;
+        return java.util.Objects.equals(this.isDryRun, other.isDryRun)
+                && java.util.Objects.equals(this.enable, other.enable)
+                && java.util.Objects.equals(this.disable, other.disable)
+                && java.util.Objects.equals(this.install, other.install)
+                && java.util.Objects.equals(this.remove, other.remove)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isDryRun == null ? 43 : this.isDryRun.hashCode());
+        result = (result * PRIME) + (this.enable == null ? 43 : this.enable.hashCode());
+        result = (result * PRIME) + (this.disable == null ? 43 : this.disable.hashCode());
+        result = (result * PRIME) + (this.install == null ? 43 : this.install.hashCode());
+        result = (result * PRIME) + (this.remove == null ? 43 : this.remove.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

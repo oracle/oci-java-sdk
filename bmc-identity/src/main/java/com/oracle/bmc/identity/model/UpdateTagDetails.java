@@ -15,14 +15,35 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateTagDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateTagDetails {
+public final class UpdateTagDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "isRetired",
+        "freeformTags",
+        "definedTags",
+        "isCostTracking",
+        "validator"
+    })
+    public UpdateTagDetails(
+            String description,
+            Boolean isRetired,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isCostTracking,
+            BaseTagDefinitionValidator validator) {
+        super();
+        this.description = description;
+        this.isRetired = isRetired;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.isCostTracking = isCostTracking;
+        this.validator = validator;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -117,11 +138,19 @@ public class UpdateTagDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The description you assign to the tag during creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Whether the tag is retired.
@@ -129,7 +158,11 @@ public class UpdateTagDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
-    Boolean isRetired;
+    private final Boolean isRetired;
+
+    public Boolean getIsRetired() {
+        return isRetired;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -139,7 +172,11 @@ public class UpdateTagDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -149,18 +186,86 @@ public class UpdateTagDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Indicates whether the tag is enabled for cost tracking.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
-    Boolean isCostTracking;
+    private final Boolean isCostTracking;
+
+    public Boolean getIsCostTracking() {
+        return isCostTracking;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("validator")
-    BaseTagDefinitionValidator validator;
+    private final BaseTagDefinitionValidator validator;
+
+    public BaseTagDefinitionValidator getValidator() {
+        return validator;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateTagDetails(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", isRetired=").append(String.valueOf(this.isRetired));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isCostTracking=").append(String.valueOf(this.isCostTracking));
+        sb.append(", validator=").append(String.valueOf(this.validator));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTagDetails)) {
+            return false;
+        }
+
+        UpdateTagDetails other = (UpdateTagDetails) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isRetired, other.isRetired)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.isCostTracking, other.isCostTracking)
+                && java.util.Objects.equals(this.validator, other.validator)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.isRetired == null ? 43 : this.isRetired.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCostTracking == null ? 43 : this.isCostTracking.hashCode());
+        result = (result * PRIME) + (this.validator == null ? 43 : this.validator.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,31 @@ package com.oracle.bmc.managementagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AvailabilityHistorySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AvailabilityHistorySummary {
+public final class AvailabilityHistorySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "managementAgentId",
+        "availabilityStatus",
+        "timeAvailabilityStatusStarted",
+        "timeAvailabilityStatusEnded"
+    })
+    public AvailabilityHistorySummary(
+            String managementAgentId,
+            AvailabilityStatus availabilityStatus,
+            java.util.Date timeAvailabilityStatusStarted,
+            java.util.Date timeAvailabilityStatusEnded) {
+        super();
+        this.managementAgentId = managementAgentId;
+        this.availabilityStatus = availabilityStatus;
+        this.timeAvailabilityStatusStarted = timeAvailabilityStatusStarted;
+        this.timeAvailabilityStatusEnded = timeAvailabilityStatusEnded;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
@@ -96,30 +111,116 @@ public class AvailabilityHistorySummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * agent identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
-    String managementAgentId;
+    private final String managementAgentId;
+
+    public String getManagementAgentId() {
+        return managementAgentId;
+    }
 
     /**
      * The availability status of managementAgent
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
-    AvailabilityStatus availabilityStatus;
+    private final AvailabilityStatus availabilityStatus;
+
+    public AvailabilityStatus getAvailabilityStatus() {
+        return availabilityStatus;
+    }
 
     /**
      * The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusStarted")
-    java.util.Date timeAvailabilityStatusStarted;
+    private final java.util.Date timeAvailabilityStatusStarted;
+
+    public java.util.Date getTimeAvailabilityStatusStarted() {
+        return timeAvailabilityStatusStarted;
+    }
 
     /**
      * The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusEnded")
-    java.util.Date timeAvailabilityStatusEnded;
+    private final java.util.Date timeAvailabilityStatusEnded;
+
+    public java.util.Date getTimeAvailabilityStatusEnded() {
+        return timeAvailabilityStatusEnded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AvailabilityHistorySummary(");
+        sb.append("managementAgentId=").append(String.valueOf(this.managementAgentId));
+        sb.append(", availabilityStatus=").append(String.valueOf(this.availabilityStatus));
+        sb.append(", timeAvailabilityStatusStarted=")
+                .append(String.valueOf(this.timeAvailabilityStatusStarted));
+        sb.append(", timeAvailabilityStatusEnded=")
+                .append(String.valueOf(this.timeAvailabilityStatusEnded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AvailabilityHistorySummary)) {
+            return false;
+        }
+
+        AvailabilityHistorySummary other = (AvailabilityHistorySummary) o;
+        return java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
+                && java.util.Objects.equals(this.availabilityStatus, other.availabilityStatus)
+                && java.util.Objects.equals(
+                        this.timeAvailabilityStatusStarted, other.timeAvailabilityStatusStarted)
+                && java.util.Objects.equals(
+                        this.timeAvailabilityStatusEnded, other.timeAvailabilityStatusEnded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.managementAgentId == null ? 43 : this.managementAgentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityStatus == null
+                                ? 43
+                                : this.availabilityStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeAvailabilityStatusStarted == null
+                                ? 43
+                                : this.timeAvailabilityStatusStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeAvailabilityStatusEnded == null
+                                ? 43
+                                : this.timeAvailabilityStatusEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

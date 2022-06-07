@@ -9,14 +9,6 @@ import com.oracle.bmc.datacatalog.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCustomPropertyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCustomPropertyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateCustomPropertyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails> {
@@ -26,22 +18,35 @@ public class UpdateCustomPropertyRequest
      */
     private String catalogId;
 
+    public String getCatalogId() {
+        return catalogId;
+    }
     /**
      * Unique namespace identifier.
      */
     private String namespaceId;
 
+    public String getNamespaceId() {
+        return namespaceId;
+    }
     /**
      * Unique Custom Property key
      */
     private String customPropertyKey;
 
+    public String getCustomPropertyKey() {
+        return customPropertyKey;
+    }
     /**
      * The information to be updated in the custom property.
      */
     private com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails
             updateCustomPropertyDetails;
 
+    public com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails
+            getUpdateCustomPropertyDetails() {
+        return updateCustomPropertyDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -52,10 +57,17 @@ public class UpdateCustomPropertyRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -74,6 +86,80 @@ public class UpdateCustomPropertyRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String catalogId = null;
+
+        /**
+         * Unique catalog identifier.
+         * @return this builder instance
+         */
+        public Builder catalogId(String catalogId) {
+            this.catalogId = catalogId;
+            return this;
+        }
+
+        private String namespaceId = null;
+
+        /**
+         * Unique namespace identifier.
+         * @return this builder instance
+         */
+        public Builder namespaceId(String namespaceId) {
+            this.namespaceId = namespaceId;
+            return this;
+        }
+
+        private String customPropertyKey = null;
+
+        /**
+         * Unique Custom Property key
+         * @return this builder instance
+         */
+        public Builder customPropertyKey(String customPropertyKey) {
+            this.customPropertyKey = customPropertyKey;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails
+                updateCustomPropertyDetails = null;
+
+        /**
+         * The information to be updated in the custom property.
+         * @return this builder instance
+         */
+        public Builder updateCustomPropertyDetails(
+                com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails
+                        updateCustomPropertyDetails) {
+            this.updateCustomPropertyDetails = updateCustomPropertyDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -141,5 +227,97 @@ public class UpdateCustomPropertyRequest
             updateCustomPropertyDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateCustomPropertyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateCustomPropertyRequest
+         */
+        public UpdateCustomPropertyRequest buildWithoutInvocationCallback() {
+            UpdateCustomPropertyRequest request = new UpdateCustomPropertyRequest();
+            request.catalogId = catalogId;
+            request.namespaceId = namespaceId;
+            request.customPropertyKey = customPropertyKey;
+            request.updateCustomPropertyDetails = updateCustomPropertyDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateCustomPropertyRequest(catalogId, namespaceId, customPropertyKey, updateCustomPropertyDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .catalogId(catalogId)
+                .namespaceId(namespaceId)
+                .customPropertyKey(customPropertyKey)
+                .updateCustomPropertyDetails(updateCustomPropertyDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(",namespaceId=").append(String.valueOf(this.namespaceId));
+        sb.append(",customPropertyKey=").append(String.valueOf(this.customPropertyKey));
+        sb.append(",updateCustomPropertyDetails=")
+                .append(String.valueOf(this.updateCustomPropertyDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateCustomPropertyRequest)) {
+            return false;
+        }
+
+        UpdateCustomPropertyRequest other = (UpdateCustomPropertyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.namespaceId, other.namespaceId)
+                && java.util.Objects.equals(this.customPropertyKey, other.customPropertyKey)
+                && java.util.Objects.equals(
+                        this.updateCustomPropertyDetails, other.updateCustomPropertyDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result = (result * PRIME) + (this.namespaceId == null ? 43 : this.namespaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customPropertyKey == null ? 43 : this.customPropertyKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateCustomPropertyDetails == null
+                                ? 43
+                                : this.updateCustomPropertyDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

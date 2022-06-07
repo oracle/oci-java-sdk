@@ -15,16 +15,26 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WafBlockedRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WafBlockedRequest {
+public final class WafBlockedRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeObserved", "timeRangeInSeconds", "wafFeature", "count"})
+    public WafBlockedRequest(
+            java.util.Date timeObserved,
+            Integer timeRangeInSeconds,
+            WafFeature wafFeature,
+            Integer count) {
+        super();
+        this.timeObserved = timeObserved;
+        this.timeRangeInSeconds = timeRangeInSeconds;
+        this.wafFeature = wafFeature;
+        this.count = count;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
         private java.util.Date timeObserved;
@@ -92,21 +102,33 @@ public class WafBlockedRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The date and time the blocked requests were observed, expressed in RFC 3339 timestamp format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
-    java.util.Date timeObserved;
+    private final java.util.Date timeObserved;
+
+    public java.util.Date getTimeObserved() {
+        return timeObserved;
+    }
 
     /**
      * The number of seconds the data covers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRangeInSeconds")
-    Integer timeRangeInSeconds;
+    private final Integer timeRangeInSeconds;
+
+    public Integer getTimeRangeInSeconds() {
+        return timeRangeInSeconds;
+    }
+
     /**
      * The specific Web Application Firewall feature that blocked the requests, such as JavaScript Challenge or Access Control.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum WafFeature {
         ProtectionRules("PROTECTION_RULES"),
         JsChallenge("JS_CHALLENGE"),
@@ -122,6 +144,9 @@ public class WafBlockedRequest {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(WafFeature.class);
 
         private final String value;
         private static java.util.Map<String, WafFeature> map;
@@ -159,14 +184,74 @@ public class WafBlockedRequest {
      * The specific Web Application Firewall feature that blocked the requests, such as JavaScript Challenge or Access Control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wafFeature")
-    WafFeature wafFeature;
+    private final WafFeature wafFeature;
+
+    public WafFeature getWafFeature() {
+        return wafFeature;
+    }
 
     /**
      * The count of blocked requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    Integer count;
+    private final Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WafBlockedRequest(");
+        sb.append("timeObserved=").append(String.valueOf(this.timeObserved));
+        sb.append(", timeRangeInSeconds=").append(String.valueOf(this.timeRangeInSeconds));
+        sb.append(", wafFeature=").append(String.valueOf(this.wafFeature));
+        sb.append(", count=").append(String.valueOf(this.count));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WafBlockedRequest)) {
+            return false;
+        }
+
+        WafBlockedRequest other = (WafBlockedRequest) o;
+        return java.util.Objects.equals(this.timeObserved, other.timeObserved)
+                && java.util.Objects.equals(this.timeRangeInSeconds, other.timeRangeInSeconds)
+                && java.util.Objects.equals(this.wafFeature, other.wafFeature)
+                && java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeObserved == null ? 43 : this.timeObserved.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRangeInSeconds == null
+                                ? 43
+                                : this.timeRangeInSeconds.hashCode());
+        result = (result * PRIME) + (this.wafFeature == null ? 43 : this.wafFeature.hashCode());
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

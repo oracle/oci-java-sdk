@@ -15,12 +15,6 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,42 +29,96 @@ package com.oracle.bmc.opsi.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ExadataConfigurationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "exadataInsightId",
+        "compartmentId",
+        "exadataName",
+        "exadataDisplayName",
+        "exadataType",
+        "exadataRackType",
+        "definedTags",
+        "freeformTags"
+    })
+    protected ExadataConfigurationSummary(
+            String exadataInsightId,
+            String compartmentId,
+            String exadataName,
+            String exadataDisplayName,
+            ExadataType exadataType,
+            ExadataRackType exadataRackType,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags) {
+        super();
+        this.exadataInsightId = exadataInsightId;
+        this.compartmentId = compartmentId;
+        this.exadataName = exadataName;
+        this.exadataDisplayName = exadataDisplayName;
+        this.exadataType = exadataType;
+        this.exadataRackType = exadataRackType;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
-    String exadataInsightId;
+    private final String exadataInsightId;
+
+    public String getExadataInsightId() {
+        return exadataInsightId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataName")
-    String exadataName;
+    private final String exadataName;
+
+    public String getExadataName() {
+        return exadataName;
+    }
 
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
-    String exadataDisplayName;
+    private final String exadataDisplayName;
+
+    public String getExadataDisplayName() {
+        return exadataDisplayName;
+    }
 
     /**
      * Operations Insights internal representation of the the Exadata system type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataType")
-    ExadataType exadataType;
+    private final ExadataType exadataType;
+
+    public ExadataType getExadataType() {
+        return exadataType;
+    }
 
     /**
      * Exadata rack type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataRackType")
-    ExadataRackType exadataRackType;
+    private final ExadataRackType exadataRackType;
+
+    public ExadataRackType getExadataRackType() {
+        return exadataRackType;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -78,7 +126,11 @@ public class ExadataConfigurationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -86,5 +138,70 @@ public class ExadataConfigurationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExadataConfigurationSummary(");
+        sb.append("exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", exadataName=").append(String.valueOf(this.exadataName));
+        sb.append(", exadataDisplayName=").append(String.valueOf(this.exadataDisplayName));
+        sb.append(", exadataType=").append(String.valueOf(this.exadataType));
+        sb.append(", exadataRackType=").append(String.valueOf(this.exadataRackType));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExadataConfigurationSummary)) {
+            return false;
+        }
+
+        ExadataConfigurationSummary other = (ExadataConfigurationSummary) o;
+        return java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.exadataName, other.exadataName)
+                && java.util.Objects.equals(this.exadataDisplayName, other.exadataDisplayName)
+                && java.util.Objects.equals(this.exadataType, other.exadataType)
+                && java.util.Objects.equals(this.exadataRackType, other.exadataRackType)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.exadataName == null ? 43 : this.exadataName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataDisplayName == null
+                                ? 43
+                                : this.exadataDisplayName.hashCode());
+        result = (result * PRIME) + (this.exadataType == null ? 43 : this.exadataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataRackType == null ? 43 : this.exadataRackType.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        return result;
+    }
 }

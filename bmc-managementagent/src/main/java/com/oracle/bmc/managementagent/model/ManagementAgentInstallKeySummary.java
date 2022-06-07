@@ -15,16 +15,52 @@ package com.oracle.bmc.managementagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagementAgentInstallKeySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagementAgentInstallKeySummary {
+public final class ManagementAgentInstallKeySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "createdByPrincipalId",
+        "allowedKeyInstallCount",
+        "currentKeyInstallCount",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "timeExpires",
+        "compartmentId",
+        "isUnlimited"
+    })
+    public ManagementAgentInstallKeySummary(
+            String id,
+            String displayName,
+            String createdByPrincipalId,
+            Integer allowedKeyInstallCount,
+            Integer currentKeyInstallCount,
+            LifecycleStates lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeExpires,
+            String compartmentId,
+            Boolean isUnlimited) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.createdByPrincipalId = createdByPrincipalId;
+        this.allowedKeyInstallCount = allowedKeyInstallCount;
+        this.currentKeyInstallCount = currentKeyInstallCount;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.timeExpires = timeExpires;
+        this.compartmentId = compartmentId;
+        this.isUnlimited = isUnlimited;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -173,72 +209,209 @@ public class ManagementAgentInstallKeySummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Agent Install Key identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Management Agent Install Key Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Principal id of user who created the Agent Install key
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdByPrincipalId")
-    String createdByPrincipalId;
+    private final String createdByPrincipalId;
+
+    public String getCreatedByPrincipalId() {
+        return createdByPrincipalId;
+    }
 
     /**
      * Total number of install for this keys
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedKeyInstallCount")
-    Integer allowedKeyInstallCount;
+    private final Integer allowedKeyInstallCount;
+
+    public Integer getAllowedKeyInstallCount() {
+        return allowedKeyInstallCount;
+    }
 
     /**
      * Total number of install for this keys
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentKeyInstallCount")
-    Integer currentKeyInstallCount;
+    private final Integer currentKeyInstallCount;
+
+    public Integer getCurrentKeyInstallCount() {
+        return currentKeyInstallCount;
+    }
 
     /**
      * Status of Key
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * date after which key would expire after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
-    java.util.Date timeExpires;
+    private final java.util.Date timeExpires;
+
+    public java.util.Date getTimeExpires() {
+        return timeExpires;
+    }
 
     /**
      * Compartment Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
-    Boolean isUnlimited;
+    private final Boolean isUnlimited;
+
+    public Boolean getIsUnlimited() {
+        return isUnlimited;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagementAgentInstallKeySummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", createdByPrincipalId=").append(String.valueOf(this.createdByPrincipalId));
+        sb.append(", allowedKeyInstallCount=").append(String.valueOf(this.allowedKeyInstallCount));
+        sb.append(", currentKeyInstallCount=").append(String.valueOf(this.currentKeyInstallCount));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", isUnlimited=").append(String.valueOf(this.isUnlimited));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagementAgentInstallKeySummary)) {
+            return false;
+        }
+
+        ManagementAgentInstallKeySummary other = (ManagementAgentInstallKeySummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.createdByPrincipalId, other.createdByPrincipalId)
+                && java.util.Objects.equals(
+                        this.allowedKeyInstallCount, other.allowedKeyInstallCount)
+                && java.util.Objects.equals(
+                        this.currentKeyInstallCount, other.currentKeyInstallCount)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeExpires, other.timeExpires)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.isUnlimited, other.isUnlimited)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createdByPrincipalId == null
+                                ? 43
+                                : this.createdByPrincipalId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedKeyInstallCount == null
+                                ? 43
+                                : this.allowedKeyInstallCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentKeyInstallCount == null
+                                ? 43
+                                : this.currentKeyInstallCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.isUnlimited == null ? 43 : this.isUnlimited.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

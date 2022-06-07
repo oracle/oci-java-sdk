@@ -15,16 +15,67 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = JobExecutionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JobExecutionSummary {
+public final class JobExecutionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "compartmentId",
+        "managedDatabaseGroupId",
+        "managedDatabaseId",
+        "managedDatabaseName",
+        "databaseType",
+        "databaseSubType",
+        "deploymentType",
+        "isCluster",
+        "workloadType",
+        "jobId",
+        "jobName",
+        "status",
+        "timeCreated",
+        "timeCompleted"
+    })
+    public JobExecutionSummary(
+            String id,
+            String name,
+            String compartmentId,
+            String managedDatabaseGroupId,
+            String managedDatabaseId,
+            String managedDatabaseName,
+            DatabaseType databaseType,
+            DatabaseSubType databaseSubType,
+            DeploymentType deploymentType,
+            Boolean isCluster,
+            WorkloadType workloadType,
+            String jobId,
+            String jobName,
+            JobExecution.Status status,
+            java.util.Date timeCreated,
+            java.util.Date timeCompleted) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.compartmentId = compartmentId;
+        this.managedDatabaseGroupId = managedDatabaseGroupId;
+        this.managedDatabaseId = managedDatabaseId;
+        this.managedDatabaseName = managedDatabaseName;
+        this.databaseType = databaseType;
+        this.databaseSubType = databaseSubType;
+        this.deploymentType = deploymentType;
+        this.isCluster = isCluster;
+        this.workloadType = workloadType;
+        this.jobId = jobId;
+        this.jobName = jobName;
+        this.status = status;
+        this.timeCreated = timeCreated;
+        this.timeCompleted = timeCompleted;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -228,102 +279,273 @@ public class JobExecutionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The identifier of the job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the parent job resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the parent job has to be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
-    String managedDatabaseGroupId;
+    private final String managedDatabaseGroupId;
+
+    public String getManagedDatabaseGroupId() {
+        return managedDatabaseGroupId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Managed Database associated with the job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
-    String managedDatabaseId;
+    private final String managedDatabaseId;
+
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
 
     /**
      * The name of the Managed Database associated with the job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseName")
-    String managedDatabaseName;
+    private final String managedDatabaseName;
+
+    public String getManagedDatabaseName() {
+        return managedDatabaseName;
+    }
 
     /**
      * The type of Oracle Database installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    DatabaseType databaseType;
+    private final DatabaseType databaseType;
+
+    public DatabaseType getDatabaseType() {
+        return databaseType;
+    }
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
-    DatabaseSubType databaseSubType;
+    private final DatabaseSubType databaseSubType;
+
+    public DatabaseSubType getDatabaseSubType() {
+        return databaseSubType;
+    }
 
     /**
      * A list of the supported infrastructure that can be used to deploy the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
-    DeploymentType deploymentType;
+    private final DeploymentType deploymentType;
+
+    public DeploymentType getDeploymentType() {
+        return deploymentType;
+    }
 
     /**
      * Indicates whether the Oracle Database is part of a cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
-    Boolean isCluster;
+    private final Boolean isCluster;
+
+    public Boolean getIsCluster() {
+        return isCluster;
+    }
 
     /**
      * The workload type of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
-    WorkloadType workloadType;
+    private final WorkloadType workloadType;
+
+    public WorkloadType getWorkloadType() {
+        return workloadType;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobId")
-    String jobId;
+    private final String jobId;
+
+    public String getJobId() {
+        return jobId;
+    }
 
     /**
      * The name of the parent job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobName")
-    String jobName;
+    private final String jobName;
+
+    public String getJobName() {
+        return jobName;
+    }
 
     /**
      * The status of the job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    JobExecution.Status status;
+    private final JobExecution.Status status;
+
+    public JobExecution.Status getStatus() {
+        return status;
+    }
 
     /**
      * The date and time when the job execution was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time when the job execution was completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
-    java.util.Date timeCompleted;
+    private final java.util.Date timeCompleted;
+
+    public java.util.Date getTimeCompleted() {
+        return timeCompleted;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JobExecutionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", managedDatabaseGroupId=").append(String.valueOf(this.managedDatabaseGroupId));
+        sb.append(", managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(", managedDatabaseName=").append(String.valueOf(this.managedDatabaseName));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
+        sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
+        sb.append(", isCluster=").append(String.valueOf(this.isCluster));
+        sb.append(", workloadType=").append(String.valueOf(this.workloadType));
+        sb.append(", jobId=").append(String.valueOf(this.jobId));
+        sb.append(", jobName=").append(String.valueOf(this.jobName));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeCompleted=").append(String.valueOf(this.timeCompleted));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JobExecutionSummary)) {
+            return false;
+        }
+
+        JobExecutionSummary other = (JobExecutionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.managedDatabaseGroupId, other.managedDatabaseGroupId)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(this.managedDatabaseName, other.managedDatabaseName)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
+                && java.util.Objects.equals(this.isCluster, other.isCluster)
+                && java.util.Objects.equals(this.workloadType, other.workloadType)
+                && java.util.Objects.equals(this.jobId, other.jobId)
+                && java.util.Objects.equals(this.jobName, other.jobName)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeCompleted, other.timeCompleted)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseGroupId == null
+                                ? 43
+                                : this.managedDatabaseGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseName == null
+                                ? 43
+                                : this.managedDatabaseName.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSubType == null ? 43 : this.databaseSubType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result = (result * PRIME) + (this.isCluster == null ? 43 : this.isCluster.hashCode());
+        result = (result * PRIME) + (this.workloadType == null ? 43 : this.workloadType.hashCode());
+        result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
+        result = (result * PRIME) + (this.jobName == null ? 43 : this.jobName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCompleted == null ? 43 : this.timeCompleted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

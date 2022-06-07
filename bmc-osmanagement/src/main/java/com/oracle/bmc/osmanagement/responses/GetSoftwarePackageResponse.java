@@ -7,10 +7,6 @@ package com.oracle.bmc.osmanagement.responses;
 import com.oracle.bmc.osmanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned SoftwarePackage instance.
      */
     private com.oracle.bmc.osmanagement.model.SoftwarePackage softwarePackage;
+
+    public com.oracle.bmc.osmanagement.model.SoftwarePackage getSoftwarePackage() {
+        return softwarePackage;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "softwarePackage"})
     private GetSoftwarePackageResponse(
@@ -42,6 +46,21 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.SoftwarePackage softwarePackage;
+
+        public Builder softwarePackage(
+                com.oracle.bmc.osmanagement.model.SoftwarePackage softwarePackage) {
+            this.softwarePackage = softwarePackage;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -58,5 +77,46 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
             return new GetSoftwarePackageResponse(
                     __httpStatusCode__, opcRequestId, softwarePackage);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",softwarePackage=").append(String.valueOf(softwarePackage));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetSoftwarePackageResponse)) {
+            return false;
+        }
+
+        GetSoftwarePackageResponse other = (GetSoftwarePackageResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.softwarePackage, other.softwarePackage);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwarePackage == null ? 43 : this.softwarePackage.hashCode());
+        return result;
     }
 }

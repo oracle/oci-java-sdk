@@ -15,16 +15,37 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AppCatalogListingResourceVersionAgreements.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AppCatalogListingResourceVersionAgreements {
+public final class AppCatalogListingResourceVersionAgreements {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "listingId",
+        "listingResourceVersion",
+        "oracleTermsOfUseLink",
+        "eulaLink",
+        "timeRetrieved",
+        "signature"
+    })
+    public AppCatalogListingResourceVersionAgreements(
+            String listingId,
+            String listingResourceVersion,
+            String oracleTermsOfUseLink,
+            String eulaLink,
+            java.util.Date timeRetrieved,
+            String signature) {
+        super();
+        this.listingId = listingId;
+        this.listingResourceVersion = listingResourceVersion;
+        this.oracleTermsOfUseLink = oracleTermsOfUseLink;
+        this.eulaLink = eulaLink;
+        this.timeRetrieved = timeRetrieved;
+        this.signature = signature;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
@@ -118,29 +139,49 @@ public class AppCatalogListingResourceVersionAgreements {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the listing associated with these agreements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * Listing resource version associated with these agreements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
-    String listingResourceVersion;
+    private final String listingResourceVersion;
+
+    public String getListingResourceVersion() {
+        return listingResourceVersion;
+    }
 
     /**
      * Oracle TOU link
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleTermsOfUseLink")
-    String oracleTermsOfUseLink;
+    private final String oracleTermsOfUseLink;
+
+    public String getOracleTermsOfUseLink() {
+        return oracleTermsOfUseLink;
+    }
 
     /**
      * EULA link
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eulaLink")
-    String eulaLink;
+    private final String eulaLink;
+
+    public String getEulaLink() {
+        return eulaLink;
+    }
 
     /**
      * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
@@ -148,15 +189,89 @@ public class AppCatalogListingResourceVersionAgreements {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRetrieved")
-    java.util.Date timeRetrieved;
+    private final java.util.Date timeRetrieved;
+
+    public java.util.Date getTimeRetrieved() {
+        return timeRetrieved;
+    }
 
     /**
      * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
-    String signature;
+    private final String signature;
+
+    public String getSignature() {
+        return signature;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AppCatalogListingResourceVersionAgreements(");
+        sb.append("listingId=").append(String.valueOf(this.listingId));
+        sb.append(", listingResourceVersion=").append(String.valueOf(this.listingResourceVersion));
+        sb.append(", oracleTermsOfUseLink=").append(String.valueOf(this.oracleTermsOfUseLink));
+        sb.append(", eulaLink=").append(String.valueOf(this.eulaLink));
+        sb.append(", timeRetrieved=").append(String.valueOf(this.timeRetrieved));
+        sb.append(", signature=").append(String.valueOf(this.signature));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AppCatalogListingResourceVersionAgreements)) {
+            return false;
+        }
+
+        AppCatalogListingResourceVersionAgreements other =
+                (AppCatalogListingResourceVersionAgreements) o;
+        return java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(
+                        this.listingResourceVersion, other.listingResourceVersion)
+                && java.util.Objects.equals(this.oracleTermsOfUseLink, other.oracleTermsOfUseLink)
+                && java.util.Objects.equals(this.eulaLink, other.eulaLink)
+                && java.util.Objects.equals(this.timeRetrieved, other.timeRetrieved)
+                && java.util.Objects.equals(this.signature, other.signature)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listingResourceVersion == null
+                                ? 43
+                                : this.listingResourceVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleTermsOfUseLink == null
+                                ? 43
+                                : this.oracleTermsOfUseLink.hashCode());
+        result = (result * PRIME) + (this.eulaLink == null ? 43 : this.eulaLink.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRetrieved == null ? 43 : this.timeRetrieved.hashCode());
+        result = (result * PRIME) + (this.signature == null ? 43 : this.signature.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

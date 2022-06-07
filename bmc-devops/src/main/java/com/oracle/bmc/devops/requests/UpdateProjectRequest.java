@@ -9,14 +9,6 @@ import com.oracle.bmc.devops.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateProjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateProjectRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateProjectRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.devops.model.UpdateProjectDetails> {
@@ -26,20 +18,33 @@ public class UpdateProjectRequest
      */
     private String projectId;
 
+    public String getProjectId() {
+        return projectId;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.devops.model.UpdateProjectDetails updateProjectDetails;
 
+    public com.oracle.bmc.devops.model.UpdateProjectDetails getUpdateProjectDetails() {
+        return updateProjectDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -57,6 +62,51 @@ public class UpdateProjectRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String projectId = null;
+
+        /**
+         * Unique project identifier.
+         * @return this builder instance
+         */
+        public Builder projectId(String projectId) {
+            this.projectId = projectId;
+            return this;
+        }
+
+        private com.oracle.bmc.devops.model.UpdateProjectDetails updateProjectDetails = null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateProjectDetails(
+                com.oracle.bmc.devops.model.UpdateProjectDetails updateProjectDetails) {
+            this.updateProjectDetails = updateProjectDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -122,5 +172,83 @@ public class UpdateProjectRequest
             updateProjectDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateProjectRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateProjectRequest
+         */
+        public UpdateProjectRequest buildWithoutInvocationCallback() {
+            UpdateProjectRequest request = new UpdateProjectRequest();
+            request.projectId = projectId;
+            request.updateProjectDetails = updateProjectDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateProjectRequest(projectId, updateProjectDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .projectId(projectId)
+                .updateProjectDetails(updateProjectDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",projectId=").append(String.valueOf(this.projectId));
+        sb.append(",updateProjectDetails=").append(String.valueOf(this.updateProjectDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateProjectRequest)) {
+            return false;
+        }
+
+        UpdateProjectRequest other = (UpdateProjectRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.projectId, other.projectId)
+                && java.util.Objects.equals(this.updateProjectDetails, other.updateProjectDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateProjectDetails == null
+                                ? 43
+                                : this.updateProjectDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

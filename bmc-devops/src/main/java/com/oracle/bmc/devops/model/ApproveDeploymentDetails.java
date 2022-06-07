@@ -15,16 +15,21 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApproveDeploymentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApproveDeploymentDetails {
+public final class ApproveDeploymentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"deployStageId", "reason", "action"})
+    public ApproveDeploymentDetails(String deployStageId, String reason, Action action) {
+        super();
+        this.deployStageId = deployStageId;
+        this.reason = reason;
+        this.action = action;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
         private String deployStageId;
@@ -80,17 +85,30 @@ public class ApproveDeploymentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the stage which is marked for approval.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
-    String deployStageId;
+    private final String deployStageId;
+
+    public String getDeployStageId() {
+        return deployStageId;
+    }
 
     /**
      * The reason for approving or rejecting the deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
-    String reason;
+    private final String reason;
+
+    public String getReason() {
+        return reason;
+    }
+
     /**
      * The action of Approve or Reject.
      **/
@@ -130,8 +148,59 @@ public class ApproveDeploymentDetails {
      * The action of Approve or Reject.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApproveDeploymentDetails(");
+        sb.append("deployStageId=").append(String.valueOf(this.deployStageId));
+        sb.append(", reason=").append(String.valueOf(this.reason));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApproveDeploymentDetails)) {
+            return false;
+        }
+
+        ApproveDeploymentDetails other = (ApproveDeploymentDetails) o;
+        return java.util.Objects.equals(this.deployStageId, other.deployStageId)
+                && java.util.Objects.equals(this.reason, other.reason)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.deployStageId == null ? 43 : this.deployStageId.hashCode());
+        result = (result * PRIME) + (this.reason == null ? 43 : this.reason.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

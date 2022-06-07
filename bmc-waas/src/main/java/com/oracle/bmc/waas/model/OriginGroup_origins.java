@@ -15,16 +15,20 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OriginGroup_origins.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OriginGroup_origins {
+public final class OriginGroup_origins {
+    @Deprecated
+    @java.beans.ConstructorProperties({"origin", "weight"})
+    public OriginGroup_origins(String origin, Integer weight) {
+        super();
+        this.origin = origin;
+        this.weight = weight;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("origin")
         private String origin;
@@ -69,18 +73,72 @@ public class OriginGroup_origins {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The IP address or CIDR notation of the origin server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
-    String origin;
+    private final String origin;
+
+    public String getOrigin() {
+        return origin;
+    }
 
     /**
      * The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    Integer weight;
+    private final Integer weight;
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OriginGroup_origins(");
+        sb.append("origin=").append(String.valueOf(this.origin));
+        sb.append(", weight=").append(String.valueOf(this.weight));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OriginGroup_origins)) {
+            return false;
+        }
+
+        OriginGroup_origins other = (OriginGroup_origins) o;
+        return java.util.Objects.equals(this.origin, other.origin)
+                && java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.origin == null ? 43 : this.origin.hashCode());
+        result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

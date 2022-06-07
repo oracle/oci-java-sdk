@@ -16,16 +16,34 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ComputeGlobalImageCapabilitySchemaVersion.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ComputeGlobalImageCapabilitySchemaVersion {
+public final class ComputeGlobalImageCapabilitySchemaVersion {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "computeGlobalImageCapabilitySchemaId",
+        "displayName",
+        "schemaData",
+        "timeCreated"
+    })
+    public ComputeGlobalImageCapabilitySchemaVersion(
+            String name,
+            String computeGlobalImageCapabilitySchemaId,
+            String displayName,
+            java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData,
+            java.util.Date timeCreated) {
+        super();
+        this.name = name;
+        this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
+        this.displayName = displayName;
+        this.schemaData = schemaData;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -111,19 +129,31 @@ public class ComputeGlobalImageCapabilitySchemaVersion {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the compute global image capability schema version
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The ocid of the compute global image capability schema
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeGlobalImageCapabilitySchemaId")
-    String computeGlobalImageCapabilitySchemaId;
+    private final String computeGlobalImageCapabilitySchemaId;
+
+    public String getComputeGlobalImageCapabilitySchemaId() {
+        return computeGlobalImageCapabilitySchemaId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -131,13 +161,21 @@ public class ComputeGlobalImageCapabilitySchemaVersion {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The map of each capability name to its ImageCapabilityDescriptor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaData")
-    java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData;
+    private final java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData;
+
+    public java.util.Map<String, ImageCapabilitySchemaDescriptor> getSchemaData() {
+        return schemaData;
+    }
 
     /**
      * The date and time the compute global image capability schema version was created, in the format defined by
@@ -147,8 +185,71 @@ public class ComputeGlobalImageCapabilitySchemaVersion {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ComputeGlobalImageCapabilitySchemaVersion(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", computeGlobalImageCapabilitySchemaId=")
+                .append(String.valueOf(this.computeGlobalImageCapabilitySchemaId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", schemaData=").append(String.valueOf(this.schemaData));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ComputeGlobalImageCapabilitySchemaVersion)) {
+            return false;
+        }
+
+        ComputeGlobalImageCapabilitySchemaVersion other =
+                (ComputeGlobalImageCapabilitySchemaVersion) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(
+                        this.computeGlobalImageCapabilitySchemaId,
+                        other.computeGlobalImageCapabilitySchemaId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.schemaData, other.schemaData)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeGlobalImageCapabilitySchemaId == null
+                                ? 43
+                                : this.computeGlobalImageCapabilitySchemaId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.schemaData == null ? 43 : this.schemaData.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

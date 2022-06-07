@@ -15,16 +15,31 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsSourceEntityType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsSourceEntityType {
+public final class LogAnalyticsSourceEntityType {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sourceId",
+        "entityType",
+        "entityTypeCategory",
+        "entityTypeDisplayName"
+    })
+    public LogAnalyticsSourceEntityType(
+            Long sourceId,
+            String entityType,
+            String entityTypeCategory,
+            String entityTypeDisplayName) {
+        super();
+        this.sourceId = sourceId;
+        this.entityType = entityType;
+        this.entityTypeCategory = entityTypeCategory;
+        this.entityTypeDisplayName = entityTypeDisplayName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
@@ -93,30 +108,106 @@ public class LogAnalyticsSourceEntityType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    Long sourceId;
+    private final Long sourceId;
+
+    public Long getSourceId() {
+        return sourceId;
+    }
 
     /**
      * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    String entityType;
+    private final String entityType;
+
+    public String getEntityType() {
+        return entityType;
+    }
 
     /**
      * The type category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeCategory")
-    String entityTypeCategory;
+    private final String entityTypeCategory;
+
+    public String getEntityTypeCategory() {
+        return entityTypeCategory;
+    }
 
     /**
      * The entity type display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
-    String entityTypeDisplayName;
+    private final String entityTypeDisplayName;
+
+    public String getEntityTypeDisplayName() {
+        return entityTypeDisplayName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsSourceEntityType(");
+        sb.append("sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", entityTypeCategory=").append(String.valueOf(this.entityTypeCategory));
+        sb.append(", entityTypeDisplayName=").append(String.valueOf(this.entityTypeDisplayName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsSourceEntityType)) {
+            return false;
+        }
+
+        LogAnalyticsSourceEntityType other = (LogAnalyticsSourceEntityType) o;
+        return java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.entityTypeCategory, other.entityTypeCategory)
+                && java.util.Objects.equals(this.entityTypeDisplayName, other.entityTypeDisplayName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityTypeCategory == null
+                                ? 43
+                                : this.entityTypeCategory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityTypeDisplayName == null
+                                ? 43
+                                : this.entityTypeDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

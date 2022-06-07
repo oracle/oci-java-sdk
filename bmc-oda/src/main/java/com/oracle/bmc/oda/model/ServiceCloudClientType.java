@@ -8,7 +8,6 @@ package com.oracle.bmc.oda.model;
  * The type of Service Cloud clients.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.extern.slf4j.Slf4j
 public enum ServiceCloudClientType {
     Wsdl("WSDL"),
     Rest("REST"),
@@ -18,6 +17,9 @@ public enum ServiceCloudClientType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ServiceCloudClientType.class);
 
     private final String value;
     private static java.util.Map<String, ServiceCloudClientType> map;

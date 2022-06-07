@@ -9,14 +9,6 @@ import com.oracle.bmc.streaming.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ConsumerHeartbeatExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ConsumerHeartbeatRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,12 +17,18 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String streamId;
 
+    public String getStreamId() {
+        return streamId;
+    }
     /**
      * The group-cursor representing the offsets of the group. This cursor is retrieved from the CreateGroupCursor API call.
      *
      */
     private String cursor;
 
+    public String getCursor() {
+        return cursor;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -38,12 +36,53 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ConsumerHeartbeatRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String streamId = null;
+
+        /**
+         * The OCID of the stream.
+         *
+         * @return this builder instance
+         */
+        public Builder streamId(String streamId) {
+            this.streamId = streamId;
+            return this;
+        }
+
+        private String cursor = null;
+
+        /**
+         * The group-cursor representing the offsets of the group. This cursor is retrieved from the CreateGroupCursor API call.
+         *
+         * @return this builder instance
+         */
+        public Builder cursor(String cursor) {
+            this.cursor = cursor;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -97,5 +136,71 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ConsumerHeartbeatRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ConsumerHeartbeatRequest
+         */
+        public ConsumerHeartbeatRequest buildWithoutInvocationCallback() {
+            ConsumerHeartbeatRequest request = new ConsumerHeartbeatRequest();
+            request.streamId = streamId;
+            request.cursor = cursor;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ConsumerHeartbeatRequest(streamId, cursor, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().streamId(streamId).cursor(cursor).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",streamId=").append(String.valueOf(this.streamId));
+        sb.append(",cursor=").append(String.valueOf(this.cursor));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConsumerHeartbeatRequest)) {
+            return false;
+        }
+
+        ConsumerHeartbeatRequest other = (ConsumerHeartbeatRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.streamId, other.streamId)
+                && java.util.Objects.equals(this.cursor, other.cursor)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
+        result = (result * PRIME) + (this.cursor == null ? 43 : this.cursor.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

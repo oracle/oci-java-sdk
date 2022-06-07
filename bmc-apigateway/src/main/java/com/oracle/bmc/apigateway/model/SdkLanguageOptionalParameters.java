@@ -15,16 +15,40 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SdkLanguageOptionalParameters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SdkLanguageOptionalParameters {
+public final class SdkLanguageOptionalParameters {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "paramName",
+        "displayName",
+        "description",
+        "isRequired",
+        "maxSize",
+        "inputType",
+        "allowedValues"
+    })
+    public SdkLanguageOptionalParameters(
+            String paramName,
+            String displayName,
+            String description,
+            Boolean isRequired,
+            java.math.BigDecimal maxSize,
+            InputType inputType,
+            java.util.List<SdkLanguageOptionalParametersAllowedValue> allowedValues) {
+        super();
+        this.paramName = paramName;
+        this.displayName = displayName;
+        this.description = description;
+        this.isRequired = isRequired;
+        this.maxSize = maxSize;
+        this.inputType = inputType;
+        this.allowedValues = allowedValues;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("paramName")
         private String paramName;
@@ -130,40 +154,65 @@ public class SdkLanguageOptionalParameters {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("paramName")
-    String paramName;
+    private final String paramName;
+
+    public String getParamName() {
+        return paramName;
+    }
 
     /**
      * Display name of the parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description for the parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Information on whether the parameter is required or not.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
-    Boolean isRequired;
+    private final Boolean isRequired;
+
+    public Boolean getIsRequired() {
+        return isRequired;
+    }
 
     /**
      * Maximum size as input value for this parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSize")
-    java.math.BigDecimal maxSize;
+    private final java.math.BigDecimal maxSize;
+
+    public java.math.BigDecimal getMaxSize() {
+        return maxSize;
+    }
+
     /**
      * The input type for this param.
      * - Input type is ENUM when only specific list of input strings are allowed.
@@ -172,7 +221,6 @@ public class SdkLanguageOptionalParameters {
      * - Input type is STRING in all other cases.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum InputType {
         Enum("ENUM"),
         Email("EMAIL"),
@@ -184,6 +232,9 @@ public class SdkLanguageOptionalParameters {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(InputType.class);
 
         private final String value;
         private static java.util.Map<String, InputType> map;
@@ -226,7 +277,11 @@ public class SdkLanguageOptionalParameters {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputType")
-    InputType inputType;
+    private final InputType inputType;
+
+    public InputType getInputType() {
+        return inputType;
+    }
 
     /**
      * List of allowed input values.
@@ -234,8 +289,71 @@ public class SdkLanguageOptionalParameters {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
-    java.util.List<SdkLanguageOptionalParametersAllowedValue> allowedValues;
+    private final java.util.List<SdkLanguageOptionalParametersAllowedValue> allowedValues;
+
+    public java.util.List<SdkLanguageOptionalParametersAllowedValue> getAllowedValues() {
+        return allowedValues;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SdkLanguageOptionalParameters(");
+        sb.append("paramName=").append(String.valueOf(this.paramName));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isRequired=").append(String.valueOf(this.isRequired));
+        sb.append(", maxSize=").append(String.valueOf(this.maxSize));
+        sb.append(", inputType=").append(String.valueOf(this.inputType));
+        sb.append(", allowedValues=").append(String.valueOf(this.allowedValues));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SdkLanguageOptionalParameters)) {
+            return false;
+        }
+
+        SdkLanguageOptionalParameters other = (SdkLanguageOptionalParameters) o;
+        return java.util.Objects.equals(this.paramName, other.paramName)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isRequired, other.isRequired)
+                && java.util.Objects.equals(this.maxSize, other.maxSize)
+                && java.util.Objects.equals(this.inputType, other.inputType)
+                && java.util.Objects.equals(this.allowedValues, other.allowedValues)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.paramName == null ? 43 : this.paramName.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.isRequired == null ? 43 : this.isRequired.hashCode());
+        result = (result * PRIME) + (this.maxSize == null ? 43 : this.maxSize.hashCode());
+        result = (result * PRIME) + (this.inputType == null ? 43 : this.inputType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

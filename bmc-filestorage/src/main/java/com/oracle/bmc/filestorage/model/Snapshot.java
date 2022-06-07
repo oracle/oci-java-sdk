@@ -18,14 +18,47 @@ package com.oracle.bmc.filestorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Snapshot.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Snapshot {
+public final class Snapshot {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "fileSystemId",
+        "id",
+        "lifecycleState",
+        "name",
+        "timeCreated",
+        "provenanceId",
+        "isCloneSource",
+        "lifecycleDetails",
+        "freeformTags",
+        "definedTags"
+    })
+    public Snapshot(
+            String fileSystemId,
+            String id,
+            LifecycleState lifecycleState,
+            String name,
+            java.util.Date timeCreated,
+            String provenanceId,
+            Boolean isCloneSource,
+            String lifecycleDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.fileSystemId = fileSystemId;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.name = name;
+        this.timeCreated = timeCreated;
+        this.provenanceId = provenanceId;
+        this.isCloneSource = isCloneSource;
+        this.lifecycleDetails = lifecycleDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
         private String fileSystemId;
@@ -164,23 +197,35 @@ public class Snapshot {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot
      * was created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
-    String fileSystemId;
+    private final String fileSystemId;
+
+    public String getFileSystemId() {
+        return fileSystemId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the snapshot.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The current state of the snapshot.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -192,6 +237,9 @@ public class Snapshot {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -229,7 +277,11 @@ public class Snapshot {
      * The current state of the snapshot.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Name of the snapshot. This value is immutable.
@@ -240,7 +292,11 @@ public class Snapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The date and time the snapshot was created, expressed
@@ -250,7 +306,11 @@ public class Snapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned.
@@ -260,7 +320,11 @@ public class Snapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provenanceId")
-    String provenanceId;
+    private final String provenanceId;
+
+    public String getProvenanceId() {
+        return provenanceId;
+    }
 
     /**
      * Specifies whether the snapshot has been cloned.
@@ -268,13 +332,21 @@ public class Snapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCloneSource")
-    Boolean isCloneSource;
+    private final Boolean isCloneSource;
+
+    public Boolean getIsCloneSource() {
+        return isCloneSource;
+    }
 
     /**
      * Additional information about the current 'lifecycleState'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
@@ -284,7 +356,11 @@ public class Snapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -293,8 +369,84 @@ public class Snapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Snapshot(");
+        sb.append("fileSystemId=").append(String.valueOf(this.fileSystemId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", provenanceId=").append(String.valueOf(this.provenanceId));
+        sb.append(", isCloneSource=").append(String.valueOf(this.isCloneSource));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Snapshot)) {
+            return false;
+        }
+
+        Snapshot other = (Snapshot) o;
+        return java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.provenanceId, other.provenanceId)
+                && java.util.Objects.equals(this.isCloneSource, other.isCloneSource)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.fileSystemId == null ? 43 : this.fileSystemId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.provenanceId == null ? 43 : this.provenanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCloneSource == null ? 43 : this.isCloneSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

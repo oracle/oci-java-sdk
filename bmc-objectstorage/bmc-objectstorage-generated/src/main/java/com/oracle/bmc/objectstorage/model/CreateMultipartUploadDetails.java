@@ -18,16 +18,43 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateMultipartUploadDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateMultipartUploadDetails {
+public final class CreateMultipartUploadDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "object",
+        "contentType",
+        "contentLanguage",
+        "contentEncoding",
+        "contentDisposition",
+        "cacheControl",
+        "storageTier",
+        "metadata"
+    })
+    public CreateMultipartUploadDetails(
+            String object,
+            String contentType,
+            String contentLanguage,
+            String contentEncoding,
+            String contentDisposition,
+            String cacheControl,
+            StorageTier storageTier,
+            java.util.Map<String, String> metadata) {
+        super();
+        this.object = object;
+        this.contentType = contentType;
+        this.contentLanguage = contentLanguage;
+        this.contentEncoding = contentEncoding;
+        this.contentDisposition = contentDisposition;
+        this.cacheControl = cacheControl;
+        this.storageTier = storageTier;
+        this.metadata = metadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("object")
         private String object;
@@ -143,13 +170,21 @@ public class CreateMultipartUploadDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
      * Example: test/object1.log
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("object")
-    String object;
+    private final String object;
+
+    public String getObject() {
+        return object;
+    }
 
     /**
      * The optional Content-Type header that defines the standard MIME type format of the object to upload.
@@ -159,7 +194,11 @@ public class CreateMultipartUploadDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
-    String contentType;
+    private final String contentType;
+
+    public String getContentType() {
+        return contentType;
+    }
 
     /**
      * The optional Content-Language header that defines the content language of the object to upload. Specifying
@@ -169,7 +208,11 @@ public class CreateMultipartUploadDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentLanguage")
-    String contentLanguage;
+    private final String contentLanguage;
+
+    public String getContentLanguage() {
+        return contentLanguage;
+    }
 
     /**
      * The optional Content-Encoding header that defines the content encodings that were applied to the object to
@@ -180,7 +223,11 @@ public class CreateMultipartUploadDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentEncoding")
-    String contentEncoding;
+    private final String contentEncoding;
+
+    public String getContentEncoding() {
+        return contentEncoding;
+    }
 
     /**
      * The optional Content-Disposition header that defines presentational information for the object to be
@@ -190,7 +237,11 @@ public class CreateMultipartUploadDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentDisposition")
-    String contentDisposition;
+    private final String contentDisposition;
+
+    public String getContentDisposition() {
+        return contentDisposition;
+    }
 
     /**
      * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
@@ -200,7 +251,11 @@ public class CreateMultipartUploadDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cacheControl")
-    String cacheControl;
+    private final String cacheControl;
+
+    public String getCacheControl() {
+        return cacheControl;
+    }
 
     /**
      * The storage tier that the object should be stored in. If not specified, the object will be stored in
@@ -208,7 +263,11 @@ public class CreateMultipartUploadDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
-    StorageTier storageTier;
+    private final StorageTier storageTier;
+
+    public StorageTier getStorageTier() {
+        return storageTier;
+    }
 
     /**
      * Arbitrary string keys and values for the user-defined metadata for the object.
@@ -216,8 +275,80 @@ public class CreateMultipartUploadDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    java.util.Map<String, String> metadata;
+    private final java.util.Map<String, String> metadata;
+
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateMultipartUploadDetails(");
+        sb.append("object=").append(String.valueOf(this.object));
+        sb.append(", contentType=").append(String.valueOf(this.contentType));
+        sb.append(", contentLanguage=").append(String.valueOf(this.contentLanguage));
+        sb.append(", contentEncoding=").append(String.valueOf(this.contentEncoding));
+        sb.append(", contentDisposition=").append(String.valueOf(this.contentDisposition));
+        sb.append(", cacheControl=").append(String.valueOf(this.cacheControl));
+        sb.append(", storageTier=").append(String.valueOf(this.storageTier));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateMultipartUploadDetails)) {
+            return false;
+        }
+
+        CreateMultipartUploadDetails other = (CreateMultipartUploadDetails) o;
+        return java.util.Objects.equals(this.object, other.object)
+                && java.util.Objects.equals(this.contentType, other.contentType)
+                && java.util.Objects.equals(this.contentLanguage, other.contentLanguage)
+                && java.util.Objects.equals(this.contentEncoding, other.contentEncoding)
+                && java.util.Objects.equals(this.contentDisposition, other.contentDisposition)
+                && java.util.Objects.equals(this.cacheControl, other.cacheControl)
+                && java.util.Objects.equals(this.storageTier, other.storageTier)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.object == null ? 43 : this.object.hashCode());
+        result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contentLanguage == null ? 43 : this.contentLanguage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contentEncoding == null ? 43 : this.contentEncoding.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contentDisposition == null
+                                ? 43
+                                : this.contentDisposition.hashCode());
+        result = (result * PRIME) + (this.cacheControl == null ? 43 : this.cacheControl.hashCode());
+        result = (result * PRIME) + (this.storageTier == null ? 43 : this.storageTier.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

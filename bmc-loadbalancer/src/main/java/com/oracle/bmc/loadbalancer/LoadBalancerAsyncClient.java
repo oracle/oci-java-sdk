@@ -7,6 +7,7 @@ package com.oracle.bmc.loadbalancer;
 import com.oracle.bmc.loadbalancer.internal.http.*;
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for LoadBalancer service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.loadbalancer.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.extern.slf4j.Slf4j
 public class LoadBalancerAsyncClient implements LoadBalancerAsync {
     /**
      * Service instance for LoadBalancer.
@@ -34,7 +34,9 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LoadBalancerAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
          * @return the client
          */
         public LoadBalancerAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new LoadBalancerAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

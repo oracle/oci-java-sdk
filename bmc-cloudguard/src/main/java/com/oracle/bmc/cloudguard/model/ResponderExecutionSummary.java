@@ -15,16 +15,70 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResponderExecutionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResponderExecutionSummary {
+public final class ResponderExecutionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "responderRuleId",
+        "responderRuleType",
+        "responderRuleName",
+        "problemId",
+        "problemName",
+        "region",
+        "targetId",
+        "compartmentId",
+        "resourceType",
+        "resourceName",
+        "timeCreated",
+        "timeCompleted",
+        "responderExecutionStatus",
+        "responderExecutionMode",
+        "message",
+        "responderRuleExecutionDetails"
+    })
+    public ResponderExecutionSummary(
+            String id,
+            String responderRuleId,
+            ResponderType responderRuleType,
+            String responderRuleName,
+            String problemId,
+            String problemName,
+            String region,
+            String targetId,
+            String compartmentId,
+            String resourceType,
+            String resourceName,
+            java.util.Date timeCreated,
+            java.util.Date timeCompleted,
+            ResponderExecutionStates responderExecutionStatus,
+            ResponderExecutionModes responderExecutionMode,
+            String message,
+            ResponderRuleExecutionDetails responderRuleExecutionDetails) {
+        super();
+        this.id = id;
+        this.responderRuleId = responderRuleId;
+        this.responderRuleType = responderRuleType;
+        this.responderRuleName = responderRuleName;
+        this.problemId = problemId;
+        this.problemName = problemName;
+        this.region = region;
+        this.targetId = targetId;
+        this.compartmentId = compartmentId;
+        this.resourceType = resourceType;
+        this.resourceName = resourceName;
+        this.timeCreated = timeCreated;
+        this.timeCompleted = timeCompleted;
+        this.responderExecutionStatus = responderExecutionStatus;
+        this.responderExecutionMode = responderExecutionMode;
+        this.message = message;
+        this.responderRuleExecutionDetails = responderRuleExecutionDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -240,105 +294,291 @@ public class ResponderExecutionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier of the responder execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Responder Rule id for the responder execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
-    String responderRuleId;
+    private final String responderRuleId;
+
+    public String getResponderRuleId() {
+        return responderRuleId;
+    }
 
     /**
      * Rule Type for the responder execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleType")
-    ResponderType responderRuleType;
+    private final ResponderType responderRuleType;
+
+    public ResponderType getResponderRuleType() {
+        return responderRuleType;
+    }
 
     /**
      * Rule name for the responder execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleName")
-    String responderRuleName;
+    private final String responderRuleName;
+
+    public String getResponderRuleName() {
+        return responderRuleName;
+    }
 
     /**
      * Problem id associated with the responder execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
-    String problemId;
+    private final String problemId;
+
+    public String getProblemId() {
+        return problemId;
+    }
 
     /**
      * Problem name associated with the responder execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemName")
-    String problemName;
+    private final String problemName;
+
+    public String getProblemName() {
+        return problemName;
+    }
 
     /**
      * Region where the problem is found
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * Target Id of the problem for the responder execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * compartment id of the problem for the responder execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * resource type of the problem for the responder execution
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     /**
      * resource name of the problem for the responder execution. TODO-DOC link to resource definition doc
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * The date and time the responder execution was created. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the responder execution was updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
-    java.util.Date timeCompleted;
+    private final java.util.Date timeCompleted;
+
+    public java.util.Date getTimeCompleted() {
+        return timeCompleted;
+    }
 
     /**
      * current execution status of the responder
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionStatus")
-    ResponderExecutionStates responderExecutionStatus;
+    private final ResponderExecutionStates responderExecutionStatus;
+
+    public ResponderExecutionStates getResponderExecutionStatus() {
+        return responderExecutionStatus;
+    }
 
     /**
      * possible type of responder execution modes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionMode")
-    ResponderExecutionModes responderExecutionMode;
+    private final ResponderExecutionModes responderExecutionMode;
+
+    public ResponderExecutionModes getResponderExecutionMode() {
+        return responderExecutionMode;
+    }
 
     /**
      * Message about the responder execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleExecutionDetails")
-    ResponderRuleExecutionDetails responderRuleExecutionDetails;
+    private final ResponderRuleExecutionDetails responderRuleExecutionDetails;
+
+    public ResponderRuleExecutionDetails getResponderRuleExecutionDetails() {
+        return responderRuleExecutionDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResponderExecutionSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", responderRuleId=").append(String.valueOf(this.responderRuleId));
+        sb.append(", responderRuleType=").append(String.valueOf(this.responderRuleType));
+        sb.append(", responderRuleName=").append(String.valueOf(this.responderRuleName));
+        sb.append(", problemId=").append(String.valueOf(this.problemId));
+        sb.append(", problemName=").append(String.valueOf(this.problemName));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeCompleted=").append(String.valueOf(this.timeCompleted));
+        sb.append(", responderExecutionStatus=")
+                .append(String.valueOf(this.responderExecutionStatus));
+        sb.append(", responderExecutionMode=").append(String.valueOf(this.responderExecutionMode));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append(", responderRuleExecutionDetails=")
+                .append(String.valueOf(this.responderRuleExecutionDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResponderExecutionSummary)) {
+            return false;
+        }
+
+        ResponderExecutionSummary other = (ResponderExecutionSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.responderRuleId, other.responderRuleId)
+                && java.util.Objects.equals(this.responderRuleType, other.responderRuleType)
+                && java.util.Objects.equals(this.responderRuleName, other.responderRuleName)
+                && java.util.Objects.equals(this.problemId, other.problemId)
+                && java.util.Objects.equals(this.problemName, other.problemName)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeCompleted, other.timeCompleted)
+                && java.util.Objects.equals(
+                        this.responderExecutionStatus, other.responderExecutionStatus)
+                && java.util.Objects.equals(
+                        this.responderExecutionMode, other.responderExecutionMode)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(
+                        this.responderRuleExecutionDetails, other.responderRuleExecutionDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderRuleId == null ? 43 : this.responderRuleId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderRuleType == null ? 43 : this.responderRuleType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderRuleName == null ? 43 : this.responderRuleName.hashCode());
+        result = (result * PRIME) + (this.problemId == null ? 43 : this.problemId.hashCode());
+        result = (result * PRIME) + (this.problemName == null ? 43 : this.problemName.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCompleted == null ? 43 : this.timeCompleted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderExecutionStatus == null
+                                ? 43
+                                : this.responderExecutionStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderExecutionMode == null
+                                ? 43
+                                : this.responderExecutionMode.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responderRuleExecutionDetails == null
+                                ? 43
+                                : this.responderRuleExecutionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

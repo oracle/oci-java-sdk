@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProxyField.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProxyField extends TypedObject {
+public final class ProxyField extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -177,6 +172,10 @@ public class ProxyField extends TypedObject {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ProxyField(
             String key,
@@ -201,20 +200,88 @@ public class ProxyField extends TypedObject {
      * Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
-    Object scope;
+    private final Object scope;
+
+    public Object getScope() {
+        return scope;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("scopeReference")
-    ScopeReference scopeReference;
+    private final ScopeReference scopeReference;
+
+    public ScopeReference getScopeReference() {
+        return scopeReference;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    BaseType type;
+    private final BaseType type;
+
+    public BaseType getType() {
+        return type;
+    }
 
     /**
      * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
-    java.util.List<String> labels;
+    private final java.util.List<String> labels;
+
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProxyField(");
+        sb.append("super=").append(super.toString());
+        sb.append(", scope=").append(String.valueOf(this.scope));
+        sb.append(", scopeReference=").append(String.valueOf(this.scopeReference));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", labels=").append(String.valueOf(this.labels));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProxyField)) {
+            return false;
+        }
+
+        ProxyField other = (ProxyField) o;
+        return java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.scopeReference, other.scopeReference)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.labels, other.labels)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scopeReference == null ? 43 : this.scopeReference.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.ospgateway.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/AuthorizeSubscriptionPaymentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AuthorizeSubscriptionPaymentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AuthorizeSubscriptionPaymentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails> {
@@ -27,23 +19,36 @@ public class AuthorizeSubscriptionPaymentRequest
      */
     private String ospHomeRegion;
 
+    public String getOspHomeRegion() {
+        return ospHomeRegion;
+    }
     /**
      * Subscription id(OCID).
      */
     private String subscriptionId;
 
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      *
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * subscription payment request.
      */
     private com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails
             authorizeSubscriptionPaymentDetails;
 
+    public com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails
+            getAuthorizeSubscriptionPaymentDetails() {
+        return authorizeSubscriptionPaymentDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -54,6 +59,9 @@ public class AuthorizeSubscriptionPaymentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * For requests that are not idempotent (creates being the main place of interest), THE APIs should take a header
      * called opc-retry-token to identify the customer desire across requests, to introduce some level of idempotency.
@@ -61,12 +69,19 @@ public class AuthorizeSubscriptionPaymentRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -85,6 +100,97 @@ public class AuthorizeSubscriptionPaymentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String ospHomeRegion = null;
+
+        /**
+         * The home region's public name of the logged in user.
+         *
+         * @return this builder instance
+         */
+        public Builder ospHomeRegion(String ospHomeRegion) {
+            this.ospHomeRegion = ospHomeRegion;
+            return this;
+        }
+
+        private String subscriptionId = null;
+
+        /**
+         * Subscription id(OCID).
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails
+                authorizeSubscriptionPaymentDetails = null;
+
+        /**
+         * subscription payment request.
+         * @return this builder instance
+         */
+        public Builder authorizeSubscriptionPaymentDetails(
+                com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails
+                        authorizeSubscriptionPaymentDetails) {
+            this.authorizeSubscriptionPaymentDetails = authorizeSubscriptionPaymentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * For requests that are not idempotent (creates being the main place of interest), THE APIs should take a header
+         * called opc-retry-token to identify the customer desire across requests, to introduce some level of idempotency.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -154,5 +260,109 @@ public class AuthorizeSubscriptionPaymentRequest
             authorizeSubscriptionPaymentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of AuthorizeSubscriptionPaymentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of AuthorizeSubscriptionPaymentRequest
+         */
+        public AuthorizeSubscriptionPaymentRequest buildWithoutInvocationCallback() {
+            AuthorizeSubscriptionPaymentRequest request = new AuthorizeSubscriptionPaymentRequest();
+            request.ospHomeRegion = ospHomeRegion;
+            request.subscriptionId = subscriptionId;
+            request.compartmentId = compartmentId;
+            request.authorizeSubscriptionPaymentDetails = authorizeSubscriptionPaymentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new AuthorizeSubscriptionPaymentRequest(ospHomeRegion, subscriptionId, compartmentId, authorizeSubscriptionPaymentDetails, ifMatch, opcRetryToken, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .ospHomeRegion(ospHomeRegion)
+                .subscriptionId(subscriptionId)
+                .compartmentId(compartmentId)
+                .authorizeSubscriptionPaymentDetails(authorizeSubscriptionPaymentDetails)
+                .ifMatch(ifMatch)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",ospHomeRegion=").append(String.valueOf(this.ospHomeRegion));
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",authorizeSubscriptionPaymentDetails=")
+                .append(String.valueOf(this.authorizeSubscriptionPaymentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuthorizeSubscriptionPaymentRequest)) {
+            return false;
+        }
+
+        AuthorizeSubscriptionPaymentRequest other = (AuthorizeSubscriptionPaymentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.ospHomeRegion, other.ospHomeRegion)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.authorizeSubscriptionPaymentDetails,
+                        other.authorizeSubscriptionPaymentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.ospHomeRegion == null ? 43 : this.ospHomeRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authorizeSubscriptionPaymentDetails == null
+                                ? 43
+                                : this.authorizeSubscriptionPaymentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

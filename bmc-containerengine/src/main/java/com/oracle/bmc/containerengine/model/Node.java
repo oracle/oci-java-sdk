@@ -15,14 +15,62 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Node.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Node {
+public final class Node {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "kubernetesVersion",
+        "availabilityDomain",
+        "subnetId",
+        "nodePoolId",
+        "faultDomain",
+        "privateIp",
+        "publicIp",
+        "nodeError",
+        "freeformTags",
+        "definedTags",
+        "systemTags",
+        "lifecycleState",
+        "lifecycleDetails"
+    })
+    public Node(
+            String id,
+            String name,
+            String kubernetesVersion,
+            String availabilityDomain,
+            String subnetId,
+            String nodePoolId,
+            String faultDomain,
+            String privateIp,
+            String publicIp,
+            NodeError nodeError,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            LifecycleState lifecycleState,
+            String lifecycleDetails) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.kubernetesVersion = kubernetesVersion;
+        this.availabilityDomain = availabilityDomain;
+        this.subnetId = subnetId;
+        this.nodePoolId = nodePoolId;
+        this.faultDomain = faultDomain;
+        this.privateIp = privateIp;
+        this.publicIp = publicIp;
+        this.nodeError = nodeError;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -216,65 +264,109 @@ public class Node {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compute instance backing this node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The version of Kubernetes this node is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
-    String kubernetesVersion;
+    private final String kubernetesVersion;
+
+    public String getKubernetesVersion() {
+        return kubernetesVersion;
+    }
 
     /**
      * The name of the availability domain in which this node is placed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The OCID of the subnet in which this node is placed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The OCID of the node pool to which this node belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodePoolId")
-    String nodePoolId;
+    private final String nodePoolId;
+
+    public String getNodePoolId() {
+        return nodePoolId;
+    }
 
     /**
      * The fault domain of this node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
 
     /**
      * The private IP address of this node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    String privateIp;
+    private final String privateIp;
+
+    public String getPrivateIp() {
+        return privateIp;
+    }
 
     /**
      * The public IP address of this node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
-    String publicIp;
+    private final String publicIp;
+
+    public String getPublicIp() {
+        return publicIp;
+    }
 
     /**
      * An error that may be associated with the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeError")
-    NodeError nodeError;
+    private final NodeError nodeError;
+
+    public NodeError getNodeError() {
+        return nodeError;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -283,7 +375,11 @@ public class Node {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -292,7 +388,11 @@ public class Node {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
@@ -300,11 +400,15 @@ public class Node {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /**
      * The state of the node.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -319,6 +423,9 @@ public class Node {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -356,14 +463,113 @@ public class Node {
      * The state of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Details about the state of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Node(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", kubernetesVersion=").append(String.valueOf(this.kubernetesVersion));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nodePoolId=").append(String.valueOf(this.nodePoolId));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", publicIp=").append(String.valueOf(this.publicIp));
+        sb.append(", nodeError=").append(String.valueOf(this.nodeError));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Node)) {
+            return false;
+        }
+
+        Node other = (Node) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.kubernetesVersion, other.kubernetesVersion)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nodePoolId, other.nodePoolId)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.publicIp, other.publicIp)
+                && java.util.Objects.equals(this.nodeError, other.nodeError)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kubernetesVersion == null ? 43 : this.kubernetesVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nodePoolId == null ? 43 : this.nodePoolId.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.publicIp == null ? 43 : this.publicIp.hashCode());
+        result = (result * PRIME) + (this.nodeError == null ? 43 : this.nodeError.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

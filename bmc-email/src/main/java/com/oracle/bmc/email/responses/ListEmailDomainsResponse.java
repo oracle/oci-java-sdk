@@ -7,10 +7,6 @@ package com.oracle.bmc.email.responses;
 import com.oracle.bmc.email.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListEmailDomainsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages of results remain.
@@ -19,6 +15,10 @@ public class ListEmailDomainsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -26,10 +26,18 @@ public class ListEmailDomainsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned EmailDomainCollection instance.
      */
     private com.oracle.bmc.email.model.EmailDomainCollection emailDomainCollection;
+
+    public com.oracle.bmc.email.model.EmailDomainCollection getEmailDomainCollection() {
+        return emailDomainCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -56,6 +64,28 @@ public class ListEmailDomainsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.email.model.EmailDomainCollection emailDomainCollection;
+
+        public Builder emailDomainCollection(
+                com.oracle.bmc.email.model.EmailDomainCollection emailDomainCollection) {
+            this.emailDomainCollection = emailDomainCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -73,5 +103,52 @@ public class ListEmailDomainsResponse extends com.oracle.bmc.responses.BmcRespon
             return new ListEmailDomainsResponse(
                     __httpStatusCode__, opcNextPage, opcRequestId, emailDomainCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",emailDomainCollection=").append(String.valueOf(emailDomainCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListEmailDomainsResponse)) {
+            return false;
+        }
+
+        ListEmailDomainsResponse other = (ListEmailDomainsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.emailDomainCollection, other.emailDomainCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.emailDomainCollection == null
+                                ? 43
+                                : this.emailDomainCollection.hashCode());
+        return result;
     }
 }

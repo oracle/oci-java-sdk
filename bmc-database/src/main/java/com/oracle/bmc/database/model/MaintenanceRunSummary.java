@@ -16,16 +16,103 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MaintenanceRunSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MaintenanceRunSummary {
+public final class MaintenanceRunSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "description",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeScheduled",
+        "timeStarted",
+        "timeEnded",
+        "targetResourceType",
+        "targetResourceId",
+        "maintenanceType",
+        "patchId",
+        "maintenanceSubtype",
+        "peerMaintenanceRunId",
+        "patchingMode",
+        "patchFailureCount",
+        "targetDbServerVersion",
+        "targetStorageServerVersion",
+        "isCustomActionTimeoutEnabled",
+        "customActionTimeoutInMins",
+        "currentCustomActionTimeoutInMins",
+        "patchingStatus",
+        "patchingStartTime",
+        "patchingEndTime",
+        "estimatedPatchingTime",
+        "currentPatchingComponent",
+        "estimatedComponentPatchingStartTime"
+    })
+    public MaintenanceRunSummary(
+            String id,
+            String compartmentId,
+            String displayName,
+            String description,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeScheduled,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded,
+            TargetResourceType targetResourceType,
+            String targetResourceId,
+            MaintenanceType maintenanceType,
+            String patchId,
+            MaintenanceSubtype maintenanceSubtype,
+            String peerMaintenanceRunId,
+            PatchingMode patchingMode,
+            Integer patchFailureCount,
+            String targetDbServerVersion,
+            String targetStorageServerVersion,
+            Boolean isCustomActionTimeoutEnabled,
+            Integer customActionTimeoutInMins,
+            Integer currentCustomActionTimeoutInMins,
+            PatchingStatus patchingStatus,
+            java.util.Date patchingStartTime,
+            java.util.Date patchingEndTime,
+            EstimatedPatchingTime estimatedPatchingTime,
+            String currentPatchingComponent,
+            java.util.Date estimatedComponentPatchingStartTime) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.description = description;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeScheduled = timeScheduled;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+        this.targetResourceType = targetResourceType;
+        this.targetResourceId = targetResourceId;
+        this.maintenanceType = maintenanceType;
+        this.patchId = patchId;
+        this.maintenanceSubtype = maintenanceSubtype;
+        this.peerMaintenanceRunId = peerMaintenanceRunId;
+        this.patchingMode = patchingMode;
+        this.patchFailureCount = patchFailureCount;
+        this.targetDbServerVersion = targetDbServerVersion;
+        this.targetStorageServerVersion = targetStorageServerVersion;
+        this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+        this.customActionTimeoutInMins = customActionTimeoutInMins;
+        this.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
+        this.patchingStatus = patchingStatus;
+        this.patchingStartTime = patchingStartTime;
+        this.patchingEndTime = patchingEndTime;
+        this.estimatedPatchingTime = estimatedPatchingTime;
+        this.currentPatchingComponent = currentPatchingComponent;
+        this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -364,34 +451,54 @@ public class MaintenanceRunSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The user-friendly name for the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
     /**
      * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Scheduled("SCHEDULED"),
         InProgress("IN_PROGRESS"),
@@ -408,6 +515,9 @@ public class MaintenanceRunSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -446,35 +556,55 @@ public class MaintenanceRunSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time the maintenance run is scheduled to occur.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
-    java.util.Date timeScheduled;
+    private final java.util.Date timeScheduled;
+
+    public java.util.Date getTimeScheduled() {
+        return timeScheduled;
+    }
 
     /**
      * The date and time the maintenance run starts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The date and time the maintenance run was completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
+
     /**
      * The type of the target resource on which the maintenance run occurs.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TargetResourceType {
         AutonomousExadataInfrastructure("AUTONOMOUS_EXADATA_INFRASTRUCTURE"),
         AutonomousContainerDatabase("AUTONOMOUS_CONTAINER_DATABASE"),
@@ -489,6 +619,9 @@ public class MaintenanceRunSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TargetResourceType.class);
 
         private final String value;
         private static java.util.Map<String, TargetResourceType> map;
@@ -526,17 +659,25 @@ public class MaintenanceRunSummary {
      * The type of the target resource on which the maintenance run occurs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
-    TargetResourceType targetResourceType;
+    private final TargetResourceType targetResourceType;
+
+    public TargetResourceType getTargetResourceType() {
+        return targetResourceType;
+    }
 
     /**
      * The ID of the target resource on which the maintenance run occurs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
-    String targetResourceId;
+    private final String targetResourceId;
+
+    public String getTargetResourceId() {
+        return targetResourceId;
+    }
+
     /**
      * Maintenance type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MaintenanceType {
         Planned("PLANNED"),
         Unplanned("UNPLANNED"),
@@ -546,6 +687,9 @@ public class MaintenanceRunSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MaintenanceType.class);
 
         private final String value;
         private static java.util.Map<String, MaintenanceType> map;
@@ -583,17 +727,25 @@ public class MaintenanceRunSummary {
      * Maintenance type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceType")
-    MaintenanceType maintenanceType;
+    private final MaintenanceType maintenanceType;
+
+    public MaintenanceType getMaintenanceType() {
+        return maintenanceType;
+    }
 
     /**
      * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
-    String patchId;
+    private final String patchId;
+
+    public String getPatchId() {
+        return patchId;
+    }
+
     /**
      * Maintenance sub-type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MaintenanceSubtype {
         Quarterly("QUARTERLY"),
         Hardware("HARDWARE"),
@@ -607,6 +759,9 @@ public class MaintenanceRunSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MaintenanceSubtype.class);
 
         private final String value;
         private static java.util.Map<String, MaintenanceSubtype> map;
@@ -644,20 +799,28 @@ public class MaintenanceRunSummary {
      * Maintenance sub-type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceSubtype")
-    MaintenanceSubtype maintenanceSubtype;
+    private final MaintenanceSubtype maintenanceSubtype;
+
+    public MaintenanceSubtype getMaintenanceSubtype() {
+        return maintenanceSubtype;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunId")
-    String peerMaintenanceRunId;
+    private final String peerMaintenanceRunId;
+
+    public String getPeerMaintenanceRunId() {
+        return peerMaintenanceRunId;
+    }
+
     /**
      * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      * <p>
      *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PatchingMode {
         Rolling("ROLLING"),
         Nonrolling("NONROLLING"),
@@ -667,6 +830,9 @@ public class MaintenanceRunSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchingMode.class);
 
         private final String value;
         private static java.util.Map<String, PatchingMode> map;
@@ -707,31 +873,51 @@ public class MaintenanceRunSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
-    PatchingMode patchingMode;
+    private final PatchingMode patchingMode;
+
+    public PatchingMode getPatchingMode() {
+        return patchingMode;
+    }
 
     /**
      * Contain the patch failure count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchFailureCount")
-    Integer patchFailureCount;
+    private final Integer patchFailureCount;
+
+    public Integer getPatchFailureCount() {
+        return patchFailureCount;
+    }
 
     /**
      * The target software version for the database server patching operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDbServerVersion")
-    String targetDbServerVersion;
+    private final String targetDbServerVersion;
+
+    public String getTargetDbServerVersion() {
+        return targetDbServerVersion;
+    }
 
     /**
      * The target Cell version that is to be patched to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetStorageServerVersion")
-    String targetStorageServerVersion;
+    private final String targetStorageServerVersion;
+
+    public String getTargetStorageServerVersion() {
+        return targetStorageServerVersion;
+    }
 
     /**
      * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
-    Boolean isCustomActionTimeoutEnabled;
+    private final Boolean isCustomActionTimeoutEnabled;
+
+    public Boolean getIsCustomActionTimeoutEnabled() {
+        return isCustomActionTimeoutEnabled;
+    }
 
     /**
      * Determines the amount of time the system will wait before the start of each database server patching operation.
@@ -739,17 +925,25 @@ public class MaintenanceRunSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
-    Integer customActionTimeoutInMins;
+    private final Integer customActionTimeoutInMins;
+
+    public Integer getCustomActionTimeoutInMins() {
+        return customActionTimeoutInMins;
+    }
 
     /**
      * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
-    Integer currentCustomActionTimeoutInMins;
+    private final Integer currentCustomActionTimeoutInMins;
+
+    public Integer getCurrentCustomActionTimeoutInMins() {
+        return currentCustomActionTimeoutInMins;
+    }
+
     /**
      * The status of the patching operation.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PatchingStatus {
         Patching("PATCHING"),
         Waiting("WAITING"),
@@ -760,6 +954,9 @@ public class MaintenanceRunSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchingStatus.class);
 
         private final String value;
         private static java.util.Map<String, PatchingStatus> map;
@@ -797,35 +994,257 @@ public class MaintenanceRunSummary {
      * The status of the patching operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
-    PatchingStatus patchingStatus;
+    private final PatchingStatus patchingStatus;
+
+    public PatchingStatus getPatchingStatus() {
+        return patchingStatus;
+    }
 
     /**
      * The time when the patching operation started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingStartTime")
-    java.util.Date patchingStartTime;
+    private final java.util.Date patchingStartTime;
+
+    public java.util.Date getPatchingStartTime() {
+        return patchingStartTime;
+    }
 
     /**
      * The time when the patching operation ended.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingEndTime")
-    java.util.Date patchingEndTime;
+    private final java.util.Date patchingEndTime;
+
+    public java.util.Date getPatchingEndTime() {
+        return patchingEndTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedPatchingTime")
-    EstimatedPatchingTime estimatedPatchingTime;
+    private final EstimatedPatchingTime estimatedPatchingTime;
+
+    public EstimatedPatchingTime getEstimatedPatchingTime() {
+        return estimatedPatchingTime;
+    }
 
     /**
      * The name of the current infrastruture component that is getting patched.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentPatchingComponent")
-    String currentPatchingComponent;
+    private final String currentPatchingComponent;
+
+    public String getCurrentPatchingComponent() {
+        return currentPatchingComponent;
+    }
 
     /**
      * The estimated start time of the next infrastruture component patching operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedComponentPatchingStartTime")
-    java.util.Date estimatedComponentPatchingStartTime;
+    private final java.util.Date estimatedComponentPatchingStartTime;
+
+    public java.util.Date getEstimatedComponentPatchingStartTime() {
+        return estimatedComponentPatchingStartTime;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MaintenanceRunSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", targetResourceType=").append(String.valueOf(this.targetResourceType));
+        sb.append(", targetResourceId=").append(String.valueOf(this.targetResourceId));
+        sb.append(", maintenanceType=").append(String.valueOf(this.maintenanceType));
+        sb.append(", patchId=").append(String.valueOf(this.patchId));
+        sb.append(", maintenanceSubtype=").append(String.valueOf(this.maintenanceSubtype));
+        sb.append(", peerMaintenanceRunId=").append(String.valueOf(this.peerMaintenanceRunId));
+        sb.append(", patchingMode=").append(String.valueOf(this.patchingMode));
+        sb.append(", patchFailureCount=").append(String.valueOf(this.patchFailureCount));
+        sb.append(", targetDbServerVersion=").append(String.valueOf(this.targetDbServerVersion));
+        sb.append(", targetStorageServerVersion=")
+                .append(String.valueOf(this.targetStorageServerVersion));
+        sb.append(", isCustomActionTimeoutEnabled=")
+                .append(String.valueOf(this.isCustomActionTimeoutEnabled));
+        sb.append(", customActionTimeoutInMins=")
+                .append(String.valueOf(this.customActionTimeoutInMins));
+        sb.append(", currentCustomActionTimeoutInMins=")
+                .append(String.valueOf(this.currentCustomActionTimeoutInMins));
+        sb.append(", patchingStatus=").append(String.valueOf(this.patchingStatus));
+        sb.append(", patchingStartTime=").append(String.valueOf(this.patchingStartTime));
+        sb.append(", patchingEndTime=").append(String.valueOf(this.patchingEndTime));
+        sb.append(", estimatedPatchingTime=").append(String.valueOf(this.estimatedPatchingTime));
+        sb.append(", currentPatchingComponent=")
+                .append(String.valueOf(this.currentPatchingComponent));
+        sb.append(", estimatedComponentPatchingStartTime=")
+                .append(String.valueOf(this.estimatedComponentPatchingStartTime));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MaintenanceRunSummary)) {
+            return false;
+        }
+
+        MaintenanceRunSummary other = (MaintenanceRunSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.targetResourceType, other.targetResourceType)
+                && java.util.Objects.equals(this.targetResourceId, other.targetResourceId)
+                && java.util.Objects.equals(this.maintenanceType, other.maintenanceType)
+                && java.util.Objects.equals(this.patchId, other.patchId)
+                && java.util.Objects.equals(this.maintenanceSubtype, other.maintenanceSubtype)
+                && java.util.Objects.equals(this.peerMaintenanceRunId, other.peerMaintenanceRunId)
+                && java.util.Objects.equals(this.patchingMode, other.patchingMode)
+                && java.util.Objects.equals(this.patchFailureCount, other.patchFailureCount)
+                && java.util.Objects.equals(this.targetDbServerVersion, other.targetDbServerVersion)
+                && java.util.Objects.equals(
+                        this.targetStorageServerVersion, other.targetStorageServerVersion)
+                && java.util.Objects.equals(
+                        this.isCustomActionTimeoutEnabled, other.isCustomActionTimeoutEnabled)
+                && java.util.Objects.equals(
+                        this.customActionTimeoutInMins, other.customActionTimeoutInMins)
+                && java.util.Objects.equals(
+                        this.currentCustomActionTimeoutInMins,
+                        other.currentCustomActionTimeoutInMins)
+                && java.util.Objects.equals(this.patchingStatus, other.patchingStatus)
+                && java.util.Objects.equals(this.patchingStartTime, other.patchingStartTime)
+                && java.util.Objects.equals(this.patchingEndTime, other.patchingEndTime)
+                && java.util.Objects.equals(this.estimatedPatchingTime, other.estimatedPatchingTime)
+                && java.util.Objects.equals(
+                        this.currentPatchingComponent, other.currentPatchingComponent)
+                && java.util.Objects.equals(
+                        this.estimatedComponentPatchingStartTime,
+                        other.estimatedComponentPatchingStartTime)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduled == null ? 43 : this.timeScheduled.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourceType == null
+                                ? 43
+                                : this.targetResourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourceId == null ? 43 : this.targetResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceType == null ? 43 : this.maintenanceType.hashCode());
+        result = (result * PRIME) + (this.patchId == null ? 43 : this.patchId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceSubtype == null
+                                ? 43
+                                : this.maintenanceSubtype.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerMaintenanceRunId == null
+                                ? 43
+                                : this.peerMaintenanceRunId.hashCode());
+        result = (result * PRIME) + (this.patchingMode == null ? 43 : this.patchingMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchFailureCount == null ? 43 : this.patchFailureCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDbServerVersion == null
+                                ? 43
+                                : this.targetDbServerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetStorageServerVersion == null
+                                ? 43
+                                : this.targetStorageServerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCustomActionTimeoutEnabled == null
+                                ? 43
+                                : this.isCustomActionTimeoutEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customActionTimeoutInMins == null
+                                ? 43
+                                : this.customActionTimeoutInMins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentCustomActionTimeoutInMins == null
+                                ? 43
+                                : this.currentCustomActionTimeoutInMins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchingStatus == null ? 43 : this.patchingStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchingStartTime == null ? 43 : this.patchingStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchingEndTime == null ? 43 : this.patchingEndTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.estimatedPatchingTime == null
+                                ? 43
+                                : this.estimatedPatchingTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentPatchingComponent == null
+                                ? 43
+                                : this.currentPatchingComponent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.estimatedComponentPatchingStartTime == null
+                                ? 43
+                                : this.estimatedComponentPatchingStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

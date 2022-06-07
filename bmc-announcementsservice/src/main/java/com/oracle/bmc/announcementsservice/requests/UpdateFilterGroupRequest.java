@@ -9,14 +9,6 @@ import com.oracle.bmc.announcementsservice.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateFilterGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFilterGroupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateFilterGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails> {
@@ -26,17 +18,27 @@ public class UpdateFilterGroupRequest
      */
     private String announcementSubscriptionId;
 
+    public String getAnnouncementSubscriptionId() {
+        return announcementSubscriptionId;
+    }
     /**
      * The name of the filter group.
      */
     private String filterGroupName;
 
+    public String getFilterGroupName() {
+        return filterGroupName;
+    }
     /**
      * The filter group information to update.
      */
     private com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails
             updateFilterGroupDetails;
 
+    public com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails
+            getUpdateFilterGroupDetails() {
+        return updateFilterGroupDetails;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the complete request ID.
@@ -44,10 +46,17 @@ public class UpdateFilterGroupRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The locking version, used for optimistic concurrency control.
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -66,6 +75,66 @@ public class UpdateFilterGroupRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String announcementSubscriptionId = null;
+
+        /**
+         * The OCID of the announcement subscription.
+         * @return this builder instance
+         */
+        public Builder announcementSubscriptionId(String announcementSubscriptionId) {
+            this.announcementSubscriptionId = announcementSubscriptionId;
+            return this;
+        }
+
+        private String filterGroupName = null;
+
+        /**
+         * The name of the filter group.
+         * @return this builder instance
+         */
+        public Builder filterGroupName(String filterGroupName) {
+            this.filterGroupName = filterGroupName;
+            return this;
+        }
+
+        private com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails
+                updateFilterGroupDetails = null;
+
+        /**
+         * The filter group information to update.
+         * @return this builder instance
+         */
+        public Builder updateFilterGroupDetails(
+                com.oracle.bmc.announcementsservice.model.UpdateFilterGroupDetails
+                        updateFilterGroupDetails) {
+            this.updateFilterGroupDetails = updateFilterGroupDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * The locking version, used for optimistic concurrency control.
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -133,5 +202,98 @@ public class UpdateFilterGroupRequest
             updateFilterGroupDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateFilterGroupRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateFilterGroupRequest
+         */
+        public UpdateFilterGroupRequest buildWithoutInvocationCallback() {
+            UpdateFilterGroupRequest request = new UpdateFilterGroupRequest();
+            request.announcementSubscriptionId = announcementSubscriptionId;
+            request.filterGroupName = filterGroupName;
+            request.updateFilterGroupDetails = updateFilterGroupDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateFilterGroupRequest(announcementSubscriptionId, filterGroupName, updateFilterGroupDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .announcementSubscriptionId(announcementSubscriptionId)
+                .filterGroupName(filterGroupName)
+                .updateFilterGroupDetails(updateFilterGroupDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",announcementSubscriptionId=")
+                .append(String.valueOf(this.announcementSubscriptionId));
+        sb.append(",filterGroupName=").append(String.valueOf(this.filterGroupName));
+        sb.append(",updateFilterGroupDetails=")
+                .append(String.valueOf(this.updateFilterGroupDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateFilterGroupRequest)) {
+            return false;
+        }
+
+        UpdateFilterGroupRequest other = (UpdateFilterGroupRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.announcementSubscriptionId, other.announcementSubscriptionId)
+                && java.util.Objects.equals(this.filterGroupName, other.filterGroupName)
+                && java.util.Objects.equals(
+                        this.updateFilterGroupDetails, other.updateFilterGroupDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.announcementSubscriptionId == null
+                                ? 43
+                                : this.announcementSubscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterGroupName == null ? 43 : this.filterGroupName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateFilterGroupDetails == null
+                                ? 43
+                                : this.updateFilterGroupDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

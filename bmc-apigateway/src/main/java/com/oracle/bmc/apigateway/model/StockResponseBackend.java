@@ -16,22 +16,17 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StockResponseBackend.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StockResponseBackend extends ApiSpecificationRouteBackend {
+public final class StockResponseBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("body")
         private String body;
@@ -85,6 +80,10 @@ public class StockResponseBackend extends ApiSpecificationRouteBackend {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public StockResponseBackend(
             String body, Integer status, java.util.List<HeaderFieldSpecification> headers) {
@@ -98,20 +97,79 @@ public class StockResponseBackend extends ApiSpecificationRouteBackend {
      * The body of the stock response from the mock backend.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("body")
-    String body;
+    private final String body;
+
+    public String getBody() {
+        return body;
+    }
 
     /**
      * The status code of the stock response from the mock backend.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Integer status;
+    private final Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
 
     /**
      * The headers of the stock response from the mock backend.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
-    java.util.List<HeaderFieldSpecification> headers;
+    private final java.util.List<HeaderFieldSpecification> headers;
+
+    public java.util.List<HeaderFieldSpecification> getHeaders() {
+        return headers;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StockResponseBackend(");
+        sb.append("super=").append(super.toString());
+        sb.append(", body=").append(String.valueOf(this.body));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", headers=").append(String.valueOf(this.headers));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StockResponseBackend)) {
+            return false;
+        }
+
+        StockResponseBackend other = (StockResponseBackend) o;
+        return java.util.Objects.equals(this.body, other.body)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.headers, other.headers)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.body == null ? 43 : this.body.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

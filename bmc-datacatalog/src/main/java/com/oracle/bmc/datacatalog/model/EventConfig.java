@@ -15,14 +15,44 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EventConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EventConfig {
+public final class EventConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "typeId",
+        "typeName",
+        "propertyId",
+        "propertyName",
+        "eventConfigStatus",
+        "timeCreated",
+        "timeUpdated",
+        "createdById",
+        "updatedById"
+    })
+    public EventConfig(
+            String typeId,
+            String typeName,
+            String propertyId,
+            String propertyName,
+            EventConfigStatus eventConfigStatus,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String createdById,
+            String updatedById) {
+        super();
+        this.typeId = typeId;
+        this.typeName = typeName;
+        this.propertyId = propertyId;
+        this.propertyName = propertyName;
+        this.eventConfigStatus = eventConfigStatus;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.createdById = createdById;
+        this.updatedById = updatedById;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("typeId")
         private String typeId;
@@ -149,35 +179,59 @@ public class EventConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique type key identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeId")
-    String typeId;
+    private final String typeId;
+
+    public String getTypeId() {
+        return typeId;
+    }
 
     /**
      * Name of the type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
-    String typeName;
+    private final String typeName;
+
+    public String getTypeName() {
+        return typeName;
+    }
 
     /**
      * Unique property key identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("propertyId")
-    String propertyId;
+    private final String propertyId;
+
+    public String getPropertyId() {
+        return propertyId;
+    }
 
     /**
      * Name of the property.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("propertyName")
-    String propertyName;
+    private final String propertyName;
+
+    public String getPropertyName() {
+        return propertyName;
+    }
 
     /**
      * Status of the configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventConfigStatus")
-    EventConfigStatus eventConfigStatus;
+    private final EventConfigStatus eventConfigStatus;
+
+    public EventConfigStatus getEventConfigStatus() {
+        return eventConfigStatus;
+    }
 
     /**
      * The date and time the event was configured, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -185,27 +239,108 @@ public class EventConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The last time that any change was made to the configuration. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * OCID of the user who created the configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
-    String createdById;
+    private final String createdById;
+
+    public String getCreatedById() {
+        return createdById;
+    }
 
     /**
      * OCID of the user who last modified the configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
-    String updatedById;
+    private final String updatedById;
+
+    public String getUpdatedById() {
+        return updatedById;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EventConfig(");
+        sb.append("typeId=").append(String.valueOf(this.typeId));
+        sb.append(", typeName=").append(String.valueOf(this.typeName));
+        sb.append(", propertyId=").append(String.valueOf(this.propertyId));
+        sb.append(", propertyName=").append(String.valueOf(this.propertyName));
+        sb.append(", eventConfigStatus=").append(String.valueOf(this.eventConfigStatus));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", createdById=").append(String.valueOf(this.createdById));
+        sb.append(", updatedById=").append(String.valueOf(this.updatedById));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EventConfig)) {
+            return false;
+        }
+
+        EventConfig other = (EventConfig) o;
+        return java.util.Objects.equals(this.typeId, other.typeId)
+                && java.util.Objects.equals(this.typeName, other.typeName)
+                && java.util.Objects.equals(this.propertyId, other.propertyId)
+                && java.util.Objects.equals(this.propertyName, other.propertyName)
+                && java.util.Objects.equals(this.eventConfigStatus, other.eventConfigStatus)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.createdById, other.createdById)
+                && java.util.Objects.equals(this.updatedById, other.updatedById)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.typeId == null ? 43 : this.typeId.hashCode());
+        result = (result * PRIME) + (this.typeName == null ? 43 : this.typeName.hashCode());
+        result = (result * PRIME) + (this.propertyId == null ? 43 : this.propertyId.hashCode());
+        result = (result * PRIME) + (this.propertyName == null ? 43 : this.propertyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.eventConfigStatus == null ? 43 : this.eventConfigStatus.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.createdById == null ? 43 : this.createdById.hashCode());
+        result = (result * PRIME) + (this.updatedById == null ? 43 : this.updatedById.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

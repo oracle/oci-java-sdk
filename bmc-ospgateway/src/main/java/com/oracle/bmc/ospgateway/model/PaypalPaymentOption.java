@@ -15,22 +15,17 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PaypalPaymentOption.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "paymentMethod"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PaypalPaymentOption extends PaymentOption {
+public final class PaypalPaymentOption extends PaymentOption {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("walletInstrumentId")
         private String walletInstrumentId;
@@ -124,6 +119,10 @@ public class PaypalPaymentOption extends PaymentOption {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public PaypalPaymentOption(
             String walletInstrumentId,
@@ -143,26 +142,96 @@ public class PaypalPaymentOption extends PaymentOption {
      * The email address of the paypal user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
-    String emailAddress;
+    private final String emailAddress;
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
 
     /**
      * First name of the paypal user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
-    String firstName;
+    private final String firstName;
+
+    public String getFirstName() {
+        return firstName;
+    }
 
     /**
      * Last name of the paypal user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
-    String lastName;
+    private final String lastName;
+
+    public String getLastName() {
+        return lastName;
+    }
 
     /**
      * Agreement id for the paypal account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extBillingAgreementId")
-    String extBillingAgreementId;
+    private final String extBillingAgreementId;
+
+    public String getExtBillingAgreementId() {
+        return extBillingAgreementId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PaypalPaymentOption(");
+        sb.append("super=").append(super.toString());
+        sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
+        sb.append(", firstName=").append(String.valueOf(this.firstName));
+        sb.append(", lastName=").append(String.valueOf(this.lastName));
+        sb.append(", extBillingAgreementId=").append(String.valueOf(this.extBillingAgreementId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PaypalPaymentOption)) {
+            return false;
+        }
+
+        PaypalPaymentOption other = (PaypalPaymentOption) o;
+        return java.util.Objects.equals(this.emailAddress, other.emailAddress)
+                && java.util.Objects.equals(this.firstName, other.firstName)
+                && java.util.Objects.equals(this.lastName, other.lastName)
+                && java.util.Objects.equals(this.extBillingAgreementId, other.extBillingAgreementId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
+        result = (result * PRIME) + (this.firstName == null ? 43 : this.firstName.hashCode());
+        result = (result * PRIME) + (this.lastName == null ? 43 : this.lastName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extBillingAgreementId == null
+                                ? 43
+                                : this.extBillingAgreementId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

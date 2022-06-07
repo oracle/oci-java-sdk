@@ -15,14 +15,20 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OntologyClass.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OntologyClass {
+public final class OntologyClass {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "parentNames", "synonymNames"})
+    public OntologyClass(
+            String name, java.util.List<String> parentNames, java.util.List<String> synonymNames) {
+        super();
+        this.name = name;
+        this.parentNames = parentNames;
+        this.synonymNames = synonymNames;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -79,24 +85,85 @@ public class OntologyClass {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The label parents.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentNames")
-    java.util.List<String> parentNames;
+    private final java.util.List<String> parentNames;
+
+    public java.util.List<String> getParentNames() {
+        return parentNames;
+    }
 
     /**
      * The label synonyms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("synonymNames")
-    java.util.List<String> synonymNames;
+    private final java.util.List<String> synonymNames;
+
+    public java.util.List<String> getSynonymNames() {
+        return synonymNames;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OntologyClass(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", parentNames=").append(String.valueOf(this.parentNames));
+        sb.append(", synonymNames=").append(String.valueOf(this.synonymNames));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OntologyClass)) {
+            return false;
+        }
+
+        OntologyClass other = (OntologyClass) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.parentNames, other.parentNames)
+                && java.util.Objects.equals(this.synonymNames, other.synonymNames)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.parentNames == null ? 43 : this.parentNames.hashCode());
+        result = (result * PRIME) + (this.synonymNames == null ? 43 : this.synonymNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

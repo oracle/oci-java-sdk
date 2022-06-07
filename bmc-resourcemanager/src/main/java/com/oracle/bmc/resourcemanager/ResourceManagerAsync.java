@@ -91,6 +91,27 @@ public interface ResourceManagerAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a private endpoint to a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePrivateEndpointCompartmentResponse>
+            changePrivateEndpointCompartment(
+                    ChangePrivateEndpointCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePrivateEndpointCompartmentRequest,
+                                    ChangePrivateEndpointCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a Stack and it's associated Jobs into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -161,6 +182,23 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handler);
 
     /**
+     * Creates a a private endpoint in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePrivateEndpointResponse> createPrivateEndpoint(
+            CreatePrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
+                    handler);
+
+    /**
      * Creates a stack in the specified compartment.
      * You can create a stack from a Terraform configuration.
      * The Terraform configuration can be directly uploaded or referenced from a source code control system.
@@ -214,6 +252,22 @@ public interface ResourceManagerAsync extends AutoCloseable {
                                     DeleteConfigurationSourceProviderRequest,
                                     DeleteConfigurationSourceProviderResponse>
                             handler);
+
+    /**
+     * Deletes the specified private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePrivateEndpointResponse> deletePrivateEndpoint(
+            DeletePrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>
+                    handler);
 
     /**
      * Deletes the specified stack object.
@@ -358,6 +412,24 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the output of the specified Terraform plan job in binary or JSON format.
+     * For information about running Terraform plan jobs, see
+     * [To run a plan job](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#PlanJobRun).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetJobTfPlanResponse> getJobTfPlan(
+            GetJobTfPlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetJobTfPlanRequest, GetJobTfPlanResponse>
+                    handler);
+
+    /**
      * Returns the Terraform state for the specified job.
      *
      * @param request The request object containing the details to send
@@ -370,6 +442,38 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<GetJobTfStateResponse> getJobTfState(
             GetJobTfStateRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetJobTfStateRequest, GetJobTfStateResponse>
+                    handler);
+
+    /**
+     * Gets the specified private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPrivateEndpointResponse> getPrivateEndpoint(
+            GetPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPrivateEndpointRequest, GetPrivateEndpointResponse>
+                    handler);
+
+    /**
+     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetReachableIpResponse> getReachableIp(
+            GetReachableIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetReachableIpRequest, GetReachableIpResponse>
                     handler);
 
     /**
@@ -521,6 +625,25 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<ListJobsResponse> listJobs(
             ListJobsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handler);
+
+    /**
+     * Lists private endpoints according to the specified filter.
+     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `privateEndpointId`, lists the matching private endpoint.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPrivateEndpointsResponse> listPrivateEndpoints(
+            ListPrivateEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>
+                    handler);
 
     /**
      * Returns a list of supported services for Resource Discovery. For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
@@ -716,6 +839,22 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateJobResponse> updateJob(
             UpdateJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handler);
+
+    /**
+     * Updates the specified private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePrivateEndpointResponse> updatePrivateEndpoint(
+            UpdatePrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>
+                    handler);
 
     /**
      * Updates the specified stack object.

@@ -15,16 +15,43 @@ package com.oracle.bmc.apmsynthetics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RequestAuthenticationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RequestAuthenticationDetails {
+public final class RequestAuthenticationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "oauthScheme",
+        "authUserName",
+        "authUserPassword",
+        "authToken",
+        "authUrl",
+        "authHeaders",
+        "authRequestMethod",
+        "authRequestPostBody"
+    })
+    public RequestAuthenticationDetails(
+            OAuthSchemes oauthScheme,
+            String authUserName,
+            String authUserPassword,
+            String authToken,
+            String authUrl,
+            java.util.List<Header> authHeaders,
+            RequestMethods authRequestMethod,
+            String authRequestPostBody) {
+        super();
+        this.oauthScheme = oauthScheme;
+        this.authUserName = authUserName;
+        this.authUserPassword = authUserPassword;
+        this.authToken = authToken;
+        this.authUrl = authUrl;
+        this.authHeaders = authHeaders;
+        this.authRequestMethod = authRequestMethod;
+        this.authRequestPostBody = authRequestPostBody;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("oauthScheme")
         private OAuthSchemes oauthScheme;
@@ -140,55 +167,159 @@ public class RequestAuthenticationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Request http oauth scheme.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oauthScheme")
-    OAuthSchemes oauthScheme;
+    private final OAuthSchemes oauthScheme;
+
+    public OAuthSchemes getOauthScheme() {
+        return oauthScheme;
+    }
 
     /**
      * Username for authentication.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authUserName")
-    String authUserName;
+    private final String authUserName;
+
+    public String getAuthUserName() {
+        return authUserName;
+    }
 
     /**
      * User password for authentication.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authUserPassword")
-    String authUserPassword;
+    private final String authUserPassword;
+
+    public String getAuthUserPassword() {
+        return authUserPassword;
+    }
 
     /**
      * Authentication token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-    String authToken;
+    private final String authToken;
+
+    public String getAuthToken() {
+        return authToken;
+    }
 
     /**
      * URL to get authetication token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authUrl")
-    String authUrl;
+    private final String authUrl;
+
+    public String getAuthUrl() {
+        return authUrl;
+    }
 
     /**
      * List of authentication headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authHeaders")
-    java.util.List<Header> authHeaders;
+    private final java.util.List<Header> authHeaders;
+
+    public java.util.List<Header> getAuthHeaders() {
+        return authHeaders;
+    }
 
     /**
      * Request method.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authRequestMethod")
-    RequestMethods authRequestMethod;
+    private final RequestMethods authRequestMethod;
+
+    public RequestMethods getAuthRequestMethod() {
+        return authRequestMethod;
+    }
 
     /**
      * Request post body.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authRequestPostBody")
-    String authRequestPostBody;
+    private final String authRequestPostBody;
+
+    public String getAuthRequestPostBody() {
+        return authRequestPostBody;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RequestAuthenticationDetails(");
+        sb.append("oauthScheme=").append(String.valueOf(this.oauthScheme));
+        sb.append(", authUserName=").append(String.valueOf(this.authUserName));
+        sb.append(", authUserPassword=").append(String.valueOf(this.authUserPassword));
+        sb.append(", authToken=").append(String.valueOf(this.authToken));
+        sb.append(", authUrl=").append(String.valueOf(this.authUrl));
+        sb.append(", authHeaders=").append(String.valueOf(this.authHeaders));
+        sb.append(", authRequestMethod=").append(String.valueOf(this.authRequestMethod));
+        sb.append(", authRequestPostBody=").append(String.valueOf(this.authRequestPostBody));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RequestAuthenticationDetails)) {
+            return false;
+        }
+
+        RequestAuthenticationDetails other = (RequestAuthenticationDetails) o;
+        return java.util.Objects.equals(this.oauthScheme, other.oauthScheme)
+                && java.util.Objects.equals(this.authUserName, other.authUserName)
+                && java.util.Objects.equals(this.authUserPassword, other.authUserPassword)
+                && java.util.Objects.equals(this.authToken, other.authToken)
+                && java.util.Objects.equals(this.authUrl, other.authUrl)
+                && java.util.Objects.equals(this.authHeaders, other.authHeaders)
+                && java.util.Objects.equals(this.authRequestMethod, other.authRequestMethod)
+                && java.util.Objects.equals(this.authRequestPostBody, other.authRequestPostBody)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.oauthScheme == null ? 43 : this.oauthScheme.hashCode());
+        result = (result * PRIME) + (this.authUserName == null ? 43 : this.authUserName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authUserPassword == null ? 43 : this.authUserPassword.hashCode());
+        result = (result * PRIME) + (this.authToken == null ? 43 : this.authToken.hashCode());
+        result = (result * PRIME) + (this.authUrl == null ? 43 : this.authUrl.hashCode());
+        result = (result * PRIME) + (this.authHeaders == null ? 43 : this.authHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authRequestMethod == null ? 43 : this.authRequestMethod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authRequestPostBody == null
+                                ? 43
+                                : this.authRequestPostBody.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

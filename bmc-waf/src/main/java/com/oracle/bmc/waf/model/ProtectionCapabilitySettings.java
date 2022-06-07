@@ -16,16 +16,37 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProtectionCapabilitySettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProtectionCapabilitySettings {
+public final class ProtectionCapabilitySettings {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "maxNumberOfArguments",
+        "maxSingleArgumentLength",
+        "maxTotalArgumentLength",
+        "maxHttpRequestHeaders",
+        "maxHttpRequestHeaderLength",
+        "allowedHttpMethods"
+    })
+    public ProtectionCapabilitySettings(
+            Integer maxNumberOfArguments,
+            Integer maxSingleArgumentLength,
+            Integer maxTotalArgumentLength,
+            Integer maxHttpRequestHeaders,
+            Integer maxHttpRequestHeaderLength,
+            java.util.List<String> allowedHttpMethods) {
+        super();
+        this.maxNumberOfArguments = maxNumberOfArguments;
+        this.maxSingleArgumentLength = maxSingleArgumentLength;
+        this.maxTotalArgumentLength = maxTotalArgumentLength;
+        this.maxHttpRequestHeaders = maxHttpRequestHeaders;
+        this.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
+        this.allowedHttpMethods = allowedHttpMethods;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("maxNumberOfArguments")
         private Integer maxNumberOfArguments;
@@ -119,40 +140,64 @@ public class ProtectionCapabilitySettings {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxNumberOfArguments")
-    Integer maxNumberOfArguments;
+    private final Integer maxNumberOfArguments;
+
+    public Integer getMaxNumberOfArguments() {
+        return maxNumberOfArguments;
+    }
 
     /**
      * Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSingleArgumentLength")
-    Integer maxSingleArgumentLength;
+    private final Integer maxSingleArgumentLength;
+
+    public Integer getMaxSingleArgumentLength() {
+        return maxSingleArgumentLength;
+    }
 
     /**
      * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalArgumentLength")
-    Integer maxTotalArgumentLength;
+    private final Integer maxTotalArgumentLength;
+
+    public Integer getMaxTotalArgumentLength() {
+        return maxTotalArgumentLength;
+    }
 
     /**
      * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaders")
-    Integer maxHttpRequestHeaders;
+    private final Integer maxHttpRequestHeaders;
+
+    public Integer getMaxHttpRequestHeaders() {
+        return maxHttpRequestHeaders;
+    }
 
     /**
      * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaderLength")
-    Integer maxHttpRequestHeaderLength;
+    private final Integer maxHttpRequestHeaderLength;
+
+    public Integer getMaxHttpRequestHeaderLength() {
+        return maxHttpRequestHeaderLength;
+    }
 
     /**
      * List of allowed HTTP methods. Each value as a RFC7230 formated token string.
@@ -160,8 +205,95 @@ public class ProtectionCapabilitySettings {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedHttpMethods")
-    java.util.List<String> allowedHttpMethods;
+    private final java.util.List<String> allowedHttpMethods;
+
+    public java.util.List<String> getAllowedHttpMethods() {
+        return allowedHttpMethods;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProtectionCapabilitySettings(");
+        sb.append("maxNumberOfArguments=").append(String.valueOf(this.maxNumberOfArguments));
+        sb.append(", maxSingleArgumentLength=")
+                .append(String.valueOf(this.maxSingleArgumentLength));
+        sb.append(", maxTotalArgumentLength=").append(String.valueOf(this.maxTotalArgumentLength));
+        sb.append(", maxHttpRequestHeaders=").append(String.valueOf(this.maxHttpRequestHeaders));
+        sb.append(", maxHttpRequestHeaderLength=")
+                .append(String.valueOf(this.maxHttpRequestHeaderLength));
+        sb.append(", allowedHttpMethods=").append(String.valueOf(this.allowedHttpMethods));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProtectionCapabilitySettings)) {
+            return false;
+        }
+
+        ProtectionCapabilitySettings other = (ProtectionCapabilitySettings) o;
+        return java.util.Objects.equals(this.maxNumberOfArguments, other.maxNumberOfArguments)
+                && java.util.Objects.equals(
+                        this.maxSingleArgumentLength, other.maxSingleArgumentLength)
+                && java.util.Objects.equals(
+                        this.maxTotalArgumentLength, other.maxTotalArgumentLength)
+                && java.util.Objects.equals(this.maxHttpRequestHeaders, other.maxHttpRequestHeaders)
+                && java.util.Objects.equals(
+                        this.maxHttpRequestHeaderLength, other.maxHttpRequestHeaderLength)
+                && java.util.Objects.equals(this.allowedHttpMethods, other.allowedHttpMethods)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.maxNumberOfArguments == null
+                                ? 43
+                                : this.maxNumberOfArguments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxSingleArgumentLength == null
+                                ? 43
+                                : this.maxSingleArgumentLength.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxTotalArgumentLength == null
+                                ? 43
+                                : this.maxTotalArgumentLength.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxHttpRequestHeaders == null
+                                ? 43
+                                : this.maxHttpRequestHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxHttpRequestHeaderLength == null
+                                ? 43
+                                : this.maxHttpRequestHeaderLength.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedHttpMethods == null
+                                ? 43
+                                : this.allowedHttpMethods.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

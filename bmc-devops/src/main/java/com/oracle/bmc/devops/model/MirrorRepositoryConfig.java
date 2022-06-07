@@ -15,16 +15,22 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MirrorRepositoryConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MirrorRepositoryConfig {
+public final class MirrorRepositoryConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"connectorId", "repositoryUrl", "triggerSchedule"})
+    public MirrorRepositoryConfig(
+            String connectorId, String repositoryUrl, TriggerSchedule triggerSchedule) {
+        super();
+        this.connectorId = connectorId;
+        this.repositoryUrl = repositoryUrl;
+        this.triggerSchedule = triggerSchedule;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
@@ -82,21 +88,86 @@ public class MirrorRepositoryConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Upstream git repository connection identifer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
-    String connectorId;
+    private final String connectorId;
+
+    public String getConnectorId() {
+        return connectorId;
+    }
 
     /**
      * URL of external repository you want to mirror.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
-    String repositoryUrl;
+    private final String repositoryUrl;
+
+    public String getRepositoryUrl() {
+        return repositoryUrl;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("triggerSchedule")
-    TriggerSchedule triggerSchedule;
+    private final TriggerSchedule triggerSchedule;
+
+    public TriggerSchedule getTriggerSchedule() {
+        return triggerSchedule;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MirrorRepositoryConfig(");
+        sb.append("connectorId=").append(String.valueOf(this.connectorId));
+        sb.append(", repositoryUrl=").append(String.valueOf(this.repositoryUrl));
+        sb.append(", triggerSchedule=").append(String.valueOf(this.triggerSchedule));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MirrorRepositoryConfig)) {
+            return false;
+        }
+
+        MirrorRepositoryConfig other = (MirrorRepositoryConfig) o;
+        return java.util.Objects.equals(this.connectorId, other.connectorId)
+                && java.util.Objects.equals(this.repositoryUrl, other.repositoryUrl)
+                && java.util.Objects.equals(this.triggerSchedule, other.triggerSchedule)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.connectorId == null ? 43 : this.connectorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryUrl == null ? 43 : this.repositoryUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.triggerSchedule == null ? 43 : this.triggerSchedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

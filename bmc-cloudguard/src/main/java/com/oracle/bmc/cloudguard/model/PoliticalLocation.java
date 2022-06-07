@@ -15,16 +15,21 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PoliticalLocation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PoliticalLocation {
+public final class PoliticalLocation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"city", "state", "country"})
+    public PoliticalLocation(String city, String state, String country) {
+        super();
+        this.city = city;
+        this.state = state;
+        this.country = country;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("city")
         private String city;
@@ -78,24 +83,85 @@ public class PoliticalLocation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * City
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("city")
-    String city;
+    private final String city;
+
+    public String getCity() {
+        return city;
+    }
 
     /**
      * State
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
-    String state;
+    private final String state;
+
+    public String getState() {
+        return state;
+    }
 
     /**
      * Country
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
-    String country;
+    private final String country;
+
+    public String getCountry() {
+        return country;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PoliticalLocation(");
+        sb.append("city=").append(String.valueOf(this.city));
+        sb.append(", state=").append(String.valueOf(this.state));
+        sb.append(", country=").append(String.valueOf(this.country));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PoliticalLocation)) {
+            return false;
+        }
+
+        PoliticalLocation other = (PoliticalLocation) o;
+        return java.util.Objects.equals(this.city, other.city)
+                && java.util.Objects.equals(this.state, other.state)
+                && java.util.Objects.equals(this.country, other.country)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.city == null ? 43 : this.city.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
+        result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.opsi.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceCapacityTrendExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeExadataInsightResourceCapacityTrendRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SummarizeExadataInsightResourceCapacityTrendRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -27,6 +19,9 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
      */
     private String resourceType;
 
+    public String getResourceType() {
+        return resourceType;
+    }
     /**
      * Filter by resource metric.
      * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
@@ -34,17 +29,26 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
      */
     private String resourceMetric;
 
+    public String getResourceMetric() {
+        return resourceMetric;
+    }
     /**
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
      *
      */
     private String exadataInsightId;
 
+    public String getExadataInsightId() {
+        return exadataInsightId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Specify time period in ISO 8601 format with respect to current time.
      * Default is last 30 days represented by P30D.
@@ -54,6 +58,9 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
      */
     private String analysisTimeInterval;
 
+    public String getAnalysisTimeInterval() {
+        return analysisTimeInterval;
+    }
     /**
      * Analysis start time in UTC in ISO 8601 format(inclusive).
      * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
@@ -64,6 +71,9 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
      */
     private java.util.Date timeIntervalStart;
 
+    public java.util.Date getTimeIntervalStart() {
+        return timeIntervalStart;
+    }
     /**
      * Analysis end time in UTC in ISO 8601 format(exclusive).
      * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
@@ -73,24 +83,36 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
      */
     private java.util.Date timeIntervalEnd;
 
+    public java.util.Date getTimeIntervalEnd() {
+        return timeIntervalEnd;
+    }
     /**
      * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     private java.util.List<String> databaseInsightId;
 
+    public java.util.List<String> getDatabaseInsightId() {
+        return databaseInsightId;
+    }
     /**
      * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     private java.util.List<String> hostInsightId;
 
+    public java.util.List<String> getHostInsightId() {
+        return hostInsightId;
+    }
     /**
      * Optional storage server name on an exadata system.
      *
      */
     private java.util.List<String> storageServerName;
 
+    public java.util.List<String> getStorageServerName() {
+        return storageServerName;
+    }
     /**
      * Filter by one or more Exadata types.
      * Possible value are DBMACHINE, EXACS, and EXACC.
@@ -98,18 +120,27 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> exadataType;
 
+    public java.util.List<String> getExadataType() {
+        return exadataType;
+    }
     /**
      * Filter by one or more cdb name.
      *
      */
     private java.util.List<String> cdbName;
 
+    public java.util.List<String> getCdbName() {
+        return cdbName;
+    }
     /**
      * Filter by hostname.
      *
      */
     private java.util.List<String> hostName;
 
+    public java.util.List<String> getHostName() {
+        return hostName;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from
      * the previous "List" call. For important details about how pagination works,
@@ -118,6 +149,9 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to
      * return in a paginated "List" call.
@@ -128,12 +162,18 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The order in which resource capacity trend records are listed
      */
@@ -174,6 +214,10 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -181,12 +225,111 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeExadataInsightResourceCapacityTrendRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String resourceType = null;
+
+        /**
+         * Filter by resource.
+         * Supported values are HOST , STORAGE_SERVER and DATABASE
+         *
+         * @return this builder instance
+         */
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
+            return this;
+        }
+
+        private String resourceMetric = null;
+
+        /**
+         * Filter by resource metric.
+         * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+         *
+         * @return this builder instance
+         */
+        public Builder resourceMetric(String resourceMetric) {
+            this.resourceMetric = resourceMetric;
+            return this;
+        }
+
+        private String exadataInsightId = null;
+
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(String exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String analysisTimeInterval = null;
+
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         *
+         * @return this builder instance
+         */
+        public Builder analysisTimeInterval(String analysisTimeInterval) {
+            this.analysisTimeInterval = analysisTimeInterval;
+            return this;
+        }
+
+        private java.util.Date timeIntervalStart = null;
+
+        /**
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
+         * @return this builder instance
+         */
+        public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
+            this.timeIntervalStart = timeIntervalStart;
+            return this;
+        }
+
+        private java.util.Date timeIntervalEnd = null;
+
+        /**
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
+         * @return this builder instance
+         */
+        public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
+            this.timeIntervalEnd = timeIntervalEnd;
+            return this;
+        }
 
         private java.util.List<String> databaseInsightId = null;
 
@@ -316,6 +459,72 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
             return this.hostName(java.util.Arrays.asList(singularValue));
         }
 
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.opsi.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The order in which resource capacity trend records are listed
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
@@ -384,5 +593,172 @@ public class SummarizeExadataInsightResourceCapacityTrendRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of SummarizeExadataInsightResourceCapacityTrendRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of SummarizeExadataInsightResourceCapacityTrendRequest
+         */
+        public SummarizeExadataInsightResourceCapacityTrendRequest
+                buildWithoutInvocationCallback() {
+            SummarizeExadataInsightResourceCapacityTrendRequest request =
+                    new SummarizeExadataInsightResourceCapacityTrendRequest();
+            request.resourceType = resourceType;
+            request.resourceMetric = resourceMetric;
+            request.exadataInsightId = exadataInsightId;
+            request.compartmentId = compartmentId;
+            request.analysisTimeInterval = analysisTimeInterval;
+            request.timeIntervalStart = timeIntervalStart;
+            request.timeIntervalEnd = timeIntervalEnd;
+            request.databaseInsightId = databaseInsightId;
+            request.hostInsightId = hostInsightId;
+            request.storageServerName = storageServerName;
+            request.exadataType = exadataType;
+            request.cdbName = cdbName;
+            request.hostName = hostName;
+            request.page = page;
+            request.limit = limit;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new SummarizeExadataInsightResourceCapacityTrendRequest(resourceType, resourceMetric, exadataInsightId, compartmentId, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, databaseInsightId, hostInsightId, storageServerName, exadataType, cdbName, hostName, page, limit, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .resourceType(resourceType)
+                .resourceMetric(resourceMetric)
+                .exadataInsightId(exadataInsightId)
+                .compartmentId(compartmentId)
+                .analysisTimeInterval(analysisTimeInterval)
+                .timeIntervalStart(timeIntervalStart)
+                .timeIntervalEnd(timeIntervalEnd)
+                .databaseInsightId(databaseInsightId)
+                .hostInsightId(hostInsightId)
+                .storageServerName(storageServerName)
+                .exadataType(exadataType)
+                .cdbName(cdbName)
+                .hostName(hostName)
+                .page(page)
+                .limit(limit)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(",resourceMetric=").append(String.valueOf(this.resourceMetric));
+        sb.append(",exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",analysisTimeInterval=").append(String.valueOf(this.analysisTimeInterval));
+        sb.append(",timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
+        sb.append(",timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(",databaseInsightId=").append(String.valueOf(this.databaseInsightId));
+        sb.append(",hostInsightId=").append(String.valueOf(this.hostInsightId));
+        sb.append(",storageServerName=").append(String.valueOf(this.storageServerName));
+        sb.append(",exadataType=").append(String.valueOf(this.exadataType));
+        sb.append(",cdbName=").append(String.valueOf(this.cdbName));
+        sb.append(",hostName=").append(String.valueOf(this.hostName));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeExadataInsightResourceCapacityTrendRequest)) {
+            return false;
+        }
+
+        SummarizeExadataInsightResourceCapacityTrendRequest other =
+                (SummarizeExadataInsightResourceCapacityTrendRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.resourceMetric, other.resourceMetric)
+                && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.analysisTimeInterval, other.analysisTimeInterval)
+                && java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
+                && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(this.databaseInsightId, other.databaseInsightId)
+                && java.util.Objects.equals(this.hostInsightId, other.hostInsightId)
+                && java.util.Objects.equals(this.storageServerName, other.storageServerName)
+                && java.util.Objects.equals(this.exadataType, other.exadataType)
+                && java.util.Objects.equals(this.cdbName, other.cdbName)
+                && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceMetric == null ? 43 : this.resourceMetric.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.analysisTimeInterval == null
+                                ? 43
+                                : this.analysisTimeInterval.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalStart == null ? 43 : this.timeIntervalStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseInsightId == null ? 43 : this.databaseInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostInsightId == null ? 43 : this.hostInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageServerName == null ? 43 : this.storageServerName.hashCode());
+        result = (result * PRIME) + (this.exadataType == null ? 43 : this.exadataType.hashCode());
+        result = (result * PRIME) + (this.cdbName == null ? 43 : this.cdbName.hashCode());
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

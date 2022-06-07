@@ -15,16 +15,22 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InternationalMarketPrice.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InternationalMarketPrice {
+public final class InternationalMarketPrice {
+    @Deprecated
+    @java.beans.ConstructorProperties({"currencyCode", "currencySymbol", "rate"})
+    public InternationalMarketPrice(
+            PricingCurrencyEnum currencyCode, String currencySymbol, Double rate) {
+        super();
+        this.currencyCode = currencyCode;
+        this.currencySymbol = currencySymbol;
+        this.rate = rate;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private PricingCurrencyEnum currencyCode;
@@ -82,24 +88,87 @@ public class InternationalMarketPrice {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The currency of the pricing model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
-    PricingCurrencyEnum currencyCode;
+    private final PricingCurrencyEnum currencyCode;
+
+    public PricingCurrencyEnum getCurrencyCode() {
+        return currencyCode;
+    }
 
     /**
      * The symbol of the currency
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencySymbol")
-    String currencySymbol;
+    private final String currencySymbol;
+
+    public String getCurrencySymbol() {
+        return currencySymbol;
+    }
 
     /**
      * The pricing rate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rate")
-    Double rate;
+    private final Double rate;
+
+    public Double getRate() {
+        return rate;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InternationalMarketPrice(");
+        sb.append("currencyCode=").append(String.valueOf(this.currencyCode));
+        sb.append(", currencySymbol=").append(String.valueOf(this.currencySymbol));
+        sb.append(", rate=").append(String.valueOf(this.rate));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InternationalMarketPrice)) {
+            return false;
+        }
+
+        InternationalMarketPrice other = (InternationalMarketPrice) o;
+        return java.util.Objects.equals(this.currencyCode, other.currencyCode)
+                && java.util.Objects.equals(this.currencySymbol, other.currencySymbol)
+                && java.util.Objects.equals(this.rate, other.rate)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.currencyCode == null ? 43 : this.currencyCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currencySymbol == null ? 43 : this.currencySymbol.hashCode());
+        result = (result * PRIME) + (this.rate == null ? 43 : this.rate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

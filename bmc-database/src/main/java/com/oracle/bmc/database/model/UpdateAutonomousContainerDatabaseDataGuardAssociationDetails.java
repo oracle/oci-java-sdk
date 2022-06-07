@@ -16,16 +16,20 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateAutonomousContainerDatabaseDataGuardAssociationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails {
+public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isAutomaticFailoverEnabled"})
+    public UpdateAutonomousContainerDatabaseDataGuardAssociationDetails(
+            Boolean isAutomaticFailoverEnabled) {
+        super();
+        this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
         private Boolean isAutomaticFailoverEnabled;
@@ -63,13 +67,67 @@ public class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
-    Boolean isAutomaticFailoverEnabled;
+    private final Boolean isAutomaticFailoverEnabled;
+
+    public Boolean getIsAutomaticFailoverEnabled() {
+        return isAutomaticFailoverEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateAutonomousContainerDatabaseDataGuardAssociationDetails(");
+        sb.append("isAutomaticFailoverEnabled=")
+                .append(String.valueOf(this.isAutomaticFailoverEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAutonomousContainerDatabaseDataGuardAssociationDetails)) {
+            return false;
+        }
+
+        UpdateAutonomousContainerDatabaseDataGuardAssociationDetails other =
+                (UpdateAutonomousContainerDatabaseDataGuardAssociationDetails) o;
+        return java.util.Objects.equals(
+                        this.isAutomaticFailoverEnabled, other.isAutomaticFailoverEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isAutomaticFailoverEnabled == null
+                                ? 43
+                                : this.isAutomaticFailoverEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

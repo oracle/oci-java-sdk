@@ -15,16 +15,82 @@ package com.oracle.bmc.managementdashboard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateManagementDashboardDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateManagementDashboardDetails {
+public final class UpdateManagementDashboardDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "providerId",
+        "providerName",
+        "providerVersion",
+        "tiles",
+        "displayName",
+        "description",
+        "compartmentId",
+        "isOobDashboard",
+        "isShowInHome",
+        "metadataVersion",
+        "isShowDescription",
+        "screenImage",
+        "nls",
+        "uiConfig",
+        "dataConfig",
+        "type",
+        "isFavorite",
+        "parametersConfig",
+        "drilldownConfig",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateManagementDashboardDetails(
+            String providerId,
+            String providerName,
+            String providerVersion,
+            java.util.List<ManagementDashboardTileDetails> tiles,
+            String displayName,
+            String description,
+            String compartmentId,
+            Boolean isOobDashboard,
+            Boolean isShowInHome,
+            String metadataVersion,
+            Boolean isShowDescription,
+            String screenImage,
+            Object nls,
+            Object uiConfig,
+            java.util.List<Object> dataConfig,
+            String type,
+            Boolean isFavorite,
+            java.util.List<Object> parametersConfig,
+            java.util.List<Object> drilldownConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.providerId = providerId;
+        this.providerName = providerName;
+        this.providerVersion = providerVersion;
+        this.tiles = tiles;
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.isOobDashboard = isOobDashboard;
+        this.isShowInHome = isShowInHome;
+        this.metadataVersion = metadataVersion;
+        this.isShowDescription = isShowDescription;
+        this.screenImage = screenImage;
+        this.nls = nls;
+        this.uiConfig = uiConfig;
+        this.dataConfig = dataConfig;
+        this.type = type;
+        this.isFavorite = isFavorite;
+        this.parametersConfig = parametersConfig;
+        this.drilldownConfig = drilldownConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("providerId")
         private String providerId;
@@ -284,119 +350,199 @@ public class UpdateManagementDashboardDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerId")
-    String providerId;
+    private final String providerId;
+
+    public String getProviderId() {
+        return providerId;
+    }
 
     /**
      * Name of the service (for example, Logging Analytics) that owns the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
-    String providerName;
+    private final String providerName;
+
+    public String getProviderName() {
+        return providerName;
+    }
 
     /**
      * Version of the service that owns the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
-    String providerVersion;
+    private final String providerVersion;
+
+    public String getProviderVersion() {
+        return providerVersion;
+    }
 
     /**
      * Array of dashboard tiles.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tiles")
-    java.util.List<ManagementDashboardTileDetails> tiles;
+    private final java.util.List<ManagementDashboardTileDetails> tiles;
+
+    public java.util.List<ManagementDashboardTileDetails> getTiles() {
+        return tiles;
+    }
 
     /**
      * Display name of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * OCID of the compartment in which the dashboard resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOobDashboard")
-    Boolean isOobDashboard;
+    private final Boolean isOobDashboard;
+
+    public Boolean getIsOobDashboard() {
+        return isOobDashboard;
+    }
 
     /**
      * Determines whether the dashboard will be displayed in Dashboard Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShowInHome")
-    Boolean isShowInHome;
+    private final Boolean isShowInHome;
+
+    public Boolean getIsShowInHome() {
+        return isShowInHome;
+    }
 
     /**
      * Version of the metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
-    String metadataVersion;
+    private final String metadataVersion;
+
+    public String getMetadataVersion() {
+        return metadataVersion;
+    }
 
     /**
      * Determines whether the description of the dashboard is displayed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShowDescription")
-    Boolean isShowDescription;
+    private final Boolean isShowDescription;
+
+    public Boolean getIsShowDescription() {
+        return isShowDescription;
+    }
 
     /**
      * Screen image of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
-    String screenImage;
+    private final String screenImage;
+
+    public String getScreenImage() {
+        return screenImage;
+    }
 
     /**
      * JSON that contains internationalization options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
-    Object nls;
+    private final Object nls;
+
+    public Object getNls() {
+        return nls;
+    }
 
     /**
      * JSON that contains user interface options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
-    Object uiConfig;
+    private final Object uiConfig;
+
+    public Object getUiConfig() {
+        return uiConfig;
+    }
 
     /**
      * Array of JSON that contain data source options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
-    java.util.List<Object> dataConfig;
+    private final java.util.List<Object> dataConfig;
+
+    public java.util.List<Object> getDataConfig() {
+        return dataConfig;
+    }
 
     /**
      * Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * Determines whether the dashboard is set as favorite.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
-    Boolean isFavorite;
+    private final Boolean isFavorite;
+
+    public Boolean getIsFavorite() {
+        return isFavorite;
+    }
 
     /**
      * Defines parameters for the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
-    java.util.List<Object> parametersConfig;
+    private final java.util.List<Object> parametersConfig;
+
+    public java.util.List<Object> getParametersConfig() {
+        return parametersConfig;
+    }
 
     /**
      * Drill-down configuration to define the destination of a drill-down action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
-    java.util.List<Object> drilldownConfig;
+    private final java.util.List<Object> drilldownConfig;
+
+    public java.util.List<Object> getDrilldownConfig() {
+        return drilldownConfig;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -404,7 +550,11 @@ public class UpdateManagementDashboardDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -412,8 +562,125 @@ public class UpdateManagementDashboardDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateManagementDashboardDetails(");
+        sb.append("providerId=").append(String.valueOf(this.providerId));
+        sb.append(", providerName=").append(String.valueOf(this.providerName));
+        sb.append(", providerVersion=").append(String.valueOf(this.providerVersion));
+        sb.append(", tiles=").append(String.valueOf(this.tiles));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", isOobDashboard=").append(String.valueOf(this.isOobDashboard));
+        sb.append(", isShowInHome=").append(String.valueOf(this.isShowInHome));
+        sb.append(", metadataVersion=").append(String.valueOf(this.metadataVersion));
+        sb.append(", isShowDescription=").append(String.valueOf(this.isShowDescription));
+        sb.append(", screenImage=").append(String.valueOf(this.screenImage));
+        sb.append(", nls=").append(String.valueOf(this.nls));
+        sb.append(", uiConfig=").append(String.valueOf(this.uiConfig));
+        sb.append(", dataConfig=").append(String.valueOf(this.dataConfig));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", isFavorite=").append(String.valueOf(this.isFavorite));
+        sb.append(", parametersConfig=").append(String.valueOf(this.parametersConfig));
+        sb.append(", drilldownConfig=").append(String.valueOf(this.drilldownConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateManagementDashboardDetails)) {
+            return false;
+        }
+
+        UpdateManagementDashboardDetails other = (UpdateManagementDashboardDetails) o;
+        return java.util.Objects.equals(this.providerId, other.providerId)
+                && java.util.Objects.equals(this.providerName, other.providerName)
+                && java.util.Objects.equals(this.providerVersion, other.providerVersion)
+                && java.util.Objects.equals(this.tiles, other.tiles)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.isOobDashboard, other.isOobDashboard)
+                && java.util.Objects.equals(this.isShowInHome, other.isShowInHome)
+                && java.util.Objects.equals(this.metadataVersion, other.metadataVersion)
+                && java.util.Objects.equals(this.isShowDescription, other.isShowDescription)
+                && java.util.Objects.equals(this.screenImage, other.screenImage)
+                && java.util.Objects.equals(this.nls, other.nls)
+                && java.util.Objects.equals(this.uiConfig, other.uiConfig)
+                && java.util.Objects.equals(this.dataConfig, other.dataConfig)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.isFavorite, other.isFavorite)
+                && java.util.Objects.equals(this.parametersConfig, other.parametersConfig)
+                && java.util.Objects.equals(this.drilldownConfig, other.drilldownConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.providerId == null ? 43 : this.providerId.hashCode());
+        result = (result * PRIME) + (this.providerName == null ? 43 : this.providerName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerVersion == null ? 43 : this.providerVersion.hashCode());
+        result = (result * PRIME) + (this.tiles == null ? 43 : this.tiles.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOobDashboard == null ? 43 : this.isOobDashboard.hashCode());
+        result = (result * PRIME) + (this.isShowInHome == null ? 43 : this.isShowInHome.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metadataVersion == null ? 43 : this.metadataVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isShowDescription == null ? 43 : this.isShowDescription.hashCode());
+        result = (result * PRIME) + (this.screenImage == null ? 43 : this.screenImage.hashCode());
+        result = (result * PRIME) + (this.nls == null ? 43 : this.nls.hashCode());
+        result = (result * PRIME) + (this.uiConfig == null ? 43 : this.uiConfig.hashCode());
+        result = (result * PRIME) + (this.dataConfig == null ? 43 : this.dataConfig.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.isFavorite == null ? 43 : this.isFavorite.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parametersConfig == null ? 43 : this.parametersConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drilldownConfig == null ? 43 : this.drilldownConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

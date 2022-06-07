@@ -25,22 +25,17 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ControlAccessUsingHttpMethodsRule.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "action"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ControlAccessUsingHttpMethodsRule extends Rule {
+public final class ControlAccessUsingHttpMethodsRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("allowedMethods")
         private java.util.List<String> allowedMethods;
@@ -87,6 +82,10 @@ public class ControlAccessUsingHttpMethodsRule extends Rule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ControlAccessUsingHttpMethodsRule(
             java.util.List<String> allowedMethods, Integer statusCode) {
@@ -112,7 +111,11 @@ public class ControlAccessUsingHttpMethodsRule extends Rule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedMethods")
-    java.util.List<String> allowedMethods;
+    private final java.util.List<String> allowedMethods;
+
+    public java.util.List<String> getAllowedMethods() {
+        return allowedMethods;
+    }
 
     /**
      * The HTTP status code to return when the requested HTTP method is not in the list of allowed methods.
@@ -123,8 +126,58 @@ public class ControlAccessUsingHttpMethodsRule extends Rule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusCode")
-    Integer statusCode;
+    private final Integer statusCode;
+
+    public Integer getStatusCode() {
+        return statusCode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ControlAccessUsingHttpMethodsRule(");
+        sb.append("super=").append(super.toString());
+        sb.append(", allowedMethods=").append(String.valueOf(this.allowedMethods));
+        sb.append(", statusCode=").append(String.valueOf(this.statusCode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ControlAccessUsingHttpMethodsRule)) {
+            return false;
+        }
+
+        ControlAccessUsingHttpMethodsRule other = (ControlAccessUsingHttpMethodsRule) o;
+        return java.util.Objects.equals(this.allowedMethods, other.allowedMethods)
+                && java.util.Objects.equals(this.statusCode, other.statusCode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.allowedMethods == null ? 43 : this.allowedMethods.hashCode());
+        result = (result * PRIME) + (this.statusCode == null ? 43 : this.statusCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

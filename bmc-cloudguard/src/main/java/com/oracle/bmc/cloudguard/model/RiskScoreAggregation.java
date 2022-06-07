@@ -15,16 +15,20 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RiskScoreAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RiskScoreAggregation {
+public final class RiskScoreAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"dimensionsMap", "riskScore"})
+    public RiskScoreAggregation(java.util.Map<String, String> dimensionsMap, Integer riskScore) {
+        super();
+        this.dimensionsMap = dimensionsMap;
+        this.riskScore = riskScore;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
@@ -69,18 +73,74 @@ public class RiskScoreAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The key-value pairs of dimensions and their names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
-    java.util.Map<String, String> dimensionsMap;
+    private final java.util.Map<String, String> dimensionsMap;
+
+    public java.util.Map<String, String> getDimensionsMap() {
+        return dimensionsMap;
+    }
 
     /**
      * The risk score with given dimensions
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
-    Integer riskScore;
+    private final Integer riskScore;
+
+    public Integer getRiskScore() {
+        return riskScore;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RiskScoreAggregation(");
+        sb.append("dimensionsMap=").append(String.valueOf(this.dimensionsMap));
+        sb.append(", riskScore=").append(String.valueOf(this.riskScore));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RiskScoreAggregation)) {
+            return false;
+        }
+
+        RiskScoreAggregation other = (RiskScoreAggregation) o;
+        return java.util.Objects.equals(this.dimensionsMap, other.dimensionsMap)
+                && java.util.Objects.equals(this.riskScore, other.riskScore)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.dimensionsMap == null ? 43 : this.dimensionsMap.hashCode());
+        result = (result * PRIME) + (this.riskScore == null ? 43 : this.riskScore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudVmClusterIormConfigExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCloudVmClusterIormConfigRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateCloudVmClusterIormConfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.ExadataIormConfigUpdateDetails> {
@@ -26,18 +18,28 @@ public class UpdateCloudVmClusterIormConfigRequest
      */
     private String cloudVmClusterId;
 
+    public String getCloudVmClusterId() {
+        return cloudVmClusterId;
+    }
     /**
      * Request to perform database update.
      */
     private com.oracle.bmc.database.model.ExadataIormConfigUpdateDetails
             cloudVmClusterIormConfigUpdateDetails;
 
+    public com.oracle.bmc.database.model.ExadataIormConfigUpdateDetails
+            getCloudVmClusterIormConfigUpdateDetails() {
+        return cloudVmClusterIormConfigUpdateDetails;
+    }
     /**
      * Unique identifier for the request.
      *
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -45,6 +47,10 @@ public class UpdateCloudVmClusterIormConfigRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +69,57 @@ public class UpdateCloudVmClusterIormConfigRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String cloudVmClusterId = null;
+
+        /**
+         * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder cloudVmClusterId(String cloudVmClusterId) {
+            this.cloudVmClusterId = cloudVmClusterId;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.ExadataIormConfigUpdateDetails
+                cloudVmClusterIormConfigUpdateDetails = null;
+
+        /**
+         * Request to perform database update.
+         * @return this builder instance
+         */
+        public Builder cloudVmClusterIormConfigUpdateDetails(
+                com.oracle.bmc.database.model.ExadataIormConfigUpdateDetails
+                        cloudVmClusterIormConfigUpdateDetails) {
+            this.cloudVmClusterIormConfigUpdateDetails = cloudVmClusterIormConfigUpdateDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +185,89 @@ public class UpdateCloudVmClusterIormConfigRequest
             cloudVmClusterIormConfigUpdateDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateCloudVmClusterIormConfigRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateCloudVmClusterIormConfigRequest
+         */
+        public UpdateCloudVmClusterIormConfigRequest buildWithoutInvocationCallback() {
+            UpdateCloudVmClusterIormConfigRequest request =
+                    new UpdateCloudVmClusterIormConfigRequest();
+            request.cloudVmClusterId = cloudVmClusterId;
+            request.cloudVmClusterIormConfigUpdateDetails = cloudVmClusterIormConfigUpdateDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateCloudVmClusterIormConfigRequest(cloudVmClusterId, cloudVmClusterIormConfigUpdateDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .cloudVmClusterId(cloudVmClusterId)
+                .cloudVmClusterIormConfigUpdateDetails(cloudVmClusterIormConfigUpdateDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",cloudVmClusterId=").append(String.valueOf(this.cloudVmClusterId));
+        sb.append(",cloudVmClusterIormConfigUpdateDetails=")
+                .append(String.valueOf(this.cloudVmClusterIormConfigUpdateDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateCloudVmClusterIormConfigRequest)) {
+            return false;
+        }
+
+        UpdateCloudVmClusterIormConfigRequest other = (UpdateCloudVmClusterIormConfigRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.cloudVmClusterId, other.cloudVmClusterId)
+                && java.util.Objects.equals(
+                        this.cloudVmClusterIormConfigUpdateDetails,
+                        other.cloudVmClusterIormConfigUpdateDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.cloudVmClusterId == null ? 43 : this.cloudVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudVmClusterIormConfigUpdateDetails == null
+                                ? 43
+                                : this.cloudVmClusterIormConfigUpdateDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

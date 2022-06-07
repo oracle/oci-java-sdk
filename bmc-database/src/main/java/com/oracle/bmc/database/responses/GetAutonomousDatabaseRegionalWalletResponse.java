@@ -7,10 +7,6 @@ package com.oracle.bmc.database.responses;
 import com.oracle.bmc.database.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetAutonomousDatabaseRegionalWalletResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -20,10 +16,18 @@ public class GetAutonomousDatabaseRegionalWalletResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned AutonomousDatabaseWallet instance.
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseWallet autonomousDatabaseWallet;
+
+    public com.oracle.bmc.database.model.AutonomousDatabaseWallet getAutonomousDatabaseWallet() {
+        return autonomousDatabaseWallet;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -47,6 +51,21 @@ public class GetAutonomousDatabaseRegionalWalletResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.AutonomousDatabaseWallet autonomousDatabaseWallet;
+
+        public Builder autonomousDatabaseWallet(
+                com.oracle.bmc.database.model.AutonomousDatabaseWallet autonomousDatabaseWallet) {
+            this.autonomousDatabaseWallet = autonomousDatabaseWallet;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -63,5 +82,50 @@ public class GetAutonomousDatabaseRegionalWalletResponse
             return new GetAutonomousDatabaseRegionalWalletResponse(
                     __httpStatusCode__, opcRequestId, autonomousDatabaseWallet);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",autonomousDatabaseWallet=").append(String.valueOf(autonomousDatabaseWallet));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetAutonomousDatabaseRegionalWalletResponse)) {
+            return false;
+        }
+
+        GetAutonomousDatabaseRegionalWalletResponse other =
+                (GetAutonomousDatabaseRegionalWalletResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.autonomousDatabaseWallet, other.autonomousDatabaseWallet);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDatabaseWallet == null
+                                ? 43
+                                : this.autonomousDatabaseWallet.hashCode());
+        return result;
     }
 }

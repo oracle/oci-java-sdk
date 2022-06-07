@@ -8,7 +8,6 @@ package com.oracle.bmc.certificatesmanagement.model;
  * The algorithm used to create key pairs.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.extern.slf4j.Slf4j
 public enum KeyAlgorithm {
     Rsa2048("RSA2048"),
     Rsa4096("RSA4096"),
@@ -20,6 +19,9 @@ public enum KeyAlgorithm {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(KeyAlgorithm.class);
 
     private final String value;
     private static java.util.Map<String, KeyAlgorithm> map;

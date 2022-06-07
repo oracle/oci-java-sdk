@@ -17,16 +17,58 @@ package com.oracle.bmc.jms.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstallationUsage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstallationUsage {
+public final class InstallationUsage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "jreVendor",
+        "jreDistribution",
+        "jreVersion",
+        "path",
+        "os",
+        "architecture",
+        "operatingSystem",
+        "approximateApplicationCount",
+        "approximateManagedInstanceCount",
+        "timeStart",
+        "timeEnd",
+        "timeFirstSeen",
+        "timeLastSeen"
+    })
+    public InstallationUsage(
+            String jreVendor,
+            String jreDistribution,
+            String jreVersion,
+            String path,
+            String os,
+            String architecture,
+            OperatingSystem operatingSystem,
+            Integer approximateApplicationCount,
+            Integer approximateManagedInstanceCount,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            java.util.Date timeFirstSeen,
+            java.util.Date timeLastSeen) {
+        super();
+        this.jreVendor = jreVendor;
+        this.jreDistribution = jreDistribution;
+        this.jreVersion = jreVersion;
+        this.path = path;
+        this.os = os;
+        this.architecture = architecture;
+        this.operatingSystem = operatingSystem;
+        this.approximateApplicationCount = approximateApplicationCount;
+        this.approximateManagedInstanceCount = approximateManagedInstanceCount;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.timeFirstSeen = timeFirstSeen;
+        this.timeLastSeen = timeLastSeen;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("jreVendor")
         private String jreVendor;
@@ -197,68 +239,116 @@ public class InstallationUsage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The vendor of the Java Runtime that is deployed with the installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jreVendor")
-    String jreVendor;
+    private final String jreVendor;
+
+    public String getJreVendor() {
+        return jreVendor;
+    }
 
     /**
      * The distribution of the Java Runtime that is deployed with the installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jreDistribution")
-    String jreDistribution;
+    private final String jreDistribution;
+
+    public String getJreDistribution() {
+        return jreDistribution;
+    }
 
     /**
      * The version of the Java Runtime that is deployed with the installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jreVersion")
-    String jreVersion;
+    private final String jreVersion;
+
+    public String getJreVersion() {
+        return jreVersion;
+    }
 
     /**
      * The file system path of the Java installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * The Operating System for the installation. Deprecated, use {@code operatingSystem} instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("os")
-    String os;
+    private final String os;
+
+    public String getOs() {
+        return os;
+    }
 
     /**
      * The architecture of the operating system for the installation. Deprecated, use {@code operatingSystem} instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
-    String architecture;
+    private final String architecture;
+
+    public String getArchitecture() {
+        return architecture;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
-    OperatingSystem operatingSystem;
+    private final OperatingSystem operatingSystem;
+
+    public OperatingSystem getOperatingSystem() {
+        return operatingSystem;
+    }
 
     /**
      * The approximate count of applications running on this installation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
-    Integer approximateApplicationCount;
+    private final Integer approximateApplicationCount;
+
+    public Integer getApproximateApplicationCount() {
+        return approximateApplicationCount;
+    }
 
     /**
      * The approximate count of managed instances reporting this installation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
-    Integer approximateManagedInstanceCount;
+    private final Integer approximateManagedInstanceCount;
+
+    public Integer getApproximateManagedInstanceCount() {
+        return approximateManagedInstanceCount;
+    }
 
     /**
      * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * The date and time the resource was _first_ reported to JMS.
@@ -268,7 +358,11 @@ public class InstallationUsage {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
-    java.util.Date timeFirstSeen;
+    private final java.util.Date timeFirstSeen;
+
+    public java.util.Date getTimeFirstSeen() {
+        return timeFirstSeen;
+    }
 
     /**
      * The date and time the resource was _last_ reported to JMS.
@@ -278,8 +372,105 @@ public class InstallationUsage {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
-    java.util.Date timeLastSeen;
+    private final java.util.Date timeLastSeen;
+
+    public java.util.Date getTimeLastSeen() {
+        return timeLastSeen;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstallationUsage(");
+        sb.append("jreVendor=").append(String.valueOf(this.jreVendor));
+        sb.append(", jreDistribution=").append(String.valueOf(this.jreDistribution));
+        sb.append(", jreVersion=").append(String.valueOf(this.jreVersion));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", os=").append(String.valueOf(this.os));
+        sb.append(", architecture=").append(String.valueOf(this.architecture));
+        sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", approximateApplicationCount=")
+                .append(String.valueOf(this.approximateApplicationCount));
+        sb.append(", approximateManagedInstanceCount=")
+                .append(String.valueOf(this.approximateManagedInstanceCount));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
+        sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstallationUsage)) {
+            return false;
+        }
+
+        InstallationUsage other = (InstallationUsage) o;
+        return java.util.Objects.equals(this.jreVendor, other.jreVendor)
+                && java.util.Objects.equals(this.jreDistribution, other.jreDistribution)
+                && java.util.Objects.equals(this.jreVersion, other.jreVersion)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.os, other.os)
+                && java.util.Objects.equals(this.architecture, other.architecture)
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(
+                        this.approximateApplicationCount, other.approximateApplicationCount)
+                && java.util.Objects.equals(
+                        this.approximateManagedInstanceCount, other.approximateManagedInstanceCount)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
+                && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.jreVendor == null ? 43 : this.jreVendor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jreDistribution == null ? 43 : this.jreDistribution.hashCode());
+        result = (result * PRIME) + (this.jreVersion == null ? 43 : this.jreVersion.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.os == null ? 43 : this.os.hashCode());
+        result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateApplicationCount == null
+                                ? 43
+                                : this.approximateApplicationCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateManagedInstanceCount == null
+                                ? 43
+                                : this.approximateManagedInstanceCount.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstSeen == null ? 43 : this.timeFirstSeen.hashCode());
+        result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

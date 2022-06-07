@@ -15,22 +15,17 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExportImageViaObjectStorageTupleDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "destinationType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails {
+public final class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")
         private ExportFormat exportFormat;
@@ -99,6 +94,10 @@ public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails 
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ExportImageViaObjectStorageTupleDetails(
             ExportFormat exportFormat, String bucketName, String namespaceName, String objectName) {
@@ -112,20 +111,81 @@ public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails 
      * The Object Storage bucket to export the image to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    private final String bucketName;
+
+    public String getBucketName() {
+        return bucketName;
+    }
 
     /**
      * The Object Storage namespace to export the image to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
-    String namespaceName;
+    private final String namespaceName;
+
+    public String getNamespaceName() {
+        return namespaceName;
+    }
 
     /**
      * The Object Storage object name for the exported image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExportImageViaObjectStorageTupleDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportImageViaObjectStorageTupleDetails)) {
+            return false;
+        }
+
+        ExportImageViaObjectStorageTupleDetails other = (ExportImageViaObjectStorageTupleDetails) o;
+        return java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

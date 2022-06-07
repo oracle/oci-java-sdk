@@ -15,16 +15,21 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CalculateAuditVolumeCollectedDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CalculateAuditVolumeCollectedDetails {
+public final class CalculateAuditVolumeCollectedDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeFromMonth", "timeToMonth"})
+    public CalculateAuditVolumeCollectedDetails(
+            java.util.Date timeFromMonth, java.util.Date timeToMonth) {
+        super();
+        this.timeFromMonth = timeFromMonth;
+        this.timeToMonth = timeToMonth;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeFromMonth")
         private java.util.Date timeFromMonth;
@@ -71,18 +76,74 @@ public class CalculateAuditVolumeCollectedDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFromMonth")
-    java.util.Date timeFromMonth;
+    private final java.util.Date timeFromMonth;
+
+    public java.util.Date getTimeFromMonth() {
+        return timeFromMonth;
+    }
 
     /**
      * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeToMonth")
-    java.util.Date timeToMonth;
+    private final java.util.Date timeToMonth;
+
+    public java.util.Date getTimeToMonth() {
+        return timeToMonth;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CalculateAuditVolumeCollectedDetails(");
+        sb.append("timeFromMonth=").append(String.valueOf(this.timeFromMonth));
+        sb.append(", timeToMonth=").append(String.valueOf(this.timeToMonth));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CalculateAuditVolumeCollectedDetails)) {
+            return false;
+        }
+
+        CalculateAuditVolumeCollectedDetails other = (CalculateAuditVolumeCollectedDetails) o;
+        return java.util.Objects.equals(this.timeFromMonth, other.timeFromMonth)
+                && java.util.Objects.equals(this.timeToMonth, other.timeToMonth)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeFromMonth == null ? 43 : this.timeFromMonth.hashCode());
+        result = (result * PRIME) + (this.timeToMonth == null ? 43 : this.timeToMonth.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

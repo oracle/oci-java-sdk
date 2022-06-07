@@ -22,16 +22,64 @@ package com.oracle.bmc.ocvp.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateSddcDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateSddcDetails {
+public final class UpdateSddcDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "vmwareSoftwareVersion",
+        "sshAuthorizedKeys",
+        "vsphereVlanId",
+        "vmotionVlanId",
+        "vsanVlanId",
+        "nsxVTepVlanId",
+        "nsxEdgeVTepVlanId",
+        "nsxEdgeUplink1VlanId",
+        "nsxEdgeUplink2VlanId",
+        "replicationVlanId",
+        "provisioningVlanId",
+        "hcxVlanId",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateSddcDetails(
+            String displayName,
+            String vmwareSoftwareVersion,
+            String sshAuthorizedKeys,
+            String vsphereVlanId,
+            String vmotionVlanId,
+            String vsanVlanId,
+            String nsxVTepVlanId,
+            String nsxEdgeVTepVlanId,
+            String nsxEdgeUplink1VlanId,
+            String nsxEdgeUplink2VlanId,
+            String replicationVlanId,
+            String provisioningVlanId,
+            String hcxVlanId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.vmwareSoftwareVersion = vmwareSoftwareVersion;
+        this.sshAuthorizedKeys = sshAuthorizedKeys;
+        this.vsphereVlanId = vsphereVlanId;
+        this.vmotionVlanId = vmotionVlanId;
+        this.vsanVlanId = vsanVlanId;
+        this.nsxVTepVlanId = nsxVTepVlanId;
+        this.nsxEdgeVTepVlanId = nsxEdgeVTepVlanId;
+        this.nsxEdgeUplink1VlanId = nsxEdgeUplink1VlanId;
+        this.nsxEdgeUplink2VlanId = nsxEdgeUplink2VlanId;
+        this.replicationVlanId = replicationVlanId;
+        this.provisioningVlanId = provisioningVlanId;
+        this.hcxVlanId = hcxVlanId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -225,13 +273,21 @@ public class UpdateSddcDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
      * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The version of bundled VMware software that the Oracle Cloud VMware Solution will
@@ -242,7 +298,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
-    String vmwareSoftwareVersion;
+    private final String vmwareSoftwareVersion;
+
+    public String getVmwareSoftwareVersion() {
+        return vmwareSoftwareVersion;
+    }
 
     /**
      * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
@@ -252,7 +312,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
-    String sshAuthorizedKeys;
+    private final String sshAuthorizedKeys;
+
+    public String getSshAuthorizedKeys() {
+        return sshAuthorizedKeys;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
@@ -260,7 +324,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vsphereVlanId")
-    String vsphereVlanId;
+    private final String vsphereVlanId;
+
+    public String getVsphereVlanId() {
+        return vsphereVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
@@ -268,7 +336,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmotionVlanId")
-    String vmotionVlanId;
+    private final String vmotionVlanId;
+
+    public String getVmotionVlanId() {
+        return vmotionVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
@@ -276,7 +348,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vsanVlanId")
-    String vsanVlanId;
+    private final String vsanVlanId;
+
+    public String getVsanVlanId() {
+        return vsanVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
@@ -284,7 +360,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxVTepVlanId")
-    String nsxVTepVlanId;
+    private final String nsxVTepVlanId;
+
+    public String getNsxVTepVlanId() {
+        return nsxVTepVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
@@ -292,7 +372,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeVTepVlanId")
-    String nsxEdgeVTepVlanId;
+    private final String nsxEdgeVTepVlanId;
+
+    public String getNsxEdgeVTepVlanId() {
+        return nsxEdgeVTepVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
@@ -300,7 +384,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink1VlanId")
-    String nsxEdgeUplink1VlanId;
+    private final String nsxEdgeUplink1VlanId;
+
+    public String getNsxEdgeUplink1VlanId() {
+        return nsxEdgeUplink1VlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
@@ -310,7 +398,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink2VlanId")
-    String nsxEdgeUplink2VlanId;
+    private final String nsxEdgeUplink2VlanId;
+
+    public String getNsxEdgeUplink2VlanId() {
+        return nsxEdgeUplink2VlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -318,7 +410,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
-    String replicationVlanId;
+    private final String replicationVlanId;
+
+    public String getReplicationVlanId() {
+        return replicationVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
@@ -326,7 +422,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
-    String provisioningVlanId;
+    private final String provisioningVlanId;
+
+    public String getProvisioningVlanId() {
+        return provisioningVlanId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX
@@ -334,7 +434,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
-    String hcxVlanId;
+    private final String hcxVlanId;
+
+    public String getHcxVlanId() {
+        return hcxVlanId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -344,7 +448,11 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -354,8 +462,121 @@ public class UpdateSddcDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateSddcDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
+        sb.append(", sshAuthorizedKeys=").append(String.valueOf(this.sshAuthorizedKeys));
+        sb.append(", vsphereVlanId=").append(String.valueOf(this.vsphereVlanId));
+        sb.append(", vmotionVlanId=").append(String.valueOf(this.vmotionVlanId));
+        sb.append(", vsanVlanId=").append(String.valueOf(this.vsanVlanId));
+        sb.append(", nsxVTepVlanId=").append(String.valueOf(this.nsxVTepVlanId));
+        sb.append(", nsxEdgeVTepVlanId=").append(String.valueOf(this.nsxEdgeVTepVlanId));
+        sb.append(", nsxEdgeUplink1VlanId=").append(String.valueOf(this.nsxEdgeUplink1VlanId));
+        sb.append(", nsxEdgeUplink2VlanId=").append(String.valueOf(this.nsxEdgeUplink2VlanId));
+        sb.append(", replicationVlanId=").append(String.valueOf(this.replicationVlanId));
+        sb.append(", provisioningVlanId=").append(String.valueOf(this.provisioningVlanId));
+        sb.append(", hcxVlanId=").append(String.valueOf(this.hcxVlanId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSddcDetails)) {
+            return false;
+        }
+
+        UpdateSddcDetails other = (UpdateSddcDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
+                && java.util.Objects.equals(this.sshAuthorizedKeys, other.sshAuthorizedKeys)
+                && java.util.Objects.equals(this.vsphereVlanId, other.vsphereVlanId)
+                && java.util.Objects.equals(this.vmotionVlanId, other.vmotionVlanId)
+                && java.util.Objects.equals(this.vsanVlanId, other.vsanVlanId)
+                && java.util.Objects.equals(this.nsxVTepVlanId, other.nsxVTepVlanId)
+                && java.util.Objects.equals(this.nsxEdgeVTepVlanId, other.nsxEdgeVTepVlanId)
+                && java.util.Objects.equals(this.nsxEdgeUplink1VlanId, other.nsxEdgeUplink1VlanId)
+                && java.util.Objects.equals(this.nsxEdgeUplink2VlanId, other.nsxEdgeUplink2VlanId)
+                && java.util.Objects.equals(this.replicationVlanId, other.replicationVlanId)
+                && java.util.Objects.equals(this.provisioningVlanId, other.provisioningVlanId)
+                && java.util.Objects.equals(this.hcxVlanId, other.hcxVlanId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmwareSoftwareVersion == null
+                                ? 43
+                                : this.vmwareSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sshAuthorizedKeys == null ? 43 : this.sshAuthorizedKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vsphereVlanId == null ? 43 : this.vsphereVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmotionVlanId == null ? 43 : this.vmotionVlanId.hashCode());
+        result = (result * PRIME) + (this.vsanVlanId == null ? 43 : this.vsanVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxVTepVlanId == null ? 43 : this.nsxVTepVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxEdgeVTepVlanId == null ? 43 : this.nsxEdgeVTepVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxEdgeUplink1VlanId == null
+                                ? 43
+                                : this.nsxEdgeUplink1VlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nsxEdgeUplink2VlanId == null
+                                ? 43
+                                : this.nsxEdgeUplink2VlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationVlanId == null ? 43 : this.replicationVlanId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisioningVlanId == null
+                                ? 43
+                                : this.provisioningVlanId.hashCode());
+        result = (result * PRIME) + (this.hcxVlanId == null ? 43 : this.hcxVlanId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

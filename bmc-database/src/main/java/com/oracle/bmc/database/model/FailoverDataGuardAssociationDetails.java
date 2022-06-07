@@ -16,16 +16,19 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FailoverDataGuardAssociationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FailoverDataGuardAssociationDetails {
+public final class FailoverDataGuardAssociationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"databaseAdminPassword"})
+    public FailoverDataGuardAssociationDetails(String databaseAdminPassword) {
+        super();
+        this.databaseAdminPassword = databaseAdminPassword;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
@@ -62,12 +65,63 @@ public class FailoverDataGuardAssociationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The DB system administrator password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
-    String databaseAdminPassword;
+    private final String databaseAdminPassword;
+
+    public String getDatabaseAdminPassword() {
+        return databaseAdminPassword;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FailoverDataGuardAssociationDetails(");
+        sb.append("databaseAdminPassword=").append(String.valueOf(this.databaseAdminPassword));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FailoverDataGuardAssociationDetails)) {
+            return false;
+        }
+
+        FailoverDataGuardAssociationDetails other = (FailoverDataGuardAssociationDetails) o;
+        return java.util.Objects.equals(this.databaseAdminPassword, other.databaseAdminPassword)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.databaseAdminPassword == null
+                                ? 43
+                                : this.databaseAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

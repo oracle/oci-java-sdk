@@ -8,7 +8,6 @@ package com.oracle.bmc.databasemanagement.model;
  * A list of supported workload types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.extern.slf4j.Slf4j
 public enum WorkloadType {
     Oltp("OLTP"),
     Dw("DW"),
@@ -20,6 +19,9 @@ public enum WorkloadType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WorkloadType.class);
 
     private final String value;
     private static java.util.Map<String, WorkloadType> map;

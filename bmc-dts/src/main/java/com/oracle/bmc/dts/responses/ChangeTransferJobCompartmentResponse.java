@@ -7,20 +7,24 @@ package com.oracle.bmc.dts.responses;
 import com.oracle.bmc.dts.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeTransferJobCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For optimistic concurrency control. See 'if-match'.
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag"})
     private ChangeTransferJobCompartmentResponse(
@@ -35,6 +39,20 @@ public class ChangeTransferJobCompartmentResponse extends com.oracle.bmc.respons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
             return this;
         }
 
@@ -53,5 +71,44 @@ public class ChangeTransferJobCompartmentResponse extends com.oracle.bmc.respons
         public ChangeTransferJobCompartmentResponse build() {
             return new ChangeTransferJobCompartmentResponse(__httpStatusCode__, opcRequestId, etag);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeTransferJobCompartmentResponse)) {
+            return false;
+        }
+
+        ChangeTransferJobCompartmentResponse other = (ChangeTransferJobCompartmentResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        return result;
     }
 }

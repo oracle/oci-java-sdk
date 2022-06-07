@@ -17,16 +17,46 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProtectionCapabilitySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProtectionCapabilitySummary {
+public final class ProtectionCapabilitySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "displayName",
+        "description",
+        "version",
+        "isLatestVersion",
+        "groupTags",
+        "type",
+        "collaborativeActionThreshold",
+        "collaborativeWeights"
+    })
+    public ProtectionCapabilitySummary(
+            String key,
+            String displayName,
+            String description,
+            Integer version,
+            Boolean isLatestVersion,
+            java.util.List<String> groupTags,
+            Type type,
+            Integer collaborativeActionThreshold,
+            java.util.List<CollaborativeCapabilityWeight> collaborativeWeights) {
+        super();
+        this.key = key;
+        this.displayName = displayName;
+        this.description = description;
+        this.version = version;
+        this.isLatestVersion = isLatestVersion;
+        this.groupTags = groupTags;
+        this.type = type;
+        this.collaborativeActionThreshold = collaborativeActionThreshold;
+        this.collaborativeWeights = collaborativeWeights;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -154,35 +184,59 @@ public class ProtectionCapabilitySummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique key of protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The display name of protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The description of protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The version of protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    Integer version;
+    private final Integer version;
+
+    public Integer getVersion() {
+        return version;
+    }
 
     /**
      * The field that shows if this is the latest version of protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLatestVersion")
-    Boolean isLatestVersion;
+    private final Boolean isLatestVersion;
+
+    public Boolean getIsLatestVersion() {
+        return isLatestVersion;
+    }
 
     /**
      * The list of unique names protection capability group tags that are associated with this capability.
@@ -190,7 +244,12 @@ public class ProtectionCapabilitySummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupTags")
-    java.util.List<String> groupTags;
+    private final java.util.List<String> groupTags;
+
+    public java.util.List<String> getGroupTags() {
+        return groupTags;
+    }
+
     /**
      * The type of protection capability.
      * <p>
@@ -199,7 +258,6 @@ public class ProtectionCapabilitySummary {
      * **RESPONSE_PROTECTION_CAPABILITY** can only be used in {@code responseProtection} module of WebAppFirewallPolicy.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         RequestProtectionCapability("REQUEST_PROTECTION_CAPABILITY"),
         ResponseProtectionCapability("RESPONSE_PROTECTION_CAPABILITY"),
@@ -209,6 +267,8 @@ public class ProtectionCapabilitySummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -250,7 +310,11 @@ public class ProtectionCapabilitySummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The default collaborative action threshold for OCI-managed collaborative protection capability.
@@ -265,7 +329,11 @@ public class ProtectionCapabilitySummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeActionThreshold")
-    Integer collaborativeActionThreshold;
+    private final Integer collaborativeActionThreshold;
+
+    public Integer getCollaborativeActionThreshold() {
+        return collaborativeActionThreshold;
+    }
 
     /**
      * The weights of contributing capabilities.
@@ -275,8 +343,87 @@ public class ProtectionCapabilitySummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeWeights")
-    java.util.List<CollaborativeCapabilityWeight> collaborativeWeights;
+    private final java.util.List<CollaborativeCapabilityWeight> collaborativeWeights;
+
+    public java.util.List<CollaborativeCapabilityWeight> getCollaborativeWeights() {
+        return collaborativeWeights;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProtectionCapabilitySummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", isLatestVersion=").append(String.valueOf(this.isLatestVersion));
+        sb.append(", groupTags=").append(String.valueOf(this.groupTags));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", collaborativeActionThreshold=")
+                .append(String.valueOf(this.collaborativeActionThreshold));
+        sb.append(", collaborativeWeights=").append(String.valueOf(this.collaborativeWeights));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProtectionCapabilitySummary)) {
+            return false;
+        }
+
+        ProtectionCapabilitySummary other = (ProtectionCapabilitySummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.isLatestVersion, other.isLatestVersion)
+                && java.util.Objects.equals(this.groupTags, other.groupTags)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(
+                        this.collaborativeActionThreshold, other.collaborativeActionThreshold)
+                && java.util.Objects.equals(this.collaborativeWeights, other.collaborativeWeights)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLatestVersion == null ? 43 : this.isLatestVersion.hashCode());
+        result = (result * PRIME) + (this.groupTags == null ? 43 : this.groupTags.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.collaborativeActionThreshold == null
+                                ? 43
+                                : this.collaborativeActionThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.collaborativeWeights == null
+                                ? 43
+                                : this.collaborativeWeights.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,10 +7,6 @@ package com.oracle.bmc.goldengate.responses;
 import com.oracle.bmc.goldengate.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListDeploymentBackupsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
@@ -18,16 +14,29 @@ public class ListDeploymentBackupsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
      *
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned DeploymentBackupCollection instance.
      */
     private com.oracle.bmc.goldengate.model.DeploymentBackupCollection deploymentBackupCollection;
+
+    public com.oracle.bmc.goldengate.model.DeploymentBackupCollection
+            getDeploymentBackupCollection() {
+        return deploymentBackupCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -54,6 +63,30 @@ public class ListDeploymentBackupsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.goldengate.model.DeploymentBackupCollection
+                deploymentBackupCollection;
+
+        public Builder deploymentBackupCollection(
+                com.oracle.bmc.goldengate.model.DeploymentBackupCollection
+                        deploymentBackupCollection) {
+            this.deploymentBackupCollection = deploymentBackupCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -71,5 +104,53 @@ public class ListDeploymentBackupsResponse extends com.oracle.bmc.responses.BmcR
             return new ListDeploymentBackupsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, deploymentBackupCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",deploymentBackupCollection=")
+                .append(String.valueOf(deploymentBackupCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListDeploymentBackupsResponse)) {
+            return false;
+        }
+
+        ListDeploymentBackupsResponse other = (ListDeploymentBackupsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.deploymentBackupCollection, other.deploymentBackupCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentBackupCollection == null
+                                ? 43
+                                : this.deploymentBackupCollection.hashCode());
+        return result;
     }
 }

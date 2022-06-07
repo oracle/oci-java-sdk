@@ -9,14 +9,6 @@ import com.oracle.bmc.dataconnectivity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetNetworkConnectivityStatusCollectionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetNetworkConnectivityStatusCollectionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetNetworkConnectivityStatusCollectionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,11 +17,17 @@ public class GetNetworkConnectivityStatusCollectionRequest
      */
     private String registryId;
 
+    public String getRegistryId() {
+        return registryId;
+    }
     /**
      * The endpoint key.
      */
     private String endpointKey;
 
+    public String getEndpointKey() {
+        return endpointKey;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -38,22 +36,34 @@ public class GetNetworkConnectivityStatusCollectionRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
      */
@@ -95,6 +105,10 @@ public class GetNetworkConnectivityStatusCollectionRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
      */
@@ -136,12 +150,108 @@ public class GetNetworkConnectivityStatusCollectionRequest
         }
     };
 
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetNetworkConnectivityStatusCollectionRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String registryId = null;
+
+        /**
+         * The registry Ocid.
+         * @return this builder instance
+         */
+        public Builder registryId(String registryId) {
+            this.registryId = registryId;
+            return this;
+        }
+
+        private String endpointKey = null;
+
+        /**
+         * The endpoint key.
+         * @return this builder instance
+         */
+        public Builder endpointKey(String endpointKey) {
+            this.endpointKey = endpointKey;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -201,5 +311,103 @@ public class GetNetworkConnectivityStatusCollectionRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetNetworkConnectivityStatusCollectionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetNetworkConnectivityStatusCollectionRequest
+         */
+        public GetNetworkConnectivityStatusCollectionRequest buildWithoutInvocationCallback() {
+            GetNetworkConnectivityStatusCollectionRequest request =
+                    new GetNetworkConnectivityStatusCollectionRequest();
+            request.registryId = registryId;
+            request.endpointKey = endpointKey;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            request.page = page;
+            request.limit = limit;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            return request;
+            // new GetNetworkConnectivityStatusCollectionRequest(registryId, endpointKey, opcRequestId, opcRetryToken, page, limit, sortBy, sortOrder);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .registryId(registryId)
+                .endpointKey(endpointKey)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken)
+                .page(page)
+                .limit(limit)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",registryId=").append(String.valueOf(this.registryId));
+        sb.append(",endpointKey=").append(String.valueOf(this.endpointKey));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetNetworkConnectivityStatusCollectionRequest)) {
+            return false;
+        }
+
+        GetNetworkConnectivityStatusCollectionRequest other =
+                (GetNetworkConnectivityStatusCollectionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.registryId, other.registryId)
+                && java.util.Objects.equals(this.endpointKey, other.endpointKey)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
+        result = (result * PRIME) + (this.endpointKey == null ? 43 : this.endpointKey.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        return result;
     }
 }

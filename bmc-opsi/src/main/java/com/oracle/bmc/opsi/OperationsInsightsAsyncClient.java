@@ -7,6 +7,7 @@ package com.oracle.bmc.opsi;
 import com.oracle.bmc.opsi.internal.http.*;
 import com.oracle.bmc.opsi.requests.*;
 import com.oracle.bmc.opsi.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for OperationsInsights service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.opsi.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.extern.slf4j.Slf4j
 public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     /**
      * Service instance for OperationsInsights.
@@ -35,7 +35,9 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                             "https://operationsinsights.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OperationsInsightsAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -319,9 +321,13 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
          * @return the client
          */
         public OperationsInsightsAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new OperationsInsightsAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -331,6 +337,10 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override
@@ -2379,6 +2389,50 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetOpsiDataObjectResponse> getOpsiDataObject(
+            GetOpsiDataObjectRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOpsiDataObjectRequest, GetOpsiDataObjectResponse>
+                    handler) {
+        LOG.trace("Called async getOpsiDataObject");
+        final GetOpsiDataObjectRequest interceptedRequest =
+                GetOpsiDataObjectConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOpsiDataObjectConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetOpsiDataObjectResponse>
+                transformer = GetOpsiDataObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperationsInsights",
+                "GetOpsiDataObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/GetOpsiDataObject");
+
+        com.oracle.bmc.responses.AsyncHandler<GetOpsiDataObjectRequest, GetOpsiDataObjectResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOpsiDataObjectRequest, GetOpsiDataObjectResponse>,
+                        java.util.concurrent.Future<GetOpsiDataObjectResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOpsiDataObjectRequest, GetOpsiDataObjectResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3359,7 +3413,7 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 "OperationsInsights",
                 "ListOperationsInsightsPrivateEndpoints",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpointCollection/ListOperationsInsightsPrivateEndpoints");
+                "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ListOperationsInsightsPrivateEndpoints");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListOperationsInsightsPrivateEndpointsRequest,
@@ -3481,6 +3535,52 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListOperationsInsightsWarehousesRequest,
                     ListOperationsInsightsWarehousesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsiDataObjectsResponse> listOpsiDataObjects(
+            ListOpsiDataObjectsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListOpsiDataObjectsRequest, ListOpsiDataObjectsResponse>
+                    handler) {
+        LOG.trace("Called async listOpsiDataObjects");
+        final ListOpsiDataObjectsRequest interceptedRequest =
+                ListOpsiDataObjectsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOpsiDataObjectsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListOpsiDataObjectsResponse>
+                transformer = ListOpsiDataObjectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperationsInsights",
+                "ListOpsiDataObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/ListOpsiDataObjects");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOpsiDataObjectsRequest, ListOpsiDataObjectsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOpsiDataObjectsRequest, ListOpsiDataObjectsResponse>,
+                        java.util.concurrent.Future<ListOpsiDataObjectsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOpsiDataObjectsRequest, ListOpsiDataObjectsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3747,6 +3847,57 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<QueryOpsiDataObjectDataResponse> queryOpsiDataObjectData(
+            QueryOpsiDataObjectDataRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            QueryOpsiDataObjectDataRequest, QueryOpsiDataObjectDataResponse>
+                    handler) {
+        LOG.trace("Called async queryOpsiDataObjectData");
+        final QueryOpsiDataObjectDataRequest interceptedRequest =
+                QueryOpsiDataObjectDataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                QueryOpsiDataObjectDataConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, QueryOpsiDataObjectDataResponse>
+                transformer = QueryOpsiDataObjectDataConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperationsInsights",
+                "QueryOpsiDataObjectData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/QueryOpsiDataObjectData");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        QueryOpsiDataObjectDataRequest, QueryOpsiDataObjectDataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                QueryOpsiDataObjectDataRequest, QueryOpsiDataObjectDataResponse>,
+                        java.util.concurrent.Future<QueryOpsiDataObjectDataResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getQueryOpsiDataObjectDataDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    QueryOpsiDataObjectDataRequest, QueryOpsiDataObjectDataResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

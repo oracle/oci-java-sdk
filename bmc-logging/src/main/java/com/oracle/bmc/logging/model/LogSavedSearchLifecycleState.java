@@ -15,7 +15,6 @@ package com.oracle.bmc.logging.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.extern.slf4j.Slf4j
 public enum LogSavedSearchLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
@@ -29,6 +28,9 @@ public enum LogSavedSearchLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LogSavedSearchLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, LogSavedSearchLifecycleState> map;

@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDataAssetFromAtp.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
+public final class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -278,6 +273,10 @@ public class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateDataAssetFromAtp(
             String key,
@@ -327,53 +326,175 @@ public class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
      * The Autonomous Transaction Processing instance service name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     /**
      * The Autonomous Transaction Processing driver class
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
-    String driverClass;
+    private final String driverClass;
+
+    public String getDriverClass() {
+        return driverClass;
+    }
 
     /**
      * The credential file content from an Autonomous Transaction Processing wallet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
-    String credentialFileContent;
+    private final String credentialFileContent;
+
+    public String getCredentialFileContent() {
+        return credentialFileContent;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("walletSecret")
-    SensitiveAttribute walletSecret;
+    private final SensitiveAttribute walletSecret;
+
+    public SensitiveAttribute getWalletSecret() {
+        return walletSecret;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecret")
-    SensitiveAttribute walletPasswordSecret;
+    private final SensitiveAttribute walletPasswordSecret;
+
+    public SensitiveAttribute getWalletPasswordSecret() {
+        return walletPasswordSecret;
+    }
 
     /**
      * The Autonomous Data Warehouse instance region Id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionId")
-    String regionId;
+    private final String regionId;
+
+    public String getRegionId() {
+        return regionId;
+    }
 
     /**
      * The Autonomous Data Warehouse instance tenancy Id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    String tenancyId;
+    private final String tenancyId;
+
+    public String getTenancyId() {
+        return tenancyId;
+    }
 
     /**
      * The Autonomous Data Warehouse instance compartment Id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Tha Autonomous Database Id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDbId")
-    String autonomousDbId;
+    private final String autonomousDbId;
+
+    public String getAutonomousDbId() {
+        return autonomousDbId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
-    UpdateConnectionFromAtp defaultConnection;
+    private final UpdateConnectionFromAtp defaultConnection;
+
+    public UpdateConnectionFromAtp getDefaultConnection() {
+        return defaultConnection;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateDataAssetFromAtp(");
+        sb.append("super=").append(super.toString());
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", driverClass=").append(String.valueOf(this.driverClass));
+        sb.append(", credentialFileContent=").append(String.valueOf(this.credentialFileContent));
+        sb.append(", walletSecret=").append(String.valueOf(this.walletSecret));
+        sb.append(", walletPasswordSecret=").append(String.valueOf(this.walletPasswordSecret));
+        sb.append(", regionId=").append(String.valueOf(this.regionId));
+        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", autonomousDbId=").append(String.valueOf(this.autonomousDbId));
+        sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDataAssetFromAtp)) {
+            return false;
+        }
+
+        UpdateDataAssetFromAtp other = (UpdateDataAssetFromAtp) o;
+        return java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.driverClass, other.driverClass)
+                && java.util.Objects.equals(this.credentialFileContent, other.credentialFileContent)
+                && java.util.Objects.equals(this.walletSecret, other.walletSecret)
+                && java.util.Objects.equals(this.walletPasswordSecret, other.walletPasswordSecret)
+                && java.util.Objects.equals(this.regionId, other.regionId)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.autonomousDbId, other.autonomousDbId)
+                && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.driverClass == null ? 43 : this.driverClass.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialFileContent == null
+                                ? 43
+                                : this.credentialFileContent.hashCode());
+        result = (result * PRIME) + (this.walletSecret == null ? 43 : this.walletSecret.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.walletPasswordSecret == null
+                                ? 43
+                                : this.walletPasswordSecret.hashCode());
+        result = (result * PRIME) + (this.regionId == null ? 43 : this.regionId.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDbId == null ? 43 : this.autonomousDbId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

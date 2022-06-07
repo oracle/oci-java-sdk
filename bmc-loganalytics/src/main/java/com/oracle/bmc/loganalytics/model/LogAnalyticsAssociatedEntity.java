@@ -15,16 +15,37 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsAssociatedEntity.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsAssociatedEntity {
+public final class LogAnalyticsAssociatedEntity {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "entityId",
+        "entityName",
+        "entityType",
+        "entityTypeDisplayName",
+        "onHost",
+        "associationCount"
+    })
+    public LogAnalyticsAssociatedEntity(
+            String entityId,
+            String entityName,
+            String entityType,
+            String entityTypeDisplayName,
+            String onHost,
+            Long associationCount) {
+        super();
+        this.entityId = entityId;
+        this.entityName = entityName;
+        this.entityType = entityType;
+        this.entityTypeDisplayName = entityTypeDisplayName;
+        this.onHost = onHost;
+        this.associationCount = associationCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
@@ -118,42 +139,130 @@ public class LogAnalyticsAssociatedEntity {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The entity unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
-    String entityId;
+    private final String entityId;
+
+    public String getEntityId() {
+        return entityId;
+    }
 
     /**
      * The entity name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
-    String entityName;
+    private final String entityName;
+
+    public String getEntityName() {
+        return entityName;
+    }
 
     /**
      * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    String entityType;
+    private final String entityType;
+
+    public String getEntityType() {
+        return entityType;
+    }
 
     /**
      * The entity type display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
-    String entityTypeDisplayName;
+    private final String entityTypeDisplayName;
+
+    public String getEntityTypeDisplayName() {
+        return entityTypeDisplayName;
+    }
 
     /**
      * The host associated with the entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onHost")
-    String onHost;
+    private final String onHost;
+
+    public String getOnHost() {
+        return onHost;
+    }
 
     /**
      * The association count for the entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
-    Long associationCount;
+    private final Long associationCount;
+
+    public Long getAssociationCount() {
+        return associationCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsAssociatedEntity(");
+        sb.append("entityId=").append(String.valueOf(this.entityId));
+        sb.append(", entityName=").append(String.valueOf(this.entityName));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", entityTypeDisplayName=").append(String.valueOf(this.entityTypeDisplayName));
+        sb.append(", onHost=").append(String.valueOf(this.onHost));
+        sb.append(", associationCount=").append(String.valueOf(this.associationCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsAssociatedEntity)) {
+            return false;
+        }
+
+        LogAnalyticsAssociatedEntity other = (LogAnalyticsAssociatedEntity) o;
+        return java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.entityName, other.entityName)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.entityTypeDisplayName, other.entityTypeDisplayName)
+                && java.util.Objects.equals(this.onHost, other.onHost)
+                && java.util.Objects.equals(this.associationCount, other.associationCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityTypeDisplayName == null
+                                ? 43
+                                : this.entityTypeDisplayName.hashCode());
+        result = (result * PRIME) + (this.onHost == null ? 43 : this.onHost.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associationCount == null ? 43 : this.associationCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

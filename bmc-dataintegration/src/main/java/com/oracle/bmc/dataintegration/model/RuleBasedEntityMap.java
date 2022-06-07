@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RuleBasedEntityMap.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RuleBasedEntityMap extends FieldMap {
+public final class RuleBasedEntityMap extends FieldMap {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -168,6 +163,10 @@ public class RuleBasedEntityMap extends FieldMap {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public RuleBasedEntityMap(
             String description,
@@ -196,23 +195,39 @@ public class RuleBasedEntityMap extends FieldMap {
      * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configValues")
-    ConfigValues configValues;
+    private final ConfigValues configValues;
+
+    public ConfigValues getConfigValues() {
+        return configValues;
+    }
+
     /**
      * mapType
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MapType {
         Mapbyname("MAPBYNAME"),
         Mapbypattern("MAPBYPATTERN"),
@@ -222,6 +237,9 @@ public class RuleBasedEntityMap extends FieldMap {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MapType.class);
 
         private final String value;
         private static java.util.Map<String, MapType> map;
@@ -259,32 +277,119 @@ public class RuleBasedEntityMap extends FieldMap {
      * mapType
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mapType")
-    MapType mapType;
+    private final MapType mapType;
+
+    public MapType getMapType() {
+        return mapType;
+    }
 
     /**
      * The pattern to map from.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fromPattern")
-    String fromPattern;
+    private final String fromPattern;
+
+    public String getFromPattern() {
+        return fromPattern;
+    }
 
     /**
      * The pattern to map to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("toPattern")
-    String toPattern;
+    private final String toPattern;
+
+    public String getToPattern() {
+        return toPattern;
+    }
 
     /**
      * Specifies whether the rule uses a java regex syntax.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isJavaRegexSyntax")
-    Boolean isJavaRegexSyntax;
+    private final Boolean isJavaRegexSyntax;
+
+    public Boolean getIsJavaRegexSyntax() {
+        return isJavaRegexSyntax;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RuleBasedEntityMap(");
+        sb.append("super=").append(super.toString());
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", configValues=").append(String.valueOf(this.configValues));
+        sb.append(", mapType=").append(String.valueOf(this.mapType));
+        sb.append(", fromPattern=").append(String.valueOf(this.fromPattern));
+        sb.append(", toPattern=").append(String.valueOf(this.toPattern));
+        sb.append(", isJavaRegexSyntax=").append(String.valueOf(this.isJavaRegexSyntax));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RuleBasedEntityMap)) {
+            return false;
+        }
+
+        RuleBasedEntityMap other = (RuleBasedEntityMap) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.configValues, other.configValues)
+                && java.util.Objects.equals(this.mapType, other.mapType)
+                && java.util.Objects.equals(this.fromPattern, other.fromPattern)
+                && java.util.Objects.equals(this.toPattern, other.toPattern)
+                && java.util.Objects.equals(this.isJavaRegexSyntax, other.isJavaRegexSyntax)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
+        result = (result * PRIME) + (this.mapType == null ? 43 : this.mapType.hashCode());
+        result = (result * PRIME) + (this.fromPattern == null ? 43 : this.fromPattern.hashCode());
+        result = (result * PRIME) + (this.toPattern == null ? 43 : this.toPattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isJavaRegexSyntax == null ? 43 : this.isJavaRegexSyntax.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

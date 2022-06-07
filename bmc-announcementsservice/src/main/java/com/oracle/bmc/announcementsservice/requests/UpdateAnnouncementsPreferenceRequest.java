@@ -9,14 +9,6 @@ import com.oracle.bmc.announcementsservice.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateAnnouncementsPreferenceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAnnouncementsPreferenceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateAnnouncementsPreferenceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails> {
@@ -26,12 +18,19 @@ public class UpdateAnnouncementsPreferenceRequest
      */
     private String preferenceId;
 
+    public String getPreferenceId() {
+        return preferenceId;
+    }
     /**
      * The object that contains details about tenancy preferences for receiving announcements by email.
      */
     private com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
             announcementsPreferenceDetails;
 
+    public com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
+            getAnnouncementsPreferenceDetails() {
+        return announcementsPreferenceDetails;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the complete request ID.
@@ -39,10 +38,17 @@ public class UpdateAnnouncementsPreferenceRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The locking version, used for optimistic concurrency control.
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +69,55 @@ public class UpdateAnnouncementsPreferenceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String preferenceId = null;
+
+        /**
+         * The ID of the preference.
+         * @return this builder instance
+         */
+        public Builder preferenceId(String preferenceId) {
+            this.preferenceId = preferenceId;
+            return this;
+        }
+
+        private com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
+                announcementsPreferenceDetails = null;
+
+        /**
+         * The object that contains details about tenancy preferences for receiving announcements by email.
+         * @return this builder instance
+         */
+        public Builder announcementsPreferenceDetails(
+                com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
+                        announcementsPreferenceDetails) {
+            this.announcementsPreferenceDetails = announcementsPreferenceDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * The locking version, used for optimistic concurrency control.
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +185,86 @@ public class UpdateAnnouncementsPreferenceRequest
             announcementsPreferenceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateAnnouncementsPreferenceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateAnnouncementsPreferenceRequest
+         */
+        public UpdateAnnouncementsPreferenceRequest buildWithoutInvocationCallback() {
+            UpdateAnnouncementsPreferenceRequest request =
+                    new UpdateAnnouncementsPreferenceRequest();
+            request.preferenceId = preferenceId;
+            request.announcementsPreferenceDetails = announcementsPreferenceDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateAnnouncementsPreferenceRequest(preferenceId, announcementsPreferenceDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .preferenceId(preferenceId)
+                .announcementsPreferenceDetails(announcementsPreferenceDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",preferenceId=").append(String.valueOf(this.preferenceId));
+        sb.append(",announcementsPreferenceDetails=")
+                .append(String.valueOf(this.announcementsPreferenceDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAnnouncementsPreferenceRequest)) {
+            return false;
+        }
+
+        UpdateAnnouncementsPreferenceRequest other = (UpdateAnnouncementsPreferenceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.preferenceId, other.preferenceId)
+                && java.util.Objects.equals(
+                        this.announcementsPreferenceDetails, other.announcementsPreferenceDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.preferenceId == null ? 43 : this.preferenceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.announcementsPreferenceDetails == null
+                                ? 43
+                                : this.announcementsPreferenceDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

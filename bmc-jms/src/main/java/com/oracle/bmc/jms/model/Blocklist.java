@@ -15,14 +15,20 @@ package com.oracle.bmc.jms.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Blocklist.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Blocklist {
+public final class Blocklist {
+    @Deprecated
+    @java.beans.ConstructorProperties({"key", "target", "operation", "reason"})
+    public Blocklist(String key, BlocklistTarget target, OperationType operation, String reason) {
+        super();
+        this.key = key;
+        this.target = target;
+        this.operation = operation;
+        this.reason = reason;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -89,27 +95,95 @@ public class Blocklist {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier of this blocklist record.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    BlocklistTarget target;
+    private final BlocklistTarget target;
+
+    public BlocklistTarget getTarget() {
+        return target;
+    }
 
     /**
      * The operation type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
-    OperationType operation;
+    private final OperationType operation;
+
+    public OperationType getOperation() {
+        return operation;
+    }
 
     /**
      * The reason for why the operation is blocklisted
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
-    String reason;
+    private final String reason;
+
+    public String getReason() {
+        return reason;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Blocklist(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", operation=").append(String.valueOf(this.operation));
+        sb.append(", reason=").append(String.valueOf(this.reason));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Blocklist)) {
+            return false;
+        }
+
+        Blocklist other = (Blocklist) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(this.reason, other.reason)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result = (result * PRIME) + (this.reason == null ? 43 : this.reason.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

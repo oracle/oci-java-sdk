@@ -15,16 +15,26 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DeployStageExecutionProgressDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeployStageExecutionProgressDetails {
+public final class DeployStageExecutionProgressDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"targetId", "targetGroup", "steps", "rollbackSteps"})
+    public DeployStageExecutionProgressDetails(
+            String targetId,
+            String targetGroup,
+            java.util.List<DeployStageExecutionStep> steps,
+            java.util.List<DeployStageExecutionStep> rollbackSteps) {
+        super();
+        this.targetId = targetId;
+        this.targetGroup = targetGroup;
+        this.steps = steps;
+        this.rollbackSteps = rollbackSteps;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
@@ -93,30 +103,100 @@ public class DeployStageExecutionProgressDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * Group for the target environment for example, the batch number for an Instance Group deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetGroup")
-    String targetGroup;
+    private final String targetGroup;
+
+    public String getTargetGroup() {
+        return targetGroup;
+    }
 
     /**
      * Details about all the steps for one target environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
-    java.util.List<DeployStageExecutionStep> steps;
+    private final java.util.List<DeployStageExecutionStep> steps;
+
+    public java.util.List<DeployStageExecutionStep> getSteps() {
+        return steps;
+    }
 
     /**
      * Details about all the rollback steps for one target environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rollbackSteps")
-    java.util.List<DeployStageExecutionStep> rollbackSteps;
+    private final java.util.List<DeployStageExecutionStep> rollbackSteps;
+
+    public java.util.List<DeployStageExecutionStep> getRollbackSteps() {
+        return rollbackSteps;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeployStageExecutionProgressDetails(");
+        sb.append("targetId=").append(String.valueOf(this.targetId));
+        sb.append(", targetGroup=").append(String.valueOf(this.targetGroup));
+        sb.append(", steps=").append(String.valueOf(this.steps));
+        sb.append(", rollbackSteps=").append(String.valueOf(this.rollbackSteps));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeployStageExecutionProgressDetails)) {
+            return false;
+        }
+
+        DeployStageExecutionProgressDetails other = (DeployStageExecutionProgressDetails) o;
+        return java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetGroup, other.targetGroup)
+                && java.util.Objects.equals(this.steps, other.steps)
+                && java.util.Objects.equals(this.rollbackSteps, other.rollbackSteps)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.targetGroup == null ? 43 : this.targetGroup.hashCode());
+        result = (result * PRIME) + (this.steps == null ? 43 : this.steps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rollbackSteps == null ? 43 : this.rollbackSteps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

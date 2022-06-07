@@ -16,14 +16,74 @@ package com.oracle.bmc.dataflow.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RunSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RunSummary {
+public final class RunSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "applicationId",
+        "compartmentId",
+        "dataReadInBytes",
+        "dataWrittenInBytes",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "language",
+        "lifecycleDetails",
+        "lifecycleState",
+        "opcRequestId",
+        "ownerPrincipalId",
+        "ownerUserName",
+        "runDurationInMilliseconds",
+        "totalOCpu",
+        "timeCreated",
+        "timeUpdated",
+        "type"
+    })
+    public RunSummary(
+            String applicationId,
+            String compartmentId,
+            Long dataReadInBytes,
+            Long dataWrittenInBytes,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            ApplicationLanguage language,
+            String lifecycleDetails,
+            RunLifecycleState lifecycleState,
+            String opcRequestId,
+            String ownerPrincipalId,
+            String ownerUserName,
+            Long runDurationInMilliseconds,
+            Integer totalOCpu,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            ApplicationType type) {
+        super();
+        this.applicationId = applicationId;
+        this.compartmentId = compartmentId;
+        this.dataReadInBytes = dataReadInBytes;
+        this.dataWrittenInBytes = dataWrittenInBytes;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.language = language;
+        this.lifecycleDetails = lifecycleDetails;
+        this.lifecycleState = lifecycleState;
+        this.opcRequestId = opcRequestId;
+        this.ownerPrincipalId = ownerPrincipalId;
+        this.ownerUserName = ownerUserName;
+        this.runDurationInMilliseconds = runDurationInMilliseconds;
+        this.totalOCpu = totalOCpu;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.type = type;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
@@ -261,33 +321,53 @@ public class RunSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The application ID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
-    String applicationId;
+    private final String applicationId;
+
+    public String getApplicationId() {
+        return applicationId;
+    }
 
     /**
      * The OCID of a compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The data read by the run in bytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataReadInBytes")
-    Long dataReadInBytes;
+    private final Long dataReadInBytes;
+
+    public Long getDataReadInBytes() {
+        return dataReadInBytes;
+    }
 
     /**
      * The data written by the run in bytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataWrittenInBytes")
-    Long dataWrittenInBytes;
+    private final Long dataWrittenInBytes;
+
+    public Long getDataWrittenInBytes() {
+        return dataWrittenInBytes;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -295,14 +375,22 @@ public class RunSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. This name is not necessarily unique.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -311,35 +399,55 @@ public class RunSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The ID of a run.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The Spark language.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
-    ApplicationLanguage language;
+    private final ApplicationLanguage language;
+
+    public ApplicationLanguage getLanguage() {
+        return language;
+    }
 
     /**
      * The detailed messages about the lifecycle state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The current state of this run.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    RunLifecycleState lifecycleState;
+    private final RunLifecycleState lifecycleState;
+
+    public RunLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Unique Oracle assigned identifier for the request.
@@ -347,14 +455,22 @@ public class RunSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("opcRequestId")
-    String opcRequestId;
+    private final String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * The OCID of the user who created the resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerPrincipalId")
-    String ownerPrincipalId;
+    private final String ownerPrincipalId;
+
+    public String getOwnerPrincipalId() {
+        return ownerPrincipalId;
+    }
 
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist,
@@ -362,21 +478,33 @@ public class RunSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
-    String ownerUserName;
+    private final String ownerUserName;
+
+    public String getOwnerUserName() {
+        return ownerUserName;
+    }
 
     /**
      * The duration of the run in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("runDurationInMilliseconds")
-    Long runDurationInMilliseconds;
+    private final Long runDurationInMilliseconds;
+
+    public Long getRunDurationInMilliseconds() {
+        return runDurationInMilliseconds;
+    }
 
     /**
      * The total number of oCPU requested by the run.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalOCpu")
-    Integer totalOCpu;
+    private final Integer totalOCpu;
+
+    public Integer getTotalOCpu() {
+        return totalOCpu;
+    }
 
     /**
      * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -384,7 +512,11 @@ public class RunSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -392,15 +524,140 @@ public class RunSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The Spark application processing type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    ApplicationType type;
+    private final ApplicationType type;
+
+    public ApplicationType getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RunSummary(");
+        sb.append("applicationId=").append(String.valueOf(this.applicationId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", dataReadInBytes=").append(String.valueOf(this.dataReadInBytes));
+        sb.append(", dataWrittenInBytes=").append(String.valueOf(this.dataWrittenInBytes));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", language=").append(String.valueOf(this.language));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(", ownerPrincipalId=").append(String.valueOf(this.ownerPrincipalId));
+        sb.append(", ownerUserName=").append(String.valueOf(this.ownerUserName));
+        sb.append(", runDurationInMilliseconds=")
+                .append(String.valueOf(this.runDurationInMilliseconds));
+        sb.append(", totalOCpu=").append(String.valueOf(this.totalOCpu));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RunSummary)) {
+            return false;
+        }
+
+        RunSummary other = (RunSummary) o;
+        return java.util.Objects.equals(this.applicationId, other.applicationId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.dataReadInBytes, other.dataReadInBytes)
+                && java.util.Objects.equals(this.dataWrittenInBytes, other.dataWrittenInBytes)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.language, other.language)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ownerPrincipalId, other.ownerPrincipalId)
+                && java.util.Objects.equals(this.ownerUserName, other.ownerUserName)
+                && java.util.Objects.equals(
+                        this.runDurationInMilliseconds, other.runDurationInMilliseconds)
+                && java.util.Objects.equals(this.totalOCpu, other.totalOCpu)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.applicationId == null ? 43 : this.applicationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataReadInBytes == null ? 43 : this.dataReadInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataWrittenInBytes == null
+                                ? 43
+                                : this.dataWrittenInBytes.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ownerPrincipalId == null ? 43 : this.ownerPrincipalId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ownerUserName == null ? 43 : this.ownerUserName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runDurationInMilliseconds == null
+                                ? 43
+                                : this.runDurationInMilliseconds.hashCode());
+        result = (result * PRIME) + (this.totalOCpu == null ? 43 : this.totalOCpu.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

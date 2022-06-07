@@ -16,16 +16,40 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlPlanInsightAggregationCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlPlanInsightAggregationCollection {
+public final class SqlPlanInsightAggregationCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sqlIdentifier",
+        "id",
+        "databaseId",
+        "timeIntervalStart",
+        "timeIntervalEnd",
+        "insights",
+        "items"
+    })
+    public SqlPlanInsightAggregationCollection(
+            String sqlIdentifier,
+            String id,
+            String databaseId,
+            java.util.Date timeIntervalStart,
+            java.util.Date timeIntervalEnd,
+            java.util.List<SqlPlanInsights> insights,
+            java.util.List<SqlPlanInsightAggregation> items) {
+        super();
+        this.sqlIdentifier = sqlIdentifier;
+        this.id = id;
+        this.databaseId = databaseId;
+        this.timeIntervalStart = timeIntervalStart;
+        this.timeIntervalEnd = timeIntervalEnd;
+        this.insights = insights;
+        this.items = items;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
@@ -130,49 +154,144 @@ public class SqlPlanInsightAggregationCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique SQL_ID for a SQL Statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
-    String sqlIdentifier;
+    private final String sqlIdentifier;
+
+    public String getSqlIdentifier() {
+        return sqlIdentifier;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    String databaseId;
+    private final String databaseId;
+
+    public String getDatabaseId() {
+        return databaseId;
+    }
 
     /**
      * The start timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
-    java.util.Date timeIntervalStart;
+    private final java.util.Date timeIntervalStart;
+
+    public java.util.Date getTimeIntervalStart() {
+        return timeIntervalStart;
+    }
 
     /**
      * The end timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
-    java.util.Date timeIntervalEnd;
+    private final java.util.Date timeIntervalEnd;
+
+    public java.util.Date getTimeIntervalEnd() {
+        return timeIntervalEnd;
+    }
 
     /**
      * List of SQL plan insights.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("insights")
-    java.util.List<SqlPlanInsights> insights;
+    private final java.util.List<SqlPlanInsights> insights;
+
+    public java.util.List<SqlPlanInsights> getInsights() {
+        return insights;
+    }
 
     /**
      * List of SQL plan statistics.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<SqlPlanInsightAggregation> items;
+    private final java.util.List<SqlPlanInsightAggregation> items;
+
+    public java.util.List<SqlPlanInsightAggregation> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlPlanInsightAggregationCollection(");
+        sb.append("sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
+        sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(", insights=").append(String.valueOf(this.insights));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlPlanInsightAggregationCollection)) {
+            return false;
+        }
+
+        SqlPlanInsightAggregationCollection other = (SqlPlanInsightAggregationCollection) o;
+        return java.util.Objects.equals(this.sqlIdentifier, other.sqlIdentifier)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
+                && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(this.insights, other.insights)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sqlIdentifier == null ? 43 : this.sqlIdentifier.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalStart == null ? 43 : this.timeIntervalStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result = (result * PRIME) + (this.insights == null ? 43 : this.insights.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

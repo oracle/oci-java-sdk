@@ -15,16 +15,20 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = QueryParameterValidationItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class QueryParameterValidationItem {
+public final class QueryParameterValidationItem {
+    @Deprecated
+    @java.beans.ConstructorProperties({"required", "name"})
+    public QueryParameterValidationItem(Boolean required, String name) {
+        super();
+        this.required = required;
+        this.name = name;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("required")
         private Boolean required;
@@ -70,18 +74,72 @@ public class QueryParameterValidationItem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Determines if the parameter is required in the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("required")
-    Boolean required;
+    private final Boolean required;
+
+    public Boolean getRequired() {
+        return required;
+    }
 
     /**
      * Parameter name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("QueryParameterValidationItem(");
+        sb.append("required=").append(String.valueOf(this.required));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof QueryParameterValidationItem)) {
+            return false;
+        }
+
+        QueryParameterValidationItem other = (QueryParameterValidationItem) o;
+        return java.util.Objects.equals(this.required, other.required)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.required == null ? 43 : this.required.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

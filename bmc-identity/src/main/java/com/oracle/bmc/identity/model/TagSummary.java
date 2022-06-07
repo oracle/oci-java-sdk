@@ -16,14 +16,47 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TagSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TagSummary {
+public final class TagSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "id",
+        "name",
+        "description",
+        "freeformTags",
+        "definedTags",
+        "isRetired",
+        "lifecycleState",
+        "timeCreated",
+        "isCostTracking"
+    })
+    public TagSummary(
+            String compartmentId,
+            String id,
+            String name,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isRetired,
+            Tag.LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            Boolean isCostTracking) {
+        super();
+        this.compartmentId = compartmentId;
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.isRetired = isRetired;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.isCostTracking = isCostTracking;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -162,17 +195,29 @@ public class TagSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment that contains the tag definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the tag definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name assigned to the tag during creation. This is the tag key definition.
@@ -180,13 +225,21 @@ public class TagSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The description you assign to the tag.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -195,7 +248,11 @@ public class TagSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -204,7 +261,11 @@ public class TagSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Whether the tag is retired.
@@ -212,13 +273,21 @@ public class TagSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
-    Boolean isRetired;
+    private final Boolean isRetired;
+
+    public Boolean getIsRetired() {
+        return isRetired;
+    }
 
     /**
      * The tag's current state. After creating a tag, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a tag, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    Tag.LifecycleState lifecycleState;
+    private final Tag.LifecycleState lifecycleState;
+
+    public Tag.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Date and time the tag was created, in the format defined by RFC3339.
@@ -226,15 +295,95 @@ public class TagSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Indicates whether the tag is enabled for cost tracking.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
-    Boolean isCostTracking;
+    private final Boolean isCostTracking;
+
+    public Boolean getIsCostTracking() {
+        return isCostTracking;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TagSummary(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isRetired=").append(String.valueOf(this.isRetired));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", isCostTracking=").append(String.valueOf(this.isCostTracking));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TagSummary)) {
+            return false;
+        }
+
+        TagSummary other = (TagSummary) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.isRetired, other.isRetired)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.isCostTracking, other.isCostTracking)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.isRetired == null ? 43 : this.isRetired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCostTracking == null ? 43 : this.isCostTracking.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

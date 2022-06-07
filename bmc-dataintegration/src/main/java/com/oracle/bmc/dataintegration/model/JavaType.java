@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JavaType.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JavaType extends BaseType {
+public final class JavaType extends BaseType {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -144,6 +139,10 @@ public class JavaType extends BaseType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public JavaType(
             String key,
@@ -163,11 +162,65 @@ public class JavaType extends BaseType {
      * The java type name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("javaTypeName")
-    String javaTypeName;
+    private final String javaTypeName;
+
+    public String getJavaTypeName() {
+        return javaTypeName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configDefinition")
-    ConfigDefinition configDefinition;
+    private final ConfigDefinition configDefinition;
+
+    public ConfigDefinition getConfigDefinition() {
+        return configDefinition;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JavaType(");
+        sb.append("super=").append(super.toString());
+        sb.append(", javaTypeName=").append(String.valueOf(this.javaTypeName));
+        sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JavaType)) {
+            return false;
+        }
+
+        JavaType other = (JavaType) o;
+        return java.util.Objects.equals(this.javaTypeName, other.javaTypeName)
+                && java.util.Objects.equals(this.configDefinition, other.configDefinition)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.javaTypeName == null ? 43 : this.javaTypeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configDefinition == null ? 43 : this.configDefinition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

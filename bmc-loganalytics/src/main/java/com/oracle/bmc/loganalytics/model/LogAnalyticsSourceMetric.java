@@ -15,16 +15,31 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsSourceMetric.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsSourceMetric {
+public final class LogAnalyticsSourceMetric {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isMetricSourceEnabled",
+        "metricName",
+        "sourceName",
+        "entityType"
+    })
+    public LogAnalyticsSourceMetric(
+            Boolean isMetricSourceEnabled,
+            String metricName,
+            String sourceName,
+            String entityType) {
+        super();
+        this.isMetricSourceEnabled = isMetricSourceEnabled;
+        this.metricName = metricName;
+        this.sourceName = sourceName;
+        this.entityType = entityType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isMetricSourceEnabled")
         private Boolean isMetricSourceEnabled;
@@ -93,31 +108,103 @@ public class LogAnalyticsSourceMetric {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A flag specifying whether or not the metric source is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricSourceEnabled")
-    Boolean isMetricSourceEnabled;
+    private final Boolean isMetricSourceEnabled;
+
+    public Boolean getIsMetricSourceEnabled() {
+        return isMetricSourceEnabled;
+    }
 
     /**
      * The metric name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
-    String metricName;
+    private final String metricName;
+
+    public String getMetricName() {
+        return metricName;
+    }
 
     /**
      * The source internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
 
     /**
      * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    String entityType;
+    private final String entityType;
+
+    public String getEntityType() {
+        return entityType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsSourceMetric(");
+        sb.append("isMetricSourceEnabled=").append(String.valueOf(this.isMetricSourceEnabled));
+        sb.append(", metricName=").append(String.valueOf(this.metricName));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsSourceMetric)) {
+            return false;
+        }
+
+        LogAnalyticsSourceMetric other = (LogAnalyticsSourceMetric) o;
+        return java.util.Objects.equals(this.isMetricSourceEnabled, other.isMetricSourceEnabled)
+                && java.util.Objects.equals(this.metricName, other.metricName)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isMetricSourceEnabled == null
+                                ? 43
+                                : this.isMetricSourceEnabled.hashCode());
+        result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

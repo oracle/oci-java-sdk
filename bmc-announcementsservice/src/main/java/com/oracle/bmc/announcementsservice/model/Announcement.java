@@ -16,20 +16,15 @@ package com.oracle.bmc.announcementsservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Announcement.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Announcement extends BaseAnnouncement {
+public final class Announcement extends BaseAnnouncement {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -288,6 +283,10 @@ public class Announcement extends BaseAnnouncement {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public Announcement(
             String id,
@@ -341,7 +340,11 @@ public class Announcement extends BaseAnnouncement {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Additional information about the event, expressed by using Markdown language and included in the
@@ -350,14 +353,75 @@ public class Announcement extends BaseAnnouncement {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalInformation")
-    String additionalInformation;
+    private final String additionalInformation;
+
+    public String getAdditionalInformation() {
+        return additionalInformation;
+    }
 
     /**
      * The list of resources, if any, affected by the event described in the announcement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("affectedResources")
-    java.util.List<AffectedResource> affectedResources;
+    private final java.util.List<AffectedResource> affectedResources;
+
+    public java.util.List<AffectedResource> getAffectedResources() {
+        return affectedResources;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Announcement(");
+        sb.append("super=").append(super.toString());
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", additionalInformation=").append(String.valueOf(this.additionalInformation));
+        sb.append(", affectedResources=").append(String.valueOf(this.affectedResources));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Announcement)) {
+            return false;
+        }
+
+        Announcement other = (Announcement) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.additionalInformation, other.additionalInformation)
+                && java.util.Objects.equals(this.affectedResources, other.affectedResources)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalInformation == null
+                                ? 43
+                                : this.additionalInformation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.affectedResources == null ? 43 : this.affectedResources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

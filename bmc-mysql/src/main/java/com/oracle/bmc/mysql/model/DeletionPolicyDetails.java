@@ -15,16 +15,28 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DeletionPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeletionPolicyDetails {
+public final class DeletionPolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "automaticBackupRetention",
+        "finalBackup",
+        "isDeleteProtected"
+    })
+    public DeletionPolicyDetails(
+            AutomaticBackupRetention automaticBackupRetention,
+            FinalBackup finalBackup,
+            Boolean isDeleteProtected) {
+        super();
+        this.automaticBackupRetention = automaticBackupRetention;
+        this.finalBackup = finalBackup;
+        this.isDeleteProtected = isDeleteProtected;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("automaticBackupRetention")
         private AutomaticBackupRetention automaticBackupRetention;
@@ -83,11 +95,14 @@ public class DeletionPolicyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AutomaticBackupRetention {
         Delete("DELETE"),
         Retain("RETAIN"),
@@ -97,6 +112,9 @@ public class DeletionPolicyDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AutomaticBackupRetention.class);
 
         private final String value;
         private static java.util.Map<String, AutomaticBackupRetention> map;
@@ -135,14 +153,18 @@ public class DeletionPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("automaticBackupRetention")
-    AutomaticBackupRetention automaticBackupRetention;
+    private final AutomaticBackupRetention automaticBackupRetention;
+
+    public AutomaticBackupRetention getAutomaticBackupRetention() {
+        return automaticBackupRetention;
+    }
+
     /**
      * Specifies whether or not a backup is taken when the DB System is deleted.
      *   REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted.
      *   SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum FinalBackup {
         SkipFinalBackup("SKIP_FINAL_BACKUP"),
         RequireFinalBackup("REQUIRE_FINAL_BACKUP"),
@@ -152,6 +174,9 @@ public class DeletionPolicyDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FinalBackup.class);
 
         private final String value;
         private static java.util.Map<String, FinalBackup> map;
@@ -192,15 +217,76 @@ public class DeletionPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("finalBackup")
-    FinalBackup finalBackup;
+    private final FinalBackup finalBackup;
+
+    public FinalBackup getFinalBackup() {
+        return finalBackup;
+    }
 
     /**
      * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtected")
-    Boolean isDeleteProtected;
+    private final Boolean isDeleteProtected;
+
+    public Boolean getIsDeleteProtected() {
+        return isDeleteProtected;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeletionPolicyDetails(");
+        sb.append("automaticBackupRetention=")
+                .append(String.valueOf(this.automaticBackupRetention));
+        sb.append(", finalBackup=").append(String.valueOf(this.finalBackup));
+        sb.append(", isDeleteProtected=").append(String.valueOf(this.isDeleteProtected));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeletionPolicyDetails)) {
+            return false;
+        }
+
+        DeletionPolicyDetails other = (DeletionPolicyDetails) o;
+        return java.util.Objects.equals(
+                        this.automaticBackupRetention, other.automaticBackupRetention)
+                && java.util.Objects.equals(this.finalBackup, other.finalBackup)
+                && java.util.Objects.equals(this.isDeleteProtected, other.isDeleteProtected)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.automaticBackupRetention == null
+                                ? 43
+                                : this.automaticBackupRetention.hashCode());
+        result = (result * PRIME) + (this.finalBackup == null ? 43 : this.finalBackup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDeleteProtected == null ? 43 : this.isDeleteProtected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

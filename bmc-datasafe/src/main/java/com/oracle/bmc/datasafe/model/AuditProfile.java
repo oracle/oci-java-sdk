@@ -15,14 +15,71 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuditProfile.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AuditProfile {
+public final class AuditProfile {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "lifecycleDetails",
+        "targetId",
+        "description",
+        "auditTrails",
+        "isPaidUsageEnabled",
+        "onlineMonths",
+        "offlineMonths",
+        "auditCollectedVolume",
+        "isOverrideGlobalRetentionSetting",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public AuditProfile(
+            String id,
+            String compartmentId,
+            String displayName,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            AuditProfileLifecycleState lifecycleState,
+            String lifecycleDetails,
+            String targetId,
+            String description,
+            java.util.List<AuditTrail> auditTrails,
+            Boolean isPaidUsageEnabled,
+            Integer onlineMonths,
+            Integer offlineMonths,
+            Long auditCollectedVolume,
+            Boolean isOverrideGlobalRetentionSetting,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.targetId = targetId;
+        this.description = description;
+        this.auditTrails = auditTrails;
+        this.isPaidUsageEnabled = isPaidUsageEnabled;
+        this.onlineMonths = onlineMonths;
+        this.offlineMonths = offlineMonths;
+        this.auditCollectedVolume = auditCollectedVolume;
+        this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -250,65 +307,109 @@ public class AuditProfile {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the audit profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment that contains the audit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The display name of the audit profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The date and time the audit profile was created, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the audit profile was updated, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the audit profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    AuditProfileLifecycleState lifecycleState;
+    private final AuditProfileLifecycleState lifecycleState;
+
+    public AuditProfileLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Details about the current state of the audit profile in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The OCID of the Data Safe target for which the audit profile is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The description of the audit profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Indicates the list of available audit trails on the target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditTrails")
-    java.util.List<AuditTrail> auditTrails;
+    private final java.util.List<AuditTrail> auditTrails;
+
+    public java.util.List<AuditTrail> getAuditTrails() {
+        return auditTrails;
+    }
 
     /**
      * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
@@ -317,7 +418,11 @@ public class AuditProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsageEnabled")
-    Boolean isPaidUsageEnabled;
+    private final Boolean isPaidUsageEnabled;
+
+    public Boolean getIsPaidUsageEnabled() {
+        return isPaidUsageEnabled;
+    }
 
     /**
      * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
@@ -325,7 +430,11 @@ public class AuditProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onlineMonths")
-    Integer onlineMonths;
+    private final Integer onlineMonths;
+
+    public Integer getOnlineMonths() {
+        return onlineMonths;
+    }
 
     /**
      * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
@@ -334,7 +443,11 @@ public class AuditProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offlineMonths")
-    Integer offlineMonths;
+    private final Integer offlineMonths;
+
+    public Integer getOfflineMonths() {
+        return offlineMonths;
+    }
 
     /**
      * Indicates number of audit records collected by Data Safe in the current calendar month.
@@ -342,7 +455,11 @@ public class AuditProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditCollectedVolume")
-    Long auditCollectedVolume;
+    private final Long auditCollectedVolume;
+
+    public Long getAuditCollectedVolume() {
+        return auditCollectedVolume;
+    }
 
     /**
      * Indicates whether audit retention settings like online and offline months is set at the
@@ -350,7 +467,11 @@ public class AuditProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalRetentionSetting")
-    Boolean isOverrideGlobalRetentionSetting;
+    private final Boolean isOverrideGlobalRetentionSetting;
+
+    public Boolean getIsOverrideGlobalRetentionSetting() {
+        return isOverrideGlobalRetentionSetting;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -359,7 +480,11 @@ public class AuditProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -368,7 +493,11 @@ public class AuditProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
@@ -376,8 +505,125 @@ public class AuditProfile {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuditProfile(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", auditTrails=").append(String.valueOf(this.auditTrails));
+        sb.append(", isPaidUsageEnabled=").append(String.valueOf(this.isPaidUsageEnabled));
+        sb.append(", onlineMonths=").append(String.valueOf(this.onlineMonths));
+        sb.append(", offlineMonths=").append(String.valueOf(this.offlineMonths));
+        sb.append(", auditCollectedVolume=").append(String.valueOf(this.auditCollectedVolume));
+        sb.append(", isOverrideGlobalRetentionSetting=")
+                .append(String.valueOf(this.isOverrideGlobalRetentionSetting));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuditProfile)) {
+            return false;
+        }
+
+        AuditProfile other = (AuditProfile) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.auditTrails, other.auditTrails)
+                && java.util.Objects.equals(this.isPaidUsageEnabled, other.isPaidUsageEnabled)
+                && java.util.Objects.equals(this.onlineMonths, other.onlineMonths)
+                && java.util.Objects.equals(this.offlineMonths, other.offlineMonths)
+                && java.util.Objects.equals(this.auditCollectedVolume, other.auditCollectedVolume)
+                && java.util.Objects.equals(
+                        this.isOverrideGlobalRetentionSetting,
+                        other.isOverrideGlobalRetentionSetting)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.auditTrails == null ? 43 : this.auditTrails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPaidUsageEnabled == null
+                                ? 43
+                                : this.isPaidUsageEnabled.hashCode());
+        result = (result * PRIME) + (this.onlineMonths == null ? 43 : this.onlineMonths.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.offlineMonths == null ? 43 : this.offlineMonths.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditCollectedVolume == null
+                                ? 43
+                                : this.auditCollectedVolume.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOverrideGlobalRetentionSetting == null
+                                ? 43
+                                : this.isOverrideGlobalRetentionSetting.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

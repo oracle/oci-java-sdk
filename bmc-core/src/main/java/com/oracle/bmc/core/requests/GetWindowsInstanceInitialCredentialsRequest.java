@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetWindowsInstanceInitialCredentialsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetWindowsInstanceInitialCredentialsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetWindowsInstanceInitialCredentialsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,12 +17,27 @@ public class GetWindowsInstanceInitialCredentialsRequest
      */
     private String instanceId;
 
+    public String getInstanceId() {
+        return instanceId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetWindowsInstanceInitialCredentialsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String instanceId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         * @return this builder instance
+         */
+        public Builder instanceId(String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -82,5 +89,64 @@ public class GetWindowsInstanceInitialCredentialsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetWindowsInstanceInitialCredentialsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetWindowsInstanceInitialCredentialsRequest
+         */
+        public GetWindowsInstanceInitialCredentialsRequest buildWithoutInvocationCallback() {
+            GetWindowsInstanceInitialCredentialsRequest request =
+                    new GetWindowsInstanceInitialCredentialsRequest();
+            request.instanceId = instanceId;
+            return request;
+            // new GetWindowsInstanceInitialCredentialsRequest(instanceId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().instanceId(instanceId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetWindowsInstanceInitialCredentialsRequest)) {
+            return false;
+        }
+
+        GetWindowsInstanceInitialCredentialsRequest other =
+                (GetWindowsInstanceInitialCredentialsRequest) o;
+        return super.equals(o) && java.util.Objects.equals(this.instanceId, other.instanceId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        return result;
     }
 }

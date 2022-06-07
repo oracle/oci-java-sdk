@@ -7,6 +7,7 @@ package com.oracle.bmc.ospgateway;
 import com.oracle.bmc.ospgateway.internal.http.*;
 import com.oracle.bmc.ospgateway.requests.*;
 import com.oracle.bmc.ospgateway.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for InvoiceService service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.ospgateway.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.extern.slf4j.Slf4j
 public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
     /**
      * Service instance for InvoiceService.
@@ -34,7 +34,9 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
                     .serviceEndpointTemplate("https://ospap.oracle.com")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(InvoiceServiceAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
          * @return the client
          */
         public InvoiceServiceAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new InvoiceServiceAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

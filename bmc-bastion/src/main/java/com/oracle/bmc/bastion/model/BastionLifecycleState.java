@@ -8,7 +8,6 @@ package com.oracle.bmc.bastion.model;
  * Possible bastion lifecycle states.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.extern.slf4j.Slf4j
 public enum BastionLifecycleState {
     Creating("CREATING"),
     Updating("UPDATING"),
@@ -22,6 +21,9 @@ public enum BastionLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(BastionLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, BastionLifecycleState> map;

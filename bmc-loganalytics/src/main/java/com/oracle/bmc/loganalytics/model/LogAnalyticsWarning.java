@@ -15,16 +15,97 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsWarning.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsWarning {
+public final class LogAnalyticsWarning {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "agentId",
+        "hostName",
+        "ruleDisplayName",
+        "sourceName",
+        "compartmentId",
+        "sourceDisplayName",
+        "entityName",
+        "timeCollected",
+        "warningId",
+        "timeOfInitialWarning",
+        "isActive",
+        "isSuppressed",
+        "timeOfLatestWarning",
+        "warningLevel",
+        "warningMessage",
+        "patternId",
+        "patternText",
+        "ruleId",
+        "sourceId",
+        "suppressedBy",
+        "entityId",
+        "entityType",
+        "entityTypeDisplayName",
+        "typeDisplayName",
+        "typeName",
+        "severity"
+    })
+    public LogAnalyticsWarning(
+            String agentId,
+            String hostName,
+            String ruleDisplayName,
+            String sourceName,
+            String compartmentId,
+            String sourceDisplayName,
+            String entityName,
+            java.util.Date timeCollected,
+            String warningId,
+            java.util.Date timeOfInitialWarning,
+            Boolean isActive,
+            Boolean isSuppressed,
+            java.util.Date timeOfLatestWarning,
+            String warningLevel,
+            String warningMessage,
+            String patternId,
+            String patternText,
+            String ruleId,
+            String sourceId,
+            String suppressedBy,
+            String entityId,
+            String entityType,
+            String entityTypeDisplayName,
+            String typeDisplayName,
+            String typeName,
+            Integer severity) {
+        super();
+        this.agentId = agentId;
+        this.hostName = hostName;
+        this.ruleDisplayName = ruleDisplayName;
+        this.sourceName = sourceName;
+        this.compartmentId = compartmentId;
+        this.sourceDisplayName = sourceDisplayName;
+        this.entityName = entityName;
+        this.timeCollected = timeCollected;
+        this.warningId = warningId;
+        this.timeOfInitialWarning = timeOfInitialWarning;
+        this.isActive = isActive;
+        this.isSuppressed = isSuppressed;
+        this.timeOfLatestWarning = timeOfLatestWarning;
+        this.warningLevel = warningLevel;
+        this.warningMessage = warningMessage;
+        this.patternId = patternId;
+        this.patternText = patternText;
+        this.ruleId = ruleId;
+        this.sourceId = sourceId;
+        this.suppressedBy = suppressedBy;
+        this.entityId = entityId;
+        this.entityType = entityType;
+        this.entityTypeDisplayName = entityTypeDisplayName;
+        this.typeDisplayName = typeDisplayName;
+        this.typeName = typeName;
+        this.severity = severity;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
@@ -338,89 +419,149 @@ public class LogAnalyticsWarning {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier of the agent associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
-    String agentId;
+    private final String agentId;
+
+    public String getAgentId() {
+        return agentId;
+    }
 
     /**
      * The host containing the agent associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
-    String hostName;
+    private final String hostName;
+
+    public String getHostName() {
+        return hostName;
+    }
 
     /**
      * The display name of the rule which triggered the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleDisplayName")
-    String ruleDisplayName;
+    private final String ruleDisplayName;
+
+    public String getRuleDisplayName() {
+        return ruleDisplayName;
+    }
 
     /**
      * The name of the source associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
 
     /**
      * The entity compartment ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The display name of the source associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
-    String sourceDisplayName;
+    private final String sourceDisplayName;
+
+    public String getSourceDisplayName() {
+        return sourceDisplayName;
+    }
 
     /**
      * The name of the entity associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
-    String entityName;
+    private final String entityName;
+
+    public String getEntityName() {
+        return entityName;
+    }
 
     /**
      * The time at which the warning was most recently collected
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
-    java.util.Date timeCollected;
+    private final java.util.Date timeCollected;
+
+    public java.util.Date getTimeCollected() {
+        return timeCollected;
+    }
 
     /**
      * The unique identifier of the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningId")
-    String warningId;
+    private final String warningId;
+
+    public String getWarningId() {
+        return warningId;
+    }
 
     /**
      * The date at which the warning was initially triggered
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfInitialWarning")
-    java.util.Date timeOfInitialWarning;
+    private final java.util.Date timeOfInitialWarning;
+
+    public java.util.Date getTimeOfInitialWarning() {
+        return timeOfInitialWarning;
+    }
 
     /**
      * A flag indicating if the warning is currently active
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
-    Boolean isActive;
+    private final Boolean isActive;
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
 
     /**
      * A flag indicating if the warning is currently suppressed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSuppressed")
-    Boolean isSuppressed;
+    private final Boolean isSuppressed;
+
+    public Boolean getIsSuppressed() {
+        return isSuppressed;
+    }
 
     /**
      * The most recent date on which the warning was triggered
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLatestWarning")
-    java.util.Date timeOfLatestWarning;
+    private final java.util.Date timeOfLatestWarning;
+
+    public java.util.Date getTimeOfLatestWarning() {
+        return timeOfLatestWarning;
+    }
 
     /**
      * The warning level - either pattern, rule, or source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningLevel")
-    String warningLevel;
+    private final String warningLevel;
+
+    public String getWarningLevel() {
+        return warningLevel;
+    }
 
     /**
      * A description of the warning intended for the consumer of the warning.  It will
@@ -429,74 +570,260 @@ public class LogAnalyticsWarning {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningMessage")
-    String warningMessage;
+    private final String warningMessage;
+
+    public String getWarningMessage() {
+        return warningMessage;
+    }
 
     /**
      * The unique identifier of the warning pattern
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternId")
-    String patternId;
+    private final String patternId;
+
+    public String getPatternId() {
+        return patternId;
+    }
 
     /**
      * The text of the pattern used by the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternText")
-    String patternText;
+    private final String patternText;
+
+    public String getPatternText() {
+        return patternText;
+    }
 
     /**
      * The unique identifier of the rule associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleId")
-    String ruleId;
+    private final String ruleId;
+
+    public String getRuleId() {
+        return ruleId;
+    }
 
     /**
      * The unique identifier of the source associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    String sourceId;
+    private final String sourceId;
+
+    public String getSourceId() {
+        return sourceId;
+    }
 
     /**
      * The user who suppressed the warning, or empty if the warning is not suppressed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("suppressedBy")
-    String suppressedBy;
+    private final String suppressedBy;
+
+    public String getSuppressedBy() {
+        return suppressedBy;
+    }
 
     /**
      * The unique identifier of the entity associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
-    String entityId;
+    private final String entityId;
+
+    public String getEntityId() {
+        return entityId;
+    }
 
     /**
      * The type of the entity associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    String entityType;
+    private final String entityType;
+
+    public String getEntityType() {
+        return entityType;
+    }
 
     /**
      * The display name of the entity type associated with the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
-    String entityTypeDisplayName;
+    private final String entityTypeDisplayName;
+
+    public String getEntityTypeDisplayName() {
+        return entityTypeDisplayName;
+    }
 
     /**
      * The display name of the warning type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeDisplayName")
-    String typeDisplayName;
+    private final String typeDisplayName;
+
+    public String getTypeDisplayName() {
+        return typeDisplayName;
+    }
 
     /**
      * The internal name of the warning
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
-    String typeName;
+    private final String typeName;
+
+    public String getTypeName() {
+        return typeName;
+    }
 
     /**
      * The warning severity
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Integer severity;
+    private final Integer severity;
+
+    public Integer getSeverity() {
+        return severity;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsWarning(");
+        sb.append("agentId=").append(String.valueOf(this.agentId));
+        sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", ruleDisplayName=").append(String.valueOf(this.ruleDisplayName));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", sourceDisplayName=").append(String.valueOf(this.sourceDisplayName));
+        sb.append(", entityName=").append(String.valueOf(this.entityName));
+        sb.append(", timeCollected=").append(String.valueOf(this.timeCollected));
+        sb.append(", warningId=").append(String.valueOf(this.warningId));
+        sb.append(", timeOfInitialWarning=").append(String.valueOf(this.timeOfInitialWarning));
+        sb.append(", isActive=").append(String.valueOf(this.isActive));
+        sb.append(", isSuppressed=").append(String.valueOf(this.isSuppressed));
+        sb.append(", timeOfLatestWarning=").append(String.valueOf(this.timeOfLatestWarning));
+        sb.append(", warningLevel=").append(String.valueOf(this.warningLevel));
+        sb.append(", warningMessage=").append(String.valueOf(this.warningMessage));
+        sb.append(", patternId=").append(String.valueOf(this.patternId));
+        sb.append(", patternText=").append(String.valueOf(this.patternText));
+        sb.append(", ruleId=").append(String.valueOf(this.ruleId));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", suppressedBy=").append(String.valueOf(this.suppressedBy));
+        sb.append(", entityId=").append(String.valueOf(this.entityId));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", entityTypeDisplayName=").append(String.valueOf(this.entityTypeDisplayName));
+        sb.append(", typeDisplayName=").append(String.valueOf(this.typeDisplayName));
+        sb.append(", typeName=").append(String.valueOf(this.typeName));
+        sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsWarning)) {
+            return false;
+        }
+
+        LogAnalyticsWarning other = (LogAnalyticsWarning) o;
+        return java.util.Objects.equals(this.agentId, other.agentId)
+                && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.ruleDisplayName, other.ruleDisplayName)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.sourceDisplayName, other.sourceDisplayName)
+                && java.util.Objects.equals(this.entityName, other.entityName)
+                && java.util.Objects.equals(this.timeCollected, other.timeCollected)
+                && java.util.Objects.equals(this.warningId, other.warningId)
+                && java.util.Objects.equals(this.timeOfInitialWarning, other.timeOfInitialWarning)
+                && java.util.Objects.equals(this.isActive, other.isActive)
+                && java.util.Objects.equals(this.isSuppressed, other.isSuppressed)
+                && java.util.Objects.equals(this.timeOfLatestWarning, other.timeOfLatestWarning)
+                && java.util.Objects.equals(this.warningLevel, other.warningLevel)
+                && java.util.Objects.equals(this.warningMessage, other.warningMessage)
+                && java.util.Objects.equals(this.patternId, other.patternId)
+                && java.util.Objects.equals(this.patternText, other.patternText)
+                && java.util.Objects.equals(this.ruleId, other.ruleId)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.suppressedBy, other.suppressedBy)
+                && java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.entityTypeDisplayName, other.entityTypeDisplayName)
+                && java.util.Objects.equals(this.typeDisplayName, other.typeDisplayName)
+                && java.util.Objects.equals(this.typeName, other.typeName)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ruleDisplayName == null ? 43 : this.ruleDisplayName.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDisplayName == null ? 43 : this.sourceDisplayName.hashCode());
+        result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCollected == null ? 43 : this.timeCollected.hashCode());
+        result = (result * PRIME) + (this.warningId == null ? 43 : this.warningId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfInitialWarning == null
+                                ? 43
+                                : this.timeOfInitialWarning.hashCode());
+        result = (result * PRIME) + (this.isActive == null ? 43 : this.isActive.hashCode());
+        result = (result * PRIME) + (this.isSuppressed == null ? 43 : this.isSuppressed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLatestWarning == null
+                                ? 43
+                                : this.timeOfLatestWarning.hashCode());
+        result = (result * PRIME) + (this.warningLevel == null ? 43 : this.warningLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.warningMessage == null ? 43 : this.warningMessage.hashCode());
+        result = (result * PRIME) + (this.patternId == null ? 43 : this.patternId.hashCode());
+        result = (result * PRIME) + (this.patternText == null ? 43 : this.patternText.hashCode());
+        result = (result * PRIME) + (this.ruleId == null ? 43 : this.ruleId.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result = (result * PRIME) + (this.suppressedBy == null ? 43 : this.suppressedBy.hashCode());
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityTypeDisplayName == null
+                                ? 43
+                                : this.entityTypeDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.typeDisplayName == null ? 43 : this.typeDisplayName.hashCode());
+        result = (result * PRIME) + (this.typeName == null ? 43 : this.typeName.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

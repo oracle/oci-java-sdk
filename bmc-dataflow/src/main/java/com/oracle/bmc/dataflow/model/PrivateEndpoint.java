@@ -16,14 +16,65 @@ package com.oracle.bmc.dataflow.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PrivateEndpoint.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PrivateEndpoint {
+public final class PrivateEndpoint {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "definedTags",
+        "description",
+        "displayName",
+        "dnsZones",
+        "freeformTags",
+        "id",
+        "lifecycleDetails",
+        "lifecycleState",
+        "maxHostCount",
+        "nsgIds",
+        "ownerPrincipalId",
+        "ownerUserName",
+        "subnetId",
+        "timeCreated",
+        "timeUpdated"
+    })
+    public PrivateEndpoint(
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String description,
+            String displayName,
+            java.util.List<String> dnsZones,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            String lifecycleDetails,
+            PrivateEndpointLifecycleState lifecycleState,
+            Integer maxHostCount,
+            java.util.List<String> nsgIds,
+            String ownerPrincipalId,
+            String ownerUserName,
+            String subnetId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.description = description;
+        this.displayName = displayName;
+        this.dnsZones = dnsZones;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.lifecycleDetails = lifecycleDetails;
+        this.lifecycleState = lifecycleState;
+        this.maxHostCount = maxHostCount;
+        this.nsgIds = nsgIds;
+        this.ownerPrincipalId = ownerPrincipalId;
+        this.ownerUserName = ownerUserName;
+        this.subnetId = subnetId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -228,12 +279,20 @@ public class PrivateEndpoint {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of a compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -241,21 +300,33 @@ public class PrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly description. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * An array of DNS zone names.
@@ -263,7 +334,11 @@ public class PrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
-    java.util.List<String> dnsZones;
+    private final java.util.List<String> dnsZones;
+
+    public java.util.List<String> getDnsZones() {
+        return dnsZones;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -272,28 +347,44 @@ public class PrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The OCID of a private endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The detailed messages about the lifecycle state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The current state of this private endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    PrivateEndpointLifecycleState lifecycleState;
+    private final PrivateEndpointLifecycleState lifecycleState;
+
+    public PrivateEndpointLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The maximum number of hosts to be accessed through the private endpoint. This value is used
@@ -303,21 +394,33 @@ public class PrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxHostCount")
-    Integer maxHostCount;
+    private final Integer maxHostCount;
+
+    public Integer getMaxHostCount() {
+        return maxHostCount;
+    }
 
     /**
      * An array of network security group OCIDs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     /**
      * The OCID of the user who created the resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerPrincipalId")
-    String ownerPrincipalId;
+    private final String ownerPrincipalId;
+
+    public String getOwnerPrincipalId() {
+        return ownerPrincipalId;
+    }
 
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist,
@@ -325,14 +428,22 @@ public class PrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
-    String ownerUserName;
+    private final String ownerUserName;
+
+    public String getOwnerUserName() {
+        return ownerUserName;
+    }
 
     /**
      * The OCID of a subnet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -340,7 +451,11 @@ public class PrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -348,8 +463,106 @@ public class PrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PrivateEndpoint(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", dnsZones=").append(String.valueOf(this.dnsZones));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", maxHostCount=").append(String.valueOf(this.maxHostCount));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", ownerPrincipalId=").append(String.valueOf(this.ownerPrincipalId));
+        sb.append(", ownerUserName=").append(String.valueOf(this.ownerUserName));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PrivateEndpoint)) {
+            return false;
+        }
+
+        PrivateEndpoint other = (PrivateEndpoint) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.dnsZones, other.dnsZones)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.maxHostCount, other.maxHostCount)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.ownerPrincipalId, other.ownerPrincipalId)
+                && java.util.Objects.equals(this.ownerUserName, other.ownerUserName)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.dnsZones == null ? 43 : this.dnsZones.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.maxHostCount == null ? 43 : this.maxHostCount.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ownerPrincipalId == null ? 43 : this.ownerPrincipalId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ownerUserName == null ? 43 : this.ownerUserName.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

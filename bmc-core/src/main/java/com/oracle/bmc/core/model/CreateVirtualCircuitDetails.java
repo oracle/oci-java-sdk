@@ -15,16 +15,79 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateVirtualCircuitDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateVirtualCircuitDetails {
+public final class CreateVirtualCircuitDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bandwidthShapeName",
+        "compartmentId",
+        "crossConnectMappings",
+        "routingPolicy",
+        "bgpAdminState",
+        "isBfdEnabled",
+        "customerBgpAsn",
+        "customerAsn",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "gatewayId",
+        "providerName",
+        "providerServiceId",
+        "providerServiceKeyName",
+        "providerServiceName",
+        "publicPrefixes",
+        "region",
+        "type",
+        "ipMtu"
+    })
+    public CreateVirtualCircuitDetails(
+            String bandwidthShapeName,
+            String compartmentId,
+            java.util.List<CrossConnectMapping> crossConnectMappings,
+            java.util.List<RoutingPolicy> routingPolicy,
+            BgpAdminState bgpAdminState,
+            Boolean isBfdEnabled,
+            Integer customerBgpAsn,
+            Long customerAsn,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String gatewayId,
+            String providerName,
+            String providerServiceId,
+            String providerServiceKeyName,
+            String providerServiceName,
+            java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes,
+            String region,
+            Type type,
+            VirtualCircuitIpMtu ipMtu) {
+        super();
+        this.bandwidthShapeName = bandwidthShapeName;
+        this.compartmentId = compartmentId;
+        this.crossConnectMappings = crossConnectMappings;
+        this.routingPolicy = routingPolicy;
+        this.bgpAdminState = bgpAdminState;
+        this.isBfdEnabled = isBfdEnabled;
+        this.customerBgpAsn = customerBgpAsn;
+        this.customerAsn = customerAsn;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.gatewayId = gatewayId;
+        this.providerName = providerName;
+        this.providerServiceId = providerServiceId;
+        this.providerServiceKeyName = providerServiceKeyName;
+        this.providerServiceName = providerServiceName;
+        this.publicPrefixes = publicPrefixes;
+        this.region = region;
+        this.type = type;
+        this.ipMtu = ipMtu;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
         private String bandwidthShapeName;
@@ -275,6 +338,10 @@ public class CreateVirtualCircuitDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The provisioned data rate of the connection. To get a list of the
      * available bandwidth levels (that is, shapes), see
@@ -284,14 +351,22 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
-    String bandwidthShapeName;
+    private final String bandwidthShapeName;
+
+    public String getBandwidthShapeName() {
+        return bandwidthShapeName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Create a {@code CrossConnectMapping} for each cross-connect or cross-connect
@@ -299,7 +374,12 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
-    java.util.List<CrossConnectMapping> crossConnectMappings;
+    private final java.util.List<CrossConnectMapping> crossConnectMappings;
+
+    public java.util.List<CrossConnectMapping> getCrossConnectMappings() {
+        return crossConnectMappings;
+    }
+
     /**
      **/
     public enum RoutingPolicy {
@@ -344,7 +424,12 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
-    java.util.List<RoutingPolicy> routingPolicy;
+    private final java.util.List<RoutingPolicy> routingPolicy;
+
+    public java.util.List<RoutingPolicy> getRoutingPolicy() {
+        return routingPolicy;
+    }
+
     /**
      * Set to {@code ENABLED} (the default) to activate the BGP session of the virtual circuit, set to {@code DISABLED} to deactivate the virtual circuit.
      *
@@ -386,14 +471,22 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpAdminState")
-    BgpAdminState bgpAdminState;
+    private final BgpAdminState bgpAdminState;
+
+    public BgpAdminState getBgpAdminState() {
+        return bgpAdminState;
+    }
 
     /**
      * Set to {@code true} to enable BFD for IPv4 BGP peering, or set to {@code false} to disable BFD. If this is not set, the default is {@code false}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBfdEnabled")
-    Boolean isBfdEnabled;
+    private final Boolean isBfdEnabled;
+
+    public Boolean getIsBfdEnabled() {
+        return isBfdEnabled;
+    }
 
     /**
      * Deprecated. Instead use {@code customerAsn}.
@@ -401,7 +494,11 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
-    Integer customerBgpAsn;
+    private final Integer customerBgpAsn;
+
+    public Integer getCustomerBgpAsn() {
+        return customerBgpAsn;
+    }
 
     /**
      * Your BGP ASN (either public or private). Provide this value only if
@@ -413,7 +510,11 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerAsn")
-    Long customerAsn;
+    private final Long customerAsn;
+
+    public Long getCustomerAsn() {
+        return customerAsn;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -423,7 +524,11 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -431,7 +536,11 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -441,7 +550,11 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Drg}
@@ -449,7 +562,11 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
-    String gatewayId;
+    private final String gatewayId;
+
+    public String getGatewayId() {
+        return gatewayId;
+    }
 
     /**
      * Deprecated. Instead use {@code providerServiceId}.
@@ -458,7 +575,11 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
-    String providerName;
+    private final String providerName;
+
+    public String getProviderName() {
+        return providerName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting
@@ -467,14 +588,22 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
-    String providerServiceId;
+    private final String providerServiceId;
+
+    public String getProviderServiceId() {
+        return providerServiceId;
+    }
 
     /**
      * The service key name offered by the provider (if the customer is connecting via a provider).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
-    String providerServiceKeyName;
+    private final String providerServiceKeyName;
+
+    public String getProviderServiceKeyName() {
+        return providerServiceKeyName;
+    }
 
     /**
      * Deprecated. Instead use {@code providerServiceId}.
@@ -483,7 +612,11 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
-    String providerServiceName;
+    private final String providerServiceName;
+
+    public String getProviderServiceName() {
+        return providerServiceName;
+    }
 
     /**
      * For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
@@ -491,7 +624,11 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
-    java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes;
+    private final java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes;
+
+    public java.util.List<CreateVirtualCircuitPublicPrefixDetails> getPublicPrefixes() {
+        return publicPrefixes;
+    }
 
     /**
      * The Oracle Cloud Infrastructure region where this virtual
@@ -500,7 +637,12 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
+
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE
      * means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses
@@ -546,14 +688,147 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The layer 3 IP MTU to use with this virtual circuit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipMtu")
-    VirtualCircuitIpMtu ipMtu;
+    private final VirtualCircuitIpMtu ipMtu;
+
+    public VirtualCircuitIpMtu getIpMtu() {
+        return ipMtu;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateVirtualCircuitDetails(");
+        sb.append("bandwidthShapeName=").append(String.valueOf(this.bandwidthShapeName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", crossConnectMappings=").append(String.valueOf(this.crossConnectMappings));
+        sb.append(", routingPolicy=").append(String.valueOf(this.routingPolicy));
+        sb.append(", bgpAdminState=").append(String.valueOf(this.bgpAdminState));
+        sb.append(", isBfdEnabled=").append(String.valueOf(this.isBfdEnabled));
+        sb.append(", customerBgpAsn=").append(String.valueOf(this.customerBgpAsn));
+        sb.append(", customerAsn=").append(String.valueOf(this.customerAsn));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", gatewayId=").append(String.valueOf(this.gatewayId));
+        sb.append(", providerName=").append(String.valueOf(this.providerName));
+        sb.append(", providerServiceId=").append(String.valueOf(this.providerServiceId));
+        sb.append(", providerServiceKeyName=").append(String.valueOf(this.providerServiceKeyName));
+        sb.append(", providerServiceName=").append(String.valueOf(this.providerServiceName));
+        sb.append(", publicPrefixes=").append(String.valueOf(this.publicPrefixes));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", ipMtu=").append(String.valueOf(this.ipMtu));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateVirtualCircuitDetails)) {
+            return false;
+        }
+
+        CreateVirtualCircuitDetails other = (CreateVirtualCircuitDetails) o;
+        return java.util.Objects.equals(this.bandwidthShapeName, other.bandwidthShapeName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.crossConnectMappings, other.crossConnectMappings)
+                && java.util.Objects.equals(this.routingPolicy, other.routingPolicy)
+                && java.util.Objects.equals(this.bgpAdminState, other.bgpAdminState)
+                && java.util.Objects.equals(this.isBfdEnabled, other.isBfdEnabled)
+                && java.util.Objects.equals(this.customerBgpAsn, other.customerBgpAsn)
+                && java.util.Objects.equals(this.customerAsn, other.customerAsn)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.gatewayId, other.gatewayId)
+                && java.util.Objects.equals(this.providerName, other.providerName)
+                && java.util.Objects.equals(this.providerServiceId, other.providerServiceId)
+                && java.util.Objects.equals(
+                        this.providerServiceKeyName, other.providerServiceKeyName)
+                && java.util.Objects.equals(this.providerServiceName, other.providerServiceName)
+                && java.util.Objects.equals(this.publicPrefixes, other.publicPrefixes)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.ipMtu, other.ipMtu)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.bandwidthShapeName == null
+                                ? 43
+                                : this.bandwidthShapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.crossConnectMappings == null
+                                ? 43
+                                : this.crossConnectMappings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.routingPolicy == null ? 43 : this.routingPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bgpAdminState == null ? 43 : this.bgpAdminState.hashCode());
+        result = (result * PRIME) + (this.isBfdEnabled == null ? 43 : this.isBfdEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerBgpAsn == null ? 43 : this.customerBgpAsn.hashCode());
+        result = (result * PRIME) + (this.customerAsn == null ? 43 : this.customerAsn.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.gatewayId == null ? 43 : this.gatewayId.hashCode());
+        result = (result * PRIME) + (this.providerName == null ? 43 : this.providerName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerServiceId == null ? 43 : this.providerServiceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerServiceKeyName == null
+                                ? 43
+                                : this.providerServiceKeyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerServiceName == null
+                                ? 43
+                                : this.providerServiceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicPrefixes == null ? 43 : this.publicPrefixes.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.ipMtu == null ? 43 : this.ipMtu.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

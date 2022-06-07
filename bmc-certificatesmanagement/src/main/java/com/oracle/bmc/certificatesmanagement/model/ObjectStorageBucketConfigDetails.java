@@ -15,16 +15,28 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectStorageBucketConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectStorageBucketConfigDetails {
+public final class ObjectStorageBucketConfigDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "objectStorageNamespace",
+        "objectStorageBucketName",
+        "objectStorageObjectNameFormat"
+    })
+    public ObjectStorageBucketConfigDetails(
+            String objectStorageNamespace,
+            String objectStorageBucketName,
+            String objectStorageObjectNameFormat) {
+        super();
+        this.objectStorageNamespace = objectStorageNamespace;
+        this.objectStorageBucketName = objectStorageBucketName;
+        this.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
         private String objectStorageNamespace;
@@ -85,25 +97,102 @@ public class ObjectStorageBucketConfigDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The tenancy of the bucket where the CRL is stored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
-    String objectStorageNamespace;
+    private final String objectStorageNamespace;
+
+    public String getObjectStorageNamespace() {
+        return objectStorageNamespace;
+    }
 
     /**
      * The name of the bucket where the CRL is stored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketName")
-    String objectStorageBucketName;
+    private final String objectStorageBucketName;
+
+    public String getObjectStorageBucketName() {
+        return objectStorageBucketName;
+    }
 
     /**
      * The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageObjectNameFormat")
-    String objectStorageObjectNameFormat;
+    private final String objectStorageObjectNameFormat;
+
+    public String getObjectStorageObjectNameFormat() {
+        return objectStorageObjectNameFormat;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectStorageBucketConfigDetails(");
+        sb.append("objectStorageNamespace=").append(String.valueOf(this.objectStorageNamespace));
+        sb.append(", objectStorageBucketName=")
+                .append(String.valueOf(this.objectStorageBucketName));
+        sb.append(", objectStorageObjectNameFormat=")
+                .append(String.valueOf(this.objectStorageObjectNameFormat));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectStorageBucketConfigDetails)) {
+            return false;
+        }
+
+        ObjectStorageBucketConfigDetails other = (ObjectStorageBucketConfigDetails) o;
+        return java.util.Objects.equals(this.objectStorageNamespace, other.objectStorageNamespace)
+                && java.util.Objects.equals(
+                        this.objectStorageBucketName, other.objectStorageBucketName)
+                && java.util.Objects.equals(
+                        this.objectStorageObjectNameFormat, other.objectStorageObjectNameFormat)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.objectStorageNamespace == null
+                                ? 43
+                                : this.objectStorageNamespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectStorageBucketName == null
+                                ? 43
+                                : this.objectStorageBucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectStorageObjectNameFormat == null
+                                ? 43
+                                : this.objectStorageObjectNameFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

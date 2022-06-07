@@ -9,14 +9,6 @@ import com.oracle.bmc.apmcontrolplane.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmcontrolplane/GenerateDataKeysExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateDataKeysRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GenerateDataKeysRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>> {
@@ -27,11 +19,18 @@ public class GenerateDataKeysRequest
     private java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
             generateDataKeysListDetails;
 
+    public java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
+            getGenerateDataKeysListDetails() {
+        return generateDataKeysListDetails;
+    }
     /**
      * The OCID of the APM domain.
      */
     private String apmDomainId;
 
+    public String getApmDomainId() {
+        return apmDomainId;
+    }
     /**
      * For optimistic concurrency control. Set the {@code if-match} parameter
      * to the value of the etag from a previous GET or POST response for that resource.
@@ -41,10 +40,17 @@ public class GenerateDataKeysRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -85,6 +91,43 @@ public class GenerateDataKeysRequest
         public Builder generateDataKeysListDetails(
                 com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails singularValue) {
             return this.generateDataKeysListDetails(java.util.Arrays.asList(singularValue));
+        }
+
+        private String apmDomainId = null;
+
+        /**
+         * The OCID of the APM domain.
+         * @return this builder instance
+         */
+        public Builder apmDomainId(String apmDomainId) {
+            this.apmDomainId = apmDomainId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. Set the {@code if-match} parameter
+         * to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -152,5 +195,85 @@ public class GenerateDataKeysRequest
             generateDataKeysListDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of GenerateDataKeysRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GenerateDataKeysRequest
+         */
+        public GenerateDataKeysRequest buildWithoutInvocationCallback() {
+            GenerateDataKeysRequest request = new GenerateDataKeysRequest();
+            request.generateDataKeysListDetails = generateDataKeysListDetails;
+            request.apmDomainId = apmDomainId;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GenerateDataKeysRequest(generateDataKeysListDetails, apmDomainId, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .generateDataKeysListDetails(generateDataKeysListDetails)
+                .apmDomainId(apmDomainId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",generateDataKeysListDetails=")
+                .append(String.valueOf(this.generateDataKeysListDetails));
+        sb.append(",apmDomainId=").append(String.valueOf(this.apmDomainId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateDataKeysRequest)) {
+            return false;
+        }
+
+        GenerateDataKeysRequest other = (GenerateDataKeysRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.generateDataKeysListDetails, other.generateDataKeysListDetails)
+                && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.generateDataKeysListDetails == null
+                                ? 43
+                                : this.generateDataKeysListDetails.hashCode());
+        result = (result * PRIME) + (this.apmDomainId == null ? 43 : this.apmDomainId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

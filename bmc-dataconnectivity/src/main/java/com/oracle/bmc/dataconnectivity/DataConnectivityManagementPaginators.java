@@ -26,9 +26,12 @@ import com.oracle.bmc.dataconnectivity.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.RequiredArgsConstructor
 public class DataConnectivityManagementPaginators {
     private final DataConnectivityManagement client;
+
+    public DataConnectivityManagementPaginators(DataConnectivityManagement client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listConnectionValidations operation. This iterable

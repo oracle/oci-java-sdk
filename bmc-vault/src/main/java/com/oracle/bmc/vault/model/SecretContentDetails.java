@@ -15,12 +15,6 @@ package com.oracle.bmc.vault.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,12 +29,24 @@ package com.oracle.bmc.vault.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class SecretContentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "stage"})
+    protected SecretContentDetails(String name, Stage stage) {
+        super();
+        this.name = name;
+        this.stage = stage;
+    }
 
     /**
      * Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The rotation state of the secret content. The default is {@code CURRENT}, meaning that the secret is currently in use. A secret version
      * that you mark as {@code PENDING} is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
@@ -90,7 +96,44 @@ public class SecretContentDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stage")
-    Stage stage;
+    private final Stage stage;
+
+    public Stage getStage() {
+        return stage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SecretContentDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", stage=").append(String.valueOf(this.stage));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SecretContentDetails)) {
+            return false;
+        }
+
+        SecretContentDetails other = (SecretContentDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.stage, other.stage);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.stage == null ? 43 : this.stage.hashCode());
+        return result;
+    }
 
     /**
      * The base64-encoded content of the secret.

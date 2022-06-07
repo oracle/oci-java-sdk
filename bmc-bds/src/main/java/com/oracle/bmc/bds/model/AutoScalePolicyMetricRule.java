@@ -15,16 +15,20 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutoScalePolicyMetricRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutoScalePolicyMetricRule {
+public final class AutoScalePolicyMetricRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({"metricType", "threshold"})
+    public AutoScalePolicyMetricRule(MetricType metricType, MetricThresholdRule threshold) {
+        super();
+        this.metricType = metricType;
+        this.threshold = threshold;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("metricType")
         private MetricType metricType;
@@ -70,10 +74,13 @@ public class AutoScalePolicyMetricRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Allowed value is CPU_UTILIZATION.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MetricType {
         CpuUtilization("CPU_UTILIZATION"),
 
@@ -82,6 +89,9 @@ public class AutoScalePolicyMetricRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MetricType.class);
 
         private final String value;
         private static java.util.Map<String, MetricType> map;
@@ -119,11 +129,61 @@ public class AutoScalePolicyMetricRule {
      * Allowed value is CPU_UTILIZATION.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
-    MetricType metricType;
+    private final MetricType metricType;
+
+    public MetricType getMetricType() {
+        return metricType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
-    MetricThresholdRule threshold;
+    private final MetricThresholdRule threshold;
+
+    public MetricThresholdRule getThreshold() {
+        return threshold;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutoScalePolicyMetricRule(");
+        sb.append("metricType=").append(String.valueOf(this.metricType));
+        sb.append(", threshold=").append(String.valueOf(this.threshold));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutoScalePolicyMetricRule)) {
+            return false;
+        }
+
+        AutoScalePolicyMetricRule other = (AutoScalePolicyMetricRule) o;
+        return java.util.Objects.equals(this.metricType, other.metricType)
+                && java.util.Objects.equals(this.threshold, other.threshold)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.metricType == null ? 43 : this.metricType.hashCode());
+        result = (result * PRIME) + (this.threshold == null ? 43 : this.threshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

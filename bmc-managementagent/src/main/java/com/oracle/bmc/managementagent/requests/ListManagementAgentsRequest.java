@@ -9,14 +9,6 @@ import com.oracle.bmc.managementagent.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListManagementAgentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListManagementAgentsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListManagementAgentsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,61 +17,97 @@ public class ListManagementAgentsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
      */
     private java.util.List<String> pluginName;
 
+    public java.util.List<String> getPluginName() {
+        return pluginName;
+    }
     /**
      * Filter to return only Management Agents having the particular agent version.
      */
     private java.util.List<String> version;
 
+    public java.util.List<String> getVersion() {
+        return version;
+    }
     /**
      * Filter to return only Management Agents having the particular display name.
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * Filter to return only Management Agents in the particular lifecycle state.
      */
     private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState;
 
+    public com.oracle.bmc.managementagent.model.LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * Filter to return only Management Agents in the particular availability status.
      */
     private com.oracle.bmc.managementagent.model.AvailabilityStatus availabilityStatus;
 
+    public com.oracle.bmc.managementagent.model.AvailabilityStatus getAvailabilityStatus() {
+        return availabilityStatus;
+    }
     /**
      * Filter to return only Management Agents having the particular agent host id.
      */
     private String hostId;
 
+    public String getHostId() {
+        return hostId;
+    }
     /**
      * Filter to return only results having the particular platform type.
      */
     private java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType;
 
+    public java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> getPlatformType() {
+        return platformType;
+    }
     /**
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      */
     private Boolean isCustomerDeployed;
 
+    public Boolean getIsCustomerDeployed() {
+        return isCustomerDeployed;
+    }
     /**
      * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
      */
     private com.oracle.bmc.managementagent.model.InstallTypes installType;
 
+    public com.oracle.bmc.managementagent.model.InstallTypes getInstallType() {
+        return installType;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
@@ -120,6 +148,10 @@ public class ListManagementAgentsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
      *
@@ -167,10 +199,18 @@ public class ListManagementAgentsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -178,6 +218,17 @@ public class ListManagementAgentsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the compartment to which a request will be scoped.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         private java.util.List<String> pluginName = null;
 
@@ -217,6 +268,52 @@ public class ListManagementAgentsRequest
             return this.version(java.util.Arrays.asList(singularValue));
         }
 
+        private String displayName = null;
+
+        /**
+         * Filter to return only Management Agents having the particular display name.
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState = null;
+
+        /**
+         * Filter to return only Management Agents in the particular lifecycle state.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private com.oracle.bmc.managementagent.model.AvailabilityStatus availabilityStatus = null;
+
+        /**
+         * Filter to return only Management Agents in the particular availability status.
+         * @return this builder instance
+         */
+        public Builder availabilityStatus(
+                com.oracle.bmc.managementagent.model.AvailabilityStatus availabilityStatus) {
+            this.availabilityStatus = availabilityStatus;
+            return this;
+        }
+
+        private String hostId = null;
+
+        /**
+         * Filter to return only Management Agents having the particular agent host id.
+         * @return this builder instance
+         */
+        public Builder hostId(String hostId) {
+            this.hostId = hostId;
+            return this;
+        }
+
         private java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> platformType =
                 null;
 
@@ -236,6 +333,84 @@ public class ListManagementAgentsRequest
          */
         public Builder platformType(PlatformTypes singularValue) {
             return this.platformType(java.util.Arrays.asList(singularValue));
+        }
+
+        private Boolean isCustomerDeployed = null;
+
+        /**
+         * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
+         * @return this builder instance
+         */
+        public Builder isCustomerDeployed(Boolean isCustomerDeployed) {
+            this.isCustomerDeployed = isCustomerDeployed;
+            return this;
+        }
+
+        private com.oracle.bmc.managementagent.model.InstallTypes installType = null;
+
+        /**
+         * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+         * @return this builder instance
+         */
+        public Builder installType(com.oracle.bmc.managementagent.model.InstallTypes installType) {
+            this.installType = installType;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -302,5 +477,146 @@ public class ListManagementAgentsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListManagementAgentsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListManagementAgentsRequest
+         */
+        public ListManagementAgentsRequest buildWithoutInvocationCallback() {
+            ListManagementAgentsRequest request = new ListManagementAgentsRequest();
+            request.compartmentId = compartmentId;
+            request.pluginName = pluginName;
+            request.version = version;
+            request.displayName = displayName;
+            request.lifecycleState = lifecycleState;
+            request.availabilityStatus = availabilityStatus;
+            request.hostId = hostId;
+            request.platformType = platformType;
+            request.isCustomerDeployed = isCustomerDeployed;
+            request.installType = installType;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListManagementAgentsRequest(compartmentId, pluginName, version, displayName, lifecycleState, availabilityStatus, hostId, platformType, isCustomerDeployed, installType, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .pluginName(pluginName)
+                .version(version)
+                .displayName(displayName)
+                .lifecycleState(lifecycleState)
+                .availabilityStatus(availabilityStatus)
+                .hostId(hostId)
+                .platformType(platformType)
+                .isCustomerDeployed(isCustomerDeployed)
+                .installType(installType)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",pluginName=").append(String.valueOf(this.pluginName));
+        sb.append(",version=").append(String.valueOf(this.version));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",availabilityStatus=").append(String.valueOf(this.availabilityStatus));
+        sb.append(",hostId=").append(String.valueOf(this.hostId));
+        sb.append(",platformType=").append(String.valueOf(this.platformType));
+        sb.append(",isCustomerDeployed=").append(String.valueOf(this.isCustomerDeployed));
+        sb.append(",installType=").append(String.valueOf(this.installType));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListManagementAgentsRequest)) {
+            return false;
+        }
+
+        ListManagementAgentsRequest other = (ListManagementAgentsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.pluginName, other.pluginName)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.availabilityStatus, other.availabilityStatus)
+                && java.util.Objects.equals(this.hostId, other.hostId)
+                && java.util.Objects.equals(this.platformType, other.platformType)
+                && java.util.Objects.equals(this.isCustomerDeployed, other.isCustomerDeployed)
+                && java.util.Objects.equals(this.installType, other.installType)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.pluginName == null ? 43 : this.pluginName.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityStatus == null
+                                ? 43
+                                : this.availabilityStatus.hashCode());
+        result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
+        result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCustomerDeployed == null
+                                ? 43
+                                : this.isCustomerDeployed.hashCode());
+        result = (result * PRIME) + (this.installType == null ? 43 : this.installType.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

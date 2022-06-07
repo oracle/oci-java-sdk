@@ -15,16 +15,24 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ThinAssociationAuthorizationResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ThinAssociationAuthorizationResponse {
+public final class ThinAssociationAuthorizationResponse {
+    @Deprecated
+    @java.beans.ConstructorProperties({"responses", "associationResult", "decisionCacheDuration"})
+    public ThinAssociationAuthorizationResponse(
+            java.util.List<ThinAuthorizationResponse> responses,
+            AssociationResult associationResult,
+            String decisionCacheDuration) {
+        super();
+        this.responses = responses;
+        this.associationResult = associationResult;
+        this.decisionCacheDuration = decisionCacheDuration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("responses")
         private java.util.List<ThinAuthorizationResponse> responses;
@@ -83,11 +91,20 @@ public class ThinAssociationAuthorizationResponse {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The authorization responses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responses")
-    java.util.List<ThinAuthorizationResponse> responses;
+    private final java.util.List<ThinAuthorizationResponse> responses;
+
+    public java.util.List<ThinAuthorizationResponse> getResponses() {
+        return responses;
+    }
+
     /**
      * The association verification result.
      **/
@@ -130,14 +147,73 @@ public class ThinAssociationAuthorizationResponse {
      * The association verification result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationResult")
-    AssociationResult associationResult;
+    private final AssociationResult associationResult;
+
+    public AssociationResult getAssociationResult() {
+        return associationResult;
+    }
 
     /**
      * The decision cache duration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
-    String decisionCacheDuration;
+    private final String decisionCacheDuration;
+
+    public String getDecisionCacheDuration() {
+        return decisionCacheDuration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ThinAssociationAuthorizationResponse(");
+        sb.append("responses=").append(String.valueOf(this.responses));
+        sb.append(", associationResult=").append(String.valueOf(this.associationResult));
+        sb.append(", decisionCacheDuration=").append(String.valueOf(this.decisionCacheDuration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ThinAssociationAuthorizationResponse)) {
+            return false;
+        }
+
+        ThinAssociationAuthorizationResponse other = (ThinAssociationAuthorizationResponse) o;
+        return java.util.Objects.equals(this.responses, other.responses)
+                && java.util.Objects.equals(this.associationResult, other.associationResult)
+                && java.util.Objects.equals(this.decisionCacheDuration, other.decisionCacheDuration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.responses == null ? 43 : this.responses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associationResult == null ? 43 : this.associationResult.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.decisionCacheDuration == null
+                                ? 43
+                                : this.decisionCacheDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

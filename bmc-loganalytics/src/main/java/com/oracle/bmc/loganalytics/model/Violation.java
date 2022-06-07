@@ -15,14 +15,32 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Violation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Violation {
+public final class Violation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "indexes",
+        "ruleDescription",
+        "ruleName",
+        "ruleRemediation",
+        "ruleType"
+    })
+    public Violation(
+            java.util.List<Indexes> indexes,
+            String ruleDescription,
+            String ruleName,
+            String ruleRemediation,
+            RuleType ruleType) {
+        super();
+        this.indexes = indexes;
+        this.ruleDescription = ruleDescription;
+        this.ruleName = ruleName;
+        this.ruleRemediation = ruleRemediation;
+        this.ruleType = ruleType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("indexes")
         private java.util.List<Indexes> indexes;
@@ -100,33 +118,53 @@ public class Violation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The indices associated with regular expression violations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("indexes")
-    java.util.List<Indexes> indexes;
+    private final java.util.List<Indexes> indexes;
+
+    public java.util.List<Indexes> getIndexes() {
+        return indexes;
+    }
 
     /**
      * The rule description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleDescription")
-    String ruleDescription;
+    private final String ruleDescription;
+
+    public String getRuleDescription() {
+        return ruleDescription;
+    }
 
     /**
      * The rule name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
-    String ruleName;
+    private final String ruleName;
+
+    public String getRuleName() {
+        return ruleName;
+    }
 
     /**
      * The rule remediation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleRemediation")
-    String ruleRemediation;
+    private final String ruleRemediation;
+
+    public String getRuleRemediation() {
+        return ruleRemediation;
+    }
+
     /**
      * The rule type.  Either WARN or ERROR.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RuleType {
         Warn("WARN"),
         Error("ERROR"),
@@ -136,6 +174,9 @@ public class Violation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RuleType.class);
 
         private final String value;
         private static java.util.Map<String, RuleType> map;
@@ -173,8 +214,67 @@ public class Violation {
      * The rule type.  Either WARN or ERROR.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
-    RuleType ruleType;
+    private final RuleType ruleType;
+
+    public RuleType getRuleType() {
+        return ruleType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Violation(");
+        sb.append("indexes=").append(String.valueOf(this.indexes));
+        sb.append(", ruleDescription=").append(String.valueOf(this.ruleDescription));
+        sb.append(", ruleName=").append(String.valueOf(this.ruleName));
+        sb.append(", ruleRemediation=").append(String.valueOf(this.ruleRemediation));
+        sb.append(", ruleType=").append(String.valueOf(this.ruleType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Violation)) {
+            return false;
+        }
+
+        Violation other = (Violation) o;
+        return java.util.Objects.equals(this.indexes, other.indexes)
+                && java.util.Objects.equals(this.ruleDescription, other.ruleDescription)
+                && java.util.Objects.equals(this.ruleName, other.ruleName)
+                && java.util.Objects.equals(this.ruleRemediation, other.ruleRemediation)
+                && java.util.Objects.equals(this.ruleType, other.ruleType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.indexes == null ? 43 : this.indexes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ruleDescription == null ? 43 : this.ruleDescription.hashCode());
+        result = (result * PRIME) + (this.ruleName == null ? 43 : this.ruleName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ruleRemediation == null ? 43 : this.ruleRemediation.hashCode());
+        result = (result * PRIME) + (this.ruleType == null ? 43 : this.ruleType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

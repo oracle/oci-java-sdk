@@ -15,14 +15,32 @@ package com.oracle.bmc.ospgateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Currency.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Currency {
+public final class Currency {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "currencyCode",
+        "currencySymbol",
+        "name",
+        "usdConversion",
+        "roundDecimalPoint"
+    })
+    public Currency(
+            String currencyCode,
+            String currencySymbol,
+            String name,
+            java.math.BigDecimal usdConversion,
+            java.math.BigDecimal roundDecimalPoint) {
+        super();
+        this.currencyCode = currencyCode;
+        this.currencySymbol = currencySymbol;
+        this.name = name;
+        this.usdConversion = usdConversion;
+        this.roundDecimalPoint = roundDecimalPoint;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
@@ -101,36 +119,117 @@ public class Currency {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Currency code
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
-    String currencyCode;
+    private final String currencyCode;
+
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
 
     /**
      * Currency symbol
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencySymbol")
-    String currencySymbol;
+    private final String currencySymbol;
+
+    public String getCurrencySymbol() {
+        return currencySymbol;
+    }
 
     /**
      * Name of the currency
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * USD conversion rate of the currency
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usdConversion")
-    java.math.BigDecimal usdConversion;
+    private final java.math.BigDecimal usdConversion;
+
+    public java.math.BigDecimal getUsdConversion() {
+        return usdConversion;
+    }
 
     /**
      * Round decimal point
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("roundDecimalPoint")
-    java.math.BigDecimal roundDecimalPoint;
+    private final java.math.BigDecimal roundDecimalPoint;
+
+    public java.math.BigDecimal getRoundDecimalPoint() {
+        return roundDecimalPoint;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Currency(");
+        sb.append("currencyCode=").append(String.valueOf(this.currencyCode));
+        sb.append(", currencySymbol=").append(String.valueOf(this.currencySymbol));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", usdConversion=").append(String.valueOf(this.usdConversion));
+        sb.append(", roundDecimalPoint=").append(String.valueOf(this.roundDecimalPoint));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Currency)) {
+            return false;
+        }
+
+        Currency other = (Currency) o;
+        return java.util.Objects.equals(this.currencyCode, other.currencyCode)
+                && java.util.Objects.equals(this.currencySymbol, other.currencySymbol)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.usdConversion, other.usdConversion)
+                && java.util.Objects.equals(this.roundDecimalPoint, other.roundDecimalPoint)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.currencyCode == null ? 43 : this.currencyCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currencySymbol == null ? 43 : this.currencySymbol.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usdConversion == null ? 43 : this.usdConversion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.roundDecimalPoint == null ? 43 : this.roundDecimalPoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

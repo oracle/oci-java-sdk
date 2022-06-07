@@ -18,22 +18,17 @@ package com.oracle.bmc.sch.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonitoringTargetDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "kind"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonitoringTargetDetails extends TargetDetails {
+public final class MonitoringTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -101,6 +96,10 @@ public class MonitoringTargetDetails extends TargetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public MonitoringTargetDetails(
             String compartmentId,
@@ -119,7 +118,11 @@ public class MonitoringTargetDetails extends TargetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The namespace of the metric.
@@ -128,7 +131,11 @@ public class MonitoringTargetDetails extends TargetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricNamespace")
-    String metricNamespace;
+    private final String metricNamespace;
+
+    public String getMetricNamespace() {
+        return metricNamespace;
+    }
 
     /**
      * The name of the metric.
@@ -137,15 +144,77 @@ public class MonitoringTargetDetails extends TargetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metric")
-    String metric;
+    private final String metric;
+
+    public String getMetric() {
+        return metric;
+    }
 
     /**
      * List of dimension names and values.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    java.util.List<DimensionDetails> dimensions;
+    private final java.util.List<DimensionDetails> dimensions;
+
+    public java.util.List<DimensionDetails> getDimensions() {
+        return dimensions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitoringTargetDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", metricNamespace=").append(String.valueOf(this.metricNamespace));
+        sb.append(", metric=").append(String.valueOf(this.metric));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitoringTargetDetails)) {
+            return false;
+        }
+
+        MonitoringTargetDetails other = (MonitoringTargetDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.metricNamespace, other.metricNamespace)
+                && java.util.Objects.equals(this.metric, other.metric)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metricNamespace == null ? 43 : this.metricNamespace.hashCode());
+        result = (result * PRIME) + (this.metric == null ? 43 : this.metric.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

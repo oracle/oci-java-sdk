@@ -16,14 +16,140 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CloudVmCluster.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CloudVmCluster {
+public final class CloudVmCluster {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "iormConfigCache",
+        "id",
+        "compartmentId",
+        "availabilityDomain",
+        "subnetId",
+        "backupSubnetId",
+        "nsgIds",
+        "backupNetworkNsgIds",
+        "lastUpdateHistoryEntryId",
+        "shape",
+        "listenerPort",
+        "lifecycleState",
+        "nodeCount",
+        "storageSizeInGBs",
+        "displayName",
+        "timeCreated",
+        "lifecycleDetails",
+        "timeZone",
+        "hostname",
+        "domain",
+        "cpuCoreCount",
+        "ocpuCount",
+        "clusterName",
+        "dataStoragePercentage",
+        "isLocalBackupEnabled",
+        "cloudExadataInfrastructureId",
+        "isSparseDiskgroupEnabled",
+        "giVersion",
+        "systemVersion",
+        "sshPublicKeys",
+        "licenseModel",
+        "diskRedundancy",
+        "scanIpIds",
+        "vipIds",
+        "scanDnsRecordId",
+        "freeformTags",
+        "definedTags",
+        "scanDnsName",
+        "zoneId",
+        "scanListenerPortTcp",
+        "scanListenerPortTcpSsl"
+    })
+    public CloudVmCluster(
+            ExadataIormConfig iormConfigCache,
+            String id,
+            String compartmentId,
+            String availabilityDomain,
+            String subnetId,
+            String backupSubnetId,
+            java.util.List<String> nsgIds,
+            java.util.List<String> backupNetworkNsgIds,
+            String lastUpdateHistoryEntryId,
+            String shape,
+            Long listenerPort,
+            LifecycleState lifecycleState,
+            Integer nodeCount,
+            Integer storageSizeInGBs,
+            String displayName,
+            java.util.Date timeCreated,
+            String lifecycleDetails,
+            String timeZone,
+            String hostname,
+            String domain,
+            Integer cpuCoreCount,
+            Float ocpuCount,
+            String clusterName,
+            Integer dataStoragePercentage,
+            Boolean isLocalBackupEnabled,
+            String cloudExadataInfrastructureId,
+            Boolean isSparseDiskgroupEnabled,
+            String giVersion,
+            String systemVersion,
+            java.util.List<String> sshPublicKeys,
+            LicenseModel licenseModel,
+            DiskRedundancy diskRedundancy,
+            java.util.List<String> scanIpIds,
+            java.util.List<String> vipIds,
+            String scanDnsRecordId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String scanDnsName,
+            String zoneId,
+            Integer scanListenerPortTcp,
+            Integer scanListenerPortTcpSsl) {
+        super();
+        this.iormConfigCache = iormConfigCache;
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.availabilityDomain = availabilityDomain;
+        this.subnetId = subnetId;
+        this.backupSubnetId = backupSubnetId;
+        this.nsgIds = nsgIds;
+        this.backupNetworkNsgIds = backupNetworkNsgIds;
+        this.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
+        this.shape = shape;
+        this.listenerPort = listenerPort;
+        this.lifecycleState = lifecycleState;
+        this.nodeCount = nodeCount;
+        this.storageSizeInGBs = storageSizeInGBs;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeZone = timeZone;
+        this.hostname = hostname;
+        this.domain = domain;
+        this.cpuCoreCount = cpuCoreCount;
+        this.ocpuCount = ocpuCount;
+        this.clusterName = clusterName;
+        this.dataStoragePercentage = dataStoragePercentage;
+        this.isLocalBackupEnabled = isLocalBackupEnabled;
+        this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
+        this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
+        this.giVersion = giVersion;
+        this.systemVersion = systemVersion;
+        this.sshPublicKeys = sshPublicKeys;
+        this.licenseModel = licenseModel;
+        this.diskRedundancy = diskRedundancy;
+        this.scanIpIds = scanIpIds;
+        this.vipIds = vipIds;
+        this.scanDnsRecordId = scanDnsRecordId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.scanDnsName = scanDnsName;
+        this.zoneId = zoneId;
+        this.scanListenerPortTcp = scanListenerPortTcp;
+        this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("iormConfigCache")
         private ExadataIormConfig iormConfigCache;
@@ -503,26 +629,46 @@ public class CloudVmCluster {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("iormConfigCache")
-    ExadataIormConfig iormConfigCache;
+    private final ExadataIormConfig iormConfigCache;
+
+    public ExadataIormConfig getIormConfigCache() {
+        return iormConfigCache;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
@@ -536,7 +682,11 @@ public class CloudVmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
@@ -545,46 +695,70 @@ public class CloudVmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
-    String backupSubnetId;
+    private final String backupSubnetId;
+
+    public String getBackupSubnetId() {
+        return backupSubnetId;
+    }
 
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
-    java.util.List<String> backupNetworkNsgIds;
+    private final java.util.List<String> backupNetworkNsgIds;
+
+    public java.util.List<String> getBackupNetworkNsgIds() {
+        return backupNetworkNsgIds;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateHistoryEntryId")
-    String lastUpdateHistoryEntryId;
+    private final String lastUpdateHistoryEntryId;
+
+    public String getLastUpdateHistoryEntryId() {
+        return lastUpdateHistoryEntryId;
+    }
 
     /**
      * The model name of the Exadata hardware running the cloud VM cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The port number configured for the listener on the cloud VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
-    Long listenerPort;
+    private final Long listenerPort;
+
+    public Long getListenerPort() {
+        return listenerPort;
+    }
+
     /**
      * The current state of the cloud VM cluster.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -599,6 +773,9 @@ public class CloudVmCluster {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -636,75 +813,123 @@ public class CloudVmCluster {
      * The current state of the cloud VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The number of nodes in the cloud VM cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
-    Integer nodeCount;
+    private final Integer nodeCount;
+
+    public Integer getNodeCount() {
+        return nodeCount;
+    }
 
     /**
      * The storage allocation for the disk group, in gigabytes (GB).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInGBs")
-    Integer storageSizeInGBs;
+    private final Integer storageSizeInGBs;
+
+    public Integer getStorageSizeInGBs() {
+        return storageSizeInGBs;
+    }
 
     /**
      * The user-friendly name for the cloud VM cluster. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The date and time that the cloud VM cluster was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
-    String timeZone;
+    private final String timeZone;
+
+    public String getTimeZone() {
+        return timeZone;
+    }
 
     /**
      * The hostname for the cloud VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * The domain name for the cloud VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    String domain;
+    private final String domain;
+
+    public String getDomain() {
+        return domain;
+    }
 
     /**
      * The number of CPU cores enabled on the cloud VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
-    Float ocpuCount;
+    private final Float ocpuCount;
+
+    public Float getOcpuCount() {
+        return ocpuCount;
+    }
 
     /**
      * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
-    String clusterName;
+    private final String clusterName;
+
+    public String getClusterName() {
+        return clusterName;
+    }
 
     /**
      * The percentage assigned to DATA storage (user data and database files).
@@ -712,50 +937,78 @@ public class CloudVmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
-    Integer dataStoragePercentage;
+    private final Integer dataStoragePercentage;
+
+    public Integer getDataStoragePercentage() {
+        return dataStoragePercentage;
+    }
 
     /**
      * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLocalBackupEnabled")
-    Boolean isLocalBackupEnabled;
+    private final Boolean isLocalBackupEnabled;
+
+    public Boolean getIsLocalBackupEnabled() {
+        return isLocalBackupEnabled;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
-    String cloudExadataInfrastructureId;
+    private final String cloudExadataInfrastructureId;
+
+    public String getCloudExadataInfrastructureId() {
+        return cloudExadataInfrastructureId;
+    }
 
     /**
      * If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSparseDiskgroupEnabled")
-    Boolean isSparseDiskgroupEnabled;
+    private final Boolean isSparseDiskgroupEnabled;
+
+    public Boolean getIsSparseDiskgroupEnabled() {
+        return isSparseDiskgroupEnabled;
+    }
 
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
-    String giVersion;
+    private final String giVersion;
+
+    public String getGiVersion() {
+        return giVersion;
+    }
 
     /**
      * Operating system version of the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
-    String systemVersion;
+    private final String systemVersion;
+
+    public String getSystemVersion() {
+        return systemVersion;
+    }
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
-    java.util.List<String> sshPublicKeys;
+    private final java.util.List<String> sshPublicKeys;
+
+    public java.util.List<String> getSshPublicKeys() {
+        return sshPublicKeys;
+    }
+
     /**
      * The Oracle license model that applies to the cloud VM cluster. The default is LICENSE_INCLUDED.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
@@ -765,6 +1018,9 @@ public class CloudVmCluster {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LicenseModel.class);
 
         private final String value;
         private static java.util.Map<String, LicenseModel> map;
@@ -803,14 +1059,18 @@ public class CloudVmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
+
     /**
      * The type of redundancy configured for the cloud Vm cluster.
      * NORMAL is 2-way redundancy.
      * HIGH is 3-way redundancy.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DiskRedundancy {
         High("HIGH"),
         Normal("NORMAL"),
@@ -820,6 +1080,9 @@ public class CloudVmCluster {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DiskRedundancy.class);
 
         private final String value;
         private static java.util.Map<String, DiskRedundancy> map;
@@ -860,7 +1123,11 @@ public class CloudVmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
-    DiskRedundancy diskRedundancy;
+    private final DiskRedundancy diskRedundancy;
+
+    public DiskRedundancy getDiskRedundancy() {
+        return diskRedundancy;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster.
@@ -871,7 +1138,11 @@ public class CloudVmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanIpIds")
-    java.util.List<String> scanIpIds;
+    private final java.util.List<String> scanIpIds;
+
+    public java.util.List<String> getScanIpIds() {
+        return scanIpIds;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster.
@@ -882,14 +1153,22 @@ public class CloudVmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vipIds")
-    java.util.List<String> vipIds;
+    private final java.util.List<String> vipIds;
+
+    public java.util.List<String> getVipIds() {
+        return vipIds;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
-    String scanDnsRecordId;
+    private final String scanDnsRecordId;
+
+    public String getScanDnsRecordId() {
+        return scanDnsRecordId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -899,7 +1178,11 @@ public class CloudVmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -907,34 +1190,276 @@ public class CloudVmCluster {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
-    String scanDnsName;
+    private final String scanDnsName;
+
+    public String getScanDnsName() {
+        return scanDnsName;
+    }
 
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
-    String zoneId;
+    private final String zoneId;
+
+    public String getZoneId() {
+        return zoneId;
+    }
 
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
-    Integer scanListenerPortTcp;
+    private final Integer scanListenerPortTcp;
+
+    public Integer getScanListenerPortTcp() {
+        return scanListenerPortTcp;
+    }
 
     /**
      * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
-    Integer scanListenerPortTcpSsl;
+    private final Integer scanListenerPortTcpSsl;
+
+    public Integer getScanListenerPortTcpSsl() {
+        return scanListenerPortTcpSsl;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CloudVmCluster(");
+        sb.append("iormConfigCache=").append(String.valueOf(this.iormConfigCache));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
+        sb.append(", lastUpdateHistoryEntryId=")
+                .append(String.valueOf(this.lastUpdateHistoryEntryId));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", listenerPort=").append(String.valueOf(this.listenerPort));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
+        sb.append(", storageSizeInGBs=").append(String.valueOf(this.storageSizeInGBs));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", domain=").append(String.valueOf(this.domain));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", clusterName=").append(String.valueOf(this.clusterName));
+        sb.append(", dataStoragePercentage=").append(String.valueOf(this.dataStoragePercentage));
+        sb.append(", isLocalBackupEnabled=").append(String.valueOf(this.isLocalBackupEnabled));
+        sb.append(", cloudExadataInfrastructureId=")
+                .append(String.valueOf(this.cloudExadataInfrastructureId));
+        sb.append(", isSparseDiskgroupEnabled=")
+                .append(String.valueOf(this.isSparseDiskgroupEnabled));
+        sb.append(", giVersion=").append(String.valueOf(this.giVersion));
+        sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
+        sb.append(", sshPublicKeys=").append(String.valueOf(this.sshPublicKeys));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", diskRedundancy=").append(String.valueOf(this.diskRedundancy));
+        sb.append(", scanIpIds=").append(String.valueOf(this.scanIpIds));
+        sb.append(", vipIds=").append(String.valueOf(this.vipIds));
+        sb.append(", scanDnsRecordId=").append(String.valueOf(this.scanDnsRecordId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", scanDnsName=").append(String.valueOf(this.scanDnsName));
+        sb.append(", zoneId=").append(String.valueOf(this.zoneId));
+        sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
+        sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CloudVmCluster)) {
+            return false;
+        }
+
+        CloudVmCluster other = (CloudVmCluster) o;
+        return java.util.Objects.equals(this.iormConfigCache, other.iormConfigCache)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
+                && java.util.Objects.equals(
+                        this.lastUpdateHistoryEntryId, other.lastUpdateHistoryEntryId)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.listenerPort, other.listenerPort)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.nodeCount, other.nodeCount)
+                && java.util.Objects.equals(this.storageSizeInGBs, other.storageSizeInGBs)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.domain, other.domain)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.clusterName, other.clusterName)
+                && java.util.Objects.equals(this.dataStoragePercentage, other.dataStoragePercentage)
+                && java.util.Objects.equals(this.isLocalBackupEnabled, other.isLocalBackupEnabled)
+                && java.util.Objects.equals(
+                        this.cloudExadataInfrastructureId, other.cloudExadataInfrastructureId)
+                && java.util.Objects.equals(
+                        this.isSparseDiskgroupEnabled, other.isSparseDiskgroupEnabled)
+                && java.util.Objects.equals(this.giVersion, other.giVersion)
+                && java.util.Objects.equals(this.systemVersion, other.systemVersion)
+                && java.util.Objects.equals(this.sshPublicKeys, other.sshPublicKeys)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.diskRedundancy, other.diskRedundancy)
+                && java.util.Objects.equals(this.scanIpIds, other.scanIpIds)
+                && java.util.Objects.equals(this.vipIds, other.vipIds)
+                && java.util.Objects.equals(this.scanDnsRecordId, other.scanDnsRecordId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.scanDnsName, other.scanDnsName)
+                && java.util.Objects.equals(this.zoneId, other.zoneId)
+                && java.util.Objects.equals(this.scanListenerPortTcp, other.scanListenerPortTcp)
+                && java.util.Objects.equals(
+                        this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.iormConfigCache == null ? 43 : this.iormConfigCache.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSubnetId == null ? 43 : this.backupSubnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupNetworkNsgIds == null
+                                ? 43
+                                : this.backupNetworkNsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastUpdateHistoryEntryId == null
+                                ? 43
+                                : this.lastUpdateHistoryEntryId.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.listenerPort == null ? 43 : this.listenerPort.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeInGBs == null ? 43 : this.storageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
+        result = (result * PRIME) + (this.clusterName == null ? 43 : this.clusterName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStoragePercentage == null
+                                ? 43
+                                : this.dataStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLocalBackupEnabled == null
+                                ? 43
+                                : this.isLocalBackupEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudExadataInfrastructureId == null
+                                ? 43
+                                : this.cloudExadataInfrastructureId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSparseDiskgroupEnabled == null
+                                ? 43
+                                : this.isSparseDiskgroupEnabled.hashCode());
+        result = (result * PRIME) + (this.giVersion == null ? 43 : this.giVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sshPublicKeys == null ? 43 : this.sshPublicKeys.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diskRedundancy == null ? 43 : this.diskRedundancy.hashCode());
+        result = (result * PRIME) + (this.scanIpIds == null ? 43 : this.scanIpIds.hashCode());
+        result = (result * PRIME) + (this.vipIds == null ? 43 : this.vipIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanDnsRecordId == null ? 43 : this.scanDnsRecordId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.scanDnsName == null ? 43 : this.scanDnsName.hashCode());
+        result = (result * PRIME) + (this.zoneId == null ? 43 : this.zoneId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTcp == null
+                                ? 43
+                                : this.scanListenerPortTcp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTcpSsl == null
+                                ? 43
+                                : this.scanListenerPortTcpSsl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

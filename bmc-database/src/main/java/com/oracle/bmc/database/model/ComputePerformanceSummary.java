@@ -16,16 +16,34 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ComputePerformanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ComputePerformanceSummary {
+public final class ComputePerformanceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "cpuCoreCount",
+        "memoryInGBs",
+        "networkBandwidthInGbps",
+        "networkIops",
+        "networkThroughputInMbps"
+    })
+    public ComputePerformanceSummary(
+            Integer cpuCoreCount,
+            Double memoryInGBs,
+            Float networkBandwidthInGbps,
+            Float networkIops,
+            Float networkThroughputInMbps) {
+        super();
+        this.cpuCoreCount = cpuCoreCount;
+        this.memoryInGBs = memoryInGBs;
+        this.networkBandwidthInGbps = networkBandwidthInGbps;
+        this.networkIops = networkIops;
+        this.networkThroughputInMbps = networkThroughputInMbps;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
@@ -108,36 +126,122 @@ public class ComputePerformanceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of OCPU cores available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * The amount of memory allocated for the VMDB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
-    Double memoryInGBs;
+    private final Double memoryInGBs;
+
+    public Double getMemoryInGBs() {
+        return memoryInGBs;
+    }
 
     /**
      * The network bandwidth of the VMDB system in gbps.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkBandwidthInGbps")
-    Float networkBandwidthInGbps;
+    private final Float networkBandwidthInGbps;
+
+    public Float getNetworkBandwidthInGbps() {
+        return networkBandwidthInGbps;
+    }
 
     /**
      * IOPS for the VMDB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkIops")
-    Float networkIops;
+    private final Float networkIops;
+
+    public Float getNetworkIops() {
+        return networkIops;
+    }
 
     /**
      * Network throughput for the VMDB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkThroughputInMbps")
-    Float networkThroughputInMbps;
+    private final Float networkThroughputInMbps;
+
+    public Float getNetworkThroughputInMbps() {
+        return networkThroughputInMbps;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ComputePerformanceSummary(");
+        sb.append("cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", networkBandwidthInGbps=").append(String.valueOf(this.networkBandwidthInGbps));
+        sb.append(", networkIops=").append(String.valueOf(this.networkIops));
+        sb.append(", networkThroughputInMbps=")
+                .append(String.valueOf(this.networkThroughputInMbps));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ComputePerformanceSummary)) {
+            return false;
+        }
+
+        ComputePerformanceSummary other = (ComputePerformanceSummary) o;
+        return java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(
+                        this.networkBandwidthInGbps, other.networkBandwidthInGbps)
+                && java.util.Objects.equals(this.networkIops, other.networkIops)
+                && java.util.Objects.equals(
+                        this.networkThroughputInMbps, other.networkThroughputInMbps)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkBandwidthInGbps == null
+                                ? 43
+                                : this.networkBandwidthInGbps.hashCode());
+        result = (result * PRIME) + (this.networkIops == null ? 43 : this.networkIops.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkThroughputInMbps == null
+                                ? 43
+                                : this.networkThroughputInMbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

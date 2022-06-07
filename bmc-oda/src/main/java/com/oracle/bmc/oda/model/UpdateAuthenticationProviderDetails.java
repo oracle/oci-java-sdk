@@ -15,16 +15,55 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateAuthenticationProviderDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateAuthenticationProviderDetails {
+public final class UpdateAuthenticationProviderDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tokenEndpointUrl",
+        "authorizationEndpointUrl",
+        "shortAuthorizationCodeRequestUrl",
+        "revokeTokenEndpointUrl",
+        "clientId",
+        "clientSecret",
+        "scopes",
+        "subjectClaim",
+        "refreshTokenRetentionPeriodInDays",
+        "redirectUrl",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateAuthenticationProviderDetails(
+            String tokenEndpointUrl,
+            String authorizationEndpointUrl,
+            String shortAuthorizationCodeRequestUrl,
+            String revokeTokenEndpointUrl,
+            String clientId,
+            String clientSecret,
+            String scopes,
+            String subjectClaim,
+            Integer refreshTokenRetentionPeriodInDays,
+            String redirectUrl,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.tokenEndpointUrl = tokenEndpointUrl;
+        this.authorizationEndpointUrl = authorizationEndpointUrl;
+        this.shortAuthorizationCodeRequestUrl = shortAuthorizationCodeRequestUrl;
+        this.revokeTokenEndpointUrl = revokeTokenEndpointUrl;
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
+        this.scopes = scopes;
+        this.subjectClaim = subjectClaim;
+        this.refreshTokenRetentionPeriodInDays = refreshTokenRetentionPeriodInDays;
+        this.redirectUrl = redirectUrl;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tokenEndpointUrl")
         private String tokenEndpointUrl;
@@ -188,17 +227,29 @@ public class UpdateAuthenticationProviderDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The IDPs URL for requesting access tokens.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tokenEndpointUrl")
-    String tokenEndpointUrl;
+    private final String tokenEndpointUrl;
+
+    public String getTokenEndpointUrl() {
+        return tokenEndpointUrl;
+    }
 
     /**
      * The IDPs URL for the page that users authenticate with by entering the user name and password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationEndpointUrl")
-    String authorizationEndpointUrl;
+    private final String authorizationEndpointUrl;
+
+    public String getAuthorizationEndpointUrl() {
+        return authorizationEndpointUrl;
+    }
 
     /**
      * A shortened version of the authorization URL, which you can get from a URL shortener service (one that allows
@@ -207,7 +258,11 @@ public class UpdateAuthenticationProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortAuthorizationCodeRequestUrl")
-    String shortAuthorizationCodeRequestUrl;
+    private final String shortAuthorizationCodeRequestUrl;
+
+    public String getShortAuthorizationCodeRequestUrl() {
+        return shortAuthorizationCodeRequestUrl;
+    }
 
     /**
      * If you want to revoke all the refresh tokens and access tokens of the logged-in user from a dialog flow, then
@@ -216,7 +271,11 @@ public class UpdateAuthenticationProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("revokeTokenEndpointUrl")
-    String revokeTokenEndpointUrl;
+    private final String revokeTokenEndpointUrl;
+
+    public String getRevokeTokenEndpointUrl() {
+        return revokeTokenEndpointUrl;
+    }
 
     /**
      * The client ID for the IDP application (OAuth Client) that was registered as described in Identity Provider Registration.
@@ -224,7 +283,11 @@ public class UpdateAuthenticationProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
-    String clientId;
+    private final String clientId;
+
+    public String getClientId() {
+        return clientId;
+    }
 
     /**
      * The client secret for the IDP application (OAuth Client) that was registered as described in Identity Provider
@@ -232,7 +295,11 @@ public class UpdateAuthenticationProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-    String clientSecret;
+    private final String clientSecret;
+
+    public String getClientSecret() {
+        return clientSecret;
+    }
 
     /**
      * A space-separated list of the scopes that must be included when Digital Assistant requests an access token from
@@ -241,25 +308,41 @@ public class UpdateAuthenticationProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
-    String scopes;
+    private final String scopes;
+
+    public String getScopes() {
+        return scopes;
+    }
 
     /**
      * The access-token profile claim to use to identify the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subjectClaim")
-    String subjectClaim;
+    private final String subjectClaim;
+
+    public String getSubjectClaim() {
+        return subjectClaim;
+    }
 
     /**
      * The number of days to keep the refresh token in the Digital Assistant cache.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("refreshTokenRetentionPeriodInDays")
-    Integer refreshTokenRetentionPeriodInDays;
+    private final Integer refreshTokenRetentionPeriodInDays;
+
+    public Integer getRefreshTokenRetentionPeriodInDays() {
+        return refreshTokenRetentionPeriodInDays;
+    }
 
     /**
      * The OAuth Redirect URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
-    String redirectUrl;
+    private final String redirectUrl;
+
+    public String getRedirectUrl() {
+        return redirectUrl;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.
@@ -267,7 +350,11 @@ public class UpdateAuthenticationProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -275,8 +362,111 @@ public class UpdateAuthenticationProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateAuthenticationProviderDetails(");
+        sb.append("tokenEndpointUrl=").append(String.valueOf(this.tokenEndpointUrl));
+        sb.append(", authorizationEndpointUrl=")
+                .append(String.valueOf(this.authorizationEndpointUrl));
+        sb.append(", shortAuthorizationCodeRequestUrl=")
+                .append(String.valueOf(this.shortAuthorizationCodeRequestUrl));
+        sb.append(", revokeTokenEndpointUrl=").append(String.valueOf(this.revokeTokenEndpointUrl));
+        sb.append(", clientId=").append(String.valueOf(this.clientId));
+        sb.append(", clientSecret=").append(String.valueOf(this.clientSecret));
+        sb.append(", scopes=").append(String.valueOf(this.scopes));
+        sb.append(", subjectClaim=").append(String.valueOf(this.subjectClaim));
+        sb.append(", refreshTokenRetentionPeriodInDays=")
+                .append(String.valueOf(this.refreshTokenRetentionPeriodInDays));
+        sb.append(", redirectUrl=").append(String.valueOf(this.redirectUrl));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAuthenticationProviderDetails)) {
+            return false;
+        }
+
+        UpdateAuthenticationProviderDetails other = (UpdateAuthenticationProviderDetails) o;
+        return java.util.Objects.equals(this.tokenEndpointUrl, other.tokenEndpointUrl)
+                && java.util.Objects.equals(
+                        this.authorizationEndpointUrl, other.authorizationEndpointUrl)
+                && java.util.Objects.equals(
+                        this.shortAuthorizationCodeRequestUrl,
+                        other.shortAuthorizationCodeRequestUrl)
+                && java.util.Objects.equals(
+                        this.revokeTokenEndpointUrl, other.revokeTokenEndpointUrl)
+                && java.util.Objects.equals(this.clientId, other.clientId)
+                && java.util.Objects.equals(this.clientSecret, other.clientSecret)
+                && java.util.Objects.equals(this.scopes, other.scopes)
+                && java.util.Objects.equals(this.subjectClaim, other.subjectClaim)
+                && java.util.Objects.equals(
+                        this.refreshTokenRetentionPeriodInDays,
+                        other.refreshTokenRetentionPeriodInDays)
+                && java.util.Objects.equals(this.redirectUrl, other.redirectUrl)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.tokenEndpointUrl == null ? 43 : this.tokenEndpointUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authorizationEndpointUrl == null
+                                ? 43
+                                : this.authorizationEndpointUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shortAuthorizationCodeRequestUrl == null
+                                ? 43
+                                : this.shortAuthorizationCodeRequestUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.revokeTokenEndpointUrl == null
+                                ? 43
+                                : this.revokeTokenEndpointUrl.hashCode());
+        result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
+        result = (result * PRIME) + (this.clientSecret == null ? 43 : this.clientSecret.hashCode());
+        result = (result * PRIME) + (this.scopes == null ? 43 : this.scopes.hashCode());
+        result = (result * PRIME) + (this.subjectClaim == null ? 43 : this.subjectClaim.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refreshTokenRetentionPeriodInDays == null
+                                ? 43
+                                : this.refreshTokenRetentionPeriodInDays.hashCode());
+        result = (result * PRIME) + (this.redirectUrl == null ? 43 : this.redirectUrl.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

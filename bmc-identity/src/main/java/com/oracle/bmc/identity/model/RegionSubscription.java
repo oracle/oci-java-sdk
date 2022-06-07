@@ -21,16 +21,23 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RegionSubscription.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RegionSubscription {
+public final class RegionSubscription {
+    @Deprecated
+    @java.beans.ConstructorProperties({"regionKey", "regionName", "status", "isHomeRegion"})
+    public RegionSubscription(
+            String regionKey, String regionName, Status status, Boolean isHomeRegion) {
+        super();
+        this.regionKey = regionKey;
+        this.regionName = regionName;
+        this.status = status;
+        this.isHomeRegion = isHomeRegion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
         private String regionKey;
@@ -98,6 +105,10 @@ public class RegionSubscription {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The region's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
      * for the full list of supported 3-letter region codes.
@@ -106,7 +117,11 @@ public class RegionSubscription {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
-    String regionKey;
+    private final String regionKey;
+
+    public String getRegionKey() {
+        return regionKey;
+    }
 
     /**
      * The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
@@ -116,11 +131,15 @@ public class RegionSubscription {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionName")
-    String regionName;
+    private final String regionName;
+
+    public String getRegionName() {
+        return regionName;
+    }
+
     /**
      * The region subscription status.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Ready("READY"),
         InProgress("IN_PROGRESS"),
@@ -130,6 +149,8 @@ public class RegionSubscription {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -167,14 +188,70 @@ public class RegionSubscription {
      * The region subscription status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * Indicates if the region is the home region or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHomeRegion")
-    Boolean isHomeRegion;
+    private final Boolean isHomeRegion;
+
+    public Boolean getIsHomeRegion() {
+        return isHomeRegion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RegionSubscription(");
+        sb.append("regionKey=").append(String.valueOf(this.regionKey));
+        sb.append(", regionName=").append(String.valueOf(this.regionName));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", isHomeRegion=").append(String.valueOf(this.isHomeRegion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RegionSubscription)) {
+            return false;
+        }
+
+        RegionSubscription other = (RegionSubscription) o;
+        return java.util.Objects.equals(this.regionKey, other.regionKey)
+                && java.util.Objects.equals(this.regionName, other.regionName)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.isHomeRegion, other.isHomeRegion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.regionKey == null ? 43 : this.regionKey.hashCode());
+        result = (result * PRIME) + (this.regionName == null ? 43 : this.regionName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.isHomeRegion == null ? 43 : this.isHomeRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

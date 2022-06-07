@@ -15,14 +15,24 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Filter.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Filter {
+public final class Filter {
+    @Deprecated
+    @java.beans.ConstructorProperties({"operator", "dimensions", "tags", "filters"})
+    public Filter(
+            Operator operator,
+            java.util.List<Dimension> dimensions,
+            java.util.List<Tag> tags,
+            java.util.List<Filter> filters) {
+        super();
+        this.operator = operator;
+        this.dimensions = dimensions;
+        this.tags = tags;
+        this.filters = filters;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
@@ -89,10 +99,13 @@ public class Filter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The filter operator. Example: 'AND', 'OR', 'NOT'.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Operator {
         And("AND"),
         Not("NOT"),
@@ -103,6 +116,9 @@ public class Filter {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Operator.class);
 
         private final String value;
         private static java.util.Map<String, Operator> map;
@@ -140,26 +156,90 @@ public class Filter {
      * The filter operator. Example: 'AND', 'OR', 'NOT'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
-    Operator operator;
+    private final Operator operator;
+
+    public Operator getOperator() {
+        return operator;
+    }
 
     /**
      * The dimensions to filter on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    java.util.List<Dimension> dimensions;
+    private final java.util.List<Dimension> dimensions;
+
+    public java.util.List<Dimension> getDimensions() {
+        return dimensions;
+    }
 
     /**
      * The tags to filter on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
-    java.util.List<Tag> tags;
+    private final java.util.List<Tag> tags;
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
 
     /**
      * The nested filter object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
-    java.util.List<Filter> filters;
+    private final java.util.List<Filter> filters;
+
+    public java.util.List<Filter> getFilters() {
+        return filters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Filter(");
+        sb.append("operator=").append(String.valueOf(this.operator));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append(", tags=").append(String.valueOf(this.tags));
+        sb.append(", filters=").append(String.valueOf(this.filters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Filter)) {
+            return false;
+        }
+
+        Filter other = (Filter) o;
+        return java.util.Objects.equals(this.operator, other.operator)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.tags, other.tags)
+                && java.util.Objects.equals(this.filters, other.filters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.operator == null ? 43 : this.operator.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
+        result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

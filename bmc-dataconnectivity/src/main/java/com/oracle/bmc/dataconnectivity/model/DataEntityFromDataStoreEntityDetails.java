@@ -15,22 +15,17 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DataEntityFromDataStoreEntityDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataEntityFromDataStoreEntityDetails extends DataEntityDetails {
+public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -289,6 +284,10 @@ public class DataEntityFromDataStoreEntityDetails extends DataEntityDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DataEntityFromDataStoreEntityDetails(
             String key,
@@ -340,49 +339,86 @@ public class DataEntityFromDataStoreEntityDetails extends DataEntityDetails {
      * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The version of the object that is used to track changes in the object instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     /**
      * The external key for the object
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
-    String externalKey;
+    private final String externalKey;
+
+    public String getExternalKey() {
+        return externalKey;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    Shape shape;
+    private final Shape shape;
+
+    public Shape getShape() {
+        return shape;
+    }
 
     /**
      * The shape ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
-    String shapeId;
+    private final String shapeId;
+
+    public String getShapeId() {
+        return shapeId;
+    }
+
     /**
      * The entity type.
      **/
@@ -425,74 +461,241 @@ public class DataEntityFromDataStoreEntityDetails extends DataEntityDetails {
      * The entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    EntityType entityType;
+    private final EntityType entityType;
+
+    public EntityType getEntityType() {
+        return entityType;
+    }
 
     /**
      * Specifies other type labels.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherTypeLabel")
-    String otherTypeLabel;
+    private final String otherTypeLabel;
+
+    public String getOtherTypeLabel() {
+        return otherTypeLabel;
+    }
 
     /**
      * An array of unique keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueKeys")
-    java.util.List<UniqueKey> uniqueKeys;
+    private final java.util.List<UniqueKey> uniqueKeys;
+
+    public java.util.List<UniqueKey> getUniqueKeys() {
+        return uniqueKeys;
+    }
 
     /**
      * An array of foreign keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("foreignKeys")
-    java.util.List<ForeignKey> foreignKeys;
+    private final java.util.List<ForeignKey> foreignKeys;
+
+    public java.util.List<ForeignKey> getForeignKeys() {
+        return foreignKeys;
+    }
 
     /**
      * The resource name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * Filters present in the Datastore. It can be Null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
-    String filters;
+    private final String filters;
+
+    public String getFilters() {
+        return filters;
+    }
 
     /**
      * It shows whether or not effective date is disabled
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEffectiveDateDisabled")
-    Boolean isEffectiveDateDisabled;
+    private final Boolean isEffectiveDateDisabled;
+
+    public Boolean getIsEffectiveDateDisabled() {
+        return isEffectiveDateDisabled;
+    }
 
     /**
      * It shows whether the datastore is of flex type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexDataStore")
-    Boolean isFlexDataStore;
+    private final Boolean isFlexDataStore;
+
+    public Boolean getIsFlexDataStore() {
+        return isFlexDataStore;
+    }
 
     /**
      * It shows whether the extraction of this datastore will stop on error
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSilentError")
-    Boolean isSilentError;
+    private final Boolean isSilentError;
+
+    public Boolean getIsSilentError() {
+        return isSilentError;
+    }
 
     /**
      * It shows whether the datastore supports Incremental Extract or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportsIncremental")
-    Boolean supportsIncremental;
+    private final Boolean supportsIncremental;
+
+    public Boolean getSupportsIncremental() {
+        return supportsIncremental;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataEntityFromDataStoreEntityDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", externalKey=").append(String.valueOf(this.externalKey));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", shapeId=").append(String.valueOf(this.shapeId));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", otherTypeLabel=").append(String.valueOf(this.otherTypeLabel));
+        sb.append(", uniqueKeys=").append(String.valueOf(this.uniqueKeys));
+        sb.append(", foreignKeys=").append(String.valueOf(this.foreignKeys));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", filters=").append(String.valueOf(this.filters));
+        sb.append(", isEffectiveDateDisabled=")
+                .append(String.valueOf(this.isEffectiveDateDisabled));
+        sb.append(", isFlexDataStore=").append(String.valueOf(this.isFlexDataStore));
+        sb.append(", isSilentError=").append(String.valueOf(this.isSilentError));
+        sb.append(", supportsIncremental=").append(String.valueOf(this.supportsIncremental));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataEntityFromDataStoreEntityDetails)) {
+            return false;
+        }
+
+        DataEntityFromDataStoreEntityDetails other = (DataEntityFromDataStoreEntityDetails) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.externalKey, other.externalKey)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.shapeId, other.shapeId)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.otherTypeLabel, other.otherTypeLabel)
+                && java.util.Objects.equals(this.uniqueKeys, other.uniqueKeys)
+                && java.util.Objects.equals(this.foreignKeys, other.foreignKeys)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.filters, other.filters)
+                && java.util.Objects.equals(
+                        this.isEffectiveDateDisabled, other.isEffectiveDateDisabled)
+                && java.util.Objects.equals(this.isFlexDataStore, other.isFlexDataStore)
+                && java.util.Objects.equals(this.isSilentError, other.isSilentError)
+                && java.util.Objects.equals(this.supportsIncremental, other.supportsIncremental)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.shapeId == null ? 43 : this.shapeId.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.otherTypeLabel == null ? 43 : this.otherTypeLabel.hashCode());
+        result = (result * PRIME) + (this.uniqueKeys == null ? 43 : this.uniqueKeys.hashCode());
+        result = (result * PRIME) + (this.foreignKeys == null ? 43 : this.foreignKeys.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEffectiveDateDisabled == null
+                                ? 43
+                                : this.isEffectiveDateDisabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isFlexDataStore == null ? 43 : this.isFlexDataStore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSilentError == null ? 43 : this.isSilentError.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportsIncremental == null
+                                ? 43
+                                : this.supportsIncremental.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

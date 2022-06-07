@@ -7,10 +7,6 @@ package com.oracle.bmc.dataintegration.responses;
 import com.oracle.bmc.dataintegration.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateUserDefinedFunctionValidationResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -19,6 +15,10 @@ public class CreateUserDefinedFunctionValidationResponse
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -26,11 +26,20 @@ public class CreateUserDefinedFunctionValidationResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned UserDefinedFunctionValidation instance.
      */
     private com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation
             userDefinedFunctionValidation;
+
+    public com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation
+            getUserDefinedFunctionValidation() {
+        return userDefinedFunctionValidation;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -58,6 +67,30 @@ public class CreateUserDefinedFunctionValidationResponse
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation
+                userDefinedFunctionValidation;
+
+        public Builder userDefinedFunctionValidation(
+                com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation
+                        userDefinedFunctionValidation) {
+            this.userDefinedFunctionValidation = userDefinedFunctionValidation;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -75,5 +108,54 @@ public class CreateUserDefinedFunctionValidationResponse
             return new CreateUserDefinedFunctionValidationResponse(
                     __httpStatusCode__, etag, opcRequestId, userDefinedFunctionValidation);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",userDefinedFunctionValidation=")
+                .append(String.valueOf(userDefinedFunctionValidation));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateUserDefinedFunctionValidationResponse)) {
+            return false;
+        }
+
+        CreateUserDefinedFunctionValidationResponse other =
+                (CreateUserDefinedFunctionValidationResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.userDefinedFunctionValidation, other.userDefinedFunctionValidation);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.userDefinedFunctionValidation == null
+                                ? 43
+                                : this.userDefinedFunctionValidation.hashCode());
+        return result;
     }
 }

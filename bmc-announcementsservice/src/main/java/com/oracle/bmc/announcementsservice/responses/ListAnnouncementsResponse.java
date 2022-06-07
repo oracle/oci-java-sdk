@@ -7,10 +7,6 @@ package com.oracle.bmc.announcementsservice.responses;
 import com.oracle.bmc.announcementsservice.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -20,12 +16,20 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * For pagination of a list of items. Include this value as the {@code page} parameter for the
      * subsequent GET request to get the previous batch of items.
      *
      */
     private String opcPreviousPage;
+
+    public String getOpcPreviousPage() {
+        return opcPreviousPage;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -34,11 +38,20 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned AnnouncementsCollection instance.
      */
     private com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
             announcementsCollection;
+
+    public com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
+            getAnnouncementsCollection() {
+        return announcementsCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -69,6 +82,37 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private String opcPreviousPage;
+
+        public Builder opcPreviousPage(String opcPreviousPage) {
+            this.opcPreviousPage = opcPreviousPage;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
+                announcementsCollection;
+
+        public Builder announcementsCollection(
+                com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
+                        announcementsCollection) {
+            this.announcementsCollection = announcementsCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -91,5 +135,57 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
                     opcRequestId,
                     announcementsCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcPreviousPage=").append(String.valueOf(opcPreviousPage));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",announcementsCollection=").append(String.valueOf(announcementsCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAnnouncementsResponse)) {
+            return false;
+        }
+
+        ListAnnouncementsResponse other = (ListAnnouncementsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcPreviousPage, other.opcPreviousPage)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.announcementsCollection, other.announcementsCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcPreviousPage == null ? 43 : this.opcPreviousPage.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.announcementsCollection == null
+                                ? 43
+                                : this.announcementsCollection.hashCode());
+        return result;
     }
 }

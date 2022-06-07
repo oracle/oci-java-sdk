@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeBootVolumeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeBootVolumeCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeBootVolumeCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails> {
@@ -26,18 +18,29 @@ public class ChangeBootVolumeCompartmentRequest
      */
     private String bootVolumeId;
 
+    public String getBootVolumeId() {
+        return bootVolumeId;
+    }
     /**
      * Request to change the compartment of given boot volume.
      */
     private com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails
             changeBootVolumeCompartmentDetails;
 
+    public com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails
+            getChangeBootVolumeCompartmentDetails() {
+        return changeBootVolumeCompartmentDetails;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +59,44 @@ public class ChangeBootVolumeCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String bootVolumeId = null;
+
+        /**
+         * The OCID of the boot volume.
+         * @return this builder instance
+         */
+        public Builder bootVolumeId(String bootVolumeId) {
+            this.bootVolumeId = bootVolumeId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails
+                changeBootVolumeCompartmentDetails = null;
+
+        /**
+         * Request to change the compartment of given boot volume.
+         * @return this builder instance
+         */
+        public Builder changeBootVolumeCompartmentDetails(
+                com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails
+                        changeBootVolumeCompartmentDetails) {
+            this.changeBootVolumeCompartmentDetails = changeBootVolumeCompartmentDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +161,81 @@ public class ChangeBootVolumeCompartmentRequest
             changeBootVolumeCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeBootVolumeCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeBootVolumeCompartmentRequest
+         */
+        public ChangeBootVolumeCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeBootVolumeCompartmentRequest request = new ChangeBootVolumeCompartmentRequest();
+            request.bootVolumeId = bootVolumeId;
+            request.changeBootVolumeCompartmentDetails = changeBootVolumeCompartmentDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ChangeBootVolumeCompartmentRequest(bootVolumeId, changeBootVolumeCompartmentDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .bootVolumeId(bootVolumeId)
+                .changeBootVolumeCompartmentDetails(changeBootVolumeCompartmentDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",bootVolumeId=").append(String.valueOf(this.bootVolumeId));
+        sb.append(",changeBootVolumeCompartmentDetails=")
+                .append(String.valueOf(this.changeBootVolumeCompartmentDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeBootVolumeCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeBootVolumeCompartmentRequest other = (ChangeBootVolumeCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.bootVolumeId, other.bootVolumeId)
+                && java.util.Objects.equals(
+                        this.changeBootVolumeCompartmentDetails,
+                        other.changeBootVolumeCompartmentDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.bootVolumeId == null ? 43 : this.bootVolumeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeBootVolumeCompartmentDetails == null
+                                ? 43
+                                : this.changeBootVolumeCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

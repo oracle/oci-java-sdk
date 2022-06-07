@@ -25,16 +25,58 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BlockVolumeReplica.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BlockVolumeReplica {
+public final class BlockVolumeReplica {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "compartmentId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "lifecycleState",
+        "sizeInGBs",
+        "timeCreated",
+        "timeLastSynced",
+        "blockVolumeId",
+        "totalDataTransferredInGBs",
+        "volumeGroupReplicaId"
+    })
+    public BlockVolumeReplica(
+            String availabilityDomain,
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            LifecycleState lifecycleState,
+            Long sizeInGBs,
+            java.util.Date timeCreated,
+            java.util.Date timeLastSynced,
+            String blockVolumeId,
+            Long totalDataTransferredInGBs,
+            String volumeGroupReplicaId) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.sizeInGBs = sizeInGBs;
+        this.timeCreated = timeCreated;
+        this.timeLastSynced = timeLastSynced;
+        this.blockVolumeId = blockVolumeId;
+        this.totalDataTransferredInGBs = totalDataTransferredInGBs;
+        this.volumeGroupReplicaId = volumeGroupReplicaId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -206,6 +248,10 @@ public class BlockVolumeReplica {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain of the block volume replica.
      * <p>
@@ -213,13 +259,21 @@ public class BlockVolumeReplica {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The OCID of the compartment that contains the block volume replica.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -229,7 +283,11 @@ public class BlockVolumeReplica {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -237,7 +295,11 @@ public class BlockVolumeReplica {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -247,17 +309,25 @@ public class BlockVolumeReplica {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The block volume replica's Oracle ID (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The current state of a block volume replica.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -271,6 +341,9 @@ public class BlockVolumeReplica {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -308,14 +381,22 @@ public class BlockVolumeReplica {
      * The current state of a block volume replica.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The size of the source block volume, in GBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
-    Long sizeInGBs;
+    private final Long sizeInGBs;
+
+    public Long getSizeInGBs() {
+        return sizeInGBs;
+    }
 
     /**
      * The date and time the block volume replica was created. Format defined
@@ -323,7 +404,11 @@ public class BlockVolumeReplica {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the block volume replica was last synced from the source block volume.
@@ -331,28 +416,141 @@ public class BlockVolumeReplica {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
-    java.util.Date timeLastSynced;
+    private final java.util.Date timeLastSynced;
+
+    public java.util.Date getTimeLastSynced() {
+        return timeLastSynced;
+    }
 
     /**
      * The OCID of the source block volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeId")
-    String blockVolumeId;
+    private final String blockVolumeId;
+
+    public String getBlockVolumeId() {
+        return blockVolumeId;
+    }
 
     /**
      * The total size of the data transferred from the source block volume to the block volume replica, in GBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalDataTransferredInGBs")
-    Long totalDataTransferredInGBs;
+    private final Long totalDataTransferredInGBs;
+
+    public Long getTotalDataTransferredInGBs() {
+        return totalDataTransferredInGBs;
+    }
 
     /**
      * The OCID of the volume group replica.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicaId")
-    String volumeGroupReplicaId;
+    private final String volumeGroupReplicaId;
+
+    public String getVolumeGroupReplicaId() {
+        return volumeGroupReplicaId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BlockVolumeReplica(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeLastSynced=").append(String.valueOf(this.timeLastSynced));
+        sb.append(", blockVolumeId=").append(String.valueOf(this.blockVolumeId));
+        sb.append(", totalDataTransferredInGBs=")
+                .append(String.valueOf(this.totalDataTransferredInGBs));
+        sb.append(", volumeGroupReplicaId=").append(String.valueOf(this.volumeGroupReplicaId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BlockVolumeReplica)) {
+            return false;
+        }
+
+        BlockVolumeReplica other = (BlockVolumeReplica) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeLastSynced, other.timeLastSynced)
+                && java.util.Objects.equals(this.blockVolumeId, other.blockVolumeId)
+                && java.util.Objects.equals(
+                        this.totalDataTransferredInGBs, other.totalDataTransferredInGBs)
+                && java.util.Objects.equals(this.volumeGroupReplicaId, other.volumeGroupReplicaId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastSynced == null ? 43 : this.timeLastSynced.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockVolumeId == null ? 43 : this.blockVolumeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalDataTransferredInGBs == null
+                                ? 43
+                                : this.totalDataTransferredInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.volumeGroupReplicaId == null
+                                ? 43
+                                : this.volumeGroupReplicaId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

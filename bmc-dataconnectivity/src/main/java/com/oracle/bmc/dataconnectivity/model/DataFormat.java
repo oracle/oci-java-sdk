@@ -15,14 +15,20 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataFormat.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataFormat {
+public final class DataFormat {
+    @Deprecated
+    @java.beans.ConstructorProperties({"formatAttribute", "type", "compressionConfig"})
+    public DataFormat(
+            AbstractFormatAttribute formatAttribute, Type type, Compression compressionConfig) {
+        super();
+        this.formatAttribute = formatAttribute;
+        this.type = type;
+        this.compressionConfig = compressionConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("formatAttribute")
         private AbstractFormatAttribute formatAttribute;
@@ -79,12 +85,20 @@ public class DataFormat {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("formatAttribute")
-    AbstractFormatAttribute formatAttribute;
+    private final AbstractFormatAttribute formatAttribute;
+
+    public AbstractFormatAttribute getFormatAttribute() {
+        return formatAttribute;
+    }
+
     /**
      * type
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Json("JSON"),
         Csv("CSV"),
@@ -96,6 +110,8 @@ public class DataFormat {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -132,11 +148,68 @@ public class DataFormat {
      * type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("compressionConfig")
-    Compression compressionConfig;
+    private final Compression compressionConfig;
+
+    public Compression getCompressionConfig() {
+        return compressionConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataFormat(");
+        sb.append("formatAttribute=").append(String.valueOf(this.formatAttribute));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", compressionConfig=").append(String.valueOf(this.compressionConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataFormat)) {
+            return false;
+        }
+
+        DataFormat other = (DataFormat) o;
+        return java.util.Objects.equals(this.formatAttribute, other.formatAttribute)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.compressionConfig, other.compressionConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.formatAttribute == null ? 43 : this.formatAttribute.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compressionConfig == null ? 43 : this.compressionConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

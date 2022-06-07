@@ -16,16 +16,31 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DynectMigrationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DynectMigrationDetails {
+public final class DynectMigrationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "customerName",
+        "username",
+        "password",
+        "httpRedirectReplacements"
+    })
+    public DynectMigrationDetails(
+            String customerName,
+            String username,
+            String password,
+            java.util.Map<String, java.util.List<MigrationReplacement>> httpRedirectReplacements) {
+        super();
+        this.customerName = customerName;
+        this.username = username;
+        this.password = password;
+        this.httpRedirectReplacements = httpRedirectReplacements;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("customerName")
         private String customerName;
@@ -97,34 +112,110 @@ public class DynectMigrationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * DynECT customer name the zone belongs to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerName")
-    String customerName;
+    private final String customerName;
+
+    public String getCustomerName() {
+        return customerName;
+    }
 
     /**
      * DynECT API username to perform the migration with.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
-    String username;
+    private final String username;
+
+    public String getUsername() {
+        return username;
+    }
 
     /**
      * DynECT API password for the provided username.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    String password;
+    private final String password;
+
+    public String getPassword() {
+        return password;
+    }
 
     /**
      * A map of fully-qualified domain names (FQDNs) to an array of {@code MigrationReplacement} objects.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpRedirectReplacements")
-    java.util.Map<String, java.util.List<MigrationReplacement>> httpRedirectReplacements;
+    private final java.util.Map<String, java.util.List<MigrationReplacement>>
+            httpRedirectReplacements;
+
+    public java.util.Map<String, java.util.List<MigrationReplacement>>
+            getHttpRedirectReplacements() {
+        return httpRedirectReplacements;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DynectMigrationDetails(");
+        sb.append("customerName=").append(String.valueOf(this.customerName));
+        sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", httpRedirectReplacements=")
+                .append(String.valueOf(this.httpRedirectReplacements));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DynectMigrationDetails)) {
+            return false;
+        }
+
+        DynectMigrationDetails other = (DynectMigrationDetails) o;
+        return java.util.Objects.equals(this.customerName, other.customerName)
+                && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(
+                        this.httpRedirectReplacements, other.httpRedirectReplacements)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.customerName == null ? 43 : this.customerName.hashCode());
+        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.httpRedirectReplacements == null
+                                ? 43
+                                : this.httpRedirectReplacements.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

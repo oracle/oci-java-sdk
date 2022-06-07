@@ -15,14 +15,17 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BoundingPolygon.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BoundingPolygon {
+public final class BoundingPolygon {
+    @Deprecated
+    @java.beans.ConstructorProperties({"normalizedVertices"})
+    public BoundingPolygon(java.util.List<NormalizedVertex> normalizedVertices) {
+        super();
+        this.normalizedVertices = normalizedVertices;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("normalizedVertices")
         private java.util.List<NormalizedVertex> normalizedVertices;
@@ -58,14 +61,65 @@ public class BoundingPolygon {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An array of normalized points defining the polygon's perimeter, with an implicit segment between subsequent points and between the first and last point.
      * Rectangles are defined with four points. For example, {@code [{"x": 0, "y": 0}, {"x": 1, "y": 0}, {"x": 1, "y": 0.5}, {"x": 0, "y": 0.5}]} represents the top half of an image.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("normalizedVertices")
-    java.util.List<NormalizedVertex> normalizedVertices;
+    private final java.util.List<NormalizedVertex> normalizedVertices;
+
+    public java.util.List<NormalizedVertex> getNormalizedVertices() {
+        return normalizedVertices;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BoundingPolygon(");
+        sb.append("normalizedVertices=").append(String.valueOf(this.normalizedVertices));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BoundingPolygon)) {
+            return false;
+        }
+
+        BoundingPolygon other = (BoundingPolygon) o;
+        return java.util.Objects.equals(this.normalizedVertices, other.normalizedVertices)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.normalizedVertices == null
+                                ? 43
+                                : this.normalizedVertices.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

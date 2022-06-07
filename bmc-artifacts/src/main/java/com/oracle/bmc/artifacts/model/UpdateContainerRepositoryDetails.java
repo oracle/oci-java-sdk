@@ -15,16 +15,22 @@ package com.oracle.bmc.artifacts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateContainerRepositoryDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateContainerRepositoryDetails {
+public final class UpdateContainerRepositoryDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isImmutable", "isPublic", "readme"})
+    public UpdateContainerRepositoryDetails(
+            Boolean isImmutable, Boolean isPublic, ContainerRepositoryReadme readme) {
+        super();
+        this.isImmutable = isImmutable;
+        this.isPublic = isPublic;
+        this.readme = readme;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
         private Boolean isImmutable;
@@ -80,21 +86,82 @@ public class UpdateContainerRepositoryDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
-    Boolean isImmutable;
+    private final Boolean isImmutable;
+
+    public Boolean getIsImmutable() {
+        return isImmutable;
+    }
 
     /**
      * Whether the repository is public. A public repository allows unauthenticated access.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
-    Boolean isPublic;
+    private final Boolean isPublic;
+
+    public Boolean getIsPublic() {
+        return isPublic;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("readme")
-    ContainerRepositoryReadme readme;
+    private final ContainerRepositoryReadme readme;
+
+    public ContainerRepositoryReadme getReadme() {
+        return readme;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateContainerRepositoryDetails(");
+        sb.append("isImmutable=").append(String.valueOf(this.isImmutable));
+        sb.append(", isPublic=").append(String.valueOf(this.isPublic));
+        sb.append(", readme=").append(String.valueOf(this.readme));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateContainerRepositoryDetails)) {
+            return false;
+        }
+
+        UpdateContainerRepositoryDetails other = (UpdateContainerRepositoryDetails) o;
+        return java.util.Objects.equals(this.isImmutable, other.isImmutable)
+                && java.util.Objects.equals(this.isPublic, other.isPublic)
+                && java.util.Objects.equals(this.readme, other.readme)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isImmutable == null ? 43 : this.isImmutable.hashCode());
+        result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
+        result = (result * PRIME) + (this.readme == null ? 43 : this.readme.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

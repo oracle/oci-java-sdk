@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeJobCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeJobCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails> {
@@ -26,17 +18,27 @@ public class ChangeJobCompartmentRequest
      */
     private String jobId;
 
+    public String getJobId() {
+        return jobId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to move the job to.
      */
     private com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails
             changeJobCompartmentDetails;
 
+    public com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails
+            getChangeJobCompartmentDetails() {
+        return changeJobCompartmentDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -47,6 +49,9 @@ public class ChangeJobCompartmentRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -56,6 +61,10 @@ public class ChangeJobCompartmentRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -74,6 +83,74 @@ public class ChangeJobCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String jobId = null;
+
+        /**
+         * The identifier of the job.
+         * @return this builder instance
+         */
+        public Builder jobId(String jobId) {
+            this.jobId = jobId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails
+                changeJobCompartmentDetails = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to move the job to.
+         * @return this builder instance
+         */
+        public Builder changeJobCompartmentDetails(
+                com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails
+                        changeJobCompartmentDetails) {
+            this.changeJobCompartmentDetails = changeJobCompartmentDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -141,5 +218,92 @@ public class ChangeJobCompartmentRequest
             changeJobCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeJobCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeJobCompartmentRequest
+         */
+        public ChangeJobCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeJobCompartmentRequest request = new ChangeJobCompartmentRequest();
+            request.jobId = jobId;
+            request.changeJobCompartmentDetails = changeJobCompartmentDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            request.ifMatch = ifMatch;
+            return request;
+            // new ChangeJobCompartmentRequest(jobId, changeJobCompartmentDetails, opcRequestId, opcRetryToken, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .jobId(jobId)
+                .changeJobCompartmentDetails(changeJobCompartmentDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",jobId=").append(String.valueOf(this.jobId));
+        sb.append(",changeJobCompartmentDetails=")
+                .append(String.valueOf(this.changeJobCompartmentDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeJobCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeJobCompartmentRequest other = (ChangeJobCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.jobId, other.jobId)
+                && java.util.Objects.equals(
+                        this.changeJobCompartmentDetails, other.changeJobCompartmentDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeJobCompartmentDetails == null
+                                ? 43
+                                : this.changeJobCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

@@ -18,16 +18,292 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousDatabaseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousDatabaseSummary {
+public final class AutonomousDatabaseSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "lifecycleState",
+        "lifecycleDetails",
+        "kmsKeyId",
+        "vaultId",
+        "kmsKeyLifecycleDetails",
+        "kmsKeyVersionId",
+        "dbName",
+        "characterSet",
+        "ncharacterSet",
+        "isFreeTier",
+        "systemTags",
+        "timeReclamationOfFreeAutonomousDatabase",
+        "timeDeletionOfFreeAutonomousDatabase",
+        "backupConfig",
+        "keyHistoryEntry",
+        "cpuCoreCount",
+        "ocpuCount",
+        "provisionableCpus",
+        "dataStorageSizeInTBs",
+        "memoryPerOracleComputeUnitInGBs",
+        "dataStorageSizeInGBs",
+        "infrastructureType",
+        "isDedicated",
+        "autonomousContainerDatabaseId",
+        "timeCreated",
+        "displayName",
+        "serviceConsoleUrl",
+        "connectionStrings",
+        "connectionUrls",
+        "licenseModel",
+        "usedDataStorageSizeInTBs",
+        "freeformTags",
+        "definedTags",
+        "subnetId",
+        "nsgIds",
+        "privateEndpoint",
+        "privateEndpointLabel",
+        "privateEndpointIp",
+        "dbVersion",
+        "isPreview",
+        "dbWorkload",
+        "isAccessControlEnabled",
+        "whitelistedIps",
+        "arePrimaryWhitelistedIpsUsed",
+        "standbyWhitelistedIps",
+        "apexDetails",
+        "isAutoScalingEnabled",
+        "dataSafeStatus",
+        "operationsInsightsStatus",
+        "databaseManagementStatus",
+        "timeMaintenanceBegin",
+        "timeMaintenanceEnd",
+        "isRefreshableClone",
+        "timeOfLastRefresh",
+        "timeOfLastRefreshPoint",
+        "timeOfNextRefresh",
+        "openMode",
+        "refreshableStatus",
+        "refreshableMode",
+        "sourceId",
+        "permissionLevel",
+        "timeOfLastSwitchover",
+        "timeOfLastFailover",
+        "isDataGuardEnabled",
+        "failedDataRecoveryInSeconds",
+        "standbyDb",
+        "isLocalDataGuardEnabled",
+        "isRemoteDataGuardEnabled",
+        "localStandbyDb",
+        "role",
+        "availableUpgradeVersions",
+        "keyStoreId",
+        "keyStoreWalletName",
+        "supportedRegionsToCloneTo",
+        "customerContacts",
+        "timeLocalDataGuardEnabled",
+        "dataguardRegionType",
+        "timeDataGuardRoleChanged",
+        "peerDbIds",
+        "isMtlsConnectionRequired",
+        "isReconnectCloneEnabled",
+        "timeUntilReconnectCloneEnabled",
+        "autonomousMaintenanceScheduleType",
+        "scheduledOperations",
+        "isAutoScalingForStorageEnabled",
+        "allocatedStorageSizeInTBs",
+        "actualUsedDataStorageSizeInTBs",
+        "maxCpuCoreCount",
+        "databaseEdition"
+    })
+    public AutonomousDatabaseSummary(
+            String id,
+            String compartmentId,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            String kmsKeyId,
+            String vaultId,
+            String kmsKeyLifecycleDetails,
+            String kmsKeyVersionId,
+            String dbName,
+            String characterSet,
+            String ncharacterSet,
+            Boolean isFreeTier,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Date timeReclamationOfFreeAutonomousDatabase,
+            java.util.Date timeDeletionOfFreeAutonomousDatabase,
+            AutonomousDatabaseBackupConfig backupConfig,
+            java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry,
+            Integer cpuCoreCount,
+            Float ocpuCount,
+            java.util.List<Float> provisionableCpus,
+            Integer dataStorageSizeInTBs,
+            Integer memoryPerOracleComputeUnitInGBs,
+            Integer dataStorageSizeInGBs,
+            InfrastructureType infrastructureType,
+            Boolean isDedicated,
+            String autonomousContainerDatabaseId,
+            java.util.Date timeCreated,
+            String displayName,
+            String serviceConsoleUrl,
+            AutonomousDatabaseConnectionStrings connectionStrings,
+            AutonomousDatabaseConnectionUrls connectionUrls,
+            LicenseModel licenseModel,
+            Integer usedDataStorageSizeInTBs,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String subnetId,
+            java.util.List<String> nsgIds,
+            String privateEndpoint,
+            String privateEndpointLabel,
+            String privateEndpointIp,
+            String dbVersion,
+            Boolean isPreview,
+            DbWorkload dbWorkload,
+            Boolean isAccessControlEnabled,
+            java.util.List<String> whitelistedIps,
+            Boolean arePrimaryWhitelistedIpsUsed,
+            java.util.List<String> standbyWhitelistedIps,
+            AutonomousDatabaseApex apexDetails,
+            Boolean isAutoScalingEnabled,
+            DataSafeStatus dataSafeStatus,
+            OperationsInsightsStatus operationsInsightsStatus,
+            DatabaseManagementStatus databaseManagementStatus,
+            java.util.Date timeMaintenanceBegin,
+            java.util.Date timeMaintenanceEnd,
+            Boolean isRefreshableClone,
+            java.util.Date timeOfLastRefresh,
+            java.util.Date timeOfLastRefreshPoint,
+            java.util.Date timeOfNextRefresh,
+            OpenMode openMode,
+            RefreshableStatus refreshableStatus,
+            RefreshableMode refreshableMode,
+            String sourceId,
+            PermissionLevel permissionLevel,
+            java.util.Date timeOfLastSwitchover,
+            java.util.Date timeOfLastFailover,
+            Boolean isDataGuardEnabled,
+            Integer failedDataRecoveryInSeconds,
+            AutonomousDatabaseStandbySummary standbyDb,
+            Boolean isLocalDataGuardEnabled,
+            Boolean isRemoteDataGuardEnabled,
+            AutonomousDatabaseStandbySummary localStandbyDb,
+            Role role,
+            java.util.List<String> availableUpgradeVersions,
+            String keyStoreId,
+            String keyStoreWalletName,
+            java.util.List<String> supportedRegionsToCloneTo,
+            java.util.List<CustomerContact> customerContacts,
+            java.util.Date timeLocalDataGuardEnabled,
+            DataguardRegionType dataguardRegionType,
+            java.util.Date timeDataGuardRoleChanged,
+            java.util.List<String> peerDbIds,
+            Boolean isMtlsConnectionRequired,
+            Boolean isReconnectCloneEnabled,
+            java.util.Date timeUntilReconnectCloneEnabled,
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            java.util.List<ScheduledOperationDetails> scheduledOperations,
+            Boolean isAutoScalingForStorageEnabled,
+            Double allocatedStorageSizeInTBs,
+            Double actualUsedDataStorageSizeInTBs,
+            Integer maxCpuCoreCount,
+            DatabaseEdition databaseEdition) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.kmsKeyId = kmsKeyId;
+        this.vaultId = vaultId;
+        this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.dbName = dbName;
+        this.characterSet = characterSet;
+        this.ncharacterSet = ncharacterSet;
+        this.isFreeTier = isFreeTier;
+        this.systemTags = systemTags;
+        this.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+        this.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
+        this.backupConfig = backupConfig;
+        this.keyHistoryEntry = keyHistoryEntry;
+        this.cpuCoreCount = cpuCoreCount;
+        this.ocpuCount = ocpuCount;
+        this.provisionableCpus = provisionableCpus;
+        this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+        this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.infrastructureType = infrastructureType;
+        this.isDedicated = isDedicated;
+        this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+        this.timeCreated = timeCreated;
+        this.displayName = displayName;
+        this.serviceConsoleUrl = serviceConsoleUrl;
+        this.connectionStrings = connectionStrings;
+        this.connectionUrls = connectionUrls;
+        this.licenseModel = licenseModel;
+        this.usedDataStorageSizeInTBs = usedDataStorageSizeInTBs;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
+        this.privateEndpoint = privateEndpoint;
+        this.privateEndpointLabel = privateEndpointLabel;
+        this.privateEndpointIp = privateEndpointIp;
+        this.dbVersion = dbVersion;
+        this.isPreview = isPreview;
+        this.dbWorkload = dbWorkload;
+        this.isAccessControlEnabled = isAccessControlEnabled;
+        this.whitelistedIps = whitelistedIps;
+        this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
+        this.standbyWhitelistedIps = standbyWhitelistedIps;
+        this.apexDetails = apexDetails;
+        this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.dataSafeStatus = dataSafeStatus;
+        this.operationsInsightsStatus = operationsInsightsStatus;
+        this.databaseManagementStatus = databaseManagementStatus;
+        this.timeMaintenanceBegin = timeMaintenanceBegin;
+        this.timeMaintenanceEnd = timeMaintenanceEnd;
+        this.isRefreshableClone = isRefreshableClone;
+        this.timeOfLastRefresh = timeOfLastRefresh;
+        this.timeOfLastRefreshPoint = timeOfLastRefreshPoint;
+        this.timeOfNextRefresh = timeOfNextRefresh;
+        this.openMode = openMode;
+        this.refreshableStatus = refreshableStatus;
+        this.refreshableMode = refreshableMode;
+        this.sourceId = sourceId;
+        this.permissionLevel = permissionLevel;
+        this.timeOfLastSwitchover = timeOfLastSwitchover;
+        this.timeOfLastFailover = timeOfLastFailover;
+        this.isDataGuardEnabled = isDataGuardEnabled;
+        this.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
+        this.standbyDb = standbyDb;
+        this.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
+        this.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
+        this.localStandbyDb = localStandbyDb;
+        this.role = role;
+        this.availableUpgradeVersions = availableUpgradeVersions;
+        this.keyStoreId = keyStoreId;
+        this.keyStoreWalletName = keyStoreWalletName;
+        this.supportedRegionsToCloneTo = supportedRegionsToCloneTo;
+        this.customerContacts = customerContacts;
+        this.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
+        this.dataguardRegionType = dataguardRegionType;
+        this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+        this.peerDbIds = peerDbIds;
+        this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+        this.isReconnectCloneEnabled = isReconnectCloneEnabled;
+        this.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
+        this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+        this.scheduledOperations = scheduledOperations;
+        this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+        this.allocatedStorageSizeInTBs = allocatedStorageSizeInTBs;
+        this.actualUsedDataStorageSizeInTBs = actualUsedDataStorageSizeInTBs;
+        this.maxCpuCoreCount = maxCpuCoreCount;
+        this.databaseEdition = databaseEdition;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -1066,21 +1342,33 @@ public class AutonomousDatabaseSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * The current state of the Autonomous Database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -1109,6 +1397,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -1146,44 +1437,72 @@ public class AutonomousDatabaseSummary {
      * The current state of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * KMS key lifecycle details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyLifecycleDetails")
-    String kmsKeyLifecycleDetails;
+    private final String kmsKeyLifecycleDetails;
+
+    public String getKmsKeyLifecycleDetails() {
+        return kmsKeyLifecycleDetails;
+    }
 
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
-    String kmsKeyVersionId;
+    private final String kmsKeyVersionId;
+
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
+    }
 
     /**
      * The database name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    private final String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
 
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
@@ -1192,7 +1511,11 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
-    String characterSet;
+    private final String characterSet;
+
+    public String getCharacterSet() {
+        return characterSet;
+    }
 
     /**
      * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are:
@@ -1200,14 +1523,22 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-    String ncharacterSet;
+    private final String ncharacterSet;
+
+    public String getNcharacterSet() {
+        return ncharacterSet;
+    }
 
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
-    Boolean isFreeTier;
+    private final Boolean isFreeTier;
+
+    public Boolean getIsFreeTier() {
+        return isFreeTier;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
@@ -1215,30 +1546,50 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
 
     /**
      * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReclamationOfFreeAutonomousDatabase")
-    java.util.Date timeReclamationOfFreeAutonomousDatabase;
+    private final java.util.Date timeReclamationOfFreeAutonomousDatabase;
+
+    public java.util.Date getTimeReclamationOfFreeAutonomousDatabase() {
+        return timeReclamationOfFreeAutonomousDatabase;
+    }
 
     /**
      * The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDeletionOfFreeAutonomousDatabase")
-    java.util.Date timeDeletionOfFreeAutonomousDatabase;
+    private final java.util.Date timeDeletionOfFreeAutonomousDatabase;
+
+    public java.util.Date getTimeDeletionOfFreeAutonomousDatabase() {
+        return timeDeletionOfFreeAutonomousDatabase;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backupConfig")
-    AutonomousDatabaseBackupConfig backupConfig;
+    private final AutonomousDatabaseBackupConfig backupConfig;
+
+    public AutonomousDatabaseBackupConfig getBackupConfig() {
+        return backupConfig;
+    }
 
     /**
      * Key History Entry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyHistoryEntry")
-    java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry;
+    private final java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry;
+
+    public java.util.List<AutonomousDatabaseKeyHistoryEntry> getKeyHistoryEntry() {
+        return keyHistoryEntry;
+    }
 
     /**
      * The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -1247,7 +1598,11 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-    Integer cpuCoreCount;
+    private final Integer cpuCoreCount;
+
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
 
     /**
      * The number of OCPU cores to be made available to the database.
@@ -1262,35 +1617,55 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
-    Float ocpuCount;
+    private final Float ocpuCount;
+
+    public Float getOcpuCount() {
+        return ocpuCount;
+    }
 
     /**
      * An array of CPU values that an Autonomous Database can be scaled to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
-    java.util.List<Float> provisionableCpus;
+    private final java.util.List<Float> provisionableCpus;
+
+    public java.util.List<Float> getProvisionableCpus() {
+        return provisionableCpus;
+    }
 
     /**
      * The quantity of data in the database, in terabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
-    Integer dataStorageSizeInTBs;
+    private final Integer dataStorageSizeInTBs;
+
+    public Integer getDataStorageSizeInTBs() {
+        return dataStorageSizeInTBs;
+    }
 
     /**
      * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
-    Integer memoryPerOracleComputeUnitInGBs;
+    private final Integer memoryPerOracleComputeUnitInGBs;
+
+    public Integer getMemoryPerOracleComputeUnitInGBs() {
+        return memoryPerOracleComputeUnitInGBs;
+    }
 
     /**
      * The quantity of data in the database, in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
-    Integer dataStorageSizeInGBs;
+    private final Integer dataStorageSizeInGBs;
+
+    public Integer getDataStorageSizeInGBs() {
+        return dataStorageSizeInGBs;
+    }
+
     /**
      * The infrastructure type this resource belongs to.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum InfrastructureType {
         Cloud("CLOUD"),
         CloudAtCustomer("CLOUD_AT_CUSTOMER"),
@@ -1300,6 +1675,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(InfrastructureType.class);
 
         private final String value;
         private static java.util.Map<String, InfrastructureType> map;
@@ -1337,47 +1715,80 @@ public class AutonomousDatabaseSummary {
      * The infrastructure type this resource belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
-    InfrastructureType infrastructureType;
+    private final InfrastructureType infrastructureType;
+
+    public InfrastructureType getInfrastructureType() {
+        return infrastructureType;
+    }
 
     /**
      * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
-    Boolean isDedicated;
+    private final Boolean isDedicated;
+
+    public Boolean getIsDedicated() {
+        return isDedicated;
+    }
 
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
-    String autonomousContainerDatabaseId;
+    private final String autonomousContainerDatabaseId;
+
+    public String getAutonomousContainerDatabaseId() {
+        return autonomousContainerDatabaseId;
+    }
 
     /**
      * The date and time the Autonomous Database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The user-friendly name for the Autonomous Database. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The URL of the Service Console for the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConsoleUrl")
-    String serviceConsoleUrl;
+    private final String serviceConsoleUrl;
+
+    public String getServiceConsoleUrl() {
+        return serviceConsoleUrl;
+    }
 
     /**
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
-    AutonomousDatabaseConnectionStrings connectionStrings;
+    private final AutonomousDatabaseConnectionStrings connectionStrings;
+
+    public AutonomousDatabaseConnectionStrings getConnectionStrings() {
+        return connectionStrings;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUrls")
-    AutonomousDatabaseConnectionUrls connectionUrls;
+    private final AutonomousDatabaseConnectionUrls connectionUrls;
+
+    public AutonomousDatabaseConnectionUrls getConnectionUrls() {
+        return connectionUrls;
+    }
+
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
@@ -1385,7 +1796,6 @@ public class AutonomousDatabaseSummary {
      * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
@@ -1395,6 +1805,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LicenseModel.class);
 
         private final String value;
         private static java.util.Map<String, LicenseModel> map;
@@ -1436,13 +1849,21 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     /**
      * The amount of storage that has been used, in terabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInTBs")
-    Integer usedDataStorageSizeInTBs;
+    private final Integer usedDataStorageSizeInTBs;
+
+    public Integer getUsedDataStorageSizeInTBs() {
+        return usedDataStorageSizeInTBs;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -1452,7 +1873,11 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -1460,7 +1885,11 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
@@ -1476,46 +1905,75 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     /**
      * The private endpoint for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
-    String privateEndpoint;
+    private final String privateEndpoint;
+
+    public String getPrivateEndpoint() {
+        return privateEndpoint;
+    }
 
     /**
      * The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointLabel")
-    String privateEndpointLabel;
+    private final String privateEndpointLabel;
+
+    public String getPrivateEndpointLabel() {
+        return privateEndpointLabel;
+    }
 
     /**
      * The private endpoint Ip address for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
-    String privateEndpointIp;
+    private final String privateEndpointIp;
+
+    public String getPrivateEndpointIp() {
+        return privateEndpointIp;
+    }
 
     /**
      * A valid Oracle Database version for Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-    String dbVersion;
+    private final String dbVersion;
+
+    public String getDbVersion() {
+        return dbVersion;
+    }
 
     /**
      * Indicates if the Autonomous Database version is a preview version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreview")
-    Boolean isPreview;
+    private final Boolean isPreview;
+
+    public Boolean getIsPreview() {
+        return isPreview;
+    }
+
     /**
      * The Autonomous Database workload type. The following values are valid:
      * <p>
@@ -1525,7 +1983,6 @@ public class AutonomousDatabaseSummary {
      * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DbWorkload {
         Oltp("OLTP"),
         Dw("DW"),
@@ -1537,6 +1994,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DbWorkload.class);
 
         private final String value;
         private static java.util.Map<String, DbWorkload> map;
@@ -1580,7 +2040,11 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
-    DbWorkload dbWorkload;
+    private final DbWorkload dbWorkload;
+
+    public DbWorkload getDbWorkload() {
+        return dbWorkload;
+    }
 
     /**
      * Indicates if the database-level access control is enabled.
@@ -1593,7 +2057,11 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlEnabled")
-    Boolean isAccessControlEnabled;
+    private final Boolean isAccessControlEnabled;
+
+    public Boolean getIsAccessControlEnabled() {
+        return isAccessControlEnabled;
+    }
 
     /**
      * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
@@ -1609,7 +2077,11 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
-    java.util.List<String> whitelistedIps;
+    private final java.util.List<String> whitelistedIps;
+
+    public java.util.List<String> getWhitelistedIps() {
+        return whitelistedIps;
+    }
 
     /**
      * This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
@@ -1618,7 +2090,11 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
-    Boolean arePrimaryWhitelistedIpsUsed;
+    private final Boolean arePrimaryWhitelistedIpsUsed;
+
+    public Boolean getArePrimaryWhitelistedIpsUsed() {
+        return arePrimaryWhitelistedIpsUsed;
+    }
 
     /**
      * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
@@ -1634,24 +2110,36 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("standbyWhitelistedIps")
-    java.util.List<String> standbyWhitelistedIps;
+    private final java.util.List<String> standbyWhitelistedIps;
+
+    public java.util.List<String> getStandbyWhitelistedIps() {
+        return standbyWhitelistedIps;
+    }
 
     /**
      * Information about Oracle APEX Application Development.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apexDetails")
-    AutonomousDatabaseApex apexDetails;
+    private final AutonomousDatabaseApex apexDetails;
+
+    public AutonomousDatabaseApex getApexDetails() {
+        return apexDetails;
+    }
 
     /**
      * Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
-    Boolean isAutoScalingEnabled;
+    private final Boolean isAutoScalingEnabled;
+
+    public Boolean getIsAutoScalingEnabled() {
+        return isAutoScalingEnabled;
+    }
+
     /**
      * Status of the Data Safe registration for this Autonomous Database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DataSafeStatus {
         Registering("REGISTERING"),
         Registered("REGISTERED"),
@@ -1664,6 +2152,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataSafeStatus.class);
 
         private final String value;
         private static java.util.Map<String, DataSafeStatus> map;
@@ -1701,11 +2192,15 @@ public class AutonomousDatabaseSummary {
      * Status of the Data Safe registration for this Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataSafeStatus")
-    DataSafeStatus dataSafeStatus;
+    private final DataSafeStatus dataSafeStatus;
+
+    public DataSafeStatus getDataSafeStatus() {
+        return dataSafeStatus;
+    }
+
     /**
      * Status of Operations Insights for this Autonomous Database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OperationsInsightsStatus {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
@@ -1719,6 +2214,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OperationsInsightsStatus.class);
 
         private final String value;
         private static java.util.Map<String, OperationsInsightsStatus> map;
@@ -1756,11 +2254,15 @@ public class AutonomousDatabaseSummary {
      * Status of Operations Insights for this Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
-    OperationsInsightsStatus operationsInsightsStatus;
+    private final OperationsInsightsStatus operationsInsightsStatus;
+
+    public OperationsInsightsStatus getOperationsInsightsStatus() {
+        return operationsInsightsStatus;
+    }
+
     /**
      * Status of Database Management for this Autonomous Database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DatabaseManagementStatus {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
@@ -1774,6 +2276,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseManagementStatus.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseManagementStatus> map;
@@ -1811,47 +2316,75 @@ public class AutonomousDatabaseSummary {
      * Status of Database Management for this Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
-    DatabaseManagementStatus databaseManagementStatus;
+    private final DatabaseManagementStatus databaseManagementStatus;
+
+    public DatabaseManagementStatus getDatabaseManagementStatus() {
+        return databaseManagementStatus;
+    }
 
     /**
      * The date and time when maintenance will begin.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceBegin")
-    java.util.Date timeMaintenanceBegin;
+    private final java.util.Date timeMaintenanceBegin;
+
+    public java.util.Date getTimeMaintenanceBegin() {
+        return timeMaintenanceBegin;
+    }
 
     /**
      * The date and time when maintenance will end.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
-    java.util.Date timeMaintenanceEnd;
+    private final java.util.Date timeMaintenanceEnd;
+
+    public java.util.Date getTimeMaintenanceEnd() {
+        return timeMaintenanceEnd;
+    }
 
     /**
      * Indicates whether the Autonomous Database is a refreshable clone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRefreshableClone")
-    Boolean isRefreshableClone;
+    private final Boolean isRefreshableClone;
+
+    public Boolean getIsRefreshableClone() {
+        return isRefreshableClone;
+    }
 
     /**
      * The date and time when last refresh happened.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastRefresh")
-    java.util.Date timeOfLastRefresh;
+    private final java.util.Date timeOfLastRefresh;
+
+    public java.util.Date getTimeOfLastRefresh() {
+        return timeOfLastRefresh;
+    }
 
     /**
      * The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastRefreshPoint")
-    java.util.Date timeOfLastRefreshPoint;
+    private final java.util.Date timeOfLastRefreshPoint;
+
+    public java.util.Date getTimeOfLastRefreshPoint() {
+        return timeOfLastRefreshPoint;
+    }
 
     /**
      * The date and time of next refresh.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextRefresh")
-    java.util.Date timeOfNextRefresh;
+    private final java.util.Date timeOfNextRefresh;
+
+    public java.util.Date getTimeOfNextRefresh() {
+        return timeOfNextRefresh;
+    }
+
     /**
      * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code READ_WRITE} mode.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OpenMode {
         ReadOnly("READ_ONLY"),
         ReadWrite("READ_WRITE"),
@@ -1861,6 +2394,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OpenMode.class);
 
         private final String value;
         private static java.util.Map<String, OpenMode> map;
@@ -1898,11 +2434,15 @@ public class AutonomousDatabaseSummary {
      * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code READ_WRITE} mode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
-    OpenMode openMode;
+    private final OpenMode openMode;
+
+    public OpenMode getOpenMode() {
+        return openMode;
+    }
+
     /**
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RefreshableStatus {
         Refreshing("REFRESHING"),
         NotRefreshing("NOT_REFRESHING"),
@@ -1912,6 +2452,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RefreshableStatus.class);
 
         private final String value;
         private static java.util.Map<String, RefreshableStatus> map;
@@ -1949,11 +2492,15 @@ public class AutonomousDatabaseSummary {
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableStatus")
-    RefreshableStatus refreshableStatus;
+    private final RefreshableStatus refreshableStatus;
+
+    public RefreshableStatus getRefreshableStatus() {
+        return refreshableStatus;
+    }
+
     /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RefreshableMode {
         Automatic("AUTOMATIC"),
         Manual("MANUAL"),
@@ -1963,6 +2510,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RefreshableMode.class);
 
         private final String value;
         private static java.util.Map<String, RefreshableMode> map;
@@ -2000,17 +2550,25 @@ public class AutonomousDatabaseSummary {
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
-    RefreshableMode refreshableMode;
+    private final RefreshableMode refreshableMode;
+
+    public RefreshableMode getRefreshableMode() {
+        return refreshableMode;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    String sourceId;
+    private final String sourceId;
+
+    public String getSourceId() {
+        return sourceId;
+    }
+
     /**
      * The Autonomous Database permission level. Restricted mode allows access only to admin users.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PermissionLevel {
         Restricted("RESTRICTED"),
         Unrestricted("UNRESTRICTED"),
@@ -2020,6 +2578,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PermissionLevel.class);
 
         private final String value;
         private static java.util.Map<String, PermissionLevel> map;
@@ -2057,59 +2618,95 @@ public class AutonomousDatabaseSummary {
      * The Autonomous Database permission level. Restricted mode allows access only to admin users.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("permissionLevel")
-    PermissionLevel permissionLevel;
+    private final PermissionLevel permissionLevel;
+
+    public PermissionLevel getPermissionLevel() {
+        return permissionLevel;
+    }
 
     /**
      * The timestamp of the last switchover operation for the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastSwitchover")
-    java.util.Date timeOfLastSwitchover;
+    private final java.util.Date timeOfLastSwitchover;
+
+    public java.util.Date getTimeOfLastSwitchover() {
+        return timeOfLastSwitchover;
+    }
 
     /**
      * The timestamp of the last failover operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastFailover")
-    java.util.Date timeOfLastFailover;
+    private final java.util.Date timeOfLastFailover;
+
+    public java.util.Date getTimeOfLastFailover() {
+        return timeOfLastFailover;
+    }
 
     /**
      * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
-    Boolean isDataGuardEnabled;
+    private final Boolean isDataGuardEnabled;
+
+    public Boolean getIsDataGuardEnabled() {
+        return isDataGuardEnabled;
+    }
 
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedDataRecoveryInSeconds")
-    Integer failedDataRecoveryInSeconds;
+    private final Integer failedDataRecoveryInSeconds;
+
+    public Integer getFailedDataRecoveryInSeconds() {
+        return failedDataRecoveryInSeconds;
+    }
 
     /**
      * **Deprecated** Autonomous Data Guard standby database details.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("standbyDb")
-    AutonomousDatabaseStandbySummary standbyDb;
+    private final AutonomousDatabaseStandbySummary standbyDb;
+
+    public AutonomousDatabaseStandbySummary getStandbyDb() {
+        return standbyDb;
+    }
 
     /**
      * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLocalDataGuardEnabled")
-    Boolean isLocalDataGuardEnabled;
+    private final Boolean isLocalDataGuardEnabled;
+
+    public Boolean getIsLocalDataGuardEnabled() {
+        return isLocalDataGuardEnabled;
+    }
 
     /**
      * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRemoteDataGuardEnabled")
-    Boolean isRemoteDataGuardEnabled;
+    private final Boolean isRemoteDataGuardEnabled;
+
+    public Boolean getIsRemoteDataGuardEnabled() {
+        return isRemoteDataGuardEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("localStandbyDb")
-    AutonomousDatabaseStandbySummary localStandbyDb;
+    private final AutonomousDatabaseStandbySummary localStandbyDb;
+
+    public AutonomousDatabaseStandbySummary getLocalStandbyDb() {
+        return localStandbyDb;
+    }
+
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Role {
         Primary("PRIMARY"),
         Standby("STANDBY"),
@@ -2120,6 +2717,8 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Role.class);
 
         private final String value;
         private static java.util.Map<String, Role> map;
@@ -2157,48 +2756,76 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    Role role;
+    private final Role role;
+
+    public Role getRole() {
+        return role;
+    }
 
     /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableUpgradeVersions")
-    java.util.List<String> availableUpgradeVersions;
+    private final java.util.List<String> availableUpgradeVersions;
+
+    public java.util.List<String> getAvailableUpgradeVersions() {
+        return availableUpgradeVersions;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
-    String keyStoreId;
+    private final String keyStoreId;
+
+    public String getKeyStoreId() {
+        return keyStoreId;
+    }
 
     /**
      * The wallet name for Oracle Key Vault.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
-    String keyStoreWalletName;
+    private final String keyStoreWalletName;
+
+    public String getKeyStoreWalletName() {
+        return keyStoreWalletName;
+    }
 
     /**
      * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedRegionsToCloneTo")
-    java.util.List<String> supportedRegionsToCloneTo;
+    private final java.util.List<String> supportedRegionsToCloneTo;
+
+    public java.util.List<String> getSupportedRegionsToCloneTo() {
+        return supportedRegionsToCloneTo;
+    }
 
     /**
      * Customer Contacts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
-    java.util.List<CustomerContact> customerContacts;
+    private final java.util.List<CustomerContact> customerContacts;
+
+    public java.util.List<CustomerContact> getCustomerContacts() {
+        return customerContacts;
+    }
 
     /**
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLocalDataGuardEnabled")
-    java.util.Date timeLocalDataGuardEnabled;
+    private final java.util.Date timeLocalDataGuardEnabled;
+
+    public java.util.Date getTimeLocalDataGuardEnabled() {
+        return timeLocalDataGuardEnabled;
+    }
+
     /**
      * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DataguardRegionType {
         PrimaryDgRegion("PRIMARY_DG_REGION"),
         RemoteStandbyDgRegion("REMOTE_STANDBY_DG_REGION"),
@@ -2208,6 +2835,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataguardRegionType.class);
 
         private final String value;
         private static java.util.Map<String, DataguardRegionType> map;
@@ -2245,43 +2875,67 @@ public class AutonomousDatabaseSummary {
      * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataguardRegionType")
-    DataguardRegionType dataguardRegionType;
+    private final DataguardRegionType dataguardRegionType;
+
+    public DataguardRegionType getDataguardRegionType() {
+        return dataguardRegionType;
+    }
 
     /**
      * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
-    java.util.Date timeDataGuardRoleChanged;
+    private final java.util.Date timeDataGuardRoleChanged;
+
+    public java.util.Date getTimeDataGuardRoleChanged() {
+        return timeDataGuardRoleChanged;
+    }
 
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbIds")
-    java.util.List<String> peerDbIds;
+    private final java.util.List<String> peerDbIds;
+
+    public java.util.List<String> getPeerDbIds() {
+        return peerDbIds;
+    }
 
     /**
      * Indicates whether the Autonomous Database requires mTLS connections.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
-    Boolean isMtlsConnectionRequired;
+    private final Boolean isMtlsConnectionRequired;
+
+    public Boolean getIsMtlsConnectionRequired() {
+        return isMtlsConnectionRequired;
+    }
 
     /**
      * Indicates if the refreshable clone can be reconnected to its source database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReconnectCloneEnabled")
-    Boolean isReconnectCloneEnabled;
+    private final Boolean isReconnectCloneEnabled;
+
+    public Boolean getIsReconnectCloneEnabled() {
+        return isReconnectCloneEnabled;
+    }
 
     /**
      * The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUntilReconnectCloneEnabled")
-    java.util.Date timeUntilReconnectCloneEnabled;
+    private final java.util.Date timeUntilReconnectCloneEnabled;
+
+    public java.util.Date getTimeUntilReconnectCloneEnabled() {
+        return timeUntilReconnectCloneEnabled;
+    }
+
     /**
      * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
      * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AutonomousMaintenanceScheduleType {
         Early("EARLY"),
         Regular("REGULAR"),
@@ -2291,6 +2945,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AutonomousMaintenanceScheduleType.class);
 
         private final String value;
         private static java.util.Map<String, AutonomousMaintenanceScheduleType> map;
@@ -2330,20 +2987,32 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
-    AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+    private final AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+    public AutonomousMaintenanceScheduleType getAutonomousMaintenanceScheduleType() {
+        return autonomousMaintenanceScheduleType;
+    }
 
     /**
      * list of scheduled operations
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
-    java.util.List<ScheduledOperationDetails> scheduledOperations;
+    private final java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+    public java.util.List<ScheduledOperationDetails> getScheduledOperations() {
+        return scheduledOperations;
+    }
 
     /**
      * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is {@code FALSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
-    Boolean isAutoScalingForStorageEnabled;
+    private final Boolean isAutoScalingForStorageEnabled;
+
+    public Boolean getIsAutoScalingForStorageEnabled() {
+        return isAutoScalingForStorageEnabled;
+    }
 
     /**
      * The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the {@code dataStorageSizeInTBs} value. You can compare this value to the {@code actualUsedDataStorageSizeInTBs} value to determine if a manual shrink operation is appropriate for your allocated storage.
@@ -2352,26 +3021,38 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allocatedStorageSizeInTBs")
-    Double allocatedStorageSizeInTBs;
+    private final Double allocatedStorageSizeInTBs;
+
+    public Double getAllocatedStorageSizeInTBs() {
+        return allocatedStorageSizeInTBs;
+    }
 
     /**
      * The current amount of storage in use for user and system data, in terabytes (TB).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actualUsedDataStorageSizeInTBs")
-    Double actualUsedDataStorageSizeInTBs;
+    private final Double actualUsedDataStorageSizeInTBs;
+
+    public Double getActualUsedDataStorageSizeInTBs() {
+        return actualUsedDataStorageSizeInTBs;
+    }
 
     /**
      * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
-    Integer maxCpuCoreCount;
+    private final Integer maxCpuCoreCount;
+
+    public Integer getMaxCpuCoreCount() {
+        return maxCpuCoreCount;
+    }
+
     /**
      * The Oracle Database Edition that applies to the Autonomous databases.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DatabaseEdition {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
@@ -2381,6 +3062,9 @@ public class AutonomousDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseEdition.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseEdition> map;
@@ -2419,8 +3103,577 @@ public class AutonomousDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-    DatabaseEdition databaseEdition;
+    private final DatabaseEdition databaseEdition;
+
+    public DatabaseEdition getDatabaseEdition() {
+        return databaseEdition;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousDatabaseSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", kmsKeyLifecycleDetails=").append(String.valueOf(this.kmsKeyLifecycleDetails));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", dbName=").append(String.valueOf(this.dbName));
+        sb.append(", characterSet=").append(String.valueOf(this.characterSet));
+        sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
+        sb.append(", isFreeTier=").append(String.valueOf(this.isFreeTier));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", timeReclamationOfFreeAutonomousDatabase=")
+                .append(String.valueOf(this.timeReclamationOfFreeAutonomousDatabase));
+        sb.append(", timeDeletionOfFreeAutonomousDatabase=")
+                .append(String.valueOf(this.timeDeletionOfFreeAutonomousDatabase));
+        sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
+        sb.append(", keyHistoryEntry=").append(String.valueOf(this.keyHistoryEntry));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", provisionableCpus=").append(String.valueOf(this.provisionableCpus));
+        sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
+        sb.append(", memoryPerOracleComputeUnitInGBs=")
+                .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", infrastructureType=").append(String.valueOf(this.infrastructureType));
+        sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
+        sb.append(", autonomousContainerDatabaseId=")
+                .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", serviceConsoleUrl=").append(String.valueOf(this.serviceConsoleUrl));
+        sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
+        sb.append(", connectionUrls=").append(String.valueOf(this.connectionUrls));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", usedDataStorageSizeInTBs=")
+                .append(String.valueOf(this.usedDataStorageSizeInTBs));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", privateEndpoint=").append(String.valueOf(this.privateEndpoint));
+        sb.append(", privateEndpointLabel=").append(String.valueOf(this.privateEndpointLabel));
+        sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
+        sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", isPreview=").append(String.valueOf(this.isPreview));
+        sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
+        sb.append(", isAccessControlEnabled=").append(String.valueOf(this.isAccessControlEnabled));
+        sb.append(", whitelistedIps=").append(String.valueOf(this.whitelistedIps));
+        sb.append(", arePrimaryWhitelistedIpsUsed=")
+                .append(String.valueOf(this.arePrimaryWhitelistedIpsUsed));
+        sb.append(", standbyWhitelistedIps=").append(String.valueOf(this.standbyWhitelistedIps));
+        sb.append(", apexDetails=").append(String.valueOf(this.apexDetails));
+        sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
+        sb.append(", dataSafeStatus=").append(String.valueOf(this.dataSafeStatus));
+        sb.append(", operationsInsightsStatus=")
+                .append(String.valueOf(this.operationsInsightsStatus));
+        sb.append(", databaseManagementStatus=")
+                .append(String.valueOf(this.databaseManagementStatus));
+        sb.append(", timeMaintenanceBegin=").append(String.valueOf(this.timeMaintenanceBegin));
+        sb.append(", timeMaintenanceEnd=").append(String.valueOf(this.timeMaintenanceEnd));
+        sb.append(", isRefreshableClone=").append(String.valueOf(this.isRefreshableClone));
+        sb.append(", timeOfLastRefresh=").append(String.valueOf(this.timeOfLastRefresh));
+        sb.append(", timeOfLastRefreshPoint=").append(String.valueOf(this.timeOfLastRefreshPoint));
+        sb.append(", timeOfNextRefresh=").append(String.valueOf(this.timeOfNextRefresh));
+        sb.append(", openMode=").append(String.valueOf(this.openMode));
+        sb.append(", refreshableStatus=").append(String.valueOf(this.refreshableStatus));
+        sb.append(", refreshableMode=").append(String.valueOf(this.refreshableMode));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", permissionLevel=").append(String.valueOf(this.permissionLevel));
+        sb.append(", timeOfLastSwitchover=").append(String.valueOf(this.timeOfLastSwitchover));
+        sb.append(", timeOfLastFailover=").append(String.valueOf(this.timeOfLastFailover));
+        sb.append(", isDataGuardEnabled=").append(String.valueOf(this.isDataGuardEnabled));
+        sb.append(", failedDataRecoveryInSeconds=")
+                .append(String.valueOf(this.failedDataRecoveryInSeconds));
+        sb.append(", standbyDb=").append(String.valueOf(this.standbyDb));
+        sb.append(", isLocalDataGuardEnabled=")
+                .append(String.valueOf(this.isLocalDataGuardEnabled));
+        sb.append(", isRemoteDataGuardEnabled=")
+                .append(String.valueOf(this.isRemoteDataGuardEnabled));
+        sb.append(", localStandbyDb=").append(String.valueOf(this.localStandbyDb));
+        sb.append(", role=").append(String.valueOf(this.role));
+        sb.append(", availableUpgradeVersions=")
+                .append(String.valueOf(this.availableUpgradeVersions));
+        sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append(", keyStoreWalletName=").append(String.valueOf(this.keyStoreWalletName));
+        sb.append(", supportedRegionsToCloneTo=")
+                .append(String.valueOf(this.supportedRegionsToCloneTo));
+        sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", timeLocalDataGuardEnabled=")
+                .append(String.valueOf(this.timeLocalDataGuardEnabled));
+        sb.append(", dataguardRegionType=").append(String.valueOf(this.dataguardRegionType));
+        sb.append(", timeDataGuardRoleChanged=")
+                .append(String.valueOf(this.timeDataGuardRoleChanged));
+        sb.append(", peerDbIds=").append(String.valueOf(this.peerDbIds));
+        sb.append(", isMtlsConnectionRequired=")
+                .append(String.valueOf(this.isMtlsConnectionRequired));
+        sb.append(", isReconnectCloneEnabled=")
+                .append(String.valueOf(this.isReconnectCloneEnabled));
+        sb.append(", timeUntilReconnectCloneEnabled=")
+                .append(String.valueOf(this.timeUntilReconnectCloneEnabled));
+        sb.append(", autonomousMaintenanceScheduleType=")
+                .append(String.valueOf(this.autonomousMaintenanceScheduleType));
+        sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
+        sb.append(", isAutoScalingForStorageEnabled=")
+                .append(String.valueOf(this.isAutoScalingForStorageEnabled));
+        sb.append(", allocatedStorageSizeInTBs=")
+                .append(String.valueOf(this.allocatedStorageSizeInTBs));
+        sb.append(", actualUsedDataStorageSizeInTBs=")
+                .append(String.valueOf(this.actualUsedDataStorageSizeInTBs));
+        sb.append(", maxCpuCoreCount=").append(String.valueOf(this.maxCpuCoreCount));
+        sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousDatabaseSummary)) {
+            return false;
+        }
+
+        AutonomousDatabaseSummary other = (AutonomousDatabaseSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(
+                        this.kmsKeyLifecycleDetails, other.kmsKeyLifecycleDetails)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.characterSet, other.characterSet)
+                && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
+                && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(
+                        this.timeReclamationOfFreeAutonomousDatabase,
+                        other.timeReclamationOfFreeAutonomousDatabase)
+                && java.util.Objects.equals(
+                        this.timeDeletionOfFreeAutonomousDatabase,
+                        other.timeDeletionOfFreeAutonomousDatabase)
+                && java.util.Objects.equals(this.backupConfig, other.backupConfig)
+                && java.util.Objects.equals(this.keyHistoryEntry, other.keyHistoryEntry)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.provisionableCpus, other.provisionableCpus)
+                && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
+                && java.util.Objects.equals(
+                        this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
+                && java.util.Objects.equals(this.isDedicated, other.isDedicated)
+                && java.util.Objects.equals(
+                        this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.serviceConsoleUrl, other.serviceConsoleUrl)
+                && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
+                && java.util.Objects.equals(this.connectionUrls, other.connectionUrls)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.usedDataStorageSizeInTBs, other.usedDataStorageSizeInTBs)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint)
+                && java.util.Objects.equals(this.privateEndpointLabel, other.privateEndpointLabel)
+                && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
+                && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(this.isPreview, other.isPreview)
+                && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
+                && java.util.Objects.equals(
+                        this.isAccessControlEnabled, other.isAccessControlEnabled)
+                && java.util.Objects.equals(this.whitelistedIps, other.whitelistedIps)
+                && java.util.Objects.equals(
+                        this.arePrimaryWhitelistedIpsUsed, other.arePrimaryWhitelistedIpsUsed)
+                && java.util.Objects.equals(this.standbyWhitelistedIps, other.standbyWhitelistedIps)
+                && java.util.Objects.equals(this.apexDetails, other.apexDetails)
+                && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
+                && java.util.Objects.equals(this.dataSafeStatus, other.dataSafeStatus)
+                && java.util.Objects.equals(
+                        this.operationsInsightsStatus, other.operationsInsightsStatus)
+                && java.util.Objects.equals(
+                        this.databaseManagementStatus, other.databaseManagementStatus)
+                && java.util.Objects.equals(this.timeMaintenanceBegin, other.timeMaintenanceBegin)
+                && java.util.Objects.equals(this.timeMaintenanceEnd, other.timeMaintenanceEnd)
+                && java.util.Objects.equals(this.isRefreshableClone, other.isRefreshableClone)
+                && java.util.Objects.equals(this.timeOfLastRefresh, other.timeOfLastRefresh)
+                && java.util.Objects.equals(
+                        this.timeOfLastRefreshPoint, other.timeOfLastRefreshPoint)
+                && java.util.Objects.equals(this.timeOfNextRefresh, other.timeOfNextRefresh)
+                && java.util.Objects.equals(this.openMode, other.openMode)
+                && java.util.Objects.equals(this.refreshableStatus, other.refreshableStatus)
+                && java.util.Objects.equals(this.refreshableMode, other.refreshableMode)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.permissionLevel, other.permissionLevel)
+                && java.util.Objects.equals(this.timeOfLastSwitchover, other.timeOfLastSwitchover)
+                && java.util.Objects.equals(this.timeOfLastFailover, other.timeOfLastFailover)
+                && java.util.Objects.equals(this.isDataGuardEnabled, other.isDataGuardEnabled)
+                && java.util.Objects.equals(
+                        this.failedDataRecoveryInSeconds, other.failedDataRecoveryInSeconds)
+                && java.util.Objects.equals(this.standbyDb, other.standbyDb)
+                && java.util.Objects.equals(
+                        this.isLocalDataGuardEnabled, other.isLocalDataGuardEnabled)
+                && java.util.Objects.equals(
+                        this.isRemoteDataGuardEnabled, other.isRemoteDataGuardEnabled)
+                && java.util.Objects.equals(this.localStandbyDb, other.localStandbyDb)
+                && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(
+                        this.availableUpgradeVersions, other.availableUpgradeVersions)
+                && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(this.keyStoreWalletName, other.keyStoreWalletName)
+                && java.util.Objects.equals(
+                        this.supportedRegionsToCloneTo, other.supportedRegionsToCloneTo)
+                && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(
+                        this.timeLocalDataGuardEnabled, other.timeLocalDataGuardEnabled)
+                && java.util.Objects.equals(this.dataguardRegionType, other.dataguardRegionType)
+                && java.util.Objects.equals(
+                        this.timeDataGuardRoleChanged, other.timeDataGuardRoleChanged)
+                && java.util.Objects.equals(this.peerDbIds, other.peerDbIds)
+                && java.util.Objects.equals(
+                        this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
+                && java.util.Objects.equals(
+                        this.isReconnectCloneEnabled, other.isReconnectCloneEnabled)
+                && java.util.Objects.equals(
+                        this.timeUntilReconnectCloneEnabled, other.timeUntilReconnectCloneEnabled)
+                && java.util.Objects.equals(
+                        this.autonomousMaintenanceScheduleType,
+                        other.autonomousMaintenanceScheduleType)
+                && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
+                && java.util.Objects.equals(
+                        this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
+                && java.util.Objects.equals(
+                        this.allocatedStorageSizeInTBs, other.allocatedStorageSizeInTBs)
+                && java.util.Objects.equals(
+                        this.actualUsedDataStorageSizeInTBs, other.actualUsedDataStorageSizeInTBs)
+                && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
+                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyLifecycleDetails == null
+                                ? 43
+                                : this.kmsKeyLifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
+        result = (result * PRIME) + (this.isFreeTier == null ? 43 : this.isFreeTier.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeReclamationOfFreeAutonomousDatabase == null
+                                ? 43
+                                : this.timeReclamationOfFreeAutonomousDatabase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDeletionOfFreeAutonomousDatabase == null
+                                ? 43
+                                : this.timeDeletionOfFreeAutonomousDatabase.hashCode());
+        result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyHistoryEntry == null ? 43 : this.keyHistoryEntry.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionableCpus == null ? 43 : this.provisionableCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInTBs == null
+                                ? 43
+                                : this.dataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryPerOracleComputeUnitInGBs == null
+                                ? 43
+                                : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInGBs == null
+                                ? 43
+                                : this.dataStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureType == null
+                                ? 43
+                                : this.infrastructureType.hashCode());
+        result = (result * PRIME) + (this.isDedicated == null ? 43 : this.isDedicated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousContainerDatabaseId == null
+                                ? 43
+                                : this.autonomousContainerDatabaseId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceConsoleUrl == null ? 43 : this.serviceConsoleUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionStrings == null ? 43 : this.connectionStrings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionUrls == null ? 43 : this.connectionUrls.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usedDataStorageSizeInTBs == null
+                                ? 43
+                                : this.usedDataStorageSizeInTBs.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpoint == null ? 43 : this.privateEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointLabel == null
+                                ? 43
+                                : this.privateEndpointLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
+        result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result = (result * PRIME) + (this.isPreview == null ? 43 : this.isPreview.hashCode());
+        result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAccessControlEnabled == null
+                                ? 43
+                                : this.isAccessControlEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.whitelistedIps == null ? 43 : this.whitelistedIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.arePrimaryWhitelistedIpsUsed == null
+                                ? 43
+                                : this.arePrimaryWhitelistedIpsUsed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standbyWhitelistedIps == null
+                                ? 43
+                                : this.standbyWhitelistedIps.hashCode());
+        result = (result * PRIME) + (this.apexDetails == null ? 43 : this.apexDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoScalingEnabled == null
+                                ? 43
+                                : this.isAutoScalingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSafeStatus == null ? 43 : this.dataSafeStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationsInsightsStatus == null
+                                ? 43
+                                : this.operationsInsightsStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagementStatus == null
+                                ? 43
+                                : this.databaseManagementStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaintenanceBegin == null
+                                ? 43
+                                : this.timeMaintenanceBegin.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaintenanceEnd == null
+                                ? 43
+                                : this.timeMaintenanceEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRefreshableClone == null
+                                ? 43
+                                : this.isRefreshableClone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLastRefresh == null ? 43 : this.timeOfLastRefresh.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLastRefreshPoint == null
+                                ? 43
+                                : this.timeOfLastRefreshPoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfNextRefresh == null ? 43 : this.timeOfNextRefresh.hashCode());
+        result = (result * PRIME) + (this.openMode == null ? 43 : this.openMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refreshableStatus == null ? 43 : this.refreshableStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refreshableMode == null ? 43 : this.refreshableMode.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.permissionLevel == null ? 43 : this.permissionLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLastSwitchover == null
+                                ? 43
+                                : this.timeOfLastSwitchover.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLastFailover == null
+                                ? 43
+                                : this.timeOfLastFailover.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDataGuardEnabled == null
+                                ? 43
+                                : this.isDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failedDataRecoveryInSeconds == null
+                                ? 43
+                                : this.failedDataRecoveryInSeconds.hashCode());
+        result = (result * PRIME) + (this.standbyDb == null ? 43 : this.standbyDb.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLocalDataGuardEnabled == null
+                                ? 43
+                                : this.isLocalDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRemoteDataGuardEnabled == null
+                                ? 43
+                                : this.isRemoteDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localStandbyDb == null ? 43 : this.localStandbyDb.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableUpgradeVersions == null
+                                ? 43
+                                : this.availableUpgradeVersions.hashCode());
+        result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreWalletName == null
+                                ? 43
+                                : this.keyStoreWalletName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedRegionsToCloneTo == null
+                                ? 43
+                                : this.supportedRegionsToCloneTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLocalDataGuardEnabled == null
+                                ? 43
+                                : this.timeLocalDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataguardRegionType == null
+                                ? 43
+                                : this.dataguardRegionType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataGuardRoleChanged == null
+                                ? 43
+                                : this.timeDataGuardRoleChanged.hashCode());
+        result = (result * PRIME) + (this.peerDbIds == null ? 43 : this.peerDbIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMtlsConnectionRequired == null
+                                ? 43
+                                : this.isMtlsConnectionRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReconnectCloneEnabled == null
+                                ? 43
+                                : this.isReconnectCloneEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUntilReconnectCloneEnabled == null
+                                ? 43
+                                : this.timeUntilReconnectCloneEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousMaintenanceScheduleType == null
+                                ? 43
+                                : this.autonomousMaintenanceScheduleType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledOperations == null
+                                ? 43
+                                : this.scheduledOperations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoScalingForStorageEnabled == null
+                                ? 43
+                                : this.isAutoScalingForStorageEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allocatedStorageSizeInTBs == null
+                                ? 43
+                                : this.allocatedStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actualUsedDataStorageSizeInTBs == null
+                                ? 43
+                                : this.actualUsedDataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxCpuCoreCount == null ? 43 : this.maxCpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

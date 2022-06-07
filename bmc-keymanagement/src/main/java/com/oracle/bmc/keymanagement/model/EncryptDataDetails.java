@@ -15,16 +15,37 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = EncryptDataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EncryptDataDetails {
+public final class EncryptDataDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "associatedData",
+        "keyId",
+        "loggingContext",
+        "plaintext",
+        "keyVersionId",
+        "encryptionAlgorithm"
+    })
+    public EncryptDataDetails(
+            java.util.Map<String, String> associatedData,
+            String keyId,
+            java.util.Map<String, String> loggingContext,
+            String plaintext,
+            String keyVersionId,
+            EncryptionAlgorithm encryptionAlgorithm) {
+        super();
+        this.associatedData = associatedData;
+        this.keyId = keyId;
+        this.loggingContext = loggingContext;
+        this.plaintext = plaintext;
+        this.keyVersionId = keyVersionId;
+        this.encryptionAlgorithm = encryptionAlgorithm;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
         private java.util.Map<String, String> associatedData;
@@ -118,6 +139,10 @@ public class EncryptDataDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Information that can be used to provide an encryption context for the
      * encrypted data. The length of the string representation of the associated data
@@ -125,13 +150,21 @@ public class EncryptDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
-    java.util.Map<String, String> associatedData;
+    private final java.util.Map<String, String> associatedData;
+
+    public java.util.Map<String, String> getAssociatedData() {
+        return associatedData;
+    }
 
     /**
      * The OCID of the key to encrypt with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * Information that provides context for audit logging. You can provide this additional
@@ -139,19 +172,32 @@ public class EncryptDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
-    java.util.Map<String, String> loggingContext;
+    private final java.util.Map<String, String> loggingContext;
+
+    public java.util.Map<String, String> getLoggingContext() {
+        return loggingContext;
+    }
 
     /**
      * The plaintext data to encrypt.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
-    String plaintext;
+    private final String plaintext;
+
+    public String getPlaintext() {
+        return plaintext;
+    }
 
     /**
      * The OCID of the key version used to encrypt the ciphertext.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
-    String keyVersionId;
+    private final String keyVersionId;
+
+    public String getKeyVersionId() {
+        return keyVersionId;
+    }
+
     /**
      * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
      * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
@@ -204,8 +250,74 @@ public class EncryptDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
-    EncryptionAlgorithm encryptionAlgorithm;
+    private final EncryptionAlgorithm encryptionAlgorithm;
+
+    public EncryptionAlgorithm getEncryptionAlgorithm() {
+        return encryptionAlgorithm;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EncryptDataDetails(");
+        sb.append("associatedData=").append(String.valueOf(this.associatedData));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", loggingContext=").append(String.valueOf(this.loggingContext));
+        sb.append(", plaintext=").append(String.valueOf(this.plaintext));
+        sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
+        sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EncryptDataDetails)) {
+            return false;
+        }
+
+        EncryptDataDetails other = (EncryptDataDetails) o;
+        return java.util.Objects.equals(this.associatedData, other.associatedData)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.loggingContext, other.loggingContext)
+                && java.util.Objects.equals(this.plaintext, other.plaintext)
+                && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
+                && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.associatedData == null ? 43 : this.associatedData.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loggingContext == null ? 43 : this.loggingContext.hashCode());
+        result = (result * PRIME) + (this.plaintext == null ? 43 : this.plaintext.hashCode());
+        result = (result * PRIME) + (this.keyVersionId == null ? 43 : this.keyVersionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionAlgorithm == null
+                                ? 43
+                                : this.encryptionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

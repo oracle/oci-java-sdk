@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeDeviceShapeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCpeDeviceShapeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetCpeDeviceShapeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetCpeDeviceShapeRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String cpeDeviceShapeId;
 
+    public String getCpeDeviceShapeId() {
+        return cpeDeviceShapeId;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -31,12 +26,40 @@ public class GetCpeDeviceShapeRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetCpeDeviceShapeRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String cpeDeviceShapeId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
+         * @return this builder instance
+         */
+        public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
+            this.cpeDeviceShapeId = cpeDeviceShapeId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -89,5 +112,69 @@ public class GetCpeDeviceShapeRequest extends com.oracle.bmc.requests.BmcRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetCpeDeviceShapeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetCpeDeviceShapeRequest
+         */
+        public GetCpeDeviceShapeRequest buildWithoutInvocationCallback() {
+            GetCpeDeviceShapeRequest request = new GetCpeDeviceShapeRequest();
+            request.cpeDeviceShapeId = cpeDeviceShapeId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetCpeDeviceShapeRequest(cpeDeviceShapeId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().cpeDeviceShapeId(cpeDeviceShapeId).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",cpeDeviceShapeId=").append(String.valueOf(this.cpeDeviceShapeId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetCpeDeviceShapeRequest)) {
+            return false;
+        }
+
+        GetCpeDeviceShapeRequest other = (GetCpeDeviceShapeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.cpeDeviceShapeId, other.cpeDeviceShapeId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.cpeDeviceShapeId == null ? 43 : this.cpeDeviceShapeId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

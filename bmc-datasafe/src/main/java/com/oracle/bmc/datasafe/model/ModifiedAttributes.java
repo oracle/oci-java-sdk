@@ -17,16 +17,22 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ModifiedAttributes.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModifiedAttributes {
+public final class ModifiedAttributes {
+    @Deprecated
+    @java.beans.ConstructorProperties({"appDefinedChildColumnKeys", "dbDefinedChildColumnKeys"})
+    public ModifiedAttributes(
+            java.util.List<String> appDefinedChildColumnKeys,
+            java.util.List<String> dbDefinedChildColumnKeys) {
+        super();
+        this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
+        this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("appDefinedChildColumnKeys")
         private java.util.List<String> appDefinedChildColumnKeys;
@@ -74,18 +80,84 @@ public class ModifiedAttributes {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("appDefinedChildColumnKeys")
-    java.util.List<String> appDefinedChildColumnKeys;
+    private final java.util.List<String> appDefinedChildColumnKeys;
+
+    public java.util.List<String> getAppDefinedChildColumnKeys() {
+        return appDefinedChildColumnKeys;
+    }
 
     /**
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbDefinedChildColumnKeys")
-    java.util.List<String> dbDefinedChildColumnKeys;
+    private final java.util.List<String> dbDefinedChildColumnKeys;
+
+    public java.util.List<String> getDbDefinedChildColumnKeys() {
+        return dbDefinedChildColumnKeys;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModifiedAttributes(");
+        sb.append("appDefinedChildColumnKeys=")
+                .append(String.valueOf(this.appDefinedChildColumnKeys));
+        sb.append(", dbDefinedChildColumnKeys=")
+                .append(String.valueOf(this.dbDefinedChildColumnKeys));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModifiedAttributes)) {
+            return false;
+        }
+
+        ModifiedAttributes other = (ModifiedAttributes) o;
+        return java.util.Objects.equals(
+                        this.appDefinedChildColumnKeys, other.appDefinedChildColumnKeys)
+                && java.util.Objects.equals(
+                        this.dbDefinedChildColumnKeys, other.dbDefinedChildColumnKeys)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.appDefinedChildColumnKeys == null
+                                ? 43
+                                : this.appDefinedChildColumnKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbDefinedChildColumnKeys == null
+                                ? 43
+                                : this.dbDefinedChildColumnKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

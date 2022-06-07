@@ -15,14 +15,24 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StructuredType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StructuredType {
+public final class StructuredType {
+    @Deprecated
+    @java.beans.ConstructorProperties({"schema", "dtType", "typeSystemName", "configDefinition"})
+    public StructuredType(
+            BaseType schema,
+            DtType dtType,
+            String typeSystemName,
+            ConfigDefinition configDefinition) {
+        super();
+        this.schema = schema;
+        this.dtType = dtType;
+        this.typeSystemName = typeSystemName;
+        this.configDefinition = configDefinition;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("schema")
         private BaseType schema;
@@ -90,8 +100,17 @@ public class StructuredType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
-    BaseType schema;
+    private final BaseType schema;
+
+    public BaseType getSchema() {
+        return schema;
+    }
+
     /**
      * The data type.
      **/
@@ -131,17 +150,81 @@ public class StructuredType {
      * The data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dtType")
-    DtType dtType;
+    private final DtType dtType;
+
+    public DtType getDtType() {
+        return dtType;
+    }
 
     /**
      * The data type system name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeSystemName")
-    String typeSystemName;
+    private final String typeSystemName;
+
+    public String getTypeSystemName() {
+        return typeSystemName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configDefinition")
-    ConfigDefinition configDefinition;
+    private final ConfigDefinition configDefinition;
+
+    public ConfigDefinition getConfigDefinition() {
+        return configDefinition;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StructuredType(");
+        sb.append("schema=").append(String.valueOf(this.schema));
+        sb.append(", dtType=").append(String.valueOf(this.dtType));
+        sb.append(", typeSystemName=").append(String.valueOf(this.typeSystemName));
+        sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StructuredType)) {
+            return false;
+        }
+
+        StructuredType other = (StructuredType) o;
+        return java.util.Objects.equals(this.schema, other.schema)
+                && java.util.Objects.equals(this.dtType, other.dtType)
+                && java.util.Objects.equals(this.typeSystemName, other.typeSystemName)
+                && java.util.Objects.equals(this.configDefinition, other.configDefinition)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.schema == null ? 43 : this.schema.hashCode());
+        result = (result * PRIME) + (this.dtType == null ? 43 : this.dtType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.typeSystemName == null ? 43 : this.typeSystemName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configDefinition == null ? 43 : this.configDefinition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

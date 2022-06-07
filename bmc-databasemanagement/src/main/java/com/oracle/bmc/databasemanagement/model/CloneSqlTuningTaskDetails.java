@@ -15,16 +15,31 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CloneSqlTuningTaskDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CloneSqlTuningTaskDetails {
+public final class CloneSqlTuningTaskDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "taskName",
+        "originalTaskId",
+        "taskDescription",
+        "credentialDetails"
+    })
+    public CloneSqlTuningTaskDetails(
+            String taskName,
+            Long originalTaskId,
+            String taskDescription,
+            SqlTuningTaskCredentialDetails credentialDetails) {
+        super();
+        this.taskName = taskName;
+        this.originalTaskId = originalTaskId;
+        this.taskDescription = taskDescription;
+        this.credentialDetails = credentialDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("taskName")
         private String taskName;
@@ -93,11 +108,19 @@ public class CloneSqlTuningTaskDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
-    String taskName;
+    private final String taskName;
+
+    public String getTaskName() {
+        return taskName;
+    }
 
     /**
      * The identifier of the SQL tuning task being cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -106,17 +129,83 @@ public class CloneSqlTuningTaskDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalTaskId")
-    Long originalTaskId;
+    private final Long originalTaskId;
+
+    public Long getOriginalTaskId() {
+        return originalTaskId;
+    }
 
     /**
      * The description of the SQL tuning task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskDescription")
-    String taskDescription;
+    private final String taskDescription;
+
+    public String getTaskDescription() {
+        return taskDescription;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
-    SqlTuningTaskCredentialDetails credentialDetails;
+    private final SqlTuningTaskCredentialDetails credentialDetails;
+
+    public SqlTuningTaskCredentialDetails getCredentialDetails() {
+        return credentialDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CloneSqlTuningTaskDetails(");
+        sb.append("taskName=").append(String.valueOf(this.taskName));
+        sb.append(", originalTaskId=").append(String.valueOf(this.originalTaskId));
+        sb.append(", taskDescription=").append(String.valueOf(this.taskDescription));
+        sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CloneSqlTuningTaskDetails)) {
+            return false;
+        }
+
+        CloneSqlTuningTaskDetails other = (CloneSqlTuningTaskDetails) o;
+        return java.util.Objects.equals(this.taskName, other.taskName)
+                && java.util.Objects.equals(this.originalTaskId, other.originalTaskId)
+                && java.util.Objects.equals(this.taskDescription, other.taskDescription)
+                && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.taskName == null ? 43 : this.taskName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originalTaskId == null ? 43 : this.originalTaskId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.taskDescription == null ? 43 : this.taskDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

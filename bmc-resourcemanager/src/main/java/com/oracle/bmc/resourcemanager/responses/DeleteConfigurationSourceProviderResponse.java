@@ -7,16 +7,16 @@ package com.oracle.bmc.resourcemanager.responses;
 import com.oracle.bmc.resourcemanager.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteConfigurationSourceProviderResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteConfigurationSourceProviderResponse(int __httpStatusCode__, String opcRequestId) {
@@ -29,6 +29,13 @@ public class DeleteConfigurationSourceProviderResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
             return this;
         }
 
@@ -46,5 +53,41 @@ public class DeleteConfigurationSourceProviderResponse
         public DeleteConfigurationSourceProviderResponse build() {
             return new DeleteConfigurationSourceProviderResponse(__httpStatusCode__, opcRequestId);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteConfigurationSourceProviderResponse)) {
+            return false;
+        }
+
+        DeleteConfigurationSourceProviderResponse other =
+                (DeleteConfigurationSourceProviderResponse) o;
+        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

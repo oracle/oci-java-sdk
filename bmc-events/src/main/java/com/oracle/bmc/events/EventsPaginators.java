@@ -26,9 +26,12 @@ import com.oracle.bmc.events.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.RequiredArgsConstructor
 public class EventsPaginators {
     private final Events client;
+
+    public EventsPaginators(Events client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listRules operation. This iterable

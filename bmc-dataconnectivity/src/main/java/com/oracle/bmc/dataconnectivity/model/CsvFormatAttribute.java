@@ -15,22 +15,17 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CsvFormatAttribute.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CsvFormatAttribute extends AbstractFormatAttribute {
+public final class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("encoding")
         private String encoding;
@@ -135,6 +130,10 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CsvFormatAttribute(
             String encoding,
@@ -158,44 +157,139 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
      * The encoding for the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
-    String encoding;
+    private final String encoding;
+
+    public String getEncoding() {
+        return encoding;
+    }
 
     /**
      * The escape character for the CSV format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("escapeCharacter")
-    String escapeCharacter;
+    private final String escapeCharacter;
+
+    public String getEscapeCharacter() {
+        return escapeCharacter;
+    }
 
     /**
      * The delimiter for the CSV format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("delimiter")
-    String delimiter;
+    private final String delimiter;
+
+    public String getDelimiter() {
+        return delimiter;
+    }
 
     /**
      * The quote character for the CSV format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quoteCharacter")
-    String quoteCharacter;
+    private final String quoteCharacter;
+
+    public String getQuoteCharacter() {
+        return quoteCharacter;
+    }
 
     /**
      * Defines whether the file has a header row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hasHeader")
-    Boolean hasHeader;
+    private final Boolean hasHeader;
+
+    public Boolean getHasHeader() {
+        return hasHeader;
+    }
 
     /**
      * Defines whether a file pattern is supported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
-    Boolean isFilePattern;
+    private final Boolean isFilePattern;
+
+    public Boolean getIsFilePattern() {
+        return isFilePattern;
+    }
 
     /**
      * Format for timestamp information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestampFormat")
-    String timestampFormat;
+    private final String timestampFormat;
+
+    public String getTimestampFormat() {
+        return timestampFormat;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CsvFormatAttribute(");
+        sb.append("super=").append(super.toString());
+        sb.append(", encoding=").append(String.valueOf(this.encoding));
+        sb.append(", escapeCharacter=").append(String.valueOf(this.escapeCharacter));
+        sb.append(", delimiter=").append(String.valueOf(this.delimiter));
+        sb.append(", quoteCharacter=").append(String.valueOf(this.quoteCharacter));
+        sb.append(", hasHeader=").append(String.valueOf(this.hasHeader));
+        sb.append(", isFilePattern=").append(String.valueOf(this.isFilePattern));
+        sb.append(", timestampFormat=").append(String.valueOf(this.timestampFormat));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CsvFormatAttribute)) {
+            return false;
+        }
+
+        CsvFormatAttribute other = (CsvFormatAttribute) o;
+        return java.util.Objects.equals(this.encoding, other.encoding)
+                && java.util.Objects.equals(this.escapeCharacter, other.escapeCharacter)
+                && java.util.Objects.equals(this.delimiter, other.delimiter)
+                && java.util.Objects.equals(this.quoteCharacter, other.quoteCharacter)
+                && java.util.Objects.equals(this.hasHeader, other.hasHeader)
+                && java.util.Objects.equals(this.isFilePattern, other.isFilePattern)
+                && java.util.Objects.equals(this.timestampFormat, other.timestampFormat)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.encoding == null ? 43 : this.encoding.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.escapeCharacter == null ? 43 : this.escapeCharacter.hashCode());
+        result = (result * PRIME) + (this.delimiter == null ? 43 : this.delimiter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.quoteCharacter == null ? 43 : this.quoteCharacter.hashCode());
+        result = (result * PRIME) + (this.hasHeader == null ? 43 : this.hasHeader.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isFilePattern == null ? 43 : this.isFilePattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timestampFormat == null ? 43 : this.timestampFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

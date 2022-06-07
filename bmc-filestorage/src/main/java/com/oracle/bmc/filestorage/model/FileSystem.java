@@ -27,14 +27,59 @@ package com.oracle.bmc.filestorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FileSystem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FileSystem {
+public final class FileSystem {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "meteredBytes",
+        "compartmentId",
+        "displayName",
+        "id",
+        "lifecycleState",
+        "timeCreated",
+        "freeformTags",
+        "definedTags",
+        "kmsKeyId",
+        "sourceDetails",
+        "isCloneParent",
+        "isHydrated",
+        "lifecycleDetails"
+    })
+    public FileSystem(
+            String availabilityDomain,
+            Long meteredBytes,
+            String compartmentId,
+            String displayName,
+            String id,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String kmsKeyId,
+            SourceDetails sourceDetails,
+            Boolean isCloneParent,
+            Boolean isHydrated,
+            String lifecycleDetails) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.meteredBytes = meteredBytes;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.kmsKeyId = kmsKeyId;
+        this.sourceDetails = sourceDetails;
+        this.isCloneParent = isCloneParent;
+        this.isHydrated = isHydrated;
+        this.lifecycleDetails = lifecycleDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -217,6 +262,10 @@ public class FileSystem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain the file system is in. May be unset
      * as a blank or NULL value.
@@ -225,7 +274,11 @@ public class FileSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The number of bytes consumed by the file system, including
@@ -236,13 +289,21 @@ public class FileSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("meteredBytes")
-    Long meteredBytes;
+    private final Long meteredBytes;
+
+    public Long getMeteredBytes() {
+        return meteredBytes;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
@@ -252,17 +313,25 @@ public class FileSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The current state of the file system.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -274,6 +343,9 @@ public class FileSystem {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -311,7 +383,11 @@ public class FileSystem {
      * The current state of the file system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the file system was created, expressed in
@@ -321,7 +397,11 @@ public class FileSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
@@ -331,7 +411,11 @@ public class FileSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -340,17 +424,29 @@ public class FileSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key which is the master encryption key for the file system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
-    SourceDetails sourceDetails;
+    private final SourceDetails sourceDetails;
+
+    public SourceDetails getSourceDetails() {
+        return sourceDetails;
+    }
 
     /**
      * Specifies whether the file system has been cloned.
@@ -358,7 +454,11 @@ public class FileSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
-    Boolean isCloneParent;
+    private final Boolean isCloneParent;
+
+    public Boolean getIsCloneParent() {
+        return isCloneParent;
+    }
 
     /**
      * Specifies whether the data has finished copying from the source to the clone.
@@ -368,14 +468,114 @@ public class FileSystem {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
-    Boolean isHydrated;
+    private final Boolean isHydrated;
+
+    public Boolean getIsHydrated() {
+        return isHydrated;
+    }
 
     /**
      * Additional information about the current 'lifecycleState'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FileSystem(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", meteredBytes=").append(String.valueOf(this.meteredBytes));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
+        sb.append(", isCloneParent=").append(String.valueOf(this.isCloneParent));
+        sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FileSystem)) {
+            return false;
+        }
+
+        FileSystem other = (FileSystem) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.meteredBytes, other.meteredBytes)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
+                && java.util.Objects.equals(this.isCloneParent, other.isCloneParent)
+                && java.util.Objects.equals(this.isHydrated, other.isHydrated)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.meteredBytes == null ? 43 : this.meteredBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCloneParent == null ? 43 : this.isCloneParent.hashCode());
+        result = (result * PRIME) + (this.isHydrated == null ? 43 : this.isHydrated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

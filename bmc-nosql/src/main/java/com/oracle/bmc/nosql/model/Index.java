@@ -15,14 +15,38 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Index.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Index {
+public final class Index {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "compartmentId",
+        "tableName",
+        "tableId",
+        "keys",
+        "lifecycleState",
+        "lifecycleDetails"
+    })
+    public Index(
+            String name,
+            String compartmentId,
+            String tableName,
+            String tableId,
+            java.util.List<IndexKey> keys,
+            LifecycleState lifecycleState,
+            String lifecycleDetails) {
+        super();
+        this.name = name;
+        this.compartmentId = compartmentId;
+        this.tableName = tableName;
+        this.tableId = tableId;
+        this.keys = keys;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -127,39 +151,63 @@ public class Index {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Index name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Compartment Identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of the table to which this index belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
-    String tableName;
+    private final String tableName;
+
+    public String getTableName() {
+        return tableName;
+    }
 
     /**
      * the OCID of the table to which this index belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableId")
-    String tableId;
+    private final String tableId;
+
+    public String getTableId() {
+        return tableId;
+    }
 
     /**
      * A set of keys for a secondary index.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keys")
-    java.util.List<IndexKey> keys;
+    private final java.util.List<IndexKey> keys;
+
+    public java.util.List<IndexKey> getKeys() {
+        return keys;
+    }
+
     /**
      * The state of an index.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -173,6 +221,9 @@ public class Index {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -210,15 +261,86 @@ public class Index {
      * The state of an index.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current state in more detail.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Index(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", tableName=").append(String.valueOf(this.tableName));
+        sb.append(", tableId=").append(String.valueOf(this.tableId));
+        sb.append(", keys=").append(String.valueOf(this.keys));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Index)) {
+            return false;
+        }
+
+        Index other = (Index) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.tableName, other.tableName)
+                && java.util.Objects.equals(this.tableId, other.tableId)
+                && java.util.Objects.equals(this.keys, other.keys)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
+        result = (result * PRIME) + (this.tableId == null ? 43 : this.tableId.hashCode());
+        result = (result * PRIME) + (this.keys == null ? 43 : this.keys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

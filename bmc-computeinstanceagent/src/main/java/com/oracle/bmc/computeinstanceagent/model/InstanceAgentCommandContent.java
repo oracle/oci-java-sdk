@@ -15,16 +15,21 @@ package com.oracle.bmc.computeinstanceagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceAgentCommandContent.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceAgentCommandContent {
+public final class InstanceAgentCommandContent {
+    @Deprecated
+    @java.beans.ConstructorProperties({"source", "output"})
+    public InstanceAgentCommandContent(
+            InstanceAgentCommandSourceDetails source, InstanceAgentCommandOutputDetails output) {
+        super();
+        this.source = source;
+        this.output = output;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private InstanceAgentCommandSourceDetails source;
@@ -70,18 +75,72 @@ public class InstanceAgentCommandContent {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The source of the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    InstanceAgentCommandSourceDetails source;
+    private final InstanceAgentCommandSourceDetails source;
+
+    public InstanceAgentCommandSourceDetails getSource() {
+        return source;
+    }
 
     /**
      * The output destination for the command.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("output")
-    InstanceAgentCommandOutputDetails output;
+    private final InstanceAgentCommandOutputDetails output;
+
+    public InstanceAgentCommandOutputDetails getOutput() {
+        return output;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceAgentCommandContent(");
+        sb.append("source=").append(String.valueOf(this.source));
+        sb.append(", output=").append(String.valueOf(this.output));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceAgentCommandContent)) {
+            return false;
+        }
+
+        InstanceAgentCommandContent other = (InstanceAgentCommandContent) o;
+        return java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.output, other.output)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.output == null ? 43 : this.output.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

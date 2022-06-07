@@ -8,7 +8,6 @@ package com.oracle.bmc.objectstorage.model;
  * Storage tiers supported by Object Storage
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.extern.slf4j.Slf4j
 public enum StorageTier {
     Standard("Standard"),
     InfrequentAccess("InfrequentAccess"),
@@ -19,6 +18,9 @@ public enum StorageTier {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(StorageTier.class);
 
     private final String value;
     private static java.util.Map<String, StorageTier> map;

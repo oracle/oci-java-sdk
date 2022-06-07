@@ -15,16 +15,34 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RepositoryMirrorRecord.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RepositoryMirrorRecord {
+public final class RepositoryMirrorRecord {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "mirrorStatus",
+        "workRequestId",
+        "timeEnqueued",
+        "timeStarted",
+        "timeEnded"
+    })
+    public RepositoryMirrorRecord(
+            MirrorStatus mirrorStatus,
+            String workRequestId,
+            java.util.Date timeEnqueued,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded) {
+        super();
+        this.mirrorStatus = mirrorStatus;
+        this.workRequestId = workRequestId;
+        this.timeEnqueued = timeEnqueued;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
         private MirrorStatus mirrorStatus;
@@ -103,6 +121,10 @@ public class RepositoryMirrorRecord {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Mirror status of current mirror entry.
      * QUEUED - Mirroring Queued
@@ -111,7 +133,6 @@ public class RepositoryMirrorRecord {
      * FAILED - Mirroring Failed
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MirrorStatus {
         None("NONE"),
         Queued("QUEUED"),
@@ -124,6 +145,9 @@ public class RepositoryMirrorRecord {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MirrorStatus.class);
 
         private final String value;
         private static java.util.Map<String, MirrorStatus> map;
@@ -166,32 +190,105 @@ public class RepositoryMirrorRecord {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
-    MirrorStatus mirrorStatus;
+    private final MirrorStatus mirrorStatus;
+
+    public MirrorStatus getMirrorStatus() {
+        return mirrorStatus;
+    }
 
     /**
      * Workrequest ID to track current mirror operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
-    String workRequestId;
+    private final String workRequestId;
+
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
 
     /**
      * The time to enqueue a mirror operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnqueued")
-    java.util.Date timeEnqueued;
+    private final java.util.Date timeEnqueued;
+
+    public java.util.Date getTimeEnqueued() {
+        return timeEnqueued;
+    }
 
     /**
      * The time to start a mirror operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The time taken to complete a mirror operation. Value is null if not completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RepositoryMirrorRecord(");
+        sb.append("mirrorStatus=").append(String.valueOf(this.mirrorStatus));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
+        sb.append(", timeEnqueued=").append(String.valueOf(this.timeEnqueued));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RepositoryMirrorRecord)) {
+            return false;
+        }
+
+        RepositoryMirrorRecord other = (RepositoryMirrorRecord) o;
+        return java.util.Objects.equals(this.mirrorStatus, other.mirrorStatus)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
+                && java.util.Objects.equals(this.timeEnqueued, other.timeEnqueued)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.mirrorStatus == null ? 43 : this.mirrorStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
+        result = (result * PRIME) + (this.timeEnqueued == null ? 43 : this.timeEnqueued.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

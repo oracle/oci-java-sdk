@@ -18,22 +18,17 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateStandardTaskDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "kind"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateStandardTaskDetails extends CreateScheduledTaskDetails {
+public final class CreateStandardTaskDetails extends CreateScheduledTaskDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -139,6 +134,10 @@ public class CreateStandardTaskDetails extends CreateScheduledTaskDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateStandardTaskDetails(
             String compartmentId,
@@ -158,7 +157,11 @@ public class CreateStandardTaskDetails extends CreateScheduledTaskDetails {
      * Task type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
-    TaskType taskType;
+    private final TaskType taskType;
+
+    public TaskType getTaskType() {
+        return taskType;
+    }
 
     /**
      * Schedules, typically a single schedule.
@@ -166,11 +169,66 @@ public class CreateStandardTaskDetails extends CreateScheduledTaskDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
-    java.util.List<Schedule> schedules;
+    private final java.util.List<Schedule> schedules;
+
+    public java.util.List<Schedule> getSchedules() {
+        return schedules;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateStandardTaskDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", taskType=").append(String.valueOf(this.taskType));
+        sb.append(", schedules=").append(String.valueOf(this.schedules));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateStandardTaskDetails)) {
+            return false;
+        }
+
+        CreateStandardTaskDetails other = (CreateStandardTaskDetails) o;
+        return java.util.Objects.equals(this.taskType, other.taskType)
+                && java.util.Objects.equals(this.schedules, other.schedules)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
+        result = (result * PRIME) + (this.schedules == null ? 43 : this.schedules.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -25,14 +25,83 @@ package com.oracle.bmc.monitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Alarm.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Alarm {
+public final class Alarm {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "compartmentId",
+        "metricCompartmentId",
+        "metricCompartmentIdInSubtree",
+        "namespace",
+        "resourceGroup",
+        "query",
+        "resolution",
+        "pendingDuration",
+        "severity",
+        "body",
+        "messageFormat",
+        "destinations",
+        "repeatNotificationDuration",
+        "suppression",
+        "isEnabled",
+        "freeformTags",
+        "definedTags",
+        "lifecycleState",
+        "timeCreated",
+        "timeUpdated"
+    })
+    public Alarm(
+            String id,
+            String displayName,
+            String compartmentId,
+            String metricCompartmentId,
+            Boolean metricCompartmentIdInSubtree,
+            String namespace,
+            String resourceGroup,
+            String query,
+            String resolution,
+            String pendingDuration,
+            Severity severity,
+            String body,
+            MessageFormat messageFormat,
+            java.util.List<String> destinations,
+            String repeatNotificationDuration,
+            Suppression suppression,
+            Boolean isEnabled,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.metricCompartmentId = metricCompartmentId;
+        this.metricCompartmentIdInSubtree = metricCompartmentIdInSubtree;
+        this.namespace = namespace;
+        this.resourceGroup = resourceGroup;
+        this.query = query;
+        this.resolution = resolution;
+        this.pendingDuration = pendingDuration;
+        this.severity = severity;
+        this.body = body;
+        this.messageFormat = messageFormat;
+        this.destinations = destinations;
+        this.repeatNotificationDuration = repeatNotificationDuration;
+        this.suppression = suppression;
+        this.isEnabled = isEnabled;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -303,12 +372,20 @@ public class Alarm {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
@@ -319,14 +396,22 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric
@@ -334,7 +419,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricCompartmentId")
-    String metricCompartmentId;
+    private final String metricCompartmentId;
+
+    public String getMetricCompartmentId() {
+        return metricCompartmentId;
+    }
 
     /**
      * When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can
@@ -347,7 +436,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricCompartmentIdInSubtree")
-    Boolean metricCompartmentIdInSubtree;
+    private final Boolean metricCompartmentIdInSubtree;
+
+    public Boolean getMetricCompartmentIdInSubtree() {
+        return metricCompartmentIdInSubtree;
+    }
 
     /**
      * The source service or application emitting the metric that is evaluated by the alarm.
@@ -356,7 +449,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
@@ -366,7 +463,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
-    String resourceGroup;
+    private final String resourceGroup;
+
+    public String getResourceGroup() {
+        return resourceGroup;
+    }
 
     /**
      * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
@@ -398,14 +499,22 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
-    String query;
+    private final String query;
+
+    public String getQuery() {
+        return query;
+    }
 
     /**
      * The time between calculated aggregation windows for the alarm. Supported value: {@code 1m}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolution")
-    String resolution;
+    private final String resolution;
+
+    public String getResolution() {
+        return resolution;
+    }
 
     /**
      * The period of time that the condition defined in the alarm must persist before the alarm state
@@ -426,14 +535,18 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pendingDuration")
-    String pendingDuration;
+    private final String pendingDuration;
+
+    public String getPendingDuration() {
+        return pendingDuration;
+    }
+
     /**
      * The perceived type of response required when the alarm is in the "FIRING" state.
      * <p>
      * Example: {@code CRITICAL}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Severity {
         Critical("CRITICAL"),
         Error("ERROR"),
@@ -445,6 +558,9 @@ public class Alarm {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Severity.class);
 
         private final String value;
         private static java.util.Map<String, Severity> map;
@@ -485,7 +601,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Severity severity;
+    private final Severity severity;
+
+    public Severity getSeverity() {
+        return severity;
+    }
 
     /**
      * The human-readable content of the notification delivered. Oracle recommends providing guidance
@@ -496,7 +616,12 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("body")
-    String body;
+    private final String body;
+
+    public String getBody() {
+        return body;
+    }
+
     /**
      * The format to use for notification messages sent from this alarm. The formats are:
      * * {@code RAW} - Raw JSON blob. Default value.
@@ -504,7 +629,6 @@ public class Alarm {
      * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MessageFormat {
         Raw("RAW"),
         PrettyJson("PRETTY_JSON"),
@@ -515,6 +639,9 @@ public class Alarm {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MessageFormat.class);
 
         private final String value;
         private static java.util.Map<String, MessageFormat> map;
@@ -556,7 +683,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
-    MessageFormat messageFormat;
+    private final MessageFormat messageFormat;
+
+    public MessageFormat getMessageFormat() {
+        return messageFormat;
+    }
 
     /**
      * A list of destinations to which the notifications for this alarm will be delivered.
@@ -566,7 +697,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
-    java.util.List<String> destinations;
+    private final java.util.List<String> destinations;
+
+    public java.util.List<String> getDestinations() {
+        return destinations;
+    }
 
     /**
      * The frequency at which notifications are re-submitted, if the alarm keeps firing without
@@ -579,14 +714,22 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repeatNotificationDuration")
-    String repeatNotificationDuration;
+    private final String repeatNotificationDuration;
+
+    public String getRepeatNotificationDuration() {
+        return repeatNotificationDuration;
+    }
 
     /**
      * The configuration details for suppressing an alarm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("suppression")
-    Suppression suppression;
+    private final Suppression suppression;
+
+    public Suppression getSuppression() {
+        return suppression;
+    }
 
     /**
      * Whether the alarm is enabled.
@@ -595,7 +738,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -603,7 +750,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -611,14 +762,18 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     /**
      * The current lifecycle state of the alarm.
      * <p>
      * Example: {@code DELETED}
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Deleting("DELETING"),
@@ -629,6 +784,9 @@ public class Alarm {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -669,7 +827,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the alarm was created. Format defined by RFC3339.
@@ -678,7 +840,11 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the alarm was last updated. Format defined by RFC3339.
@@ -687,8 +853,140 @@ public class Alarm {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Alarm(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", metricCompartmentId=").append(String.valueOf(this.metricCompartmentId));
+        sb.append(", metricCompartmentIdInSubtree=")
+                .append(String.valueOf(this.metricCompartmentIdInSubtree));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(", query=").append(String.valueOf(this.query));
+        sb.append(", resolution=").append(String.valueOf(this.resolution));
+        sb.append(", pendingDuration=").append(String.valueOf(this.pendingDuration));
+        sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", body=").append(String.valueOf(this.body));
+        sb.append(", messageFormat=").append(String.valueOf(this.messageFormat));
+        sb.append(", destinations=").append(String.valueOf(this.destinations));
+        sb.append(", repeatNotificationDuration=")
+                .append(String.valueOf(this.repeatNotificationDuration));
+        sb.append(", suppression=").append(String.valueOf(this.suppression));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Alarm)) {
+            return false;
+        }
+
+        Alarm other = (Alarm) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.metricCompartmentId, other.metricCompartmentId)
+                && java.util.Objects.equals(
+                        this.metricCompartmentIdInSubtree, other.metricCompartmentIdInSubtree)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.query, other.query)
+                && java.util.Objects.equals(this.resolution, other.resolution)
+                && java.util.Objects.equals(this.pendingDuration, other.pendingDuration)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.body, other.body)
+                && java.util.Objects.equals(this.messageFormat, other.messageFormat)
+                && java.util.Objects.equals(this.destinations, other.destinations)
+                && java.util.Objects.equals(
+                        this.repeatNotificationDuration, other.repeatNotificationDuration)
+                && java.util.Objects.equals(this.suppression, other.suppression)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metricCompartmentId == null
+                                ? 43
+                                : this.metricCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metricCompartmentIdInSubtree == null
+                                ? 43
+                                : this.metricCompartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
+        result = (result * PRIME) + (this.resolution == null ? 43 : this.resolution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pendingDuration == null ? 43 : this.pendingDuration.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.body == null ? 43 : this.body.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.messageFormat == null ? 43 : this.messageFormat.hashCode());
+        result = (result * PRIME) + (this.destinations == null ? 43 : this.destinations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repeatNotificationDuration == null
+                                ? 43
+                                : this.repeatNotificationDuration.hashCode());
+        result = (result * PRIME) + (this.suppression == null ? 43 : this.suppression.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

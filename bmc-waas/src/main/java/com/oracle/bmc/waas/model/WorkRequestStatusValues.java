@@ -8,7 +8,6 @@ package com.oracle.bmc.waas.model;
  * The possible status values for a work request.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.extern.slf4j.Slf4j
 public enum WorkRequestStatusValues {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
@@ -22,6 +21,9 @@ public enum WorkRequestStatusValues {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WorkRequestStatusValues.class);
 
     private final String value;
     private static java.util.Map<String, WorkRequestStatusValues> map;

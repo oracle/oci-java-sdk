@@ -15,16 +15,40 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TopProcessesUsageTrend.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TopProcessesUsageTrend {
+public final class TopProcessesUsageTrend {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "endTimestamp",
+        "cpuUsage",
+        "cpuUtilization",
+        "memoryUtilization",
+        "virtualMemoryInMBs",
+        "physicalMemoryInMBs",
+        "maxProcessCount"
+    })
+    public TopProcessesUsageTrend(
+            java.util.Date endTimestamp,
+            Double cpuUsage,
+            Double cpuUtilization,
+            Double memoryUtilization,
+            Double virtualMemoryInMBs,
+            Double physicalMemoryInMBs,
+            Integer maxProcessCount) {
+        super();
+        this.endTimestamp = endTimestamp;
+        this.cpuUsage = cpuUsage;
+        this.cpuUtilization = cpuUtilization;
+        this.memoryUtilization = memoryUtilization;
+        this.virtualMemoryInMBs = virtualMemoryInMBs;
+        this.physicalMemoryInMBs = physicalMemoryInMBs;
+        this.maxProcessCount = maxProcessCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
         private java.util.Date endTimestamp;
@@ -129,48 +153,151 @@ public class TopProcessesUsageTrend {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The timestamp in which the current sampling period ends in RFC 3339 format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
-    java.util.Date endTimestamp;
+    private final java.util.Date endTimestamp;
+
+    public java.util.Date getEndTimestamp() {
+        return endTimestamp;
+    }
 
     /**
      * Process CPU usage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUsage")
-    Double cpuUsage;
+    private final Double cpuUsage;
+
+    public Double getCpuUsage() {
+        return cpuUsage;
+    }
 
     /**
      * Process CPU utilization percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilization")
-    Double cpuUtilization;
+    private final Double cpuUtilization;
+
+    public Double getCpuUtilization() {
+        return cpuUtilization;
+    }
 
     /**
      * Process memory utilization percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUtilization")
-    Double memoryUtilization;
+    private final Double memoryUtilization;
+
+    public Double getMemoryUtilization() {
+        return memoryUtilization;
+    }
 
     /**
      * Process virtual memory in Megabytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualMemoryInMBs")
-    Double virtualMemoryInMBs;
+    private final Double virtualMemoryInMBs;
+
+    public Double getVirtualMemoryInMBs() {
+        return virtualMemoryInMBs;
+    }
 
     /**
      * Procress physical memory in Megabytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("physicalMemoryInMBs")
-    Double physicalMemoryInMBs;
+    private final Double physicalMemoryInMBs;
+
+    public Double getPhysicalMemoryInMBs() {
+        return physicalMemoryInMBs;
+    }
 
     /**
      * Maximum number of processes running at time of collection
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxProcessCount")
-    Integer maxProcessCount;
+    private final Integer maxProcessCount;
+
+    public Integer getMaxProcessCount() {
+        return maxProcessCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TopProcessesUsageTrend(");
+        sb.append("endTimestamp=").append(String.valueOf(this.endTimestamp));
+        sb.append(", cpuUsage=").append(String.valueOf(this.cpuUsage));
+        sb.append(", cpuUtilization=").append(String.valueOf(this.cpuUtilization));
+        sb.append(", memoryUtilization=").append(String.valueOf(this.memoryUtilization));
+        sb.append(", virtualMemoryInMBs=").append(String.valueOf(this.virtualMemoryInMBs));
+        sb.append(", physicalMemoryInMBs=").append(String.valueOf(this.physicalMemoryInMBs));
+        sb.append(", maxProcessCount=").append(String.valueOf(this.maxProcessCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TopProcessesUsageTrend)) {
+            return false;
+        }
+
+        TopProcessesUsageTrend other = (TopProcessesUsageTrend) o;
+        return java.util.Objects.equals(this.endTimestamp, other.endTimestamp)
+                && java.util.Objects.equals(this.cpuUsage, other.cpuUsage)
+                && java.util.Objects.equals(this.cpuUtilization, other.cpuUtilization)
+                && java.util.Objects.equals(this.memoryUtilization, other.memoryUtilization)
+                && java.util.Objects.equals(this.virtualMemoryInMBs, other.virtualMemoryInMBs)
+                && java.util.Objects.equals(this.physicalMemoryInMBs, other.physicalMemoryInMBs)
+                && java.util.Objects.equals(this.maxProcessCount, other.maxProcessCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.endTimestamp == null ? 43 : this.endTimestamp.hashCode());
+        result = (result * PRIME) + (this.cpuUsage == null ? 43 : this.cpuUsage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuUtilization == null ? 43 : this.cpuUtilization.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryUtilization == null ? 43 : this.memoryUtilization.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualMemoryInMBs == null
+                                ? 43
+                                : this.virtualMemoryInMBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.physicalMemoryInMBs == null
+                                ? 43
+                                : this.physicalMemoryInMBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxProcessCount == null ? 43 : this.maxProcessCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -17,14 +17,20 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateSshDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSshDetails {
+public final class CreateSshDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"host", "sshkey", "user", "sudoLocation"})
+    public CreateSshDetails(String host, String sshkey, String user, String sudoLocation) {
+        super();
+        this.host = host;
+        this.sshkey = sshkey;
+        this.user = user;
+        this.sudoLocation = sudoLocation;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
@@ -91,34 +97,102 @@ public class CreateSshDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the host the SSH key is valid for.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * Private SSH key string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshkey")
-    String sshkey;
+    private final String sshkey;
+
+    public String getSshkey() {
+        return sshkey;
+    }
 
     /**
      * SSH user
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("user")
-    String user;
+    private final String user;
+
+    public String getUser() {
+        return user;
+    }
 
     /**
      * Sudo location
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sudoLocation")
-    String sudoLocation;
+    private final String sudoLocation;
+
+    public String getSudoLocation() {
+        return sudoLocation;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSshDetails(");
+        sb.append("host=").append(String.valueOf(this.host));
+        sb.append(", sshkey=").append(String.valueOf(this.sshkey));
+        sb.append(", user=").append(String.valueOf(this.user));
+        sb.append(", sudoLocation=").append(String.valueOf(this.sudoLocation));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSshDetails)) {
+            return false;
+        }
+
+        CreateSshDetails other = (CreateSshDetails) o;
+        return java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.sshkey, other.sshkey)
+                && java.util.Objects.equals(this.user, other.user)
+                && java.util.Objects.equals(this.sudoLocation, other.sudoLocation)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result = (result * PRIME) + (this.sshkey == null ? 43 : this.sshkey.hashCode());
+        result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
+        result = (result * PRIME) + (this.sudoLocation == null ? 43 : this.sudoLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

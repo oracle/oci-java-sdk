@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * provider of the feed (Oracle/Customer)
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum FeedProviderType {
     Customer("CUSTOMER"),
     Oracle("ORACLE"),
@@ -18,6 +17,9 @@ public enum FeedProviderType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(FeedProviderType.class);
 
     private final String value;
     private static java.util.Map<String, FeedProviderType> map;

@@ -15,14 +15,56 @@ package com.oracle.bmc.streaming.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StreamPool.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StreamPool {
+public final class StreamPool {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "name",
+        "lifecycleState",
+        "lifecycleStateDetails",
+        "timeCreated",
+        "kafkaSettings",
+        "customEncryptionKey",
+        "isPrivate",
+        "endpointFqdn",
+        "privateEndpointSettings",
+        "freeformTags",
+        "definedTags"
+    })
+    public StreamPool(
+            String id,
+            String compartmentId,
+            String name,
+            LifecycleState lifecycleState,
+            String lifecycleStateDetails,
+            java.util.Date timeCreated,
+            KafkaSettings kafkaSettings,
+            CustomEncryptionKey customEncryptionKey,
+            Boolean isPrivate,
+            String endpointFqdn,
+            PrivateEndpointSettings privateEndpointSettings,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleStateDetails = lifecycleStateDetails;
+        this.timeCreated = timeCreated;
+        this.kafkaSettings = kafkaSettings;
+        this.customEncryptionKey = customEncryptionKey;
+        this.isPrivate = isPrivate;
+        this.endpointFqdn = endpointFqdn;
+        this.privateEndpointSettings = privateEndpointSettings;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -194,27 +236,43 @@ public class StreamPool {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the stream pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Compartment OCID that the pool belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of the stream pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The current state of the stream pool.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -228,6 +286,9 @@ public class StreamPool {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -265,13 +326,21 @@ public class StreamPool {
      * The current state of the stream pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Any additional details about the current state of the stream.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
-    String lifecycleStateDetails;
+    private final String lifecycleStateDetails;
+
+    public String getLifecycleStateDetails() {
+        return lifecycleStateDetails;
+    }
 
     /**
      * The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
@@ -280,13 +349,25 @@ public class StreamPool {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("kafkaSettings")
-    KafkaSettings kafkaSettings;
+    private final KafkaSettings kafkaSettings;
+
+    public KafkaSettings getKafkaSettings() {
+        return kafkaSettings;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKey")
-    CustomEncryptionKey customEncryptionKey;
+    private final CustomEncryptionKey customEncryptionKey;
+
+    public CustomEncryptionKey getCustomEncryptionKey() {
+        return customEncryptionKey;
+    }
 
     /**
      * True if the stream pool is private, false otherwise.
@@ -294,7 +375,11 @@ public class StreamPool {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
-    Boolean isPrivate;
+    private final Boolean isPrivate;
+
+    public Boolean getIsPrivate() {
+        return isPrivate;
+    }
 
     /**
      * The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a {@link Stream} object).
@@ -303,10 +388,18 @@ public class StreamPool {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointFqdn")
-    String endpointFqdn;
+    private final String endpointFqdn;
+
+    public String getEndpointFqdn() {
+        return endpointFqdn;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointSettings")
-    PrivateEndpointSettings privateEndpointSettings;
+    private final PrivateEndpointSettings privateEndpointSettings;
+
+    public PrivateEndpointSettings getPrivateEndpointSettings() {
+        return privateEndpointSettings;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.
@@ -316,7 +409,11 @@ public class StreamPool {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -325,8 +422,107 @@ public class StreamPool {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StreamPool(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", kafkaSettings=").append(String.valueOf(this.kafkaSettings));
+        sb.append(", customEncryptionKey=").append(String.valueOf(this.customEncryptionKey));
+        sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
+        sb.append(", endpointFqdn=").append(String.valueOf(this.endpointFqdn));
+        sb.append(", privateEndpointSettings=")
+                .append(String.valueOf(this.privateEndpointSettings));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StreamPool)) {
+            return false;
+        }
+
+        StreamPool other = (StreamPool) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.kafkaSettings, other.kafkaSettings)
+                && java.util.Objects.equals(this.customEncryptionKey, other.customEncryptionKey)
+                && java.util.Objects.equals(this.isPrivate, other.isPrivate)
+                && java.util.Objects.equals(this.endpointFqdn, other.endpointFqdn)
+                && java.util.Objects.equals(
+                        this.privateEndpointSettings, other.privateEndpointSettings)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStateDetails == null
+                                ? 43
+                                : this.lifecycleStateDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kafkaSettings == null ? 43 : this.kafkaSettings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customEncryptionKey == null
+                                ? 43
+                                : this.customEncryptionKey.hashCode());
+        result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
+        result = (result * PRIME) + (this.endpointFqdn == null ? 43 : this.endpointFqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointSettings == null
+                                ? 43
+                                : this.privateEndpointSettings.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

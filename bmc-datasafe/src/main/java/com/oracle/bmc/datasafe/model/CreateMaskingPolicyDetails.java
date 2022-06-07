@@ -33,16 +33,58 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateMaskingPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateMaskingPolicyDetails {
+public final class CreateMaskingPolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "compartmentId",
+        "description",
+        "isDropTempTablesEnabled",
+        "isRedoLoggingEnabled",
+        "isRefreshStatsEnabled",
+        "parallelDegree",
+        "recompile",
+        "preMaskingScript",
+        "postMaskingScript",
+        "columnSource",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateMaskingPolicyDetails(
+            String displayName,
+            String compartmentId,
+            String description,
+            Boolean isDropTempTablesEnabled,
+            Boolean isRedoLoggingEnabled,
+            Boolean isRefreshStatsEnabled,
+            String parallelDegree,
+            MaskingPolicy.Recompile recompile,
+            String preMaskingScript,
+            String postMaskingScript,
+            CreateColumnSourceDetails columnSource,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.description = description;
+        this.isDropTempTablesEnabled = isDropTempTablesEnabled;
+        this.isRedoLoggingEnabled = isRedoLoggingEnabled;
+        this.isRefreshStatsEnabled = isRefreshStatsEnabled;
+        this.parallelDegree = parallelDegree;
+        this.recompile = recompile;
+        this.preMaskingScript = preMaskingScript;
+        this.postMaskingScript = postMaskingScript;
+        this.columnSource = columnSource;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -214,23 +256,39 @@ public class CreateMaskingPolicyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The display name of the masking policy. The name does not have to be unique, and it's changeable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the compartment where the masking policy should be created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The description of the masking policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default.
@@ -241,7 +299,11 @@ public class CreateMaskingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDropTempTablesEnabled")
-    Boolean isDropTempTablesEnabled;
+    private final Boolean isDropTempTablesEnabled;
+
+    public Boolean getIsDropTempTablesEnabled() {
+        return isDropTempTablesEnabled;
+    }
 
     /**
      * Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to
@@ -251,7 +313,11 @@ public class CreateMaskingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRedoLoggingEnabled")
-    Boolean isRedoLoggingEnabled;
+    private final Boolean isRedoLoggingEnabled;
+
+    public Boolean getIsRedoLoggingEnabled() {
+        return isRedoLoggingEnabled;
+    }
 
     /**
      * Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics
@@ -259,7 +325,11 @@ public class CreateMaskingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRefreshStatsEnabled")
-    Boolean isRefreshStatsEnabled;
+    private final Boolean isRefreshStatsEnabled;
+
+    public Boolean getIsRefreshStatsEnabled() {
+        return isRefreshStatsEnabled;
+    }
 
     /**
      * Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
@@ -269,7 +339,11 @@ public class CreateMaskingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
-    String parallelDegree;
+    private final String parallelDegree;
+
+    public String getParallelDegree() {
+        return parallelDegree;
+    }
 
     /**
      * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
@@ -278,7 +352,11 @@ public class CreateMaskingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recompile")
-    MaskingPolicy.Recompile recompile;
+    private final MaskingPolicy.Recompile recompile;
+
+    public MaskingPolicy.Recompile getRecompile() {
+        return recompile;
+    }
 
     /**
      * A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before
@@ -287,7 +365,11 @@ public class CreateMaskingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preMaskingScript")
-    String preMaskingScript;
+    private final String preMaskingScript;
+
+    public String getPreMaskingScript() {
+        return preMaskingScript;
+    }
 
     /**
      * A post-masking script, which can contain SQL and PL/SQL statements. It's executed after
@@ -296,10 +378,18 @@ public class CreateMaskingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("postMaskingScript")
-    String postMaskingScript;
+    private final String postMaskingScript;
+
+    public String getPostMaskingScript() {
+        return postMaskingScript;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("columnSource")
-    CreateColumnSourceDetails columnSource;
+    private final CreateColumnSourceDetails columnSource;
+
+    public CreateColumnSourceDetails getColumnSource() {
+        return columnSource;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -308,7 +398,11 @@ public class CreateMaskingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -317,8 +411,109 @@ public class CreateMaskingPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateMaskingPolicyDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isDropTempTablesEnabled=")
+                .append(String.valueOf(this.isDropTempTablesEnabled));
+        sb.append(", isRedoLoggingEnabled=").append(String.valueOf(this.isRedoLoggingEnabled));
+        sb.append(", isRefreshStatsEnabled=").append(String.valueOf(this.isRefreshStatsEnabled));
+        sb.append(", parallelDegree=").append(String.valueOf(this.parallelDegree));
+        sb.append(", recompile=").append(String.valueOf(this.recompile));
+        sb.append(", preMaskingScript=").append(String.valueOf(this.preMaskingScript));
+        sb.append(", postMaskingScript=").append(String.valueOf(this.postMaskingScript));
+        sb.append(", columnSource=").append(String.valueOf(this.columnSource));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateMaskingPolicyDetails)) {
+            return false;
+        }
+
+        CreateMaskingPolicyDetails other = (CreateMaskingPolicyDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(
+                        this.isDropTempTablesEnabled, other.isDropTempTablesEnabled)
+                && java.util.Objects.equals(this.isRedoLoggingEnabled, other.isRedoLoggingEnabled)
+                && java.util.Objects.equals(this.isRefreshStatsEnabled, other.isRefreshStatsEnabled)
+                && java.util.Objects.equals(this.parallelDegree, other.parallelDegree)
+                && java.util.Objects.equals(this.recompile, other.recompile)
+                && java.util.Objects.equals(this.preMaskingScript, other.preMaskingScript)
+                && java.util.Objects.equals(this.postMaskingScript, other.postMaskingScript)
+                && java.util.Objects.equals(this.columnSource, other.columnSource)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDropTempTablesEnabled == null
+                                ? 43
+                                : this.isDropTempTablesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRedoLoggingEnabled == null
+                                ? 43
+                                : this.isRedoLoggingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRefreshStatsEnabled == null
+                                ? 43
+                                : this.isRefreshStatsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parallelDegree == null ? 43 : this.parallelDegree.hashCode());
+        result = (result * PRIME) + (this.recompile == null ? 43 : this.recompile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preMaskingScript == null ? 43 : this.preMaskingScript.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.postMaskingScript == null ? 43 : this.postMaskingScript.hashCode());
+        result = (result * PRIME) + (this.columnSource == null ? 43 : this.columnSource.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

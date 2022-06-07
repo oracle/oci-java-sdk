@@ -16,16 +16,46 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MaintenanceWindow.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MaintenanceWindow {
+public final class MaintenanceWindow {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "preference",
+        "patchingMode",
+        "isCustomActionTimeoutEnabled",
+        "customActionTimeoutInMins",
+        "months",
+        "weeksOfMonth",
+        "daysOfWeek",
+        "hoursOfDay",
+        "leadTimeInWeeks"
+    })
+    public MaintenanceWindow(
+            Preference preference,
+            PatchingMode patchingMode,
+            Boolean isCustomActionTimeoutEnabled,
+            Integer customActionTimeoutInMins,
+            java.util.List<Month> months,
+            java.util.List<Integer> weeksOfMonth,
+            java.util.List<DayOfWeek> daysOfWeek,
+            java.util.List<Integer> hoursOfDay,
+            Integer leadTimeInWeeks) {
+        super();
+        this.preference = preference;
+        this.patchingMode = patchingMode;
+        this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+        this.customActionTimeoutInMins = customActionTimeoutInMins;
+        this.months = months;
+        this.weeksOfMonth = weeksOfMonth;
+        this.daysOfWeek = daysOfWeek;
+        this.hoursOfDay = hoursOfDay;
+        this.leadTimeInWeeks = leadTimeInWeeks;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("preference")
         private Preference preference;
@@ -152,10 +182,13 @@ public class MaintenanceWindow {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The maintenance window scheduling preference.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Preference {
         NoPreference("NO_PREFERENCE"),
         CustomPreference("CUSTOM_PREFERENCE"),
@@ -165,6 +198,9 @@ public class MaintenanceWindow {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Preference.class);
 
         private final String value;
         private static java.util.Map<String, Preference> map;
@@ -202,14 +238,18 @@ public class MaintenanceWindow {
      * The maintenance window scheduling preference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preference")
-    Preference preference;
+    private final Preference preference;
+
+    public Preference getPreference() {
+        return preference;
+    }
+
     /**
      * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      * <p>
      *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PatchingMode {
         Rolling("ROLLING"),
         Nonrolling("NONROLLING"),
@@ -219,6 +259,9 @@ public class MaintenanceWindow {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchingMode.class);
 
         private final String value;
         private static java.util.Map<String, PatchingMode> map;
@@ -259,13 +302,21 @@ public class MaintenanceWindow {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
-    PatchingMode patchingMode;
+    private final PatchingMode patchingMode;
+
+    public PatchingMode getPatchingMode() {
+        return patchingMode;
+    }
 
     /**
      * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
-    Boolean isCustomActionTimeoutEnabled;
+    private final Boolean isCustomActionTimeoutEnabled;
+
+    public Boolean getIsCustomActionTimeoutEnabled() {
+        return isCustomActionTimeoutEnabled;
+    }
 
     /**
      * Determines the amount of time the system will wait before the start of each database server patching operation.
@@ -273,13 +324,21 @@ public class MaintenanceWindow {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
-    Integer customActionTimeoutInMins;
+    private final Integer customActionTimeoutInMins;
+
+    public Integer getCustomActionTimeoutInMins() {
+        return customActionTimeoutInMins;
+    }
 
     /**
      * Months during the year when maintenance should be performed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("months")
-    java.util.List<Month> months;
+    private final java.util.List<Month> months;
+
+    public java.util.List<Month> getMonths() {
+        return months;
+    }
 
     /**
      * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week.
@@ -288,28 +347,121 @@ public class MaintenanceWindow {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weeksOfMonth")
-    java.util.List<Integer> weeksOfMonth;
+    private final java.util.List<Integer> weeksOfMonth;
+
+    public java.util.List<Integer> getWeeksOfMonth() {
+        return weeksOfMonth;
+    }
 
     /**
      * Days during the week when maintenance should be performed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("daysOfWeek")
-    java.util.List<DayOfWeek> daysOfWeek;
+    private final java.util.List<DayOfWeek> daysOfWeek;
+
+    public java.util.List<DayOfWeek> getDaysOfWeek() {
+        return daysOfWeek;
+    }
 
     /**
      * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hoursOfDay")
-    java.util.List<Integer> hoursOfDay;
+    private final java.util.List<Integer> hoursOfDay;
+
+    public java.util.List<Integer> getHoursOfDay() {
+        return hoursOfDay;
+    }
 
     /**
      * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("leadTimeInWeeks")
-    Integer leadTimeInWeeks;
+    private final Integer leadTimeInWeeks;
+
+    public Integer getLeadTimeInWeeks() {
+        return leadTimeInWeeks;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MaintenanceWindow(");
+        sb.append("preference=").append(String.valueOf(this.preference));
+        sb.append(", patchingMode=").append(String.valueOf(this.patchingMode));
+        sb.append(", isCustomActionTimeoutEnabled=")
+                .append(String.valueOf(this.isCustomActionTimeoutEnabled));
+        sb.append(", customActionTimeoutInMins=")
+                .append(String.valueOf(this.customActionTimeoutInMins));
+        sb.append(", months=").append(String.valueOf(this.months));
+        sb.append(", weeksOfMonth=").append(String.valueOf(this.weeksOfMonth));
+        sb.append(", daysOfWeek=").append(String.valueOf(this.daysOfWeek));
+        sb.append(", hoursOfDay=").append(String.valueOf(this.hoursOfDay));
+        sb.append(", leadTimeInWeeks=").append(String.valueOf(this.leadTimeInWeeks));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MaintenanceWindow)) {
+            return false;
+        }
+
+        MaintenanceWindow other = (MaintenanceWindow) o;
+        return java.util.Objects.equals(this.preference, other.preference)
+                && java.util.Objects.equals(this.patchingMode, other.patchingMode)
+                && java.util.Objects.equals(
+                        this.isCustomActionTimeoutEnabled, other.isCustomActionTimeoutEnabled)
+                && java.util.Objects.equals(
+                        this.customActionTimeoutInMins, other.customActionTimeoutInMins)
+                && java.util.Objects.equals(this.months, other.months)
+                && java.util.Objects.equals(this.weeksOfMonth, other.weeksOfMonth)
+                && java.util.Objects.equals(this.daysOfWeek, other.daysOfWeek)
+                && java.util.Objects.equals(this.hoursOfDay, other.hoursOfDay)
+                && java.util.Objects.equals(this.leadTimeInWeeks, other.leadTimeInWeeks)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.preference == null ? 43 : this.preference.hashCode());
+        result = (result * PRIME) + (this.patchingMode == null ? 43 : this.patchingMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCustomActionTimeoutEnabled == null
+                                ? 43
+                                : this.isCustomActionTimeoutEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customActionTimeoutInMins == null
+                                ? 43
+                                : this.customActionTimeoutInMins.hashCode());
+        result = (result * PRIME) + (this.months == null ? 43 : this.months.hashCode());
+        result = (result * PRIME) + (this.weeksOfMonth == null ? 43 : this.weeksOfMonth.hashCode());
+        result = (result * PRIME) + (this.daysOfWeek == null ? 43 : this.daysOfWeek.hashCode());
+        result = (result * PRIME) + (this.hoursOfDay == null ? 43 : this.hoursOfDay.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.leadTimeInWeeks == null ? 43 : this.leadTimeInWeeks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

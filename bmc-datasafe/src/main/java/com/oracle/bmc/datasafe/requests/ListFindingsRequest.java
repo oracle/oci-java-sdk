@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListFindingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFindingsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +16,17 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String securityAssessmentId;
 
+    public String getSecurityAssessmentId() {
+        return securityAssessmentId;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A filter to return only findings of a particular risk level.
      */
@@ -73,16 +71,26 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid Severity: " + key);
         }
     };
+
+    public Severity getSeverity() {
+        return severity;
+    }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Default is false.
      * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
@@ -90,6 +98,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Boolean compartmentIdInSubtree;
 
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
      * Setting this to ACCESSIBLE returns only those compartments for which the
@@ -138,10 +149,18 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid AccessLevel: " + key);
         }
     };
+
+    public AccessLevel getAccessLevel() {
+        return accessLevel;
+    }
     /**
      * Each finding has a key. This key is same for the finding across targets
      */
     private String findingKey;
+
+    public String getFindingKey() {
+        return findingKey;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -149,6 +168,100 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String securityAssessmentId = null;
+
+        /**
+         * The OCID of the security assessment.
+         * @return this builder instance
+         */
+        public Builder securityAssessmentId(String securityAssessmentId) {
+            this.securityAssessmentId = securityAssessmentId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Severity severity = null;
+
+        /**
+         * A filter to return only findings of a particular risk level.
+         * @return this builder instance
+         */
+        public Builder severity(Severity severity) {
+            this.severity = severity;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        private AccessLevel accessLevel = null;
+
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         * @return this builder instance
+         */
+        public Builder accessLevel(AccessLevel accessLevel) {
+            this.accessLevel = accessLevel;
+            return this;
+        }
+
+        private String findingKey = null;
+
+        /**
+         * Each finding has a key. This key is same for the finding across targets
+         * @return this builder instance
+         */
+        public Builder findingKey(String findingKey) {
+            this.findingKey = findingKey;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -207,5 +320,108 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListFindingsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListFindingsRequest
+         */
+        public ListFindingsRequest buildWithoutInvocationCallback() {
+            ListFindingsRequest request = new ListFindingsRequest();
+            request.securityAssessmentId = securityAssessmentId;
+            request.opcRequestId = opcRequestId;
+            request.severity = severity;
+            request.limit = limit;
+            request.page = page;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
+            request.accessLevel = accessLevel;
+            request.findingKey = findingKey;
+            return request;
+            // new ListFindingsRequest(securityAssessmentId, opcRequestId, severity, limit, page, compartmentIdInSubtree, accessLevel, findingKey);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .securityAssessmentId(securityAssessmentId)
+                .opcRequestId(opcRequestId)
+                .severity(severity)
+                .limit(limit)
+                .page(page)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
+                .accessLevel(accessLevel)
+                .findingKey(findingKey);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",securityAssessmentId=").append(String.valueOf(this.securityAssessmentId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",severity=").append(String.valueOf(this.severity));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
+        sb.append(",findingKey=").append(String.valueOf(this.findingKey));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListFindingsRequest)) {
+            return false;
+        }
+
+        ListFindingsRequest other = (ListFindingsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.securityAssessmentId, other.securityAssessmentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.accessLevel, other.accessLevel)
+                && java.util.Objects.equals(this.findingKey, other.findingKey);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.securityAssessmentId == null
+                                ? 43
+                                : this.securityAssessmentId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
+        result = (result * PRIME) + (this.findingKey == null ? 43 : this.findingKey.hashCode());
+        return result;
     }
 }

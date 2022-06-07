@@ -16,12 +16,6 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -44,10 +38,15 @@ package com.oracle.bmc.core.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ImageCapabilitySchemaDescriptor {
+    @Deprecated
+    @java.beans.ConstructorProperties({"source"})
+    protected ImageCapabilitySchemaDescriptor(Source source) {
+        super();
+        this.source = source;
+    }
 
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Source {
         Global("GLOBAL"),
         Image("IMAGE"),
@@ -57,6 +56,8 @@ public class ImageCapabilitySchemaDescriptor {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Source.class);
 
         private final String value;
         private static java.util.Map<String, Source> map;
@@ -92,5 +93,39 @@ public class ImageCapabilitySchemaDescriptor {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    Source source;
+    private final Source source;
+
+    public Source getSource() {
+        return source;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImageCapabilitySchemaDescriptor(");
+        sb.append("source=").append(String.valueOf(this.source));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImageCapabilitySchemaDescriptor)) {
+            return false;
+        }
+
+        ImageCapabilitySchemaDescriptor other = (ImageCapabilitySchemaDescriptor) o;
+        return java.util.Objects.equals(this.source, other.source);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        return result;
+    }
 }

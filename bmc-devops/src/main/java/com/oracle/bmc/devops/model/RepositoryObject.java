@@ -15,14 +15,20 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RepositoryObject.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RepositoryObject {
+public final class RepositoryObject {
+    @Deprecated
+    @java.beans.ConstructorProperties({"type", "sizeInBytes", "sha", "isBinary"})
+    public RepositoryObject(Type type, Long sizeInBytes, String sha, Boolean isBinary) {
+        super();
+        this.type = type;
+        this.sizeInBytes = sizeInBytes;
+        this.sha = sha;
+        this.isBinary = isBinary;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -89,10 +95,13 @@ public class RepositoryObject {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of git object.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Blob("BLOB"),
         Tree("TREE"),
@@ -103,6 +112,8 @@ public class RepositoryObject {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -139,26 +150,90 @@ public class RepositoryObject {
      * The type of git object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * Size in bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-    Long sizeInBytes;
+    private final Long sizeInBytes;
+
+    public Long getSizeInBytes() {
+        return sizeInBytes;
+    }
 
     /**
      * SHA-1 hash of git object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sha")
-    String sha;
+    private final String sha;
+
+    public String getSha() {
+        return sha;
+    }
 
     /**
      * Flag to determine if the object contains binary file content or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBinary")
-    Boolean isBinary;
+    private final Boolean isBinary;
+
+    public Boolean getIsBinary() {
+        return isBinary;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RepositoryObject(");
+        sb.append("type=").append(String.valueOf(this.type));
+        sb.append(", sizeInBytes=").append(String.valueOf(this.sizeInBytes));
+        sb.append(", sha=").append(String.valueOf(this.sha));
+        sb.append(", isBinary=").append(String.valueOf(this.isBinary));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RepositoryObject)) {
+            return false;
+        }
+
+        RepositoryObject other = (RepositoryObject) o;
+        return java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.sizeInBytes, other.sizeInBytes)
+                && java.util.Objects.equals(this.sha, other.sha)
+                && java.util.Objects.equals(this.isBinary, other.isBinary)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.sizeInBytes == null ? 43 : this.sizeInBytes.hashCode());
+        result = (result * PRIME) + (this.sha == null ? 43 : this.sha.hashCode());
+        result = (result * PRIME) + (this.isBinary == null ? 43 : this.isBinary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

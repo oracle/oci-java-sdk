@@ -15,14 +15,41 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TransferDevice.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TransferDevice {
+public final class TransferDevice {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "serialNumber",
+        "iscsiIQN",
+        "label",
+        "lifecycleState",
+        "transferJobId",
+        "attachedTransferPackageLabel",
+        "creationTime",
+        "uploadStatusLogUri"
+    })
+    public TransferDevice(
+            String serialNumber,
+            String iscsiIQN,
+            String label,
+            LifecycleState lifecycleState,
+            String transferJobId,
+            String attachedTransferPackageLabel,
+            java.util.Date creationTime,
+            String uploadStatusLogUri) {
+        super();
+        this.serialNumber = serialNumber;
+        this.iscsiIQN = iscsiIQN;
+        this.label = label;
+        this.lifecycleState = lifecycleState;
+        this.transferJobId = transferJobId;
+        this.attachedTransferPackageLabel = attachedTransferPackageLabel;
+        this.creationTime = creationTime;
+        this.uploadStatusLogUri = uploadStatusLogUri;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
         private String serialNumber;
@@ -138,17 +165,33 @@ public class TransferDevice {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
-    String serialNumber;
+    private final String serialNumber;
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("iscsiIQN")
-    String iscsiIQN;
+    private final String iscsiIQN;
+
+    public String getIscsiIQN() {
+        return iscsiIQN;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("label")
-    String label;
+    private final String label;
+
+    public String getLabel() {
+        return label;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Preparing("PREPARING"),
         Ready("READY"),
@@ -166,6 +209,9 @@ public class TransferDevice {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -201,20 +247,114 @@ public class TransferDevice {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("transferJobId")
-    String transferJobId;
+    private final String transferJobId;
+
+    public String getTransferJobId() {
+        return transferJobId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("attachedTransferPackageLabel")
-    String attachedTransferPackageLabel;
+    private final String attachedTransferPackageLabel;
+
+    public String getAttachedTransferPackageLabel() {
+        return attachedTransferPackageLabel;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
-    java.util.Date creationTime;
+    private final java.util.Date creationTime;
+
+    public java.util.Date getCreationTime() {
+        return creationTime;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("uploadStatusLogUri")
-    String uploadStatusLogUri;
+    private final String uploadStatusLogUri;
+
+    public String getUploadStatusLogUri() {
+        return uploadStatusLogUri;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TransferDevice(");
+        sb.append("serialNumber=").append(String.valueOf(this.serialNumber));
+        sb.append(", iscsiIQN=").append(String.valueOf(this.iscsiIQN));
+        sb.append(", label=").append(String.valueOf(this.label));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", transferJobId=").append(String.valueOf(this.transferJobId));
+        sb.append(", attachedTransferPackageLabel=")
+                .append(String.valueOf(this.attachedTransferPackageLabel));
+        sb.append(", creationTime=").append(String.valueOf(this.creationTime));
+        sb.append(", uploadStatusLogUri=").append(String.valueOf(this.uploadStatusLogUri));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TransferDevice)) {
+            return false;
+        }
+
+        TransferDevice other = (TransferDevice) o;
+        return java.util.Objects.equals(this.serialNumber, other.serialNumber)
+                && java.util.Objects.equals(this.iscsiIQN, other.iscsiIQN)
+                && java.util.Objects.equals(this.label, other.label)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.transferJobId, other.transferJobId)
+                && java.util.Objects.equals(
+                        this.attachedTransferPackageLabel, other.attachedTransferPackageLabel)
+                && java.util.Objects.equals(this.creationTime, other.creationTime)
+                && java.util.Objects.equals(this.uploadStatusLogUri, other.uploadStatusLogUri)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.serialNumber == null ? 43 : this.serialNumber.hashCode());
+        result = (result * PRIME) + (this.iscsiIQN == null ? 43 : this.iscsiIQN.hashCode());
+        result = (result * PRIME) + (this.label == null ? 43 : this.label.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transferJobId == null ? 43 : this.transferJobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachedTransferPackageLabel == null
+                                ? 43
+                                : this.attachedTransferPackageLabel.hashCode());
+        result = (result * PRIME) + (this.creationTime == null ? 43 : this.creationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uploadStatusLogUri == null
+                                ? 43
+                                : this.uploadStatusLogUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

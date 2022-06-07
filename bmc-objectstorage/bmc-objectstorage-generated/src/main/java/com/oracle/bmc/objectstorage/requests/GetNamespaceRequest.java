@@ -9,14 +9,6 @@ import com.oracle.bmc.objectstorage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetNamespaceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetNamespaceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcClientRequestId;
 
+    public String getOpcClientRequestId() {
+        return opcClientRequestId;
+    }
     /**
      * This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) or the compartment
      * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
@@ -31,12 +26,40 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetNamespaceRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String opcClientRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcClientRequestId(String opcClientRequestId) {
+            this.opcClientRequestId = opcClientRequestId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) or the compartment
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -89,5 +112,73 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetNamespaceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetNamespaceRequest
+         */
+        public GetNamespaceRequest buildWithoutInvocationCallback() {
+            GetNamespaceRequest request = new GetNamespaceRequest();
+            request.opcClientRequestId = opcClientRequestId;
+            request.compartmentId = compartmentId;
+            return request;
+            // new GetNamespaceRequest(opcClientRequestId, compartmentId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().opcClientRequestId(opcClientRequestId).compartmentId(compartmentId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcClientRequestId=").append(String.valueOf(this.opcClientRequestId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetNamespaceRequest)) {
+            return false;
+        }
+
+        GetNamespaceRequest other = (GetNamespaceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.opcClientRequestId == null
+                                ? 43
+                                : this.opcClientRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        return result;
     }
 }

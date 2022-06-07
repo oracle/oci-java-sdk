@@ -15,16 +15,20 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceAgentPluginConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceAgentPluginConfigDetails {
+public final class InstanceAgentPluginConfigDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "desiredState"})
+    public InstanceAgentPluginConfigDetails(String name, DesiredState desiredState) {
+        super();
+        this.name = name;
+        this.desiredState = desiredState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -70,6 +74,10 @@ public class InstanceAgentPluginConfigDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The plugin name. To get a list of available plugins, use the
      * {@link #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest) listInstanceagentAvailablePlugins}
@@ -78,7 +86,12 @@ public class InstanceAgentPluginConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * Whether the plugin should be enabled or disabled.
      * <p>
@@ -86,7 +99,6 @@ public class InstanceAgentPluginConfigDetails {
      * {@code isManagementDisabled} attributes must also be set to false.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DesiredState {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
@@ -96,6 +108,9 @@ public class InstanceAgentPluginConfigDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DesiredState.class);
 
         private final String value;
         private static java.util.Map<String, DesiredState> map;
@@ -137,8 +152,54 @@ public class InstanceAgentPluginConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("desiredState")
-    DesiredState desiredState;
+    private final DesiredState desiredState;
+
+    public DesiredState getDesiredState() {
+        return desiredState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceAgentPluginConfigDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", desiredState=").append(String.valueOf(this.desiredState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceAgentPluginConfigDetails)) {
+            return false;
+        }
+
+        InstanceAgentPluginConfigDetails other = (InstanceAgentPluginConfigDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.desiredState, other.desiredState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.desiredState == null ? 43 : this.desiredState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,22 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OperationsInsightsConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OperationsInsightsConfig {
+public final class OperationsInsightsConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"operationsInsightsStatus", "operationsInsightsConnectorId"})
+    public OperationsInsightsConfig(
+            OperationsInsightsStatus operationsInsightsStatus,
+            String operationsInsightsConnectorId) {
+        super();
+        this.operationsInsightsStatus = operationsInsightsStatus;
+        this.operationsInsightsConnectorId = operationsInsightsConnectorId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
         private OperationsInsightsStatus operationsInsightsStatus;
@@ -73,10 +79,13 @@ public class OperationsInsightsConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The status of Operations Insights
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OperationsInsightsStatus {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
@@ -90,6 +99,9 @@ public class OperationsInsightsConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OperationsInsightsStatus.class);
 
         private final String value;
         private static java.util.Map<String, OperationsInsightsStatus> map;
@@ -127,7 +139,11 @@ public class OperationsInsightsConfig {
      * The status of Operations Insights
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
-    OperationsInsightsStatus operationsInsightsStatus;
+    private final OperationsInsightsStatus operationsInsightsStatus;
+
+    public OperationsInsightsStatus getOperationsInsightsStatus() {
+        return operationsInsightsStatus;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
@@ -135,8 +151,66 @@ public class OperationsInsightsConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConnectorId")
-    String operationsInsightsConnectorId;
+    private final String operationsInsightsConnectorId;
+
+    public String getOperationsInsightsConnectorId() {
+        return operationsInsightsConnectorId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OperationsInsightsConfig(");
+        sb.append("operationsInsightsStatus=")
+                .append(String.valueOf(this.operationsInsightsStatus));
+        sb.append(", operationsInsightsConnectorId=")
+                .append(String.valueOf(this.operationsInsightsConnectorId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OperationsInsightsConfig)) {
+            return false;
+        }
+
+        OperationsInsightsConfig other = (OperationsInsightsConfig) o;
+        return java.util.Objects.equals(
+                        this.operationsInsightsStatus, other.operationsInsightsStatus)
+                && java.util.Objects.equals(
+                        this.operationsInsightsConnectorId, other.operationsInsightsConnectorId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.operationsInsightsStatus == null
+                                ? 43
+                                : this.operationsInsightsStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationsInsightsConnectorId == null
+                                ? 43
+                                : this.operationsInsightsConnectorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

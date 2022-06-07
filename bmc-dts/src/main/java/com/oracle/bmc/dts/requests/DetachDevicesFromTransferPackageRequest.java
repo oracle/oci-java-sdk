@@ -9,14 +9,6 @@ import com.oracle.bmc.dts.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DetachDevicesFromTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DetachDevicesFromTransferPackageRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DetachDevicesFromTransferPackageRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dts.model.DetachDevicesDetails> {
 
@@ -25,15 +17,25 @@ public class DetachDevicesFromTransferPackageRequest
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * Label of the Transfer Package
      */
     private String transferPackageLabel;
 
+    public String getTransferPackageLabel() {
+        return transferPackageLabel;
+    }
     /**
      * Labels of Transfer Devices to detach
      */
     private com.oracle.bmc.dts.model.DetachDevicesDetails detachDevicesDetails;
+
+    public com.oracle.bmc.dts.model.DetachDevicesDetails getDetachDevicesDetails() {
+        return detachDevicesDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -52,6 +54,40 @@ public class DetachDevicesFromTransferPackageRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String id = null;
+
+        /**
+         * ID of the Transfer Job
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private String transferPackageLabel = null;
+
+        /**
+         * Label of the Transfer Package
+         * @return this builder instance
+         */
+        public Builder transferPackageLabel(String transferPackageLabel) {
+            this.transferPackageLabel = transferPackageLabel;
+            return this;
+        }
+
+        private com.oracle.bmc.dts.model.DetachDevicesDetails detachDevicesDetails = null;
+
+        /**
+         * Labels of Transfer Devices to detach
+         * @return this builder instance
+         */
+        public Builder detachDevicesDetails(
+                com.oracle.bmc.dts.model.DetachDevicesDetails detachDevicesDetails) {
+            this.detachDevicesDetails = detachDevicesDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -116,5 +152,83 @@ public class DetachDevicesFromTransferPackageRequest
             detachDevicesDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of DetachDevicesFromTransferPackageRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DetachDevicesFromTransferPackageRequest
+         */
+        public DetachDevicesFromTransferPackageRequest buildWithoutInvocationCallback() {
+            DetachDevicesFromTransferPackageRequest request =
+                    new DetachDevicesFromTransferPackageRequest();
+            request.id = id;
+            request.transferPackageLabel = transferPackageLabel;
+            request.detachDevicesDetails = detachDevicesDetails;
+            return request;
+            // new DetachDevicesFromTransferPackageRequest(id, transferPackageLabel, detachDevicesDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .id(id)
+                .transferPackageLabel(transferPackageLabel)
+                .detachDevicesDetails(detachDevicesDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",transferPackageLabel=").append(String.valueOf(this.transferPackageLabel));
+        sb.append(",detachDevicesDetails=").append(String.valueOf(this.detachDevicesDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DetachDevicesFromTransferPackageRequest)) {
+            return false;
+        }
+
+        DetachDevicesFromTransferPackageRequest other = (DetachDevicesFromTransferPackageRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.transferPackageLabel, other.transferPackageLabel)
+                && java.util.Objects.equals(this.detachDevicesDetails, other.detachDevicesDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transferPackageLabel == null
+                                ? 43
+                                : this.transferPackageLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detachDevicesDetails == null
+                                ? 43
+                                : this.detachDevicesDetails.hashCode());
+        return result;
     }
 }

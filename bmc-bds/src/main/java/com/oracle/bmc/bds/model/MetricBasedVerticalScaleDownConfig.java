@@ -15,16 +15,34 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MetricBasedVerticalScaleDownConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MetricBasedVerticalScaleDownConfig {
+public final class MetricBasedVerticalScaleDownConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "metric",
+        "minOcpusPerNode",
+        "minMemoryPerNode",
+        "ocpuStepSize",
+        "memoryStepSize"
+    })
+    public MetricBasedVerticalScaleDownConfig(
+            AutoScalePolicyMetricRule metric,
+            Integer minOcpusPerNode,
+            Integer minMemoryPerNode,
+            Integer ocpuStepSize,
+            Integer memoryStepSize) {
+        super();
+        this.metric = metric;
+        this.minOcpusPerNode = minOcpusPerNode;
+        this.minMemoryPerNode = minMemoryPerNode;
+        this.ocpuStepSize = ocpuStepSize;
+        this.memoryStepSize = memoryStepSize;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("metric")
         private AutoScalePolicyMetricRule metric;
@@ -107,33 +125,114 @@ public class MetricBasedVerticalScaleDownConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("metric")
-    AutoScalePolicyMetricRule metric;
+    private final AutoScalePolicyMetricRule metric;
+
+    public AutoScalePolicyMetricRule getMetric() {
+        return metric;
+    }
 
     /**
      * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minOcpusPerNode")
-    Integer minOcpusPerNode;
+    private final Integer minOcpusPerNode;
+
+    public Integer getMinOcpusPerNode() {
+        return minOcpusPerNode;
+    }
 
     /**
      * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minMemoryPerNode")
-    Integer minMemoryPerNode;
+    private final Integer minMemoryPerNode;
+
+    public Integer getMinMemoryPerNode() {
+        return minMemoryPerNode;
+    }
 
     /**
      * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuStepSize")
-    Integer ocpuStepSize;
+    private final Integer ocpuStepSize;
+
+    public Integer getOcpuStepSize() {
+        return ocpuStepSize;
+    }
 
     /**
      * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryStepSize")
-    Integer memoryStepSize;
+    private final Integer memoryStepSize;
+
+    public Integer getMemoryStepSize() {
+        return memoryStepSize;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MetricBasedVerticalScaleDownConfig(");
+        sb.append("metric=").append(String.valueOf(this.metric));
+        sb.append(", minOcpusPerNode=").append(String.valueOf(this.minOcpusPerNode));
+        sb.append(", minMemoryPerNode=").append(String.valueOf(this.minMemoryPerNode));
+        sb.append(", ocpuStepSize=").append(String.valueOf(this.ocpuStepSize));
+        sb.append(", memoryStepSize=").append(String.valueOf(this.memoryStepSize));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MetricBasedVerticalScaleDownConfig)) {
+            return false;
+        }
+
+        MetricBasedVerticalScaleDownConfig other = (MetricBasedVerticalScaleDownConfig) o;
+        return java.util.Objects.equals(this.metric, other.metric)
+                && java.util.Objects.equals(this.minOcpusPerNode, other.minOcpusPerNode)
+                && java.util.Objects.equals(this.minMemoryPerNode, other.minMemoryPerNode)
+                && java.util.Objects.equals(this.ocpuStepSize, other.ocpuStepSize)
+                && java.util.Objects.equals(this.memoryStepSize, other.memoryStepSize)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.metric == null ? 43 : this.metric.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minOcpusPerNode == null ? 43 : this.minOcpusPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minMemoryPerNode == null ? 43 : this.minMemoryPerNode.hashCode());
+        result = (result * PRIME) + (this.ocpuStepSize == null ? 43 : this.ocpuStepSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryStepSize == null ? 43 : this.memoryStepSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

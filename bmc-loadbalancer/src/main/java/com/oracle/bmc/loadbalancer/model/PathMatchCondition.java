@@ -16,22 +16,17 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PathMatchCondition.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "attributeName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PathMatchCondition extends RuleCondition {
+public final class PathMatchCondition extends RuleCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
         private String attributeValue;
@@ -76,6 +71,10 @@ public class PathMatchCondition extends RuleCondition {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public PathMatchCondition(String attributeValue, Operator operator) {
         super();
@@ -90,7 +89,12 @@ public class PathMatchCondition extends RuleCondition {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
-    String attributeValue;
+    private final String attributeValue;
+
+    public String getAttributeValue() {
+        return attributeValue;
+    }
+
     /**
      * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
      * incoming URI.
@@ -107,7 +111,6 @@ public class PathMatchCondition extends RuleCondition {
      *    string.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Operator {
         ExactMatch("EXACT_MATCH"),
         ForceLongestPrefixMatch("FORCE_LONGEST_PREFIX_MATCH"),
@@ -119,6 +122,9 @@ public class PathMatchCondition extends RuleCondition {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Operator.class);
 
         private final String value;
         private static java.util.Map<String, Operator> map;
@@ -169,8 +175,58 @@ public class PathMatchCondition extends RuleCondition {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
-    Operator operator;
+    private final Operator operator;
+
+    public Operator getOperator() {
+        return operator;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PathMatchCondition(");
+        sb.append("super=").append(super.toString());
+        sb.append(", attributeValue=").append(String.valueOf(this.attributeValue));
+        sb.append(", operator=").append(String.valueOf(this.operator));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PathMatchCondition)) {
+            return false;
+        }
+
+        PathMatchCondition other = (PathMatchCondition) o;
+        return java.util.Objects.equals(this.attributeValue, other.attributeValue)
+                && java.util.Objects.equals(this.operator, other.operator)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.attributeValue == null ? 43 : this.attributeValue.hashCode());
+        result = (result * PRIME) + (this.operator == null ? 43 : this.operator.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

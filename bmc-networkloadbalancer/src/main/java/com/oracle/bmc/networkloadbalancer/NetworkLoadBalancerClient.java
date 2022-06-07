@@ -9,9 +9,9 @@ import com.oracle.bmc.networkloadbalancer.requests.*;
 import com.oracle.bmc.networkloadbalancer.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.extern.slf4j.Slf4j
 public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
     /**
      * Service instance for NetworkLoadBalancer.
@@ -26,13 +26,17 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(NetworkLoadBalancerAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final NetworkLoadBalancerWaiters waiters;
 
     private final NetworkLoadBalancerPaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -402,9 +406,13 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
          * @return the client
          */
         public NetworkLoadBalancerClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new NetworkLoadBalancerClient(
                     authenticationDetailsProvider,
                     configuration,

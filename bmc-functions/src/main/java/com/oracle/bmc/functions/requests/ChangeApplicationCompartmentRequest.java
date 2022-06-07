@@ -9,14 +9,6 @@ import com.oracle.bmc.functions.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ChangeApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeApplicationCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeApplicationCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails> {
@@ -27,12 +19,19 @@ public class ChangeApplicationCompartmentRequest
      */
     private String applicationId;
 
+    public String getApplicationId() {
+        return applicationId;
+    }
     /**
      * Properties to change the compartment of an application.
      */
     private com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails
             changeApplicationCompartmentDetails;
 
+    public com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails
+            getChangeApplicationCompartmentDetails() {
+        return changeApplicationCompartmentDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -41,12 +40,19 @@ public class ChangeApplicationCompartmentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,6 +71,59 @@ public class ChangeApplicationCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String applicationId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
+         *
+         * @return this builder instance
+         */
+        public Builder applicationId(String applicationId) {
+            this.applicationId = applicationId;
+            return this;
+        }
+
+        private com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails
+                changeApplicationCompartmentDetails = null;
+
+        /**
+         * Properties to change the compartment of an application.
+         * @return this builder instance
+         */
+        public Builder changeApplicationCompartmentDetails(
+                com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails
+                        changeApplicationCompartmentDetails) {
+            this.changeApplicationCompartmentDetails = changeApplicationCompartmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -131,5 +190,88 @@ public class ChangeApplicationCompartmentRequest
             changeApplicationCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeApplicationCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeApplicationCompartmentRequest
+         */
+        public ChangeApplicationCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeApplicationCompartmentRequest request = new ChangeApplicationCompartmentRequest();
+            request.applicationId = applicationId;
+            request.changeApplicationCompartmentDetails = changeApplicationCompartmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ChangeApplicationCompartmentRequest(applicationId, changeApplicationCompartmentDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .applicationId(applicationId)
+                .changeApplicationCompartmentDetails(changeApplicationCompartmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",applicationId=").append(String.valueOf(this.applicationId));
+        sb.append(",changeApplicationCompartmentDetails=")
+                .append(String.valueOf(this.changeApplicationCompartmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeApplicationCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeApplicationCompartmentRequest other = (ChangeApplicationCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.applicationId, other.applicationId)
+                && java.util.Objects.equals(
+                        this.changeApplicationCompartmentDetails,
+                        other.changeApplicationCompartmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.applicationId == null ? 43 : this.applicationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeApplicationCompartmentDetails == null
+                                ? 43
+                                : this.changeApplicationCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

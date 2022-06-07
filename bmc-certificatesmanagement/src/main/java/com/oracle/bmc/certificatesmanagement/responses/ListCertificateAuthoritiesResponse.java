@@ -7,10 +7,6 @@ package com.oracle.bmc.certificatesmanagement.responses;
 import com.oracle.bmc.certificatesmanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListCertificateAuthoritiesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -18,6 +14,10 @@ public class ListCertificateAuthoritiesResponse extends com.oracle.bmc.responses
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -28,11 +28,20 @@ public class ListCertificateAuthoritiesResponse extends com.oracle.bmc.responses
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned CertificateAuthorityCollection instance.
      */
     private com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityCollection
             certificateAuthorityCollection;
+
+    public com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityCollection
+            getCertificateAuthorityCollection() {
+        return certificateAuthorityCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -60,6 +69,30 @@ public class ListCertificateAuthoritiesResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityCollection
+                certificateAuthorityCollection;
+
+        public Builder certificateAuthorityCollection(
+                com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityCollection
+                        certificateAuthorityCollection) {
+            this.certificateAuthorityCollection = certificateAuthorityCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -77,5 +110,53 @@ public class ListCertificateAuthoritiesResponse extends com.oracle.bmc.responses
             return new ListCertificateAuthoritiesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, certificateAuthorityCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",certificateAuthorityCollection=")
+                .append(String.valueOf(certificateAuthorityCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListCertificateAuthoritiesResponse)) {
+            return false;
+        }
+
+        ListCertificateAuthoritiesResponse other = (ListCertificateAuthoritiesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.certificateAuthorityCollection, other.certificateAuthorityCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateAuthorityCollection == null
+                                ? 43
+                                : this.certificateAuthorityCollection.hashCode());
+        return result;
     }
 }

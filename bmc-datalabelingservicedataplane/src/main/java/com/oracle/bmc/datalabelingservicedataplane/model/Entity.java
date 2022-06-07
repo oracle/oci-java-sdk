@@ -16,12 +16,6 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -44,6 +38,39 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Entity {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected Entity() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Entity(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Entity)) {
+            return false;
+        }
+
+        Entity other = (Entity) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * The entity type described in the annotation.
@@ -52,7 +79,6 @@ public class Entity {
      * TEXTSELECTION - This allows the labeler to highlight text, by specifying an offset and a length, and apply labels to it.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EntityType {
         Generic("GENERIC"),
         Imageobjectselection("IMAGEOBJECTSELECTION"),
@@ -63,6 +89,9 @@ public class Entity {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EntityType.class);
 
         private final String value;
         private static java.util.Map<String, EntityType> map;

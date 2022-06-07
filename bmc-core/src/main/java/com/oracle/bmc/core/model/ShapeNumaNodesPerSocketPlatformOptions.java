@@ -16,16 +16,21 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ShapeNumaNodesPerSocketPlatformOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ShapeNumaNodesPerSocketPlatformOptions {
+public final class ShapeNumaNodesPerSocketPlatformOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"allowedValues", "defaultValue"})
+    public ShapeNumaNodesPerSocketPlatformOptions(
+            java.util.List<AllowedValues> allowedValues, String defaultValue) {
+        super();
+        this.allowedValues = allowedValues;
+        this.defaultValue = defaultValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<AllowedValues> allowedValues;
@@ -72,9 +77,12 @@ public class ShapeNumaNodesPerSocketPlatformOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AllowedValues {
         Nps0("NPS0"),
         Nps1("NPS1"),
@@ -86,6 +94,9 @@ public class ShapeNumaNodesPerSocketPlatformOptions {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AllowedValues.class);
 
         private final String value;
         private static java.util.Map<String, AllowedValues> map;
@@ -124,15 +135,67 @@ public class ShapeNumaNodesPerSocketPlatformOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
-    java.util.List<AllowedValues> allowedValues;
+    private final java.util.List<AllowedValues> allowedValues;
+
+    public java.util.List<AllowedValues> getAllowedValues() {
+        return allowedValues;
+    }
 
     /**
      * The default NUMA nodes per socket configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
-    String defaultValue;
+    private final String defaultValue;
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ShapeNumaNodesPerSocketPlatformOptions(");
+        sb.append("allowedValues=").append(String.valueOf(this.allowedValues));
+        sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ShapeNumaNodesPerSocketPlatformOptions)) {
+            return false;
+        }
+
+        ShapeNumaNodesPerSocketPlatformOptions other = (ShapeNumaNodesPerSocketPlatformOptions) o;
+        return java.util.Objects.equals(this.allowedValues, other.allowedValues)
+                && java.util.Objects.equals(this.defaultValue, other.defaultValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
+        result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

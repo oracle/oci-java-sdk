@@ -16,14 +16,18 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackendHealth.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackendHealth {
+public final class BackendHealth {
+    @Deprecated
+    @java.beans.ConstructorProperties({"status", "healthCheckResults"})
+    public BackendHealth(Status status, java.util.List<HealthCheckResult> healthCheckResults) {
+        super();
+        this.status = status;
+        this.healthCheckResults = healthCheckResults;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
@@ -69,6 +73,10 @@ public class BackendHealth {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The general health status of the specified backend server as reported by the primary and standby load balancers.
      * <p>
@@ -81,7 +89,6 @@ public class BackendHealth {
      *   **UNKNOWN:** One or both health checks returned {@code UNKNOWN}, or the system was unable to retrieve metrics at this time.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Ok("OK"),
         Warning("WARNING"),
@@ -93,6 +100,8 @@ public class BackendHealth {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -139,15 +148,69 @@ public class BackendHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * A list of the most recent health check results returned for the specified backend server.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
-    java.util.List<HealthCheckResult> healthCheckResults;
+    private final java.util.List<HealthCheckResult> healthCheckResults;
+
+    public java.util.List<HealthCheckResult> getHealthCheckResults() {
+        return healthCheckResults;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackendHealth(");
+        sb.append("status=").append(String.valueOf(this.status));
+        sb.append(", healthCheckResults=").append(String.valueOf(this.healthCheckResults));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackendHealth)) {
+            return false;
+        }
+
+        BackendHealth other = (BackendHealth) o;
+        return java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.healthCheckResults, other.healthCheckResults)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.healthCheckResults == null
+                                ? 43
+                                : this.healthCheckResults.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

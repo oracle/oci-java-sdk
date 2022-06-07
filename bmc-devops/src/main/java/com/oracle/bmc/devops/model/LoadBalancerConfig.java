@@ -18,16 +18,21 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LoadBalancerConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LoadBalancerConfig {
+public final class LoadBalancerConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"loadBalancerId", "listenerName", "backendPort"})
+    public LoadBalancerConfig(String loadBalancerId, String listenerName, Integer backendPort) {
+        super();
+        this.loadBalancerId = loadBalancerId;
+        this.listenerName = listenerName;
+        this.backendPort = backendPort;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
@@ -85,24 +90,87 @@ public class LoadBalancerConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
-    String loadBalancerId;
+    private final String loadBalancerId;
+
+    public String getLoadBalancerId() {
+        return loadBalancerId;
+    }
 
     /**
      * Name of the load balancer listener.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerName")
-    String listenerName;
+    private final String listenerName;
+
+    public String getListenerName() {
+        return listenerName;
+    }
 
     /**
      * Listen port for the backend server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendPort")
-    Integer backendPort;
+    private final Integer backendPort;
+
+    public Integer getBackendPort() {
+        return backendPort;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LoadBalancerConfig(");
+        sb.append("loadBalancerId=").append(String.valueOf(this.loadBalancerId));
+        sb.append(", listenerName=").append(String.valueOf(this.listenerName));
+        sb.append(", backendPort=").append(String.valueOf(this.backendPort));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LoadBalancerConfig)) {
+            return false;
+        }
+
+        LoadBalancerConfig other = (LoadBalancerConfig) o;
+        return java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
+                && java.util.Objects.equals(this.listenerName, other.listenerName)
+                && java.util.Objects.equals(this.backendPort, other.backendPort)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
+        result = (result * PRIME) + (this.listenerName == null ? 43 : this.listenerName.hashCode());
+        result = (result * PRIME) + (this.backendPort == null ? 43 : this.backendPort.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

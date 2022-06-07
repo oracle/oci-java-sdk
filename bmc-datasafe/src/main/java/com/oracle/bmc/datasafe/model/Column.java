@@ -15,14 +15,32 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Column.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Column {
+public final class Column {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "fieldName",
+        "dataType",
+        "isHidden",
+        "displayOrder"
+    })
+    public Column(
+            String displayName,
+            String fieldName,
+            String dataType,
+            Boolean isHidden,
+            Integer displayOrder) {
+        super();
+        this.displayName = displayName;
+        this.fieldName = fieldName;
+        this.dataType = dataType;
+        this.isHidden = isHidden;
+        this.displayOrder = displayOrder;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -100,36 +118,111 @@ public class Column {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the column displayed on UI.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Specifies the corresponding field name in the data source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
-    String fieldName;
+    private final String fieldName;
+
+    public String getFieldName() {
+        return fieldName;
+    }
 
     /**
      * Specifies the data type of the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    String dataType;
+    private final String dataType;
+
+    public String getDataType() {
+        return dataType;
+    }
 
     /**
      * Indicates if the column is hidden. Values can either be 'true' or 'false'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
-    Boolean isHidden;
+    private final Boolean isHidden;
+
+    public Boolean getIsHidden() {
+        return isHidden;
+    }
 
     /**
      * Specifies the display order of the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
-    Integer displayOrder;
+    private final Integer displayOrder;
+
+    public Integer getDisplayOrder() {
+        return displayOrder;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Column(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", fieldName=").append(String.valueOf(this.fieldName));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", isHidden=").append(String.valueOf(this.isHidden));
+        sb.append(", displayOrder=").append(String.valueOf(this.displayOrder));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Column)) {
+            return false;
+        }
+
+        Column other = (Column) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.fieldName, other.fieldName)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.isHidden, other.isHidden)
+                && java.util.Objects.equals(this.displayOrder, other.displayOrder)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
+        result = (result * PRIME) + (this.displayOrder == null ? 43 : this.displayOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

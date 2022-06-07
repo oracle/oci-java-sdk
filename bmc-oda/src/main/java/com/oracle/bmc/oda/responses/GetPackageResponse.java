@@ -7,10 +7,6 @@ package com.oracle.bmc.oda.responses;
 import com.oracle.bmc.oda.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned PackageItem instance.
      */
     private com.oracle.bmc.oda.model.PackageItem packageItem;
+
+    public com.oracle.bmc.oda.model.PackageItem getPackageItem() {
+        return packageItem;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "packageItem"})
     private GetPackageResponse(
@@ -42,6 +46,20 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.oda.model.PackageItem packageItem;
+
+        public Builder packageItem(com.oracle.bmc.oda.model.PackageItem packageItem) {
+            this.packageItem = packageItem;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +75,44 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
         public GetPackageResponse build() {
             return new GetPackageResponse(__httpStatusCode__, opcRequestId, packageItem);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",packageItem=").append(String.valueOf(packageItem));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetPackageResponse)) {
+            return false;
+        }
+
+        GetPackageResponse other = (GetPackageResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.packageItem, other.packageItem);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.packageItem == null ? 43 : this.packageItem.hashCode());
+        return result;
     }
 }

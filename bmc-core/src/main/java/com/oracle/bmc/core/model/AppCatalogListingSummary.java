@@ -15,16 +15,23 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AppCatalogListingSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AppCatalogListingSummary {
+public final class AppCatalogListingSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"listingId", "displayName", "summary", "publisherName"})
+    public AppCatalogListingSummary(
+            String listingId, String displayName, String summary, String publisherName) {
+        super();
+        this.listingId = listingId;
+        this.displayName = displayName;
+        this.summary = summary;
+        this.publisherName = publisherName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
@@ -92,11 +99,19 @@ public class AppCatalogListingSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * the region free ocid of the listing resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -104,20 +119,82 @@ public class AppCatalogListingSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The short summary for the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
-    String summary;
+    private final String summary;
+
+    public String getSummary() {
+        return summary;
+    }
 
     /**
      * The name of the publisher who published this listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
-    String publisherName;
+    private final String publisherName;
+
+    public String getPublisherName() {
+        return publisherName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AppCatalogListingSummary(");
+        sb.append("listingId=").append(String.valueOf(this.listingId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", summary=").append(String.valueOf(this.summary));
+        sb.append(", publisherName=").append(String.valueOf(this.publisherName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AppCatalogListingSummary)) {
+            return false;
+        }
+
+        AppCatalogListingSummary other = (AppCatalogListingSummary) o;
+        return java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.summary, other.summary)
+                && java.util.Objects.equals(this.publisherName, other.publisherName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publisherName == null ? 43 : this.publisherName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

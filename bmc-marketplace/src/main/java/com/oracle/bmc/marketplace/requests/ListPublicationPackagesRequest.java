@@ -9,14 +9,6 @@ import com.oracle.bmc.marketplace.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPublicationPackagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPublicationPackagesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListPublicationPackagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,17 +17,26 @@ public class ListPublicationPackagesRequest
      */
     private String publicationId;
 
+    public String getPublicationId() {
+        return publicationId;
+    }
     /**
      * The version of the package. Package versions are unique within a listing.
      */
     private String packageVersion;
 
+    public String getPackageVersion() {
+        return packageVersion;
+    }
     /**
      * A filter to return only packages that match the given package type exactly.
      *
      */
     private String packageType;
 
+    public String getPackageType() {
+        return packageType;
+    }
     /**
      * The field to use to sort listed results. You can only specify one field to sort by.
      * {@code TIMERELEASED} displays results in descending order by default.
@@ -81,6 +82,10 @@ public class ListPublicationPackagesRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either {@code ASC} or {@code DESC}.
      */
@@ -121,17 +126,27 @@ public class ListPublicationPackagesRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
      * please provide the request ID.
@@ -139,12 +154,111 @@ public class ListPublicationPackagesRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPublicationPackagesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String publicationId = null;
+
+        /**
+         * The unique identifier for the publication.
+         * @return this builder instance
+         */
+        public Builder publicationId(String publicationId) {
+            this.publicationId = publicationId;
+            return this;
+        }
+
+        private String packageVersion = null;
+
+        /**
+         * The version of the package. Package versions are unique within a listing.
+         * @return this builder instance
+         */
+        public Builder packageVersion(String packageVersion) {
+            this.packageVersion = packageVersion;
+            return this;
+        }
+
+        private String packageType = null;
+
+        /**
+         * A filter to return only packages that match the given package type exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder packageType(String packageType) {
+            this.packageType = packageType;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to use to sort listed results. You can only specify one field to sort by.
+         * {@code TIMERELEASED} displays results in descending order by default.
+         * You can change your preference by specifying a different sort order.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either {@code ASC} or {@code DESC}.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -203,5 +317,103 @@ public class ListPublicationPackagesRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListPublicationPackagesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListPublicationPackagesRequest
+         */
+        public ListPublicationPackagesRequest buildWithoutInvocationCallback() {
+            ListPublicationPackagesRequest request = new ListPublicationPackagesRequest();
+            request.publicationId = publicationId;
+            request.packageVersion = packageVersion;
+            request.packageType = packageType;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.limit = limit;
+            request.page = page;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListPublicationPackagesRequest(publicationId, packageVersion, packageType, sortBy, sortOrder, limit, page, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .publicationId(publicationId)
+                .packageVersion(packageVersion)
+                .packageType(packageType)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .limit(limit)
+                .page(page)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",publicationId=").append(String.valueOf(this.publicationId));
+        sb.append(",packageVersion=").append(String.valueOf(this.packageVersion));
+        sb.append(",packageType=").append(String.valueOf(this.packageType));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListPublicationPackagesRequest)) {
+            return false;
+        }
+
+        ListPublicationPackagesRequest other = (ListPublicationPackagesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.publicationId, other.publicationId)
+                && java.util.Objects.equals(this.packageVersion, other.packageVersion)
+                && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.publicationId == null ? 43 : this.publicationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageVersion == null ? 43 : this.packageVersion.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

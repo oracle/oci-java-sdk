@@ -15,16 +15,20 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ArchivingConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ArchivingConfiguration {
+public final class ArchivingConfiguration {
+    @Deprecated
+    @java.beans.ConstructorProperties({"activeStorageDuration", "archivalStorageDuration"})
+    public ArchivingConfiguration(String activeStorageDuration, String archivalStorageDuration) {
+        super();
+        this.activeStorageDuration = activeStorageDuration;
+        this.archivalStorageDuration = archivalStorageDuration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("activeStorageDuration")
         private String activeStorageDuration;
@@ -72,6 +76,10 @@ public class ArchivingConfiguration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This is the duration data in active storage before data is archived, as described in
      * https://en.wikipedia.org/wiki/ISO_8601#Durations.
@@ -79,7 +87,11 @@ public class ArchivingConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activeStorageDuration")
-    String activeStorageDuration;
+    private final String activeStorageDuration;
+
+    public String getActiveStorageDuration() {
+        return activeStorageDuration;
+    }
 
     /**
      * This is the duration before archived data is deleted from object storage, as described in
@@ -88,8 +100,64 @@ public class ArchivingConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archivalStorageDuration")
-    String archivalStorageDuration;
+    private final String archivalStorageDuration;
+
+    public String getArchivalStorageDuration() {
+        return archivalStorageDuration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ArchivingConfiguration(");
+        sb.append("activeStorageDuration=").append(String.valueOf(this.activeStorageDuration));
+        sb.append(", archivalStorageDuration=")
+                .append(String.valueOf(this.archivalStorageDuration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ArchivingConfiguration)) {
+            return false;
+        }
+
+        ArchivingConfiguration other = (ArchivingConfiguration) o;
+        return java.util.Objects.equals(this.activeStorageDuration, other.activeStorageDuration)
+                && java.util.Objects.equals(
+                        this.archivalStorageDuration, other.archivalStorageDuration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.activeStorageDuration == null
+                                ? 43
+                                : this.activeStorageDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.archivalStorageDuration == null
+                                ? 43
+                                : this.archivalStorageDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -17,16 +17,31 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CpeDeviceShapeDetail.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CpeDeviceShapeDetail {
+public final class CpeDeviceShapeDetail {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "cpeDeviceShapeId",
+        "cpeDeviceInfo",
+        "parameters",
+        "template"
+    })
+    public CpeDeviceShapeDetail(
+            String cpeDeviceShapeId,
+            CpeDeviceInfo cpeDeviceInfo,
+            java.util.List<CpeDeviceConfigQuestion> parameters,
+            String template) {
+        super();
+        this.cpeDeviceShapeId = cpeDeviceShapeId;
+        this.cpeDeviceInfo = cpeDeviceInfo;
+        this.parameters = parameters;
+        this.template = template;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
         private String cpeDeviceShapeId;
@@ -94,16 +109,28 @@ public class CpeDeviceShapeDetail {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
      * This value uniquely identifies the type of CPE device.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
-    String cpeDeviceShapeId;
+    private final String cpeDeviceShapeId;
+
+    public String getCpeDeviceShapeId() {
+        return cpeDeviceShapeId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceInfo")
-    CpeDeviceInfo cpeDeviceInfo;
+    private final CpeDeviceInfo cpeDeviceInfo;
+
+    public CpeDeviceInfo getCpeDeviceInfo() {
+        return cpeDeviceInfo;
+    }
 
     /**
      * For certain CPE devices types, the customer can provide answers to
@@ -115,7 +142,11 @@ public class CpeDeviceShapeDetail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.List<CpeDeviceConfigQuestion> parameters;
+    private final java.util.List<CpeDeviceConfigQuestion> parameters;
+
+    public java.util.List<CpeDeviceConfigQuestion> getParameters() {
+        return parameters;
+    }
 
     /**
      * A template of CPE device configuration information that will be merged with the customer's
@@ -127,8 +158,64 @@ public class CpeDeviceShapeDetail {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("template")
-    String template;
+    private final String template;
+
+    public String getTemplate() {
+        return template;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CpeDeviceShapeDetail(");
+        sb.append("cpeDeviceShapeId=").append(String.valueOf(this.cpeDeviceShapeId));
+        sb.append(", cpeDeviceInfo=").append(String.valueOf(this.cpeDeviceInfo));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", template=").append(String.valueOf(this.template));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CpeDeviceShapeDetail)) {
+            return false;
+        }
+
+        CpeDeviceShapeDetail other = (CpeDeviceShapeDetail) o;
+        return java.util.Objects.equals(this.cpeDeviceShapeId, other.cpeDeviceShapeId)
+                && java.util.Objects.equals(this.cpeDeviceInfo, other.cpeDeviceInfo)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.template, other.template)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.cpeDeviceShapeId == null ? 43 : this.cpeDeviceShapeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpeDeviceInfo == null ? 43 : this.cpeDeviceInfo.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.template == null ? 43 : this.template.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

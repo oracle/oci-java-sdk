@@ -17,16 +17,20 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RenameQueryParameterPolicyItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RenameQueryParameterPolicyItem {
+public final class RenameQueryParameterPolicyItem {
+    @Deprecated
+    @java.beans.ConstructorProperties({"from", "to"})
+    public RenameQueryParameterPolicyItem(String from, String to) {
+        super();
+        this.from = from;
+        this.to = to;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("from")
         private String from;
@@ -72,21 +76,75 @@ public class RenameQueryParameterPolicyItem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The original case-sensitive name of the query parameter.  This name must be unique across transformation
      * policies.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("from")
-    String from;
+    private final String from;
+
+    public String getFrom() {
+        return from;
+    }
 
     /**
      * The new name of the query parameter.  This name must be unique across transformation policies.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("to")
-    String to;
+    private final String to;
+
+    public String getTo() {
+        return to;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RenameQueryParameterPolicyItem(");
+        sb.append("from=").append(String.valueOf(this.from));
+        sb.append(", to=").append(String.valueOf(this.to));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RenameQueryParameterPolicyItem)) {
+            return false;
+        }
+
+        RenameQueryParameterPolicyItem other = (RenameQueryParameterPolicyItem) o;
+        return java.util.Objects.equals(this.from, other.from)
+                && java.util.Objects.equals(this.to, other.to)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.from == null ? 43 : this.from.hashCode());
+        result = (result * PRIME) + (this.to == null ? 43 : this.to.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

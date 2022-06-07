@@ -15,16 +15,55 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TunnelPhaseTwoDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TunnelPhaseTwoDetails {
+public final class TunnelPhaseTwoDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isCustomPhaseTwoConfig",
+        "lifetime",
+        "remainingLifetime",
+        "customAuthenticationAlgorithm",
+        "negotiatedAuthenticationAlgorithm",
+        "customEncryptionAlgorithm",
+        "negotiatedEncryptionAlgorithm",
+        "dhGroup",
+        "negotiatedDhGroup",
+        "isEspEstablished",
+        "isPfsEnabled",
+        "remainingLifetimeLastRetrieved"
+    })
+    public TunnelPhaseTwoDetails(
+            Boolean isCustomPhaseTwoConfig,
+            Long lifetime,
+            Long remainingLifetime,
+            String customAuthenticationAlgorithm,
+            String negotiatedAuthenticationAlgorithm,
+            String customEncryptionAlgorithm,
+            String negotiatedEncryptionAlgorithm,
+            String dhGroup,
+            String negotiatedDhGroup,
+            Boolean isEspEstablished,
+            Boolean isPfsEnabled,
+            java.util.Date remainingLifetimeLastRetrieved) {
+        super();
+        this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
+        this.lifetime = lifetime;
+        this.remainingLifetime = remainingLifetime;
+        this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
+        this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
+        this.customEncryptionAlgorithm = customEncryptionAlgorithm;
+        this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
+        this.dhGroup = dhGroup;
+        this.negotiatedDhGroup = negotiatedDhGroup;
+        this.isEspEstablished = isEspEstablished;
+        this.isPfsEnabled = isPfsEnabled;
+        this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
         private Boolean isCustomPhaseTwoConfig;
@@ -186,76 +225,124 @@ public class TunnelPhaseTwoDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates whether custom phase two configuration is enabled.
      * If this option is not enabled, default settings are proposed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
-    Boolean isCustomPhaseTwoConfig;
+    private final Boolean isCustomPhaseTwoConfig;
+
+    public Boolean getIsCustomPhaseTwoConfig() {
+        return isCustomPhaseTwoConfig;
+    }
 
     /**
      * The total configured lifetime of the IKE security association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
-    Long lifetime;
+    private final Long lifetime;
+
+    public Long getLifetime() {
+        return lifetime;
+    }
 
     /**
      * The remaining lifetime before the key is refreshed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remainingLifetime")
-    Long remainingLifetime;
+    private final Long remainingLifetime;
+
+    public Long getRemainingLifetime() {
+        return remainingLifetime;
+    }
 
     /**
      * Phase two authentication algorithm proposed during tunnel negotiation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customAuthenticationAlgorithm")
-    String customAuthenticationAlgorithm;
+    private final String customAuthenticationAlgorithm;
+
+    public String getCustomAuthenticationAlgorithm() {
+        return customAuthenticationAlgorithm;
+    }
 
     /**
      * The negotiated phase two authentication algorithm.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("negotiatedAuthenticationAlgorithm")
-    String negotiatedAuthenticationAlgorithm;
+    private final String negotiatedAuthenticationAlgorithm;
+
+    public String getNegotiatedAuthenticationAlgorithm() {
+        return negotiatedAuthenticationAlgorithm;
+    }
 
     /**
      * The proposed custom phase two encryption algorithm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionAlgorithm")
-    String customEncryptionAlgorithm;
+    private final String customEncryptionAlgorithm;
+
+    public String getCustomEncryptionAlgorithm() {
+        return customEncryptionAlgorithm;
+    }
 
     /**
      * The negotiated encryption algorithm.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("negotiatedEncryptionAlgorithm")
-    String negotiatedEncryptionAlgorithm;
+    private final String negotiatedEncryptionAlgorithm;
+
+    public String getNegotiatedEncryptionAlgorithm() {
+        return negotiatedEncryptionAlgorithm;
+    }
 
     /**
      * The proposed Diffie-Hellman group.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhGroup")
-    String dhGroup;
+    private final String dhGroup;
+
+    public String getDhGroup() {
+        return dhGroup;
+    }
 
     /**
      * The negotiated Diffie-Hellman group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("negotiatedDhGroup")
-    String negotiatedDhGroup;
+    private final String negotiatedDhGroup;
+
+    public String getNegotiatedDhGroup() {
+        return negotiatedDhGroup;
+    }
 
     /**
      * Indicates that ESP phase two is established.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEspEstablished")
-    Boolean isEspEstablished;
+    private final Boolean isEspEstablished;
+
+    public Boolean getIsEspEstablished() {
+        return isEspEstablished;
+    }
 
     /**
      * Indicates that PFS (perfect forward secrecy) is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPfsEnabled")
-    Boolean isPfsEnabled;
+    private final Boolean isPfsEnabled;
+
+    public Boolean getIsPfsEnabled() {
+        return isPfsEnabled;
+    }
 
     /**
      * The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -264,8 +351,125 @@ public class TunnelPhaseTwoDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remainingLifetimeLastRetrieved")
-    java.util.Date remainingLifetimeLastRetrieved;
+    private final java.util.Date remainingLifetimeLastRetrieved;
+
+    public java.util.Date getRemainingLifetimeLastRetrieved() {
+        return remainingLifetimeLastRetrieved;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TunnelPhaseTwoDetails(");
+        sb.append("isCustomPhaseTwoConfig=").append(String.valueOf(this.isCustomPhaseTwoConfig));
+        sb.append(", lifetime=").append(String.valueOf(this.lifetime));
+        sb.append(", remainingLifetime=").append(String.valueOf(this.remainingLifetime));
+        sb.append(", customAuthenticationAlgorithm=")
+                .append(String.valueOf(this.customAuthenticationAlgorithm));
+        sb.append(", negotiatedAuthenticationAlgorithm=")
+                .append(String.valueOf(this.negotiatedAuthenticationAlgorithm));
+        sb.append(", customEncryptionAlgorithm=")
+                .append(String.valueOf(this.customEncryptionAlgorithm));
+        sb.append(", negotiatedEncryptionAlgorithm=")
+                .append(String.valueOf(this.negotiatedEncryptionAlgorithm));
+        sb.append(", dhGroup=").append(String.valueOf(this.dhGroup));
+        sb.append(", negotiatedDhGroup=").append(String.valueOf(this.negotiatedDhGroup));
+        sb.append(", isEspEstablished=").append(String.valueOf(this.isEspEstablished));
+        sb.append(", isPfsEnabled=").append(String.valueOf(this.isPfsEnabled));
+        sb.append(", remainingLifetimeLastRetrieved=")
+                .append(String.valueOf(this.remainingLifetimeLastRetrieved));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TunnelPhaseTwoDetails)) {
+            return false;
+        }
+
+        TunnelPhaseTwoDetails other = (TunnelPhaseTwoDetails) o;
+        return java.util.Objects.equals(this.isCustomPhaseTwoConfig, other.isCustomPhaseTwoConfig)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
+                && java.util.Objects.equals(this.remainingLifetime, other.remainingLifetime)
+                && java.util.Objects.equals(
+                        this.customAuthenticationAlgorithm, other.customAuthenticationAlgorithm)
+                && java.util.Objects.equals(
+                        this.negotiatedAuthenticationAlgorithm,
+                        other.negotiatedAuthenticationAlgorithm)
+                && java.util.Objects.equals(
+                        this.customEncryptionAlgorithm, other.customEncryptionAlgorithm)
+                && java.util.Objects.equals(
+                        this.negotiatedEncryptionAlgorithm, other.negotiatedEncryptionAlgorithm)
+                && java.util.Objects.equals(this.dhGroup, other.dhGroup)
+                && java.util.Objects.equals(this.negotiatedDhGroup, other.negotiatedDhGroup)
+                && java.util.Objects.equals(this.isEspEstablished, other.isEspEstablished)
+                && java.util.Objects.equals(this.isPfsEnabled, other.isPfsEnabled)
+                && java.util.Objects.equals(
+                        this.remainingLifetimeLastRetrieved, other.remainingLifetimeLastRetrieved)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isCustomPhaseTwoConfig == null
+                                ? 43
+                                : this.isCustomPhaseTwoConfig.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remainingLifetime == null ? 43 : this.remainingLifetime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customAuthenticationAlgorithm == null
+                                ? 43
+                                : this.customAuthenticationAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.negotiatedAuthenticationAlgorithm == null
+                                ? 43
+                                : this.negotiatedAuthenticationAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customEncryptionAlgorithm == null
+                                ? 43
+                                : this.customEncryptionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.negotiatedEncryptionAlgorithm == null
+                                ? 43
+                                : this.negotiatedEncryptionAlgorithm.hashCode());
+        result = (result * PRIME) + (this.dhGroup == null ? 43 : this.dhGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.negotiatedDhGroup == null ? 43 : this.negotiatedDhGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEspEstablished == null ? 43 : this.isEspEstablished.hashCode());
+        result = (result * PRIME) + (this.isPfsEnabled == null ? 43 : this.isPfsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remainingLifetimeLastRetrieved == null
+                                ? 43
+                                : this.remainingLifetimeLastRetrieved.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

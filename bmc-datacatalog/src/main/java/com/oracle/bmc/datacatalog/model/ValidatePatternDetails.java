@@ -15,16 +15,31 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ValidatePatternDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ValidatePatternDetails {
+public final class ValidatePatternDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "expression",
+        "filePathPrefix",
+        "checkFilePathList",
+        "checkFailureLimit"
+    })
+    public ValidatePatternDetails(
+            String expression,
+            String filePathPrefix,
+            java.util.List<String> checkFilePathList,
+            Integer checkFailureLimit) {
+        super();
+        this.expression = expression;
+        this.filePathPrefix = filePathPrefix;
+        this.checkFilePathList = checkFilePathList;
+        this.checkFailureLimit = checkFailureLimit;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
@@ -93,6 +108,10 @@ public class ValidatePatternDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
      * Refer to the user documentation for details of the format and examples. A pattern cannot include both
@@ -100,7 +119,11 @@ public class ValidatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
-    String expression;
+    private final String expression;
+
+    public String getExpression() {
+        return expression;
+    }
 
     /**
      * Input string which drives the selection process.
@@ -109,7 +132,11 @@ public class ValidatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
-    String filePathPrefix;
+    private final String filePathPrefix;
+
+    public String getFilePathPrefix() {
+        return filePathPrefix;
+    }
 
     /**
      * List of file paths against which the pattern can be tried, as a check. This documents, for reference
@@ -119,7 +146,11 @@ public class ValidatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("checkFilePathList")
-    java.util.List<String> checkFilePathList;
+    private final java.util.List<String> checkFilePathList;
+
+    public java.util.List<String> getCheckFilePathList() {
+        return checkFilePathList;
+    }
 
     /**
      * The maximum number of UNMATCHED files, in checkFilePathList, above which the check fails.
@@ -129,8 +160,66 @@ public class ValidatePatternDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("checkFailureLimit")
-    Integer checkFailureLimit;
+    private final Integer checkFailureLimit;
+
+    public Integer getCheckFailureLimit() {
+        return checkFailureLimit;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ValidatePatternDetails(");
+        sb.append("expression=").append(String.valueOf(this.expression));
+        sb.append(", filePathPrefix=").append(String.valueOf(this.filePathPrefix));
+        sb.append(", checkFilePathList=").append(String.valueOf(this.checkFilePathList));
+        sb.append(", checkFailureLimit=").append(String.valueOf(this.checkFailureLimit));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ValidatePatternDetails)) {
+            return false;
+        }
+
+        ValidatePatternDetails other = (ValidatePatternDetails) o;
+        return java.util.Objects.equals(this.expression, other.expression)
+                && java.util.Objects.equals(this.filePathPrefix, other.filePathPrefix)
+                && java.util.Objects.equals(this.checkFilePathList, other.checkFilePathList)
+                && java.util.Objects.equals(this.checkFailureLimit, other.checkFailureLimit)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filePathPrefix == null ? 43 : this.filePathPrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.checkFilePathList == null ? 43 : this.checkFilePathList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.checkFailureLimit == null ? 43 : this.checkFailureLimit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

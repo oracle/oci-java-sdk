@@ -15,16 +15,19 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AttachCatalogPrivateEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AttachCatalogPrivateEndpointDetails {
+public final class AttachCatalogPrivateEndpointDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"catalogPrivateEndpointId"})
+    public AttachCatalogPrivateEndpointDetails(String catalogPrivateEndpointId) {
+        super();
+        this.catalogPrivateEndpointId = catalogPrivateEndpointId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("catalogPrivateEndpointId")
         private String catalogPrivateEndpointId;
@@ -61,12 +64,65 @@ public class AttachCatalogPrivateEndpointDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The identifier of the private endpoint to be attached to the catalog resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("catalogPrivateEndpointId")
-    String catalogPrivateEndpointId;
+    private final String catalogPrivateEndpointId;
+
+    public String getCatalogPrivateEndpointId() {
+        return catalogPrivateEndpointId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AttachCatalogPrivateEndpointDetails(");
+        sb.append("catalogPrivateEndpointId=")
+                .append(String.valueOf(this.catalogPrivateEndpointId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AttachCatalogPrivateEndpointDetails)) {
+            return false;
+        }
+
+        AttachCatalogPrivateEndpointDetails other = (AttachCatalogPrivateEndpointDetails) o;
+        return java.util.Objects.equals(
+                        this.catalogPrivateEndpointId, other.catalogPrivateEndpointId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.catalogPrivateEndpointId == null
+                                ? 43
+                                : this.catalogPrivateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,12 +15,6 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,17 +33,60 @@ package com.oracle.bmc.devops.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ComputeInstanceGroupRolloutPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({"batchDelayInSeconds"})
+    protected ComputeInstanceGroupRolloutPolicy(Integer batchDelayInSeconds) {
+        super();
+        this.batchDelayInSeconds = batchDelayInSeconds;
+    }
 
     /**
      * The duration of delay between batch rollout. The default delay is 1 minute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchDelayInSeconds")
-    Integer batchDelayInSeconds;
+    private final Integer batchDelayInSeconds;
+
+    public Integer getBatchDelayInSeconds() {
+        return batchDelayInSeconds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ComputeInstanceGroupRolloutPolicy(");
+        sb.append("batchDelayInSeconds=").append(String.valueOf(this.batchDelayInSeconds));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ComputeInstanceGroupRolloutPolicy)) {
+            return false;
+        }
+
+        ComputeInstanceGroupRolloutPolicy other = (ComputeInstanceGroupRolloutPolicy) o;
+        return java.util.Objects.equals(this.batchDelayInSeconds, other.batchDelayInSeconds);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.batchDelayInSeconds == null
+                                ? 43
+                                : this.batchDelayInSeconds.hashCode());
+        return result;
+    }
 
     /**
      * The type of policy used for rolling out a deployment stage.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PolicyType {
         ComputeInstanceGroupLinearRolloutPolicyByCount(
                 "COMPUTE_INSTANCE_GROUP_LINEAR_ROLLOUT_POLICY_BY_COUNT"),
@@ -61,6 +98,9 @@ public class ComputeInstanceGroupRolloutPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PolicyType.class);
 
         private final String value;
         private static java.util.Map<String, PolicyType> map;

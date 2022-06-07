@@ -9,14 +9,6 @@ import com.oracle.bmc.apmconfig.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ListConfigsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConfigsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,6 +17,9 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String apmDomainId;
 
+    public String getApmDomainId() {
+        return apmDomainId;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -32,6 +27,9 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A filter to match configuration items of a given type.
      * Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
@@ -39,16 +37,25 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String configType;
 
+    public String getConfigType() {
+        return configType;
+    }
     /**
      * A filter to return resources that match the given display name.
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The maximum number of results per page, or items to return in a paginated "List" call. For information on
      * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -57,6 +64,9 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The displayName sort order
      * is case-sensitive.
@@ -64,6 +74,9 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.apmconfig.model.SortOrders sortOrder;
 
+    public com.oracle.bmc.apmconfig.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. You can provide one "sortBy" value. The default order for displayName, timeCreated
      * and timeUpdated is ascending. The displayName sort by is case-sensitive.
@@ -110,12 +123,116 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListConfigsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String apmDomainId = null;
+
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         * @return this builder instance
+         */
+        public Builder apmDomainId(String apmDomainId) {
+            this.apmDomainId = apmDomainId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String configType = null;
+
+        /**
+         * A filter to match configuration items of a given type.
+         * Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+         *
+         * @return this builder instance
+         */
+        public Builder configType(String configType) {
+            this.configType = configType;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A filter to return resources that match the given display name.
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The maximum number of results per page, or items to return in a paginated "List" call. For information on
+         * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.apmconfig.model.SortOrders sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The displayName sort order
+         * is case-sensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.apmconfig.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can provide one "sortBy" value. The default order for displayName, timeCreated
+         * and timeUpdated is ascending. The displayName sort by is case-sensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -174,5 +291,99 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListConfigsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListConfigsRequest
+         */
+        public ListConfigsRequest buildWithoutInvocationCallback() {
+            ListConfigsRequest request = new ListConfigsRequest();
+            request.apmDomainId = apmDomainId;
+            request.opcRequestId = opcRequestId;
+            request.configType = configType;
+            request.displayName = displayName;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            return request;
+            // new ListConfigsRequest(apmDomainId, opcRequestId, configType, displayName, limit, page, sortOrder, sortBy);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .apmDomainId(apmDomainId)
+                .opcRequestId(opcRequestId)
+                .configType(configType)
+                .displayName(displayName)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",apmDomainId=").append(String.valueOf(this.apmDomainId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",configType=").append(String.valueOf(this.configType));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListConfigsRequest)) {
+            return false;
+        }
+
+        ListConfigsRequest other = (ListConfigsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.configType, other.configType)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.apmDomainId == null ? 43 : this.apmDomainId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.configType == null ? 43 : this.configType.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        return result;
     }
 }

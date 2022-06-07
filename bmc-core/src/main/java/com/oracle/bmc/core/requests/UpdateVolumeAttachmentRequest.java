@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateVolumeAttachmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateVolumeAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails> {
@@ -26,11 +18,18 @@ public class UpdateVolumeAttachmentRequest
      */
     private String volumeAttachmentId;
 
+    public String getVolumeAttachmentId() {
+        return volumeAttachmentId;
+    }
     /**
      * Update information about the specified volume attachment.
      */
     private com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails updateVolumeAttachmentDetails;
 
+    public com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails
+            getUpdateVolumeAttachmentDetails() {
+        return updateVolumeAttachmentDetails;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -38,6 +37,9 @@ public class UpdateVolumeAttachmentRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -45,6 +47,10 @@ public class UpdateVolumeAttachmentRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +69,58 @@ public class UpdateVolumeAttachmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String volumeAttachmentId = null;
+
+        /**
+         * The OCID of the volume attachment.
+         * @return this builder instance
+         */
+        public Builder volumeAttachmentId(String volumeAttachmentId) {
+            this.volumeAttachmentId = volumeAttachmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails
+                updateVolumeAttachmentDetails = null;
+
+        /**
+         * Update information about the specified volume attachment.
+         * @return this builder instance
+         */
+        public Builder updateVolumeAttachmentDetails(
+                com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails
+                        updateVolumeAttachmentDetails) {
+            this.updateVolumeAttachmentDetails = updateVolumeAttachmentDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +186,89 @@ public class UpdateVolumeAttachmentRequest
             updateVolumeAttachmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateVolumeAttachmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateVolumeAttachmentRequest
+         */
+        public UpdateVolumeAttachmentRequest buildWithoutInvocationCallback() {
+            UpdateVolumeAttachmentRequest request = new UpdateVolumeAttachmentRequest();
+            request.volumeAttachmentId = volumeAttachmentId;
+            request.updateVolumeAttachmentDetails = updateVolumeAttachmentDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateVolumeAttachmentRequest(volumeAttachmentId, updateVolumeAttachmentDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .volumeAttachmentId(volumeAttachmentId)
+                .updateVolumeAttachmentDetails(updateVolumeAttachmentDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",volumeAttachmentId=").append(String.valueOf(this.volumeAttachmentId));
+        sb.append(",updateVolumeAttachmentDetails=")
+                .append(String.valueOf(this.updateVolumeAttachmentDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateVolumeAttachmentRequest)) {
+            return false;
+        }
+
+        UpdateVolumeAttachmentRequest other = (UpdateVolumeAttachmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.volumeAttachmentId, other.volumeAttachmentId)
+                && java.util.Objects.equals(
+                        this.updateVolumeAttachmentDetails, other.updateVolumeAttachmentDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.volumeAttachmentId == null
+                                ? 43
+                                : this.volumeAttachmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateVolumeAttachmentDetails == null
+                                ? 43
+                                : this.updateVolumeAttachmentDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

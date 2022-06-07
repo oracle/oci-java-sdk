@@ -15,14 +15,62 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ListingSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ListingSummary {
+public final class ListingSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "shortDescription",
+        "isRoverExportable",
+        "tagline",
+        "icon",
+        "packageType",
+        "pricingTypes",
+        "compatibleArchitectures",
+        "regions",
+        "isFeatured",
+        "categories",
+        "publisher",
+        "supportedOperatingSystems",
+        "listingType"
+    })
+    public ListingSummary(
+            String id,
+            String name,
+            String shortDescription,
+            Boolean isRoverExportable,
+            String tagline,
+            UploadData icon,
+            PackageTypeEnum packageType,
+            java.util.List<PricingTypes> pricingTypes,
+            java.util.List<CompatibleArchitectures> compatibleArchitectures,
+            java.util.List<Region> regions,
+            Boolean isFeatured,
+            java.util.List<String> categories,
+            PublisherSummary publisher,
+            java.util.List<OperatingSystem> supportedOperatingSystems,
+            ListingType listingType) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.shortDescription = shortDescription;
+        this.isRoverExportable = isRoverExportable;
+        this.tagline = tagline;
+        this.icon = icon;
+        this.packageType = packageType;
+        this.pricingTypes = pricingTypes;
+        this.compatibleArchitectures = compatibleArchitectures;
+        this.regions = regions;
+        this.isFeatured = isFeatured;
+        this.categories = categories;
+        this.publisher = publisher;
+        this.supportedOperatingSystems = supportedOperatingSystems;
+        this.listingType = listingType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -217,47 +265,79 @@ public class ListingSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier for the listing in Marketplace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A short description of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
-    String shortDescription;
+    private final String shortDescription;
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
 
     /**
      * True if this application is Rover exportable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRoverExportable")
-    Boolean isRoverExportable;
+    private final Boolean isRoverExportable;
+
+    public Boolean getIsRoverExportable() {
+        return isRoverExportable;
+    }
 
     /**
      * The tagline of the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagline")
-    String tagline;
+    private final String tagline;
+
+    public String getTagline() {
+        return tagline;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("icon")
-    UploadData icon;
+    private final UploadData icon;
+
+    public UploadData getIcon() {
+        return icon;
+    }
 
     /**
      * The listing's package type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
-    PackageTypeEnum packageType;
+    private final PackageTypeEnum packageType;
+
+    public PackageTypeEnum getPackageType() {
+        return packageType;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PricingTypes {
         Free("FREE"),
         Byol("BYOL"),
@@ -268,6 +348,9 @@ public class ListingSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PricingTypes.class);
 
         private final String value;
         private static java.util.Map<String, PricingTypes> map;
@@ -305,10 +388,14 @@ public class ListingSummary {
      * Summary of the pricing types available across all packages in the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pricingTypes")
-    java.util.List<PricingTypes> pricingTypes;
+    private final java.util.List<PricingTypes> pricingTypes;
+
+    public java.util.List<PricingTypes> getPricingTypes() {
+        return pricingTypes;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CompatibleArchitectures {
         X86("X86"),
         Arm("ARM"),
@@ -318,6 +405,9 @@ public class ListingSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CompatibleArchitectures.class);
 
         private final String value;
         private static java.util.Map<String, CompatibleArchitectures> map;
@@ -355,42 +445,167 @@ public class ListingSummary {
      * The list of compatible architectures supported by the listing
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compatibleArchitectures")
-    java.util.List<CompatibleArchitectures> compatibleArchitectures;
+    private final java.util.List<CompatibleArchitectures> compatibleArchitectures;
+
+    public java.util.List<CompatibleArchitectures> getCompatibleArchitectures() {
+        return compatibleArchitectures;
+    }
 
     /**
      * The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
-    java.util.List<Region> regions;
+    private final java.util.List<Region> regions;
+
+    public java.util.List<Region> getRegions() {
+        return regions;
+    }
 
     /**
      * Indicates whether the listing is featured.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
-    Boolean isFeatured;
+    private final Boolean isFeatured;
+
+    public Boolean getIsFeatured() {
+        return isFeatured;
+    }
 
     /**
      * Product categories that the listing belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
-    java.util.List<String> categories;
+    private final java.util.List<String> categories;
+
+    public java.util.List<String> getCategories() {
+        return categories;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("publisher")
-    PublisherSummary publisher;
+    private final PublisherSummary publisher;
+
+    public PublisherSummary getPublisher() {
+        return publisher;
+    }
 
     /**
      * The list of operating systems supported by the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedOperatingSystems")
-    java.util.List<OperatingSystem> supportedOperatingSystems;
+    private final java.util.List<OperatingSystem> supportedOperatingSystems;
+
+    public java.util.List<OperatingSystem> getSupportedOperatingSystems() {
+        return supportedOperatingSystems;
+    }
 
     /**
      * The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingType")
-    ListingType listingType;
+    private final ListingType listingType;
+
+    public ListingType getListingType() {
+        return listingType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ListingSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", shortDescription=").append(String.valueOf(this.shortDescription));
+        sb.append(", isRoverExportable=").append(String.valueOf(this.isRoverExportable));
+        sb.append(", tagline=").append(String.valueOf(this.tagline));
+        sb.append(", icon=").append(String.valueOf(this.icon));
+        sb.append(", packageType=").append(String.valueOf(this.packageType));
+        sb.append(", pricingTypes=").append(String.valueOf(this.pricingTypes));
+        sb.append(", compatibleArchitectures=")
+                .append(String.valueOf(this.compatibleArchitectures));
+        sb.append(", regions=").append(String.valueOf(this.regions));
+        sb.append(", isFeatured=").append(String.valueOf(this.isFeatured));
+        sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append(", publisher=").append(String.valueOf(this.publisher));
+        sb.append(", supportedOperatingSystems=")
+                .append(String.valueOf(this.supportedOperatingSystems));
+        sb.append(", listingType=").append(String.valueOf(this.listingType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListingSummary)) {
+            return false;
+        }
+
+        ListingSummary other = (ListingSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.shortDescription, other.shortDescription)
+                && java.util.Objects.equals(this.isRoverExportable, other.isRoverExportable)
+                && java.util.Objects.equals(this.tagline, other.tagline)
+                && java.util.Objects.equals(this.icon, other.icon)
+                && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.pricingTypes, other.pricingTypes)
+                && java.util.Objects.equals(
+                        this.compatibleArchitectures, other.compatibleArchitectures)
+                && java.util.Objects.equals(this.regions, other.regions)
+                && java.util.Objects.equals(this.isFeatured, other.isFeatured)
+                && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.publisher, other.publisher)
+                && java.util.Objects.equals(
+                        this.supportedOperatingSystems, other.supportedOperatingSystems)
+                && java.util.Objects.equals(this.listingType, other.listingType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shortDescription == null ? 43 : this.shortDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRoverExportable == null ? 43 : this.isRoverExportable.hashCode());
+        result = (result * PRIME) + (this.tagline == null ? 43 : this.tagline.hashCode());
+        result = (result * PRIME) + (this.icon == null ? 43 : this.icon.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result = (result * PRIME) + (this.pricingTypes == null ? 43 : this.pricingTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compatibleArchitectures == null
+                                ? 43
+                                : this.compatibleArchitectures.hashCode());
+        result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
+        result = (result * PRIME) + (this.isFeatured == null ? 43 : this.isFeatured.hashCode());
+        result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.publisher == null ? 43 : this.publisher.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedOperatingSystems == null
+                                ? 43
+                                : this.supportedOperatingSystems.hashCode());
+        result = (result * PRIME) + (this.listingType == null ? 43 : this.listingType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

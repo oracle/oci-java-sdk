@@ -15,16 +15,26 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceRiskScoreAggregationCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceRiskScoreAggregationCollection {
+public final class ResourceRiskScoreAggregationCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({"filterType", "filterId", "riskThreshold", "items"})
+    public ResourceRiskScoreAggregationCollection(
+            String filterType,
+            String filterId,
+            Integer riskThreshold,
+            java.util.List<ResourceRiskScoreAggregation> items) {
+        super();
+        this.filterType = filterType;
+        this.filterId = filterId;
+        this.riskThreshold = riskThreshold;
+        this.items = items;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private String filterType;
@@ -93,30 +103,100 @@ public class ResourceRiskScoreAggregationCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Type of filter. Valid Values - problem_id and resource_id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
-    String filterType;
+    private final String filterType;
+
+    public String getFilterType() {
+        return filterType;
+    }
 
     /**
      * Id value on which risk scores are filtered
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
-    String filterId;
+    private final String filterId;
+
+    public String getFilterId() {
+        return filterId;
+    }
 
     /**
      * Risk Score
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
-    Integer riskThreshold;
+    private final Integer riskThreshold;
+
+    public Integer getRiskThreshold() {
+        return riskThreshold;
+    }
 
     /**
      * List of ResourceRiskScoreAggregation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<ResourceRiskScoreAggregation> items;
+    private final java.util.List<ResourceRiskScoreAggregation> items;
+
+    public java.util.List<ResourceRiskScoreAggregation> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceRiskScoreAggregationCollection(");
+        sb.append("filterType=").append(String.valueOf(this.filterType));
+        sb.append(", filterId=").append(String.valueOf(this.filterId));
+        sb.append(", riskThreshold=").append(String.valueOf(this.riskThreshold));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceRiskScoreAggregationCollection)) {
+            return false;
+        }
+
+        ResourceRiskScoreAggregationCollection other = (ResourceRiskScoreAggregationCollection) o;
+        return java.util.Objects.equals(this.filterType, other.filterType)
+                && java.util.Objects.equals(this.filterId, other.filterId)
+                && java.util.Objects.equals(this.riskThreshold, other.riskThreshold)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.filterType == null ? 43 : this.filterType.hashCode());
+        result = (result * PRIME) + (this.filterId == null ? 43 : this.filterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.riskThreshold == null ? 43 : this.riskThreshold.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

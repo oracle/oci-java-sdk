@@ -7,10 +7,6 @@ package com.oracle.bmc.loganalytics.responses;
 import com.oracle.bmc.loganalytics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
@@ -18,20 +14,36 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The base-64 encoded MD5 hash of the request body as computed by the server.
      */
     private String opcContentMd5;
+
+    public String getOpcContentMd5() {
+        return opcContentMd5;
+    }
 
     /**
      * Unique Oracle-assigned identifier for log data.
      */
     private String opcObjectId;
 
+    public String getOpcObjectId() {
+        return opcObjectId;
+    }
+
     /**
      * The returned Upload instance.
      */
     private com.oracle.bmc.loganalytics.model.Upload upload;
+
+    public com.oracle.bmc.loganalytics.model.Upload getUpload() {
+        return upload;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -61,6 +73,34 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcContentMd5;
+
+        public Builder opcContentMd5(String opcContentMd5) {
+            this.opcContentMd5 = opcContentMd5;
+            return this;
+        }
+
+        private String opcObjectId;
+
+        public Builder opcObjectId(String opcObjectId) {
+            this.opcObjectId = opcObjectId;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.Upload upload;
+
+        public Builder upload(com.oracle.bmc.loganalytics.model.Upload upload) {
+            this.upload = upload;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -79,5 +119,52 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
             return new UploadLogFileResponse(
                     __httpStatusCode__, opcRequestId, opcContentMd5, opcObjectId, upload);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcContentMd5=").append(String.valueOf(opcContentMd5));
+        sb.append(",opcObjectId=").append(String.valueOf(opcObjectId));
+        sb.append(",upload=").append(String.valueOf(upload));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UploadLogFileResponse)) {
+            return false;
+        }
+
+        UploadLogFileResponse other = (UploadLogFileResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcContentMd5, other.opcContentMd5)
+                && java.util.Objects.equals(this.opcObjectId, other.opcObjectId)
+                && java.util.Objects.equals(this.upload, other.upload);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentMd5 == null ? 43 : this.opcContentMd5.hashCode());
+        result = (result * PRIME) + (this.opcObjectId == null ? 43 : this.opcObjectId.hashCode());
+        result = (result * PRIME) + (this.upload == null ? 43 : this.upload.hashCode());
+        return result;
     }
 }

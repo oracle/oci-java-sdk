@@ -15,16 +15,20 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CompareContentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CompareContentDetails {
+public final class CompareContentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"content1", "content2"})
+    public CompareContentDetails(String content1, String content2) {
+        super();
+        this.content1 = content1;
+        this.content2 = content2;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("content1")
         private String content1;
@@ -69,18 +73,72 @@ public class CompareContentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The first of two strings to compare.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content1")
-    String content1;
+    private final String content1;
+
+    public String getContent1() {
+        return content1;
+    }
 
     /**
      * The second of two strings to compare.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content2")
-    String content2;
+    private final String content2;
+
+    public String getContent2() {
+        return content2;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CompareContentDetails(");
+        sb.append("content1=").append(String.valueOf(this.content1));
+        sb.append(", content2=").append(String.valueOf(this.content2));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CompareContentDetails)) {
+            return false;
+        }
+
+        CompareContentDetails other = (CompareContentDetails) o;
+        return java.util.Objects.equals(this.content1, other.content1)
+                && java.util.Objects.equals(this.content2, other.content2)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.content1 == null ? 43 : this.content1.hashCode());
+        result = (result * PRIME) + (this.content2 == null ? 43 : this.content2.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

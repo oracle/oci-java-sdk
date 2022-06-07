@@ -15,16 +15,52 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDataFlowDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDataFlowDetails {
+public final class CreateDataFlowDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelVersion",
+        "parentRef",
+        "name",
+        "identifier",
+        "nodes",
+        "parameters",
+        "description",
+        "flowConfigValues",
+        "objectStatus",
+        "registryMetadata"
+    })
+    public CreateDataFlowDetails(
+            String key,
+            String modelVersion,
+            ParentReference parentRef,
+            String name,
+            String identifier,
+            java.util.List<FlowNode> nodes,
+            java.util.List<Parameter> parameters,
+            String description,
+            ConfigValues flowConfigValues,
+            Integer objectStatus,
+            RegistryMetadata registryMetadata) {
+        super();
+        this.key = key;
+        this.modelVersion = modelVersion;
+        this.parentRef = parentRef;
+        this.name = name;
+        this.identifier = identifier;
+        this.nodes = nodes;
+        this.parameters = parameters;
+        this.description = description;
+        this.flowConfigValues = flowConfigValues;
+        this.objectStatus = objectStatus;
+        this.registryMetadata = registryMetadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -173,63 +209,184 @@ public class CreateDataFlowDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Generated key that can be used in API calls to identify data flow. On scenarios where reference to the data flow is needed, a value can be passed in create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * An array of nodes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
-    java.util.List<FlowNode> nodes;
+    private final java.util.List<FlowNode> nodes;
+
+    public java.util.List<FlowNode> getNodes() {
+        return nodes;
+    }
 
     /**
      * An array of parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.List<Parameter> parameters;
+    private final java.util.List<Parameter> parameters;
+
+    public java.util.List<Parameter> getParameters() {
+        return parameters;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("flowConfigValues")
-    ConfigValues flowConfigValues;
+    private final ConfigValues flowConfigValues;
+
+    public ConfigValues getFlowConfigValues() {
+        return flowConfigValues;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
-    RegistryMetadata registryMetadata;
+    private final RegistryMetadata registryMetadata;
+
+    public RegistryMetadata getRegistryMetadata() {
+        return registryMetadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDataFlowDetails(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", nodes=").append(String.valueOf(this.nodes));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", flowConfigValues=").append(String.valueOf(this.flowConfigValues));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDataFlowDetails)) {
+            return false;
+        }
+
+        CreateDataFlowDetails other = (CreateDataFlowDetails) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.nodes, other.nodes)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.flowConfigValues, other.flowConfigValues)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.nodes == null ? 43 : this.nodes.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flowConfigValues == null ? 43 : this.flowConfigValues.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

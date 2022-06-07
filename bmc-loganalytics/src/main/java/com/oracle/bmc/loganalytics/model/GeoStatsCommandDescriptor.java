@@ -16,22 +16,17 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GeoStatsCommandDescriptor.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "name"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
+public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
@@ -147,6 +142,10 @@ public class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public GeoStatsCommandDescriptor(
             String displayQueryString,
@@ -167,7 +166,6 @@ public class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
      * Indicates which coordinates to show.  Either client, server or both.  Defaults to client.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Include {
         Client("CLIENT"),
         Server("SERVER"),
@@ -178,6 +176,9 @@ public class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Include.class);
 
         private final String value;
         private static java.util.Map<String, Include> map;
@@ -216,22 +217,83 @@ public class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("include")
-    Include include;
+    private final Include include;
+
+    public Include getInclude() {
+        return include;
+    }
 
     /**
      * Group by fields if specified in the query string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
-    java.util.List<AbstractField> groupByFields;
+    private final java.util.List<AbstractField> groupByFields;
+
+    public java.util.List<AbstractField> getGroupByFields() {
+        return groupByFields;
+    }
 
     /**
      * Statistical functions specified in the query string. Atleast 1 is required for a GEOSTATS command.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
-    java.util.List<FunctionField> functions;
+    private final java.util.List<FunctionField> functions;
+
+    public java.util.List<FunctionField> getFunctions() {
+        return functions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GeoStatsCommandDescriptor(");
+        sb.append("super=").append(super.toString());
+        sb.append(", include=").append(String.valueOf(this.include));
+        sb.append(", groupByFields=").append(String.valueOf(this.groupByFields));
+        sb.append(", functions=").append(String.valueOf(this.functions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GeoStatsCommandDescriptor)) {
+            return false;
+        }
+
+        GeoStatsCommandDescriptor other = (GeoStatsCommandDescriptor) o;
+        return java.util.Objects.equals(this.include, other.include)
+                && java.util.Objects.equals(this.groupByFields, other.groupByFields)
+                && java.util.Objects.equals(this.functions, other.functions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.include == null ? 43 : this.include.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupByFields == null ? 43 : this.groupByFields.hashCode());
+        result = (result * PRIME) + (this.functions == null ? 43 : this.functions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

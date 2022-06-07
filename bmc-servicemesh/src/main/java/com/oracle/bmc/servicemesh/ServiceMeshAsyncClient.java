@@ -7,6 +7,7 @@ package com.oracle.bmc.servicemesh;
 import com.oracle.bmc.servicemesh.internal.http.*;
 import com.oracle.bmc.servicemesh.requests.*;
 import com.oracle.bmc.servicemesh.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ServiceMesh service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.servicemesh.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.extern.slf4j.Slf4j
 public class ServiceMeshAsyncClient implements ServiceMeshAsync {
     /**
      * Service instance for ServiceMesh.
@@ -34,7 +34,9 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                     .serviceEndpointTemplate("https://servicemesh.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ServiceMeshAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
          * @return the client
          */
         public ServiceMeshAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new ServiceMeshAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

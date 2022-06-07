@@ -15,22 +15,17 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateOsvcChannelResult.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateOsvcChannelResult extends CreateChannelResult {
+public final class CreateOsvcChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -248,6 +243,10 @@ public class CreateOsvcChannelResult extends CreateChannelResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateOsvcChannelResult(
             String id,
@@ -299,44 +298,141 @@ public class CreateOsvcChannelResult extends CreateChannelResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * The port.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    String port;
+    private final String port;
+
+    public String getPort() {
+        return port;
+    }
 
     /**
      * The user name for the digital-assistant agent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * The total session count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSessionCount")
-    Integer totalSessionCount;
+    private final Integer totalSessionCount;
+
+    public Integer getTotalSessionCount() {
+        return totalSessionCount;
+    }
 
     /**
      * The type of OSVC service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("channelService")
-    OsvcServiceType channelService;
+    private final OsvcServiceType channelService;
+
+    public OsvcServiceType getChannelService() {
+        return channelService;
+    }
 
     /**
      * The name of the Authentication Provider to use to authenticate the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationProviderName")
-    String authenticationProviderName;
+    private final String authenticationProviderName;
+
+    public String getAuthenticationProviderName() {
+        return authenticationProviderName;
+    }
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
-    String botId;
+    private final String botId;
+
+    public String getBotId() {
+        return botId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateOsvcChannelResult(");
+        sb.append("super=").append(super.toString());
+        sb.append(", host=").append(String.valueOf(this.host));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", totalSessionCount=").append(String.valueOf(this.totalSessionCount));
+        sb.append(", channelService=").append(String.valueOf(this.channelService));
+        sb.append(", authenticationProviderName=")
+                .append(String.valueOf(this.authenticationProviderName));
+        sb.append(", botId=").append(String.valueOf(this.botId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOsvcChannelResult)) {
+            return false;
+        }
+
+        CreateOsvcChannelResult other = (CreateOsvcChannelResult) o;
+        return java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.totalSessionCount, other.totalSessionCount)
+                && java.util.Objects.equals(this.channelService, other.channelService)
+                && java.util.Objects.equals(
+                        this.authenticationProviderName, other.authenticationProviderName)
+                && java.util.Objects.equals(this.botId, other.botId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalSessionCount == null ? 43 : this.totalSessionCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.channelService == null ? 43 : this.channelService.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationProviderName == null
+                                ? 43
+                                : this.authenticationProviderName.hashCode());
+        result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

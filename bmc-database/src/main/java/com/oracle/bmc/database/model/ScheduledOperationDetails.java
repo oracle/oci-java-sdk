@@ -16,16 +16,22 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScheduledOperationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScheduledOperationDetails {
+public final class ScheduledOperationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"dayOfWeek", "scheduledStartTime", "scheduledStopTime"})
+    public ScheduledOperationDetails(
+            DayOfWeek dayOfWeek, String scheduledStartTime, String scheduledStopTime) {
+        super();
+        this.dayOfWeek = dayOfWeek;
+        this.scheduledStartTime = scheduledStartTime;
+        this.scheduledStopTime = scheduledStopTime;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
         private DayOfWeek dayOfWeek;
@@ -83,21 +89,88 @@ public class ScheduledOperationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
-    DayOfWeek dayOfWeek;
+    private final DayOfWeek dayOfWeek;
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
 
     /**
      * auto start time. value must be of ISO-8601 format "HH:mm"
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledStartTime")
-    String scheduledStartTime;
+    private final String scheduledStartTime;
+
+    public String getScheduledStartTime() {
+        return scheduledStartTime;
+    }
 
     /**
      * auto stop time. value must be of ISO-8601 format "HH:mm"
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledStopTime")
-    String scheduledStopTime;
+    private final String scheduledStopTime;
+
+    public String getScheduledStopTime() {
+        return scheduledStopTime;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScheduledOperationDetails(");
+        sb.append("dayOfWeek=").append(String.valueOf(this.dayOfWeek));
+        sb.append(", scheduledStartTime=").append(String.valueOf(this.scheduledStartTime));
+        sb.append(", scheduledStopTime=").append(String.valueOf(this.scheduledStopTime));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScheduledOperationDetails)) {
+            return false;
+        }
+
+        ScheduledOperationDetails other = (ScheduledOperationDetails) o;
+        return java.util.Objects.equals(this.dayOfWeek, other.dayOfWeek)
+                && java.util.Objects.equals(this.scheduledStartTime, other.scheduledStartTime)
+                && java.util.Objects.equals(this.scheduledStopTime, other.scheduledStopTime)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dayOfWeek == null ? 43 : this.dayOfWeek.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledStartTime == null
+                                ? 43
+                                : this.scheduledStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledStopTime == null ? 43 : this.scheduledStopTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/SetUnprocessedDataBucketExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SetUnprocessedDataBucketRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SetUnprocessedDataBucketRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -26,11 +18,17 @@ public class SetUnprocessedDataBucketRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * Name of the Object Storage bucket.
      */
     private String bucketName;
 
+    public String getBucketName() {
+        return bucketName;
+    }
     /**
      * The enabled flag used for filtering.  Only items with the specified enabled value
      * will be returned.
@@ -38,10 +36,17 @@ public class SetUnprocessedDataBucketRequest
      */
     private Boolean isEnabled;
 
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -49,6 +54,53 @@ public class SetUnprocessedDataBucketRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String bucketName = null;
+
+        /**
+         * Name of the Object Storage bucket.
+         * @return this builder instance
+         */
+        public Builder bucketName(String bucketName) {
+            this.bucketName = bucketName;
+            return this;
+        }
+
+        private Boolean isEnabled = null;
+
+        /**
+         * The enabled flag used for filtering.  Only items with the specified enabled value
+         * will be returned.
+         *
+         * @return this builder instance
+         */
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -103,5 +155,81 @@ public class SetUnprocessedDataBucketRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of SetUnprocessedDataBucketRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of SetUnprocessedDataBucketRequest
+         */
+        public SetUnprocessedDataBucketRequest buildWithoutInvocationCallback() {
+            SetUnprocessedDataBucketRequest request = new SetUnprocessedDataBucketRequest();
+            request.namespaceName = namespaceName;
+            request.bucketName = bucketName;
+            request.isEnabled = isEnabled;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new SetUnprocessedDataBucketRequest(namespaceName, bucketName, isEnabled, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .bucketName(bucketName)
+                .isEnabled(isEnabled)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(",isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SetUnprocessedDataBucketRequest)) {
+            return false;
+        }
+
+        SetUnprocessedDataBucketRequest other = (SetUnprocessedDataBucketRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

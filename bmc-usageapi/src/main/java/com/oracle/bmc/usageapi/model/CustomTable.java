@@ -15,14 +15,24 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CustomTable.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CustomTable {
+public final class CustomTable {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "savedReportId", "compartmentId", "savedCustomTable"})
+    public CustomTable(
+            String id,
+            String savedReportId,
+            String compartmentId,
+            SavedCustomTable savedCustomTable) {
+        super();
+        this.id = id;
+        this.savedReportId = savedReportId;
+        this.compartmentId = compartmentId;
+        this.savedCustomTable = savedCustomTable;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -90,27 +100,101 @@ public class CustomTable {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The custom table OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The custom table associated saved report OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
-    String savedReportId;
+    private final String savedReportId;
+
+    public String getSavedReportId() {
+        return savedReportId;
+    }
 
     /**
      * The custom table compartment OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("savedCustomTable")
-    SavedCustomTable savedCustomTable;
+    private final SavedCustomTable savedCustomTable;
+
+    public SavedCustomTable getSavedCustomTable() {
+        return savedCustomTable;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CustomTable(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", savedReportId=").append(String.valueOf(this.savedReportId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", savedCustomTable=").append(String.valueOf(this.savedCustomTable));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CustomTable)) {
+            return false;
+        }
+
+        CustomTable other = (CustomTable) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.savedReportId, other.savedReportId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.savedCustomTable, other.savedCustomTable)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.savedReportId == null ? 43 : this.savedReportId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.savedCustomTable == null ? 43 : this.savedCustomTable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

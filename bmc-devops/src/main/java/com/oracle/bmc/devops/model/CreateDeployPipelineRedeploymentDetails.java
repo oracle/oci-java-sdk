@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDeployPipelineRedeploymentDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deploymentType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDeployPipelineRedeploymentDetails extends CreateDeploymentDetails {
+public final class CreateDeployPipelineRedeploymentDetails extends CreateDeploymentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("deployPipelineId")
         private String deployPipelineId;
@@ -114,6 +109,10 @@ public class CreateDeployPipelineRedeploymentDetails extends CreateDeploymentDet
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateDeployPipelineRedeploymentDetails(
             String deployPipelineId,
@@ -129,8 +128,57 @@ public class CreateDeployPipelineRedeploymentDetails extends CreateDeploymentDet
      * Specifies the OCID of the previous deployment to be redeployed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousDeploymentId")
-    String previousDeploymentId;
+    private final String previousDeploymentId;
+
+    public String getPreviousDeploymentId() {
+        return previousDeploymentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDeployPipelineRedeploymentDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", previousDeploymentId=").append(String.valueOf(this.previousDeploymentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDeployPipelineRedeploymentDetails)) {
+            return false;
+        }
+
+        CreateDeployPipelineRedeploymentDetails other = (CreateDeployPipelineRedeploymentDetails) o;
+        return java.util.Objects.equals(this.previousDeploymentId, other.previousDeploymentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.previousDeploymentId == null
+                                ? 43
+                                : this.previousDeploymentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

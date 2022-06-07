@@ -15,14 +15,18 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParameterValue.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ParameterValue {
+public final class ParameterValue {
+    @Deprecated
+    @java.beans.ConstructorProperties({"simpleValue", "rootObjectValue"})
+    public ParameterValue(Object simpleValue, Object rootObjectValue) {
+        super();
+        this.simpleValue = simpleValue;
+        this.rootObjectValue = rootObjectValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("simpleValue")
         private Object simpleValue;
@@ -68,18 +72,74 @@ public class ParameterValue {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A simple value for the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("simpleValue")
-    Object simpleValue;
+    private final Object simpleValue;
+
+    public Object getSimpleValue() {
+        return simpleValue;
+    }
 
     /**
      * This can be any object such as a file entity, a schema, or a table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootObjectValue")
-    Object rootObjectValue;
+    private final Object rootObjectValue;
+
+    public Object getRootObjectValue() {
+        return rootObjectValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ParameterValue(");
+        sb.append("simpleValue=").append(String.valueOf(this.simpleValue));
+        sb.append(", rootObjectValue=").append(String.valueOf(this.rootObjectValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ParameterValue)) {
+            return false;
+        }
+
+        ParameterValue other = (ParameterValue) o;
+        return java.util.Objects.equals(this.simpleValue, other.simpleValue)
+                && java.util.Objects.equals(this.rootObjectValue, other.rootObjectValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.simpleValue == null ? 43 : this.simpleValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rootObjectValue == null ? 43 : this.rootObjectValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

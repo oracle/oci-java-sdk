@@ -7,15 +7,15 @@ package com.oracle.bmc.loadbalancer.responses;
 import com.oracle.bmc.loadbalancer.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String opcWorkRequestId;
+
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -23,6 +23,10 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private CreateCertificateResponse(
@@ -37,6 +41,20 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
             return this;
         }
 
@@ -56,5 +74,46 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
             return new CreateCertificateResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateCertificateResponse)) {
+            return false;
+        }
+
+        CreateCertificateResponse other = (CreateCertificateResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

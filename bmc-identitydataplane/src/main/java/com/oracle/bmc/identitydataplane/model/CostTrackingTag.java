@@ -15,14 +15,29 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CostTrackingTag.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CostTrackingTag {
+public final class CostTrackingTag {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tagNamespaceId",
+        "tagNamespaceName",
+        "tagDefinitionId",
+        "tagDefinitionName"
+    })
+    public CostTrackingTag(
+            String tagNamespaceId,
+            String tagNamespaceName,
+            String tagDefinitionId,
+            String tagDefinitionName) {
+        super();
+        this.tagNamespaceId = tagNamespaceId;
+        this.tagNamespaceName = tagNamespaceName;
+        this.tagDefinitionId = tagDefinitionId;
+        this.tagDefinitionName = tagDefinitionName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Id")
         private String tagNamespaceId;
@@ -91,30 +106,106 @@ public class CostTrackingTag {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The tag namespace id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Id")
-    String tagNamespaceId;
+    private final String tagNamespaceId;
+
+    public String getTagNamespaceId() {
+        return tagNamespaceId;
+    }
 
     /**
      * The tag namespace name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Name")
-    String tagNamespaceName;
+    private final String tagNamespaceName;
+
+    public String getTagNamespaceName() {
+        return tagNamespaceName;
+    }
 
     /**
      * The tag definition id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Id")
-    String tagDefinitionId;
+    private final String tagDefinitionId;
+
+    public String getTagDefinitionId() {
+        return tagDefinitionId;
+    }
 
     /**
      * The tag definition name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Name")
-    String tagDefinitionName;
+    private final String tagDefinitionName;
+
+    public String getTagDefinitionName() {
+        return tagDefinitionName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CostTrackingTag(");
+        sb.append("tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
+        sb.append(", tagNamespaceName=").append(String.valueOf(this.tagNamespaceName));
+        sb.append(", tagDefinitionId=").append(String.valueOf(this.tagDefinitionId));
+        sb.append(", tagDefinitionName=").append(String.valueOf(this.tagDefinitionName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CostTrackingTag)) {
+            return false;
+        }
+
+        CostTrackingTag other = (CostTrackingTag) o;
+        return java.util.Objects.equals(this.tagNamespaceId, other.tagNamespaceId)
+                && java.util.Objects.equals(this.tagNamespaceName, other.tagNamespaceName)
+                && java.util.Objects.equals(this.tagDefinitionId, other.tagDefinitionId)
+                && java.util.Objects.equals(this.tagDefinitionName, other.tagDefinitionName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.tagNamespaceId == null ? 43 : this.tagNamespaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tagNamespaceName == null ? 43 : this.tagNamespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tagDefinitionId == null ? 43 : this.tagDefinitionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tagDefinitionName == null ? 43 : this.tagDefinitionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

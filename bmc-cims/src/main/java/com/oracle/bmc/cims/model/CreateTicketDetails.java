@@ -18,16 +18,34 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateTicketDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateTicketDetails {
+public final class CreateTicketDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "severity",
+        "resourceList",
+        "title",
+        "description",
+        "contextualData"
+    })
+    public CreateTicketDetails(
+            Severity severity,
+            java.util.List<CreateResourceDetails> resourceList,
+            String title,
+            String description,
+            ContextualData contextualData) {
+        super();
+        this.severity = severity;
+        this.resourceList = resourceList;
+        this.title = title;
+        this.description = description;
+        this.contextualData = contextualData;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
@@ -106,6 +124,10 @@ public class CreateTicketDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The severity of the support ticket.
      **/
@@ -146,32 +168,105 @@ public class CreateTicketDetails {
      * The severity of the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Severity severity;
+    private final Severity severity;
+
+    public Severity getSeverity() {
+        return severity;
+    }
 
     /**
      * The list of resources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
-    java.util.List<CreateResourceDetails> resourceList;
+    private final java.util.List<CreateResourceDetails> resourceList;
+
+    public java.util.List<CreateResourceDetails> getResourceList() {
+        return resourceList;
+    }
 
     /**
      * The title of the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
-    String title;
+    private final String title;
+
+    public String getTitle() {
+        return title;
+    }
 
     /**
      * The description of the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The context from where the ticket is getting created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contextualData")
-    ContextualData contextualData;
+    private final ContextualData contextualData;
+
+    public ContextualData getContextualData() {
+        return contextualData;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateTicketDetails(");
+        sb.append("severity=").append(String.valueOf(this.severity));
+        sb.append(", resourceList=").append(String.valueOf(this.resourceList));
+        sb.append(", title=").append(String.valueOf(this.title));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", contextualData=").append(String.valueOf(this.contextualData));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTicketDetails)) {
+            return false;
+        }
+
+        CreateTicketDetails other = (CreateTicketDetails) o;
+        return java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.resourceList, other.resourceList)
+                && java.util.Objects.equals(this.title, other.title)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.contextualData, other.contextualData)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.resourceList == null ? 43 : this.resourceList.hashCode());
+        result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contextualData == null ? 43 : this.contextualData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

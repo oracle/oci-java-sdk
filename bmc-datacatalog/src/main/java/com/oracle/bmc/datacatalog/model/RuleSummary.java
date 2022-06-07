@@ -17,14 +17,68 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RuleSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RuleSummary {
+public final class RuleSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "displayName",
+        "description",
+        "ruleType",
+        "externalKey",
+        "attributes",
+        "referencedFolderKey",
+        "referencedFolderName",
+        "referencedEntityKey",
+        "referencedEntityName",
+        "referencedRuleKey",
+        "referencedRuleName",
+        "referencedAttributes",
+        "originType",
+        "uri",
+        "timeCreated",
+        "lifecycleState"
+    })
+    public RuleSummary(
+            String key,
+            String displayName,
+            String description,
+            RuleType ruleType,
+            String externalKey,
+            java.util.List<RuleAttribute> attributes,
+            String referencedFolderKey,
+            String referencedFolderName,
+            String referencedEntityKey,
+            String referencedEntityName,
+            String referencedRuleKey,
+            String referencedRuleName,
+            java.util.List<RuleAttribute> referencedAttributes,
+            RuleOriginType originType,
+            String uri,
+            java.util.Date timeCreated,
+            LifecycleState lifecycleState) {
+        super();
+        this.key = key;
+        this.displayName = displayName;
+        this.description = description;
+        this.ruleType = ruleType;
+        this.externalKey = externalKey;
+        this.attributes = attributes;
+        this.referencedFolderKey = referencedFolderKey;
+        this.referencedFolderName = referencedFolderName;
+        this.referencedEntityKey = referencedEntityKey;
+        this.referencedEntityName = referencedEntityName;
+        this.referencedRuleKey = referencedRuleKey;
+        this.referencedRuleName = referencedRuleName;
+        this.referencedAttributes = referencedAttributes;
+        this.originType = originType;
+        this.uri = uri;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -239,11 +293,19 @@ public class RuleSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Immutable unique key of a rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
@@ -251,26 +313,42 @@ public class RuleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Detailed description of a rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Type of a rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
-    RuleType ruleType;
+    private final RuleType ruleType;
+
+    public RuleType getRuleType() {
+        return ruleType;
+    }
 
     /**
      * External URI that can be used to reference the object. Format will differ based on the type of object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
-    String externalKey;
+    private final String externalKey;
+
+    public String getExternalKey() {
+        return externalKey;
+    }
 
     /**
      * Attributes associated with a rule.
@@ -278,43 +356,71 @@ public class RuleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
-    java.util.List<RuleAttribute> attributes;
+    private final java.util.List<RuleAttribute> attributes;
+
+    public java.util.List<RuleAttribute> getAttributes() {
+        return attributes;
+    }
 
     /**
      * Folder key that represents the referenced folder, applicable only when rule type FOREIGNKEY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedFolderKey")
-    String referencedFolderKey;
+    private final String referencedFolderKey;
+
+    public String getReferencedFolderKey() {
+        return referencedFolderKey;
+    }
 
     /**
      * Folder name that represents the referenced folder, applicable only when rule type FOREIGNKEY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedFolderName")
-    String referencedFolderName;
+    private final String referencedFolderName;
+
+    public String getReferencedFolderName() {
+        return referencedFolderName;
+    }
 
     /**
      * Entity key that represents the referenced entity, applicable only when rule type is FOREIGNKEY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedEntityKey")
-    String referencedEntityKey;
+    private final String referencedEntityKey;
+
+    public String getReferencedEntityKey() {
+        return referencedEntityKey;
+    }
 
     /**
      * Entity name that represents the referenced entity, applicable only when rule type is FOREIGNKEY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedEntityName")
-    String referencedEntityName;
+    private final String referencedEntityName;
+
+    public String getReferencedEntityName() {
+        return referencedEntityName;
+    }
 
     /**
      * Rule key that represents the referenced rule, applicable only when rule type is FOREIGNKEY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedRuleKey")
-    String referencedRuleKey;
+    private final String referencedRuleKey;
+
+    public String getReferencedRuleKey() {
+        return referencedRuleKey;
+    }
 
     /**
      * Rule name that represents the referenced rule, applicable only when rule type is FOREIGNKEY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedRuleName")
-    String referencedRuleName;
+    private final String referencedRuleName;
+
+    public String getReferencedRuleName() {
+        return referencedRuleName;
+    }
 
     /**
      * Attributes associated with referenced rule, applicable only when rule type is FOREIGNKEY.
@@ -322,19 +428,31 @@ public class RuleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedAttributes")
-    java.util.List<RuleAttribute> referencedAttributes;
+    private final java.util.List<RuleAttribute> referencedAttributes;
+
+    public java.util.List<RuleAttribute> getReferencedAttributes() {
+        return referencedAttributes;
+    }
 
     /**
      * Origin type of the rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originType")
-    RuleOriginType originType;
+    private final RuleOriginType originType;
+
+    public RuleOriginType getOriginType() {
+        return originType;
+    }
 
     /**
      * URI to the rule instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
 
     /**
      * The date and time the rule was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -342,14 +460,137 @@ public class RuleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * State of the rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RuleSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", ruleType=").append(String.valueOf(this.ruleType));
+        sb.append(", externalKey=").append(String.valueOf(this.externalKey));
+        sb.append(", attributes=").append(String.valueOf(this.attributes));
+        sb.append(", referencedFolderKey=").append(String.valueOf(this.referencedFolderKey));
+        sb.append(", referencedFolderName=").append(String.valueOf(this.referencedFolderName));
+        sb.append(", referencedEntityKey=").append(String.valueOf(this.referencedEntityKey));
+        sb.append(", referencedEntityName=").append(String.valueOf(this.referencedEntityName));
+        sb.append(", referencedRuleKey=").append(String.valueOf(this.referencedRuleKey));
+        sb.append(", referencedRuleName=").append(String.valueOf(this.referencedRuleName));
+        sb.append(", referencedAttributes=").append(String.valueOf(this.referencedAttributes));
+        sb.append(", originType=").append(String.valueOf(this.originType));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RuleSummary)) {
+            return false;
+        }
+
+        RuleSummary other = (RuleSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.ruleType, other.ruleType)
+                && java.util.Objects.equals(this.externalKey, other.externalKey)
+                && java.util.Objects.equals(this.attributes, other.attributes)
+                && java.util.Objects.equals(this.referencedFolderKey, other.referencedFolderKey)
+                && java.util.Objects.equals(this.referencedFolderName, other.referencedFolderName)
+                && java.util.Objects.equals(this.referencedEntityKey, other.referencedEntityKey)
+                && java.util.Objects.equals(this.referencedEntityName, other.referencedEntityName)
+                && java.util.Objects.equals(this.referencedRuleKey, other.referencedRuleKey)
+                && java.util.Objects.equals(this.referencedRuleName, other.referencedRuleName)
+                && java.util.Objects.equals(this.referencedAttributes, other.referencedAttributes)
+                && java.util.Objects.equals(this.originType, other.originType)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.ruleType == null ? 43 : this.ruleType.hashCode());
+        result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
+        result = (result * PRIME) + (this.attributes == null ? 43 : this.attributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referencedFolderKey == null
+                                ? 43
+                                : this.referencedFolderKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referencedFolderName == null
+                                ? 43
+                                : this.referencedFolderName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referencedEntityKey == null
+                                ? 43
+                                : this.referencedEntityKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referencedEntityName == null
+                                ? 43
+                                : this.referencedEntityName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referencedRuleKey == null ? 43 : this.referencedRuleKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referencedRuleName == null
+                                ? 43
+                                : this.referencedRuleName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referencedAttributes == null
+                                ? 43
+                                : this.referencedAttributes.hashCode());
+        result = (result * PRIME) + (this.originType == null ? 43 : this.originType.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

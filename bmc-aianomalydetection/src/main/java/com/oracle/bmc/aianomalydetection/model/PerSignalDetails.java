@@ -15,14 +15,44 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PerSignalDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PerSignalDetails {
+public final class PerSignalDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "signalName",
+        "mviRatio",
+        "isQuantized",
+        "fap",
+        "min",
+        "max",
+        "std",
+        "status",
+        "details"
+    })
+    public PerSignalDetails(
+            String signalName,
+            Double mviRatio,
+            Boolean isQuantized,
+            Float fap,
+            Double min,
+            Double max,
+            Double std,
+            Status status,
+            String details) {
+        super();
+        this.signalName = signalName;
+        this.mviRatio = mviRatio;
+        this.isQuantized = isQuantized;
+        this.fap = fap;
+        this.min = min;
+        this.max = max;
+        this.std = std;
+        this.status = status;
+        this.details = details;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("signalName")
         private String signalName;
@@ -141,47 +171,80 @@ public class PerSignalDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of a signal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signalName")
-    String signalName;
+    private final String signalName;
+
+    public String getSignalName() {
+        return signalName;
+    }
 
     /**
      * The ratio of missing values in a signal filled/imputed by the IDP algorithm.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mviRatio")
-    Double mviRatio;
+    private final Double mviRatio;
+
+    public Double getMviRatio() {
+        return mviRatio;
+    }
 
     /**
      * A boolean value to indicate if a signal is quantized or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isQuantized")
-    Boolean isQuantized;
+    private final Boolean isQuantized;
+
+    public Boolean getIsQuantized() {
+        return isQuantized;
+    }
 
     /**
      * Accuracy metric for a signal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fap")
-    Float fap;
+    private final Float fap;
+
+    public Float getFap() {
+        return fap;
+    }
 
     /**
      * Min value within a signal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("min")
-    Double min;
+    private final Double min;
+
+    public Double getMin() {
+        return min;
+    }
 
     /**
      * Max value within a signal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("max")
-    Double max;
+    private final Double max;
+
+    public Double getMax() {
+        return max;
+    }
 
     /**
      * Standard deviation of values within a signal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("std")
-    Double std;
+    private final Double std;
+
+    public Double getStd() {
+        return std;
+    }
+
     /**
      * Status of the signal:
      *  * ACCEPTED - the signal is used for training the model
@@ -189,7 +252,6 @@ public class PerSignalDetails {
      *  * OTHER - placeholder for other status
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Accepted("ACCEPTED"),
         Dropped("DROPPED"),
@@ -200,6 +262,8 @@ public class PerSignalDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -241,14 +305,85 @@ public class PerSignalDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * detailed information for a signal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
-    String details;
+    private final String details;
+
+    public String getDetails() {
+        return details;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PerSignalDetails(");
+        sb.append("signalName=").append(String.valueOf(this.signalName));
+        sb.append(", mviRatio=").append(String.valueOf(this.mviRatio));
+        sb.append(", isQuantized=").append(String.valueOf(this.isQuantized));
+        sb.append(", fap=").append(String.valueOf(this.fap));
+        sb.append(", min=").append(String.valueOf(this.min));
+        sb.append(", max=").append(String.valueOf(this.max));
+        sb.append(", std=").append(String.valueOf(this.std));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", details=").append(String.valueOf(this.details));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PerSignalDetails)) {
+            return false;
+        }
+
+        PerSignalDetails other = (PerSignalDetails) o;
+        return java.util.Objects.equals(this.signalName, other.signalName)
+                && java.util.Objects.equals(this.mviRatio, other.mviRatio)
+                && java.util.Objects.equals(this.isQuantized, other.isQuantized)
+                && java.util.Objects.equals(this.fap, other.fap)
+                && java.util.Objects.equals(this.min, other.min)
+                && java.util.Objects.equals(this.max, other.max)
+                && java.util.Objects.equals(this.std, other.std)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.details, other.details)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.signalName == null ? 43 : this.signalName.hashCode());
+        result = (result * PRIME) + (this.mviRatio == null ? 43 : this.mviRatio.hashCode());
+        result = (result * PRIME) + (this.isQuantized == null ? 43 : this.isQuantized.hashCode());
+        result = (result * PRIME) + (this.fap == null ? 43 : this.fap.hashCode());
+        result = (result * PRIME) + (this.min == null ? 43 : this.min.hashCode());
+        result = (result * PRIME) + (this.max == null ? 43 : this.max.hashCode());
+        result = (result * PRIME) + (this.std == null ? 43 : this.std.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

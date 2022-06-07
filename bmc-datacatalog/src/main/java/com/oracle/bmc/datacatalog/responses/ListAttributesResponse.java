@@ -7,10 +7,6 @@ package com.oracle.bmc.datacatalog.responses;
 import com.oracle.bmc.datacatalog.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAttributesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,16 +15,28 @@ public class ListAttributesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned AttributeCollection instance.
      */
     private com.oracle.bmc.datacatalog.model.AttributeCollection attributeCollection;
+
+    public com.oracle.bmc.datacatalog.model.AttributeCollection getAttributeCollection() {
+        return attributeCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -55,6 +63,28 @@ public class ListAttributesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.AttributeCollection attributeCollection;
+
+        public Builder attributeCollection(
+                com.oracle.bmc.datacatalog.model.AttributeCollection attributeCollection) {
+            this.attributeCollection = attributeCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -72,5 +102,51 @@ public class ListAttributesResponse extends com.oracle.bmc.responses.BmcResponse
             return new ListAttributesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, attributeCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",attributeCollection=").append(String.valueOf(attributeCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAttributesResponse)) {
+            return false;
+        }
+
+        ListAttributesResponse other = (ListAttributesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.attributeCollection, other.attributeCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attributeCollection == null
+                                ? 43
+                                : this.attributeCollection.hashCode());
+        return result;
     }
 }

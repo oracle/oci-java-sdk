@@ -26,9 +26,12 @@ import com.oracle.bmc.jms.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.RequiredArgsConstructor
 public class JavaManagementServicePaginators {
     private final JavaManagementService client;
+
+    public JavaManagementServicePaginators(JavaManagementService client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listBlocklists operation. This iterable

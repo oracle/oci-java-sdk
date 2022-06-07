@@ -9,14 +9,6 @@ import com.oracle.bmc.licensemanager.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicensesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProductLicensesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,16 +17,25 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -42,11 +43,17 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Indicates if the given compartment is the root compartment.
      */
     private Boolean isCompartmentIdInSubtree;
 
+    public Boolean getIsCompartmentIdInSubtree() {
+        return isCompartmentIdInSubtree;
+    }
     /**
      * The sort order to use, whether {@code ASC} or {@code DESC}.
      */
@@ -87,6 +94,10 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Specifies the attribute with which to sort the rules.
      * <p>
@@ -137,12 +148,101 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListProductLicensesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Boolean isCompartmentIdInSubtree = null;
+
+        /**
+         * Indicates if the given compartment is the root compartment.
+         * @return this builder instance
+         */
+        public Builder isCompartmentIdInSubtree(Boolean isCompartmentIdInSubtree) {
+            this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, whether {@code ASC} or {@code DESC}.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * Specifies the attribute with which to sort the rules.
+         * <p>
+         * Default: {@code totalLicenseUnitsConsumed}
+         * <p>
+         * **totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -200,5 +300,102 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListProductLicensesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListProductLicensesRequest
+         */
+        public ListProductLicensesRequest buildWithoutInvocationCallback() {
+            ListProductLicensesRequest request = new ListProductLicensesRequest();
+            request.compartmentId = compartmentId;
+            request.limit = limit;
+            request.page = page;
+            request.opcRequestId = opcRequestId;
+            request.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            return request;
+            // new ListProductLicensesRequest(compartmentId, limit, page, opcRequestId, isCompartmentIdInSubtree, sortOrder, sortBy);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .limit(limit)
+                .page(page)
+                .opcRequestId(opcRequestId)
+                .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isCompartmentIdInSubtree=")
+                .append(String.valueOf(this.isCompartmentIdInSubtree));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListProductLicensesRequest)) {
+            return false;
+        }
+
+        ListProductLicensesRequest other = (ListProductLicensesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.isCompartmentIdInSubtree, other.isCompartmentIdInSubtree)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCompartmentIdInSubtree == null
+                                ? 43
+                                : this.isCompartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        return result;
     }
 }

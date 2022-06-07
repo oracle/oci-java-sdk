@@ -15,16 +15,23 @@ package com.oracle.bmc.aispeech.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AudioFormatDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AudioFormatDetails {
+public final class AudioFormatDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"format", "numberOfChannels", "encoding", "sampleRateInHz"})
+    public AudioFormatDetails(
+            String format, Integer numberOfChannels, String encoding, Integer sampleRateInHz) {
+        super();
+        this.format = format;
+        this.numberOfChannels = numberOfChannels;
+        this.encoding = encoding;
+        this.sampleRateInHz = sampleRateInHz;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private String format;
@@ -92,30 +99,102 @@ public class AudioFormatDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Input file format. Example - WAV.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("format")
-    String format;
+    private final String format;
+
+    public String getFormat() {
+        return format;
+    }
 
     /**
      * Input file number of channels.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfChannels")
-    Integer numberOfChannels;
+    private final Integer numberOfChannels;
+
+    public Integer getNumberOfChannels() {
+        return numberOfChannels;
+    }
 
     /**
      * Input file encoding. Example - PCM.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
-    String encoding;
+    private final String encoding;
+
+    public String getEncoding() {
+        return encoding;
+    }
 
     /**
      * Input file sampleRate. Example - 16000
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleRateInHz")
-    Integer sampleRateInHz;
+    private final Integer sampleRateInHz;
+
+    public Integer getSampleRateInHz() {
+        return sampleRateInHz;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AudioFormatDetails(");
+        sb.append("format=").append(String.valueOf(this.format));
+        sb.append(", numberOfChannels=").append(String.valueOf(this.numberOfChannels));
+        sb.append(", encoding=").append(String.valueOf(this.encoding));
+        sb.append(", sampleRateInHz=").append(String.valueOf(this.sampleRateInHz));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AudioFormatDetails)) {
+            return false;
+        }
+
+        AudioFormatDetails other = (AudioFormatDetails) o;
+        return java.util.Objects.equals(this.format, other.format)
+                && java.util.Objects.equals(this.numberOfChannels, other.numberOfChannels)
+                && java.util.Objects.equals(this.encoding, other.encoding)
+                && java.util.Objects.equals(this.sampleRateInHz, other.sampleRateInHz)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.format == null ? 43 : this.format.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfChannels == null ? 43 : this.numberOfChannels.hashCode());
+        result = (result * PRIME) + (this.encoding == null ? 43 : this.encoding.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sampleRateInHz == null ? 43 : this.sampleRateInHz.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

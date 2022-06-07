@@ -15,14 +15,41 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MaskDataDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MaskDataDetails {
+public final class MaskDataDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "targetId",
+        "isDecrypt",
+        "isRerun",
+        "tablespace",
+        "isIgnoreErrorsEnabled",
+        "seed",
+        "isMoveInterimTablesEnabled",
+        "isExecuteSavedScriptEnabled"
+    })
+    public MaskDataDetails(
+            String targetId,
+            Boolean isDecrypt,
+            Boolean isRerun,
+            String tablespace,
+            Boolean isIgnoreErrorsEnabled,
+            String seed,
+            Boolean isMoveInterimTablesEnabled,
+            Boolean isExecuteSavedScriptEnabled) {
+        super();
+        this.targetId = targetId;
+        this.isDecrypt = isDecrypt;
+        this.isRerun = isRerun;
+        this.tablespace = tablespace;
+        this.isIgnoreErrorsEnabled = isIgnoreErrorsEnabled;
+        this.seed = seed;
+        this.isMoveInterimTablesEnabled = isMoveInterimTablesEnabled;
+        this.isExecuteSavedScriptEnabled = isExecuteSavedScriptEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
@@ -138,6 +165,10 @@ public class MaskDataDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the target database to be masked. If it's not provided, the value of the
      * targetId attribute in the MaskingPolicy resource is used. The OCID of the target
@@ -146,7 +177,11 @@ public class MaskDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * Indicates if the masking request is to decrypt the data values previously encrypted using Deterministic Encryption. Note that, to
@@ -154,7 +189,11 @@ public class MaskDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDecrypt")
-    Boolean isDecrypt;
+    private final Boolean isDecrypt;
+
+    public Boolean getIsDecrypt() {
+        return isDecrypt;
+    }
 
     /**
      * Indicates if the masking request is to rerun the previously failed masking steps. If a masking request is submitted with the
@@ -164,7 +203,11 @@ public class MaskDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRerun")
-    Boolean isRerun;
+    private final Boolean isRerun;
+
+    public Boolean getIsRerun() {
+        return isRerun;
+    }
 
     /**
      * The tablespace that should be used to create the mapping tables, DMASK objects, and other temporary tables for data masking.
@@ -172,7 +215,11 @@ public class MaskDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
-    String tablespace;
+    private final String tablespace;
+
+    public String getTablespace() {
+        return tablespace;
+    }
 
     /**
      * Indicates if the masking process should continue on hitting an error. It provides fault tolerance support and is enabled by
@@ -181,13 +228,21 @@ public class MaskDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreErrorsEnabled")
-    Boolean isIgnoreErrorsEnabled;
+    private final Boolean isIgnoreErrorsEnabled;
+
+    public Boolean getIsIgnoreErrorsEnabled() {
+        return isIgnoreErrorsEnabled;
+    }
 
     /**
      * The seed value to be used in case of Deterministic Encryption and Deterministic Substitution masking formats.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("seed")
-    String seed;
+    private final String seed;
+
+    public String getSeed() {
+        return seed;
+    }
 
     /**
      * Indicates if the interim DMASK tables should be moved to the user-specified tablespace. As interim tables can be large in size,
@@ -195,7 +250,11 @@ public class MaskDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMoveInterimTablesEnabled")
-    Boolean isMoveInterimTablesEnabled;
+    private final Boolean isMoveInterimTablesEnabled;
+
+    public Boolean getIsMoveInterimTablesEnabled() {
+        return isMoveInterimTablesEnabled;
+    }
 
     /**
      * Indicates if data masking should be performed using a saved masking script. Setting this attribute to true skips masking script
@@ -204,8 +263,88 @@ public class MaskDataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isExecuteSavedScriptEnabled")
-    Boolean isExecuteSavedScriptEnabled;
+    private final Boolean isExecuteSavedScriptEnabled;
+
+    public Boolean getIsExecuteSavedScriptEnabled() {
+        return isExecuteSavedScriptEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MaskDataDetails(");
+        sb.append("targetId=").append(String.valueOf(this.targetId));
+        sb.append(", isDecrypt=").append(String.valueOf(this.isDecrypt));
+        sb.append(", isRerun=").append(String.valueOf(this.isRerun));
+        sb.append(", tablespace=").append(String.valueOf(this.tablespace));
+        sb.append(", isIgnoreErrorsEnabled=").append(String.valueOf(this.isIgnoreErrorsEnabled));
+        sb.append(", seed=").append(String.valueOf(this.seed));
+        sb.append(", isMoveInterimTablesEnabled=")
+                .append(String.valueOf(this.isMoveInterimTablesEnabled));
+        sb.append(", isExecuteSavedScriptEnabled=")
+                .append(String.valueOf(this.isExecuteSavedScriptEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MaskDataDetails)) {
+            return false;
+        }
+
+        MaskDataDetails other = (MaskDataDetails) o;
+        return java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.isDecrypt, other.isDecrypt)
+                && java.util.Objects.equals(this.isRerun, other.isRerun)
+                && java.util.Objects.equals(this.tablespace, other.tablespace)
+                && java.util.Objects.equals(this.isIgnoreErrorsEnabled, other.isIgnoreErrorsEnabled)
+                && java.util.Objects.equals(this.seed, other.seed)
+                && java.util.Objects.equals(
+                        this.isMoveInterimTablesEnabled, other.isMoveInterimTablesEnabled)
+                && java.util.Objects.equals(
+                        this.isExecuteSavedScriptEnabled, other.isExecuteSavedScriptEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.isDecrypt == null ? 43 : this.isDecrypt.hashCode());
+        result = (result * PRIME) + (this.isRerun == null ? 43 : this.isRerun.hashCode());
+        result = (result * PRIME) + (this.tablespace == null ? 43 : this.tablespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIgnoreErrorsEnabled == null
+                                ? 43
+                                : this.isIgnoreErrorsEnabled.hashCode());
+        result = (result * PRIME) + (this.seed == null ? 43 : this.seed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMoveInterimTablesEnabled == null
+                                ? 43
+                                : this.isMoveInterimTablesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isExecuteSavedScriptEnabled == null
+                                ? 43
+                                : this.isExecuteSavedScriptEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

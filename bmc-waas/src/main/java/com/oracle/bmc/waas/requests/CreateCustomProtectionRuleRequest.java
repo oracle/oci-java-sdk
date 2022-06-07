@@ -9,14 +9,6 @@ import com.oracle.bmc.waas.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateCustomProtectionRuleExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateCustomProtectionRuleRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateCustomProtectionRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails> {
@@ -27,16 +19,27 @@ public class CreateCustomProtectionRuleRequest
     private com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails
             createCustomProtectionRuleDetails;
 
+    public com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails
+            getCreateCustomProtectionRuleDetails() {
+        return createCustomProtectionRuleDetails;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
      * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -55,6 +58,43 @@ public class CreateCustomProtectionRuleRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails
+                createCustomProtectionRuleDetails = null;
+
+        /**
+         * The details of the custom protection rule.
+         * @return this builder instance
+         */
+        public Builder createCustomProtectionRuleDetails(
+                com.oracle.bmc.waas.model.CreateCustomProtectionRuleDetails
+                        createCustomProtectionRuleDetails) {
+            this.createCustomProtectionRuleDetails = createCustomProtectionRuleDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+         * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -119,5 +159,83 @@ public class CreateCustomProtectionRuleRequest
             createCustomProtectionRuleDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateCustomProtectionRuleRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateCustomProtectionRuleRequest
+         */
+        public CreateCustomProtectionRuleRequest buildWithoutInvocationCallback() {
+            CreateCustomProtectionRuleRequest request = new CreateCustomProtectionRuleRequest();
+            request.createCustomProtectionRuleDetails = createCustomProtectionRuleDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateCustomProtectionRuleRequest(createCustomProtectionRuleDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createCustomProtectionRuleDetails(createCustomProtectionRuleDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createCustomProtectionRuleDetails=")
+                .append(String.valueOf(this.createCustomProtectionRuleDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateCustomProtectionRuleRequest)) {
+            return false;
+        }
+
+        CreateCustomProtectionRuleRequest other = (CreateCustomProtectionRuleRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createCustomProtectionRuleDetails,
+                        other.createCustomProtectionRuleDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createCustomProtectionRuleDetails == null
+                                ? 43
+                                : this.createCustomProtectionRuleDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

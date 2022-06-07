@@ -15,16 +15,21 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RelatedEventSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RelatedEventSummary {
+public final class RelatedEventSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "instanceId", "timestamp"})
+    public RelatedEventSummary(String id, String instanceId, java.util.Date timestamp) {
+        super();
+        this.id = id;
+        this.instanceId = instanceId;
+        this.timestamp = timestamp;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -79,24 +84,85 @@ public class RelatedEventSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID identifier of the event
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * OCID identifier of the instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
 
     /**
      * time occurence
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RelatedEventSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RelatedEventSummary)) {
+            return false;
+        }
+
+        RelatedEventSummary other = (RelatedEventSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

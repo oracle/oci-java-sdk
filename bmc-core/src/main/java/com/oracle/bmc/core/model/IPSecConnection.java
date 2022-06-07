@@ -36,14 +36,53 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IPSecConnection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class IPSecConnection {
+public final class IPSecConnection {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "cpeId",
+        "definedTags",
+        "displayName",
+        "drgId",
+        "freeformTags",
+        "id",
+        "lifecycleState",
+        "cpeLocalIdentifier",
+        "cpeLocalIdentifierType",
+        "staticRoutes",
+        "timeCreated"
+    })
+    public IPSecConnection(
+            String compartmentId,
+            String cpeId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            String drgId,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            LifecycleState lifecycleState,
+            String cpeLocalIdentifier,
+            CpeLocalIdentifierType cpeLocalIdentifierType,
+            java.util.List<String> staticRoutes,
+            java.util.Date timeCreated) {
+        super();
+        this.compartmentId = compartmentId;
+        this.cpeId = cpeId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.drgId = drgId;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.cpeLocalIdentifier = cpeLocalIdentifier;
+        this.cpeLocalIdentifierType = cpeLocalIdentifierType;
+        this.staticRoutes = staticRoutes;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -204,17 +243,29 @@ public class IPSecConnection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
-    String cpeId;
+    private final String cpeId;
+
+    public String getCpeId() {
+        return cpeId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -224,7 +275,11 @@ public class IPSecConnection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -232,13 +287,21 @@ public class IPSecConnection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
-    String drgId;
+    private final String drgId;
+
+    public String getDrgId() {
+        return drgId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -248,17 +311,25 @@ public class IPSecConnection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The IPSec connection's current state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -270,6 +341,9 @@ public class IPSecConnection {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -307,7 +381,11 @@ public class IPSecConnection {
      * The IPSec connection's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
@@ -326,13 +404,17 @@ public class IPSecConnection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
-    String cpeLocalIdentifier;
+    private final String cpeLocalIdentifier;
+
+    public String getCpeLocalIdentifier() {
+        return cpeLocalIdentifier;
+    }
+
     /**
      * The type of identifier for your CPE device. The value here must correspond to the value
      * for {@code cpeLocalIdentifier}.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CpeLocalIdentifierType {
         IpAddress("IP_ADDRESS"),
         Hostname("HOSTNAME"),
@@ -342,6 +424,9 @@ public class IPSecConnection {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CpeLocalIdentifierType.class);
 
         private final String value;
         private static java.util.Map<String, CpeLocalIdentifierType> map;
@@ -381,7 +466,11 @@ public class IPSecConnection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
-    CpeLocalIdentifierType cpeLocalIdentifierType;
+    private final CpeLocalIdentifierType cpeLocalIdentifierType;
+
+    public CpeLocalIdentifierType getCpeLocalIdentifierType() {
+        return cpeLocalIdentifierType;
+    }
 
     /**
      * Static routes to the CPE. The CIDR must not be a
@@ -401,7 +490,11 @@ public class IPSecConnection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
-    java.util.List<String> staticRoutes;
+    private final java.util.List<String> staticRoutes;
+
+    public java.util.List<String> getStaticRoutes() {
+        return staticRoutes;
+    }
 
     /**
      * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -410,8 +503,97 @@ public class IPSecConnection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("IPSecConnection(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", cpeId=").append(String.valueOf(this.cpeId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", drgId=").append(String.valueOf(this.drgId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", cpeLocalIdentifier=").append(String.valueOf(this.cpeLocalIdentifier));
+        sb.append(", cpeLocalIdentifierType=").append(String.valueOf(this.cpeLocalIdentifierType));
+        sb.append(", staticRoutes=").append(String.valueOf(this.staticRoutes));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IPSecConnection)) {
+            return false;
+        }
+
+        IPSecConnection other = (IPSecConnection) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.cpeId, other.cpeId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.drgId, other.drgId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.cpeLocalIdentifier, other.cpeLocalIdentifier)
+                && java.util.Objects.equals(
+                        this.cpeLocalIdentifierType, other.cpeLocalIdentifierType)
+                && java.util.Objects.equals(this.staticRoutes, other.staticRoutes)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.cpeId == null ? 43 : this.cpeId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.drgId == null ? 43 : this.drgId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpeLocalIdentifier == null
+                                ? 43
+                                : this.cpeLocalIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpeLocalIdentifierType == null
+                                ? 43
+                                : this.cpeLocalIdentifierType.hashCode());
+        result = (result * PRIME) + (this.staticRoutes == null ? 43 : this.staticRoutes.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

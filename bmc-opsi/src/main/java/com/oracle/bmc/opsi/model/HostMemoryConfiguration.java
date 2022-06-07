@@ -16,22 +16,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HostMemoryConfiguration.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "metricName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HostMemoryConfiguration extends HostConfigurationMetricGroup {
+public final class HostMemoryConfiguration extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
@@ -125,6 +120,10 @@ public class HostMemoryConfiguration extends HostConfigurationMetricGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HostMemoryConfiguration(
             java.util.Date timeCollected,
@@ -145,32 +144,113 @@ public class HostMemoryConfiguration extends HostConfigurationMetricGroup {
      * Page size in kilobytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pageSizeInKB")
-    Double pageSizeInKB;
+    private final Double pageSizeInKB;
+
+    public Double getPageSizeInKB() {
+        return pageSizeInKB;
+    }
 
     /**
      * Amount of memory used for page tables in kilobytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pageTablesInKB")
-    Double pageTablesInKB;
+    private final Double pageTablesInKB;
+
+    public Double getPageTablesInKB() {
+        return pageTablesInKB;
+    }
 
     /**
      * Amount of total swap space in kilobytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("swapTotalInKB")
-    Double swapTotalInKB;
+    private final Double swapTotalInKB;
+
+    public Double getSwapTotalInKB() {
+        return swapTotalInKB;
+    }
 
     /**
      * Size of huge pages in kilobytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInKB")
-    Double hugePageSizeInKB;
+    private final Double hugePageSizeInKB;
+
+    public Double getHugePageSizeInKB() {
+        return hugePageSizeInKB;
+    }
 
     /**
      * Total number of huge pages
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
-    Integer hugePagesTotal;
+    private final Integer hugePagesTotal;
+
+    public Integer getHugePagesTotal() {
+        return hugePagesTotal;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostMemoryConfiguration(");
+        sb.append("super=").append(super.toString());
+        sb.append(", pageSizeInKB=").append(String.valueOf(this.pageSizeInKB));
+        sb.append(", pageTablesInKB=").append(String.valueOf(this.pageTablesInKB));
+        sb.append(", swapTotalInKB=").append(String.valueOf(this.swapTotalInKB));
+        sb.append(", hugePageSizeInKB=").append(String.valueOf(this.hugePageSizeInKB));
+        sb.append(", hugePagesTotal=").append(String.valueOf(this.hugePagesTotal));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostMemoryConfiguration)) {
+            return false;
+        }
+
+        HostMemoryConfiguration other = (HostMemoryConfiguration) o;
+        return java.util.Objects.equals(this.pageSizeInKB, other.pageSizeInKB)
+                && java.util.Objects.equals(this.pageTablesInKB, other.pageTablesInKB)
+                && java.util.Objects.equals(this.swapTotalInKB, other.swapTotalInKB)
+                && java.util.Objects.equals(this.hugePageSizeInKB, other.hugePageSizeInKB)
+                && java.util.Objects.equals(this.hugePagesTotal, other.hugePagesTotal)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.pageSizeInKB == null ? 43 : this.pageSizeInKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pageTablesInKB == null ? 43 : this.pageTablesInKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.swapTotalInKB == null ? 43 : this.swapTotalInKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hugePageSizeInKB == null ? 43 : this.hugePageSizeInKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hugePagesTotal == null ? 43 : this.hugePagesTotal.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

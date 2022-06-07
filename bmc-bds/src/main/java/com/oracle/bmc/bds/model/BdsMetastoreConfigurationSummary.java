@@ -15,16 +15,43 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BdsMetastoreConfigurationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BdsMetastoreConfigurationSummary {
+public final class BdsMetastoreConfigurationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "metastoreType",
+        "metastoreId",
+        "bdsApiKeyId",
+        "lifecycleState",
+        "timeCreated",
+        "timeUpdated"
+    })
+    public BdsMetastoreConfigurationSummary(
+            String id,
+            String displayName,
+            BdsMetastoreConfiguration.MetastoreType metastoreType,
+            String metastoreId,
+            String bdsApiKeyId,
+            BdsMetastoreConfiguration.LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.metastoreType = metastoreType;
+        this.metastoreId = metastoreId;
+        this.bdsApiKeyId = bdsApiKeyId;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -140,54 +167,154 @@ public class BdsMetastoreConfigurationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The ID of the metastore configuration
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The display name of metastore configuration
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The type of the metastore in the metastore configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreType")
-    BdsMetastoreConfiguration.MetastoreType metastoreType;
+    private final BdsMetastoreConfiguration.MetastoreType metastoreType;
+
+    public BdsMetastoreConfiguration.MetastoreType getMetastoreType() {
+        return metastoreType;
+    }
 
     /**
      * The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
-    String metastoreId;
+    private final String metastoreId;
+
+    public String getMetastoreId() {
+        return metastoreId;
+    }
 
     /**
      * The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyId")
-    String bdsApiKeyId;
+    private final String bdsApiKeyId;
+
+    public String getBdsApiKeyId() {
+        return bdsApiKeyId;
+    }
 
     /**
      * the lifecycle state of the metastore configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    BdsMetastoreConfiguration.LifecycleState lifecycleState;
+    private final BdsMetastoreConfiguration.LifecycleState lifecycleState;
+
+    public BdsMetastoreConfiguration.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BdsMetastoreConfigurationSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", metastoreType=").append(String.valueOf(this.metastoreType));
+        sb.append(", metastoreId=").append(String.valueOf(this.metastoreId));
+        sb.append(", bdsApiKeyId=").append(String.valueOf(this.bdsApiKeyId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BdsMetastoreConfigurationSummary)) {
+            return false;
+        }
+
+        BdsMetastoreConfigurationSummary other = (BdsMetastoreConfigurationSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.metastoreType, other.metastoreType)
+                && java.util.Objects.equals(this.metastoreId, other.metastoreId)
+                && java.util.Objects.equals(this.bdsApiKeyId, other.bdsApiKeyId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metastoreType == null ? 43 : this.metastoreType.hashCode());
+        result = (result * PRIME) + (this.metastoreId == null ? 43 : this.metastoreId.hashCode());
+        result = (result * PRIME) + (this.bdsApiKeyId == null ? 43 : this.bdsApiKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,67 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsSourceFunction.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsSourceFunction {
+public final class LogAnalyticsSourceFunction {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "arguments",
+        "isEnabled",
+        "function",
+        "functionName",
+        "functionReference",
+        "sourceReference",
+        "features",
+        "functionId",
+        "order",
+        "isSystem",
+        "lookupColumn",
+        "lookupColumnPosition",
+        "lookupDisplayName",
+        "lookupMode",
+        "lookupTable",
+        "sourceId"
+    })
+    public LogAnalyticsSourceFunction(
+            java.util.List<LogAnalyticsMetaFunctionArgument> arguments,
+            Boolean isEnabled,
+            LogAnalyticsMetaFunction function,
+            FunctionName functionName,
+            String functionReference,
+            String sourceReference,
+            java.util.List<String> features,
+            Long functionId,
+            Long order,
+            Boolean isSystem,
+            String lookupColumn,
+            Long lookupColumnPosition,
+            String lookupDisplayName,
+            Long lookupMode,
+            String lookupTable,
+            Long sourceId) {
+        super();
+        this.arguments = arguments;
+        this.isEnabled = isEnabled;
+        this.function = function;
+        this.functionName = functionName;
+        this.functionReference = functionReference;
+        this.sourceReference = sourceReference;
+        this.features = features;
+        this.functionId = functionId;
+        this.order = order;
+        this.isSystem = isSystem;
+        this.lookupColumn = lookupColumn;
+        this.lookupColumnPosition = lookupColumnPosition;
+        this.lookupDisplayName = lookupDisplayName;
+        this.lookupMode = lookupMode;
+        this.lookupTable = lookupTable;
+        this.sourceId = sourceId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<LogAnalyticsMetaFunctionArgument> arguments;
@@ -228,25 +279,41 @@ public class LogAnalyticsSourceFunction {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The function argument.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
-    java.util.List<LogAnalyticsMetaFunctionArgument> arguments;
+    private final java.util.List<LogAnalyticsMetaFunctionArgument> arguments;
+
+    public java.util.List<LogAnalyticsMetaFunctionArgument> getArguments() {
+        return arguments;
+    }
 
     /**
      * A flag inidcating whether or not the source function is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("function")
-    LogAnalyticsMetaFunction function;
+    private final LogAnalyticsMetaFunction function;
+
+    public LogAnalyticsMetaFunction getFunction() {
+        return function;
+    }
+
     /**
      * The source function name
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum FunctionName {
         Geolocation("GEOLOCATION"),
         Lookup("LOOKUP"),
@@ -256,6 +323,9 @@ public class LogAnalyticsSourceFunction {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FunctionName.class);
 
         private final String value;
         private static java.util.Map<String, FunctionName> map;
@@ -293,37 +363,61 @@ public class LogAnalyticsSourceFunction {
      * The source function name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionName")
-    FunctionName functionName;
+    private final FunctionName functionName;
+
+    public FunctionName getFunctionName() {
+        return functionName;
+    }
 
     /**
      * The source function unique identifier as a string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionReference")
-    String functionReference;
+    private final String functionReference;
+
+    public String getFunctionReference() {
+        return functionReference;
+    }
 
     /**
      * The source unique identifier as a string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceReference")
-    String sourceReference;
+    private final String sourceReference;
+
+    public String getSourceReference() {
+        return sourceReference;
+    }
 
     /**
      * Features of the source function to use for enrichment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
-    java.util.List<String> features;
+    private final java.util.List<String> features;
+
+    public java.util.List<String> getFeatures() {
+        return features;
+    }
 
     /**
      * The source function unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
-    Long functionId;
+    private final Long functionId;
+
+    public Long getFunctionId() {
+        return functionId;
+    }
 
     /**
      * The source function order.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("order")
-    Long order;
+    private final Long order;
+
+    public Long getOrder() {
+        return order;
+    }
 
     /**
      * The system flag.  A value of false denotes a custom, or user
@@ -331,44 +425,166 @@ public class LogAnalyticsSourceFunction {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The lookup column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupColumn")
-    String lookupColumn;
+    private final String lookupColumn;
+
+    public String getLookupColumn() {
+        return lookupColumn;
+    }
 
     /**
      * The lookup column position.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupColumnPosition")
-    Long lookupColumnPosition;
+    private final Long lookupColumnPosition;
+
+    public Long getLookupColumnPosition() {
+        return lookupColumnPosition;
+    }
 
     /**
      * The lookup display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupDisplayName")
-    String lookupDisplayName;
+    private final String lookupDisplayName;
+
+    public String getLookupDisplayName() {
+        return lookupDisplayName;
+    }
 
     /**
      * The lookup  mode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupMode")
-    Long lookupMode;
+    private final Long lookupMode;
+
+    public Long getLookupMode() {
+        return lookupMode;
+    }
 
     /**
      * The lookup table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupTable")
-    String lookupTable;
+    private final String lookupTable;
+
+    public String getLookupTable() {
+        return lookupTable;
+    }
 
     /**
      * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    Long sourceId;
+    private final Long sourceId;
+
+    public Long getSourceId() {
+        return sourceId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsSourceFunction(");
+        sb.append("arguments=").append(String.valueOf(this.arguments));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", function=").append(String.valueOf(this.function));
+        sb.append(", functionName=").append(String.valueOf(this.functionName));
+        sb.append(", functionReference=").append(String.valueOf(this.functionReference));
+        sb.append(", sourceReference=").append(String.valueOf(this.sourceReference));
+        sb.append(", features=").append(String.valueOf(this.features));
+        sb.append(", functionId=").append(String.valueOf(this.functionId));
+        sb.append(", order=").append(String.valueOf(this.order));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", lookupColumn=").append(String.valueOf(this.lookupColumn));
+        sb.append(", lookupColumnPosition=").append(String.valueOf(this.lookupColumnPosition));
+        sb.append(", lookupDisplayName=").append(String.valueOf(this.lookupDisplayName));
+        sb.append(", lookupMode=").append(String.valueOf(this.lookupMode));
+        sb.append(", lookupTable=").append(String.valueOf(this.lookupTable));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsSourceFunction)) {
+            return false;
+        }
+
+        LogAnalyticsSourceFunction other = (LogAnalyticsSourceFunction) o;
+        return java.util.Objects.equals(this.arguments, other.arguments)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.function, other.function)
+                && java.util.Objects.equals(this.functionName, other.functionName)
+                && java.util.Objects.equals(this.functionReference, other.functionReference)
+                && java.util.Objects.equals(this.sourceReference, other.sourceReference)
+                && java.util.Objects.equals(this.features, other.features)
+                && java.util.Objects.equals(this.functionId, other.functionId)
+                && java.util.Objects.equals(this.order, other.order)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.lookupColumn, other.lookupColumn)
+                && java.util.Objects.equals(this.lookupColumnPosition, other.lookupColumnPosition)
+                && java.util.Objects.equals(this.lookupDisplayName, other.lookupDisplayName)
+                && java.util.Objects.equals(this.lookupMode, other.lookupMode)
+                && java.util.Objects.equals(this.lookupTable, other.lookupTable)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.arguments == null ? 43 : this.arguments.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.function == null ? 43 : this.function.hashCode());
+        result = (result * PRIME) + (this.functionName == null ? 43 : this.functionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.functionReference == null ? 43 : this.functionReference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceReference == null ? 43 : this.sourceReference.hashCode());
+        result = (result * PRIME) + (this.features == null ? 43 : this.features.hashCode());
+        result = (result * PRIME) + (this.functionId == null ? 43 : this.functionId.hashCode());
+        result = (result * PRIME) + (this.order == null ? 43 : this.order.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.lookupColumn == null ? 43 : this.lookupColumn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lookupColumnPosition == null
+                                ? 43
+                                : this.lookupColumnPosition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lookupDisplayName == null ? 43 : this.lookupDisplayName.hashCode());
+        result = (result * PRIME) + (this.lookupMode == null ? 43 : this.lookupMode.hashCode());
+        result = (result * PRIME) + (this.lookupTable == null ? 43 : this.lookupTable.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

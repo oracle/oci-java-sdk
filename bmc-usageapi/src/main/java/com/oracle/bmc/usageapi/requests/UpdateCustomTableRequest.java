@@ -9,14 +9,6 @@ import com.oracle.bmc.usageapi.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateCustomTableExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCustomTableRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateCustomTableRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.usageapi.model.UpdateCustomTableDetails> {
@@ -26,11 +18,17 @@ public class UpdateCustomTableRequest
      */
     private com.oracle.bmc.usageapi.model.UpdateCustomTableDetails updateCustomTableDetails;
 
+    public com.oracle.bmc.usageapi.model.UpdateCustomTableDetails getUpdateCustomTableDetails() {
+        return updateCustomTableDetails;
+    }
     /**
      * The custom table unique OCID.
      */
     private String customTableId;
 
+    public String getCustomTableId() {
+        return customTableId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -38,6 +36,9 @@ public class UpdateCustomTableRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -47,6 +48,10 @@ public class UpdateCustomTableRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,6 +70,59 @@ public class UpdateCustomTableRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.usageapi.model.UpdateCustomTableDetails updateCustomTableDetails =
+                null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateCustomTableDetails(
+                com.oracle.bmc.usageapi.model.UpdateCustomTableDetails updateCustomTableDetails) {
+            this.updateCustomTableDetails = updateCustomTableDetails;
+            return this;
+        }
+
+        private String customTableId = null;
+
+        /**
+         * The custom table unique OCID.
+         * @return this builder instance
+         */
+        public Builder customTableId(String customTableId) {
+            this.customTableId = customTableId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted, only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +188,87 @@ public class UpdateCustomTableRequest
             updateCustomTableDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateCustomTableRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateCustomTableRequest
+         */
+        public UpdateCustomTableRequest buildWithoutInvocationCallback() {
+            UpdateCustomTableRequest request = new UpdateCustomTableRequest();
+            request.updateCustomTableDetails = updateCustomTableDetails;
+            request.customTableId = customTableId;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateCustomTableRequest(updateCustomTableDetails, customTableId, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .updateCustomTableDetails(updateCustomTableDetails)
+                .customTableId(customTableId)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",updateCustomTableDetails=")
+                .append(String.valueOf(this.updateCustomTableDetails));
+        sb.append(",customTableId=").append(String.valueOf(this.customTableId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateCustomTableRequest)) {
+            return false;
+        }
+
+        UpdateCustomTableRequest other = (UpdateCustomTableRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.updateCustomTableDetails, other.updateCustomTableDetails)
+                && java.util.Objects.equals(this.customTableId, other.customTableId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.updateCustomTableDetails == null
+                                ? 43
+                                : this.updateCustomTableDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customTableId == null ? 43 : this.customTableId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

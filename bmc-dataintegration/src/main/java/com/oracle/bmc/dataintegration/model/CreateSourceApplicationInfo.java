@@ -15,16 +15,20 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSourceApplicationInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSourceApplicationInfo {
+public final class CreateSourceApplicationInfo {
+    @Deprecated
+    @java.beans.ConstructorProperties({"workspaceId", "applicationKey"})
+    public CreateSourceApplicationInfo(String workspaceId, String applicationKey) {
+        super();
+        this.workspaceId = workspaceId;
+        this.applicationKey = applicationKey;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("workspaceId")
         private String workspaceId;
@@ -71,18 +75,74 @@ public class CreateSourceApplicationInfo {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workspaceId")
-    String workspaceId;
+    private final String workspaceId;
+
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
 
     /**
      * The source application key to use when creating the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
-    String applicationKey;
+    private final String applicationKey;
+
+    public String getApplicationKey() {
+        return applicationKey;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSourceApplicationInfo(");
+        sb.append("workspaceId=").append(String.valueOf(this.workspaceId));
+        sb.append(", applicationKey=").append(String.valueOf(this.applicationKey));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSourceApplicationInfo)) {
+            return false;
+        }
+
+        CreateSourceApplicationInfo other = (CreateSourceApplicationInfo) o;
+        return java.util.Objects.equals(this.workspaceId, other.workspaceId)
+                && java.util.Objects.equals(this.applicationKey, other.applicationKey)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.workspaceId == null ? 43 : this.workspaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationKey == null ? 43 : this.applicationKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

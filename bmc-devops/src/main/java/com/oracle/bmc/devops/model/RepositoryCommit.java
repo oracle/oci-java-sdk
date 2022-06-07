@@ -15,14 +15,44 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RepositoryCommit.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RepositoryCommit {
+public final class RepositoryCommit {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "commitId",
+        "commitMessage",
+        "authorName",
+        "authorEmail",
+        "committerName",
+        "committerEmail",
+        "parentCommitIds",
+        "timeCreated",
+        "treeId"
+    })
+    public RepositoryCommit(
+            String commitId,
+            String commitMessage,
+            String authorName,
+            String authorEmail,
+            String committerName,
+            String committerEmail,
+            java.util.List<String> parentCommitIds,
+            java.util.Date timeCreated,
+            String treeId) {
+        super();
+        this.commitId = commitId;
+        this.commitMessage = commitMessage;
+        this.authorName = authorName;
+        this.authorEmail = authorEmail;
+        this.committerName = committerName;
+        this.committerEmail = committerEmail;
+        this.parentCommitIds = parentCommitIds;
+        this.timeCreated = timeCreated;
+        this.treeId = treeId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("commitId")
         private String commitId;
@@ -149,60 +179,171 @@ public class RepositoryCommit {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Commit hash pointed to by reference name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitId")
-    String commitId;
+    private final String commitId;
+
+    public String getCommitId() {
+        return commitId;
+    }
 
     /**
      * The commit message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitMessage")
-    String commitMessage;
+    private final String commitMessage;
+
+    public String getCommitMessage() {
+        return commitMessage;
+    }
 
     /**
      * Name of the author of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorName")
-    String authorName;
+    private final String authorName;
+
+    public String getAuthorName() {
+        return authorName;
+    }
 
     /**
      * Email of the author of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorEmail")
-    String authorEmail;
+    private final String authorEmail;
+
+    public String getAuthorEmail() {
+        return authorEmail;
+    }
 
     /**
      * Name of who creates the commit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("committerName")
-    String committerName;
+    private final String committerName;
+
+    public String getCommitterName() {
+        return committerName;
+    }
 
     /**
      * Email of who creates the commit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("committerEmail")
-    String committerEmail;
+    private final String committerEmail;
+
+    public String getCommitterEmail() {
+        return committerEmail;
+    }
 
     /**
      * An array of parent commit IDs of created commit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentCommitIds")
-    java.util.List<String> parentCommitIds;
+    private final java.util.List<String> parentCommitIds;
+
+    public java.util.List<String> getParentCommitIds() {
+        return parentCommitIds;
+    }
 
     /**
      * The time at which commit was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Tree information for the specified commit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("treeId")
-    String treeId;
+    private final String treeId;
+
+    public String getTreeId() {
+        return treeId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RepositoryCommit(");
+        sb.append("commitId=").append(String.valueOf(this.commitId));
+        sb.append(", commitMessage=").append(String.valueOf(this.commitMessage));
+        sb.append(", authorName=").append(String.valueOf(this.authorName));
+        sb.append(", authorEmail=").append(String.valueOf(this.authorEmail));
+        sb.append(", committerName=").append(String.valueOf(this.committerName));
+        sb.append(", committerEmail=").append(String.valueOf(this.committerEmail));
+        sb.append(", parentCommitIds=").append(String.valueOf(this.parentCommitIds));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", treeId=").append(String.valueOf(this.treeId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RepositoryCommit)) {
+            return false;
+        }
+
+        RepositoryCommit other = (RepositoryCommit) o;
+        return java.util.Objects.equals(this.commitId, other.commitId)
+                && java.util.Objects.equals(this.commitMessage, other.commitMessage)
+                && java.util.Objects.equals(this.authorName, other.authorName)
+                && java.util.Objects.equals(this.authorEmail, other.authorEmail)
+                && java.util.Objects.equals(this.committerName, other.committerName)
+                && java.util.Objects.equals(this.committerEmail, other.committerEmail)
+                && java.util.Objects.equals(this.parentCommitIds, other.parentCommitIds)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.treeId, other.treeId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.commitId == null ? 43 : this.commitId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.commitMessage == null ? 43 : this.commitMessage.hashCode());
+        result = (result * PRIME) + (this.authorName == null ? 43 : this.authorName.hashCode());
+        result = (result * PRIME) + (this.authorEmail == null ? 43 : this.authorEmail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.committerName == null ? 43 : this.committerName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.committerEmail == null ? 43 : this.committerEmail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentCommitIds == null ? 43 : this.parentCommitIds.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.treeId == null ? 43 : this.treeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

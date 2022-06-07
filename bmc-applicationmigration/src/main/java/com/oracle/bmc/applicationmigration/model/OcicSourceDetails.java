@@ -16,22 +16,17 @@ package com.oracle.bmc.applicationmigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OcicSourceDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OcicSourceDetails extends SourceDetails {
+public final class OcicSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
@@ -76,6 +71,10 @@ public class OcicSourceDetails extends SourceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public OcicSourceDetails(String region, String computeAccount) {
         super();
@@ -87,7 +86,11 @@ public class OcicSourceDetails extends SourceDetails {
      * The Oracle Cloud Infrastructure - Classic region from which you want to migrate your applications. For example, uscom-east-1 or uscom-central-1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * If you are using an Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
@@ -98,8 +101,58 @@ public class OcicSourceDetails extends SourceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAccount")
-    String computeAccount;
+    private final String computeAccount;
+
+    public String getComputeAccount() {
+        return computeAccount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OcicSourceDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", computeAccount=").append(String.valueOf(this.computeAccount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OcicSourceDetails)) {
+            return false;
+        }
+
+        OcicSourceDetails other = (OcicSourceDetails) o;
+        return java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.computeAccount, other.computeAccount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeAccount == null ? 43 : this.computeAccount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

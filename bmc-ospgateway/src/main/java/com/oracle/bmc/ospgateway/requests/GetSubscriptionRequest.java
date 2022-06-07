@@ -9,14 +9,6 @@ import com.oracle.bmc.ospgateway.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/GetSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSubscriptionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,18 +16,27 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String subscriptionId;
 
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
     /**
      * The home region's public name of the logged in user.
      *
      */
     private String ospHomeRegion;
 
+    public String getOspHomeRegion() {
+        return ospHomeRegion;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      *
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -43,12 +44,64 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetSubscriptionRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String subscriptionId = null;
+
+        /**
+         * Subscription id(OCID).
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        private String ospHomeRegion = null;
+
+        /**
+         * The home region's public name of the logged in user.
+         *
+         * @return this builder instance
+         */
+        public Builder ospHomeRegion(String ospHomeRegion) {
+            this.ospHomeRegion = ospHomeRegion;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -103,5 +156,85 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetSubscriptionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetSubscriptionRequest
+         */
+        public GetSubscriptionRequest buildWithoutInvocationCallback() {
+            GetSubscriptionRequest request = new GetSubscriptionRequest();
+            request.subscriptionId = subscriptionId;
+            request.ospHomeRegion = ospHomeRegion;
+            request.compartmentId = compartmentId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetSubscriptionRequest(subscriptionId, ospHomeRegion, compartmentId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .subscriptionId(subscriptionId)
+                .ospHomeRegion(ospHomeRegion)
+                .compartmentId(compartmentId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(",ospHomeRegion=").append(String.valueOf(this.ospHomeRegion));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetSubscriptionRequest)) {
+            return false;
+        }
+
+        GetSubscriptionRequest other = (GetSubscriptionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.ospHomeRegion, other.ospHomeRegion)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ospHomeRegion == null ? 43 : this.ospHomeRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

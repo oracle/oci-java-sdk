@@ -24,14 +24,68 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Image.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Image {
+public final class Image {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "baseImageId",
+        "compartmentId",
+        "createImageAllowed",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "launchMode",
+        "launchOptions",
+        "lifecycleState",
+        "operatingSystem",
+        "operatingSystemVersion",
+        "agentFeatures",
+        "listingType",
+        "sizeInMBs",
+        "billableSizeInGBs",
+        "timeCreated"
+    })
+    public Image(
+            String baseImageId,
+            String compartmentId,
+            Boolean createImageAllowed,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            LaunchMode launchMode,
+            LaunchOptions launchOptions,
+            LifecycleState lifecycleState,
+            String operatingSystem,
+            String operatingSystemVersion,
+            InstanceAgentFeatures agentFeatures,
+            ListingType listingType,
+            Long sizeInMBs,
+            Long billableSizeInGBs,
+            java.util.Date timeCreated) {
+        super();
+        this.baseImageId = baseImageId;
+        this.compartmentId = compartmentId;
+        this.createImageAllowed = createImageAllowed;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.launchMode = launchMode;
+        this.launchOptions = launchOptions;
+        this.lifecycleState = lifecycleState;
+        this.operatingSystem = operatingSystem;
+        this.operatingSystemVersion = operatingSystemVersion;
+        this.agentFeatures = agentFeatures;
+        this.listingType = listingType;
+        this.sizeInMBs = sizeInMBs;
+        this.billableSizeInGBs = billableSizeInGBs;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("baseImageId")
         private String baseImageId;
@@ -247,18 +301,30 @@ public class Image {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the image originally used to launch the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseImageId")
-    String baseImageId;
+    private final String baseImageId;
+
+    public String getBaseImageId() {
+        return baseImageId;
+    }
 
     /**
      * The OCID of the compartment containing the instance you want to use as the basis for the image.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Whether instances launched with this image can be used to create new images.
@@ -268,7 +334,11 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createImageAllowed")
-    Boolean createImageAllowed;
+    private final Boolean createImageAllowed;
+
+    public Boolean getCreateImageAllowed() {
+        return createImageAllowed;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -278,7 +348,11 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name for the image. It does not have to be unique, and it's changeable.
@@ -290,7 +364,11 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -300,13 +378,22 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The OCID of the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * * {@code NATIVE} - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -315,7 +402,6 @@ public class Image {
      * * {@code CUSTOM} - VM instances launch with custom configuration settings specified in the {@code LaunchOptions} parameter.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LaunchMode {
         Native("NATIVE"),
         Emulated("EMULATED"),
@@ -327,6 +413,9 @@ public class Image {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LaunchMode.class);
 
         private final String value;
         private static java.util.Map<String, LaunchMode> map;
@@ -369,13 +458,21 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
-    LaunchMode launchMode;
+    private final LaunchMode launchMode;
+
+    public LaunchMode getLaunchMode() {
+        return launchMode;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
-    LaunchOptions launchOptions;
+    private final LaunchOptions launchOptions;
+
+    public LaunchOptions getLaunchOptions() {
+        return launchOptions;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Importing("IMPORTING"),
@@ -389,6 +486,9 @@ public class Image {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -424,7 +524,11 @@ public class Image {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The image's operating system.
@@ -433,7 +537,11 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
-    String operatingSystem;
+    private final String operatingSystem;
+
+    public String getOperatingSystem() {
+        return operatingSystem;
+    }
 
     /**
      * The image's operating system version.
@@ -442,14 +550,22 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
-    String operatingSystemVersion;
+    private final String operatingSystemVersion;
+
+    public String getOperatingSystemVersion() {
+        return operatingSystemVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("agentFeatures")
-    InstanceAgentFeatures agentFeatures;
+    private final InstanceAgentFeatures agentFeatures;
+
+    public InstanceAgentFeatures getAgentFeatures() {
+        return agentFeatures;
+    }
+
     /**
      * The listing type of the image. The default value is "NONE".
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ListingType {
         Community("COMMUNITY"),
         None("NONE"),
@@ -459,6 +575,9 @@ public class Image {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ListingType.class);
 
         private final String value;
         private static java.util.Map<String, ListingType> map;
@@ -496,7 +615,11 @@ public class Image {
      * The listing type of the image. The default value is "NONE".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingType")
-    ListingType listingType;
+    private final ListingType listingType;
+
+    public ListingType getListingType() {
+        return listingType;
+    }
 
     /**
      * The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes).
@@ -506,7 +629,11 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
-    Long sizeInMBs;
+    private final Long sizeInMBs;
+
+    public Long getSizeInMBs() {
+        return sizeInMBs;
+    }
 
     /**
      * The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).
@@ -515,7 +642,11 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
-    Long billableSizeInGBs;
+    private final Long billableSizeInGBs;
+
+    public Long getBillableSizeInGBs() {
+        return billableSizeInGBs;
+    }
 
     /**
      * The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -524,8 +655,120 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Image(");
+        sb.append("baseImageId=").append(String.valueOf(this.baseImageId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", createImageAllowed=").append(String.valueOf(this.createImageAllowed));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", launchMode=").append(String.valueOf(this.launchMode));
+        sb.append(", launchOptions=").append(String.valueOf(this.launchOptions));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", operatingSystemVersion=").append(String.valueOf(this.operatingSystemVersion));
+        sb.append(", agentFeatures=").append(String.valueOf(this.agentFeatures));
+        sb.append(", listingType=").append(String.valueOf(this.listingType));
+        sb.append(", sizeInMBs=").append(String.valueOf(this.sizeInMBs));
+        sb.append(", billableSizeInGBs=").append(String.valueOf(this.billableSizeInGBs));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Image)) {
+            return false;
+        }
+
+        Image other = (Image) o;
+        return java.util.Objects.equals(this.baseImageId, other.baseImageId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.createImageAllowed, other.createImageAllowed)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.launchMode, other.launchMode)
+                && java.util.Objects.equals(this.launchOptions, other.launchOptions)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(
+                        this.operatingSystemVersion, other.operatingSystemVersion)
+                && java.util.Objects.equals(this.agentFeatures, other.agentFeatures)
+                && java.util.Objects.equals(this.listingType, other.listingType)
+                && java.util.Objects.equals(this.sizeInMBs, other.sizeInMBs)
+                && java.util.Objects.equals(this.billableSizeInGBs, other.billableSizeInGBs)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.baseImageId == null ? 43 : this.baseImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createImageAllowed == null
+                                ? 43
+                                : this.createImageAllowed.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.launchMode == null ? 43 : this.launchMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.launchOptions == null ? 43 : this.launchOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystemVersion == null
+                                ? 43
+                                : this.operatingSystemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.agentFeatures == null ? 43 : this.agentFeatures.hashCode());
+        result = (result * PRIME) + (this.listingType == null ? 43 : this.listingType.hashCode());
+        result = (result * PRIME) + (this.sizeInMBs == null ? 43 : this.sizeInMBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.billableSizeInGBs == null ? 43 : this.billableSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

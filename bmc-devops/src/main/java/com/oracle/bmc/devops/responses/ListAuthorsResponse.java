@@ -7,25 +7,33 @@ package com.oracle.bmc.devops.responses;
 import com.oracle.bmc.devops.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAuthorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned RepositoryAuthorCollection instance.
      */
     private com.oracle.bmc.devops.model.RepositoryAuthorCollection repositoryAuthorCollection;
+
+    public com.oracle.bmc.devops.model.RepositoryAuthorCollection getRepositoryAuthorCollection() {
+        return repositoryAuthorCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -52,6 +60,28 @@ public class ListAuthorsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.devops.model.RepositoryAuthorCollection repositoryAuthorCollection;
+
+        public Builder repositoryAuthorCollection(
+                com.oracle.bmc.devops.model.RepositoryAuthorCollection repositoryAuthorCollection) {
+            this.repositoryAuthorCollection = repositoryAuthorCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -69,5 +99,53 @@ public class ListAuthorsResponse extends com.oracle.bmc.responses.BmcResponse {
             return new ListAuthorsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, repositoryAuthorCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",repositoryAuthorCollection=")
+                .append(String.valueOf(repositoryAuthorCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAuthorsResponse)) {
+            return false;
+        }
+
+        ListAuthorsResponse other = (ListAuthorsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.repositoryAuthorCollection, other.repositoryAuthorCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryAuthorCollection == null
+                                ? 43
+                                : this.repositoryAuthorCollection.hashCode());
+        return result;
     }
 }

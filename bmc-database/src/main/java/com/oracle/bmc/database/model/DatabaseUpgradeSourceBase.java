@@ -16,12 +16,6 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -44,6 +38,12 @@ package com.oracle.bmc.database.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DatabaseUpgradeSourceBase {
+    @Deprecated
+    @java.beans.ConstructorProperties({"options"})
+    protected DatabaseUpgradeSourceBase(String options) {
+        super();
+        this.options = options;
+    }
 
     /**
      * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
@@ -51,7 +51,41 @@ public class DatabaseUpgradeSourceBase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
-    String options;
+    private final String options;
+
+    public String getOptions() {
+        return options;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseUpgradeSourceBase(");
+        sb.append("options=").append(String.valueOf(this.options));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseUpgradeSourceBase)) {
+            return false;
+        }
+
+        DatabaseUpgradeSourceBase other = (DatabaseUpgradeSourceBase) o;
+        return java.util.Objects.equals(this.options, other.options);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
+        return result;
+    }
 
     /**
      * The source of the Oracle Database software to be used for the upgrade.

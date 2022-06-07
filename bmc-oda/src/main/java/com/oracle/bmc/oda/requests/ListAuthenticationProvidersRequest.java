@@ -9,14 +9,6 @@ import com.oracle.bmc.oda.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListAuthenticationProvidersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAuthenticationProvidersRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAuthenticationProvidersRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,16 +17,25 @@ public class ListAuthenticationProvidersRequest
      */
     private String odaInstanceId;
 
+    public String getOdaInstanceId() {
+        return odaInstanceId;
+    }
     /**
      * Unique Authentication Provider identifier.
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * List only Authentication Providers for this Identity Provider.
      */
     private com.oracle.bmc.oda.model.AuthenticationIdentityProvider identityProvider;
 
+    public com.oracle.bmc.oda.model.AuthenticationIdentityProvider getIdentityProvider() {
+        return identityProvider;
+    }
     /**
      * List only the information for Authentication Providers with this name. Authentication Provider names are unique and may not change.
      * <p>
@@ -43,16 +44,25 @@ public class ListAuthenticationProvidersRequest
      */
     private String name;
 
+    public String getName() {
+        return name;
+    }
     /**
      * List only the resources that are in this lifecycle state.
      */
     private com.oracle.bmc.oda.model.LifecycleState lifecycleState;
 
+    public com.oracle.bmc.oda.model.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * The maximum number of items to return per page.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page at which to start retrieving results.
      * <p>
@@ -64,6 +74,9 @@ public class ListAuthenticationProvidersRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
      */
@@ -104,6 +117,10 @@ public class ListAuthenticationProvidersRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
      * <p>
@@ -154,10 +171,18 @@ public class ListAuthenticationProvidersRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -165,6 +190,130 @@ public class ListAuthenticationProvidersRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String odaInstanceId = null;
+
+        /**
+         * Unique Digital Assistant instance identifier.
+         * @return this builder instance
+         */
+        public Builder odaInstanceId(String odaInstanceId) {
+            this.odaInstanceId = odaInstanceId;
+            return this;
+        }
+
+        private String id = null;
+
+        /**
+         * Unique Authentication Provider identifier.
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private com.oracle.bmc.oda.model.AuthenticationIdentityProvider identityProvider = null;
+
+        /**
+         * List only Authentication Providers for this Identity Provider.
+         * @return this builder instance
+         */
+        public Builder identityProvider(
+                com.oracle.bmc.oda.model.AuthenticationIdentityProvider identityProvider) {
+            this.identityProvider = identityProvider;
+            return this;
+        }
+
+        private String name = null;
+
+        /**
+         * List only the information for Authentication Providers with this name. Authentication Provider names are unique and may not change.
+         * <p>
+         * Example: {@code MyProvider}
+         *
+         * @return this builder instance
+         */
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        private com.oracle.bmc.oda.model.LifecycleState lifecycleState = null;
+
+        /**
+         * List only the resources that are in this lifecycle state.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(com.oracle.bmc.oda.model.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return per page.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page at which to start retrieving results.
+         * <p>
+         * You get this value from the {@code opc-next-page} header in a previous list request.
+         * To retireve the first page, omit this query parameter.
+         * <p>
+         * Example: {@code MToxMA==}
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
+         * <p>
+         * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending.
+         * For all other sort fields the default sort order is ascending.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -225,5 +374,115 @@ public class ListAuthenticationProvidersRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListAuthenticationProvidersRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListAuthenticationProvidersRequest
+         */
+        public ListAuthenticationProvidersRequest buildWithoutInvocationCallback() {
+            ListAuthenticationProvidersRequest request = new ListAuthenticationProvidersRequest();
+            request.odaInstanceId = odaInstanceId;
+            request.id = id;
+            request.identityProvider = identityProvider;
+            request.name = name;
+            request.lifecycleState = lifecycleState;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListAuthenticationProvidersRequest(odaInstanceId, id, identityProvider, name, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .odaInstanceId(odaInstanceId)
+                .id(id)
+                .identityProvider(identityProvider)
+                .name(name)
+                .lifecycleState(lifecycleState)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",identityProvider=").append(String.valueOf(this.identityProvider));
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAuthenticationProvidersRequest)) {
+            return false;
+        }
+
+        ListAuthenticationProvidersRequest other = (ListAuthenticationProvidersRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.identityProvider, other.identityProvider)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identityProvider == null ? 43 : this.identityProvider.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

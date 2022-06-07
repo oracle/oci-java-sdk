@@ -18,14 +18,19 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PatchDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PatchDetails {
+public final class PatchDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"patchId", "databaseSoftwareImageId", "action"})
+    public PatchDetails(String patchId, String databaseSoftwareImageId, Action action) {
+        super();
+        this.patchId = patchId;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.action = action;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
@@ -82,17 +87,30 @@ public class PatchDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
-    String patchId;
+    private final String patchId;
+
+    public String getPatchId() {
+        return patchId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database software image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
-    String databaseSoftwareImageId;
+    private final String databaseSoftwareImageId;
+
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
+    }
+
     /**
      * The action to perform on the patch.
      **/
@@ -132,8 +150,63 @@ public class PatchDetails {
      * The action to perform on the patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PatchDetails(");
+        sb.append("patchId=").append(String.valueOf(this.patchId));
+        sb.append(", databaseSoftwareImageId=")
+                .append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PatchDetails)) {
+            return false;
+        }
+
+        PatchDetails other = (PatchDetails) o;
+        return java.util.Objects.equals(this.patchId, other.patchId)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageId, other.databaseSoftwareImageId)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.patchId == null ? 43 : this.patchId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,22 +16,17 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExternalMacsConnector.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "connectorType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExternalMacsConnector extends ExternalDatabaseConnector {
+public final class ExternalMacsConnector extends ExternalDatabaseConnector {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -215,6 +210,10 @@ public class ExternalMacsConnector extends ExternalDatabaseConnector {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ExternalMacsConnector(
             String compartmentId,
@@ -249,10 +248,18 @@ public class ExternalMacsConnector extends ExternalDatabaseConnector {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
-    DatabaseConnectionString connectionString;
+    private final DatabaseConnectionString connectionString;
+
+    public DatabaseConnectionString getConnectionString() {
+        return connectionString;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectionCredentials")
-    DatabaseConnectionCredentials connectionCredentials;
+    private final DatabaseConnectionCredentials connectionCredentials;
+
+    public DatabaseConnectionCredentials getConnectionCredentials() {
+        return connectionCredentials;
+    }
 
     /**
      * The ID of the agent used for the
@@ -260,8 +267,67 @@ public class ExternalMacsConnector extends ExternalDatabaseConnector {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorAgentId")
-    String connectorAgentId;
+    private final String connectorAgentId;
+
+    public String getConnectorAgentId() {
+        return connectorAgentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExternalMacsConnector(");
+        sb.append("super=").append(super.toString());
+        sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", connectionCredentials=").append(String.valueOf(this.connectionCredentials));
+        sb.append(", connectorAgentId=").append(String.valueOf(this.connectorAgentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExternalMacsConnector)) {
+            return false;
+        }
+
+        ExternalMacsConnector other = (ExternalMacsConnector) o;
+        return java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.connectionCredentials, other.connectionCredentials)
+                && java.util.Objects.equals(this.connectorAgentId, other.connectorAgentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionCredentials == null
+                                ? 43
+                                : this.connectionCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectorAgentId == null ? 43 : this.connectorAgentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

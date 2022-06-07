@@ -15,16 +15,37 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ModuleStreamOnManagedInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ModuleStreamOnManagedInstanceSummary {
+public final class ModuleStreamOnManagedInstanceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "moduleName",
+        "streamName",
+        "status",
+        "profiles",
+        "softwareSourceId",
+        "timeModified"
+    })
+    public ModuleStreamOnManagedInstanceSummary(
+            String moduleName,
+            String streamName,
+            Status status,
+            java.util.List<ModuleStreamProfileOnManagedInstanceSummary> profiles,
+            String softwareSourceId,
+            java.util.Date timeModified) {
+        super();
+        this.moduleName = moduleName;
+        this.streamName = streamName;
+        this.status = status;
+        this.profiles = profiles;
+        this.softwareSourceId = softwareSourceId;
+        this.timeModified = timeModified;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
@@ -119,19 +140,32 @@ public class ModuleStreamOnManagedInstanceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the module that contains the stream.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
-    String moduleName;
+    private final String moduleName;
+
+    public String getModuleName() {
+        return moduleName;
+    }
 
     /**
      * The name of the stream.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
-    String streamName;
+    private final String streamName;
+
+    public String getStreamName() {
+        return streamName;
+    }
+
     /**
      * The status of the stream
      * <p>
@@ -149,7 +183,6 @@ public class ModuleStreamOnManagedInstanceSummary {
      * been explicitly enabled.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
@@ -160,6 +193,8 @@ public class ModuleStreamOnManagedInstanceSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -211,19 +246,31 @@ public class ModuleStreamOnManagedInstanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The set of profiles that the module stream contains.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profiles")
-    java.util.List<ModuleStreamProfileOnManagedInstanceSummary> profiles;
+    private final java.util.List<ModuleStreamProfileOnManagedInstanceSummary> profiles;
+
+    public java.util.List<ModuleStreamProfileOnManagedInstanceSummary> getProfiles() {
+        return profiles;
+    }
 
     /**
      * The OCID of the software source that provides this module stream.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
-    String softwareSourceId;
+    private final String softwareSourceId;
+
+    public String getSoftwareSourceId() {
+        return softwareSourceId;
+    }
 
     /**
      * The date and time of the last status change for this profile, as
@@ -232,8 +279,68 @@ public class ModuleStreamOnManagedInstanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
-    java.util.Date timeModified;
+    private final java.util.Date timeModified;
+
+    public java.util.Date getTimeModified() {
+        return timeModified;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ModuleStreamOnManagedInstanceSummary(");
+        sb.append("moduleName=").append(String.valueOf(this.moduleName));
+        sb.append(", streamName=").append(String.valueOf(this.streamName));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", profiles=").append(String.valueOf(this.profiles));
+        sb.append(", softwareSourceId=").append(String.valueOf(this.softwareSourceId));
+        sb.append(", timeModified=").append(String.valueOf(this.timeModified));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModuleStreamOnManagedInstanceSummary)) {
+            return false;
+        }
+
+        ModuleStreamOnManagedInstanceSummary other = (ModuleStreamOnManagedInstanceSummary) o;
+        return java.util.Objects.equals(this.moduleName, other.moduleName)
+                && java.util.Objects.equals(this.streamName, other.streamName)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.profiles, other.profiles)
+                && java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
+                && java.util.Objects.equals(this.timeModified, other.timeModified)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.moduleName == null ? 43 : this.moduleName.hashCode());
+        result = (result * PRIME) + (this.streamName == null ? 43 : this.streamName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.profiles == null ? 43 : this.profiles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());
+        result = (result * PRIME) + (this.timeModified == null ? 43 : this.timeModified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

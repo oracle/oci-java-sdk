@@ -15,16 +15,79 @@ package com.oracle.bmc.managementdashboard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagementDashboardSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagementDashboardSummary {
+public final class ManagementDashboardSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "dashboardId",
+        "id",
+        "displayName",
+        "description",
+        "compartmentId",
+        "providerId",
+        "providerName",
+        "providerVersion",
+        "isOobDashboard",
+        "createdBy",
+        "timeCreated",
+        "updatedBy",
+        "timeUpdated",
+        "metadataVersion",
+        "screenImage",
+        "nls",
+        "type",
+        "lifecycleState",
+        "freeformTags",
+        "definedTags"
+    })
+    public ManagementDashboardSummary(
+            String dashboardId,
+            String id,
+            String displayName,
+            String description,
+            String compartmentId,
+            String providerId,
+            String providerName,
+            String providerVersion,
+            Boolean isOobDashboard,
+            String createdBy,
+            java.util.Date timeCreated,
+            String updatedBy,
+            java.util.Date timeUpdated,
+            String metadataVersion,
+            String screenImage,
+            Object nls,
+            String type,
+            LifecycleStates lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.dashboardId = dashboardId;
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.providerId = providerId;
+        this.providerName = providerName;
+        this.providerVersion = providerVersion;
+        this.isOobDashboard = isOobDashboard;
+        this.createdBy = createdBy;
+        this.timeCreated = timeCreated;
+        this.updatedBy = updatedBy;
+        this.timeUpdated = timeUpdated;
+        this.metadataVersion = metadataVersion;
+        this.screenImage = screenImage;
+        this.nls = nls;
+        this.type = type;
+        this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dashboardId")
         private String dashboardId;
@@ -273,113 +336,189 @@ public class ManagementDashboardSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * ID of the dashboard.  Same as id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dashboardId")
-    String dashboardId;
+    private final String dashboardId;
+
+    public String getDashboardId() {
+        return dashboardId;
+    }
 
     /**
      * ID of the dashboard.  Same as dashboardId.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Display name of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * OCID of the compartment in which the dashboard resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerId")
-    String providerId;
+    private final String providerId;
+
+    public String getProviderId() {
+        return providerId;
+    }
 
     /**
      * Name of the service (for example, Logging Analytics) that owns the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
-    String providerName;
+    private final String providerName;
+
+    public String getProviderName() {
+        return providerName;
+    }
 
     /**
      * Version of the service that owns the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
-    String providerVersion;
+    private final String providerVersion;
+
+    public String getProviderVersion() {
+        return providerVersion;
+    }
 
     /**
      * Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOobDashboard")
-    Boolean isOobDashboard;
+    private final Boolean isOobDashboard;
+
+    public Boolean getIsOobDashboard() {
+        return isOobDashboard;
+    }
 
     /**
      * User who created the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-    String createdBy;
+    private final String createdBy;
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
 
     /**
      * Date and time the dashboard was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * User who updated the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
-    String updatedBy;
+    private final String updatedBy;
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
 
     /**
      * Date and time the dashboard was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Version of the metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
-    String metadataVersion;
+    private final String metadataVersion;
+
+    public String getMetadataVersion() {
+        return metadataVersion;
+    }
 
     /**
      * Screen image of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
-    String screenImage;
+    private final String screenImage;
+
+    public String getScreenImage() {
+        return screenImage;
+    }
 
     /**
      * JSON that contains internationalization options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
-    Object nls;
+    private final Object nls;
+
+    public Object getNls() {
+        return nls;
+    }
 
     /**
      * Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * Current lifecycle state of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -387,7 +526,11 @@ public class ManagementDashboardSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -395,8 +538,118 @@ public class ManagementDashboardSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagementDashboardSummary(");
+        sb.append("dashboardId=").append(String.valueOf(this.dashboardId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", providerId=").append(String.valueOf(this.providerId));
+        sb.append(", providerName=").append(String.valueOf(this.providerName));
+        sb.append(", providerVersion=").append(String.valueOf(this.providerVersion));
+        sb.append(", isOobDashboard=").append(String.valueOf(this.isOobDashboard));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", updatedBy=").append(String.valueOf(this.updatedBy));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", metadataVersion=").append(String.valueOf(this.metadataVersion));
+        sb.append(", screenImage=").append(String.valueOf(this.screenImage));
+        sb.append(", nls=").append(String.valueOf(this.nls));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagementDashboardSummary)) {
+            return false;
+        }
+
+        ManagementDashboardSummary other = (ManagementDashboardSummary) o;
+        return java.util.Objects.equals(this.dashboardId, other.dashboardId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.providerId, other.providerId)
+                && java.util.Objects.equals(this.providerName, other.providerName)
+                && java.util.Objects.equals(this.providerVersion, other.providerVersion)
+                && java.util.Objects.equals(this.isOobDashboard, other.isOobDashboard)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.updatedBy, other.updatedBy)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.metadataVersion, other.metadataVersion)
+                && java.util.Objects.equals(this.screenImage, other.screenImage)
+                && java.util.Objects.equals(this.nls, other.nls)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dashboardId == null ? 43 : this.dashboardId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.providerId == null ? 43 : this.providerId.hashCode());
+        result = (result * PRIME) + (this.providerName == null ? 43 : this.providerName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerVersion == null ? 43 : this.providerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOobDashboard == null ? 43 : this.isOobDashboard.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.updatedBy == null ? 43 : this.updatedBy.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metadataVersion == null ? 43 : this.metadataVersion.hashCode());
+        result = (result * PRIME) + (this.screenImage == null ? 43 : this.screenImage.hashCode());
+        result = (result * PRIME) + (this.nls == null ? 43 : this.nls.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,47 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiffSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DiffSummary {
+public final class DiffSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "oldPath",
+        "newPath",
+        "oldId",
+        "newId",
+        "areConflictsInFile",
+        "isLarge",
+        "isBinary",
+        "changes",
+        "freeformTags",
+        "definedTags"
+    })
+    public DiffSummary(
+            String oldPath,
+            String newPath,
+            String oldId,
+            String newId,
+            Boolean areConflictsInFile,
+            Boolean isLarge,
+            Boolean isBinary,
+            java.util.List<DiffChunk> changes,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.oldPath = oldPath;
+        this.newPath = newPath;
+        this.oldId = oldId;
+        this.newId = newId;
+        this.areConflictsInFile = areConflictsInFile;
+        this.isLarge = isLarge;
+        this.isBinary = isBinary;
+        this.changes = changes;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("oldPath")
         private String oldPath;
@@ -161,66 +194,180 @@ public class DiffSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The path on the base version to the changed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldPath")
-    String oldPath;
+    private final String oldPath;
+
+    public String getOldPath() {
+        return oldPath;
+    }
 
     /**
      * The path on the target version to the changed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newPath")
-    String newPath;
+    private final String newPath;
+
+    public String getNewPath() {
+        return newPath;
+    }
 
     /**
      * The ID of the changed object on the base version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldId")
-    String oldId;
+    private final String oldId;
+
+    public String getOldId() {
+        return oldId;
+    }
 
     /**
      * The ID of the changed object on the target version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newId")
-    String newId;
+    private final String newId;
+
+    public String getNewId() {
+        return newId;
+    }
 
     /**
      * Indicates whether the changed file contains conflicts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areConflictsInFile")
-    Boolean areConflictsInFile;
+    private final Boolean areConflictsInFile;
+
+    public Boolean getAreConflictsInFile() {
+        return areConflictsInFile;
+    }
 
     /**
      * Indicates whether the file is large.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLarge")
-    Boolean isLarge;
+    private final Boolean isLarge;
+
+    public Boolean getIsLarge() {
+        return isLarge;
+    }
 
     /**
      * Indicates whether the file is binary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBinary")
-    Boolean isBinary;
+    private final Boolean isBinary;
+
+    public Boolean getIsBinary() {
+        return isBinary;
+    }
 
     /**
      * List of changed section in the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changes")
-    java.util.List<DiffChunk> changes;
+    private final java.util.List<DiffChunk> changes;
+
+    public java.util.List<DiffChunk> getChanges() {
+        return changes;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DiffSummary(");
+        sb.append("oldPath=").append(String.valueOf(this.oldPath));
+        sb.append(", newPath=").append(String.valueOf(this.newPath));
+        sb.append(", oldId=").append(String.valueOf(this.oldId));
+        sb.append(", newId=").append(String.valueOf(this.newId));
+        sb.append(", areConflictsInFile=").append(String.valueOf(this.areConflictsInFile));
+        sb.append(", isLarge=").append(String.valueOf(this.isLarge));
+        sb.append(", isBinary=").append(String.valueOf(this.isBinary));
+        sb.append(", changes=").append(String.valueOf(this.changes));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DiffSummary)) {
+            return false;
+        }
+
+        DiffSummary other = (DiffSummary) o;
+        return java.util.Objects.equals(this.oldPath, other.oldPath)
+                && java.util.Objects.equals(this.newPath, other.newPath)
+                && java.util.Objects.equals(this.oldId, other.oldId)
+                && java.util.Objects.equals(this.newId, other.newId)
+                && java.util.Objects.equals(this.areConflictsInFile, other.areConflictsInFile)
+                && java.util.Objects.equals(this.isLarge, other.isLarge)
+                && java.util.Objects.equals(this.isBinary, other.isBinary)
+                && java.util.Objects.equals(this.changes, other.changes)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.oldPath == null ? 43 : this.oldPath.hashCode());
+        result = (result * PRIME) + (this.newPath == null ? 43 : this.newPath.hashCode());
+        result = (result * PRIME) + (this.oldId == null ? 43 : this.oldId.hashCode());
+        result = (result * PRIME) + (this.newId == null ? 43 : this.newId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areConflictsInFile == null
+                                ? 43
+                                : this.areConflictsInFile.hashCode());
+        result = (result * PRIME) + (this.isLarge == null ? 43 : this.isLarge.hashCode());
+        result = (result * PRIME) + (this.isBinary == null ? 43 : this.isBinary.hashCode());
+        result = (result * PRIME) + (this.changes == null ? 43 : this.changes.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

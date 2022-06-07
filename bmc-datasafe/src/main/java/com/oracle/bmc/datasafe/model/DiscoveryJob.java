@@ -15,14 +15,89 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiscoveryJob.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DiscoveryJob {
+public final class DiscoveryJob {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "discoveryType",
+        "displayName",
+        "compartmentId",
+        "timeStarted",
+        "timeFinished",
+        "lifecycleState",
+        "sensitiveDataModelId",
+        "targetId",
+        "schemasForDiscovery",
+        "sensitiveTypeIdsForDiscovery",
+        "isSampleDataCollectionEnabled",
+        "isAppDefinedRelationDiscoveryEnabled",
+        "isIncludeAllSchemas",
+        "isIncludeAllSensitiveTypes",
+        "totalSchemasScanned",
+        "totalObjectsScanned",
+        "totalColumnsScanned",
+        "totalNewSensitiveColumns",
+        "totalModifiedSensitiveColumns",
+        "totalDeletedSensitiveColumns",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public DiscoveryJob(
+            String id,
+            DiscoveryType discoveryType,
+            String displayName,
+            String compartmentId,
+            java.util.Date timeStarted,
+            java.util.Date timeFinished,
+            DiscoveryLifecycleState lifecycleState,
+            String sensitiveDataModelId,
+            String targetId,
+            java.util.List<String> schemasForDiscovery,
+            java.util.List<String> sensitiveTypeIdsForDiscovery,
+            Boolean isSampleDataCollectionEnabled,
+            Boolean isAppDefinedRelationDiscoveryEnabled,
+            Boolean isIncludeAllSchemas,
+            Boolean isIncludeAllSensitiveTypes,
+            Long totalSchemasScanned,
+            Long totalObjectsScanned,
+            Long totalColumnsScanned,
+            Long totalNewSensitiveColumns,
+            Long totalModifiedSensitiveColumns,
+            Long totalDeletedSensitiveColumns,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.id = id;
+        this.discoveryType = discoveryType;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.timeStarted = timeStarted;
+        this.timeFinished = timeFinished;
+        this.lifecycleState = lifecycleState;
+        this.sensitiveDataModelId = sensitiveDataModelId;
+        this.targetId = targetId;
+        this.schemasForDiscovery = schemasForDiscovery;
+        this.sensitiveTypeIdsForDiscovery = sensitiveTypeIdsForDiscovery;
+        this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
+        this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
+        this.isIncludeAllSchemas = isIncludeAllSchemas;
+        this.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
+        this.totalSchemasScanned = totalSchemasScanned;
+        this.totalObjectsScanned = totalObjectsScanned;
+        this.totalColumnsScanned = totalColumnsScanned;
+        this.totalNewSensitiveColumns = totalNewSensitiveColumns;
+        this.totalModifiedSensitiveColumns = totalModifiedSensitiveColumns;
+        this.totalDeletedSensitiveColumns = totalDeletedSensitiveColumns;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -318,11 +393,20 @@ public class DiscoveryJob {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The type of the discovery job. It defines the job's scope.
      * NEW identifies new sensitive columns in the target database that are not in the sensitive data model.
@@ -331,7 +415,6 @@ public class DiscoveryJob {
      * ALL covers all the above three scenarios and reports new, deleted and modified columns.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DiscoveryType {
         All("ALL"),
         New("NEW"),
@@ -343,6 +426,9 @@ public class DiscoveryJob {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DiscoveryType.class);
 
         private final String value;
         private static java.util.Map<String, DiscoveryType> map;
@@ -385,61 +471,101 @@ public class DiscoveryJob {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
-    DiscoveryType discoveryType;
+    private final DiscoveryType discoveryType;
+
+    public DiscoveryType getDiscoveryType() {
+        return discoveryType;
+    }
 
     /**
      * The display name of the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the compartment that contains the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
 
     /**
      * The current state of the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    DiscoveryLifecycleState lifecycleState;
+    private final DiscoveryLifecycleState lifecycleState;
+
+    public DiscoveryLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The OCID of the sensitive data model associated with the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
-    String sensitiveDataModelId;
+    private final String sensitiveDataModelId;
+
+    public String getSensitiveDataModelId() {
+        return sensitiveDataModelId;
+    }
 
     /**
      * The OCID of the target database associated with the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The schemas used for data discovery.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemasForDiscovery")
-    java.util.List<String> schemasForDiscovery;
+    private final java.util.List<String> schemasForDiscovery;
+
+    public java.util.List<String> getSchemasForDiscovery() {
+        return schemasForDiscovery;
+    }
 
     /**
      * The OCIDs of the sensitive types used for data discovery.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
-    java.util.List<String> sensitiveTypeIdsForDiscovery;
+    private final java.util.List<String> sensitiveTypeIdsForDiscovery;
+
+    public java.util.List<String> getSensitiveTypeIdsForDiscovery() {
+        return sensitiveTypeIdsForDiscovery;
+    }
 
     /**
      * Indicates if the discovery job should collect and store sample data values for the discovered columns.
@@ -450,7 +576,11 @@ public class DiscoveryJob {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataCollectionEnabled")
-    Boolean isSampleDataCollectionEnabled;
+    private final Boolean isSampleDataCollectionEnabled;
+
+    public Boolean getIsSampleDataCollectionEnabled() {
+        return isSampleDataCollectionEnabled;
+    }
 
     /**
      * Indicates if the discovery job should identify potential application-level (non-dictionary) referential
@@ -461,7 +591,11 @@ public class DiscoveryJob {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAppDefinedRelationDiscoveryEnabled")
-    Boolean isAppDefinedRelationDiscoveryEnabled;
+    private final Boolean isAppDefinedRelationDiscoveryEnabled;
+
+    public Boolean getIsAppDefinedRelationDiscoveryEnabled() {
+        return isAppDefinedRelationDiscoveryEnabled;
+    }
 
     /**
      * Indicates if all the schemas in the associated target database are used for data discovery.
@@ -469,7 +603,11 @@ public class DiscoveryJob {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
-    Boolean isIncludeAllSchemas;
+    private final Boolean isIncludeAllSchemas;
+
+    public Boolean getIsIncludeAllSchemas() {
+        return isIncludeAllSchemas;
+    }
 
     /**
      * Indicates if all the existing sensitive types are used for data discovery. If it's set to true, the
@@ -477,43 +615,71 @@ public class DiscoveryJob {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSensitiveTypes")
-    Boolean isIncludeAllSensitiveTypes;
+    private final Boolean isIncludeAllSensitiveTypes;
+
+    public Boolean getIsIncludeAllSensitiveTypes() {
+        return isIncludeAllSensitiveTypes;
+    }
 
     /**
      * The total number of schemas scanned by the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSchemasScanned")
-    Long totalSchemasScanned;
+    private final Long totalSchemasScanned;
+
+    public Long getTotalSchemasScanned() {
+        return totalSchemasScanned;
+    }
 
     /**
      * The total number of objects (tables and editioning views) scanned by the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalObjectsScanned")
-    Long totalObjectsScanned;
+    private final Long totalObjectsScanned;
+
+    public Long getTotalObjectsScanned() {
+        return totalObjectsScanned;
+    }
 
     /**
      * The total number of columns scanned by the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalColumnsScanned")
-    Long totalColumnsScanned;
+    private final Long totalColumnsScanned;
+
+    public Long getTotalColumnsScanned() {
+        return totalColumnsScanned;
+    }
 
     /**
      * The total number of new sensitive columns identified by the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalNewSensitiveColumns")
-    Long totalNewSensitiveColumns;
+    private final Long totalNewSensitiveColumns;
+
+    public Long getTotalNewSensitiveColumns() {
+        return totalNewSensitiveColumns;
+    }
 
     /**
      * The total number of modified sensitive columns identified by the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalModifiedSensitiveColumns")
-    Long totalModifiedSensitiveColumns;
+    private final Long totalModifiedSensitiveColumns;
+
+    public Long getTotalModifiedSensitiveColumns() {
+        return totalModifiedSensitiveColumns;
+    }
 
     /**
      * The total number of deleted sensitive columns identified by the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalDeletedSensitiveColumns")
-    Long totalDeletedSensitiveColumns;
+    private final Long totalDeletedSensitiveColumns;
+
+    public Long getTotalDeletedSensitiveColumns() {
+        return totalDeletedSensitiveColumns;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -522,7 +688,11 @@ public class DiscoveryJob {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -531,7 +701,11 @@ public class DiscoveryJob {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
@@ -539,8 +713,193 @@ public class DiscoveryJob {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DiscoveryJob(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", discoveryType=").append(String.valueOf(this.discoveryType));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", schemasForDiscovery=").append(String.valueOf(this.schemasForDiscovery));
+        sb.append(", sensitiveTypeIdsForDiscovery=")
+                .append(String.valueOf(this.sensitiveTypeIdsForDiscovery));
+        sb.append(", isSampleDataCollectionEnabled=")
+                .append(String.valueOf(this.isSampleDataCollectionEnabled));
+        sb.append(", isAppDefinedRelationDiscoveryEnabled=")
+                .append(String.valueOf(this.isAppDefinedRelationDiscoveryEnabled));
+        sb.append(", isIncludeAllSchemas=").append(String.valueOf(this.isIncludeAllSchemas));
+        sb.append(", isIncludeAllSensitiveTypes=")
+                .append(String.valueOf(this.isIncludeAllSensitiveTypes));
+        sb.append(", totalSchemasScanned=").append(String.valueOf(this.totalSchemasScanned));
+        sb.append(", totalObjectsScanned=").append(String.valueOf(this.totalObjectsScanned));
+        sb.append(", totalColumnsScanned=").append(String.valueOf(this.totalColumnsScanned));
+        sb.append(", totalNewSensitiveColumns=")
+                .append(String.valueOf(this.totalNewSensitiveColumns));
+        sb.append(", totalModifiedSensitiveColumns=")
+                .append(String.valueOf(this.totalModifiedSensitiveColumns));
+        sb.append(", totalDeletedSensitiveColumns=")
+                .append(String.valueOf(this.totalDeletedSensitiveColumns));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DiscoveryJob)) {
+            return false;
+        }
+
+        DiscoveryJob other = (DiscoveryJob) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.discoveryType, other.discoveryType)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.sensitiveDataModelId, other.sensitiveDataModelId)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.schemasForDiscovery, other.schemasForDiscovery)
+                && java.util.Objects.equals(
+                        this.sensitiveTypeIdsForDiscovery, other.sensitiveTypeIdsForDiscovery)
+                && java.util.Objects.equals(
+                        this.isSampleDataCollectionEnabled, other.isSampleDataCollectionEnabled)
+                && java.util.Objects.equals(
+                        this.isAppDefinedRelationDiscoveryEnabled,
+                        other.isAppDefinedRelationDiscoveryEnabled)
+                && java.util.Objects.equals(this.isIncludeAllSchemas, other.isIncludeAllSchemas)
+                && java.util.Objects.equals(
+                        this.isIncludeAllSensitiveTypes, other.isIncludeAllSensitiveTypes)
+                && java.util.Objects.equals(this.totalSchemasScanned, other.totalSchemasScanned)
+                && java.util.Objects.equals(this.totalObjectsScanned, other.totalObjectsScanned)
+                && java.util.Objects.equals(this.totalColumnsScanned, other.totalColumnsScanned)
+                && java.util.Objects.equals(
+                        this.totalNewSensitiveColumns, other.totalNewSensitiveColumns)
+                && java.util.Objects.equals(
+                        this.totalModifiedSensitiveColumns, other.totalModifiedSensitiveColumns)
+                && java.util.Objects.equals(
+                        this.totalDeletedSensitiveColumns, other.totalDeletedSensitiveColumns)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryType == null ? 43 : this.discoveryType.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveDataModelId == null
+                                ? 43
+                                : this.sensitiveDataModelId.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.schemasForDiscovery == null
+                                ? 43
+                                : this.schemasForDiscovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeIdsForDiscovery == null
+                                ? 43
+                                : this.sensitiveTypeIdsForDiscovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSampleDataCollectionEnabled == null
+                                ? 43
+                                : this.isSampleDataCollectionEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAppDefinedRelationDiscoveryEnabled == null
+                                ? 43
+                                : this.isAppDefinedRelationDiscoveryEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIncludeAllSchemas == null
+                                ? 43
+                                : this.isIncludeAllSchemas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIncludeAllSensitiveTypes == null
+                                ? 43
+                                : this.isIncludeAllSensitiveTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalSchemasScanned == null
+                                ? 43
+                                : this.totalSchemasScanned.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalObjectsScanned == null
+                                ? 43
+                                : this.totalObjectsScanned.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalColumnsScanned == null
+                                ? 43
+                                : this.totalColumnsScanned.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalNewSensitiveColumns == null
+                                ? 43
+                                : this.totalNewSensitiveColumns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalModifiedSensitiveColumns == null
+                                ? 43
+                                : this.totalModifiedSensitiveColumns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalDeletedSensitiveColumns == null
+                                ? 43
+                                : this.totalDeletedSensitiveColumns.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

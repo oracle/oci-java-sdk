@@ -9,14 +9,6 @@ import com.oracle.bmc.optimizer.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateResourceActionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateResourceActionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateResourceActionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.optimizer.model.UpdateResourceActionDetails> {
@@ -26,11 +18,18 @@ public class UpdateResourceActionRequest
      */
     private String resourceActionId;
 
+    public String getResourceActionId() {
+        return resourceActionId;
+    }
     /**
      * The resource action information to be updated.
      */
     private com.oracle.bmc.optimizer.model.UpdateResourceActionDetails updateResourceActionDetails;
 
+    public com.oracle.bmc.optimizer.model.UpdateResourceActionDetails
+            getUpdateResourceActionDetails() {
+        return updateResourceActionDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -38,6 +37,9 @@ public class UpdateResourceActionRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -47,6 +49,10 @@ public class UpdateResourceActionRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,6 +71,60 @@ public class UpdateResourceActionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String resourceActionId = null;
+
+        /**
+         * The unique OCID associated with the resource action.
+         * @return this builder instance
+         */
+        public Builder resourceActionId(String resourceActionId) {
+            this.resourceActionId = resourceActionId;
+            return this;
+        }
+
+        private com.oracle.bmc.optimizer.model.UpdateResourceActionDetails
+                updateResourceActionDetails = null;
+
+        /**
+         * The resource action information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateResourceActionDetails(
+                com.oracle.bmc.optimizer.model.UpdateResourceActionDetails
+                        updateResourceActionDetails) {
+            this.updateResourceActionDetails = updateResourceActionDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +190,87 @@ public class UpdateResourceActionRequest
             updateResourceActionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateResourceActionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateResourceActionRequest
+         */
+        public UpdateResourceActionRequest buildWithoutInvocationCallback() {
+            UpdateResourceActionRequest request = new UpdateResourceActionRequest();
+            request.resourceActionId = resourceActionId;
+            request.updateResourceActionDetails = updateResourceActionDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateResourceActionRequest(resourceActionId, updateResourceActionDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .resourceActionId(resourceActionId)
+                .updateResourceActionDetails(updateResourceActionDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",resourceActionId=").append(String.valueOf(this.resourceActionId));
+        sb.append(",updateResourceActionDetails=")
+                .append(String.valueOf(this.updateResourceActionDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateResourceActionRequest)) {
+            return false;
+        }
+
+        UpdateResourceActionRequest other = (UpdateResourceActionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.resourceActionId, other.resourceActionId)
+                && java.util.Objects.equals(
+                        this.updateResourceActionDetails, other.updateResourceActionDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.resourceActionId == null ? 43 : this.resourceActionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateResourceActionDetails == null
+                                ? 43
+                                : this.updateResourceActionDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

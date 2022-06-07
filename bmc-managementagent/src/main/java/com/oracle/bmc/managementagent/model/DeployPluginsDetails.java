@@ -15,16 +15,24 @@ package com.oracle.bmc.managementagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DeployPluginsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeployPluginsDetails {
+public final class DeployPluginsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"pluginIds", "agentCompartmentId", "agentIds"})
+    public DeployPluginsDetails(
+            java.util.List<String> pluginIds,
+            String agentCompartmentId,
+            java.util.List<String> agentIds) {
+        super();
+        this.pluginIds = pluginIds;
+        this.agentCompartmentId = agentCompartmentId;
+        this.agentIds = agentIds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("pluginIds")
         private java.util.List<String> pluginIds;
@@ -82,24 +90,89 @@ public class DeployPluginsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Plugin Id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginIds")
-    java.util.List<String> pluginIds;
+    private final java.util.List<String> pluginIds;
+
+    public java.util.List<String> getPluginIds() {
+        return pluginIds;
+    }
 
     /**
      * Management Agent Compartment Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentCompartmentId")
-    String agentCompartmentId;
+    private final String agentCompartmentId;
+
+    public String getAgentCompartmentId() {
+        return agentCompartmentId;
+    }
 
     /**
      * List of Agent identifiers
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentIds")
-    java.util.List<String> agentIds;
+    private final java.util.List<String> agentIds;
+
+    public java.util.List<String> getAgentIds() {
+        return agentIds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeployPluginsDetails(");
+        sb.append("pluginIds=").append(String.valueOf(this.pluginIds));
+        sb.append(", agentCompartmentId=").append(String.valueOf(this.agentCompartmentId));
+        sb.append(", agentIds=").append(String.valueOf(this.agentIds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeployPluginsDetails)) {
+            return false;
+        }
+
+        DeployPluginsDetails other = (DeployPluginsDetails) o;
+        return java.util.Objects.equals(this.pluginIds, other.pluginIds)
+                && java.util.Objects.equals(this.agentCompartmentId, other.agentCompartmentId)
+                && java.util.Objects.equals(this.agentIds, other.agentIds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.pluginIds == null ? 43 : this.pluginIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.agentCompartmentId == null
+                                ? 43
+                                : this.agentCompartmentId.hashCode());
+        result = (result * PRIME) + (this.agentIds == null ? 43 : this.agentIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

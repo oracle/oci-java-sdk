@@ -7,10 +7,6 @@ package com.oracle.bmc.mysql.responses;
 import com.oracle.bmc.mysql.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GenerateAnalyticsClusterMemoryEstimateResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
@@ -20,17 +16,30 @@ public class GenerateAnalyticsClusterMemoryEstimateResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
      */
     private String opcWorkRequestId;
 
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
     /**
      * The returned AnalyticsClusterMemoryEstimate instance.
      */
     private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
             analyticsClusterMemoryEstimate;
+
+    public com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
+            getAnalyticsClusterMemoryEstimate() {
+        return analyticsClusterMemoryEstimate;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -58,6 +67,30 @@ public class GenerateAnalyticsClusterMemoryEstimateResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
+                analyticsClusterMemoryEstimate;
+
+        public Builder analyticsClusterMemoryEstimate(
+                com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
+                        analyticsClusterMemoryEstimate) {
+            this.analyticsClusterMemoryEstimate = analyticsClusterMemoryEstimate;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -78,5 +111,56 @@ public class GenerateAnalyticsClusterMemoryEstimateResponse
                     opcWorkRequestId,
                     analyticsClusterMemoryEstimate);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",analyticsClusterMemoryEstimate=")
+                .append(String.valueOf(analyticsClusterMemoryEstimate));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateAnalyticsClusterMemoryEstimateResponse)) {
+            return false;
+        }
+
+        GenerateAnalyticsClusterMemoryEstimateResponse other =
+                (GenerateAnalyticsClusterMemoryEstimateResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(
+                        this.analyticsClusterMemoryEstimate, other.analyticsClusterMemoryEstimate);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.analyticsClusterMemoryEstimate == null
+                                ? 43
+                                : this.analyticsClusterMemoryEstimate.hashCode());
+        return result;
     }
 }

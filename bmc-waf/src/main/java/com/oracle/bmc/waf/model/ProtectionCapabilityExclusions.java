@@ -16,16 +16,21 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProtectionCapabilityExclusions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProtectionCapabilityExclusions {
+public final class ProtectionCapabilityExclusions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"requestCookies", "args"})
+    public ProtectionCapabilityExclusions(
+            java.util.List<String> requestCookies, java.util.List<String> args) {
+        super();
+        this.requestCookies = requestCookies;
+        this.args = args;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("requestCookies")
         private java.util.List<String> requestCookies;
@@ -71,13 +76,21 @@ public class ProtectionCapabilityExclusions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of HTTP request cookie values (by cookie name) to exclude from inspecting.
      * Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestCookies")
-    java.util.List<String> requestCookies;
+    private final java.util.List<String> requestCookies;
+
+    public java.util.List<String> getRequestCookies() {
+        return requestCookies;
+    }
 
     /**
      * List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting.
@@ -85,8 +98,56 @@ public class ProtectionCapabilityExclusions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("args")
-    java.util.List<String> args;
+    private final java.util.List<String> args;
+
+    public java.util.List<String> getArgs() {
+        return args;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProtectionCapabilityExclusions(");
+        sb.append("requestCookies=").append(String.valueOf(this.requestCookies));
+        sb.append(", args=").append(String.valueOf(this.args));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProtectionCapabilityExclusions)) {
+            return false;
+        }
+
+        ProtectionCapabilityExclusions other = (ProtectionCapabilityExclusions) o;
+        return java.util.Objects.equals(this.requestCookies, other.requestCookies)
+                && java.util.Objects.equals(this.args, other.args)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.requestCookies == null ? 43 : this.requestCookies.hashCode());
+        result = (result * PRIME) + (this.args == null ? 43 : this.args.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

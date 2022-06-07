@@ -15,16 +15,34 @@ package com.oracle.bmc.managementagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateManagementAgentInstallKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateManagementAgentInstallKeyDetails {
+public final class CreateManagementAgentInstallKeyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "allowedKeyInstallCount",
+        "timeExpires",
+        "compartmentId",
+        "isUnlimited"
+    })
+    public CreateManagementAgentInstallKeyDetails(
+            String displayName,
+            Integer allowedKeyInstallCount,
+            java.util.Date timeExpires,
+            String compartmentId,
+            Boolean isUnlimited) {
+        super();
+        this.displayName = displayName;
+        this.allowedKeyInstallCount = allowedKeyInstallCount;
+        this.timeExpires = timeExpires;
+        this.compartmentId = compartmentId;
+        this.isUnlimited = isUnlimited;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -107,36 +125,118 @@ public class CreateManagementAgentInstallKeyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Management Agent install Key Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Total number of install for this keys
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedKeyInstallCount")
-    Integer allowedKeyInstallCount;
+    private final Integer allowedKeyInstallCount;
+
+    public Integer getAllowedKeyInstallCount() {
+        return allowedKeyInstallCount;
+    }
 
     /**
      * date after which key would expire after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
-    java.util.Date timeExpires;
+    private final java.util.Date timeExpires;
+
+    public java.util.Date getTimeExpires() {
+        return timeExpires;
+    }
 
     /**
      * Compartment Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
-    Boolean isUnlimited;
+    private final Boolean isUnlimited;
+
+    public Boolean getIsUnlimited() {
+        return isUnlimited;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateManagementAgentInstallKeyDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", allowedKeyInstallCount=").append(String.valueOf(this.allowedKeyInstallCount));
+        sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", isUnlimited=").append(String.valueOf(this.isUnlimited));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateManagementAgentInstallKeyDetails)) {
+            return false;
+        }
+
+        CreateManagementAgentInstallKeyDetails other = (CreateManagementAgentInstallKeyDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.allowedKeyInstallCount, other.allowedKeyInstallCount)
+                && java.util.Objects.equals(this.timeExpires, other.timeExpires)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.isUnlimited, other.isUnlimited)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedKeyInstallCount == null
+                                ? 43
+                                : this.allowedKeyInstallCount.hashCode());
+        result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.isUnlimited == null ? 43 : this.isUnlimited.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

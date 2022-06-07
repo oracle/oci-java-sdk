@@ -9,14 +9,6 @@ import com.oracle.bmc.dns.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneRecordsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetZoneRecordsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String zoneNameOrId;
 
+    public String getZoneNameOrId() {
+        return zoneNameOrId;
+    }
     /**
      * The {@code If-None-Match} header field makes the request method conditional on
      * the absence of any current representation of the target resource, when
@@ -33,6 +28,9 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String ifNoneMatch;
 
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
     /**
      * The {@code If-Modified-Since} header field makes a GET or HEAD request method
      * conditional on the selected representation's modification date being more
@@ -42,6 +40,9 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String ifModifiedSince;
 
+    public String getIfModifiedSince() {
+        return ifModifiedSince;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need
      * to contact Oracle about a particular request, please provide
@@ -50,24 +51,36 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The maximum number of items to return in a page of the collection.
      *
      */
     private Long limit;
 
+    public Long getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous "List" call.
      *
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The version of the zone for which data is requested.
      *
      */
     private String zoneVersion;
 
+    public String getZoneVersion() {
+        return zoneVersion;
+    }
     /**
      * Search by domain.
      * Will match any record whose domain (case-insensitive) equals the provided value.
@@ -75,6 +88,9 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String domain;
 
+    public String getDomain() {
+        return domain;
+    }
     /**
      * Search by domain.
      * Will match any record whose domain (case-insensitive) contains the provided value.
@@ -82,6 +98,9 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String domainContains;
 
+    public String getDomainContains() {
+        return domainContains;
+    }
     /**
      * Search by record type.
      * Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
@@ -89,6 +108,9 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String rtype;
 
+    public String getRtype() {
+        return rtype;
+    }
     /**
      * The field by which to sort records.
      */
@@ -130,12 +152,19 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The order to sort the resources.
      *
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The OCID of the compartment the zone belongs to.
      * <p>
@@ -144,16 +173,26 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      *
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    public com.oracle.bmc.dns.model.Scope getScope() {
+        return scope;
+    }
     /**
      * The OCID of the view the resource is associated with.
      */
     private String viewId;
+
+    public String getViewId() {
+        return viewId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -161,6 +200,196 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String zoneNameOrId = null;
+
+        /**
+         * The name or OCID of the target zone.
+         * @return this builder instance
+         */
+        public Builder zoneNameOrId(String zoneNameOrId) {
+            this.zoneNameOrId = zoneNameOrId;
+            return this;
+        }
+
+        private String ifNoneMatch = null;
+
+        /**
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
+
+        private String ifModifiedSince = null;
+
+        /**
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
+         *
+         * @return this builder instance
+         */
+        public Builder ifModifiedSince(String ifModifiedSince) {
+            this.ifModifiedSince = ifModifiedSince;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Long limit = null;
+
+        /**
+         * The maximum number of items to return in a page of the collection.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Long limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String zoneVersion = null;
+
+        /**
+         * The version of the zone for which data is requested.
+         *
+         * @return this builder instance
+         */
+        public Builder zoneVersion(String zoneVersion) {
+            this.zoneVersion = zoneVersion;
+            return this;
+        }
+
+        private String domain = null;
+
+        /**
+         * Search by domain.
+         * Will match any record whose domain (case-insensitive) equals the provided value.
+         *
+         * @return this builder instance
+         */
+        public Builder domain(String domain) {
+            this.domain = domain;
+            return this;
+        }
+
+        private String domainContains = null;
+
+        /**
+         * Search by domain.
+         * Will match any record whose domain (case-insensitive) contains the provided value.
+         *
+         * @return this builder instance
+         */
+        public Builder domainContains(String domainContains) {
+            this.domainContains = domainContains;
+            return this;
+        }
+
+        private String rtype = null;
+
+        /**
+         * Search by record type.
+         * Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+         *
+         * @return this builder instance
+         */
+        public Builder rtype(String rtype) {
+            this.rtype = rtype;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field by which to sort records.
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
+
+        /**
+         * The order to sort the resources.
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.dns.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the compartment the zone belongs to.
+         * <p>
+         * This parameter is deprecated and should be omitted.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.dns.model.Scope scope = null;
+
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         * @return this builder instance
+         */
+        public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
+            this.scope = scope;
+            return this;
+        }
+
+        private String viewId = null;
+
+        /**
+         * The OCID of the view the resource is associated with.
+         * @return this builder instance
+         */
+        public Builder viewId(String viewId) {
+            this.viewId = viewId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -226,5 +455,140 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetZoneRecordsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetZoneRecordsRequest
+         */
+        public GetZoneRecordsRequest buildWithoutInvocationCallback() {
+            GetZoneRecordsRequest request = new GetZoneRecordsRequest();
+            request.zoneNameOrId = zoneNameOrId;
+            request.ifNoneMatch = ifNoneMatch;
+            request.ifModifiedSince = ifModifiedSince;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            request.zoneVersion = zoneVersion;
+            request.domain = domain;
+            request.domainContains = domainContains;
+            request.rtype = rtype;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.compartmentId = compartmentId;
+            request.scope = scope;
+            request.viewId = viewId;
+            return request;
+            // new GetZoneRecordsRequest(zoneNameOrId, ifNoneMatch, ifModifiedSince, opcRequestId, limit, page, zoneVersion, domain, domainContains, rtype, sortBy, sortOrder, compartmentId, scope, viewId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .zoneNameOrId(zoneNameOrId)
+                .ifNoneMatch(ifNoneMatch)
+                .ifModifiedSince(ifModifiedSince)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page)
+                .zoneVersion(zoneVersion)
+                .domain(domain)
+                .domainContains(domainContains)
+                .rtype(rtype)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .compartmentId(compartmentId)
+                .scope(scope)
+                .viewId(viewId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",zoneNameOrId=").append(String.valueOf(this.zoneNameOrId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
+        sb.append(",ifModifiedSince=").append(String.valueOf(this.ifModifiedSince));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",zoneVersion=").append(String.valueOf(this.zoneVersion));
+        sb.append(",domain=").append(String.valueOf(this.domain));
+        sb.append(",domainContains=").append(String.valueOf(this.domainContains));
+        sb.append(",rtype=").append(String.valueOf(this.rtype));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",scope=").append(String.valueOf(this.scope));
+        sb.append(",viewId=").append(String.valueOf(this.viewId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetZoneRecordsRequest)) {
+            return false;
+        }
+
+        GetZoneRecordsRequest other = (GetZoneRecordsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.zoneNameOrId, other.zoneNameOrId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
+                && java.util.Objects.equals(this.ifModifiedSince, other.ifModifiedSince)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.zoneVersion, other.zoneVersion)
+                && java.util.Objects.equals(this.domain, other.domain)
+                && java.util.Objects.equals(this.domainContains, other.domainContains)
+                && java.util.Objects.equals(this.rtype, other.rtype)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.viewId, other.viewId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.zoneNameOrId == null ? 43 : this.zoneNameOrId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ifModifiedSince == null ? 43 : this.ifModifiedSince.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.zoneVersion == null ? 43 : this.zoneVersion.hashCode());
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainContains == null ? 43 : this.domainContains.hashCode());
+        result = (result * PRIME) + (this.rtype == null ? 43 : this.rtype.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result = (result * PRIME) + (this.viewId == null ? 43 : this.viewId.hashCode());
+        return result;
     }
 }

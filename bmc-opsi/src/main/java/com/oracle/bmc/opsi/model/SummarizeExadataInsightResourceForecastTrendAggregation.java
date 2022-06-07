@@ -15,16 +15,46 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SummarizeExadataInsightResourceForecastTrendAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SummarizeExadataInsightResourceForecastTrendAggregation {
+public final class SummarizeExadataInsightResourceForecastTrendAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeIntervalStart",
+        "timeIntervalEnd",
+        "exadataResourceMetric",
+        "exadataResourceType",
+        "usageUnit",
+        "pattern",
+        "daysToReachCapacity",
+        "historicalData",
+        "projectedData"
+    })
+    public SummarizeExadataInsightResourceForecastTrendAggregation(
+            java.util.Date timeIntervalStart,
+            java.util.Date timeIntervalEnd,
+            ExadataResourceMetric exadataResourceMetric,
+            ExadataResourceType exadataResourceType,
+            UsageUnit usageUnit,
+            Pattern pattern,
+            Integer daysToReachCapacity,
+            java.util.List<HistoricalDataItem> historicalData,
+            java.util.List<ProjectedDataItem> projectedData) {
+        super();
+        this.timeIntervalStart = timeIntervalStart;
+        this.timeIntervalEnd = timeIntervalEnd;
+        this.exadataResourceMetric = exadataResourceMetric;
+        this.exadataResourceType = exadataResourceType;
+        this.usageUnit = usageUnit;
+        this.pattern = pattern;
+        this.daysToReachCapacity = daysToReachCapacity;
+        this.historicalData = historicalData;
+        this.projectedData = projectedData;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
@@ -151,22 +181,34 @@ public class SummarizeExadataInsightResourceForecastTrendAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The start timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
-    java.util.Date timeIntervalStart;
+    private final java.util.Date timeIntervalStart;
+
+    public java.util.Date getTimeIntervalStart() {
+        return timeIntervalStart;
+    }
 
     /**
      * The end timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
-    java.util.Date timeIntervalEnd;
+    private final java.util.Date timeIntervalEnd;
+
+    public java.util.Date getTimeIntervalEnd() {
+        return timeIntervalEnd;
+    }
+
     /**
      * Defines the type of exadata resource metric (example: CPU, STORAGE)
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ExadataResourceMetric {
         Cpu("CPU"),
         Storage("STORAGE"),
@@ -180,6 +222,9 @@ public class SummarizeExadataInsightResourceForecastTrendAggregation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ExadataResourceMetric.class);
 
         private final String value;
         private static java.util.Map<String, ExadataResourceMetric> map;
@@ -218,12 +263,16 @@ public class SummarizeExadataInsightResourceForecastTrendAggregation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceMetric")
-    ExadataResourceMetric exadataResourceMetric;
+    private final ExadataResourceMetric exadataResourceMetric;
+
+    public ExadataResourceMetric getExadataResourceMetric() {
+        return exadataResourceMetric;
+    }
+
     /**
      * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ExadataResourceType {
         Database("DATABASE"),
         Host("HOST"),
@@ -235,6 +284,9 @@ public class SummarizeExadataInsightResourceForecastTrendAggregation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ExadataResourceType.class);
 
         private final String value;
         private static java.util.Map<String, ExadataResourceType> map;
@@ -273,18 +325,26 @@ public class SummarizeExadataInsightResourceForecastTrendAggregation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceType")
-    ExadataResourceType exadataResourceType;
+    private final ExadataResourceType exadataResourceType;
+
+    public ExadataResourceType getExadataResourceType() {
+        return exadataResourceType;
+    }
 
     /**
      * Displays usage unit ( CORES, GB)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
-    UsageUnit usageUnit;
+    private final UsageUnit usageUnit;
+
+    public UsageUnit getUsageUnit() {
+        return usageUnit;
+    }
+
     /**
      * Time series patterns used in the forecasting.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Pattern {
         Linear("LINEAR"),
         MonthlySeasons("MONTHLY_SEASONS"),
@@ -300,6 +360,9 @@ public class SummarizeExadataInsightResourceForecastTrendAggregation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Pattern.class);
 
         private final String value;
         private static java.util.Map<String, Pattern> map;
@@ -337,26 +400,126 @@ public class SummarizeExadataInsightResourceForecastTrendAggregation {
      * Time series patterns used in the forecasting.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
-    Pattern pattern;
+    private final Pattern pattern;
+
+    public Pattern getPattern() {
+        return pattern;
+    }
 
     /**
      * Days to reach capacity for a storage server
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReachCapacity")
-    Integer daysToReachCapacity;
+    private final Integer daysToReachCapacity;
+
+    public Integer getDaysToReachCapacity() {
+        return daysToReachCapacity;
+    }
 
     /**
      * Time series data used for the forecast analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("historicalData")
-    java.util.List<HistoricalDataItem> historicalData;
+    private final java.util.List<HistoricalDataItem> historicalData;
+
+    public java.util.List<HistoricalDataItem> getHistoricalData() {
+        return historicalData;
+    }
 
     /**
      * Time series data result of the forecasting analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectedData")
-    java.util.List<ProjectedDataItem> projectedData;
+    private final java.util.List<ProjectedDataItem> projectedData;
+
+    public java.util.List<ProjectedDataItem> getProjectedData() {
+        return projectedData;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SummarizeExadataInsightResourceForecastTrendAggregation(");
+        sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
+        sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(", exadataResourceMetric=").append(String.valueOf(this.exadataResourceMetric));
+        sb.append(", exadataResourceType=").append(String.valueOf(this.exadataResourceType));
+        sb.append(", usageUnit=").append(String.valueOf(this.usageUnit));
+        sb.append(", pattern=").append(String.valueOf(this.pattern));
+        sb.append(", daysToReachCapacity=").append(String.valueOf(this.daysToReachCapacity));
+        sb.append(", historicalData=").append(String.valueOf(this.historicalData));
+        sb.append(", projectedData=").append(String.valueOf(this.projectedData));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeExadataInsightResourceForecastTrendAggregation)) {
+            return false;
+        }
+
+        SummarizeExadataInsightResourceForecastTrendAggregation other =
+                (SummarizeExadataInsightResourceForecastTrendAggregation) o;
+        return java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
+                && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(this.exadataResourceMetric, other.exadataResourceMetric)
+                && java.util.Objects.equals(this.exadataResourceType, other.exadataResourceType)
+                && java.util.Objects.equals(this.usageUnit, other.usageUnit)
+                && java.util.Objects.equals(this.pattern, other.pattern)
+                && java.util.Objects.equals(this.daysToReachCapacity, other.daysToReachCapacity)
+                && java.util.Objects.equals(this.historicalData, other.historicalData)
+                && java.util.Objects.equals(this.projectedData, other.projectedData)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalStart == null ? 43 : this.timeIntervalStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataResourceMetric == null
+                                ? 43
+                                : this.exadataResourceMetric.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataResourceType == null
+                                ? 43
+                                : this.exadataResourceType.hashCode());
+        result = (result * PRIME) + (this.usageUnit == null ? 43 : this.usageUnit.hashCode());
+        result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.daysToReachCapacity == null
+                                ? 43
+                                : this.daysToReachCapacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.historicalData == null ? 43 : this.historicalData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.projectedData == null ? 43 : this.projectedData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

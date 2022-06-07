@@ -9,14 +9,6 @@ import com.oracle.bmc.loadbalancer.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRuleSetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateRuleSetRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateRuleSetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails> {
@@ -26,17 +18,27 @@ public class CreateRuleSetRequest
      */
     private String loadBalancerId;
 
+    public String getLoadBalancerId() {
+        return loadBalancerId;
+    }
     /**
      * The configuration details for the rule set to create.
      */
     private com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails createRuleSetDetails;
 
+    public com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails getCreateRuleSetDetails() {
+        return createRuleSetDetails;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -54,6 +56,42 @@ public class CreateRuleSetRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String loadBalancerId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the specified load balancer.
+         * @return this builder instance
+         */
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        private com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails createRuleSetDetails = null;
+
+        /**
+         * The configuration details for the rule set to create.
+         * @return this builder instance
+         */
+        public Builder createRuleSetDetails(
+                com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails createRuleSetDetails) {
+            this.createRuleSetDetails = createRuleSetDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -118,5 +156,80 @@ public class CreateRuleSetRequest
             createRuleSetDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateRuleSetRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateRuleSetRequest
+         */
+        public CreateRuleSetRequest buildWithoutInvocationCallback() {
+            CreateRuleSetRequest request = new CreateRuleSetRequest();
+            request.loadBalancerId = loadBalancerId;
+            request.createRuleSetDetails = createRuleSetDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new CreateRuleSetRequest(loadBalancerId, createRuleSetDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .loadBalancerId(loadBalancerId)
+                .createRuleSetDetails(createRuleSetDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",loadBalancerId=").append(String.valueOf(this.loadBalancerId));
+        sb.append(",createRuleSetDetails=").append(String.valueOf(this.createRuleSetDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateRuleSetRequest)) {
+            return false;
+        }
+
+        CreateRuleSetRequest other = (CreateRuleSetRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
+                && java.util.Objects.equals(this.createRuleSetDetails, other.createRuleSetDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createRuleSetDetails == null
+                                ? 43
+                                : this.createRuleSetDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

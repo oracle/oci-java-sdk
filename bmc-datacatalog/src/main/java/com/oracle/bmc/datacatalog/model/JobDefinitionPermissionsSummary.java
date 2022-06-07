@@ -15,16 +15,21 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = JobDefinitionPermissionsSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JobDefinitionPermissionsSummary {
+public final class JobDefinitionPermissionsSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"jobDefinitionKey", "userPermissions"})
+    public JobDefinitionPermissionsSummary(
+            String jobDefinitionKey, java.util.List<String> userPermissions) {
+        super();
+        this.jobDefinitionKey = jobDefinitionKey;
+        this.userPermissions = userPermissions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
         private String jobDefinitionKey;
@@ -72,18 +77,76 @@ public class JobDefinitionPermissionsSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key of the parent job definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
-    String jobDefinitionKey;
+    private final String jobDefinitionKey;
+
+    public String getJobDefinitionKey() {
+        return jobDefinitionKey;
+    }
 
     /**
      * An array of permissions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userPermissions")
-    java.util.List<String> userPermissions;
+    private final java.util.List<String> userPermissions;
+
+    public java.util.List<String> getUserPermissions() {
+        return userPermissions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JobDefinitionPermissionsSummary(");
+        sb.append("jobDefinitionKey=").append(String.valueOf(this.jobDefinitionKey));
+        sb.append(", userPermissions=").append(String.valueOf(this.userPermissions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JobDefinitionPermissionsSummary)) {
+            return false;
+        }
+
+        JobDefinitionPermissionsSummary other = (JobDefinitionPermissionsSummary) o;
+        return java.util.Objects.equals(this.jobDefinitionKey, other.jobDefinitionKey)
+                && java.util.Objects.equals(this.userPermissions, other.userPermissions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.jobDefinitionKey == null ? 43 : this.jobDefinitionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.userPermissions == null ? 43 : this.userPermissions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

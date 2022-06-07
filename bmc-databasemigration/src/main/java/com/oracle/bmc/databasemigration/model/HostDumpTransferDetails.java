@@ -16,12 +16,6 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -40,12 +34,44 @@ package com.oracle.bmc.databasemigration.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class HostDumpTransferDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected HostDumpTransferDetails() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostDumpTransferDetails(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostDumpTransferDetails)) {
+            return false;
+        }
+
+        HostDumpTransferDetails other = (HostDumpTransferDetails) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * Type of dump transfer to use during migration in source or target host. Default kind is CURL
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Kind {
         Curl("CURL"),
         OciCli("OCI_CLI"),
@@ -55,6 +81,8 @@ public class HostDumpTransferDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Kind.class);
 
         private final String value;
         private static java.util.Map<String, Kind> map;

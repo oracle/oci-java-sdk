@@ -9,14 +9,6 @@ import com.oracle.bmc.logging.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListUnifiedAgentConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUnifiedAgentConfigurationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListUnifiedAgentConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -27,38 +19,59 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Custom log OCID to list resources with the log as destination.
      *
      */
     private String logId;
 
+    public String getLogId() {
+        return logId;
+    }
     /**
      * Specifies whether or not nested compartments should be traversed. Defaults to false.
      */
     private Boolean isCompartmentIdInSubtree;
 
+    public Boolean getIsCompartmentIdInSubtree() {
+        return isCompartmentIdInSubtree;
+    }
     /**
      * The OCID of a group or a dynamic group.
      */
     private String groupId;
 
+    public String getGroupId() {
+        return groupId;
+    }
     /**
      * Resource name
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * Lifecycle state of the log object
      */
     private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState;
 
+    public com.oracle.bmc.logging.model.LogLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -66,6 +79,9 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The field to sort by (one column only). Default sort order is
      * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
@@ -110,6 +126,10 @@ public class ListUnifiedAgentConfigurationsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, whether 'asc' or 'desc'.
      *
@@ -152,6 +172,10 @@ public class ListUnifiedAgentConfigurationsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -159,12 +183,149 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUnifiedAgentConfigurationsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * Compartment OCID to list resources in. See compartmentIdInSubtree
+         *      for nested compartments traversal.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String logId = null;
+
+        /**
+         * Custom log OCID to list resources with the log as destination.
+         *
+         * @return this builder instance
+         */
+        public Builder logId(String logId) {
+            this.logId = logId;
+            return this;
+        }
+
+        private Boolean isCompartmentIdInSubtree = null;
+
+        /**
+         * Specifies whether or not nested compartments should be traversed. Defaults to false.
+         * @return this builder instance
+         */
+        public Builder isCompartmentIdInSubtree(Boolean isCompartmentIdInSubtree) {
+            this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            return this;
+        }
+
+        private String groupId = null;
+
+        /**
+         * The OCID of a group or a dynamic group.
+         * @return this builder instance
+         */
+        public Builder groupId(String groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * Resource name
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState = null;
+
+        /**
+         * Lifecycle state of the log object
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.logging.model.LogLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by (one column only). Default sort order is
+         * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -226,5 +387,125 @@ public class ListUnifiedAgentConfigurationsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListUnifiedAgentConfigurationsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListUnifiedAgentConfigurationsRequest
+         */
+        public ListUnifiedAgentConfigurationsRequest buildWithoutInvocationCallback() {
+            ListUnifiedAgentConfigurationsRequest request =
+                    new ListUnifiedAgentConfigurationsRequest();
+            request.compartmentId = compartmentId;
+            request.logId = logId;
+            request.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            request.groupId = groupId;
+            request.displayName = displayName;
+            request.lifecycleState = lifecycleState;
+            request.limit = limit;
+            request.page = page;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListUnifiedAgentConfigurationsRequest(compartmentId, logId, isCompartmentIdInSubtree, groupId, displayName, lifecycleState, limit, page, sortBy, sortOrder, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .logId(logId)
+                .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+                .groupId(groupId)
+                .displayName(displayName)
+                .lifecycleState(lifecycleState)
+                .limit(limit)
+                .page(page)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",logId=").append(String.valueOf(this.logId));
+        sb.append(",isCompartmentIdInSubtree=")
+                .append(String.valueOf(this.isCompartmentIdInSubtree));
+        sb.append(",groupId=").append(String.valueOf(this.groupId));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListUnifiedAgentConfigurationsRequest)) {
+            return false;
+        }
+
+        ListUnifiedAgentConfigurationsRequest other = (ListUnifiedAgentConfigurationsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.logId, other.logId)
+                && java.util.Objects.equals(
+                        this.isCompartmentIdInSubtree, other.isCompartmentIdInSubtree)
+                && java.util.Objects.equals(this.groupId, other.groupId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.logId == null ? 43 : this.logId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCompartmentIdInSubtree == null
+                                ? 43
+                                : this.isCompartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.groupId == null ? 43 : this.groupId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

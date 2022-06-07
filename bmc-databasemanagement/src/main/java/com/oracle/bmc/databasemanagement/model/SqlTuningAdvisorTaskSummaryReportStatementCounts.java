@@ -15,16 +15,23 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningAdvisorTaskSummaryReportStatementCounts.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningAdvisorTaskSummaryReportStatementCounts {
+public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
+    @Deprecated
+    @java.beans.ConstructorProperties({"distinctSql", "totalSql", "findingCount", "errorCount"})
+    public SqlTuningAdvisorTaskSummaryReportStatementCounts(
+            Integer distinctSql, Integer totalSql, Integer findingCount, Integer errorCount) {
+        super();
+        this.distinctSql = distinctSql;
+        this.totalSql = totalSql;
+        this.findingCount = findingCount;
+        this.errorCount = errorCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("distinctSql")
         private Integer distinctSql;
@@ -93,30 +100,99 @@ public class SqlTuningAdvisorTaskSummaryReportStatementCounts {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of distinct SQL statements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("distinctSql")
-    Integer distinctSql;
+    private final Integer distinctSql;
+
+    public Integer getDistinctSql() {
+        return distinctSql;
+    }
 
     /**
      * The total number of SQL statements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSql")
-    Integer totalSql;
+    private final Integer totalSql;
+
+    public Integer getTotalSql() {
+        return totalSql;
+    }
 
     /**
      * The number of distinct SQL statements with findings.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("findingCount")
-    Integer findingCount;
+    private final Integer findingCount;
+
+    public Integer getFindingCount() {
+        return findingCount;
+    }
 
     /**
      * The number of distinct SQL statements with errors.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
-    Integer errorCount;
+    private final Integer errorCount;
+
+    public Integer getErrorCount() {
+        return errorCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningAdvisorTaskSummaryReportStatementCounts(");
+        sb.append("distinctSql=").append(String.valueOf(this.distinctSql));
+        sb.append(", totalSql=").append(String.valueOf(this.totalSql));
+        sb.append(", findingCount=").append(String.valueOf(this.findingCount));
+        sb.append(", errorCount=").append(String.valueOf(this.errorCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningAdvisorTaskSummaryReportStatementCounts)) {
+            return false;
+        }
+
+        SqlTuningAdvisorTaskSummaryReportStatementCounts other =
+                (SqlTuningAdvisorTaskSummaryReportStatementCounts) o;
+        return java.util.Objects.equals(this.distinctSql, other.distinctSql)
+                && java.util.Objects.equals(this.totalSql, other.totalSql)
+                && java.util.Objects.equals(this.findingCount, other.findingCount)
+                && java.util.Objects.equals(this.errorCount, other.errorCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.distinctSql == null ? 43 : this.distinctSql.hashCode());
+        result = (result * PRIME) + (this.totalSql == null ? 43 : this.totalSql.hashCode());
+        result = (result * PRIME) + (this.findingCount == null ? 43 : this.findingCount.hashCode());
+        result = (result * PRIME) + (this.errorCount == null ? 43 : this.errorCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

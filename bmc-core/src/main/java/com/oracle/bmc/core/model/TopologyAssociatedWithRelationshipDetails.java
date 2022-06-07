@@ -15,16 +15,19 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TopologyAssociatedWithRelationshipDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TopologyAssociatedWithRelationshipDetails {
+public final class TopologyAssociatedWithRelationshipDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"via"})
+    public TopologyAssociatedWithRelationshipDetails(java.util.List<String> via) {
+        super();
+        this.via = via;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("via")
         private java.util.List<String> via;
@@ -61,12 +64,60 @@ public class TopologyAssociatedWithRelationshipDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entities via which the relationship is created. For example an instance is associated with a network security group via the VNIC attachment and the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("via")
-    java.util.List<String> via;
+    private final java.util.List<String> via;
+
+    public java.util.List<String> getVia() {
+        return via;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TopologyAssociatedWithRelationshipDetails(");
+        sb.append("via=").append(String.valueOf(this.via));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TopologyAssociatedWithRelationshipDetails)) {
+            return false;
+        }
+
+        TopologyAssociatedWithRelationshipDetails other =
+                (TopologyAssociatedWithRelationshipDetails) o;
+        return java.util.Objects.equals(this.via, other.via)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.via == null ? 43 : this.via.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

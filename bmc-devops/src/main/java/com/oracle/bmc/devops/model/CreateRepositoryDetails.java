@@ -15,16 +15,43 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateRepositoryDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateRepositoryDetails {
+public final class CreateRepositoryDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "projectId",
+        "defaultBranch",
+        "repositoryType",
+        "mirrorRepositoryConfig",
+        "description",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateRepositoryDetails(
+            String name,
+            String projectId,
+            String defaultBranch,
+            Repository.RepositoryType repositoryType,
+            MirrorRepositoryConfig mirrorRepositoryConfig,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.name = name;
+        this.projectId = projectId;
+        this.defaultBranch = defaultBranch;
+        this.repositoryType = repositoryType;
+        this.mirrorRepositoryConfig = mirrorRepositoryConfig;
+        this.description = description;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -141,51 +168,156 @@ public class CreateRepositoryDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique name of a repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The OCID of the DevOps project containing the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
-    String projectId;
+    private final String projectId;
+
+    public String getProjectId() {
+        return projectId;
+    }
 
     /**
      * The default branch of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
-    String defaultBranch;
+    private final String defaultBranch;
+
+    public String getDefaultBranch() {
+        return defaultBranch;
+    }
 
     /**
      * Type of repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
-    Repository.RepositoryType repositoryType;
+    private final Repository.RepositoryType repositoryType;
+
+    public Repository.RepositoryType getRepositoryType() {
+        return repositoryType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("mirrorRepositoryConfig")
-    MirrorRepositoryConfig mirrorRepositoryConfig;
+    private final MirrorRepositoryConfig mirrorRepositoryConfig;
+
+    public MirrorRepositoryConfig getMirrorRepositoryConfig() {
+        return mirrorRepositoryConfig;
+    }
 
     /**
      * Details of the repository. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateRepositoryDetails(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", projectId=").append(String.valueOf(this.projectId));
+        sb.append(", defaultBranch=").append(String.valueOf(this.defaultBranch));
+        sb.append(", repositoryType=").append(String.valueOf(this.repositoryType));
+        sb.append(", mirrorRepositoryConfig=").append(String.valueOf(this.mirrorRepositoryConfig));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateRepositoryDetails)) {
+            return false;
+        }
+
+        CreateRepositoryDetails other = (CreateRepositoryDetails) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.projectId, other.projectId)
+                && java.util.Objects.equals(this.defaultBranch, other.defaultBranch)
+                && java.util.Objects.equals(this.repositoryType, other.repositoryType)
+                && java.util.Objects.equals(
+                        this.mirrorRepositoryConfig, other.mirrorRepositoryConfig)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultBranch == null ? 43 : this.defaultBranch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryType == null ? 43 : this.repositoryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mirrorRepositoryConfig == null
+                                ? 43
+                                : this.mirrorRepositoryConfig.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

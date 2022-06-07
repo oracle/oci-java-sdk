@@ -15,14 +15,44 @@ package com.oracle.bmc.datalabelingservice.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequest {
+public final class WorkRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "operationType",
+        "status",
+        "id",
+        "compartmentId",
+        "resources",
+        "percentComplete",
+        "timeAccepted",
+        "timeStarted",
+        "timeFinished"
+    })
+    public WorkRequest(
+            OperationType operationType,
+            OperationStatus status,
+            String id,
+            String compartmentId,
+            java.util.List<WorkRequestResource> resources,
+            Float percentComplete,
+            java.util.Date timeAccepted,
+            java.util.Date timeStarted,
+            java.util.Date timeFinished) {
+        super();
+        this.operationType = operationType;
+        this.status = status;
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.resources = resources;
+        this.percentComplete = percentComplete;
+        this.timeAccepted = timeAccepted;
+        this.timeStarted = timeStarted;
+        this.timeFinished = timeFinished;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
@@ -149,23 +179,39 @@ public class WorkRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Type of the work request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
-    OperationType operationType;
+    private final OperationType operationType;
+
+    public OperationType getOperationType() {
+        return operationType;
+    }
 
     /**
      * Status of current work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    OperationStatus status;
+    private final OperationStatus status;
+
+    public OperationStatus getStatus() {
+        return status;
+    }
 
     /**
      * The id of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The ocid of the compartment that contains the work request. Work requests should be scoped to
@@ -175,19 +221,31 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The resources affected by this work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
-    java.util.List<WorkRequestResource> resources;
+    private final java.util.List<WorkRequestResource> resources;
+
+    public java.util.List<WorkRequestResource> getResources() {
+        return resources;
+    }
 
     /**
      * Percentage of the request completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
-    Float percentComplete;
+    private final Float percentComplete;
+
+    public Float getPercentComplete() {
+        return percentComplete;
+    }
 
     /**
      * The date and time the request was created, as described in
@@ -195,7 +253,11 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
-    java.util.Date timeAccepted;
+    private final java.util.Date timeAccepted;
+
+    public java.util.Date getTimeAccepted() {
+        return timeAccepted;
+    }
 
     /**
      * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
@@ -203,15 +265,92 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequest(");
+        sb.append("operationType=").append(String.valueOf(this.operationType));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", resources=").append(String.valueOf(this.resources));
+        sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
+        sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequest)) {
+            return false;
+        }
+
+        WorkRequest other = (WorkRequest) o;
+        return java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.resources, other.resources)
+                && java.util.Objects.equals(this.percentComplete, other.percentComplete)
+                && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
+        result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

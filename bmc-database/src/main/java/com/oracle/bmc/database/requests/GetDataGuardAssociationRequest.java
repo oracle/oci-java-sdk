@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDataGuardAssociationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetDataGuardAssociationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,10 +17,17 @@ public class GetDataGuardAssociationRequest
      */
     private String databaseId;
 
+    public String getDatabaseId() {
+        return databaseId;
+    }
     /**
      * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String dataGuardAssociationId;
+
+    public String getDataGuardAssociationId() {
+        return dataGuardAssociationId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -36,6 +35,28 @@ public class GetDataGuardAssociationRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String databaseId = null;
+
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder databaseId(String databaseId) {
+            this.databaseId = databaseId;
+            return this;
+        }
+
+        private String dataGuardAssociationId = null;
+
+        /**
+         * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder dataGuardAssociationId(String dataGuardAssociationId) {
+            this.dataGuardAssociationId = dataGuardAssociationId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -88,5 +109,72 @@ public class GetDataGuardAssociationRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetDataGuardAssociationRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetDataGuardAssociationRequest
+         */
+        public GetDataGuardAssociationRequest buildWithoutInvocationCallback() {
+            GetDataGuardAssociationRequest request = new GetDataGuardAssociationRequest();
+            request.databaseId = databaseId;
+            request.dataGuardAssociationId = dataGuardAssociationId;
+            return request;
+            // new GetDataGuardAssociationRequest(databaseId, dataGuardAssociationId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().databaseId(databaseId).dataGuardAssociationId(dataGuardAssociationId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(",dataGuardAssociationId=").append(String.valueOf(this.dataGuardAssociationId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetDataGuardAssociationRequest)) {
+            return false;
+        }
+
+        GetDataGuardAssociationRequest other = (GetDataGuardAssociationRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(
+                        this.dataGuardAssociationId, other.dataGuardAssociationId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataGuardAssociationId == null
+                                ? 43
+                                : this.dataGuardAssociationId.hashCode());
+        return result;
     }
 }

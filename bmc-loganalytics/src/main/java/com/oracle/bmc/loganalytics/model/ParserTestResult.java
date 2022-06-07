@@ -15,14 +15,32 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParserTestResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ParserTestResult {
+public final class ParserTestResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "additionalInfo",
+        "entries",
+        "exampleContent",
+        "lines",
+        "namedCaptureGroups"
+    })
+    public ParserTestResult(
+            java.util.Map<String, String> additionalInfo,
+            java.util.List<AbstractParserTestResultLogEntry> entries,
+            String exampleContent,
+            java.util.List<AbstractParserTestResultLogLine> lines,
+            java.util.List<String> namedCaptureGroups) {
+        super();
+        this.additionalInfo = additionalInfo;
+        this.entries = entries;
+        this.exampleContent = exampleContent;
+        this.lines = lines;
+        this.namedCaptureGroups = namedCaptureGroups;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("additionalInfo")
         private java.util.Map<String, String> additionalInfo;
@@ -101,36 +119,119 @@ public class ParserTestResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Additional information for the test result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalInfo")
-    java.util.Map<String, String> additionalInfo;
+    private final java.util.Map<String, String> additionalInfo;
+
+    public java.util.Map<String, String> getAdditionalInfo() {
+        return additionalInfo;
+    }
 
     /**
      * The test result log entries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entries")
-    java.util.List<AbstractParserTestResultLogEntry> entries;
+    private final java.util.List<AbstractParserTestResultLogEntry> entries;
+
+    public java.util.List<AbstractParserTestResultLogEntry> getEntries() {
+        return entries;
+    }
 
     /**
      * The example content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
-    String exampleContent;
+    private final String exampleContent;
+
+    public String getExampleContent() {
+        return exampleContent;
+    }
 
     /**
      * The test result log lines.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
-    java.util.List<AbstractParserTestResultLogLine> lines;
+    private final java.util.List<AbstractParserTestResultLogLine> lines;
+
+    public java.util.List<AbstractParserTestResultLogLine> getLines() {
+        return lines;
+    }
 
     /**
      * The named capture groups.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namedCaptureGroups")
-    java.util.List<String> namedCaptureGroups;
+    private final java.util.List<String> namedCaptureGroups;
+
+    public java.util.List<String> getNamedCaptureGroups() {
+        return namedCaptureGroups;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ParserTestResult(");
+        sb.append("additionalInfo=").append(String.valueOf(this.additionalInfo));
+        sb.append(", entries=").append(String.valueOf(this.entries));
+        sb.append(", exampleContent=").append(String.valueOf(this.exampleContent));
+        sb.append(", lines=").append(String.valueOf(this.lines));
+        sb.append(", namedCaptureGroups=").append(String.valueOf(this.namedCaptureGroups));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ParserTestResult)) {
+            return false;
+        }
+
+        ParserTestResult other = (ParserTestResult) o;
+        return java.util.Objects.equals(this.additionalInfo, other.additionalInfo)
+                && java.util.Objects.equals(this.entries, other.entries)
+                && java.util.Objects.equals(this.exampleContent, other.exampleContent)
+                && java.util.Objects.equals(this.lines, other.lines)
+                && java.util.Objects.equals(this.namedCaptureGroups, other.namedCaptureGroups)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.additionalInfo == null ? 43 : this.additionalInfo.hashCode());
+        result = (result * PRIME) + (this.entries == null ? 43 : this.entries.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exampleContent == null ? 43 : this.exampleContent.hashCode());
+        result = (result * PRIME) + (this.lines == null ? 43 : this.lines.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namedCaptureGroups == null
+                                ? 43
+                                : this.namedCaptureGroups.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

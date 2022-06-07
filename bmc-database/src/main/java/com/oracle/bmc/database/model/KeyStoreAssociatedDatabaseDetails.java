@@ -15,16 +15,20 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = KeyStoreAssociatedDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class KeyStoreAssociatedDatabaseDetails {
+public final class KeyStoreAssociatedDatabaseDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "dbName"})
+    public KeyStoreAssociatedDatabaseDetails(String id, String dbName) {
+        super();
+        this.id = id;
+        this.dbName = dbName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -70,18 +74,72 @@ public class KeyStoreAssociatedDatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the database that is associated with the key store.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    private final String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("KeyStoreAssociatedDatabaseDetails(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", dbName=").append(String.valueOf(this.dbName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof KeyStoreAssociatedDatabaseDetails)) {
+            return false;
+        }
+
+        KeyStoreAssociatedDatabaseDetails other = (KeyStoreAssociatedDatabaseDetails) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

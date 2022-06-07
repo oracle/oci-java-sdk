@@ -7,10 +7,6 @@ package com.oracle.bmc.dataconnectivity.responses;
 import com.oracle.bmc.dataconnectivity.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -20,6 +16,10 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then a partial list might have been returned. Include this value as the {@code page} parameter for the
@@ -28,11 +28,20 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned WorkRequestSummaryCollection instance.
      */
     private com.oracle.bmc.dataconnectivity.model.WorkRequestSummaryCollection
             workRequestSummaryCollection;
+
+    public com.oracle.bmc.dataconnectivity.model.WorkRequestSummaryCollection
+            getWorkRequestSummaryCollection() {
+        return workRequestSummaryCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -60,6 +69,30 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.dataconnectivity.model.WorkRequestSummaryCollection
+                workRequestSummaryCollection;
+
+        public Builder workRequestSummaryCollection(
+                com.oracle.bmc.dataconnectivity.model.WorkRequestSummaryCollection
+                        workRequestSummaryCollection) {
+            this.workRequestSummaryCollection = workRequestSummaryCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -77,5 +110,53 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return new ListWorkRequestsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, workRequestSummaryCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",workRequestSummaryCollection=")
+                .append(String.valueOf(workRequestSummaryCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListWorkRequestsResponse)) {
+            return false;
+        }
+
+        ListWorkRequestsResponse other = (ListWorkRequestsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.workRequestSummaryCollection, other.workRequestSummaryCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestSummaryCollection == null
+                                ? 43
+                                : this.workRequestSummaryCollection.hashCode());
+        return result;
     }
 }

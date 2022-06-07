@@ -26,9 +26,12 @@ import com.oracle.bmc.filestorage.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.RequiredArgsConstructor
 public class FileStoragePaginators {
     private final FileStorage client;
+
+    public FileStoragePaginators(FileStorage client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listExportSets operation. This iterable

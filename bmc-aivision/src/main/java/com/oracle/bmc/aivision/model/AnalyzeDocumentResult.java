@@ -15,16 +15,52 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AnalyzeDocumentResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AnalyzeDocumentResult {
+public final class AnalyzeDocumentResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "documentMetadata",
+        "pages",
+        "detectedDocumentTypes",
+        "detectedLanguages",
+        "documentClassificationModelVersion",
+        "languageClassificationModelVersion",
+        "textDetectionModelVersion",
+        "keyValueDetectionModelVersion",
+        "tableDetectionModelVersion",
+        "errors",
+        "searchablePdf"
+    })
+    public AnalyzeDocumentResult(
+            DocumentMetadata documentMetadata,
+            java.util.List<Page> pages,
+            java.util.List<DetectedDocumentType> detectedDocumentTypes,
+            java.util.List<DetectedLanguage> detectedLanguages,
+            String documentClassificationModelVersion,
+            String languageClassificationModelVersion,
+            String textDetectionModelVersion,
+            String keyValueDetectionModelVersion,
+            String tableDetectionModelVersion,
+            java.util.List<ProcessingError> errors,
+            byte[] searchablePdf) {
+        super();
+        this.documentMetadata = documentMetadata;
+        this.pages = pages;
+        this.detectedDocumentTypes = detectedDocumentTypes;
+        this.detectedLanguages = detectedLanguages;
+        this.documentClassificationModelVersion = documentClassificationModelVersion;
+        this.languageClassificationModelVersion = languageClassificationModelVersion;
+        this.textDetectionModelVersion = textDetectionModelVersion;
+        this.keyValueDetectionModelVersion = keyValueDetectionModelVersion;
+        this.tableDetectionModelVersion = tableDetectionModelVersion;
+        this.errors = errors;
+        this.searchablePdf = searchablePdf;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("documentMetadata")
         private DocumentMetadata documentMetadata;
@@ -178,69 +214,228 @@ public class AnalyzeDocumentResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("documentMetadata")
-    DocumentMetadata documentMetadata;
+    private final DocumentMetadata documentMetadata;
+
+    public DocumentMetadata getDocumentMetadata() {
+        return documentMetadata;
+    }
 
     /**
      * The array of a Page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pages")
-    java.util.List<Page> pages;
+    private final java.util.List<Page> pages;
+
+    public java.util.List<Page> getPages() {
+        return pages;
+    }
 
     /**
      * An array of detected document types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectedDocumentTypes")
-    java.util.List<DetectedDocumentType> detectedDocumentTypes;
+    private final java.util.List<DetectedDocumentType> detectedDocumentTypes;
+
+    public java.util.List<DetectedDocumentType> getDetectedDocumentTypes() {
+        return detectedDocumentTypes;
+    }
 
     /**
      * An array of detected languages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectedLanguages")
-    java.util.List<DetectedLanguage> detectedLanguages;
+    private final java.util.List<DetectedLanguage> detectedLanguages;
+
+    public java.util.List<DetectedLanguage> getDetectedLanguages() {
+        return detectedLanguages;
+    }
 
     /**
      * The document classification model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentClassificationModelVersion")
-    String documentClassificationModelVersion;
+    private final String documentClassificationModelVersion;
+
+    public String getDocumentClassificationModelVersion() {
+        return documentClassificationModelVersion;
+    }
 
     /**
      * The document language classification model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageClassificationModelVersion")
-    String languageClassificationModelVersion;
+    private final String languageClassificationModelVersion;
+
+    public String getLanguageClassificationModelVersion() {
+        return languageClassificationModelVersion;
+    }
 
     /**
      * The document text detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
-    String textDetectionModelVersion;
+    private final String textDetectionModelVersion;
+
+    public String getTextDetectionModelVersion() {
+        return textDetectionModelVersion;
+    }
 
     /**
      * The document keyValue detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyValueDetectionModelVersion")
-    String keyValueDetectionModelVersion;
+    private final String keyValueDetectionModelVersion;
+
+    public String getKeyValueDetectionModelVersion() {
+        return keyValueDetectionModelVersion;
+    }
 
     /**
      * The document table detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableDetectionModelVersion")
-    String tableDetectionModelVersion;
+    private final String tableDetectionModelVersion;
+
+    public String getTableDetectionModelVersion() {
+        return tableDetectionModelVersion;
+    }
 
     /**
      * The errors encountered during document analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
-    java.util.List<ProcessingError> errors;
+    private final java.util.List<ProcessingError> errors;
+
+    public java.util.List<ProcessingError> getErrors() {
+        return errors;
+    }
 
     /**
      * The searchable PDF file that was generated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchablePdf")
-    byte[] searchablePdf;
+    private final byte[] searchablePdf;
+
+    public byte[] getSearchablePdf() {
+        return searchablePdf;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AnalyzeDocumentResult(");
+        sb.append("documentMetadata=").append(String.valueOf(this.documentMetadata));
+        sb.append(", pages=").append(String.valueOf(this.pages));
+        sb.append(", detectedDocumentTypes=").append(String.valueOf(this.detectedDocumentTypes));
+        sb.append(", detectedLanguages=").append(String.valueOf(this.detectedLanguages));
+        sb.append(", documentClassificationModelVersion=")
+                .append(String.valueOf(this.documentClassificationModelVersion));
+        sb.append(", languageClassificationModelVersion=")
+                .append(String.valueOf(this.languageClassificationModelVersion));
+        sb.append(", textDetectionModelVersion=")
+                .append(String.valueOf(this.textDetectionModelVersion));
+        sb.append(", keyValueDetectionModelVersion=")
+                .append(String.valueOf(this.keyValueDetectionModelVersion));
+        sb.append(", tableDetectionModelVersion=")
+                .append(String.valueOf(this.tableDetectionModelVersion));
+        sb.append(", errors=").append(String.valueOf(this.errors));
+        sb.append(", searchablePdf=").append(String.valueOf(this.searchablePdf));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AnalyzeDocumentResult)) {
+            return false;
+        }
+
+        AnalyzeDocumentResult other = (AnalyzeDocumentResult) o;
+        return java.util.Objects.equals(this.documentMetadata, other.documentMetadata)
+                && java.util.Objects.equals(this.pages, other.pages)
+                && java.util.Objects.equals(this.detectedDocumentTypes, other.detectedDocumentTypes)
+                && java.util.Objects.equals(this.detectedLanguages, other.detectedLanguages)
+                && java.util.Objects.equals(
+                        this.documentClassificationModelVersion,
+                        other.documentClassificationModelVersion)
+                && java.util.Objects.equals(
+                        this.languageClassificationModelVersion,
+                        other.languageClassificationModelVersion)
+                && java.util.Objects.equals(
+                        this.textDetectionModelVersion, other.textDetectionModelVersion)
+                && java.util.Objects.equals(
+                        this.keyValueDetectionModelVersion, other.keyValueDetectionModelVersion)
+                && java.util.Objects.equals(
+                        this.tableDetectionModelVersion, other.tableDetectionModelVersion)
+                && java.util.Objects.equals(this.errors, other.errors)
+                && java.util.Objects.equals(this.searchablePdf, other.searchablePdf)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.documentMetadata == null ? 43 : this.documentMetadata.hashCode());
+        result = (result * PRIME) + (this.pages == null ? 43 : this.pages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectedDocumentTypes == null
+                                ? 43
+                                : this.detectedDocumentTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectedLanguages == null ? 43 : this.detectedLanguages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.documentClassificationModelVersion == null
+                                ? 43
+                                : this.documentClassificationModelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.languageClassificationModelVersion == null
+                                ? 43
+                                : this.languageClassificationModelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.textDetectionModelVersion == null
+                                ? 43
+                                : this.textDetectionModelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyValueDetectionModelVersion == null
+                                ? 43
+                                : this.keyValueDetectionModelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tableDetectionModelVersion == null
+                                ? 43
+                                : this.tableDetectionModelVersion.hashCode());
+        result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.searchablePdf == null ? 43 : this.searchablePdf.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

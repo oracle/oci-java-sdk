@@ -15,14 +15,41 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UserSummary {
+public final class UserSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "status",
+        "timeExpiring",
+        "defaultTablespace",
+        "tempTablespace",
+        "timeCreated",
+        "timeLocked",
+        "profile"
+    })
+    public UserSummary(
+            String name,
+            Status status,
+            java.util.Date timeExpiring,
+            String defaultTablespace,
+            String tempTablespace,
+            java.util.Date timeCreated,
+            java.util.Date timeLocked,
+            String profile) {
+        super();
+        this.name = name;
+        this.status = status;
+        this.timeExpiring = timeExpiring;
+        this.defaultTablespace = defaultTablespace;
+        this.tempTablespace = tempTablespace;
+        this.timeCreated = timeCreated;
+        this.timeLocked = timeLocked;
+        this.profile = profile;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -138,15 +165,23 @@ public class UserSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the User.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The status of the user account.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Open("OPEN"),
         Expired("EXPIRED"),
@@ -169,6 +204,8 @@ public class UserSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -206,44 +243,136 @@ public class UserSummary {
      * The status of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The date and time of the expiration of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
-    java.util.Date timeExpiring;
+    private final java.util.Date timeExpiring;
+
+    public java.util.Date getTimeExpiring() {
+        return timeExpiring;
+    }
 
     /**
      * The default tablespace for data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultTablespace")
-    String defaultTablespace;
+    private final String defaultTablespace;
+
+    public String getDefaultTablespace() {
+        return defaultTablespace;
+    }
 
     /**
      * The name of the default tablespace for temporary tables or the name of a tablespace group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempTablespace")
-    String tempTablespace;
+    private final String tempTablespace;
+
+    public String getTempTablespace() {
+        return tempTablespace;
+    }
 
     /**
      * The date and time the user was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date the account was locked, if the status of the account is LOCKED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
-    java.util.Date timeLocked;
+    private final java.util.Date timeLocked;
+
+    public java.util.Date getTimeLocked() {
+        return timeLocked;
+    }
 
     /**
      * The profile name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
-    String profile;
+    private final String profile;
+
+    public String getProfile() {
+        return profile;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UserSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeExpiring=").append(String.valueOf(this.timeExpiring));
+        sb.append(", defaultTablespace=").append(String.valueOf(this.defaultTablespace));
+        sb.append(", tempTablespace=").append(String.valueOf(this.tempTablespace));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeLocked=").append(String.valueOf(this.timeLocked));
+        sb.append(", profile=").append(String.valueOf(this.profile));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UserSummary)) {
+            return false;
+        }
+
+        UserSummary other = (UserSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeExpiring, other.timeExpiring)
+                && java.util.Objects.equals(this.defaultTablespace, other.defaultTablespace)
+                && java.util.Objects.equals(this.tempTablespace, other.tempTablespace)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeLocked, other.timeLocked)
+                && java.util.Objects.equals(this.profile, other.profile)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeExpiring == null ? 43 : this.timeExpiring.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultTablespace == null ? 43 : this.defaultTablespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tempTablespace == null ? 43 : this.tempTablespace.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeLocked == null ? 43 : this.timeLocked.hashCode());
+        result = (result * PRIME) + (this.profile == null ? 43 : this.profile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,52 @@ package com.oracle.bmc.artifacts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ContainerImageSignature.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ContainerImageSignature {
+public final class ContainerImageSignature {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "createdBy",
+        "displayName",
+        "id",
+        "imageId",
+        "kmsKeyId",
+        "kmsKeyVersionId",
+        "message",
+        "signature",
+        "signingAlgorithm",
+        "timeCreated"
+    })
+    public ContainerImageSignature(
+            String compartmentId,
+            String createdBy,
+            String displayName,
+            String id,
+            String imageId,
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            String message,
+            String signature,
+            SigningAlgorithm signingAlgorithm,
+            java.util.Date timeCreated) {
+        super();
+        this.compartmentId = compartmentId;
+        this.createdBy = createdBy;
+        this.displayName = displayName;
+        this.id = id;
+        this.imageId = imageId;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.message = message;
+        this.signature = signature;
+        this.signingAlgorithm = signingAlgorithm;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -173,17 +209,29 @@ public class ContainerImageSignature {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The id of the user or principal that created the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-    String createdBy;
+    private final String createdBy;
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
 
     /**
      * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.
@@ -192,7 +240,11 @@ public class ContainerImageSignature {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image signature.
@@ -201,7 +253,11 @@ public class ContainerImageSignature {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
@@ -210,7 +266,11 @@ public class ContainerImageSignature {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
-    String imageId;
+    private final String imageId;
+
+    public String getImageId() {
+        return imageId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.
@@ -219,7 +279,11 @@ public class ContainerImageSignature {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
@@ -228,23 +292,35 @@ public class ContainerImageSignature {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
-    String kmsKeyVersionId;
+    private final String kmsKeyVersionId;
+
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
+    }
 
     /**
      * The base64 encoded signature payload that was signed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
-    String signature;
+    private final String signature;
+
+    public String getSignature() {
+        return signature;
+    }
+
     /**
      * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SigningAlgorithm {
         Sha224RsaPkcsPss("SHA_224_RSA_PKCS_PSS"),
         Sha256RsaPkcsPss("SHA_256_RSA_PKCS_PSS"),
@@ -256,6 +332,9 @@ public class ContainerImageSignature {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SigningAlgorithm.class);
 
         private final String value;
         private static java.util.Map<String, SigningAlgorithm> map;
@@ -293,14 +372,97 @@ public class ContainerImageSignature {
      * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
-    SigningAlgorithm signingAlgorithm;
+    private final SigningAlgorithm signingAlgorithm;
+
+    public SigningAlgorithm getSigningAlgorithm() {
+        return signingAlgorithm;
+    }
 
     /**
      * An RFC 3339 timestamp indicating when the image was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ContainerImageSignature(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", imageId=").append(String.valueOf(this.imageId));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append(", signature=").append(String.valueOf(this.signature));
+        sb.append(", signingAlgorithm=").append(String.valueOf(this.signingAlgorithm));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ContainerImageSignature)) {
+            return false;
+        }
+
+        ContainerImageSignature other = (ContainerImageSignature) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.signature, other.signature)
+                && java.util.Objects.equals(this.signingAlgorithm, other.signingAlgorithm)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + (this.signature == null ? 43 : this.signature.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.signingAlgorithm == null ? 43 : this.signingAlgorithm.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

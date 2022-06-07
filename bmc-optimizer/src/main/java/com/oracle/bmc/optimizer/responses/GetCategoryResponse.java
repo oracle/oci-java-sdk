@@ -7,10 +7,6 @@ package com.oracle.bmc.optimizer.responses;
 import com.oracle.bmc.optimizer.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned Category instance.
      */
     private com.oracle.bmc.optimizer.model.Category category;
+
+    public com.oracle.bmc.optimizer.model.Category getCategory() {
+        return category;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "category"})
     private GetCategoryResponse(
@@ -42,6 +46,20 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.optimizer.model.Category category;
+
+        public Builder category(com.oracle.bmc.optimizer.model.Category category) {
+            this.category = category;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +75,44 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
         public GetCategoryResponse build() {
             return new GetCategoryResponse(__httpStatusCode__, opcRequestId, category);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",category=").append(String.valueOf(category));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetCategoryResponse)) {
+            return false;
+        }
+
+        GetCategoryResponse other = (GetCategoryResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.category, other.category);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,34 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateChildTenancyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateChildTenancyDetails {
+public final class CreateChildTenancyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "tenancyName",
+        "homeRegion",
+        "adminEmail",
+        "policyName"
+    })
+    public CreateChildTenancyDetails(
+            String compartmentId,
+            String tenancyName,
+            String homeRegion,
+            String adminEmail,
+            String policyName) {
+        super();
+        this.compartmentId = compartmentId;
+        this.tenancyName = tenancyName;
+        this.homeRegion = homeRegion;
+        this.adminEmail = adminEmail;
+        this.policyName = policyName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -103,36 +121,113 @@ public class CreateChildTenancyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The tenancy ID of the parent tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The tenancy name to use for the child tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
-    String tenancyName;
+    private final String tenancyName;
+
+    public String getTenancyName() {
+        return tenancyName;
+    }
 
     /**
      * The home region to use for the child tenancy. This must be a region where the parent tenancy is subscribed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
-    String homeRegion;
+    private final String homeRegion;
+
+    public String getHomeRegion() {
+        return homeRegion;
+    }
 
     /**
      * The email address of the administrator of the child tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
-    String adminEmail;
+    private final String adminEmail;
+
+    public String getAdminEmail() {
+        return adminEmail;
+    }
 
     /**
      * The name to use for the administrator policy in the child tenancy. Must contain only letters and underscores.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyName")
-    String policyName;
+    private final String policyName;
+
+    public String getPolicyName() {
+        return policyName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateChildTenancyDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", tenancyName=").append(String.valueOf(this.tenancyName));
+        sb.append(", homeRegion=").append(String.valueOf(this.homeRegion));
+        sb.append(", adminEmail=").append(String.valueOf(this.adminEmail));
+        sb.append(", policyName=").append(String.valueOf(this.policyName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateChildTenancyDetails)) {
+            return false;
+        }
+
+        CreateChildTenancyDetails other = (CreateChildTenancyDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.tenancyName, other.tenancyName)
+                && java.util.Objects.equals(this.homeRegion, other.homeRegion)
+                && java.util.Objects.equals(this.adminEmail, other.adminEmail)
+                && java.util.Objects.equals(this.policyName, other.policyName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.tenancyName == null ? 43 : this.tenancyName.hashCode());
+        result = (result * PRIME) + (this.homeRegion == null ? 43 : this.homeRegion.hashCode());
+        result = (result * PRIME) + (this.adminEmail == null ? 43 : this.adminEmail.hashCode());
+        result = (result * PRIME) + (this.policyName == null ? 43 : this.policyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,14 +16,44 @@ package com.oracle.bmc.osubsubscription.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RateCardSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RateCardSummary {
+public final class RateCardSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "product",
+        "timeStart",
+        "timeEnd",
+        "netUnitPrice",
+        "discretionaryDiscountPercentage",
+        "overagePrice",
+        "isTier",
+        "currency",
+        "rateCardTiers"
+    })
+    public RateCardSummary(
+            Product product,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            String netUnitPrice,
+            String discretionaryDiscountPercentage,
+            String overagePrice,
+            Boolean isTier,
+            Currency currency,
+            java.util.List<RateCardTier> rateCardTiers) {
+        super();
+        this.product = product;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.netUnitPrice = netUnitPrice;
+        this.discretionaryDiscountPercentage = discretionaryDiscountPercentage;
+        this.overagePrice = overagePrice;
+        this.isTier = isTier;
+        this.currency = currency;
+        this.rateCardTiers = rateCardTiers;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("product")
         private Product product;
@@ -150,61 +180,172 @@ public class RateCardSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("product")
-    Product product;
+    private final Product product;
+
+    public Product getProduct() {
+        return product;
+    }
 
     /**
      * Rate card start date
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Rate card end date
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * Rate card net unit price
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
-    String netUnitPrice;
+    private final String netUnitPrice;
+
+    public String getNetUnitPrice() {
+        return netUnitPrice;
+    }
 
     /**
      * Rate card discretionary discount percentage
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("discretionaryDiscountPercentage")
-    String discretionaryDiscountPercentage;
+    private final String discretionaryDiscountPercentage;
+
+    public String getDiscretionaryDiscountPercentage() {
+        return discretionaryDiscountPercentage;
+    }
 
     /**
      * Rate card overage price
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overagePrice")
-    String overagePrice;
+    private final String overagePrice;
+
+    public String getOveragePrice() {
+        return overagePrice;
+    }
 
     /**
      * Rate card price tier flag
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTier")
-    Boolean isTier;
+    private final Boolean isTier;
+
+    public Boolean getIsTier() {
+        return isTier;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
-    Currency currency;
+    private final Currency currency;
+
+    public Currency getCurrency() {
+        return currency;
+    }
 
     /**
      * List of tiered rate card prices
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardTiers")
-    java.util.List<RateCardTier> rateCardTiers;
+    private final java.util.List<RateCardTier> rateCardTiers;
+
+    public java.util.List<RateCardTier> getRateCardTiers() {
+        return rateCardTiers;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RateCardSummary(");
+        sb.append("product=").append(String.valueOf(this.product));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", netUnitPrice=").append(String.valueOf(this.netUnitPrice));
+        sb.append(", discretionaryDiscountPercentage=")
+                .append(String.valueOf(this.discretionaryDiscountPercentage));
+        sb.append(", overagePrice=").append(String.valueOf(this.overagePrice));
+        sb.append(", isTier=").append(String.valueOf(this.isTier));
+        sb.append(", currency=").append(String.valueOf(this.currency));
+        sb.append(", rateCardTiers=").append(String.valueOf(this.rateCardTiers));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RateCardSummary)) {
+            return false;
+        }
+
+        RateCardSummary other = (RateCardSummary) o;
+        return java.util.Objects.equals(this.product, other.product)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.netUnitPrice, other.netUnitPrice)
+                && java.util.Objects.equals(
+                        this.discretionaryDiscountPercentage, other.discretionaryDiscountPercentage)
+                && java.util.Objects.equals(this.overagePrice, other.overagePrice)
+                && java.util.Objects.equals(this.isTier, other.isTier)
+                && java.util.Objects.equals(this.currency, other.currency)
+                && java.util.Objects.equals(this.rateCardTiers, other.rateCardTiers)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.product == null ? 43 : this.product.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.netUnitPrice == null ? 43 : this.netUnitPrice.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discretionaryDiscountPercentage == null
+                                ? 43
+                                : this.discretionaryDiscountPercentage.hashCode());
+        result = (result * PRIME) + (this.overagePrice == null ? 43 : this.overagePrice.hashCode());
+        result = (result * PRIME) + (this.isTier == null ? 43 : this.isTier.hashCode());
+        result = (result * PRIME) + (this.currency == null ? 43 : this.currency.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rateCardTiers == null ? 43 : this.rateCardTiers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

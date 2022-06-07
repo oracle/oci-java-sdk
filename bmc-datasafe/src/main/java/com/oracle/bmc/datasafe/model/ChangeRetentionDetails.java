@@ -15,16 +15,26 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ChangeRetentionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ChangeRetentionDetails {
+public final class ChangeRetentionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "onlineMonths",
+        "offlineMonths",
+        "isOverrideGlobalRetentionSetting"
+    })
+    public ChangeRetentionDetails(
+            Integer onlineMonths, Integer offlineMonths, Boolean isOverrideGlobalRetentionSetting) {
+        super();
+        this.onlineMonths = onlineMonths;
+        this.offlineMonths = offlineMonths;
+        this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("onlineMonths")
         private Integer onlineMonths;
@@ -84,13 +94,21 @@ public class ChangeRetentionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for
      * immediate reporting and analysis. Minimum: 1; Maximum:12 months
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("onlineMonths")
-    Integer onlineMonths;
+    private final Integer onlineMonths;
+
+    public Integer getOnlineMonths() {
+        return onlineMonths;
+    }
 
     /**
      * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
@@ -99,7 +117,11 @@ public class ChangeRetentionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offlineMonths")
-    Integer offlineMonths;
+    private final Integer offlineMonths;
+
+    public Integer getOfflineMonths() {
+        return offlineMonths;
+    }
 
     /**
      * Indicates whether audit retention settings like online and offline months is set at the
@@ -107,8 +129,66 @@ public class ChangeRetentionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalRetentionSetting")
-    Boolean isOverrideGlobalRetentionSetting;
+    private final Boolean isOverrideGlobalRetentionSetting;
+
+    public Boolean getIsOverrideGlobalRetentionSetting() {
+        return isOverrideGlobalRetentionSetting;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ChangeRetentionDetails(");
+        sb.append("onlineMonths=").append(String.valueOf(this.onlineMonths));
+        sb.append(", offlineMonths=").append(String.valueOf(this.offlineMonths));
+        sb.append(", isOverrideGlobalRetentionSetting=")
+                .append(String.valueOf(this.isOverrideGlobalRetentionSetting));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeRetentionDetails)) {
+            return false;
+        }
+
+        ChangeRetentionDetails other = (ChangeRetentionDetails) o;
+        return java.util.Objects.equals(this.onlineMonths, other.onlineMonths)
+                && java.util.Objects.equals(this.offlineMonths, other.offlineMonths)
+                && java.util.Objects.equals(
+                        this.isOverrideGlobalRetentionSetting,
+                        other.isOverrideGlobalRetentionSetting)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.onlineMonths == null ? 43 : this.onlineMonths.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.offlineMonths == null ? 43 : this.offlineMonths.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOverrideGlobalRetentionSetting == null
+                                ? 43
+                                : this.isOverrideGlobalRetentionSetting.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,20 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TimeAndHorizontalScalingConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TimeAndHorizontalScalingConfig {
+public final class TimeAndHorizontalScalingConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeRecurrence", "targetNodeCount"})
+    public TimeAndHorizontalScalingConfig(String timeRecurrence, Integer targetNodeCount) {
+        super();
+        this.timeRecurrence = timeRecurrence;
+        this.targetNodeCount = targetNodeCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeRecurrence")
         private String timeRecurrence;
@@ -71,19 +75,77 @@ public class TimeAndHorizontalScalingConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRecurrence")
-    String timeRecurrence;
+    private final String timeRecurrence;
+
+    public String getTimeRecurrence() {
+        return timeRecurrence;
+    }
 
     /**
      * This value is the desired number of nodes in the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetNodeCount")
-    Integer targetNodeCount;
+    private final Integer targetNodeCount;
+
+    public Integer getTargetNodeCount() {
+        return targetNodeCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TimeAndHorizontalScalingConfig(");
+        sb.append("timeRecurrence=").append(String.valueOf(this.timeRecurrence));
+        sb.append(", targetNodeCount=").append(String.valueOf(this.targetNodeCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TimeAndHorizontalScalingConfig)) {
+            return false;
+        }
+
+        TimeAndHorizontalScalingConfig other = (TimeAndHorizontalScalingConfig) o;
+        return java.util.Objects.equals(this.timeRecurrence, other.timeRecurrence)
+                && java.util.Objects.equals(this.targetNodeCount, other.targetNodeCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeRecurrence == null ? 43 : this.timeRecurrence.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetNodeCount == null ? 43 : this.targetNodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

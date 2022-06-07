@@ -15,16 +15,80 @@ package com.oracle.bmc.databasetools.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseToolsPrivateEndpoint.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseToolsPrivateEndpoint {
+public final class DatabaseToolsPrivateEndpoint {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "definedTags",
+        "freeformTags",
+        "systemTags",
+        "displayName",
+        "description",
+        "id",
+        "endpointServiceId",
+        "timeCreated",
+        "timeUpdated",
+        "vcnId",
+        "subnetId",
+        "privateEndpointVnicId",
+        "privateEndpointIp",
+        "endpointFqdn",
+        "additionalFqdns",
+        "lifecycleState",
+        "lifecycleDetails",
+        "nsgIds",
+        "reverseConnectionConfiguration"
+    })
+    public DatabaseToolsPrivateEndpoint(
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String displayName,
+            String description,
+            String id,
+            String endpointServiceId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String vcnId,
+            String subnetId,
+            String privateEndpointVnicId,
+            String privateEndpointIp,
+            String endpointFqdn,
+            java.util.List<String> additionalFqdns,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.List<String> nsgIds,
+            DatabaseToolsPrivateEndpointReverseConnectionConfiguration
+                    reverseConnectionConfiguration) {
+        super();
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+        this.systemTags = systemTags;
+        this.displayName = displayName;
+        this.description = description;
+        this.id = id;
+        this.endpointServiceId = endpointServiceId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.vcnId = vcnId;
+        this.subnetId = subnetId;
+        this.privateEndpointVnicId = privateEndpointVnicId;
+        this.privateEndpointIp = privateEndpointIp;
+        this.endpointFqdn = endpointFqdn;
+        this.additionalFqdns = additionalFqdns;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.nsgIds = nsgIds;
+        this.reverseConnectionConfiguration = reverseConnectionConfiguration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -276,11 +340,19 @@ public class DatabaseToolsPrivateEndpoint {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the containing Compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -288,7 +360,11 @@ public class DatabaseToolsPrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -296,7 +372,11 @@ public class DatabaseToolsPrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
@@ -304,91 +384,151 @@ public class DatabaseToolsPrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A description of the DatabaseToolsPrivateEndpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointServiceId")
-    String endpointServiceId;
+    private final String endpointServiceId;
+
+    public String getEndpointServiceId() {
+        return endpointServiceId;
+    }
 
     /**
      * The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    String vcnId;
+    private final String vcnId;
+
+    public String getVcnId() {
+        return vcnId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointVnicId")
-    String privateEndpointVnicId;
+    private final String privateEndpointVnicId;
+
+    public String getPrivateEndpointVnicId() {
+        return privateEndpointVnicId;
+    }
 
     /**
      * The private IP address that represents the access point for the associated endpoint service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
-    String privateEndpointIp;
+    private final String privateEndpointIp;
+
+    public String getPrivateEndpointIp() {
+        return privateEndpointIp;
+    }
 
     /**
      * Then FQDN to use for the private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointFqdn")
-    String endpointFqdn;
+    private final String endpointFqdn;
+
+    public String getEndpointFqdn() {
+        return endpointFqdn;
+    }
 
     /**
      * A list of additional FQDNs that can be also be used for the private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalFqdns")
-    java.util.List<String> additionalFqdns;
+    private final java.util.List<String> additionalFqdns;
+
+    public java.util.List<String> getAdditionalFqdns() {
+        return additionalFqdns;
+    }
 
     /**
      * The current state of the DatabaseToolsPrivateEndpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups
@@ -397,11 +537,139 @@ public class DatabaseToolsPrivateEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
+    private final java.util.List<String> nsgIds;
+
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionConfiguration")
-    DatabaseToolsPrivateEndpointReverseConnectionConfiguration reverseConnectionConfiguration;
+    private final DatabaseToolsPrivateEndpointReverseConnectionConfiguration
+            reverseConnectionConfiguration;
+
+    public DatabaseToolsPrivateEndpointReverseConnectionConfiguration
+            getReverseConnectionConfiguration() {
+        return reverseConnectionConfiguration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseToolsPrivateEndpoint(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", endpointServiceId=").append(String.valueOf(this.endpointServiceId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", privateEndpointVnicId=").append(String.valueOf(this.privateEndpointVnicId));
+        sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
+        sb.append(", endpointFqdn=").append(String.valueOf(this.endpointFqdn));
+        sb.append(", additionalFqdns=").append(String.valueOf(this.additionalFqdns));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", reverseConnectionConfiguration=")
+                .append(String.valueOf(this.reverseConnectionConfiguration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseToolsPrivateEndpoint)) {
+            return false;
+        }
+
+        DatabaseToolsPrivateEndpoint other = (DatabaseToolsPrivateEndpoint) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.endpointServiceId, other.endpointServiceId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.privateEndpointVnicId, other.privateEndpointVnicId)
+                && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
+                && java.util.Objects.equals(this.endpointFqdn, other.endpointFqdn)
+                && java.util.Objects.equals(this.additionalFqdns, other.additionalFqdns)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(
+                        this.reverseConnectionConfiguration, other.reverseConnectionConfiguration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.endpointServiceId == null ? 43 : this.endpointServiceId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointVnicId == null
+                                ? 43
+                                : this.privateEndpointVnicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
+        result = (result * PRIME) + (this.endpointFqdn == null ? 43 : this.endpointFqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalFqdns == null ? 43 : this.additionalFqdns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reverseConnectionConfiguration == null
+                                ? 43
+                                : this.reverseConnectionConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -18,16 +18,20 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CommitMultipartUploadPartDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CommitMultipartUploadPartDetails {
+public final class CommitMultipartUploadPartDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"partNum", "etag"})
+    public CommitMultipartUploadPartDetails(Integer partNum, String etag) {
+        super();
+        this.partNum = partNum;
+        this.etag = etag;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("partNum")
         private Integer partNum;
@@ -73,18 +77,72 @@ public class CommitMultipartUploadPartDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The part number for this part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partNum")
-    Integer partNum;
+    private final Integer partNum;
+
+    public Integer getPartNum() {
+        return partNum;
+    }
 
     /**
      * The entity tag (ETag) returned when this part was uploaded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
-    String etag;
+    private final String etag;
+
+    public String getEtag() {
+        return etag;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CommitMultipartUploadPartDetails(");
+        sb.append("partNum=").append(String.valueOf(this.partNum));
+        sb.append(", etag=").append(String.valueOf(this.etag));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CommitMultipartUploadPartDetails)) {
+            return false;
+        }
+
+        CommitMultipartUploadPartDetails other = (CommitMultipartUploadPartDetails) o;
+        return java.util.Objects.equals(this.partNum, other.partNum)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.partNum == null ? 43 : this.partNum.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

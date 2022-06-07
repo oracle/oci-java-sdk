@@ -17,22 +17,17 @@ package com.oracle.bmc.apmconfig.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateMetricGroupDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "configType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateMetricGroupDetails extends CreateConfigDetails {
+public final class CreateMetricGroupDetails extends CreateConfigDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -138,6 +133,10 @@ public class CreateMetricGroupDetails extends CreateConfigDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateMetricGroupDetails(
             java.util.Map<String, String> freeformTags,
@@ -159,7 +158,11 @@ public class CreateMetricGroupDetails extends CreateConfigDetails {
      * The name of the metric group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation
@@ -167,28 +170,97 @@ public class CreateMetricGroupDetails extends CreateConfigDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
-    String filterId;
+    private final String filterId;
+
+    public String getFilterId() {
+        return filterId;
+    }
 
     /**
      * The namespace to which the metrics are published. It must be one of several predefined namespaces.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * A list of dimensions for the metric. This variable should not be used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
-    java.util.List<Dimension> dimensions;
+    private final java.util.List<Dimension> dimensions;
+
+    public java.util.List<Dimension> getDimensions() {
+        return dimensions;
+    }
 
     /**
      * The list of metrics in this group.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
-    java.util.List<Metric> metrics;
+    private final java.util.List<Metric> metrics;
+
+    public java.util.List<Metric> getMetrics() {
+        return metrics;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateMetricGroupDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", filterId=").append(String.valueOf(this.filterId));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
+        sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateMetricGroupDetails)) {
+            return false;
+        }
+
+        CreateMetricGroupDetails other = (CreateMetricGroupDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.filterId, other.filterId)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
+                && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.filterId == null ? 43 : this.filterId.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
+        result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

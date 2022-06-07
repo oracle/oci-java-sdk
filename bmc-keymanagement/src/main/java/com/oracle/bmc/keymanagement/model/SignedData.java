@@ -15,14 +15,24 @@ package com.oracle.bmc.keymanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SignedData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SignedData {
+public final class SignedData {
+    @Deprecated
+    @java.beans.ConstructorProperties({"keyId", "keyVersionId", "signature", "signingAlgorithm"})
+    public SignedData(
+            String keyId,
+            String keyVersionId,
+            String signature,
+            SigningAlgorithm signingAlgorithm) {
+        super();
+        this.keyId = keyId;
+        this.keyVersionId = keyVersionId;
+        this.signature = signature;
+        this.signingAlgorithm = signingAlgorithm;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
@@ -90,24 +100,41 @@ public class SignedData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the key used to sign the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * The OCID of the key version used to sign the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
-    String keyVersionId;
+    private final String keyVersionId;
+
+    public String getKeyVersionId() {
+        return keyVersionId;
+    }
 
     /**
      * The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
-    String signature;
+    private final String signature;
+
+    public String getSignature() {
+        return signature;
+    }
+
     /**
      * The algorithm to use to sign the message or message digest.
      * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
@@ -117,7 +144,6 @@ public class SignedData {
      * as used when creating the message digest.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SigningAlgorithm {
         Sha224RsaPkcsPss("SHA_224_RSA_PKCS_PSS"),
         Sha256RsaPkcsPss("SHA_256_RSA_PKCS_PSS"),
@@ -136,6 +162,9 @@ public class SignedData {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SigningAlgorithm.class);
 
         private final String value;
         private static java.util.Map<String, SigningAlgorithm> map;
@@ -179,8 +208,62 @@ public class SignedData {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
-    SigningAlgorithm signingAlgorithm;
+    private final SigningAlgorithm signingAlgorithm;
+
+    public SigningAlgorithm getSigningAlgorithm() {
+        return signingAlgorithm;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SignedData(");
+        sb.append("keyId=").append(String.valueOf(this.keyId));
+        sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
+        sb.append(", signature=").append(String.valueOf(this.signature));
+        sb.append(", signingAlgorithm=").append(String.valueOf(this.signingAlgorithm));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SignedData)) {
+            return false;
+        }
+
+        SignedData other = (SignedData) o;
+        return java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
+                && java.util.Objects.equals(this.signature, other.signature)
+                && java.util.Objects.equals(this.signingAlgorithm, other.signingAlgorithm)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.keyVersionId == null ? 43 : this.keyVersionId.hashCode());
+        result = (result * PRIME) + (this.signature == null ? 43 : this.signature.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.signingAlgorithm == null ? 43 : this.signingAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

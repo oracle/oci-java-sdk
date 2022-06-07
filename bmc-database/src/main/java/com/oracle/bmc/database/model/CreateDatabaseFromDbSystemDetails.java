@@ -18,16 +18,40 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDatabaseFromDbSystemDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDatabaseFromDbSystemDetails {
+public final class CreateDatabaseFromDbSystemDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "adminPassword",
+        "dbName",
+        "dbDomain",
+        "dbUniqueName",
+        "dbBackupConfig",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateDatabaseFromDbSystemDetails(
+            String adminPassword,
+            String dbName,
+            String dbDomain,
+            String dbUniqueName,
+            DbBackupConfig dbBackupConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.adminPassword = adminPassword;
+        this.dbName = dbName;
+        this.dbDomain = dbDomain;
+        this.dbUniqueName = dbUniqueName;
+        this.dbBackupConfig = dbBackupConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
@@ -133,32 +157,56 @@ public class CreateDatabaseFromDbSystemDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    String adminPassword;
+    private final String adminPassword;
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
 
     /**
      * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    private final String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
 
     /**
      * The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbDomain")
-    String dbDomain;
+    private final String dbDomain;
+
+    public String getDbDomain() {
+        return dbDomain;
+    }
 
     /**
      * The {@code DB_UNIQUE_NAME} of the Oracle Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-    String dbUniqueName;
+    private final String dbUniqueName;
+
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
-    DbBackupConfig dbBackupConfig;
+    private final DbBackupConfig dbBackupConfig;
+
+    public DbBackupConfig getDbBackupConfig() {
+        return dbBackupConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -168,7 +216,11 @@ public class CreateDatabaseFromDbSystemDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -176,8 +228,73 @@ public class CreateDatabaseFromDbSystemDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDatabaseFromDbSystemDetails(");
+        sb.append("adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", dbName=").append(String.valueOf(this.dbName));
+        sb.append(", dbDomain=").append(String.valueOf(this.dbDomain));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDatabaseFromDbSystemDetails)) {
+            return false;
+        }
+
+        CreateDatabaseFromDbSystemDetails other = (CreateDatabaseFromDbSystemDetails) o;
+        return java.util.Objects.equals(this.adminPassword, other.adminPassword)
+                && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.dbDomain, other.dbDomain)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.dbDomain == null ? 43 : this.dbDomain.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

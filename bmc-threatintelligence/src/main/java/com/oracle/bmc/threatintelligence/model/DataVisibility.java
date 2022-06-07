@@ -15,14 +15,18 @@ package com.oracle.bmc.threatintelligence.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataVisibility.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataVisibility {
+public final class DataVisibility {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "tlpName"})
+    public DataVisibility(String name, TlpName tlpName) {
+        super();
+        this.name = name;
+        this.tlpName = tlpName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -67,15 +71,23 @@ public class DataVisibility {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the visibility level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The Traffic Light Protocol (TLP) name of the visibility level.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TlpName {
         TlpInternalAudit("TLP_INTERNAL_AUDIT"),
         TlpWhite("TLP_WHITE"),
@@ -88,6 +100,9 @@ public class DataVisibility {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TlpName.class);
 
         private final String value;
         private static java.util.Map<String, TlpName> map;
@@ -125,8 +140,54 @@ public class DataVisibility {
      * The Traffic Light Protocol (TLP) name of the visibility level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlpName")
-    TlpName tlpName;
+    private final TlpName tlpName;
+
+    public TlpName getTlpName() {
+        return tlpName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataVisibility(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", tlpName=").append(String.valueOf(this.tlpName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataVisibility)) {
+            return false;
+        }
+
+        DataVisibility other = (DataVisibility) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.tlpName, other.tlpName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.tlpName == null ? 43 : this.tlpName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

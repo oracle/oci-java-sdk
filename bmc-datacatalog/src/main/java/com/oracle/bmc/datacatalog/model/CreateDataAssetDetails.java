@@ -15,16 +15,34 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDataAssetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDataAssetDetails {
+public final class CreateDataAssetDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "typeKey",
+        "customPropertyMembers",
+        "properties"
+    })
+    public CreateDataAssetDetails(
+            String displayName,
+            String description,
+            String typeKey,
+            java.util.List<CustomPropertySetUsage> customPropertyMembers,
+            java.util.Map<String, java.util.Map<String, String>> properties) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.typeKey = typeKey;
+        this.customPropertyMembers = customPropertyMembers;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -104,31 +122,51 @@ public class CreateDataAssetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Detailed description of the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The key of the data asset type. This can be obtained via the '/types' endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
-    String typeKey;
+    private final String typeKey;
+
+    public String getTypeKey() {
+        return typeKey;
+    }
 
     /**
      * The list of customized properties along with the values for this object
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
-    java.util.List<CustomPropertySetUsage> customPropertyMembers;
+    private final java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+    public java.util.List<CustomPropertySetUsage> getCustomPropertyMembers() {
+        return customPropertyMembers;
+    }
 
     /**
      * A map of maps that contains the properties which are specific to the data asset type. Each data asset type
@@ -142,8 +180,67 @@ public class CreateDataAssetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.Map<String, java.util.Map<String, String>> properties;
+    private final java.util.Map<String, java.util.Map<String, String>> properties;
+
+    public java.util.Map<String, java.util.Map<String, String>> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDataAssetDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", typeKey=").append(String.valueOf(this.typeKey));
+        sb.append(", customPropertyMembers=").append(String.valueOf(this.customPropertyMembers));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDataAssetDetails)) {
+            return false;
+        }
+
+        CreateDataAssetDetails other = (CreateDataAssetDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.typeKey, other.typeKey)
+                && java.util.Objects.equals(this.customPropertyMembers, other.customPropertyMembers)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.typeKey == null ? 43 : this.typeKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customPropertyMembers == null
+                                ? 43
+                                : this.customPropertyMembers.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

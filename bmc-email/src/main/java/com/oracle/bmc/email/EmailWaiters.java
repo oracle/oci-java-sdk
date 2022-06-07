@@ -6,6 +6,7 @@ package com.oracle.bmc.email;
 
 import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,14 @@ import com.oracle.bmc.email.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-@lombok.RequiredArgsConstructor
 public class EmailWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Email client;
+
+    public EmailWaiters(java.util.concurrent.ExecutorService executorService, Email client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

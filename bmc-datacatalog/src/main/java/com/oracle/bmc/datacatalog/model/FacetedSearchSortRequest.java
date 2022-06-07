@@ -15,16 +15,20 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FacetedSearchSortRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FacetedSearchSortRequest {
+public final class FacetedSearchSortRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({"sortBy", "sortOrder"})
+    public FacetedSearchSortRequest(String sortBy, SortOrder sortOrder) {
+        super();
+        this.sortBy = sortBy;
+        this.sortOrder = sortOrder;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private String sortBy;
@@ -69,11 +73,20 @@ public class FacetedSearchSortRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Filed name that needs to be sorted by.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
-    String sortBy;
+    private final String sortBy;
+
+    public String getSortBy() {
+        return sortBy;
+    }
+
     /**
      * Sort order for search results.
      **/
@@ -113,8 +126,54 @@ public class FacetedSearchSortRequest {
      * Sort order for search results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
-    SortOrder sortOrder;
+    private final SortOrder sortOrder;
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FacetedSearchSortRequest(");
+        sb.append("sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(", sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FacetedSearchSortRequest)) {
+            return false;
+        }
+
+        FacetedSearchSortRequest other = (FacetedSearchSortRequest) o;
+        return java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,12 +15,6 @@ package com.oracle.bmc.datascience.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,11 +29,43 @@ package com.oracle.bmc.datascience.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ScalingPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected ScalingPolicy() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScalingPolicy(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScalingPolicy)) {
+            return false;
+        }
+
+        ScalingPolicy other = (ScalingPolicy) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * The type of scaling policy.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PolicyType {
         FixedSize("FIXED_SIZE"),
 
@@ -48,6 +74,9 @@ public class ScalingPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PolicyType.class);
 
         private final String value;
         private static java.util.Map<String, PolicyType> map;

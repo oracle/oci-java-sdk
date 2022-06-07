@@ -15,16 +15,21 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StackMonitoringConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StackMonitoringConfig {
+public final class StackMonitoringConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"stackMonitoringStatus", "stackMonitoringConnectorId"})
+    public StackMonitoringConfig(
+            StackMonitoringStatus stackMonitoringStatus, String stackMonitoringConnectorId) {
+        super();
+        this.stackMonitoringStatus = stackMonitoringStatus;
+        this.stackMonitoringConnectorId = stackMonitoringConnectorId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringStatus")
         private StackMonitoringStatus stackMonitoringStatus;
@@ -72,10 +77,13 @@ public class StackMonitoringConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The status of Stack Monitoring.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum StackMonitoringStatus {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
@@ -89,6 +97,9 @@ public class StackMonitoringConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StackMonitoringStatus.class);
 
         private final String value;
         private static java.util.Map<String, StackMonitoringStatus> map;
@@ -126,7 +137,11 @@ public class StackMonitoringConfig {
      * The status of Stack Monitoring.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringStatus")
-    StackMonitoringStatus stackMonitoringStatus;
+    private final StackMonitoringStatus stackMonitoringStatus;
+
+    public StackMonitoringStatus getStackMonitoringStatus() {
+        return stackMonitoringStatus;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
@@ -134,8 +149,64 @@ public class StackMonitoringConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConnectorId")
-    String stackMonitoringConnectorId;
+    private final String stackMonitoringConnectorId;
+
+    public String getStackMonitoringConnectorId() {
+        return stackMonitoringConnectorId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StackMonitoringConfig(");
+        sb.append("stackMonitoringStatus=").append(String.valueOf(this.stackMonitoringStatus));
+        sb.append(", stackMonitoringConnectorId=")
+                .append(String.valueOf(this.stackMonitoringConnectorId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StackMonitoringConfig)) {
+            return false;
+        }
+
+        StackMonitoringConfig other = (StackMonitoringConfig) o;
+        return java.util.Objects.equals(this.stackMonitoringStatus, other.stackMonitoringStatus)
+                && java.util.Objects.equals(
+                        this.stackMonitoringConnectorId, other.stackMonitoringConnectorId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.stackMonitoringStatus == null
+                                ? 43
+                                : this.stackMonitoringStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stackMonitoringConnectorId == null
+                                ? 43
+                                : this.stackMonitoringConnectorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

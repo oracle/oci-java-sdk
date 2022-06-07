@@ -16,16 +16,40 @@ package com.oracle.bmc.secrets.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SecretBundleVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SecretBundleVersionSummary {
+public final class SecretBundleVersionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "secretId",
+        "timeCreated",
+        "versionNumber",
+        "versionName",
+        "timeOfDeletion",
+        "timeOfExpiry",
+        "stages"
+    })
+    public SecretBundleVersionSummary(
+            String secretId,
+            java.util.Date timeCreated,
+            Long versionNumber,
+            String versionName,
+            java.util.Date timeOfDeletion,
+            java.util.Date timeOfExpiry,
+            java.util.List<Stages> stages) {
+        super();
+        this.secretId = secretId;
+        this.timeCreated = timeCreated;
+        this.versionNumber = versionNumber;
+        this.versionName = versionName;
+        this.timeOfDeletion = timeOfDeletion;
+        this.timeOfExpiry = timeOfExpiry;
+        this.stages = stages;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
@@ -130,30 +154,50 @@ public class SecretBundleVersionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the secret.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
-    String secretId;
+    private final String secretId;
+
+    public String getSecretId() {
+        return secretId;
+    }
 
     /**
      * The time when the secret bundle was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The version number of the secret.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
-    Long versionNumber;
+    private final Long versionNumber;
+
+    public Long getVersionNumber() {
+        return versionNumber;
+    }
 
     /**
      * The version name of the secret bundle, as provided when the secret was created or last rotated.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
-    String versionName;
+    private final String versionName;
+
+    public String getVersionName() {
+        return versionName;
+    }
 
     /**
      * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -161,7 +205,11 @@ public class SecretBundleVersionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
-    java.util.Date timeOfDeletion;
+    private final java.util.Date timeOfDeletion;
+
+    public java.util.Date getTimeOfDeletion() {
+        return timeOfDeletion;
+    }
 
     /**
      * An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -169,10 +217,14 @@ public class SecretBundleVersionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiry")
-    java.util.Date timeOfExpiry;
+    private final java.util.Date timeOfExpiry;
+
+    public java.util.Date getTimeOfExpiry() {
+        return timeOfExpiry;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Stages {
         Current("CURRENT"),
         Pending("PENDING"),
@@ -185,6 +237,8 @@ public class SecretBundleVersionSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Stages.class);
 
         private final String value;
         private static java.util.Map<String, Stages> map;
@@ -222,8 +276,73 @@ public class SecretBundleVersionSummary {
      * A list of possible rotation states for the secret bundle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
-    java.util.List<Stages> stages;
+    private final java.util.List<Stages> stages;
+
+    public java.util.List<Stages> getStages() {
+        return stages;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SecretBundleVersionSummary(");
+        sb.append("secretId=").append(String.valueOf(this.secretId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", versionNumber=").append(String.valueOf(this.versionNumber));
+        sb.append(", versionName=").append(String.valueOf(this.versionName));
+        sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
+        sb.append(", timeOfExpiry=").append(String.valueOf(this.timeOfExpiry));
+        sb.append(", stages=").append(String.valueOf(this.stages));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SecretBundleVersionSummary)) {
+            return false;
+        }
+
+        SecretBundleVersionSummary other = (SecretBundleVersionSummary) o;
+        return java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.versionNumber, other.versionNumber)
+                && java.util.Objects.equals(this.versionName, other.versionName)
+                && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
+                && java.util.Objects.equals(this.timeOfExpiry, other.timeOfExpiry)
+                && java.util.Objects.equals(this.stages, other.stages)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionNumber == null ? 43 : this.versionNumber.hashCode());
+        result = (result * PRIME) + (this.versionName == null ? 43 : this.versionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
+        result = (result * PRIME) + (this.timeOfExpiry == null ? 43 : this.timeOfExpiry.hashCode());
+        result = (result * PRIME) + (this.stages == null ? 43 : this.stages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

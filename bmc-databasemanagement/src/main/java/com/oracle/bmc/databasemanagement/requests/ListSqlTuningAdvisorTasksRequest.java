@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTasksExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSqlTuningAdvisorTasksRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListSqlTuningAdvisorTasksRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,11 +17,17 @@ public class ListSqlTuningAdvisorTasksRequest
      */
     private String managedDatabaseId;
 
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
     /**
      * The optional query parameter to filter the SQL Tuning Advisor task list by name.
      */
     private String name;
 
+    public String getName() {
+        return name;
+    }
     /**
      * The optional query parameter to filter the SQL Tuning Advisor task list by status.
      */
@@ -73,16 +71,26 @@ public class ListSqlTuningAdvisorTasksRequest
             throw new IllegalArgumentException("Invalid Status: " + key);
         }
     };
+
+    public Status getStatus() {
+        return status;
+    }
     /**
      * The optional greater than or equal to query parameter to filter the timestamp.
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
+    public java.util.Date getTimeGreaterThanOrEqualTo() {
+        return timeGreaterThanOrEqualTo;
+    }
     /**
      * The optional less than or equal to query parameter to filter the timestamp.
      */
     private java.util.Date timeLessThanOrEqualTo;
 
+    public java.util.Date getTimeLessThanOrEqualTo() {
+        return timeLessThanOrEqualTo;
+    }
     /**
      * The page token representing the page from where the next set of paginated results
      * are retrieved. This is usually retrieved from a previous list call.
@@ -90,11 +98,17 @@ public class ListSqlTuningAdvisorTasksRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The maximum number of records returned in the paginated response.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The option to sort the SQL Tuning Advisor task summary data.
      */
@@ -135,15 +149,26 @@ public class ListSqlTuningAdvisorTasksRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -151,6 +176,118 @@ public class ListSqlTuningAdvisorTasksRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedDatabaseId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @return this builder instance
+         */
+        public Builder managedDatabaseId(String managedDatabaseId) {
+            this.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        private String name = null;
+
+        /**
+         * The optional query parameter to filter the SQL Tuning Advisor task list by name.
+         * @return this builder instance
+         */
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        private Status status = null;
+
+        /**
+         * The optional query parameter to filter the SQL Tuning Advisor task list by status.
+         * @return this builder instance
+         */
+        public Builder status(Status status) {
+            this.status = status;
+            return this;
+        }
+
+        private java.util.Date timeGreaterThanOrEqualTo = null;
+
+        /**
+         * The optional greater than or equal to query parameter to filter the timestamp.
+         * @return this builder instance
+         */
+        public Builder timeGreaterThanOrEqualTo(java.util.Date timeGreaterThanOrEqualTo) {
+            this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeLessThanOrEqualTo = null;
+
+        /**
+         * The optional less than or equal to query parameter to filter the timestamp.
+         * @return this builder instance
+         */
+        public Builder timeLessThanOrEqualTo(java.util.Date timeLessThanOrEqualTo) {
+            this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of records returned in the paginated response.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The option to sort the SQL Tuning Advisor task summary data.
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
+
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -211,5 +348,121 @@ public class ListSqlTuningAdvisorTasksRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListSqlTuningAdvisorTasksRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListSqlTuningAdvisorTasksRequest
+         */
+        public ListSqlTuningAdvisorTasksRequest buildWithoutInvocationCallback() {
+            ListSqlTuningAdvisorTasksRequest request = new ListSqlTuningAdvisorTasksRequest();
+            request.managedDatabaseId = managedDatabaseId;
+            request.name = name;
+            request.status = status;
+            request.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            request.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            request.page = page;
+            request.limit = limit;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListSqlTuningAdvisorTasksRequest(managedDatabaseId, name, status, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, page, limit, sortBy, sortOrder, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedDatabaseId(managedDatabaseId)
+                .name(name)
+                .status(status)
+                .timeGreaterThanOrEqualTo(timeGreaterThanOrEqualTo)
+                .timeLessThanOrEqualTo(timeLessThanOrEqualTo)
+                .page(page)
+                .limit(limit)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",timeGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeGreaterThanOrEqualTo));
+        sb.append(",timeLessThanOrEqualTo=").append(String.valueOf(this.timeLessThanOrEqualTo));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListSqlTuningAdvisorTasksRequest)) {
+            return false;
+        }
+
+        ListSqlTuningAdvisorTasksRequest other = (ListSqlTuningAdvisorTasksRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(
+                        this.timeGreaterThanOrEqualTo, other.timeGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.timeLessThanOrEqualTo, other.timeLessThanOrEqualTo)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLessThanOrEqualTo == null
+                                ? 43
+                                : this.timeLessThanOrEqualTo.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

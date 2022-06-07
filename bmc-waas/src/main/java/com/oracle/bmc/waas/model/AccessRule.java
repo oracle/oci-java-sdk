@@ -15,14 +15,65 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AccessRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AccessRule {
+public final class AccessRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "criteria",
+        "action",
+        "blockAction",
+        "blockResponseCode",
+        "blockErrorPageMessage",
+        "blockErrorPageCode",
+        "blockErrorPageDescription",
+        "bypassChallenges",
+        "redirectUrl",
+        "redirectResponseCode",
+        "captchaTitle",
+        "captchaHeader",
+        "captchaFooter",
+        "captchaSubmitLabel",
+        "responseHeaderManipulation"
+    })
+    public AccessRule(
+            String name,
+            java.util.List<AccessRuleCriteria> criteria,
+            Action action,
+            BlockAction blockAction,
+            Integer blockResponseCode,
+            String blockErrorPageMessage,
+            String blockErrorPageCode,
+            String blockErrorPageDescription,
+            java.util.List<BypassChallenges> bypassChallenges,
+            String redirectUrl,
+            RedirectResponseCode redirectResponseCode,
+            String captchaTitle,
+            String captchaHeader,
+            String captchaFooter,
+            String captchaSubmitLabel,
+            java.util.List<HeaderManipulationAction> responseHeaderManipulation) {
+        super();
+        this.name = name;
+        this.criteria = criteria;
+        this.action = action;
+        this.blockAction = blockAction;
+        this.blockResponseCode = blockResponseCode;
+        this.blockErrorPageMessage = blockErrorPageMessage;
+        this.blockErrorPageCode = blockErrorPageCode;
+        this.blockErrorPageDescription = blockErrorPageDescription;
+        this.bypassChallenges = bypassChallenges;
+        this.redirectUrl = redirectUrl;
+        this.redirectResponseCode = redirectResponseCode;
+        this.captchaTitle = captchaTitle;
+        this.captchaHeader = captchaHeader;
+        this.captchaFooter = captchaFooter;
+        this.captchaSubmitLabel = captchaSubmitLabel;
+        this.responseHeaderManipulation = responseHeaderManipulation;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -227,17 +278,30 @@ public class AccessRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique name of the access rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criteria")
-    java.util.List<AccessRuleCriteria> criteria;
+    private final java.util.List<AccessRuleCriteria> criteria;
+
+    public java.util.List<AccessRuleCriteria> getCriteria() {
+        return criteria;
+    }
+
     /**
      * The action to take when the access criteria are met for a rule. If unspecified, defaults to {@code ALLOW}.
      * <p>
@@ -255,7 +319,6 @@ public class AccessRule {
      * <p>
      * Regardless of action, no further rules are processed once a rule is matched.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Allow("ALLOW"),
         Detect("DETECT"),
@@ -269,6 +332,8 @@ public class AccessRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -320,11 +385,15 @@ public class AccessRule {
      * Regardless of action, no further rules are processed once a rule is matched.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
+
     /**
      * The method used to block requests if {@code action} is set to {@code BLOCK} and the access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BlockAction {
         SetResponseCode("SET_RESPONSE_CODE"),
         ShowErrorPage("SHOW_ERROR_PAGE"),
@@ -334,6 +403,9 @@ public class AccessRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BlockAction.class);
 
         private final String value;
         private static java.util.Map<String, BlockAction> map;
@@ -371,34 +443,54 @@ public class AccessRule {
      * The method used to block requests if {@code action} is set to {@code BLOCK} and the access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockAction")
-    BlockAction blockAction;
+    private final BlockAction blockAction;
+
+    public BlockAction getBlockAction() {
+        return blockAction;
+    }
 
     /**
      * The response status code to return when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If unspecified, defaults to {@code 403}. The list of available response codes: {@code 200}, {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code 302}, {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockResponseCode")
-    Integer blockResponseCode;
+    private final Integer blockResponseCode;
+
+    public Integer getBlockResponseCode() {
+        return blockResponseCode;
+    }
 
     /**
      * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageMessage")
-    String blockErrorPageMessage;
+    private final String blockErrorPageMessage;
+
+    public String getBlockErrorPageMessage() {
+        return blockErrorPageMessage;
+    }
 
     /**
      * The error code to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access rules'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageCode")
-    String blockErrorPageCode;
+    private final String blockErrorPageCode;
+
+    public String getBlockErrorPageCode() {
+        return blockErrorPageCode;
+    }
 
     /**
      * The description text to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageDescription")
-    String blockErrorPageDescription;
+    private final String blockErrorPageDescription;
+
+    public String getBlockErrorPageDescription() {
+        return blockErrorPageDescription;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BypassChallenges {
         JsChallenge("JS_CHALLENGE"),
         DeviceFingerprintChallenge("DEVICE_FINGERPRINT_CHALLENGE"),
@@ -410,6 +502,9 @@ public class AccessRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BypassChallenges.class);
 
         private final String value;
         private static java.util.Map<String, BypassChallenges> map;
@@ -455,13 +550,22 @@ public class AccessRule {
      * - **CAPTCHA:** Bypasses CAPTCHA Challenge.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bypassChallenges")
-    java.util.List<BypassChallenges> bypassChallenges;
+    private final java.util.List<BypassChallenges> bypassChallenges;
+
+    public java.util.List<BypassChallenges> getBypassChallenges() {
+        return bypassChallenges;
+    }
 
     /**
      * The target to which the request should be redirected, represented as a URI reference. Required when {@code action} is {@code REDIRECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
-    String redirectUrl;
+    private final String redirectUrl;
+
+    public String getRedirectUrl() {
+        return redirectUrl;
+    }
+
     /**
      * The response status code to return when {@code action} is set to {@code REDIRECT}.
      * <p>
@@ -469,7 +573,6 @@ public class AccessRule {
      * <p>
      * - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RedirectResponseCode {
         MovedPermanently("MOVED_PERMANENTLY"),
         Found("FOUND"),
@@ -479,6 +582,9 @@ public class AccessRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RedirectResponseCode.class);
 
         private final String value;
         private static java.util.Map<String, RedirectResponseCode> map;
@@ -520,38 +626,182 @@ public class AccessRule {
      * - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectResponseCode")
-    RedirectResponseCode redirectResponseCode;
+    private final RedirectResponseCode redirectResponseCode;
+
+    public RedirectResponseCode getRedirectResponseCode() {
+        return redirectResponseCode;
+    }
 
     /**
      * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaTitle")
-    String captchaTitle;
+    private final String captchaTitle;
+
+    public String getCaptchaTitle() {
+        return captchaTitle;
+    }
 
     /**
      * The text to show in the header when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaHeader")
-    String captchaHeader;
+    private final String captchaHeader;
+
+    public String getCaptchaHeader() {
+        return captchaHeader;
+    }
 
     /**
      * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaFooter")
-    String captchaFooter;
+    private final String captchaFooter;
+
+    public String getCaptchaFooter() {
+        return captchaFooter;
+    }
 
     /**
      * The text to show on the label of the CAPTCHA challenge submit button when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaSubmitLabel")
-    String captchaSubmitLabel;
+    private final String captchaSubmitLabel;
+
+    public String getCaptchaSubmitLabel() {
+        return captchaSubmitLabel;
+    }
 
     /**
      * An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of {@code action} value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseHeaderManipulation")
-    java.util.List<HeaderManipulationAction> responseHeaderManipulation;
+    private final java.util.List<HeaderManipulationAction> responseHeaderManipulation;
+
+    public java.util.List<HeaderManipulationAction> getResponseHeaderManipulation() {
+        return responseHeaderManipulation;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AccessRule(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", criteria=").append(String.valueOf(this.criteria));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", blockAction=").append(String.valueOf(this.blockAction));
+        sb.append(", blockResponseCode=").append(String.valueOf(this.blockResponseCode));
+        sb.append(", blockErrorPageMessage=").append(String.valueOf(this.blockErrorPageMessage));
+        sb.append(", blockErrorPageCode=").append(String.valueOf(this.blockErrorPageCode));
+        sb.append(", blockErrorPageDescription=")
+                .append(String.valueOf(this.blockErrorPageDescription));
+        sb.append(", bypassChallenges=").append(String.valueOf(this.bypassChallenges));
+        sb.append(", redirectUrl=").append(String.valueOf(this.redirectUrl));
+        sb.append(", redirectResponseCode=").append(String.valueOf(this.redirectResponseCode));
+        sb.append(", captchaTitle=").append(String.valueOf(this.captchaTitle));
+        sb.append(", captchaHeader=").append(String.valueOf(this.captchaHeader));
+        sb.append(", captchaFooter=").append(String.valueOf(this.captchaFooter));
+        sb.append(", captchaSubmitLabel=").append(String.valueOf(this.captchaSubmitLabel));
+        sb.append(", responseHeaderManipulation=")
+                .append(String.valueOf(this.responseHeaderManipulation));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AccessRule)) {
+            return false;
+        }
+
+        AccessRule other = (AccessRule) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.criteria, other.criteria)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.blockAction, other.blockAction)
+                && java.util.Objects.equals(this.blockResponseCode, other.blockResponseCode)
+                && java.util.Objects.equals(this.blockErrorPageMessage, other.blockErrorPageMessage)
+                && java.util.Objects.equals(this.blockErrorPageCode, other.blockErrorPageCode)
+                && java.util.Objects.equals(
+                        this.blockErrorPageDescription, other.blockErrorPageDescription)
+                && java.util.Objects.equals(this.bypassChallenges, other.bypassChallenges)
+                && java.util.Objects.equals(this.redirectUrl, other.redirectUrl)
+                && java.util.Objects.equals(this.redirectResponseCode, other.redirectResponseCode)
+                && java.util.Objects.equals(this.captchaTitle, other.captchaTitle)
+                && java.util.Objects.equals(this.captchaHeader, other.captchaHeader)
+                && java.util.Objects.equals(this.captchaFooter, other.captchaFooter)
+                && java.util.Objects.equals(this.captchaSubmitLabel, other.captchaSubmitLabel)
+                && java.util.Objects.equals(
+                        this.responseHeaderManipulation, other.responseHeaderManipulation)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.criteria == null ? 43 : this.criteria.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.blockAction == null ? 43 : this.blockAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockResponseCode == null ? 43 : this.blockResponseCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockErrorPageMessage == null
+                                ? 43
+                                : this.blockErrorPageMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockErrorPageCode == null
+                                ? 43
+                                : this.blockErrorPageCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockErrorPageDescription == null
+                                ? 43
+                                : this.blockErrorPageDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bypassChallenges == null ? 43 : this.bypassChallenges.hashCode());
+        result = (result * PRIME) + (this.redirectUrl == null ? 43 : this.redirectUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.redirectResponseCode == null
+                                ? 43
+                                : this.redirectResponseCode.hashCode());
+        result = (result * PRIME) + (this.captchaTitle == null ? 43 : this.captchaTitle.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.captchaHeader == null ? 43 : this.captchaHeader.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.captchaFooter == null ? 43 : this.captchaFooter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.captchaSubmitLabel == null
+                                ? 43
+                                : this.captchaSubmitLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responseHeaderManipulation == null
+                                ? 43
+                                : this.responseHeaderManipulation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,21 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UsageStatusItem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UsageStatusItem {
+public final class UsageStatusItem {
+    @Deprecated
+    @java.beans.ConstructorProperties({"dataType", "isMultiValued", "currentUsage", "maxAvailable"})
+    public UsageStatusItem(
+            String dataType, Boolean isMultiValued, Long currentUsage, Integer maxAvailable) {
+        super();
+        this.dataType = dataType;
+        this.isMultiValued = isMultiValued;
+        this.currentUsage = currentUsage;
+        this.maxAvailable = maxAvailable;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
@@ -90,31 +97,101 @@ public class UsageStatusItem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The field data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    String dataType;
+    private final String dataType;
+
+    public String getDataType() {
+        return dataType;
+    }
 
     /**
      * A flag indicating whether or not the field is multi-valued.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
-    Boolean isMultiValued;
+    private final Boolean isMultiValued;
+
+    public Boolean getIsMultiValued() {
+        return isMultiValued;
+    }
 
     /**
      * The current usage of the field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
-    Long currentUsage;
+    private final Long currentUsage;
+
+    public Long getCurrentUsage() {
+        return currentUsage;
+    }
 
     /**
      * The maximum availability of the field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxAvailable")
-    Integer maxAvailable;
+    private final Integer maxAvailable;
+
+    public Integer getMaxAvailable() {
+        return maxAvailable;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UsageStatusItem(");
+        sb.append("dataType=").append(String.valueOf(this.dataType));
+        sb.append(", isMultiValued=").append(String.valueOf(this.isMultiValued));
+        sb.append(", currentUsage=").append(String.valueOf(this.currentUsage));
+        sb.append(", maxAvailable=").append(String.valueOf(this.maxAvailable));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UsageStatusItem)) {
+            return false;
+        }
+
+        UsageStatusItem other = (UsageStatusItem) o;
+        return java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.isMultiValued, other.isMultiValued)
+                && java.util.Objects.equals(this.currentUsage, other.currentUsage)
+                && java.util.Objects.equals(this.maxAvailable, other.maxAvailable)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMultiValued == null ? 43 : this.isMultiValued.hashCode());
+        result = (result * PRIME) + (this.currentUsage == null ? 43 : this.currentUsage.hashCode());
+        result = (result * PRIME) + (this.maxAvailable == null ? 43 : this.maxAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,12 +15,6 @@ package com.oracle.bmc.computeinstanceagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -43,6 +37,39 @@ package com.oracle.bmc.computeinstanceagent.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class InstanceAgentCommandOutputDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected InstanceAgentCommandOutputDetails() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceAgentCommandOutputDetails(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceAgentCommandOutputDetails)) {
+            return false;
+        }
+
+        InstanceAgentCommandOutputDetails other = (InstanceAgentCommandOutputDetails) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * The output type for the command. The following values are supported:
@@ -55,7 +82,6 @@ public class InstanceAgentCommandOutputDetails {
      * [Overview of Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum OutputType {
         Text("TEXT"),
         ObjectStorageUri("OBJECT_STORAGE_URI"),
@@ -66,6 +92,9 @@ public class InstanceAgentCommandOutputDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OutputType.class);
 
         private final String value;
         private static java.util.Map<String, OutputType> map;

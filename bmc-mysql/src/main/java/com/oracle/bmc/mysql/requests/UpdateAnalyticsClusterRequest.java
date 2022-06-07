@@ -9,14 +9,6 @@ import com.oracle.bmc.mysql.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAnalyticsClusterRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateAnalyticsClusterRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails> {
@@ -26,11 +18,18 @@ public class UpdateAnalyticsClusterRequest
      */
     private String dbSystemId;
 
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
     /**
      * Request to update an Analytics Cluster.
      */
     private com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails updateAnalyticsClusterDetails;
 
+    public com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails
+            getUpdateAnalyticsClusterDetails() {
+        return updateAnalyticsClusterDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
      * resource, set the {@code If-Match} header to the value of the etag from a
@@ -41,6 +40,9 @@ public class UpdateAnalyticsClusterRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Customer-defined unique identifier for the request. If you need to
      * contact Oracle about a specific request, please provide the request
@@ -48,6 +50,10 @@ public class UpdateAnalyticsClusterRequest
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -66,6 +72,61 @@ public class UpdateAnalyticsClusterRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String dbSystemId = null;
+
+        /**
+         * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            return this;
+        }
+
+        private com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails
+                updateAnalyticsClusterDetails = null;
+
+        /**
+         * Request to update an Analytics Cluster.
+         * @return this builder instance
+         */
+        public Builder updateAnalyticsClusterDetails(
+                com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails
+                        updateAnalyticsClusterDetails) {
+            this.updateAnalyticsClusterDetails = updateAnalyticsClusterDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code If-Match} header to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -131,5 +192,85 @@ public class UpdateAnalyticsClusterRequest
             updateAnalyticsClusterDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateAnalyticsClusterRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateAnalyticsClusterRequest
+         */
+        public UpdateAnalyticsClusterRequest buildWithoutInvocationCallback() {
+            UpdateAnalyticsClusterRequest request = new UpdateAnalyticsClusterRequest();
+            request.dbSystemId = dbSystemId;
+            request.updateAnalyticsClusterDetails = updateAnalyticsClusterDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateAnalyticsClusterRequest(dbSystemId, updateAnalyticsClusterDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .dbSystemId(dbSystemId)
+                .updateAnalyticsClusterDetails(updateAnalyticsClusterDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(",updateAnalyticsClusterDetails=")
+                .append(String.valueOf(this.updateAnalyticsClusterDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAnalyticsClusterRequest)) {
+            return false;
+        }
+
+        UpdateAnalyticsClusterRequest other = (UpdateAnalyticsClusterRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(
+                        this.updateAnalyticsClusterDetails, other.updateAnalyticsClusterDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateAnalyticsClusterDetails == null
+                                ? 43
+                                : this.updateAnalyticsClusterDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

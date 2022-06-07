@@ -15,22 +15,18 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateOkeBlueGreenTrafficShiftDeployStageDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployStageType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateOkeBlueGreenTrafficShiftDeployStageDetails extends CreateDeployStageDetails {
+public final class CreateOkeBlueGreenTrafficShiftDeployStageDetails
+        extends CreateDeployStageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -138,6 +134,10 @@ public class CreateOkeBlueGreenTrafficShiftDeployStageDetails extends CreateDepl
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateOkeBlueGreenTrafficShiftDeployStageDetails(
             String description,
@@ -161,8 +161,60 @@ public class CreateOkeBlueGreenTrafficShiftDeployStageDetails extends CreateDepl
      * The OCID of the upstream OKE blue-green deployment stage in this pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("okeBlueGreenDeployStageId")
-    String okeBlueGreenDeployStageId;
+    private final String okeBlueGreenDeployStageId;
+
+    public String getOkeBlueGreenDeployStageId() {
+        return okeBlueGreenDeployStageId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateOkeBlueGreenTrafficShiftDeployStageDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", okeBlueGreenDeployStageId=")
+                .append(String.valueOf(this.okeBlueGreenDeployStageId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOkeBlueGreenTrafficShiftDeployStageDetails)) {
+            return false;
+        }
+
+        CreateOkeBlueGreenTrafficShiftDeployStageDetails other =
+                (CreateOkeBlueGreenTrafficShiftDeployStageDetails) o;
+        return java.util.Objects.equals(
+                        this.okeBlueGreenDeployStageId, other.okeBlueGreenDeployStageId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.okeBlueGreenDeployStageId == null
+                                ? 43
+                                : this.okeBlueGreenDeployStageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

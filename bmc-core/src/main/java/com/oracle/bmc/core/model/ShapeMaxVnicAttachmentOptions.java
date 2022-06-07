@@ -18,16 +18,21 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ShapeMaxVnicAttachmentOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ShapeMaxVnicAttachmentOptions {
+public final class ShapeMaxVnicAttachmentOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"min", "max", "defaultPerOcpu"})
+    public ShapeMaxVnicAttachmentOptions(Integer min, Float max, Float defaultPerOcpu) {
+        super();
+        this.min = min;
+        this.max = max;
+        this.defaultPerOcpu = defaultPerOcpu;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Integer min;
@@ -83,27 +88,90 @@ public class ShapeMaxVnicAttachmentOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The lowest maximum value of VNIC attachments.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("min")
-    Integer min;
+    private final Integer min;
+
+    public Integer getMin() {
+        return min;
+    }
 
     /**
      * The highest maximum value of VNIC attachments.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("max")
-    Float max;
+    private final Float max;
+
+    public Float getMax() {
+        return max;
+    }
 
     /**
      * The default number of VNIC attachments allowed per OCPU.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpu")
-    Float defaultPerOcpu;
+    private final Float defaultPerOcpu;
+
+    public Float getDefaultPerOcpu() {
+        return defaultPerOcpu;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ShapeMaxVnicAttachmentOptions(");
+        sb.append("min=").append(String.valueOf(this.min));
+        sb.append(", max=").append(String.valueOf(this.max));
+        sb.append(", defaultPerOcpu=").append(String.valueOf(this.defaultPerOcpu));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ShapeMaxVnicAttachmentOptions)) {
+            return false;
+        }
+
+        ShapeMaxVnicAttachmentOptions other = (ShapeMaxVnicAttachmentOptions) o;
+        return java.util.Objects.equals(this.min, other.min)
+                && java.util.Objects.equals(this.max, other.max)
+                && java.util.Objects.equals(this.defaultPerOcpu, other.defaultPerOcpu)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.min == null ? 43 : this.min.hashCode());
+        result = (result * PRIME) + (this.max == null ? 43 : this.max.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultPerOcpu == null ? 43 : this.defaultPerOcpu.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

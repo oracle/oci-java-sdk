@@ -7,6 +7,7 @@ package com.oracle.bmc.rover;
 import com.oracle.bmc.rover.internal.http.*;
 import com.oracle.bmc.rover.requests.*;
 import com.oracle.bmc.rover.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for RoverCluster service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.rover.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.extern.slf4j.Slf4j
 public class RoverClusterAsyncClient implements RoverClusterAsync {
     /**
      * Service instance for RoverCluster.
@@ -34,7 +34,9 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                     .serviceEndpointTemplate("https://rover.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RoverClusterAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
          * @return the client
          */
         public RoverClusterAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new RoverClusterAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

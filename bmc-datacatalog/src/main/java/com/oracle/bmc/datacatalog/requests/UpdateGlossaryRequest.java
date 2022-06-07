@@ -9,14 +9,6 @@ import com.oracle.bmc.datacatalog.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateGlossaryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateGlossaryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateGlossaryRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails> {
@@ -26,16 +18,25 @@ public class UpdateGlossaryRequest
      */
     private String catalogId;
 
+    public String getCatalogId() {
+        return catalogId;
+    }
     /**
      * Unique glossary key.
      */
     private String glossaryKey;
 
+    public String getGlossaryKey() {
+        return glossaryKey;
+    }
     /**
      * The information to be updated in the glossary.
      */
     private com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails updateGlossaryDetails;
 
+    public com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails getUpdateGlossaryDetails() {
+        return updateGlossaryDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -46,10 +47,17 @@ public class UpdateGlossaryRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -67,6 +75,67 @@ public class UpdateGlossaryRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String catalogId = null;
+
+        /**
+         * Unique catalog identifier.
+         * @return this builder instance
+         */
+        public Builder catalogId(String catalogId) {
+            this.catalogId = catalogId;
+            return this;
+        }
+
+        private String glossaryKey = null;
+
+        /**
+         * Unique glossary key.
+         * @return this builder instance
+         */
+        public Builder glossaryKey(String glossaryKey) {
+            this.glossaryKey = glossaryKey;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails updateGlossaryDetails = null;
+
+        /**
+         * The information to be updated in the glossary.
+         * @return this builder instance
+         */
+        public Builder updateGlossaryDetails(
+                com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails updateGlossaryDetails) {
+            this.updateGlossaryDetails = updateGlossaryDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -133,5 +202,88 @@ public class UpdateGlossaryRequest
             updateGlossaryDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateGlossaryRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateGlossaryRequest
+         */
+        public UpdateGlossaryRequest buildWithoutInvocationCallback() {
+            UpdateGlossaryRequest request = new UpdateGlossaryRequest();
+            request.catalogId = catalogId;
+            request.glossaryKey = glossaryKey;
+            request.updateGlossaryDetails = updateGlossaryDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateGlossaryRequest(catalogId, glossaryKey, updateGlossaryDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .catalogId(catalogId)
+                .glossaryKey(glossaryKey)
+                .updateGlossaryDetails(updateGlossaryDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(",glossaryKey=").append(String.valueOf(this.glossaryKey));
+        sb.append(",updateGlossaryDetails=").append(String.valueOf(this.updateGlossaryDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateGlossaryRequest)) {
+            return false;
+        }
+
+        UpdateGlossaryRequest other = (UpdateGlossaryRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
+                && java.util.Objects.equals(this.updateGlossaryDetails, other.updateGlossaryDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result = (result * PRIME) + (this.glossaryKey == null ? 43 : this.glossaryKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateGlossaryDetails == null
+                                ? 43
+                                : this.updateGlossaryDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

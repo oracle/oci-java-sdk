@@ -16,16 +16,20 @@ package com.oracle.bmc.networkloadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HealthCheckResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HealthCheckResult {
+public final class HealthCheckResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timestamp", "healthCheckStatus"})
+    public HealthCheckResult(java.util.Date timestamp, HealthCheckStatus healthCheckStatus) {
+        super();
+        this.timestamp = timestamp;
+        this.healthCheckStatus = healthCheckStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
@@ -71,6 +75,10 @@ public class HealthCheckResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The date and time the data was retrieved, in the format defined by RFC3339.
      * <p>
@@ -78,12 +86,16 @@ public class HealthCheckResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
+
     /**
      * The result of the most recent health check.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum HealthCheckStatus {
         Ok("OK"),
         InvalidStatusCode("INVALID_STATUS_CODE"),
@@ -97,6 +109,9 @@ public class HealthCheckResult {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(HealthCheckStatus.class);
 
         private final String value;
         private static java.util.Map<String, HealthCheckStatus> map;
@@ -135,8 +150,56 @@ public class HealthCheckResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
-    HealthCheckStatus healthCheckStatus;
+    private final HealthCheckStatus healthCheckStatus;
+
+    public HealthCheckStatus getHealthCheckStatus() {
+        return healthCheckStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HealthCheckResult(");
+        sb.append("timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", healthCheckStatus=").append(String.valueOf(this.healthCheckStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HealthCheckResult)) {
+            return false;
+        }
+
+        HealthCheckResult other = (HealthCheckResult) o;
+        return java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.healthCheckStatus, other.healthCheckStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.healthCheckStatus == null ? 43 : this.healthCheckStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

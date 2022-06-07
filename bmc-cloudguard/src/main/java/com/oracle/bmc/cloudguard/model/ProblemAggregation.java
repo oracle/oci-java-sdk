@@ -15,16 +15,20 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProblemAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProblemAggregation {
+public final class ProblemAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"dimensionsMap", "count"})
+    public ProblemAggregation(java.util.Map<String, String> dimensionsMap, Integer count) {
+        super();
+        this.dimensionsMap = dimensionsMap;
+        this.count = count;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
@@ -69,18 +73,74 @@ public class ProblemAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The key-value pairs of dimensions and their names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
-    java.util.Map<String, String> dimensionsMap;
+    private final java.util.Map<String, String> dimensionsMap;
+
+    public java.util.Map<String, String> getDimensionsMap() {
+        return dimensionsMap;
+    }
 
     /**
      * The number of occurences with given dimension/s
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
-    Integer count;
+    private final Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProblemAggregation(");
+        sb.append("dimensionsMap=").append(String.valueOf(this.dimensionsMap));
+        sb.append(", count=").append(String.valueOf(this.count));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProblemAggregation)) {
+            return false;
+        }
+
+        ProblemAggregation other = (ProblemAggregation) o;
+        return java.util.Objects.equals(this.dimensionsMap, other.dimensionsMap)
+                && java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.dimensionsMap == null ? 43 : this.dimensionsMap.hashCode());
+        result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

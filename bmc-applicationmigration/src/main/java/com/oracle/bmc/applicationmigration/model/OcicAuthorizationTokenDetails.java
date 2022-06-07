@@ -16,22 +16,17 @@ package com.oracle.bmc.applicationmigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = OcicAuthorizationTokenDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OcicAuthorizationTokenDetails extends AuthorizationDetails {
+public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("clientAppUrl")
         private String clientAppUrl;
@@ -78,6 +73,10 @@ public class OcicAuthorizationTokenDetails extends AuthorizationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public OcicAuthorizationTokenDetails(String clientAppUrl, String accessToken) {
         super();
@@ -89,14 +88,66 @@ public class OcicAuthorizationTokenDetails extends AuthorizationDetails {
      * AuthClient app url resource that the accesstoken is for.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientAppUrl")
-    String clientAppUrl;
+    private final String clientAppUrl;
+
+    public String getClientAppUrl() {
+        return clientAppUrl;
+    }
 
     /**
      * AccessToken to access the app endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
-    String accessToken;
+    private final String accessToken;
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OcicAuthorizationTokenDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", clientAppUrl=").append(String.valueOf(this.clientAppUrl));
+        sb.append(", accessToken=").append(String.valueOf(this.accessToken));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OcicAuthorizationTokenDetails)) {
+            return false;
+        }
+
+        OcicAuthorizationTokenDetails other = (OcicAuthorizationTokenDetails) o;
+        return java.util.Objects.equals(this.clientAppUrl, other.clientAppUrl)
+                && java.util.Objects.equals(this.accessToken, other.accessToken)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.clientAppUrl == null ? 43 : this.clientAppUrl.hashCode());
+        result = (result * PRIME) + (this.accessToken == null ? 43 : this.accessToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

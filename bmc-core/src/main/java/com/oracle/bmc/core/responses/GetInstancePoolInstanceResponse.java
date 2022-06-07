@@ -7,16 +7,16 @@ package com.oracle.bmc.core.responses;
 import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -25,10 +25,18 @@ public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned InstancePoolInstance instance.
      */
     private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
+
+    public com.oracle.bmc.core.model.InstancePoolInstance getInstancePoolInstance() {
+        return instancePoolInstance;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -55,6 +63,28 @@ public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
+
+        public Builder instancePoolInstance(
+                com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance) {
+            this.instancePoolInstance = instancePoolInstance;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -72,5 +102,51 @@ public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.Bm
             return new GetInstancePoolInstanceResponse(
                     __httpStatusCode__, etag, opcRequestId, instancePoolInstance);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",instancePoolInstance=").append(String.valueOf(instancePoolInstance));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetInstancePoolInstanceResponse)) {
+            return false;
+        }
+
+        GetInstancePoolInstanceResponse other = (GetInstancePoolInstanceResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.instancePoolInstance, other.instancePoolInstance);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instancePoolInstance == null
+                                ? 43
+                                : this.instancePoolInstance.hashCode());
+        return result;
     }
 }

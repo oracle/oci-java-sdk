@@ -15,16 +15,49 @@ package com.oracle.bmc.bastion.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateBastionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateBastionDetails {
+public final class CreateBastionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bastionType",
+        "name",
+        "compartmentId",
+        "targetSubnetId",
+        "phoneBookEntry",
+        "staticJumpHostIpAddresses",
+        "clientCidrBlockAllowList",
+        "maxSessionTtlInSeconds",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateBastionDetails(
+            String bastionType,
+            String name,
+            String compartmentId,
+            String targetSubnetId,
+            String phoneBookEntry,
+            java.util.List<String> staticJumpHostIpAddresses,
+            java.util.List<String> clientCidrBlockAllowList,
+            Integer maxSessionTtlInSeconds,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.bastionType = bastionType;
+        this.name = name;
+        this.compartmentId = compartmentId;
+        this.targetSubnetId = targetSubnetId;
+        this.phoneBookEntry = phoneBookEntry;
+        this.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
+        this.clientCidrBlockAllowList = clientCidrBlockAllowList;
+        this.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bastionType")
         private String bastionType;
@@ -163,56 +196,92 @@ public class CreateBastionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The type of bastion. Use {@code standard}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionType")
-    String bastionType;
+    private final String bastionType;
+
+    public String getBastionType() {
+        return bastionType;
+    }
 
     /**
      * The name of the bastion, which can't be changed after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The unique identifier (OCID) of the compartment where the bastion is located.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetSubnetId")
-    String targetSubnetId;
+    private final String targetSubnetId;
+
+    public String getTargetSubnetId() {
+        return targetSubnetId;
+    }
 
     /**
      * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to {@code standard} bastions.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("phoneBookEntry")
-    String phoneBookEntry;
+    private final String phoneBookEntry;
+
+    public String getPhoneBookEntry() {
+        return phoneBookEntry;
+    }
 
     /**
      * A list of IP addresses of the hosts that the bastion has access to. Not applicable to {@code standard} bastions.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("staticJumpHostIpAddresses")
-    java.util.List<String> staticJumpHostIpAddresses;
+    private final java.util.List<String> staticJumpHostIpAddresses;
+
+    public java.util.List<String> getStaticJumpHostIpAddresses() {
+        return staticJumpHostIpAddresses;
+    }
 
     /**
      * A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientCidrBlockAllowList")
-    java.util.List<String> clientCidrBlockAllowList;
+    private final java.util.List<String> clientCidrBlockAllowList;
+
+    public java.util.List<String> getClientCidrBlockAllowList() {
+        return clientCidrBlockAllowList;
+    }
 
     /**
      * The maximum amount of time that any session on the bastion can remain active.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSessionTtlInSeconds")
-    Integer maxSessionTtlInSeconds;
+    private final Integer maxSessionTtlInSeconds;
+
+    public Integer getMaxSessionTtlInSeconds() {
+        return maxSessionTtlInSeconds;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -220,7 +289,11 @@ public class CreateBastionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -228,8 +301,101 @@ public class CreateBastionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateBastionDetails(");
+        sb.append("bastionType=").append(String.valueOf(this.bastionType));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", targetSubnetId=").append(String.valueOf(this.targetSubnetId));
+        sb.append(", phoneBookEntry=").append(String.valueOf(this.phoneBookEntry));
+        sb.append(", staticJumpHostIpAddresses=")
+                .append(String.valueOf(this.staticJumpHostIpAddresses));
+        sb.append(", clientCidrBlockAllowList=")
+                .append(String.valueOf(this.clientCidrBlockAllowList));
+        sb.append(", maxSessionTtlInSeconds=").append(String.valueOf(this.maxSessionTtlInSeconds));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateBastionDetails)) {
+            return false;
+        }
+
+        CreateBastionDetails other = (CreateBastionDetails) o;
+        return java.util.Objects.equals(this.bastionType, other.bastionType)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.targetSubnetId, other.targetSubnetId)
+                && java.util.Objects.equals(this.phoneBookEntry, other.phoneBookEntry)
+                && java.util.Objects.equals(
+                        this.staticJumpHostIpAddresses, other.staticJumpHostIpAddresses)
+                && java.util.Objects.equals(
+                        this.clientCidrBlockAllowList, other.clientCidrBlockAllowList)
+                && java.util.Objects.equals(
+                        this.maxSessionTtlInSeconds, other.maxSessionTtlInSeconds)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.bastionType == null ? 43 : this.bastionType.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetSubnetId == null ? 43 : this.targetSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.phoneBookEntry == null ? 43 : this.phoneBookEntry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.staticJumpHostIpAddresses == null
+                                ? 43
+                                : this.staticJumpHostIpAddresses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientCidrBlockAllowList == null
+                                ? 43
+                                : this.clientCidrBlockAllowList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxSessionTtlInSeconds == null
+                                ? 43
+                                : this.maxSessionTtlInSeconds.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,21 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AuthenticationRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AuthenticationRequest {
+public final class AuthenticationRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({"userName", "password", "tenantName"})
+    public AuthenticationRequest(String userName, String password, String tenantName) {
+        super();
+        this.userName = userName;
+        this.password = password;
+        this.tenantName = tenantName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
@@ -82,24 +87,85 @@ public class AuthenticationRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The user name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * The password
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    String password;
+    private final String password;
+
+    public String getPassword() {
+        return password;
+    }
 
     /**
      * The name of the tenancy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
-    String tenantName;
+    private final String tenantName;
+
+    public String getTenantName() {
+        return tenantName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AuthenticationRequest(");
+        sb.append("userName=").append(String.valueOf(this.userName));
+        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", tenantName=").append(String.valueOf(this.tenantName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AuthenticationRequest)) {
+            return false;
+        }
+
+        AuthenticationRequest other = (AuthenticationRequest) o;
+        return java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.tenantName, other.tenantName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result = (result * PRIME) + (this.tenantName == null ? 43 : this.tenantName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

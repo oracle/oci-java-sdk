@@ -8,7 +8,6 @@ package com.oracle.bmc.datasafe.model;
  * The type of the format entry.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public enum FormatEntryType {
     DeleteRows("DELETE_ROWS"),
     DeterministicSubstitution("DETERMINISTIC_SUBSTITUTION"),
@@ -39,6 +38,9 @@ public enum FormatEntryType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(FormatEntryType.class);
 
     private final String value;
     private static java.util.Map<String, FormatEntryType> map;

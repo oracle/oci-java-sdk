@@ -8,7 +8,6 @@ package com.oracle.bmc.bastion.model;
  * Possible session lifecycle states.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.extern.slf4j.Slf4j
 public enum SessionLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
@@ -21,6 +20,9 @@ public enum SessionLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(SessionLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, SessionLifecycleState> map;

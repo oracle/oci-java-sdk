@@ -9,14 +9,6 @@ import com.oracle.bmc.dns.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateSteeringPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateSteeringPolicyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateSteeringPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dns.model.CreateSteeringPolicyDetails> {
@@ -26,6 +18,9 @@ public class CreateSteeringPolicyRequest
      */
     private com.oracle.bmc.dns.model.CreateSteeringPolicyDetails createSteeringPolicyDetails;
 
+    public com.oracle.bmc.dns.model.CreateSteeringPolicyDetails getCreateSteeringPolicyDetails() {
+        return createSteeringPolicyDetails;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case
      * of a timeout or server error without risk of executing that same action
@@ -37,6 +32,9 @@ public class CreateSteeringPolicyRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need
      * to contact Oracle about a particular request, please provide
@@ -45,11 +43,18 @@ public class CreateSteeringPolicyRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      *
      */
     private com.oracle.bmc.dns.model.Scope scope;
+
+    public com.oracle.bmc.dns.model.Scope getScope() {
+        return scope;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -68,6 +73,62 @@ public class CreateSteeringPolicyRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.dns.model.CreateSteeringPolicyDetails createSteeringPolicyDetails =
+                null;
+
+        /**
+         * Details for creating a new steering policy.
+         * @return this builder instance
+         */
+        public Builder createSteeringPolicyDetails(
+                com.oracle.bmc.dns.model.CreateSteeringPolicyDetails createSteeringPolicyDetails) {
+            this.createSteeringPolicyDetails = createSteeringPolicyDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been
+         * deleted and purged from the system, then a retry of the original creation
+         * request may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.dns.model.Scope scope = null;
+
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         * @return this builder instance
+         */
+        public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
+            this.scope = scope;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -133,5 +194,87 @@ public class CreateSteeringPolicyRequest
             createSteeringPolicyDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateSteeringPolicyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateSteeringPolicyRequest
+         */
+        public CreateSteeringPolicyRequest buildWithoutInvocationCallback() {
+            CreateSteeringPolicyRequest request = new CreateSteeringPolicyRequest();
+            request.createSteeringPolicyDetails = createSteeringPolicyDetails;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            request.scope = scope;
+            return request;
+            // new CreateSteeringPolicyRequest(createSteeringPolicyDetails, opcRetryToken, opcRequestId, scope);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createSteeringPolicyDetails(createSteeringPolicyDetails)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId)
+                .scope(scope);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createSteeringPolicyDetails=")
+                .append(String.valueOf(this.createSteeringPolicyDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",scope=").append(String.valueOf(this.scope));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSteeringPolicyRequest)) {
+            return false;
+        }
+
+        CreateSteeringPolicyRequest other = (CreateSteeringPolicyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createSteeringPolicyDetails, other.createSteeringPolicyDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.scope, other.scope);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createSteeringPolicyDetails == null
+                                ? 43
+                                : this.createSteeringPolicyDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        return result;
     }
 }

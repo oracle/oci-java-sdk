@@ -20,14 +20,53 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VnicAttachment.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VnicAttachment {
+public final class VnicAttachment {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "compartmentId",
+        "displayName",
+        "id",
+        "instanceId",
+        "lifecycleState",
+        "nicIndex",
+        "subnetId",
+        "vlanId",
+        "timeCreated",
+        "vlanTag",
+        "vnicId"
+    })
+    public VnicAttachment(
+            String availabilityDomain,
+            String compartmentId,
+            String displayName,
+            String id,
+            String instanceId,
+            LifecycleState lifecycleState,
+            Integer nicIndex,
+            String subnetId,
+            String vlanId,
+            java.util.Date timeCreated,
+            Integer vlanTag,
+            String vnicId) {
+        super();
+        this.availabilityDomain = availabilityDomain;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.id = id;
+        this.instanceId = instanceId;
+        this.lifecycleState = lifecycleState;
+        this.nicIndex = nicIndex;
+        this.subnetId = subnetId;
+        this.vlanId = vlanId;
+        this.timeCreated = timeCreated;
+        this.vlanTag = vlanTag;
+        this.vnicId = vnicId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
@@ -187,6 +226,10 @@ public class VnicAttachment {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The availability domain of the instance.
      * <p>
@@ -194,7 +237,11 @@ public class VnicAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The OCID of the compartment the VNIC attachment is in, which is the same
@@ -202,7 +249,11 @@ public class VnicAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -210,23 +261,35 @@ public class VnicAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the VNIC attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
+
     /**
      * The current state of the VNIC attachment.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Attaching("ATTACHING"),
         Attached("ATTACHED"),
@@ -238,6 +301,9 @@ public class VnicAttachment {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -275,7 +341,11 @@ public class VnicAttachment {
      * The current state of the VNIC attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Which physical network interface card (NIC) the VNIC uses.
@@ -286,13 +356,21 @@ public class VnicAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
-    Integer nicIndex;
+    private final Integer nicIndex;
+
+    public Integer getNicIndex() {
+        return nicIndex;
+    }
 
     /**
      * The OCID of the subnet to create the VNIC in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead
@@ -303,7 +381,11 @@ public class VnicAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
-    String vlanId;
+    private final String vlanId;
+
+    public String getVlanId() {
+        return vlanId;
+    }
 
     /**
      * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -312,7 +394,11 @@ public class VnicAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The Oracle-assigned VLAN tag of the attached VNIC. Available after the
@@ -326,15 +412,103 @@ public class VnicAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlanTag")
-    Integer vlanTag;
+    private final Integer vlanTag;
+
+    public Integer getVlanTag() {
+        return vlanTag;
+    }
 
     /**
      * The OCID of the VNIC. Available after the attachment process is complete.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
-    String vnicId;
+    private final String vnicId;
+
+    public String getVnicId() {
+        return vnicId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VnicAttachment(");
+        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", nicIndex=").append(String.valueOf(this.nicIndex));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", vlanId=").append(String.valueOf(this.vlanId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", vlanTag=").append(String.valueOf(this.vlanTag));
+        sb.append(", vnicId=").append(String.valueOf(this.vnicId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VnicAttachment)) {
+            return false;
+        }
+
+        VnicAttachment other = (VnicAttachment) o;
+        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.nicIndex, other.nicIndex)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.vlanId, other.vlanId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.vlanTag, other.vlanTag)
+                && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.nicIndex == null ? 43 : this.nicIndex.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.vlanTag == null ? 43 : this.vlanTag.hashCode());
+        result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

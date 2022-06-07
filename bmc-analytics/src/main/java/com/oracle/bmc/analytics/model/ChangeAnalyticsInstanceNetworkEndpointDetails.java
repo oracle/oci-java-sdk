@@ -16,16 +16,20 @@ package com.oracle.bmc.analytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ChangeAnalyticsInstanceNetworkEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ChangeAnalyticsInstanceNetworkEndpointDetails {
+public final class ChangeAnalyticsInstanceNetworkEndpointDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"networkEndpointDetails"})
+    public ChangeAnalyticsInstanceNetworkEndpointDetails(
+            NetworkEndpointDetails networkEndpointDetails) {
+        super();
+        this.networkEndpointDetails = networkEndpointDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
         private NetworkEndpointDetails networkEndpointDetails;
@@ -62,9 +66,61 @@ public class ChangeAnalyticsInstanceNetworkEndpointDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
-    NetworkEndpointDetails networkEndpointDetails;
+    private final NetworkEndpointDetails networkEndpointDetails;
+
+    public NetworkEndpointDetails getNetworkEndpointDetails() {
+        return networkEndpointDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ChangeAnalyticsInstanceNetworkEndpointDetails(");
+        sb.append("networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeAnalyticsInstanceNetworkEndpointDetails)) {
+            return false;
+        }
+
+        ChangeAnalyticsInstanceNetworkEndpointDetails other =
+                (ChangeAnalyticsInstanceNetworkEndpointDetails) o;
+        return java.util.Objects.equals(this.networkEndpointDetails, other.networkEndpointDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.networkEndpointDetails == null
+                                ? 43
+                                : this.networkEndpointDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

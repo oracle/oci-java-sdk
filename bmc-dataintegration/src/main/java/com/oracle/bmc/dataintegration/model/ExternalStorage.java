@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExternalStorage.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExternalStorage extends ConnectorAttribute {
+public final class ExternalStorage extends ConnectorAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("storageId")
         private String storageId;
@@ -116,6 +111,10 @@ public class ExternalStorage extends ConnectorAttribute {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ExternalStorage(
             String storageId,
@@ -137,38 +136,118 @@ public class ExternalStorage extends ConnectorAttribute {
      * Id of the external stoarge configured in BICC console. Usually its numeric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageId")
-    String storageId;
+    private final String storageId;
+
+    public String getStorageId() {
+        return storageId;
+    }
 
     /**
      * Name of the external storage configured in BICC console
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageName")
-    String storageName;
+    private final String storageName;
+
+    public String getStorageName() {
+        return storageName;
+    }
 
     /**
      * Object Storage host Url. DO not give http/https.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * Tenancy OCID for the OOS bucket
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    String tenancyId;
+    private final String tenancyId;
+
+    public String getTenancyId() {
+        return tenancyId;
+    }
 
     /**
      * Namespace for the OOS bucket
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * Bucket Name where BICC extracts stores the files
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
-    String bucket;
+    private final String bucket;
+
+    public String getBucket() {
+        return bucket;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExternalStorage(");
+        sb.append("super=").append(super.toString());
+        sb.append(", storageId=").append(String.valueOf(this.storageId));
+        sb.append(", storageName=").append(String.valueOf(this.storageName));
+        sb.append(", host=").append(String.valueOf(this.host));
+        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", bucket=").append(String.valueOf(this.bucket));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExternalStorage)) {
+            return false;
+        }
+
+        ExternalStorage other = (ExternalStorage) o;
+        return java.util.Objects.equals(this.storageId, other.storageId)
+                && java.util.Objects.equals(this.storageName, other.storageName)
+                && java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.bucket, other.bucket)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.storageId == null ? 43 : this.storageId.hashCode());
+        result = (result * PRIME) + (this.storageName == null ? 43 : this.storageName.hashCode());
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.bucket == null ? 43 : this.bucket.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

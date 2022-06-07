@@ -16,14 +16,20 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FilterDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FilterDetails {
+public final class FilterDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"queryString", "subSystem", "filters"})
+    public FilterDetails(
+            String queryString, SubSystemName subSystem, java.util.List<Filter> filters) {
+        super();
+        this.queryString = queryString;
+        this.subSystem = subSystem;
+        this.filters = filters;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
@@ -80,26 +86,87 @@ public class FilterDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Query to apply edits to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
-    String queryString;
+    private final String queryString;
+
+    public String getQueryString() {
+        return queryString;
+    }
 
     /**
      * Default subsystem to qualify fields with in the queryString if not specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
-    SubSystemName subSystem;
+    private final SubSystemName subSystem;
+
+    public SubSystemName getSubSystem() {
+        return subSystem;
+    }
 
     /**
      * List of edit operations to be applied in the specified order to the specified queryString.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
-    java.util.List<Filter> filters;
+    private final java.util.List<Filter> filters;
+
+    public java.util.List<Filter> getFilters() {
+        return filters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FilterDetails(");
+        sb.append("queryString=").append(String.valueOf(this.queryString));
+        sb.append(", subSystem=").append(String.valueOf(this.subSystem));
+        sb.append(", filters=").append(String.valueOf(this.filters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FilterDetails)) {
+            return false;
+        }
+
+        FilterDetails other = (FilterDetails) o;
+        return java.util.Objects.equals(this.queryString, other.queryString)
+                && java.util.Objects.equals(this.subSystem, other.subSystem)
+                && java.util.Objects.equals(this.filters, other.filters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.queryString == null ? 43 : this.queryString.hashCode());
+        result = (result * PRIME) + (this.subSystem == null ? 43 : this.subSystem.hashCode());
+        result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

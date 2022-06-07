@@ -15,20 +15,15 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ForeignKey.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ForeignKey extends Key {
+public final class ForeignKey extends Key {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -155,6 +150,10 @@ public class ForeignKey extends Key {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ForeignKey(
             String key,
@@ -182,50 +181,157 @@ public class ForeignKey extends Key {
      * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * An array of attribute references.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeRefs")
-    java.util.List<KeyAttribute> attributeRefs;
+    private final java.util.List<KeyAttribute> attributeRefs;
+
+    public java.util.List<KeyAttribute> getAttributeRefs() {
+        return attributeRefs;
+    }
 
     /**
      * The update rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateRule")
-    Integer updateRule;
+    private final Integer updateRule;
+
+    public Integer getUpdateRule() {
+        return updateRule;
+    }
 
     /**
      * The delete rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deleteRule")
-    Integer deleteRule;
+    private final Integer deleteRule;
+
+    public Integer getDeleteRule() {
+        return deleteRule;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("referenceUniqueKey")
-    UniqueKey referenceUniqueKey;
+    private final UniqueKey referenceUniqueKey;
+
+    public UniqueKey getReferenceUniqueKey() {
+        return referenceUniqueKey;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ForeignKey(");
+        sb.append("super=").append(super.toString());
+        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", attributeRefs=").append(String.valueOf(this.attributeRefs));
+        sb.append(", updateRule=").append(String.valueOf(this.updateRule));
+        sb.append(", deleteRule=").append(String.valueOf(this.deleteRule));
+        sb.append(", referenceUniqueKey=").append(String.valueOf(this.referenceUniqueKey));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ForeignKey)) {
+            return false;
+        }
+
+        ForeignKey other = (ForeignKey) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.attributeRefs, other.attributeRefs)
+                && java.util.Objects.equals(this.updateRule, other.updateRule)
+                && java.util.Objects.equals(this.deleteRule, other.deleteRule)
+                && java.util.Objects.equals(this.referenceUniqueKey, other.referenceUniqueKey)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attributeRefs == null ? 43 : this.attributeRefs.hashCode());
+        result = (result * PRIME) + (this.updateRule == null ? 43 : this.updateRule.hashCode());
+        result = (result * PRIME) + (this.deleteRule == null ? 43 : this.deleteRule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referenceUniqueKey == null
+                                ? 43
+                                : this.referenceUniqueKey.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

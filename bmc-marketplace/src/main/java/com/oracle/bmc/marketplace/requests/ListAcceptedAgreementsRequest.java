@@ -9,14 +9,6 @@ import com.oracle.bmc.marketplace.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListAcceptedAgreementsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAcceptedAgreementsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAcceptedAgreementsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,26 +17,41 @@ public class ListAcceptedAgreementsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The display name of the resource.
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The unique identifier for the listing.
      */
     private String listingId;
 
+    public String getListingId() {
+        return listingId;
+    }
     /**
      * The version of the package. Package versions are unique within a listing.
      */
     private String packageVersion;
 
+    public String getPackageVersion() {
+        return packageVersion;
+    }
     /**
      * The unique identifier for the accepted terms of use agreement.
      */
     private String acceptedAgreementId;
 
+    public String getAcceptedAgreementId() {
+        return acceptedAgreementId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
      * please provide the request ID.
@@ -52,6 +59,9 @@ public class ListAcceptedAgreementsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The field to use to sort listed results. You can only specify one field to sort by.
      * {@code TIMEACCEPTED} displays results in descending order by default. You can change your
@@ -97,6 +107,10 @@ public class ListAcceptedAgreementsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either {@code ASC} or {@code DESC}.
      */
@@ -137,16 +151,27 @@ public class ListAcceptedAgreementsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous "List" call.
      */
     private String page;
+
+    public String getPage() {
+        return page;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -154,6 +179,122 @@ public class ListAcceptedAgreementsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The unique identifier for the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * The display name of the resource.
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private String listingId = null;
+
+        /**
+         * The unique identifier for the listing.
+         * @return this builder instance
+         */
+        public Builder listingId(String listingId) {
+            this.listingId = listingId;
+            return this;
+        }
+
+        private String packageVersion = null;
+
+        /**
+         * The version of the package. Package versions are unique within a listing.
+         * @return this builder instance
+         */
+        public Builder packageVersion(String packageVersion) {
+            this.packageVersion = packageVersion;
+            return this;
+        }
+
+        private String acceptedAgreementId = null;
+
+        /**
+         * The unique identifier for the accepted terms of use agreement.
+         * @return this builder instance
+         */
+        public Builder acceptedAgreementId(String acceptedAgreementId) {
+            this.acceptedAgreementId = acceptedAgreementId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to use to sort listed results. You can only specify one field to sort by.
+         * {@code TIMEACCEPTED} displays results in descending order by default. You can change your
+         * preference by specifying a different sort order.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either {@code ASC} or {@code DESC}.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -214,5 +355,117 @@ public class ListAcceptedAgreementsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListAcceptedAgreementsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListAcceptedAgreementsRequest
+         */
+        public ListAcceptedAgreementsRequest buildWithoutInvocationCallback() {
+            ListAcceptedAgreementsRequest request = new ListAcceptedAgreementsRequest();
+            request.compartmentId = compartmentId;
+            request.displayName = displayName;
+            request.listingId = listingId;
+            request.packageVersion = packageVersion;
+            request.acceptedAgreementId = acceptedAgreementId;
+            request.opcRequestId = opcRequestId;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.limit = limit;
+            request.page = page;
+            return request;
+            // new ListAcceptedAgreementsRequest(compartmentId, displayName, listingId, packageVersion, acceptedAgreementId, opcRequestId, sortBy, sortOrder, limit, page);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .displayName(displayName)
+                .listingId(listingId)
+                .packageVersion(packageVersion)
+                .acceptedAgreementId(acceptedAgreementId)
+                .opcRequestId(opcRequestId)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .limit(limit)
+                .page(page);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",listingId=").append(String.valueOf(this.listingId));
+        sb.append(",packageVersion=").append(String.valueOf(this.packageVersion));
+        sb.append(",acceptedAgreementId=").append(String.valueOf(this.acceptedAgreementId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAcceptedAgreementsRequest)) {
+            return false;
+        }
+
+        ListAcceptedAgreementsRequest other = (ListAcceptedAgreementsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.packageVersion, other.packageVersion)
+                && java.util.Objects.equals(this.acceptedAgreementId, other.acceptedAgreementId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageVersion == null ? 43 : this.packageVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.acceptedAgreementId == null
+                                ? 43
+                                : this.acceptedAgreementId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        return result;
     }
 }

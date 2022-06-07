@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateExternalDatabaseConnectorRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateExternalDatabaseConnectorRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails> {
@@ -28,12 +20,19 @@ public class UpdateExternalDatabaseConnectorRequest
      */
     private String externalDatabaseConnectorId;
 
+    public String getExternalDatabaseConnectorId() {
+        return externalDatabaseConnectorId;
+    }
     /**
      * Request to update the properties of an external database connector.
      */
     private com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails
             updateExternalDatabaseConnectorDetails;
 
+    public com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails
+            getUpdateExternalDatabaseConnectorDetails() {
+        return updateExternalDatabaseConnectorDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -42,11 +41,18 @@ public class UpdateExternalDatabaseConnectorRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique identifier for the request.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,6 +71,59 @@ public class UpdateExternalDatabaseConnectorRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String externalDatabaseConnectorId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * external database connector resource ({@code ExternalDatabaseConnectorId}).
+         *
+         * @return this builder instance
+         */
+        public Builder externalDatabaseConnectorId(String externalDatabaseConnectorId) {
+            this.externalDatabaseConnectorId = externalDatabaseConnectorId;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails
+                updateExternalDatabaseConnectorDetails = null;
+
+        /**
+         * Request to update the properties of an external database connector.
+         * @return this builder instance
+         */
+        public Builder updateExternalDatabaseConnectorDetails(
+                com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails
+                        updateExternalDatabaseConnectorDetails) {
+            this.updateExternalDatabaseConnectorDetails = updateExternalDatabaseConnectorDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -131,5 +190,93 @@ public class UpdateExternalDatabaseConnectorRequest
             updateExternalDatabaseConnectorDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateExternalDatabaseConnectorRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateExternalDatabaseConnectorRequest
+         */
+        public UpdateExternalDatabaseConnectorRequest buildWithoutInvocationCallback() {
+            UpdateExternalDatabaseConnectorRequest request =
+                    new UpdateExternalDatabaseConnectorRequest();
+            request.externalDatabaseConnectorId = externalDatabaseConnectorId;
+            request.updateExternalDatabaseConnectorDetails = updateExternalDatabaseConnectorDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateExternalDatabaseConnectorRequest(externalDatabaseConnectorId, updateExternalDatabaseConnectorDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .externalDatabaseConnectorId(externalDatabaseConnectorId)
+                .updateExternalDatabaseConnectorDetails(updateExternalDatabaseConnectorDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",externalDatabaseConnectorId=")
+                .append(String.valueOf(this.externalDatabaseConnectorId));
+        sb.append(",updateExternalDatabaseConnectorDetails=")
+                .append(String.valueOf(this.updateExternalDatabaseConnectorDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateExternalDatabaseConnectorRequest)) {
+            return false;
+        }
+
+        UpdateExternalDatabaseConnectorRequest other = (UpdateExternalDatabaseConnectorRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.externalDatabaseConnectorId, other.externalDatabaseConnectorId)
+                && java.util.Objects.equals(
+                        this.updateExternalDatabaseConnectorDetails,
+                        other.updateExternalDatabaseConnectorDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.externalDatabaseConnectorId == null
+                                ? 43
+                                : this.externalDatabaseConnectorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateExternalDatabaseConnectorDetails == null
+                                ? 43
+                                : this.updateExternalDatabaseConnectorDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

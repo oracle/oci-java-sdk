@@ -15,20 +15,15 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DynamicDateRange.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "dateRangeType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DynamicDateRange extends DateRange {
+public final class DynamicDateRange extends DateRange {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dynamicDateRangeType")
         private DynamicDateRangeType dynamicDateRangeType;
@@ -64,6 +59,10 @@ public class DynamicDateRange extends DateRange {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DynamicDateRange(DynamicDateRangeType dynamicDateRangeType) {
         super();
@@ -72,7 +71,6 @@ public class DynamicDateRange extends DateRange {
 
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DynamicDateRangeType {
         Last7Days("LAST_7_DAYS"),
         LastCalendarWeek("LAST_CALENDAR_WEEK"),
@@ -87,6 +85,9 @@ public class DynamicDateRange extends DateRange {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DynamicDateRangeType.class);
 
         private final String value;
         private static java.util.Map<String, DynamicDateRangeType> map;
@@ -122,8 +123,57 @@ public class DynamicDateRange extends DateRange {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("dynamicDateRangeType")
-    DynamicDateRangeType dynamicDateRangeType;
+    private final DynamicDateRangeType dynamicDateRangeType;
+
+    public DynamicDateRangeType getDynamicDateRangeType() {
+        return dynamicDateRangeType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DynamicDateRange(");
+        sb.append("super=").append(super.toString());
+        sb.append(", dynamicDateRangeType=").append(String.valueOf(this.dynamicDateRangeType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DynamicDateRange)) {
+            return false;
+        }
+
+        DynamicDateRange other = (DynamicDateRange) o;
+        return java.util.Objects.equals(this.dynamicDateRangeType, other.dynamicDateRangeType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.dynamicDateRangeType == null
+                                ? 43
+                                : this.dynamicDateRangeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

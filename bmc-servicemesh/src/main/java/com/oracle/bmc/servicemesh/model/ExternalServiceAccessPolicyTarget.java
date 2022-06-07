@@ -15,22 +15,17 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExternalServiceAccessPolicyTarget.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget {
+public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
         private java.util.List<String> hostnames;
@@ -98,6 +93,10 @@ public class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ExternalServiceAccessPolicyTarget(
             java.util.List<String> hostnames,
@@ -119,7 +118,11 @@ public class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
-    java.util.List<String> hostnames;
+    private final java.util.List<String> hostnames;
+
+    public java.util.List<String> getHostnames() {
+        return hostnames;
+    }
 
     /**
      * The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol.
@@ -128,17 +131,25 @@ public class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
-    java.util.List<String> ipAddresses;
+    private final java.util.List<String> ipAddresses;
+
+    public java.util.List<String> getIpAddresses() {
+        return ipAddresses;
+    }
 
     /**
      * Ports exposed by an external service. If left empty all ports will be allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ports")
-    java.util.List<Integer> ports;
+    private final java.util.List<Integer> ports;
+
+    public java.util.List<Integer> getPorts() {
+        return ports;
+    }
+
     /**
      * Protocol of the external service
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Protocol {
         Http("HTTP"),
         Https("HTTPS"),
@@ -149,6 +160,9 @@ public class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Protocol.class);
 
         private final String value;
         private static java.util.Map<String, Protocol> map;
@@ -186,8 +200,62 @@ public class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget {
      * Protocol of the external service
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    Protocol protocol;
+    private final Protocol protocol;
+
+    public Protocol getProtocol() {
+        return protocol;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExternalServiceAccessPolicyTarget(");
+        sb.append("super=").append(super.toString());
+        sb.append(", hostnames=").append(String.valueOf(this.hostnames));
+        sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
+        sb.append(", ports=").append(String.valueOf(this.ports));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExternalServiceAccessPolicyTarget)) {
+            return false;
+        }
+
+        ExternalServiceAccessPolicyTarget other = (ExternalServiceAccessPolicyTarget) o;
+        return java.util.Objects.equals(this.hostnames, other.hostnames)
+                && java.util.Objects.equals(this.ipAddresses, other.ipAddresses)
+                && java.util.Objects.equals(this.ports, other.ports)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.hostnames == null ? 43 : this.hostnames.hashCode());
+        result = (result * PRIME) + (this.ipAddresses == null ? 43 : this.ipAddresses.hashCode());
+        result = (result * PRIME) + (this.ports == null ? 43 : this.ports.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

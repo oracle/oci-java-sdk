@@ -15,16 +15,49 @@ package com.oracle.bmc.stackmonitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MonitoredResourceMemberSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MonitoredResourceMemberSummary {
+public final class MonitoredResourceMemberSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "resourceId",
+        "resourceName",
+        "resourceDisplayName",
+        "resourceType",
+        "hostName",
+        "parentId",
+        "lifecycleState",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public MonitoredResourceMemberSummary(
+            String resourceId,
+            String resourceName,
+            String resourceDisplayName,
+            String resourceType,
+            String hostName,
+            String parentId,
+            ResourceLifecycleState lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.resourceId = resourceId;
+        this.resourceName = resourceName;
+        this.resourceDisplayName = resourceDisplayName;
+        this.resourceType = resourceType;
+        this.hostName = hostName;
+        this.parentId = parentId;
+        this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
@@ -163,47 +196,79 @@ public class MonitoredResourceMemberSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Monitored resource identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * Monitored resource name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * Monitored resource display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
-    String resourceDisplayName;
+    private final String resourceDisplayName;
+
+    public String getResourceDisplayName() {
+        return resourceDisplayName;
+    }
 
     /**
      * Monitored resource type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     /**
      * Monitored Resource Host
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
-    String hostName;
+    private final String hostName;
+
+    public String getHostName() {
+        return hostName;
+    }
 
     /**
      * Parent monitored resource identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
-    String parentId;
+    private final String parentId;
+
+    public String getParentId() {
+        return parentId;
+    }
 
     /**
      * The current state of the Resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ResourceLifecycleState lifecycleState;
+    private final ResourceLifecycleState lifecycleState;
+
+    public ResourceLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -211,7 +276,11 @@ public class MonitoredResourceMemberSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -219,7 +288,11 @@ public class MonitoredResourceMemberSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
@@ -227,8 +300,84 @@ public class MonitoredResourceMemberSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitoredResourceMemberSummary(");
+        sb.append("resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", resourceDisplayName=").append(String.valueOf(this.resourceDisplayName));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", parentId=").append(String.valueOf(this.parentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitoredResourceMemberSummary)) {
+            return false;
+        }
+
+        MonitoredResourceMemberSummary other = (MonitoredResourceMemberSummary) o;
+        return java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.resourceDisplayName, other.resourceDisplayName)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.parentId, other.parentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceDisplayName == null
+                                ? 43
+                                : this.resourceDisplayName.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

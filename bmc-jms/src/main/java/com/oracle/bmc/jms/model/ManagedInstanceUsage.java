@@ -19,16 +19,55 @@ package com.oracle.bmc.jms.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagedInstanceUsage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagedInstanceUsage {
+public final class ManagedInstanceUsage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "managedInstanceId",
+        "managedInstanceType",
+        "hostname",
+        "hostId",
+        "operatingSystem",
+        "approximateApplicationCount",
+        "approximateInstallationCount",
+        "approximateJreCount",
+        "timeStart",
+        "timeEnd",
+        "timeFirstSeen",
+        "timeLastSeen"
+    })
+    public ManagedInstanceUsage(
+            String managedInstanceId,
+            ManagedInstanceType managedInstanceType,
+            String hostname,
+            String hostId,
+            OperatingSystem operatingSystem,
+            Integer approximateApplicationCount,
+            Integer approximateInstallationCount,
+            Integer approximateJreCount,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            java.util.Date timeFirstSeen,
+            java.util.Date timeLastSeen) {
+        super();
+        this.managedInstanceId = managedInstanceId;
+        this.managedInstanceType = managedInstanceType;
+        this.hostname = hostname;
+        this.hostId = hostId;
+        this.operatingSystem = operatingSystem;
+        this.approximateApplicationCount = approximateApplicationCount;
+        this.approximateInstallationCount = approximateInstallationCount;
+        this.approximateJreCount = approximateJreCount;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.timeFirstSeen = timeFirstSeen;
+        this.timeLastSeen = timeLastSeen;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
@@ -188,64 +227,108 @@ public class ManagedInstanceUsage {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
-    String managedInstanceId;
+    private final String managedInstanceId;
+
+    public String getManagedInstanceId() {
+        return managedInstanceId;
+    }
 
     /**
      * The type of the source of events.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceType")
-    ManagedInstanceType managedInstanceType;
+    private final ManagedInstanceType managedInstanceType;
+
+    public ManagedInstanceType getManagedInstanceType() {
+        return managedInstanceType;
+    }
 
     /**
      * The hostname of the managed instance (if applicable).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostId")
-    String hostId;
+    private final String hostId;
+
+    public String getHostId() {
+        return hostId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
-    OperatingSystem operatingSystem;
+    private final OperatingSystem operatingSystem;
+
+    public OperatingSystem getOperatingSystem() {
+        return operatingSystem;
+    }
 
     /**
      * The approximate count of applications reported by this managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
-    Integer approximateApplicationCount;
+    private final Integer approximateApplicationCount;
+
+    public Integer getApproximateApplicationCount() {
+        return approximateApplicationCount;
+    }
 
     /**
      * The approximate count of installations reported by this managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
-    Integer approximateInstallationCount;
+    private final Integer approximateInstallationCount;
+
+    public Integer getApproximateInstallationCount() {
+        return approximateInstallationCount;
+    }
 
     /**
      * The approximate count of Java Runtimes reported by this managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateJreCount")
-    Integer approximateJreCount;
+    private final Integer approximateJreCount;
+
+    public Integer getApproximateJreCount() {
+        return approximateJreCount;
+    }
 
     /**
      * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    java.util.Date timeStart;
+    private final java.util.Date timeStart;
+
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    java.util.Date timeEnd;
+    private final java.util.Date timeEnd;
+
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * The date and time the resource was _first_ reported to JMS.
@@ -255,7 +338,11 @@ public class ManagedInstanceUsage {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
-    java.util.Date timeFirstSeen;
+    private final java.util.Date timeFirstSeen;
+
+    public java.util.Date getTimeFirstSeen() {
+        return timeFirstSeen;
+    }
 
     /**
      * The date and time the resource was _last_ reported to JMS.
@@ -265,8 +352,110 @@ public class ManagedInstanceUsage {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
-    java.util.Date timeLastSeen;
+    private final java.util.Date timeLastSeen;
+
+    public java.util.Date getTimeLastSeen() {
+        return timeLastSeen;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagedInstanceUsage(");
+        sb.append("managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(", managedInstanceType=").append(String.valueOf(this.managedInstanceType));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", hostId=").append(String.valueOf(this.hostId));
+        sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", approximateApplicationCount=")
+                .append(String.valueOf(this.approximateApplicationCount));
+        sb.append(", approximateInstallationCount=")
+                .append(String.valueOf(this.approximateInstallationCount));
+        sb.append(", approximateJreCount=").append(String.valueOf(this.approximateJreCount));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
+        sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagedInstanceUsage)) {
+            return false;
+        }
+
+        ManagedInstanceUsage other = (ManagedInstanceUsage) o;
+        return java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.managedInstanceType, other.managedInstanceType)
+                && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.hostId, other.hostId)
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(
+                        this.approximateApplicationCount, other.approximateApplicationCount)
+                && java.util.Objects.equals(
+                        this.approximateInstallationCount, other.approximateInstallationCount)
+                && java.util.Objects.equals(this.approximateJreCount, other.approximateJreCount)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
+                && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceType == null
+                                ? 43
+                                : this.managedInstanceType.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateApplicationCount == null
+                                ? 43
+                                : this.approximateApplicationCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateInstallationCount == null
+                                ? 43
+                                : this.approximateInstallationCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateJreCount == null
+                                ? 43
+                                : this.approximateJreCount.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstSeen == null ? 43 : this.timeFirstSeen.hashCode());
+        result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

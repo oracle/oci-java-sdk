@@ -16,16 +16,22 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MigrationJobProgressSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MigrationJobProgressSummary {
+public final class MigrationJobProgressSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"currentPhase", "currentStatus", "jobProgress"})
+    public MigrationJobProgressSummary(
+            OdmsJobPhases currentPhase, JobPhaseStatus currentStatus, Integer jobProgress) {
+        super();
+        this.currentPhase = currentPhase;
+        this.currentStatus = currentStatus;
+        this.jobProgress = jobProgress;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("currentPhase")
         private OdmsJobPhases currentPhase;
@@ -83,27 +89,90 @@ public class MigrationJobProgressSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Current phase of the job.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentPhase")
-    OdmsJobPhases currentPhase;
+    private final OdmsJobPhases currentPhase;
+
+    public OdmsJobPhases getCurrentPhase() {
+        return currentPhase;
+    }
 
     /**
      * Current status of the job.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentStatus")
-    JobPhaseStatus currentStatus;
+    private final JobPhaseStatus currentStatus;
+
+    public JobPhaseStatus getCurrentStatus() {
+        return currentStatus;
+    }
 
     /**
      * Job progress percentage (0 - 100)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobProgress")
-    Integer jobProgress;
+    private final Integer jobProgress;
+
+    public Integer getJobProgress() {
+        return jobProgress;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MigrationJobProgressSummary(");
+        sb.append("currentPhase=").append(String.valueOf(this.currentPhase));
+        sb.append(", currentStatus=").append(String.valueOf(this.currentStatus));
+        sb.append(", jobProgress=").append(String.valueOf(this.jobProgress));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MigrationJobProgressSummary)) {
+            return false;
+        }
+
+        MigrationJobProgressSummary other = (MigrationJobProgressSummary) o;
+        return java.util.Objects.equals(this.currentPhase, other.currentPhase)
+                && java.util.Objects.equals(this.currentStatus, other.currentStatus)
+                && java.util.Objects.equals(this.jobProgress, other.jobProgress)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.currentPhase == null ? 43 : this.currentPhase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentStatus == null ? 43 : this.currentStatus.hashCode());
+        result = (result * PRIME) + (this.jobProgress == null ? 43 : this.jobProgress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,37 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateVirtualServiceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateVirtualServiceDetails {
+public final class UpdateVirtualServiceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "defaultRoutingPolicy",
+        "hosts",
+        "mtls",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateVirtualServiceDetails(
+            String description,
+            DefaultVirtualServiceRoutingPolicy defaultRoutingPolicy,
+            java.util.List<String> hosts,
+            CreateMutualTransportLayerSecurityDetails mtls,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.description = description;
+        this.defaultRoutingPolicy = defaultRoutingPolicy;
+        this.hosts = hosts;
+        this.mtls = mtls;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -120,6 +141,10 @@ public class UpdateVirtualServiceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Description of the resource. It can be changed after creation.
      * Avoid entering confidential information.
@@ -128,10 +153,18 @@ public class UpdateVirtualServiceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRoutingPolicy")
-    DefaultVirtualServiceRoutingPolicy defaultRoutingPolicy;
+    private final DefaultVirtualServiceRoutingPolicy defaultRoutingPolicy;
+
+    public DefaultVirtualServiceRoutingPolicy getDefaultRoutingPolicy() {
+        return defaultRoutingPolicy;
+    }
 
     /**
      * The DNS hostnames of the virtual service that is used by its callers.
@@ -141,10 +174,18 @@ public class UpdateVirtualServiceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
-    java.util.List<String> hosts;
+    private final java.util.List<String> hosts;
+
+    public java.util.List<String> getHosts() {
+        return hosts;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("mtls")
-    CreateMutualTransportLayerSecurityDetails mtls;
+    private final CreateMutualTransportLayerSecurityDetails mtls;
+
+    public CreateMutualTransportLayerSecurityDetails getMtls() {
+        return mtls;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -152,7 +193,11 @@ public class UpdateVirtualServiceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -160,8 +205,70 @@ public class UpdateVirtualServiceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateVirtualServiceDetails(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", defaultRoutingPolicy=").append(String.valueOf(this.defaultRoutingPolicy));
+        sb.append(", hosts=").append(String.valueOf(this.hosts));
+        sb.append(", mtls=").append(String.valueOf(this.mtls));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateVirtualServiceDetails)) {
+            return false;
+        }
+
+        UpdateVirtualServiceDetails other = (UpdateVirtualServiceDetails) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.defaultRoutingPolicy, other.defaultRoutingPolicy)
+                && java.util.Objects.equals(this.hosts, other.hosts)
+                && java.util.Objects.equals(this.mtls, other.mtls)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultRoutingPolicy == null
+                                ? 43
+                                : this.defaultRoutingPolicy.hashCode());
+        result = (result * PRIME) + (this.hosts == null ? 43 : this.hosts.hashCode());
+        result = (result * PRIME) + (this.mtls == null ? 43 : this.mtls.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

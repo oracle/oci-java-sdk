@@ -7,10 +7,6 @@ package com.oracle.bmc.osmanagement.responses;
 import com.oracle.bmc.osmanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetModuleStreamProfileResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request.
@@ -19,6 +15,10 @@ public class GetModuleStreamProfileResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcWorkRequestId;
 
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -26,10 +26,18 @@ public class GetModuleStreamProfileResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned ModuleStreamProfile instance.
      */
     private com.oracle.bmc.osmanagement.model.ModuleStreamProfile moduleStreamProfile;
+
+    public com.oracle.bmc.osmanagement.model.ModuleStreamProfile getModuleStreamProfile() {
+        return moduleStreamProfile;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -56,6 +64,28 @@ public class GetModuleStreamProfileResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        private String opcWorkRequestId;
+
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.ModuleStreamProfile moduleStreamProfile;
+
+        public Builder moduleStreamProfile(
+                com.oracle.bmc.osmanagement.model.ModuleStreamProfile moduleStreamProfile) {
+            this.moduleStreamProfile = moduleStreamProfile;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -73,5 +103,53 @@ public class GetModuleStreamProfileResponse extends com.oracle.bmc.responses.Bmc
             return new GetModuleStreamProfileResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId, moduleStreamProfile);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",moduleStreamProfile=").append(String.valueOf(moduleStreamProfile));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetModuleStreamProfileResponse)) {
+            return false;
+        }
+
+        GetModuleStreamProfileResponse other = (GetModuleStreamProfileResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.moduleStreamProfile, other.moduleStreamProfile);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.moduleStreamProfile == null
+                                ? 43
+                                : this.moduleStreamProfile.hashCode());
+        return result;
     }
 }

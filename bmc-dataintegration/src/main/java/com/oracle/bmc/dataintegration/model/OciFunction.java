@@ -15,14 +15,32 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OciFunction.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OciFunction {
+public final class OciFunction {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "functionId",
+        "regionId",
+        "fnConfigDefinition",
+        "inputShape",
+        "outputShape"
+    })
+    public OciFunction(
+            String functionId,
+            String regionId,
+            ConfigDefinition fnConfigDefinition,
+            Shape inputShape,
+            Shape outputShape) {
+        super();
+        this.functionId = functionId;
+        this.regionId = regionId;
+        this.fnConfigDefinition = fnConfigDefinition;
+        this.inputShape = inputShape;
+        this.outputShape = outputShape;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
@@ -101,27 +119,106 @@ public class OciFunction {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Ocid of the OCI Function.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
-    String functionId;
+    private final String functionId;
+
+    public String getFunctionId() {
+        return functionId;
+    }
 
     /**
      * Region where the OCI Function is deployed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionId")
-    String regionId;
+    private final String regionId;
+
+    public String getRegionId() {
+        return regionId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fnConfigDefinition")
-    ConfigDefinition fnConfigDefinition;
+    private final ConfigDefinition fnConfigDefinition;
+
+    public ConfigDefinition getFnConfigDefinition() {
+        return fnConfigDefinition;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("inputShape")
-    Shape inputShape;
+    private final Shape inputShape;
+
+    public Shape getInputShape() {
+        return inputShape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("outputShape")
-    Shape outputShape;
+    private final Shape outputShape;
+
+    public Shape getOutputShape() {
+        return outputShape;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OciFunction(");
+        sb.append("functionId=").append(String.valueOf(this.functionId));
+        sb.append(", regionId=").append(String.valueOf(this.regionId));
+        sb.append(", fnConfigDefinition=").append(String.valueOf(this.fnConfigDefinition));
+        sb.append(", inputShape=").append(String.valueOf(this.inputShape));
+        sb.append(", outputShape=").append(String.valueOf(this.outputShape));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OciFunction)) {
+            return false;
+        }
+
+        OciFunction other = (OciFunction) o;
+        return java.util.Objects.equals(this.functionId, other.functionId)
+                && java.util.Objects.equals(this.regionId, other.regionId)
+                && java.util.Objects.equals(this.fnConfigDefinition, other.fnConfigDefinition)
+                && java.util.Objects.equals(this.inputShape, other.inputShape)
+                && java.util.Objects.equals(this.outputShape, other.outputShape)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.functionId == null ? 43 : this.functionId.hashCode());
+        result = (result * PRIME) + (this.regionId == null ? 43 : this.regionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fnConfigDefinition == null
+                                ? 43
+                                : this.fnConfigDefinition.hashCode());
+        result = (result * PRIME) + (this.inputShape == null ? 43 : this.inputShape.hashCode());
+        result = (result * PRIME) + (this.outputShape == null ? 43 : this.outputShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

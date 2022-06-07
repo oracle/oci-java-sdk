@@ -9,14 +9,6 @@ import com.oracle.bmc.bds.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBdsInstanceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateBdsInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.bds.model.UpdateBdsInstanceDetails> {
@@ -26,11 +18,17 @@ public class UpdateBdsInstanceRequest
      */
     private String bdsInstanceId;
 
+    public String getBdsInstanceId() {
+        return bdsInstanceId;
+    }
     /**
      * Details for the cluster to be updated.
      */
     private com.oracle.bmc.bds.model.UpdateBdsInstanceDetails updateBdsInstanceDetails;
 
+    public com.oracle.bmc.bds.model.UpdateBdsInstanceDetails getUpdateBdsInstanceDetails() {
+        return updateBdsInstanceDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -41,10 +39,17 @@ public class UpdateBdsInstanceRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -62,6 +67,56 @@ public class UpdateBdsInstanceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String bdsInstanceId = null;
+
+        /**
+         * The OCID of the cluster.
+         * @return this builder instance
+         */
+        public Builder bdsInstanceId(String bdsInstanceId) {
+            this.bdsInstanceId = bdsInstanceId;
+            return this;
+        }
+
+        private com.oracle.bmc.bds.model.UpdateBdsInstanceDetails updateBdsInstanceDetails = null;
+
+        /**
+         * Details for the cluster to be updated.
+         * @return this builder instance
+         */
+        public Builder updateBdsInstanceDetails(
+                com.oracle.bmc.bds.model.UpdateBdsInstanceDetails updateBdsInstanceDetails) {
+            this.updateBdsInstanceDetails = updateBdsInstanceDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -127,5 +182,87 @@ public class UpdateBdsInstanceRequest
             updateBdsInstanceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateBdsInstanceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateBdsInstanceRequest
+         */
+        public UpdateBdsInstanceRequest buildWithoutInvocationCallback() {
+            UpdateBdsInstanceRequest request = new UpdateBdsInstanceRequest();
+            request.bdsInstanceId = bdsInstanceId;
+            request.updateBdsInstanceDetails = updateBdsInstanceDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateBdsInstanceRequest(bdsInstanceId, updateBdsInstanceDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .bdsInstanceId(bdsInstanceId)
+                .updateBdsInstanceDetails(updateBdsInstanceDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",bdsInstanceId=").append(String.valueOf(this.bdsInstanceId));
+        sb.append(",updateBdsInstanceDetails=")
+                .append(String.valueOf(this.updateBdsInstanceDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBdsInstanceRequest)) {
+            return false;
+        }
+
+        UpdateBdsInstanceRequest other = (UpdateBdsInstanceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.bdsInstanceId, other.bdsInstanceId)
+                && java.util.Objects.equals(
+                        this.updateBdsInstanceDetails, other.updateBdsInstanceDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.bdsInstanceId == null ? 43 : this.bdsInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateBdsInstanceDetails == null
+                                ? 43
+                                : this.updateBdsInstanceDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

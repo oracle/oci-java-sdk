@@ -9,7 +9,6 @@ package com.oracle.bmc.goldengate.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.extern.slf4j.Slf4j
 public enum DeploymentUpgradeType {
     Manual("MANUAL"),
     Automatic("AUTOMATIC"),
@@ -19,6 +18,9 @@ public enum DeploymentUpgradeType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DeploymentUpgradeType.class);
 
     private final String value;
     private static java.util.Map<String, DeploymentUpgradeType> map;

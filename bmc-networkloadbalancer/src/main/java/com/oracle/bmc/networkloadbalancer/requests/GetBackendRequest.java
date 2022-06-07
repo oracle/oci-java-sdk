@@ -9,14 +9,6 @@ import com.oracle.bmc.networkloadbalancer.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetBackendRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String networkLoadBalancerId;
 
+    public String getNetworkLoadBalancerId() {
+        return networkLoadBalancerId;
+    }
     /**
      * The name of the backend set that includes the backend server.
      * <p>
@@ -32,6 +27,9 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String backendSetName;
 
+    public String getBackendSetName() {
+        return backendSetName;
+    }
     /**
      * The name of the backend server to retrieve.
      * If the backend was created with an explicitly specified name, that name should be used here.
@@ -43,6 +41,9 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String backendName;
 
+    public String getBackendName() {
+        return backendName;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
@@ -50,6 +51,9 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The system returns the requested resource, with a 200 status, only if the resource has no etag
      * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
@@ -60,12 +64,87 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String ifNoneMatch;
 
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetBackendRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String networkLoadBalancerId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @return this builder instance
+         */
+        public Builder networkLoadBalancerId(String networkLoadBalancerId) {
+            this.networkLoadBalancerId = networkLoadBalancerId;
+            return this;
+        }
+
+        private String backendSetName = null;
+
+        /**
+         * The name of the backend set that includes the backend server.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         * @return this builder instance
+         */
+        public Builder backendSetName(String backendSetName) {
+            this.backendSetName = backendSetName;
+            return this;
+        }
+
+        private String backendName = null;
+
+        /**
+         * The name of the backend server to retrieve.
+         * If the backend was created with an explicitly specified name, that name should be used here.
+         * If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
+         * If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
+         * <p>
+         * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
+         *
+         * @return this builder instance
+         */
+        public Builder backendName(String backendName) {
+            this.backendName = backendName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifNoneMatch = null;
+
+        /**
+         * The system returns the requested resource, with a 200 status, only if the resource has no etag
+         * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
+         * HTTP status code {@code 304 (Not Modified)}.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -121,5 +200,90 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetBackendRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetBackendRequest
+         */
+        public GetBackendRequest buildWithoutInvocationCallback() {
+            GetBackendRequest request = new GetBackendRequest();
+            request.networkLoadBalancerId = networkLoadBalancerId;
+            request.backendSetName = backendSetName;
+            request.backendName = backendName;
+            request.opcRequestId = opcRequestId;
+            request.ifNoneMatch = ifNoneMatch;
+            return request;
+            // new GetBackendRequest(networkLoadBalancerId, backendSetName, backendName, opcRequestId, ifNoneMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .networkLoadBalancerId(networkLoadBalancerId)
+                .backendSetName(backendSetName)
+                .backendName(backendName)
+                .opcRequestId(opcRequestId)
+                .ifNoneMatch(ifNoneMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",networkLoadBalancerId=").append(String.valueOf(this.networkLoadBalancerId));
+        sb.append(",backendSetName=").append(String.valueOf(this.backendSetName));
+        sb.append(",backendName=").append(String.valueOf(this.backendName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetBackendRequest)) {
+            return false;
+        }
+
+        GetBackendRequest other = (GetBackendRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.networkLoadBalancerId, other.networkLoadBalancerId)
+                && java.util.Objects.equals(this.backendSetName, other.backendSetName)
+                && java.util.Objects.equals(this.backendName, other.backendName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.networkLoadBalancerId == null
+                                ? 43
+                                : this.networkLoadBalancerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
+        result = (result * PRIME) + (this.backendName == null ? 43 : this.backendName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
+        return result;
     }
 }

@@ -15,14 +15,38 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlText.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlText {
+public final class SqlText {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "version",
+        "sqlIdentifier",
+        "timeCollected",
+        "sqlCommand",
+        "exactMatchingSignature",
+        "forceMatchingSignature",
+        "sqlFullText"
+    })
+    public SqlText(
+            Float version,
+            String sqlIdentifier,
+            java.util.Date timeCollected,
+            String sqlCommand,
+            String exactMatchingSignature,
+            String forceMatchingSignature,
+            String sqlFullText) {
+        super();
+        this.version = version;
+        this.sqlIdentifier = sqlIdentifier;
+        this.timeCollected = timeCollected;
+        this.sqlCommand = sqlCommand;
+        this.exactMatchingSignature = exactMatchingSignature;
+        this.forceMatchingSignature = forceMatchingSignature;
+        this.sqlFullText = sqlFullText;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Float version;
@@ -127,20 +151,32 @@ public class SqlText {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Version
      * Example: {@code 1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    Float version;
+    private final Float version;
+
+    public Float getVersion() {
+        return version;
+    }
 
     /**
      * Unique SQL_ID for a SQL Statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
-    String sqlIdentifier;
+    private final String sqlIdentifier;
+
+    public String getSqlIdentifier() {
+        return sqlIdentifier;
+    }
 
     /**
      * Collection timestamp
@@ -148,7 +184,11 @@ public class SqlText {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
-    java.util.Date timeCollected;
+    private final java.util.Date timeCollected;
+
+    public java.util.Date getTimeCollected() {
+        return timeCollected;
+    }
 
     /**
      * SQL command
@@ -156,7 +196,11 @@ public class SqlText {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlCommand")
-    String sqlCommand;
+    private final String sqlCommand;
+
+    public String getSqlCommand() {
+        return sqlCommand;
+    }
 
     /**
      * Exact matching signature
@@ -164,7 +208,11 @@ public class SqlText {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exactMatchingSignature")
-    String exactMatchingSignature;
+    private final String exactMatchingSignature;
+
+    public String getExactMatchingSignature() {
+        return exactMatchingSignature;
+    }
 
     /**
      * Force matching signature
@@ -172,7 +220,11 @@ public class SqlText {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forceMatchingSignature")
-    String forceMatchingSignature;
+    private final String forceMatchingSignature;
+
+    public String getForceMatchingSignature() {
+        return forceMatchingSignature;
+    }
 
     /**
      * Full SQL Text
@@ -181,8 +233,83 @@ public class SqlText {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlFullText")
-    String sqlFullText;
+    private final String sqlFullText;
+
+    public String getSqlFullText() {
+        return sqlFullText;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlText(");
+        sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
+        sb.append(", timeCollected=").append(String.valueOf(this.timeCollected));
+        sb.append(", sqlCommand=").append(String.valueOf(this.sqlCommand));
+        sb.append(", exactMatchingSignature=").append(String.valueOf(this.exactMatchingSignature));
+        sb.append(", forceMatchingSignature=").append(String.valueOf(this.forceMatchingSignature));
+        sb.append(", sqlFullText=").append(String.valueOf(this.sqlFullText));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlText)) {
+            return false;
+        }
+
+        SqlText other = (SqlText) o;
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.sqlIdentifier, other.sqlIdentifier)
+                && java.util.Objects.equals(this.timeCollected, other.timeCollected)
+                && java.util.Objects.equals(this.sqlCommand, other.sqlCommand)
+                && java.util.Objects.equals(
+                        this.exactMatchingSignature, other.exactMatchingSignature)
+                && java.util.Objects.equals(
+                        this.forceMatchingSignature, other.forceMatchingSignature)
+                && java.util.Objects.equals(this.sqlFullText, other.sqlFullText)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sqlIdentifier == null ? 43 : this.sqlIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCollected == null ? 43 : this.timeCollected.hashCode());
+        result = (result * PRIME) + (this.sqlCommand == null ? 43 : this.sqlCommand.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exactMatchingSignature == null
+                                ? 43
+                                : this.exactMatchingSignature.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.forceMatchingSignature == null
+                                ? 43
+                                : this.forceMatchingSignature.hashCode());
+        result = (result * PRIME) + (this.sqlFullText == null ? 43 : this.sqlFullText.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

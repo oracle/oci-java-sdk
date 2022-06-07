@@ -15,14 +15,59 @@ package com.oracle.bmc.rover.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoverEntitlement.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RoverEntitlement {
+public final class RoverEntitlement {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tenantId",
+        "id",
+        "compartmentId",
+        "displayName",
+        "requestorName",
+        "requestorEmail",
+        "lifecycleState",
+        "entitlementDetails",
+        "lifecycleStateDetails",
+        "timeCreated",
+        "timeUpdated",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public RoverEntitlement(
+            String tenantId,
+            String id,
+            String compartmentId,
+            String displayName,
+            String requestorName,
+            String requestorEmail,
+            LifecycleState lifecycleState,
+            String entitlementDetails,
+            String lifecycleStateDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.tenantId = tenantId;
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.requestorName = requestorName;
+        this.requestorEmail = requestorEmail;
+        this.lifecycleState = lifecycleState;
+        this.entitlementDetails = entitlementDetails;
+        this.lifecycleStateDetails = lifecycleStateDetails;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
@@ -205,45 +250,73 @@ public class RoverEntitlement {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * tenant Id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    private final String tenantId;
+
+    public String getTenantId() {
+        return tenantId;
+    }
 
     /**
      * A property that can uniquely identify the rover entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The compartment Id for the entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Requestor name for the entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestorName")
-    String requestorName;
+    private final String requestorName;
+
+    public String getRequestorName() {
+        return requestorName;
+    }
 
     /**
      * Requestor email for the entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestorEmail")
-    String requestorEmail;
+    private final String requestorEmail;
+
+    public String getRequestorEmail() {
+        return requestorEmail;
+    }
+
     /**
      * Lifecyclestate for the entitlement.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -255,6 +328,9 @@ public class RoverEntitlement {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -292,31 +368,51 @@ public class RoverEntitlement {
      * Lifecyclestate for the entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Details about the entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entitlementDetails")
-    String entitlementDetails;
+    private final String entitlementDetails;
+
+    public String getEntitlementDetails() {
+        return entitlementDetails;
+    }
 
     /**
      * A property that can contain details on the lifecycle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
-    String lifecycleStateDetails;
+    private final String lifecycleStateDetails;
+
+    public String getLifecycleStateDetails() {
+        return lifecycleStateDetails;
+    }
 
     /**
      * Time of creation for the entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Time when the entitlement was last updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
@@ -325,7 +421,11 @@ public class RoverEntitlement {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
@@ -334,7 +434,11 @@ public class RoverEntitlement {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
@@ -343,8 +447,106 @@ public class RoverEntitlement {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RoverEntitlement(");
+        sb.append("tenantId=").append(String.valueOf(this.tenantId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", requestorName=").append(String.valueOf(this.requestorName));
+        sb.append(", requestorEmail=").append(String.valueOf(this.requestorEmail));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", entitlementDetails=").append(String.valueOf(this.entitlementDetails));
+        sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RoverEntitlement)) {
+            return false;
+        }
+
+        RoverEntitlement other = (RoverEntitlement) o;
+        return java.util.Objects.equals(this.tenantId, other.tenantId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.requestorName, other.requestorName)
+                && java.util.Objects.equals(this.requestorEmail, other.requestorEmail)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.entitlementDetails, other.entitlementDetails)
+                && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestorName == null ? 43 : this.requestorName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestorEmail == null ? 43 : this.requestorEmail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entitlementDetails == null
+                                ? 43
+                                : this.entitlementDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStateDetails == null
+                                ? 43
+                                : this.lifecycleStateDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

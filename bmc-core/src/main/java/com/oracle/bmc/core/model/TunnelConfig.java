@@ -19,14 +19,19 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TunnelConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TunnelConfig {
+public final class TunnelConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"ipAddress", "sharedSecret", "timeCreated"})
+    public TunnelConfig(String ipAddress, String sharedSecret, java.util.Date timeCreated) {
+        super();
+        this.ipAddress = ipAddress;
+        this.sharedSecret = sharedSecret;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
@@ -83,6 +88,10 @@ public class TunnelConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The IP address of Oracle's VPN headend.
      * <p>
@@ -90,14 +99,22 @@ public class TunnelConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * The shared secret of the IPSec tunnel.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
-    String sharedSecret;
+    private final String sharedSecret;
+
+    public String getSharedSecret() {
+        return sharedSecret;
+    }
 
     /**
      * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -106,8 +123,57 @@ public class TunnelConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TunnelConfig(");
+        sb.append("ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", sharedSecret=").append(String.valueOf(this.sharedSecret));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TunnelConfig)) {
+            return false;
+        }
+
+        TunnelConfig other = (TunnelConfig) o;
+        return java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.sharedSecret, other.sharedSecret)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.sharedSecret == null ? 43 : this.sharedSecret.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

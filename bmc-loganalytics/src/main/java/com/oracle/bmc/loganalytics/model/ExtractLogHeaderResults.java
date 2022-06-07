@@ -15,16 +15,24 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExtractLogHeaderResults.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExtractLogHeaderResults {
+public final class ExtractLogHeaderResults {
+    @Deprecated
+    @java.beans.ConstructorProperties({"jsonPaths", "xmlPaths", "headerPaths"})
+    public ExtractLogHeaderResults(
+            java.util.List<ExtractLogHeaderDetails> jsonPaths,
+            java.util.List<String> xmlPaths,
+            java.util.List<String> headerPaths) {
+        super();
+        this.jsonPaths = jsonPaths;
+        this.xmlPaths = xmlPaths;
+        this.headerPaths = headerPaths;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("jsonPaths")
         private java.util.List<ExtractLogHeaderDetails> jsonPaths;
@@ -82,24 +90,85 @@ public class ExtractLogHeaderResults {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The log header json paths.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jsonPaths")
-    java.util.List<ExtractLogHeaderDetails> jsonPaths;
+    private final java.util.List<ExtractLogHeaderDetails> jsonPaths;
+
+    public java.util.List<ExtractLogHeaderDetails> getJsonPaths() {
+        return jsonPaths;
+    }
 
     /**
      * The log field or log header values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("xmlPaths")
-    java.util.List<String> xmlPaths;
+    private final java.util.List<String> xmlPaths;
+
+    public java.util.List<String> getXmlPaths() {
+        return xmlPaths;
+    }
 
     /**
      * The log header values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerPaths")
-    java.util.List<String> headerPaths;
+    private final java.util.List<String> headerPaths;
+
+    public java.util.List<String> getHeaderPaths() {
+        return headerPaths;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExtractLogHeaderResults(");
+        sb.append("jsonPaths=").append(String.valueOf(this.jsonPaths));
+        sb.append(", xmlPaths=").append(String.valueOf(this.xmlPaths));
+        sb.append(", headerPaths=").append(String.valueOf(this.headerPaths));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExtractLogHeaderResults)) {
+            return false;
+        }
+
+        ExtractLogHeaderResults other = (ExtractLogHeaderResults) o;
+        return java.util.Objects.equals(this.jsonPaths, other.jsonPaths)
+                && java.util.Objects.equals(this.xmlPaths, other.xmlPaths)
+                && java.util.Objects.equals(this.headerPaths, other.headerPaths)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.jsonPaths == null ? 43 : this.jsonPaths.hashCode());
+        result = (result * PRIME) + (this.xmlPaths == null ? 43 : this.xmlPaths.hashCode());
+        result = (result * PRIME) + (this.headerPaths == null ? 43 : this.headerPaths.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

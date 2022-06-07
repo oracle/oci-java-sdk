@@ -15,14 +15,68 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProblemSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProblemSummary {
+public final class ProblemSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "detectorRuleId",
+        "riskLevel",
+        "riskScore",
+        "resourceId",
+        "resourceName",
+        "resourceType",
+        "labels",
+        "timeFirstDetected",
+        "timeLastDetected",
+        "lifecycleState",
+        "lifecycleDetail",
+        "detectorId",
+        "region",
+        "regions",
+        "targetId"
+    })
+    public ProblemSummary(
+            String id,
+            String compartmentId,
+            String detectorRuleId,
+            RiskLevel riskLevel,
+            Double riskScore,
+            String resourceId,
+            String resourceName,
+            String resourceType,
+            java.util.List<String> labels,
+            java.util.Date timeFirstDetected,
+            java.util.Date timeLastDetected,
+            ProblemLifecycleState lifecycleState,
+            ProblemLifecycleDetail lifecycleDetail,
+            DetectorEnum detectorId,
+            String region,
+            java.util.List<String> regions,
+            String targetId) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.detectorRuleId = detectorRuleId;
+        this.riskLevel = riskLevel;
+        this.riskScore = riskScore;
+        this.resourceId = resourceId;
+        this.resourceName = resourceName;
+        this.resourceType = resourceType;
+        this.labels = labels;
+        this.timeFirstDetected = timeFirstDetected;
+        this.timeLastDetected = timeLastDetected;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetail = lifecycleDetail;
+        this.detectorId = detectorId;
+        this.region = region;
+        this.regions = regions;
+        this.targetId = targetId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -237,108 +291,279 @@ public class ProblemSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier that is immutable on creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Compartment Identifier where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Identifier of the rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
-    String detectorRuleId;
+    private final String detectorRuleId;
+
+    public String getDetectorRuleId() {
+        return detectorRuleId;
+    }
 
     /**
      * The Risk Level
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
-    RiskLevel riskLevel;
+    private final RiskLevel riskLevel;
+
+    public RiskLevel getRiskLevel() {
+        return riskLevel;
+    }
 
     /**
      * Risk Score for the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
-    Double riskScore;
+    private final Double riskScore;
+
+    public Double getRiskScore() {
+        return riskScore;
+    }
 
     /**
      * Identifier of the Resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * DisplayName of the Resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * Type of the Resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     /**
      * user defined labels on the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
-    java.util.List<String> labels;
+    private final java.util.List<String> labels;
+
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
 
     /**
      * The date and time the problem was first detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
-    java.util.Date timeFirstDetected;
+    private final java.util.Date timeFirstDetected;
+
+    public java.util.Date getTimeFirstDetected() {
+        return timeFirstDetected;
+    }
 
     /**
      * The date and time the problem was last detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
-    java.util.Date timeLastDetected;
+    private final java.util.Date timeLastDetected;
+
+    public java.util.Date getTimeLastDetected() {
+        return timeLastDetected;
+    }
 
     /**
      * The current state of the Problem.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ProblemLifecycleState lifecycleState;
+    private final ProblemLifecycleState lifecycleState;
+
+    public ProblemLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The lifecycleDetail will give more detail on the substate of the lifecycleState.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
-    ProblemLifecycleDetail lifecycleDetail;
+    private final ProblemLifecycleDetail lifecycleDetail;
+
+    public ProblemLifecycleDetail getLifecycleDetail() {
+        return lifecycleDetail;
+    }
 
     /**
      * Id of detector associated with the Problem.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorId")
-    DetectorEnum detectorId;
+    private final DetectorEnum detectorId;
+
+    public DetectorEnum getDetectorId() {
+        return detectorId;
+    }
 
     /**
      * DEPRECATED
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * Regions where the problem is found
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
-    java.util.List<String> regions;
+    private final java.util.List<String> regions;
+
+    public java.util.List<String> getRegions() {
+        return regions;
+    }
 
     /**
      * targetId associated with the problem.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProblemSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", detectorRuleId=").append(String.valueOf(this.detectorRuleId));
+        sb.append(", riskLevel=").append(String.valueOf(this.riskLevel));
+        sb.append(", riskScore=").append(String.valueOf(this.riskScore));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", labels=").append(String.valueOf(this.labels));
+        sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
+        sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetail=").append(String.valueOf(this.lifecycleDetail));
+        sb.append(", detectorId=").append(String.valueOf(this.detectorId));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", regions=").append(String.valueOf(this.regions));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProblemSummary)) {
+            return false;
+        }
+
+        ProblemSummary other = (ProblemSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.detectorRuleId, other.detectorRuleId)
+                && java.util.Objects.equals(this.riskLevel, other.riskLevel)
+                && java.util.Objects.equals(this.riskScore, other.riskScore)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.labels, other.labels)
+                && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
+                && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetail, other.lifecycleDetail)
+                && java.util.Objects.equals(this.detectorId, other.detectorId)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.regions, other.regions)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRuleId == null ? 43 : this.detectorRuleId.hashCode());
+        result = (result * PRIME) + (this.riskLevel == null ? 43 : this.riskLevel.hashCode());
+        result = (result * PRIME) + (this.riskScore == null ? 43 : this.riskScore.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstDetected == null ? 43 : this.timeFirstDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetail == null ? 43 : this.lifecycleDetail.hashCode());
+        result = (result * PRIME) + (this.detectorId == null ? 43 : this.detectorId.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

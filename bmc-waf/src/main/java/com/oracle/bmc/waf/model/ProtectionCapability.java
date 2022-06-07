@@ -16,16 +16,37 @@ package com.oracle.bmc.waf.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProtectionCapability.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProtectionCapability {
+public final class ProtectionCapability {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "version",
+        "exclusions",
+        "actionName",
+        "collaborativeActionThreshold",
+        "collaborativeWeights"
+    })
+    public ProtectionCapability(
+            String key,
+            Integer version,
+            ProtectionCapabilityExclusions exclusions,
+            String actionName,
+            Integer collaborativeActionThreshold,
+            java.util.List<CollaborativeCapabilityWeightOverride> collaborativeWeights) {
+        super();
+        this.key = key;
+        this.version = version;
+        this.exclusions = exclusions;
+        this.actionName = actionName;
+        this.collaborativeActionThreshold = collaborativeActionThreshold;
+        this.collaborativeWeights = collaborativeWeights;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -120,20 +141,36 @@ public class ProtectionCapability {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique key of referenced protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Version of referenced protection capability.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    Integer version;
+    private final Integer version;
+
+    public Integer getVersion() {
+        return version;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
-    ProtectionCapabilityExclusions exclusions;
+    private final ProtectionCapabilityExclusions exclusions;
+
+    public ProtectionCapabilityExclusions getExclusions() {
+        return exclusions;
+    }
 
     /**
      * Override action to take if capability was triggered, defined in Protection Rule for this capability.
@@ -141,7 +178,11 @@ public class ProtectionCapability {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionName")
-    String actionName;
+    private final String actionName;
+
+    public String getActionName() {
+        return actionName;
+    }
 
     /**
      * The minimum sum of weights of associated collaborative protection capabilities that have triggered which
@@ -150,15 +191,87 @@ public class ProtectionCapability {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeActionThreshold")
-    Integer collaborativeActionThreshold;
+    private final Integer collaborativeActionThreshold;
+
+    public Integer getCollaborativeActionThreshold() {
+        return collaborativeActionThreshold;
+    }
 
     /**
      * Explicit weight values to use for associated collaborative protection capabilities.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeWeights")
-    java.util.List<CollaborativeCapabilityWeightOverride> collaborativeWeights;
+    private final java.util.List<CollaborativeCapabilityWeightOverride> collaborativeWeights;
+
+    public java.util.List<CollaborativeCapabilityWeightOverride> getCollaborativeWeights() {
+        return collaborativeWeights;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProtectionCapability(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", exclusions=").append(String.valueOf(this.exclusions));
+        sb.append(", actionName=").append(String.valueOf(this.actionName));
+        sb.append(", collaborativeActionThreshold=")
+                .append(String.valueOf(this.collaborativeActionThreshold));
+        sb.append(", collaborativeWeights=").append(String.valueOf(this.collaborativeWeights));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProtectionCapability)) {
+            return false;
+        }
+
+        ProtectionCapability other = (ProtectionCapability) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.exclusions, other.exclusions)
+                && java.util.Objects.equals(this.actionName, other.actionName)
+                && java.util.Objects.equals(
+                        this.collaborativeActionThreshold, other.collaborativeActionThreshold)
+                && java.util.Objects.equals(this.collaborativeWeights, other.collaborativeWeights)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.exclusions == null ? 43 : this.exclusions.hashCode());
+        result = (result * PRIME) + (this.actionName == null ? 43 : this.actionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.collaborativeActionThreshold == null
+                                ? 43
+                                : this.collaborativeActionThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.collaborativeWeights == null
+                                ? 43
+                                : this.collaborativeWeights.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

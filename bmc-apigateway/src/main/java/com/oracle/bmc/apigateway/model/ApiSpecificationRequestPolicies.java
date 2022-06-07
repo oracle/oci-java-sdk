@@ -15,16 +15,34 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApiSpecificationRequestPolicies.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApiSpecificationRequestPolicies {
+public final class ApiSpecificationRequestPolicies {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "authentication",
+        "rateLimiting",
+        "cors",
+        "mutualTls",
+        "usagePlans"
+    })
+    public ApiSpecificationRequestPolicies(
+            AuthenticationPolicy authentication,
+            RateLimitingPolicy rateLimiting,
+            CorsPolicy cors,
+            MutualTlsDetails mutualTls,
+            UsagePlansPolicy usagePlans) {
+        super();
+        this.authentication = authentication;
+        this.rateLimiting = rateLimiting;
+        this.cors = cors;
+        this.mutualTls = mutualTls;
+        this.usagePlans = usagePlans;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("authentication")
         private AuthenticationPolicy authentication;
@@ -103,21 +121,98 @@ public class ApiSpecificationRequestPolicies {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("authentication")
-    AuthenticationPolicy authentication;
+    private final AuthenticationPolicy authentication;
+
+    public AuthenticationPolicy getAuthentication() {
+        return authentication;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("rateLimiting")
-    RateLimitingPolicy rateLimiting;
+    private final RateLimitingPolicy rateLimiting;
+
+    public RateLimitingPolicy getRateLimiting() {
+        return rateLimiting;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("cors")
-    CorsPolicy cors;
+    private final CorsPolicy cors;
+
+    public CorsPolicy getCors() {
+        return cors;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("mutualTls")
-    MutualTlsDetails mutualTls;
+    private final MutualTlsDetails mutualTls;
+
+    public MutualTlsDetails getMutualTls() {
+        return mutualTls;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("usagePlans")
-    UsagePlansPolicy usagePlans;
+    private final UsagePlansPolicy usagePlans;
+
+    public UsagePlansPolicy getUsagePlans() {
+        return usagePlans;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApiSpecificationRequestPolicies(");
+        sb.append("authentication=").append(String.valueOf(this.authentication));
+        sb.append(", rateLimiting=").append(String.valueOf(this.rateLimiting));
+        sb.append(", cors=").append(String.valueOf(this.cors));
+        sb.append(", mutualTls=").append(String.valueOf(this.mutualTls));
+        sb.append(", usagePlans=").append(String.valueOf(this.usagePlans));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApiSpecificationRequestPolicies)) {
+            return false;
+        }
+
+        ApiSpecificationRequestPolicies other = (ApiSpecificationRequestPolicies) o;
+        return java.util.Objects.equals(this.authentication, other.authentication)
+                && java.util.Objects.equals(this.rateLimiting, other.rateLimiting)
+                && java.util.Objects.equals(this.cors, other.cors)
+                && java.util.Objects.equals(this.mutualTls, other.mutualTls)
+                && java.util.Objects.equals(this.usagePlans, other.usagePlans)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.authentication == null ? 43 : this.authentication.hashCode());
+        result = (result * PRIME) + (this.rateLimiting == null ? 43 : this.rateLimiting.hashCode());
+        result = (result * PRIME) + (this.cors == null ? 43 : this.cors.hashCode());
+        result = (result * PRIME) + (this.mutualTls == null ? 43 : this.mutualTls.hashCode());
+        result = (result * PRIME) + (this.usagePlans == null ? 43 : this.usagePlans.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

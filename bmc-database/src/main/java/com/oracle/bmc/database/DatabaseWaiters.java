@@ -6,6 +6,7 @@ package com.oracle.bmc.database;
 
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -15,21 +16,27 @@ import com.oracle.bmc.database.responses.*;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class DatabaseWaiters {
-    @lombok.NonNull private final java.util.concurrent.ExecutorService executorService;
-    @lombok.NonNull private final Database client;
+    @Nonnull private final java.util.concurrent.ExecutorService executorService;
+    @Nonnull private final Database client;
     private final com.oracle.bmc.workrequests.WorkRequest workRequestClient;
 
     @Deprecated
     public DatabaseWaiters(
-            @lombok.NonNull java.util.concurrent.ExecutorService executorService,
-            @lombok.NonNull Database client) {
+            @Nonnull java.util.concurrent.ExecutorService executorService,
+            @Nonnull Database client) {
         this(executorService, client, null);
     }
 
     public DatabaseWaiters(
-            @lombok.NonNull java.util.concurrent.ExecutorService executorService,
-            @lombok.NonNull Database client,
+            @Nonnull java.util.concurrent.ExecutorService executorService,
+            @Nonnull Database client,
             com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
+        if (executorService == null) {
+            throw new NullPointerException("executorService is marked non-null but is null");
+        }
+        if (client == null) {
+            throw new NullPointerException("client is marked non-null but is null");
+        }
         this.executorService = executorService;
         this.client = client;
         this.workRequestClient = workRequestClient;

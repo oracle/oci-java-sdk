@@ -9,14 +9,6 @@ import com.oracle.bmc.logging.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateLogGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateLogGroupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateLogGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.logging.model.UpdateLogGroupDetails> {
@@ -26,11 +18,17 @@ public class UpdateLogGroupRequest
      */
     private String logGroupId;
 
+    public String getLogGroupId() {
+        return logGroupId;
+    }
     /**
      * LogGroup config parameters to update.
      */
     private com.oracle.bmc.logging.model.UpdateLogGroupDetails updateLogGroupDetails;
 
+    public com.oracle.bmc.logging.model.UpdateLogGroupDetails getUpdateLogGroupDetails() {
+        return updateLogGroupDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
      * resource, set the {@code if-match} parameter to the value of the etag from a
@@ -41,12 +39,19 @@ public class UpdateLogGroupRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +69,58 @@ public class UpdateLogGroupRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String logGroupId = null;
+
+        /**
+         * OCID of a log group to work with.
+         * @return this builder instance
+         */
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            return this;
+        }
+
+        private com.oracle.bmc.logging.model.UpdateLogGroupDetails updateLogGroupDetails = null;
+
+        /**
+         * LogGroup config parameters to update.
+         * @return this builder instance
+         */
+        public Builder updateLogGroupDetails(
+                com.oracle.bmc.logging.model.UpdateLogGroupDetails updateLogGroupDetails) {
+            this.updateLogGroupDetails = updateLogGroupDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -129,5 +186,83 @@ public class UpdateLogGroupRequest
             updateLogGroupDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateLogGroupRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateLogGroupRequest
+         */
+        public UpdateLogGroupRequest buildWithoutInvocationCallback() {
+            UpdateLogGroupRequest request = new UpdateLogGroupRequest();
+            request.logGroupId = logGroupId;
+            request.updateLogGroupDetails = updateLogGroupDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateLogGroupRequest(logGroupId, updateLogGroupDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .logGroupId(logGroupId)
+                .updateLogGroupDetails(updateLogGroupDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(",updateLogGroupDetails=").append(String.valueOf(this.updateLogGroupDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLogGroupRequest)) {
+            return false;
+        }
+
+        UpdateLogGroupRequest other = (UpdateLogGroupRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.updateLogGroupDetails, other.updateLogGroupDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateLogGroupDetails == null
+                                ? 43
+                                : this.updateLogGroupDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,30 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsParameter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsParameter {
+public final class LogAnalyticsParameter {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "defaultValue",
+        "description",
+        "isActive",
+        "name",
+        "sourceId"
+    })
+    public LogAnalyticsParameter(
+            String defaultValue, String description, Boolean isActive, String name, Long sourceId) {
+        super();
+        this.defaultValue = defaultValue;
+        this.description = description;
+        this.isActive = isActive;
+        this.name = name;
+        this.sourceId = sourceId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
@@ -102,37 +116,112 @@ public class LogAnalyticsParameter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The default value of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
-    String defaultValue;
+    private final String defaultValue;
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
 
     /**
      * The parameter description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A flag indicating whether or not the parameter is active.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
-    Boolean isActive;
+    private final Boolean isActive;
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
 
     /**
      * The parameter name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    Long sourceId;
+    private final Long sourceId;
+
+    public Long getSourceId() {
+        return sourceId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsParameter(");
+        sb.append("defaultValue=").append(String.valueOf(this.defaultValue));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isActive=").append(String.valueOf(this.isActive));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsParameter)) {
+            return false;
+        }
+
+        LogAnalyticsParameter other = (LogAnalyticsParameter) o;
+        return java.util.Objects.equals(this.defaultValue, other.defaultValue)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isActive, other.isActive)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.isActive == null ? 43 : this.isActive.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

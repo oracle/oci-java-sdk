@@ -20,16 +20,37 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousExadataInfrastructureShapeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousExadataInfrastructureShapeSummary {
+public final class AutonomousExadataInfrastructureShapeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "availableCoreCount",
+        "minimumCoreCount",
+        "coreCountIncrement",
+        "minimumNodeCount",
+        "maximumNodeCount"
+    })
+    public AutonomousExadataInfrastructureShapeSummary(
+            String name,
+            Integer availableCoreCount,
+            Integer minimumCoreCount,
+            Integer coreCountIncrement,
+            Integer minimumNodeCount,
+            Integer maximumNodeCount) {
+        super();
+        this.name = name;
+        this.availableCoreCount = availableCoreCount;
+        this.minimumCoreCount = minimumCoreCount;
+        this.coreCountIncrement = coreCountIncrement;
+        this.minimumNodeCount = minimumNodeCount;
+        this.maximumNodeCount = maximumNodeCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -123,42 +144,139 @@ public class AutonomousExadataInfrastructureShapeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the shape used for the Autonomous Exadata Infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
-    Integer availableCoreCount;
+    private final Integer availableCoreCount;
+
+    public Integer getAvailableCoreCount() {
+        return availableCoreCount;
+    }
 
     /**
      * The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
-    Integer minimumCoreCount;
+    private final Integer minimumCoreCount;
+
+    public Integer getMinimumCoreCount() {
+        return minimumCoreCount;
+    }
 
     /**
      * The increment in which core count can be increased or decreased.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
-    Integer coreCountIncrement;
+    private final Integer coreCountIncrement;
+
+    public Integer getCoreCountIncrement() {
+        return coreCountIncrement;
+    }
 
     /**
      * The minimum number of nodes available for the shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
-    Integer minimumNodeCount;
+    private final Integer minimumNodeCount;
+
+    public Integer getMinimumNodeCount() {
+        return minimumNodeCount;
+    }
 
     /**
      * The maximum number of nodes available for the shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
-    Integer maximumNodeCount;
+    private final Integer maximumNodeCount;
+
+    public Integer getMaximumNodeCount() {
+        return maximumNodeCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousExadataInfrastructureShapeSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", availableCoreCount=").append(String.valueOf(this.availableCoreCount));
+        sb.append(", minimumCoreCount=").append(String.valueOf(this.minimumCoreCount));
+        sb.append(", coreCountIncrement=").append(String.valueOf(this.coreCountIncrement));
+        sb.append(", minimumNodeCount=").append(String.valueOf(this.minimumNodeCount));
+        sb.append(", maximumNodeCount=").append(String.valueOf(this.maximumNodeCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousExadataInfrastructureShapeSummary)) {
+            return false;
+        }
+
+        AutonomousExadataInfrastructureShapeSummary other =
+                (AutonomousExadataInfrastructureShapeSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.availableCoreCount, other.availableCoreCount)
+                && java.util.Objects.equals(this.minimumCoreCount, other.minimumCoreCount)
+                && java.util.Objects.equals(this.coreCountIncrement, other.coreCountIncrement)
+                && java.util.Objects.equals(this.minimumNodeCount, other.minimumNodeCount)
+                && java.util.Objects.equals(this.maximumNodeCount, other.maximumNodeCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableCoreCount == null
+                                ? 43
+                                : this.availableCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minimumCoreCount == null ? 43 : this.minimumCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coreCountIncrement == null
+                                ? 43
+                                : this.coreCountIncrement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minimumNodeCount == null ? 43 : this.minimumNodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maximumNodeCount == null ? 43 : this.maximumNodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

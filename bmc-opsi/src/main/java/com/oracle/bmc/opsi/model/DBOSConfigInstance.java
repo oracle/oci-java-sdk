@@ -15,22 +15,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DBOSConfigInstance.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "metricName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
+public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
@@ -135,6 +130,10 @@ public class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DBOSConfigInstance(
             java.util.Date timeCollected,
@@ -157,38 +156,124 @@ public class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
      * Name of the database instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
-    String instanceName;
+    private final String instanceName;
+
+    public String getInstanceName() {
+        return instanceName;
+    }
 
     /**
      * Host name of the database instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
-    String hostName;
+    private final String hostName;
+
+    public String getHostName() {
+        return hostName;
+    }
 
     /**
      * Total number of CPUs available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numCPUs")
-    Integer numCPUs;
+    private final Integer numCPUs;
+
+    public Integer getNumCPUs() {
+        return numCPUs;
+    }
 
     /**
      * Number of CPU cores available (includes subcores of multicore CPUs as well as single-core CPUs).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numCPUCores")
-    Integer numCPUCores;
+    private final Integer numCPUCores;
+
+    public Integer getNumCPUCores() {
+        return numCPUCores;
+    }
 
     /**
      * Number of CPU Sockets available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numCPUSockets")
-    Integer numCPUSockets;
+    private final Integer numCPUSockets;
+
+    public Integer getNumCPUSockets() {
+        return numCPUSockets;
+    }
 
     /**
      * Total number of bytes of physical memory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("physicalMemoryBytes")
-    Double physicalMemoryBytes;
+    private final Double physicalMemoryBytes;
+
+    public Double getPhysicalMemoryBytes() {
+        return physicalMemoryBytes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DBOSConfigInstance(");
+        sb.append("super=").append(super.toString());
+        sb.append(", instanceName=").append(String.valueOf(this.instanceName));
+        sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", numCPUs=").append(String.valueOf(this.numCPUs));
+        sb.append(", numCPUCores=").append(String.valueOf(this.numCPUCores));
+        sb.append(", numCPUSockets=").append(String.valueOf(this.numCPUSockets));
+        sb.append(", physicalMemoryBytes=").append(String.valueOf(this.physicalMemoryBytes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DBOSConfigInstance)) {
+            return false;
+        }
+
+        DBOSConfigInstance other = (DBOSConfigInstance) o;
+        return java.util.Objects.equals(this.instanceName, other.instanceName)
+                && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.numCPUs, other.numCPUs)
+                && java.util.Objects.equals(this.numCPUCores, other.numCPUCores)
+                && java.util.Objects.equals(this.numCPUSockets, other.numCPUSockets)
+                && java.util.Objects.equals(this.physicalMemoryBytes, other.physicalMemoryBytes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.instanceName == null ? 43 : this.instanceName.hashCode());
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.numCPUs == null ? 43 : this.numCPUs.hashCode());
+        result = (result * PRIME) + (this.numCPUCores == null ? 43 : this.numCPUCores.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numCPUSockets == null ? 43 : this.numCPUSockets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.physicalMemoryBytes == null
+                                ? 43
+                                : this.physicalMemoryBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAutonomousExadataInfrastructureRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateAutonomousExadataInfrastructureRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails> {
@@ -26,12 +18,19 @@ public class UpdateAutonomousExadataInfrastructureRequest
      */
     private String autonomousExadataInfrastructureId;
 
+    public String getAutonomousExadataInfrastructureId() {
+        return autonomousExadataInfrastructureId;
+    }
     /**
      * Request to update the properties of a Autonomous Exadata Infrastructure.
      */
     private com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails
             updateAutonomousExadataInfrastructuresDetails;
 
+    public com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails
+            getUpdateAutonomousExadataInfrastructuresDetails() {
+        return updateAutonomousExadataInfrastructuresDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -39,6 +38,10 @@ public class UpdateAutonomousExadataInfrastructureRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -57,6 +60,46 @@ public class UpdateAutonomousExadataInfrastructureRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String autonomousExadataInfrastructureId = null;
+
+        /**
+         * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
+            this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails
+                updateAutonomousExadataInfrastructuresDetails = null;
+
+        /**
+         * Request to update the properties of a Autonomous Exadata Infrastructure.
+         * @return this builder instance
+         */
+        public Builder updateAutonomousExadataInfrastructuresDetails(
+                com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails
+                        updateAutonomousExadataInfrastructuresDetails) {
+            this.updateAutonomousExadataInfrastructuresDetails =
+                    updateAutonomousExadataInfrastructuresDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -123,5 +166,92 @@ public class UpdateAutonomousExadataInfrastructureRequest
             updateAutonomousExadataInfrastructuresDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateAutonomousExadataInfrastructureRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateAutonomousExadataInfrastructureRequest
+         */
+        public UpdateAutonomousExadataInfrastructureRequest buildWithoutInvocationCallback() {
+            UpdateAutonomousExadataInfrastructureRequest request =
+                    new UpdateAutonomousExadataInfrastructureRequest();
+            request.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+            request.updateAutonomousExadataInfrastructuresDetails =
+                    updateAutonomousExadataInfrastructuresDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateAutonomousExadataInfrastructureRequest(autonomousExadataInfrastructureId, updateAutonomousExadataInfrastructuresDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .autonomousExadataInfrastructureId(autonomousExadataInfrastructureId)
+                .updateAutonomousExadataInfrastructuresDetails(
+                        updateAutonomousExadataInfrastructuresDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",autonomousExadataInfrastructureId=")
+                .append(String.valueOf(this.autonomousExadataInfrastructureId));
+        sb.append(",updateAutonomousExadataInfrastructuresDetails=")
+                .append(String.valueOf(this.updateAutonomousExadataInfrastructuresDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAutonomousExadataInfrastructureRequest)) {
+            return false;
+        }
+
+        UpdateAutonomousExadataInfrastructureRequest other =
+                (UpdateAutonomousExadataInfrastructureRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.autonomousExadataInfrastructureId,
+                        other.autonomousExadataInfrastructureId)
+                && java.util.Objects.equals(
+                        this.updateAutonomousExadataInfrastructuresDetails,
+                        other.updateAutonomousExadataInfrastructuresDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.autonomousExadataInfrastructureId == null
+                                ? 43
+                                : this.autonomousExadataInfrastructureId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateAutonomousExadataInfrastructuresDetails == null
+                                ? 43
+                                : this.updateAutonomousExadataInfrastructuresDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

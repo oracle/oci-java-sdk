@@ -9,14 +9,6 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/UpdateOperatorControlAssignmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateOperatorControlAssignmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateOperatorControlAssignmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlAssignmentDetails> {
@@ -26,12 +18,19 @@ public class UpdateOperatorControlAssignmentRequest
      */
     private String operatorControlAssignmentId;
 
+    public String getOperatorControlAssignmentId() {
+        return operatorControlAssignmentId;
+    }
     /**
      * Details for the new operator control assignment.
      */
     private com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlAssignmentDetails
             updateOperatorControlAssignmentDetails;
 
+    public com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlAssignmentDetails
+            getUpdateOperatorControlAssignmentDetails() {
+        return updateOperatorControlAssignmentDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -42,10 +41,17 @@ public class UpdateOperatorControlAssignmentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -66,6 +72,58 @@ public class UpdateOperatorControlAssignmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String operatorControlAssignmentId = null;
+
+        /**
+         * unique OperatorControl identifier
+         * @return this builder instance
+         */
+        public Builder operatorControlAssignmentId(String operatorControlAssignmentId) {
+            this.operatorControlAssignmentId = operatorControlAssignmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlAssignmentDetails
+                updateOperatorControlAssignmentDetails = null;
+
+        /**
+         * Details for the new operator control assignment.
+         * @return this builder instance
+         */
+        public Builder updateOperatorControlAssignmentDetails(
+                com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlAssignmentDetails
+                        updateOperatorControlAssignmentDetails) {
+            this.updateOperatorControlAssignmentDetails = updateOperatorControlAssignmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -133,5 +191,93 @@ public class UpdateOperatorControlAssignmentRequest
             updateOperatorControlAssignmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateOperatorControlAssignmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateOperatorControlAssignmentRequest
+         */
+        public UpdateOperatorControlAssignmentRequest buildWithoutInvocationCallback() {
+            UpdateOperatorControlAssignmentRequest request =
+                    new UpdateOperatorControlAssignmentRequest();
+            request.operatorControlAssignmentId = operatorControlAssignmentId;
+            request.updateOperatorControlAssignmentDetails = updateOperatorControlAssignmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateOperatorControlAssignmentRequest(operatorControlAssignmentId, updateOperatorControlAssignmentDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .operatorControlAssignmentId(operatorControlAssignmentId)
+                .updateOperatorControlAssignmentDetails(updateOperatorControlAssignmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",operatorControlAssignmentId=")
+                .append(String.valueOf(this.operatorControlAssignmentId));
+        sb.append(",updateOperatorControlAssignmentDetails=")
+                .append(String.valueOf(this.updateOperatorControlAssignmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateOperatorControlAssignmentRequest)) {
+            return false;
+        }
+
+        UpdateOperatorControlAssignmentRequest other = (UpdateOperatorControlAssignmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.operatorControlAssignmentId, other.operatorControlAssignmentId)
+                && java.util.Objects.equals(
+                        this.updateOperatorControlAssignmentDetails,
+                        other.updateOperatorControlAssignmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.operatorControlAssignmentId == null
+                                ? 43
+                                : this.operatorControlAssignmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateOperatorControlAssignmentDetails == null
+                                ? 43
+                                : this.updateOperatorControlAssignmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

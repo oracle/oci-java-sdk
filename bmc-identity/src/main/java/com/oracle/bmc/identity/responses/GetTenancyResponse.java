@@ -7,10 +7,6 @@ package com.oracle.bmc.identity.responses;
 import com.oracle.bmc.identity.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -19,10 +15,18 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned Tenancy instance.
      */
     private com.oracle.bmc.identity.model.Tenancy tenancy;
+
+    public com.oracle.bmc.identity.model.Tenancy getTenancy() {
+        return tenancy;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "tenancy"})
     private GetTenancyResponse(
@@ -42,6 +46,20 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.Tenancy tenancy;
+
+        public Builder tenancy(com.oracle.bmc.identity.model.Tenancy tenancy) {
+            this.tenancy = tenancy;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +75,44 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
         public GetTenancyResponse build() {
             return new GetTenancyResponse(__httpStatusCode__, opcRequestId, tenancy);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",tenancy=").append(String.valueOf(tenancy));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetTenancyResponse)) {
+            return false;
+        }
+
+        GetTenancyResponse other = (GetTenancyResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.tenancy, other.tenancy);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.tenancy == null ? 43 : this.tenancy.hashCode());
+        return result;
     }
 }

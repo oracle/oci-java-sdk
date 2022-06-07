@@ -15,16 +15,24 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateOAuth2ClientCredentialDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateOAuth2ClientCredentialDetails {
+public final class UpdateOAuth2ClientCredentialDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"description", "scopes", "isResetPassword"})
+    public UpdateOAuth2ClientCredentialDetails(
+            String description,
+            java.util.List<FullyQualifiedScope> scopes,
+            Boolean isResetPassword) {
+        super();
+        this.description = description;
+        this.scopes = scopes;
+        this.isResetPassword = isResetPassword;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -82,24 +90,87 @@ public class UpdateOAuth2ClientCredentialDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Description of the oauth credential to help user differentiate them.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Allowed scopes for the given oauth credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
-    java.util.List<FullyQualifiedScope> scopes;
+    private final java.util.List<FullyQualifiedScope> scopes;
+
+    public java.util.List<FullyQualifiedScope> getScopes() {
+        return scopes;
+    }
 
     /**
      * Indicate if the password to be reset or not in the update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResetPassword")
-    Boolean isResetPassword;
+    private final Boolean isResetPassword;
+
+    public Boolean getIsResetPassword() {
+        return isResetPassword;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateOAuth2ClientCredentialDetails(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", scopes=").append(String.valueOf(this.scopes));
+        sb.append(", isResetPassword=").append(String.valueOf(this.isResetPassword));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateOAuth2ClientCredentialDetails)) {
+            return false;
+        }
+
+        UpdateOAuth2ClientCredentialDetails other = (UpdateOAuth2ClientCredentialDetails) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.scopes, other.scopes)
+                && java.util.Objects.equals(this.isResetPassword, other.isResetPassword)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.scopes == null ? 43 : this.scopes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isResetPassword == null ? 43 : this.isResetPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

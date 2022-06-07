@@ -15,16 +15,22 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MetricBasedHorizontalScaleOutConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MetricBasedHorizontalScaleOutConfig {
+public final class MetricBasedHorizontalScaleOutConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"metric", "maxNodeCount", "stepSize"})
+    public MetricBasedHorizontalScaleOutConfig(
+            AutoScalePolicyMetricRule metric, Integer maxNodeCount, Integer stepSize) {
+        super();
+        this.metric = metric;
+        this.maxNodeCount = maxNodeCount;
+        this.stepSize = stepSize;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("metric")
         private AutoScalePolicyMetricRule metric;
@@ -82,21 +88,82 @@ public class MetricBasedHorizontalScaleOutConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("metric")
-    AutoScalePolicyMetricRule metric;
+    private final AutoScalePolicyMetricRule metric;
+
+    public AutoScalePolicyMetricRule getMetric() {
+        return metric;
+    }
 
     /**
      * This value is the maximum number of nodes the cluster can be scaled-out to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxNodeCount")
-    Integer maxNodeCount;
+    private final Integer maxNodeCount;
+
+    public Integer getMaxNodeCount() {
+        return maxNodeCount;
+    }
 
     /**
      * This value is the number of nodes to add during a scale-out event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepSize")
-    Integer stepSize;
+    private final Integer stepSize;
+
+    public Integer getStepSize() {
+        return stepSize;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MetricBasedHorizontalScaleOutConfig(");
+        sb.append("metric=").append(String.valueOf(this.metric));
+        sb.append(", maxNodeCount=").append(String.valueOf(this.maxNodeCount));
+        sb.append(", stepSize=").append(String.valueOf(this.stepSize));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MetricBasedHorizontalScaleOutConfig)) {
+            return false;
+        }
+
+        MetricBasedHorizontalScaleOutConfig other = (MetricBasedHorizontalScaleOutConfig) o;
+        return java.util.Objects.equals(this.metric, other.metric)
+                && java.util.Objects.equals(this.maxNodeCount, other.maxNodeCount)
+                && java.util.Objects.equals(this.stepSize, other.stepSize)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.metric == null ? 43 : this.metric.hashCode());
+        result = (result * PRIME) + (this.maxNodeCount == null ? 43 : this.maxNodeCount.hashCode());
+        result = (result * PRIME) + (this.stepSize == null ? 43 : this.stepSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

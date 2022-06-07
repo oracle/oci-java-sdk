@@ -9,14 +9,6 @@ import com.oracle.bmc.dataintegration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateUserDefinedFunctionValidationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateUserDefinedFunctionValidationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataintegration.model.CreateUserDefinedFunctionValidationDetails> {
@@ -26,12 +18,19 @@ public class CreateUserDefinedFunctionValidationRequest
      */
     private String workspaceId;
 
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
     /**
      * The information needed to create the UserDefinedFunction validation for the UserDefinedFunction object.
      */
     private com.oracle.bmc.dataintegration.model.CreateUserDefinedFunctionValidationDetails
             createUserDefinedFunctionValidationDetails;
 
+    public com.oracle.bmc.dataintegration.model.CreateUserDefinedFunctionValidationDetails
+            getCreateUserDefinedFunctionValidationDetails() {
+        return createUserDefinedFunctionValidationDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -40,11 +39,18 @@ public class CreateUserDefinedFunctionValidationRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,6 +71,58 @@ public class CreateUserDefinedFunctionValidationRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String workspaceId = null;
+
+        /**
+         * The workspace ID.
+         * @return this builder instance
+         */
+        public Builder workspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+
+        private com.oracle.bmc.dataintegration.model.CreateUserDefinedFunctionValidationDetails
+                createUserDefinedFunctionValidationDetails = null;
+
+        /**
+         * The information needed to create the UserDefinedFunction validation for the UserDefinedFunction object.
+         * @return this builder instance
+         */
+        public Builder createUserDefinedFunctionValidationDetails(
+                com.oracle.bmc.dataintegration.model.CreateUserDefinedFunctionValidationDetails
+                        createUserDefinedFunctionValidationDetails) {
+            this.createUserDefinedFunctionValidationDetails =
+                    createUserDefinedFunctionValidationDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -133,5 +191,92 @@ public class CreateUserDefinedFunctionValidationRequest
             createUserDefinedFunctionValidationDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateUserDefinedFunctionValidationRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateUserDefinedFunctionValidationRequest
+         */
+        public CreateUserDefinedFunctionValidationRequest buildWithoutInvocationCallback() {
+            CreateUserDefinedFunctionValidationRequest request =
+                    new CreateUserDefinedFunctionValidationRequest();
+            request.workspaceId = workspaceId;
+            request.createUserDefinedFunctionValidationDetails =
+                    createUserDefinedFunctionValidationDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateUserDefinedFunctionValidationRequest(workspaceId, createUserDefinedFunctionValidationDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .workspaceId(workspaceId)
+                .createUserDefinedFunctionValidationDetails(
+                        createUserDefinedFunctionValidationDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",workspaceId=").append(String.valueOf(this.workspaceId));
+        sb.append(",createUserDefinedFunctionValidationDetails=")
+                .append(String.valueOf(this.createUserDefinedFunctionValidationDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateUserDefinedFunctionValidationRequest)) {
+            return false;
+        }
+
+        CreateUserDefinedFunctionValidationRequest other =
+                (CreateUserDefinedFunctionValidationRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.workspaceId, other.workspaceId)
+                && java.util.Objects.equals(
+                        this.createUserDefinedFunctionValidationDetails,
+                        other.createUserDefinedFunctionValidationDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.workspaceId == null ? 43 : this.workspaceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createUserDefinedFunctionValidationDetails == null
+                                ? 43
+                                : this.createUserDefinedFunctionValidationDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

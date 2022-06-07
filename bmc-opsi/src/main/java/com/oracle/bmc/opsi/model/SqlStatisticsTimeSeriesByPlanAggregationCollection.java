@@ -16,16 +16,43 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlStatisticsTimeSeriesByPlanAggregationCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlStatisticsTimeSeriesByPlanAggregationCollection {
+public final class SqlStatisticsTimeSeriesByPlanAggregationCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sqlIdentifier",
+        "id",
+        "databaseId",
+        "timeIntervalStart",
+        "timeIntervalEnd",
+        "itemDurationInMs",
+        "endTimestamps",
+        "items"
+    })
+    public SqlStatisticsTimeSeriesByPlanAggregationCollection(
+            String sqlIdentifier,
+            String id,
+            String databaseId,
+            java.util.Date timeIntervalStart,
+            java.util.Date timeIntervalEnd,
+            Long itemDurationInMs,
+            java.util.List<java.util.Date> endTimestamps,
+            java.util.List<SqlStatisticsTimeSeriesByPlanAggregation> items) {
+        super();
+        this.sqlIdentifier = sqlIdentifier;
+        this.id = id;
+        this.databaseId = databaseId;
+        this.timeIntervalStart = timeIntervalStart;
+        this.timeIntervalEnd = timeIntervalEnd;
+        this.itemDurationInMs = itemDurationInMs;
+        this.endTimestamps = endTimestamps;
+        this.items = items;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
@@ -141,56 +168,163 @@ public class SqlStatisticsTimeSeriesByPlanAggregationCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique SQL_ID for a SQL Statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
-    String sqlIdentifier;
+    private final String sqlIdentifier;
+
+    public String getSqlIdentifier() {
+        return sqlIdentifier;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    String databaseId;
+    private final String databaseId;
+
+    public String getDatabaseId() {
+        return databaseId;
+    }
 
     /**
      * The start timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
-    java.util.Date timeIntervalStart;
+    private final java.util.Date timeIntervalStart;
+
+    public java.util.Date getTimeIntervalStart() {
+        return timeIntervalStart;
+    }
 
     /**
      * The end timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
-    java.util.Date timeIntervalEnd;
+    private final java.util.Date timeIntervalEnd;
+
+    public java.util.Date getTimeIntervalEnd() {
+        return timeIntervalEnd;
+    }
 
     /**
      * Time duration in milliseconds between data points (one hour or one day).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("itemDurationInMs")
-    Long itemDurationInMs;
+    private final Long itemDurationInMs;
+
+    public Long getItemDurationInMs() {
+        return itemDurationInMs;
+    }
 
     /**
      * Array comprising of all the sampling period end timestamps in RFC 3339 format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimestamps")
-    java.util.List<java.util.Date> endTimestamps;
+    private final java.util.List<java.util.Date> endTimestamps;
+
+    public java.util.List<java.util.Date> getEndTimestamps() {
+        return endTimestamps;
+    }
 
     /**
      * array of SQL performance statistics by plans
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<SqlStatisticsTimeSeriesByPlanAggregation> items;
+    private final java.util.List<SqlStatisticsTimeSeriesByPlanAggregation> items;
+
+    public java.util.List<SqlStatisticsTimeSeriesByPlanAggregation> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlStatisticsTimeSeriesByPlanAggregationCollection(");
+        sb.append("sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
+        sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(", itemDurationInMs=").append(String.valueOf(this.itemDurationInMs));
+        sb.append(", endTimestamps=").append(String.valueOf(this.endTimestamps));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlStatisticsTimeSeriesByPlanAggregationCollection)) {
+            return false;
+        }
+
+        SqlStatisticsTimeSeriesByPlanAggregationCollection other =
+                (SqlStatisticsTimeSeriesByPlanAggregationCollection) o;
+        return java.util.Objects.equals(this.sqlIdentifier, other.sqlIdentifier)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
+                && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(this.itemDurationInMs, other.itemDurationInMs)
+                && java.util.Objects.equals(this.endTimestamps, other.endTimestamps)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sqlIdentifier == null ? 43 : this.sqlIdentifier.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalStart == null ? 43 : this.timeIntervalStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.itemDurationInMs == null ? 43 : this.itemDurationInMs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.endTimestamps == null ? 43 : this.endTimestamps.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

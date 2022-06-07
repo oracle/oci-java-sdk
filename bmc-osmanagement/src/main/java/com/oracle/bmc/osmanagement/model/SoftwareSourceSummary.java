@@ -15,16 +15,55 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SoftwareSourceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SoftwareSourceSummary {
+public final class SoftwareSourceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "description",
+        "compartmentId",
+        "displayName",
+        "repoType",
+        "status",
+        "packages",
+        "lifecycleState",
+        "parentId",
+        "parentName",
+        "freeformTags",
+        "definedTags"
+    })
+    public SoftwareSourceSummary(
+            String id,
+            String description,
+            String compartmentId,
+            String displayName,
+            String repoType,
+            Status status,
+            Integer packages,
+            LifecycleStates lifecycleState,
+            String parentId,
+            String parentName,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.repoType = repoType;
+        this.status = status;
+        this.packages = packages;
+        this.lifecycleState = lifecycleState;
+        this.parentId = parentId;
+        this.parentName = parentName;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -185,39 +224,63 @@ public class SoftwareSourceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID for the Software Source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Information specified by the user about the software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * OCID for the Compartment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * User friendly name for the software source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Type of the Software Source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repoType")
-    String repoType;
+    private final String repoType;
+
+    public String getRepoType() {
+        return repoType;
+    }
+
     /**
      * status of the software source.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Normal("NORMAL"),
         Unreachable("UNREACHABLE"),
@@ -229,6 +292,8 @@ public class SoftwareSourceSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -266,31 +331,51 @@ public class SoftwareSourceSummary {
      * status of the software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * Number of packages
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
-    Integer packages;
+    private final Integer packages;
+
+    public Integer getPackages() {
+        return packages;
+    }
 
     /**
      * The current state of the software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * OCID for the parent software source, if there is one
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
-    String parentId;
+    private final String parentId;
+
+    public String getParentId() {
+        return parentId;
+    }
 
     /**
      * Display name the parent software source, if there is one
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentName")
-    String parentName;
+    private final String parentName;
+
+    public String getParentName() {
+        return parentName;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -298,7 +383,11 @@ public class SoftwareSourceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -306,8 +395,88 @@ public class SoftwareSourceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SoftwareSourceSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", repoType=").append(String.valueOf(this.repoType));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", packages=").append(String.valueOf(this.packages));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", parentId=").append(String.valueOf(this.parentId));
+        sb.append(", parentName=").append(String.valueOf(this.parentName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SoftwareSourceSummary)) {
+            return false;
+        }
+
+        SoftwareSourceSummary other = (SoftwareSourceSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.repoType, other.repoType)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.packages, other.packages)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.parentId, other.parentId)
+                && java.util.Objects.equals(this.parentName, other.parentName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.repoType == null ? 43 : this.repoType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
+        result = (result * PRIME) + (this.parentName == null ? 43 : this.parentName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

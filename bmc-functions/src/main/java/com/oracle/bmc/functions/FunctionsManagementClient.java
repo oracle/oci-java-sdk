@@ -9,9 +9,9 @@ import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public class FunctionsManagementClient implements FunctionsManagement {
     /**
      * Service instance for FunctionsManagement.
@@ -25,13 +25,17 @@ public class FunctionsManagementClient implements FunctionsManagement {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(FunctionsManagementAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final FunctionsManagementWaiters waiters;
 
     private final FunctionsManagementPaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -401,9 +405,13 @@ public class FunctionsManagementClient implements FunctionsManagement {
          * @return the client
          */
         public FunctionsManagementClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new FunctionsManagementClient(
                     authenticationDetailsProvider,
                     configuration,

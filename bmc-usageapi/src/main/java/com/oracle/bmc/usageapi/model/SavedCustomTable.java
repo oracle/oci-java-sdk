@@ -15,14 +15,35 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SavedCustomTable.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SavedCustomTable {
+public final class SavedCustomTable {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "rowGroupBy",
+        "columnGroupBy",
+        "groupByTag",
+        "compartmentDepth",
+        "version"
+    })
+    public SavedCustomTable(
+            String displayName,
+            java.util.List<String> rowGroupBy,
+            java.util.List<String> columnGroupBy,
+            java.util.List<Tag> groupByTag,
+            java.math.BigDecimal compartmentDepth,
+            java.math.BigDecimal version) {
+        super();
+        this.displayName = displayName;
+        this.rowGroupBy = rowGroupBy;
+        this.columnGroupBy = columnGroupBy;
+        this.groupByTag = groupByTag;
+        this.compartmentDepth = compartmentDepth;
+        this.version = version;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -116,11 +137,19 @@ public class SavedCustomTable {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the custom table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The row groupBy key list.
@@ -131,7 +160,11 @@ public class SavedCustomTable {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowGroupBy")
-    java.util.List<String> rowGroupBy;
+    private final java.util.List<String> rowGroupBy;
+
+    public java.util.List<String> getRowGroupBy() {
+        return rowGroupBy;
+    }
 
     /**
      * The column groupBy key list.
@@ -142,7 +175,11 @@ public class SavedCustomTable {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnGroupBy")
-    java.util.List<String> columnGroupBy;
+    private final java.util.List<String> columnGroupBy;
+
+    public java.util.List<String> getColumnGroupBy() {
+        return columnGroupBy;
+    }
 
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported.
@@ -151,20 +188,90 @@ public class SavedCustomTable {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")
-    java.util.List<Tag> groupByTag;
+    private final java.util.List<Tag> groupByTag;
+
+    public java.util.List<Tag> getGroupByTag() {
+        return groupByTag;
+    }
 
     /**
      * The compartment depth level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
-    java.math.BigDecimal compartmentDepth;
+    private final java.math.BigDecimal compartmentDepth;
+
+    public java.math.BigDecimal getCompartmentDepth() {
+        return compartmentDepth;
+    }
 
     /**
      * The version of the custom table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    java.math.BigDecimal version;
+    private final java.math.BigDecimal version;
+
+    public java.math.BigDecimal getVersion() {
+        return version;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SavedCustomTable(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", rowGroupBy=").append(String.valueOf(this.rowGroupBy));
+        sb.append(", columnGroupBy=").append(String.valueOf(this.columnGroupBy));
+        sb.append(", groupByTag=").append(String.valueOf(this.groupByTag));
+        sb.append(", compartmentDepth=").append(String.valueOf(this.compartmentDepth));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SavedCustomTable)) {
+            return false;
+        }
+
+        SavedCustomTable other = (SavedCustomTable) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.rowGroupBy, other.rowGroupBy)
+                && java.util.Objects.equals(this.columnGroupBy, other.columnGroupBy)
+                && java.util.Objects.equals(this.groupByTag, other.groupByTag)
+                && java.util.Objects.equals(this.compartmentDepth, other.compartmentDepth)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.rowGroupBy == null ? 43 : this.rowGroupBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.columnGroupBy == null ? 43 : this.columnGroupBy.hashCode());
+        result = (result * PRIME) + (this.groupByTag == null ? 43 : this.groupByTag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentDepth == null ? 43 : this.compartmentDepth.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

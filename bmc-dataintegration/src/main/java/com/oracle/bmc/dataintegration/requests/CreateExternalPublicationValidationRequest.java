@@ -9,14 +9,6 @@ import com.oracle.bmc.dataintegration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExternalPublicationValidationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateExternalPublicationValidationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateExternalPublicationValidationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataintegration.model.CreateExternalPublicationValidationDetails> {
@@ -26,17 +18,27 @@ public class CreateExternalPublicationValidationRequest
      */
     private String workspaceId;
 
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
     /**
      * The task key.
      */
     private String taskKey;
 
+    public String getTaskKey() {
+        return taskKey;
+    }
     /**
      * The information needed to create a task validation.
      */
     private com.oracle.bmc.dataintegration.model.CreateExternalPublicationValidationDetails
             createExternalPublicationValidationDetails;
 
+    public com.oracle.bmc.dataintegration.model.CreateExternalPublicationValidationDetails
+            getCreateExternalPublicationValidationDetails() {
+        return createExternalPublicationValidationDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -45,11 +47,18 @@ public class CreateExternalPublicationValidationRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -70,6 +79,69 @@ public class CreateExternalPublicationValidationRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String workspaceId = null;
+
+        /**
+         * The workspace ID.
+         * @return this builder instance
+         */
+        public Builder workspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+
+        private String taskKey = null;
+
+        /**
+         * The task key.
+         * @return this builder instance
+         */
+        public Builder taskKey(String taskKey) {
+            this.taskKey = taskKey;
+            return this;
+        }
+
+        private com.oracle.bmc.dataintegration.model.CreateExternalPublicationValidationDetails
+                createExternalPublicationValidationDetails = null;
+
+        /**
+         * The information needed to create a task validation.
+         * @return this builder instance
+         */
+        public Builder createExternalPublicationValidationDetails(
+                com.oracle.bmc.dataintegration.model.CreateExternalPublicationValidationDetails
+                        createExternalPublicationValidationDetails) {
+            this.createExternalPublicationValidationDetails =
+                    createExternalPublicationValidationDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -139,5 +211,97 @@ public class CreateExternalPublicationValidationRequest
             createExternalPublicationValidationDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateExternalPublicationValidationRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateExternalPublicationValidationRequest
+         */
+        public CreateExternalPublicationValidationRequest buildWithoutInvocationCallback() {
+            CreateExternalPublicationValidationRequest request =
+                    new CreateExternalPublicationValidationRequest();
+            request.workspaceId = workspaceId;
+            request.taskKey = taskKey;
+            request.createExternalPublicationValidationDetails =
+                    createExternalPublicationValidationDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateExternalPublicationValidationRequest(workspaceId, taskKey, createExternalPublicationValidationDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .workspaceId(workspaceId)
+                .taskKey(taskKey)
+                .createExternalPublicationValidationDetails(
+                        createExternalPublicationValidationDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",workspaceId=").append(String.valueOf(this.workspaceId));
+        sb.append(",taskKey=").append(String.valueOf(this.taskKey));
+        sb.append(",createExternalPublicationValidationDetails=")
+                .append(String.valueOf(this.createExternalPublicationValidationDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateExternalPublicationValidationRequest)) {
+            return false;
+        }
+
+        CreateExternalPublicationValidationRequest other =
+                (CreateExternalPublicationValidationRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.workspaceId, other.workspaceId)
+                && java.util.Objects.equals(this.taskKey, other.taskKey)
+                && java.util.Objects.equals(
+                        this.createExternalPublicationValidationDetails,
+                        other.createExternalPublicationValidationDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.workspaceId == null ? 43 : this.workspaceId.hashCode());
+        result = (result * PRIME) + (this.taskKey == null ? 43 : this.taskKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createExternalPublicationValidationDetails == null
+                                ? 43
+                                : this.createExternalPublicationValidationDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

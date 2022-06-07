@@ -26,9 +26,12 @@ import com.oracle.bmc.devops.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.RequiredArgsConstructor
 public class DevopsPaginators {
     private final Devops client;
+
+    public DevopsPaginators(Devops client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listAuthors operation. This iterable

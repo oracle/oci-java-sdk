@@ -15,22 +15,17 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateSensitiveTypePatternDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "entityType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateSensitiveTypePatternDetails extends UpdateSensitiveTypeDetails {
+public final class UpdateSensitiveTypePatternDetails extends UpdateSensitiveTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -180,6 +175,10 @@ public class UpdateSensitiveTypePatternDetails extends UpdateSensitiveTypeDetail
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateSensitiveTypePatternDetails(
             String displayName,
@@ -205,19 +204,31 @@ public class UpdateSensitiveTypePatternDetails extends UpdateSensitiveTypeDetail
      * A regular expression to be used by data discovery for matching column names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namePattern")
-    String namePattern;
+    private final String namePattern;
+
+    public String getNamePattern() {
+        return namePattern;
+    }
 
     /**
      * A regular expression to be used by data discovery for matching column comments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commentPattern")
-    String commentPattern;
+    private final String commentPattern;
+
+    public String getCommentPattern() {
+        return commentPattern;
+    }
 
     /**
      * A regular expression to be used by data discovery for matching column data values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataPattern")
-    String dataPattern;
+    private final String dataPattern;
+
+    public String getDataPattern() {
+        return dataPattern;
+    }
 
     /**
      * The search type indicating how the column name, comment and data patterns should be used by data discovery.
@@ -225,14 +236,82 @@ public class UpdateSensitiveTypePatternDetails extends UpdateSensitiveTypeDetail
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchType")
-    SensitiveTypePattern.SearchType searchType;
+    private final SensitiveTypePattern.SearchType searchType;
+
+    public SensitiveTypePattern.SearchType getSearchType() {
+        return searchType;
+    }
 
     /**
      * The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMaskingFormatId")
-    String defaultMaskingFormatId;
+    private final String defaultMaskingFormatId;
+
+    public String getDefaultMaskingFormatId() {
+        return defaultMaskingFormatId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateSensitiveTypePatternDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", namePattern=").append(String.valueOf(this.namePattern));
+        sb.append(", commentPattern=").append(String.valueOf(this.commentPattern));
+        sb.append(", dataPattern=").append(String.valueOf(this.dataPattern));
+        sb.append(", searchType=").append(String.valueOf(this.searchType));
+        sb.append(", defaultMaskingFormatId=").append(String.valueOf(this.defaultMaskingFormatId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSensitiveTypePatternDetails)) {
+            return false;
+        }
+
+        UpdateSensitiveTypePatternDetails other = (UpdateSensitiveTypePatternDetails) o;
+        return java.util.Objects.equals(this.namePattern, other.namePattern)
+                && java.util.Objects.equals(this.commentPattern, other.commentPattern)
+                && java.util.Objects.equals(this.dataPattern, other.dataPattern)
+                && java.util.Objects.equals(this.searchType, other.searchType)
+                && java.util.Objects.equals(
+                        this.defaultMaskingFormatId, other.defaultMaskingFormatId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.namePattern == null ? 43 : this.namePattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.commentPattern == null ? 43 : this.commentPattern.hashCode());
+        result = (result * PRIME) + (this.dataPattern == null ? 43 : this.dataPattern.hashCode());
+        result = (result * PRIME) + (this.searchType == null ? 43 : this.searchType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultMaskingFormatId == null
+                                ? 43
+                                : this.defaultMaskingFormatId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

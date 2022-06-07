@@ -9,14 +9,6 @@ import com.oracle.bmc.datalabelingservice.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/UpdateDatasetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDatasetRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateDatasetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datalabelingservice.model.UpdateDatasetDetails> {
@@ -26,11 +18,17 @@ public class UpdateDatasetRequest
      */
     private String datasetId;
 
+    public String getDatasetId() {
+        return datasetId;
+    }
     /**
      * Details for updating a Dataset.
      */
     private com.oracle.bmc.datalabelingservice.model.UpdateDatasetDetails updateDatasetDetails;
 
+    public com.oracle.bmc.datalabelingservice.model.UpdateDatasetDetails getUpdateDatasetDetails() {
+        return updateDatasetDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -41,10 +39,17 @@ public class UpdateDatasetRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +68,58 @@ public class UpdateDatasetRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String datasetId = null;
+
+        /**
+         * Unique Dataset OCID
+         * @return this builder instance
+         */
+        public Builder datasetId(String datasetId) {
+            this.datasetId = datasetId;
+            return this;
+        }
+
+        private com.oracle.bmc.datalabelingservice.model.UpdateDatasetDetails updateDatasetDetails =
+                null;
+
+        /**
+         * Details for updating a Dataset.
+         * @return this builder instance
+         */
+        public Builder updateDatasetDetails(
+                com.oracle.bmc.datalabelingservice.model.UpdateDatasetDetails
+                        updateDatasetDetails) {
+            this.updateDatasetDetails = updateDatasetDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +185,83 @@ public class UpdateDatasetRequest
             updateDatasetDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateDatasetRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateDatasetRequest
+         */
+        public UpdateDatasetRequest buildWithoutInvocationCallback() {
+            UpdateDatasetRequest request = new UpdateDatasetRequest();
+            request.datasetId = datasetId;
+            request.updateDatasetDetails = updateDatasetDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateDatasetRequest(datasetId, updateDatasetDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .datasetId(datasetId)
+                .updateDatasetDetails(updateDatasetDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",datasetId=").append(String.valueOf(this.datasetId));
+        sb.append(",updateDatasetDetails=").append(String.valueOf(this.updateDatasetDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDatasetRequest)) {
+            return false;
+        }
+
+        UpdateDatasetRequest other = (UpdateDatasetRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.datasetId, other.datasetId)
+                && java.util.Objects.equals(this.updateDatasetDetails, other.updateDatasetDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.datasetId == null ? 43 : this.datasetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateDatasetDetails == null
+                                ? 43
+                                : this.updateDatasetDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

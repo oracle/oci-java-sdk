@@ -26,22 +26,17 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AddHttpResponseHeaderRule.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "action"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AddHttpResponseHeaderRule extends Rule {
+public final class AddHttpResponseHeaderRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("header")
         private String header;
@@ -86,6 +81,10 @@ public class AddHttpResponseHeaderRule extends Rule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public AddHttpResponseHeaderRule(String header, String value) {
         super();
@@ -100,7 +99,11 @@ public class AddHttpResponseHeaderRule extends Rule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("header")
-    String header;
+    private final String header;
+
+    public String getHeader() {
+        return header;
+    }
 
     /**
      * A header value that conforms to RFC 7230.
@@ -112,8 +115,56 @@ public class AddHttpResponseHeaderRule extends Rule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AddHttpResponseHeaderRule(");
+        sb.append("super=").append(super.toString());
+        sb.append(", header=").append(String.valueOf(this.header));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AddHttpResponseHeaderRule)) {
+            return false;
+        }
+
+        AddHttpResponseHeaderRule other = (AddHttpResponseHeaderRule) o;
+        return java.util.Objects.equals(this.header, other.header)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.header == null ? 43 : this.header.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

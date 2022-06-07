@@ -17,16 +17,49 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateWaasPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateWaasPolicyDetails {
+public final class CreateWaasPolicyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "displayName",
+        "domain",
+        "additionalDomains",
+        "origins",
+        "originGroups",
+        "policyConfig",
+        "wafConfig",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateWaasPolicyDetails(
+            String compartmentId,
+            String displayName,
+            String domain,
+            java.util.List<String> additionalDomains,
+            java.util.Map<String, Origin> origins,
+            java.util.Map<String, OriginGroup> originGroups,
+            PolicyConfig policyConfig,
+            WafConfigDetails wafConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.domain = domain;
+        this.additionalDomains = additionalDomains;
+        this.origins = origins;
+        this.originGroups = originGroups;
+        this.policyConfig = policyConfig;
+        this.wafConfig = wafConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -165,48 +198,84 @@ public class CreateWaasPolicyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The web application domain that the WAAS policy protects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    String domain;
+    private final String domain;
+
+    public String getDomain() {
+        return domain;
+    }
 
     /**
      * An array of additional domains for the specified web application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDomains")
-    java.util.List<String> additionalDomains;
+    private final java.util.List<String> additionalDomains;
+
+    public java.util.List<String> getAdditionalDomains() {
+        return additionalDomains;
+    }
 
     /**
      * A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origins")
-    java.util.Map<String, Origin> origins;
+    private final java.util.Map<String, Origin> origins;
+
+    public java.util.Map<String, Origin> getOrigins() {
+        return origins;
+    }
 
     /**
      * The map of origin groups and their keys used to associate origins to the {@code wafConfig}. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
      * To add additional origins to your WAAS policy, update the {@code origins} field of a {@code UpdateWaasPolicy} request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originGroups")
-    java.util.Map<String, OriginGroup> originGroups;
+    private final java.util.Map<String, OriginGroup> originGroups;
+
+    public java.util.Map<String, OriginGroup> getOriginGroups() {
+        return originGroups;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("policyConfig")
-    PolicyConfig policyConfig;
+    private final PolicyConfig policyConfig;
+
+    public PolicyConfig getPolicyConfig() {
+        return policyConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("wafConfig")
-    WafConfigDetails wafConfig;
+    private final WafConfigDetails wafConfig;
+
+    public WafConfigDetails getWafConfig() {
+        return wafConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -216,7 +285,11 @@ public class CreateWaasPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -226,8 +299,82 @@ public class CreateWaasPolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateWaasPolicyDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", domain=").append(String.valueOf(this.domain));
+        sb.append(", additionalDomains=").append(String.valueOf(this.additionalDomains));
+        sb.append(", origins=").append(String.valueOf(this.origins));
+        sb.append(", originGroups=").append(String.valueOf(this.originGroups));
+        sb.append(", policyConfig=").append(String.valueOf(this.policyConfig));
+        sb.append(", wafConfig=").append(String.valueOf(this.wafConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateWaasPolicyDetails)) {
+            return false;
+        }
+
+        CreateWaasPolicyDetails other = (CreateWaasPolicyDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.domain, other.domain)
+                && java.util.Objects.equals(this.additionalDomains, other.additionalDomains)
+                && java.util.Objects.equals(this.origins, other.origins)
+                && java.util.Objects.equals(this.originGroups, other.originGroups)
+                && java.util.Objects.equals(this.policyConfig, other.policyConfig)
+                && java.util.Objects.equals(this.wafConfig, other.wafConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalDomains == null ? 43 : this.additionalDomains.hashCode());
+        result = (result * PRIME) + (this.origins == null ? 43 : this.origins.hashCode());
+        result = (result * PRIME) + (this.originGroups == null ? 43 : this.originGroups.hashCode());
+        result = (result * PRIME) + (this.policyConfig == null ? 43 : this.policyConfig.hashCode());
+        result = (result * PRIME) + (this.wafConfig == null ? 43 : this.wafConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

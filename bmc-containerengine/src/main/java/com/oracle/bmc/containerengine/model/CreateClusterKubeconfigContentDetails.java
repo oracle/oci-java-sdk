@@ -15,16 +15,22 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateClusterKubeconfigContentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateClusterKubeconfigContentDetails {
+public final class CreateClusterKubeconfigContentDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"tokenVersion", "expiration", "endpoint"})
+    public CreateClusterKubeconfigContentDetails(
+            String tokenVersion, Integer expiration, Endpoint endpoint) {
+        super();
+        this.tokenVersion = tokenVersion;
+        this.expiration = expiration;
+        this.endpoint = endpoint;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tokenVersion")
         private String tokenVersion;
@@ -82,19 +88,32 @@ public class CreateClusterKubeconfigContentDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The version of the kubeconfig token. Supported value 2.0.0
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tokenVersion")
-    String tokenVersion;
+    private final String tokenVersion;
+
+    public String getTokenVersion() {
+        return tokenVersion;
+    }
 
     /**
      * Deprecated. This field is no longer used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expiration")
-    Integer expiration;
+    private final Integer expiration;
+
+    public Integer getExpiration() {
+        return expiration;
+    }
+
     /**
      * The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
      **/
@@ -136,8 +155,57 @@ public class CreateClusterKubeconfigContentDetails {
      * The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
-    Endpoint endpoint;
+    private final Endpoint endpoint;
+
+    public Endpoint getEndpoint() {
+        return endpoint;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateClusterKubeconfigContentDetails(");
+        sb.append("tokenVersion=").append(String.valueOf(this.tokenVersion));
+        sb.append(", expiration=").append(String.valueOf(this.expiration));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateClusterKubeconfigContentDetails)) {
+            return false;
+        }
+
+        CreateClusterKubeconfigContentDetails other = (CreateClusterKubeconfigContentDetails) o;
+        return java.util.Objects.equals(this.tokenVersion, other.tokenVersion)
+                && java.util.Objects.equals(this.expiration, other.expiration)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tokenVersion == null ? 43 : this.tokenVersion.hashCode());
+        result = (result * PRIME) + (this.expiration == null ? 43 : this.expiration.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,19 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlPlanInsights.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlPlanInsights {
+public final class SqlPlanInsights {
+    @Deprecated
+    @java.beans.ConstructorProperties({"text", "value", "category"})
+    public SqlPlanInsights(String text, Long value, String category) {
+        super();
+        this.text = text;
+        this.value = value;
+        this.category = category;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
@@ -76,6 +81,10 @@ public class SqlPlanInsights {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * SQL Plan Insight text.
      * For example {@code Number of Plans Used}, {@code Most Executed Plan},
@@ -85,22 +94,79 @@ public class SqlPlanInsights {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
-    String text;
+    private final String text;
+
+    public String getText() {
+        return text;
+    }
 
     /**
      * SQL execution plan hash value for a given insight. For example {@code Most Executed Plan} insight will have value as "3975467901"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    Long value;
+    private final Long value;
+
+    public Long getValue() {
+        return value;
+    }
 
     /**
      * SQL Insight category. For example PLANS_USED, MOST_EXECUTED, BEST_PERFORMER, WORST_PERFORMER, MOST_CPU or MOST_IO.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    String category;
+    private final String category;
+
+    public String getCategory() {
+        return category;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlPlanInsights(");
+        sb.append("text=").append(String.valueOf(this.text));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlPlanInsights)) {
+            return false;
+        }
+
+        SqlPlanInsights other = (SqlPlanInsights) o;
+        return java.util.Objects.equals(this.text, other.text)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

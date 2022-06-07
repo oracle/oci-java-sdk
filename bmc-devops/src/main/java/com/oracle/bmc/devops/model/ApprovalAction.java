@@ -15,14 +15,19 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApprovalAction.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApprovalAction {
+public final class ApprovalAction {
+    @Deprecated
+    @java.beans.ConstructorProperties({"subjectId", "action", "reason"})
+    public ApprovalAction(String subjectId, Action action, String reason) {
+        super();
+        this.subjectId = subjectId;
+        this.action = action;
+        this.reason = reason;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
         private String subjectId;
@@ -77,15 +82,23 @@ public class ApprovalAction {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The subject ID of the user who approves or disapproves a DevOps deployment stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
-    String subjectId;
+    private final String subjectId;
+
+    public String getSubjectId() {
+        return subjectId;
+    }
+
     /**
      * The action of the user on the DevOps deployment stage.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Approve("APPROVE"),
         Reject("REJECT"),
@@ -95,6 +108,8 @@ public class ApprovalAction {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -132,14 +147,67 @@ public class ApprovalAction {
      * The action of the user on the DevOps deployment stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * The reason for approving or rejecting the deployment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
-    String reason;
+    private final String reason;
+
+    public String getReason() {
+        return reason;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApprovalAction(");
+        sb.append("subjectId=").append(String.valueOf(this.subjectId));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", reason=").append(String.valueOf(this.reason));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApprovalAction)) {
+            return false;
+        }
+
+        ApprovalAction other = (ApprovalAction) o;
+        return java.util.Objects.equals(this.subjectId, other.subjectId)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.reason, other.reason)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.subjectId == null ? 43 : this.subjectId.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.reason == null ? 43 : this.reason.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

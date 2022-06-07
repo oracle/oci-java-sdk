@@ -15,16 +15,67 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScaledBlockchainPlatformPreview.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScaledBlockchainPlatformPreview {
+public final class ScaledBlockchainPlatformPreview {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "compartmentId",
+        "description",
+        "computeShape",
+        "storageSizeInTBs",
+        "storageSizeInTBsPostScaling",
+        "componentDetails",
+        "replicas",
+        "componentDetailsPostScaling",
+        "replicasPostScaling",
+        "hostOcpuUtilizationInfo",
+        "hostOcpuUtilizationInfoPostScaling",
+        "newVmCount",
+        "meteringPreview",
+        "scalePayload"
+    })
+    public ScaledBlockchainPlatformPreview(
+            String id,
+            String displayName,
+            String compartmentId,
+            String description,
+            String computeShape,
+            Double storageSizeInTBs,
+            Double storageSizeInTBsPostScaling,
+            BlockchainPlatformComponentDetails componentDetails,
+            ReplicaDetails replicas,
+            BlockchainPlatformComponentDetails componentDetailsPostScaling,
+            ReplicaDetails replicasPostScaling,
+            java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo,
+            java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfoPostScaling,
+            Integer newVmCount,
+            ScaledPlatformMeteringPreview meteringPreview,
+            ScaleBlockchainPlatformDetails scalePayload) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.description = description;
+        this.computeShape = computeShape;
+        this.storageSizeInTBs = storageSizeInTBs;
+        this.storageSizeInTBsPostScaling = storageSizeInTBsPostScaling;
+        this.componentDetails = componentDetails;
+        this.replicas = replicas;
+        this.componentDetailsPostScaling = componentDetailsPostScaling;
+        this.replicasPostScaling = replicasPostScaling;
+        this.hostOcpuUtilizationInfo = hostOcpuUtilizationInfo;
+        this.hostOcpuUtilizationInfoPostScaling = hostOcpuUtilizationInfoPostScaling;
+        this.newVmCount = newVmCount;
+        this.meteringPreview = meteringPreview;
+        this.scalePayload = scalePayload;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -232,84 +283,273 @@ public class ScaledBlockchainPlatformPreview {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * unique identifier that is immutable on creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Platform Instance Display name, can be renamed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Compartment Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Platform Instance Description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
-    String computeShape;
+    private final String computeShape;
+
+    public String getComputeShape() {
+        return computeShape;
+    }
 
     /**
      * Storage size in TBs
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
-    Double storageSizeInTBs;
+    private final Double storageSizeInTBs;
+
+    public Double getStorageSizeInTBs() {
+        return storageSizeInTBs;
+    }
 
     /**
      * Storage size in TBs post scaling
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBsPostScaling")
-    Double storageSizeInTBsPostScaling;
+    private final Double storageSizeInTBsPostScaling;
+
+    public Double getStorageSizeInTBsPostScaling() {
+        return storageSizeInTBsPostScaling;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("componentDetails")
-    BlockchainPlatformComponentDetails componentDetails;
+    private final BlockchainPlatformComponentDetails componentDetails;
+
+    public BlockchainPlatformComponentDetails getComponentDetails() {
+        return componentDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("replicas")
-    ReplicaDetails replicas;
+    private final ReplicaDetails replicas;
+
+    public ReplicaDetails getReplicas() {
+        return replicas;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("componentDetailsPostScaling")
-    BlockchainPlatformComponentDetails componentDetailsPostScaling;
+    private final BlockchainPlatformComponentDetails componentDetailsPostScaling;
+
+    public BlockchainPlatformComponentDetails getComponentDetailsPostScaling() {
+        return componentDetailsPostScaling;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("replicasPostScaling")
-    ReplicaDetails replicasPostScaling;
+    private final ReplicaDetails replicasPostScaling;
+
+    public ReplicaDetails getReplicasPostScaling() {
+        return replicasPostScaling;
+    }
 
     /**
      * List of OcpuUtilization for all hosts
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuUtilizationInfo")
-    java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo;
+    private final java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo;
+
+    public java.util.List<OcpuUtilizationInfo> getHostOcpuUtilizationInfo() {
+        return hostOcpuUtilizationInfo;
+    }
 
     /**
      * List of OcpuUtilization for all hosts after scaling
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuUtilizationInfoPostScaling")
-    java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfoPostScaling;
+    private final java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfoPostScaling;
+
+    public java.util.List<OcpuUtilizationInfo> getHostOcpuUtilizationInfoPostScaling() {
+        return hostOcpuUtilizationInfoPostScaling;
+    }
 
     /**
      * Number of new VMs that would be created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newVmCount")
-    Integer newVmCount;
+    private final Integer newVmCount;
+
+    public Integer getNewVmCount() {
+        return newVmCount;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("meteringPreview")
-    ScaledPlatformMeteringPreview meteringPreview;
+    private final ScaledPlatformMeteringPreview meteringPreview;
+
+    public ScaledPlatformMeteringPreview getMeteringPreview() {
+        return meteringPreview;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("scalePayload")
-    ScaleBlockchainPlatformDetails scalePayload;
+    private final ScaleBlockchainPlatformDetails scalePayload;
+
+    public ScaleBlockchainPlatformDetails getScalePayload() {
+        return scalePayload;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScaledBlockchainPlatformPreview(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", computeShape=").append(String.valueOf(this.computeShape));
+        sb.append(", storageSizeInTBs=").append(String.valueOf(this.storageSizeInTBs));
+        sb.append(", storageSizeInTBsPostScaling=")
+                .append(String.valueOf(this.storageSizeInTBsPostScaling));
+        sb.append(", componentDetails=").append(String.valueOf(this.componentDetails));
+        sb.append(", replicas=").append(String.valueOf(this.replicas));
+        sb.append(", componentDetailsPostScaling=")
+                .append(String.valueOf(this.componentDetailsPostScaling));
+        sb.append(", replicasPostScaling=").append(String.valueOf(this.replicasPostScaling));
+        sb.append(", hostOcpuUtilizationInfo=")
+                .append(String.valueOf(this.hostOcpuUtilizationInfo));
+        sb.append(", hostOcpuUtilizationInfoPostScaling=")
+                .append(String.valueOf(this.hostOcpuUtilizationInfoPostScaling));
+        sb.append(", newVmCount=").append(String.valueOf(this.newVmCount));
+        sb.append(", meteringPreview=").append(String.valueOf(this.meteringPreview));
+        sb.append(", scalePayload=").append(String.valueOf(this.scalePayload));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScaledBlockchainPlatformPreview)) {
+            return false;
+        }
+
+        ScaledBlockchainPlatformPreview other = (ScaledBlockchainPlatformPreview) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.computeShape, other.computeShape)
+                && java.util.Objects.equals(this.storageSizeInTBs, other.storageSizeInTBs)
+                && java.util.Objects.equals(
+                        this.storageSizeInTBsPostScaling, other.storageSizeInTBsPostScaling)
+                && java.util.Objects.equals(this.componentDetails, other.componentDetails)
+                && java.util.Objects.equals(this.replicas, other.replicas)
+                && java.util.Objects.equals(
+                        this.componentDetailsPostScaling, other.componentDetailsPostScaling)
+                && java.util.Objects.equals(this.replicasPostScaling, other.replicasPostScaling)
+                && java.util.Objects.equals(
+                        this.hostOcpuUtilizationInfo, other.hostOcpuUtilizationInfo)
+                && java.util.Objects.equals(
+                        this.hostOcpuUtilizationInfoPostScaling,
+                        other.hostOcpuUtilizationInfoPostScaling)
+                && java.util.Objects.equals(this.newVmCount, other.newVmCount)
+                && java.util.Objects.equals(this.meteringPreview, other.meteringPreview)
+                && java.util.Objects.equals(this.scalePayload, other.scalePayload)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.computeShape == null ? 43 : this.computeShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeInTBs == null ? 43 : this.storageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeInTBsPostScaling == null
+                                ? 43
+                                : this.storageSizeInTBsPostScaling.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.componentDetails == null ? 43 : this.componentDetails.hashCode());
+        result = (result * PRIME) + (this.replicas == null ? 43 : this.replicas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.componentDetailsPostScaling == null
+                                ? 43
+                                : this.componentDetailsPostScaling.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicasPostScaling == null
+                                ? 43
+                                : this.replicasPostScaling.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostOcpuUtilizationInfo == null
+                                ? 43
+                                : this.hostOcpuUtilizationInfo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostOcpuUtilizationInfoPostScaling == null
+                                ? 43
+                                : this.hostOcpuUtilizationInfoPostScaling.hashCode());
+        result = (result * PRIME) + (this.newVmCount == null ? 43 : this.newVmCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.meteringPreview == null ? 43 : this.meteringPreview.hashCode());
+        result = (result * PRIME) + (this.scalePayload == null ? 43 : this.scalePayload.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

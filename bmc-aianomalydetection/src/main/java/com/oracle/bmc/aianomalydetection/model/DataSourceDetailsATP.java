@@ -15,22 +15,17 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DataSourceDetailsATP.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "dataSourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataSourceDetailsATP extends DataSourceDetails {
+public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecretId")
         private String walletPasswordSecretId;
@@ -179,6 +174,10 @@ public class DataSourceDetailsATP extends DataSourceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DataSourceDetailsATP(
             String walletPasswordSecretId,
@@ -210,68 +209,214 @@ public class DataSourceDetailsATP extends DataSourceDetails {
      * wallet password Secret ID in String format
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecretId")
-    String walletPasswordSecretId;
+    private final String walletPasswordSecretId;
+
+    public String getWalletPasswordSecretId() {
+        return walletPasswordSecretId;
+    }
 
     /**
      * atp db user name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("atpUserName")
-    String atpUserName;
+    private final String atpUserName;
+
+    public String getAtpUserName() {
+        return atpUserName;
+    }
 
     /**
      * atp db password Secret Id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("atpPasswordSecretId")
-    String atpPasswordSecretId;
+    private final String atpPasswordSecretId;
+
+    public String getAtpPasswordSecretId() {
+        return atpPasswordSecretId;
+    }
 
     /**
      * OCID of the secret containing the containers certificates of ATP wallet
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cwalletFileSecretId")
-    String cwalletFileSecretId;
+    private final String cwalletFileSecretId;
+
+    public String getCwalletFileSecretId() {
+        return cwalletFileSecretId;
+    }
 
     /**
      * OCID of the secret containing the PDB'S certificates of ATP wallet
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ewalletFileSecretId")
-    String ewalletFileSecretId;
+    private final String ewalletFileSecretId;
+
+    public String getEwalletFileSecretId() {
+        return ewalletFileSecretId;
+    }
 
     /**
      * OCID of the secret containing Keystore.jks file of the ATP wallet
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreFileSecretId")
-    String keyStoreFileSecretId;
+    private final String keyStoreFileSecretId;
+
+    public String getKeyStoreFileSecretId() {
+        return keyStoreFileSecretId;
+    }
 
     /**
      * OCID of the secret that contains jdbc properties file of ATP wallet
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ojdbcFileSecretId")
-    String ojdbcFileSecretId;
+    private final String ojdbcFileSecretId;
+
+    public String getOjdbcFileSecretId() {
+        return ojdbcFileSecretId;
+    }
 
     /**
      * OCID of the secret that contains the tnsnames file of ATP wallet
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tnsnamesFileSecretId")
-    String tnsnamesFileSecretId;
+    private final String tnsnamesFileSecretId;
+
+    public String getTnsnamesFileSecretId() {
+        return tnsnamesFileSecretId;
+    }
 
     /**
      * OCID of the secret containing truststore.jks file of the ATP wallet
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("truststoreFileSecretId")
-    String truststoreFileSecretId;
+    private final String truststoreFileSecretId;
+
+    public String getTruststoreFileSecretId() {
+        return truststoreFileSecretId;
+    }
 
     /**
      * atp database name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
-    String databaseName;
+    private final String databaseName;
+
+    public String getDatabaseName() {
+        return databaseName;
+    }
 
     /**
      * atp database table name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
-    String tableName;
+    private final String tableName;
+
+    public String getTableName() {
+        return tableName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataSourceDetailsATP(");
+        sb.append("super=").append(super.toString());
+        sb.append(", walletPasswordSecretId=").append(String.valueOf(this.walletPasswordSecretId));
+        sb.append(", atpUserName=").append(String.valueOf(this.atpUserName));
+        sb.append(", atpPasswordSecretId=").append(String.valueOf(this.atpPasswordSecretId));
+        sb.append(", cwalletFileSecretId=").append(String.valueOf(this.cwalletFileSecretId));
+        sb.append(", ewalletFileSecretId=").append(String.valueOf(this.ewalletFileSecretId));
+        sb.append(", keyStoreFileSecretId=").append(String.valueOf(this.keyStoreFileSecretId));
+        sb.append(", ojdbcFileSecretId=").append(String.valueOf(this.ojdbcFileSecretId));
+        sb.append(", tnsnamesFileSecretId=").append(String.valueOf(this.tnsnamesFileSecretId));
+        sb.append(", truststoreFileSecretId=").append(String.valueOf(this.truststoreFileSecretId));
+        sb.append(", databaseName=").append(String.valueOf(this.databaseName));
+        sb.append(", tableName=").append(String.valueOf(this.tableName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataSourceDetailsATP)) {
+            return false;
+        }
+
+        DataSourceDetailsATP other = (DataSourceDetailsATP) o;
+        return java.util.Objects.equals(this.walletPasswordSecretId, other.walletPasswordSecretId)
+                && java.util.Objects.equals(this.atpUserName, other.atpUserName)
+                && java.util.Objects.equals(this.atpPasswordSecretId, other.atpPasswordSecretId)
+                && java.util.Objects.equals(this.cwalletFileSecretId, other.cwalletFileSecretId)
+                && java.util.Objects.equals(this.ewalletFileSecretId, other.ewalletFileSecretId)
+                && java.util.Objects.equals(this.keyStoreFileSecretId, other.keyStoreFileSecretId)
+                && java.util.Objects.equals(this.ojdbcFileSecretId, other.ojdbcFileSecretId)
+                && java.util.Objects.equals(this.tnsnamesFileSecretId, other.tnsnamesFileSecretId)
+                && java.util.Objects.equals(
+                        this.truststoreFileSecretId, other.truststoreFileSecretId)
+                && java.util.Objects.equals(this.databaseName, other.databaseName)
+                && java.util.Objects.equals(this.tableName, other.tableName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.walletPasswordSecretId == null
+                                ? 43
+                                : this.walletPasswordSecretId.hashCode());
+        result = (result * PRIME) + (this.atpUserName == null ? 43 : this.atpUserName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.atpPasswordSecretId == null
+                                ? 43
+                                : this.atpPasswordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cwalletFileSecretId == null
+                                ? 43
+                                : this.cwalletFileSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ewalletFileSecretId == null
+                                ? 43
+                                : this.ewalletFileSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreFileSecretId == null
+                                ? 43
+                                : this.keyStoreFileSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ojdbcFileSecretId == null ? 43 : this.ojdbcFileSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tnsnamesFileSecretId == null
+                                ? 43
+                                : this.tnsnamesFileSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.truststoreFileSecretId == null
+                                ? 43
+                                : this.truststoreFileSecretId.hashCode());
+        result = (result * PRIME) + (this.databaseName == null ? 43 : this.databaseName.hashCode());
+        result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

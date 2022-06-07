@@ -15,16 +15,40 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CachingRuleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CachingRuleSummary {
+public final class CachingRuleSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "name",
+        "action",
+        "cachingDuration",
+        "isClientCachingEnabled",
+        "clientCachingDuration",
+        "criteria"
+    })
+    public CachingRuleSummary(
+            String key,
+            String name,
+            Action action,
+            String cachingDuration,
+            Boolean isClientCachingEnabled,
+            String clientCachingDuration,
+            java.util.List<CachingRuleCriteria> criteria) {
+        super();
+        this.key = key;
+        this.name = name;
+        this.action = action;
+        this.cachingDuration = cachingDuration;
+        this.isClientCachingEnabled = isClientCachingEnabled;
+        this.clientCachingDuration = clientCachingDuration;
+        this.criteria = criteria;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -129,24 +153,36 @@ public class CachingRuleSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key for the caching rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The name of the caching rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The action to take when the criteria of a caching rule are met.
      * - **CACHE:** Caches requested content when the criteria of the rule are met.
      * <p>
      * - **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Cache("CACHE"),
         BypassCache("BYPASS_CACHE"),
@@ -156,6 +192,8 @@ public class CachingRuleSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -196,35 +234,123 @@ public class CachingRuleSummary {
      * - **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is {@code 99}. Mixing of multiple units is not supported. Only applies when the {@code action} is set to {@code CACHE}.
      * Example: {@code PT1H}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cachingDuration")
-    String cachingDuration;
+    private final String cachingDuration;
+
+    public String getCachingDuration() {
+        return cachingDuration;
+    }
 
     /**
      * Enables or disables client caching.
      * Browsers use the {@code Cache-Control} header value for caching content locally in the browser. This setting overrides the addition of a {@code Cache-Control} header in responses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isClientCachingEnabled")
-    Boolean isClientCachingEnabled;
+    private final Boolean isClientCachingEnabled;
+
+    public Boolean getIsClientCachingEnabled() {
+        return isClientCachingEnabled;
+    }
 
     /**
      * The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is {@code 99}. Mixing of multiple units is not supported. Only applies when the {@code action} is set to {@code CACHE}.
      * Example: {@code PT1H}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientCachingDuration")
-    String clientCachingDuration;
+    private final String clientCachingDuration;
+
+    public String getClientCachingDuration() {
+        return clientCachingDuration;
+    }
 
     /**
      * The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criteria")
-    java.util.List<CachingRuleCriteria> criteria;
+    private final java.util.List<CachingRuleCriteria> criteria;
+
+    public java.util.List<CachingRuleCriteria> getCriteria() {
+        return criteria;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CachingRuleSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", cachingDuration=").append(String.valueOf(this.cachingDuration));
+        sb.append(", isClientCachingEnabled=").append(String.valueOf(this.isClientCachingEnabled));
+        sb.append(", clientCachingDuration=").append(String.valueOf(this.clientCachingDuration));
+        sb.append(", criteria=").append(String.valueOf(this.criteria));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CachingRuleSummary)) {
+            return false;
+        }
+
+        CachingRuleSummary other = (CachingRuleSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.cachingDuration, other.cachingDuration)
+                && java.util.Objects.equals(
+                        this.isClientCachingEnabled, other.isClientCachingEnabled)
+                && java.util.Objects.equals(this.clientCachingDuration, other.clientCachingDuration)
+                && java.util.Objects.equals(this.criteria, other.criteria)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cachingDuration == null ? 43 : this.cachingDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isClientCachingEnabled == null
+                                ? 43
+                                : this.isClientCachingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientCachingDuration == null
+                                ? 43
+                                : this.clientCachingDuration.hashCode());
+        result = (result * PRIME) + (this.criteria == null ? 43 : this.criteria.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

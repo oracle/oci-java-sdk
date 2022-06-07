@@ -16,16 +16,19 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CancellationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CancellationDetails {
+public final class CancellationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isForced"})
+    public CancellationDetails(Boolean isForced) {
+        super();
+        this.isForced = isForced;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isForced")
         private Boolean isForced;
@@ -61,6 +64,10 @@ public class CancellationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Indicates whether a forced cancellation was requested for the job while it was running.
      * A forced cancellation can result in an incorrect state file.
@@ -68,8 +75,51 @@ public class CancellationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForced")
-    Boolean isForced;
+    private final Boolean isForced;
+
+    public Boolean getIsForced() {
+        return isForced;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CancellationDetails(");
+        sb.append("isForced=").append(String.valueOf(this.isForced));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CancellationDetails)) {
+            return false;
+        }
+
+        CancellationDetails other = (CancellationDetails) o;
+        return java.util.Objects.equals(this.isForced, other.isForced)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isForced == null ? 43 : this.isForced.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

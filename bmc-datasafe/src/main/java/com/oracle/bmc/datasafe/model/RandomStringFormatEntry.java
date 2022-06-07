@@ -21,22 +21,17 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RandomStringFormatEntry.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RandomStringFormatEntry extends FormatEntry {
+public final class RandomStringFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -94,6 +89,10 @@ public class RandomStringFormatEntry extends FormatEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public RandomStringFormatEntry(String description, Integer startLength, Integer endLength) {
         super(description);
@@ -108,7 +107,11 @@ public class RandomStringFormatEntry extends FormatEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startLength")
-    Integer startLength;
+    private final Integer startLength;
+
+    public Integer getStartLength() {
+        return startLength;
+    }
 
     /**
      * The maximum number of characters the generated strings should have. It can
@@ -117,8 +120,56 @@ public class RandomStringFormatEntry extends FormatEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endLength")
-    Integer endLength;
+    private final Integer endLength;
+
+    public Integer getEndLength() {
+        return endLength;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RandomStringFormatEntry(");
+        sb.append("super=").append(super.toString());
+        sb.append(", startLength=").append(String.valueOf(this.startLength));
+        sb.append(", endLength=").append(String.valueOf(this.endLength));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RandomStringFormatEntry)) {
+            return false;
+        }
+
+        RandomStringFormatEntry other = (RandomStringFormatEntry) o;
+        return java.util.Objects.equals(this.startLength, other.startLength)
+                && java.util.Objects.equals(this.endLength, other.endLength)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.startLength == null ? 43 : this.startLength.hashCode());
+        result = (result * PRIME) + (this.endLength == null ? 43 : this.endLength.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

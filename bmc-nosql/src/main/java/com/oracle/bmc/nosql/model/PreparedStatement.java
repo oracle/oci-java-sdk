@@ -15,16 +15,20 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PreparedStatement.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PreparedStatement {
+public final class PreparedStatement {
+    @Deprecated
+    @java.beans.ConstructorProperties({"statement", "usage"})
+    public PreparedStatement(String statement, RequestUsage usage) {
+        super();
+        this.statement = statement;
+        this.usage = usage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("statement")
         private String statement;
@@ -69,17 +73,71 @@ public class PreparedStatement {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A base64-encoded, compiled and parameterized version of
      * a SQL statement.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statement")
-    String statement;
+    private final String statement;
+
+    public String getStatement() {
+        return statement;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
-    RequestUsage usage;
+    private final RequestUsage usage;
+
+    public RequestUsage getUsage() {
+        return usage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PreparedStatement(");
+        sb.append("statement=").append(String.valueOf(this.statement));
+        sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PreparedStatement)) {
+            return false;
+        }
+
+        PreparedStatement other = (PreparedStatement) o;
+        return java.util.Objects.equals(this.statement, other.statement)
+                && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.statement == null ? 43 : this.statement.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

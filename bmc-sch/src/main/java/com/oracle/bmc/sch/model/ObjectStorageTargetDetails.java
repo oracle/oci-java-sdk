@@ -18,22 +18,17 @@ package com.oracle.bmc.sch.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectStorageTargetDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "kind"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectStorageTargetDetails extends TargetDetails {
+public final class ObjectStorageTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
@@ -116,6 +111,10 @@ public class ObjectStorageTargetDetails extends TargetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ObjectStorageTargetDetails(
             String namespace,
@@ -136,36 +135,120 @@ public class ObjectStorageTargetDetails extends TargetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * The name of the bucket. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    private final String bucketName;
+
+    public String getBucketName() {
+        return bucketName;
+    }
 
     /**
      * The prefix of the objects. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNamePrefix")
-    String objectNamePrefix;
+    private final String objectNamePrefix;
+
+    public String getObjectNamePrefix() {
+        return objectNamePrefix;
+    }
 
     /**
      * The batch rollover size in megabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverSizeInMBs")
-    Integer batchRolloverSizeInMBs;
+    private final Integer batchRolloverSizeInMBs;
+
+    public Integer getBatchRolloverSizeInMBs() {
+        return batchRolloverSizeInMBs;
+    }
 
     /**
      * The batch rollover time in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverTimeInMs")
-    Integer batchRolloverTimeInMs;
+    private final Integer batchRolloverTimeInMs;
+
+    public Integer getBatchRolloverTimeInMs() {
+        return batchRolloverTimeInMs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectStorageTargetDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", objectNamePrefix=").append(String.valueOf(this.objectNamePrefix));
+        sb.append(", batchRolloverSizeInMBs=").append(String.valueOf(this.batchRolloverSizeInMBs));
+        sb.append(", batchRolloverTimeInMs=").append(String.valueOf(this.batchRolloverTimeInMs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectStorageTargetDetails)) {
+            return false;
+        }
+
+        ObjectStorageTargetDetails other = (ObjectStorageTargetDetails) o;
+        return java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.objectNamePrefix, other.objectNamePrefix)
+                && java.util.Objects.equals(
+                        this.batchRolloverSizeInMBs, other.batchRolloverSizeInMBs)
+                && java.util.Objects.equals(this.batchRolloverTimeInMs, other.batchRolloverTimeInMs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectNamePrefix == null ? 43 : this.objectNamePrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.batchRolloverSizeInMBs == null
+                                ? 43
+                                : this.batchRolloverSizeInMBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.batchRolloverTimeInMs == null
+                                ? 43
+                                : this.batchRolloverTimeInMs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

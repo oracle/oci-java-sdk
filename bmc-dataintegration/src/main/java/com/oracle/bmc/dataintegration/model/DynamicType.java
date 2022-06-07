@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DynamicType.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DynamicType extends BaseType {
+public final class DynamicType extends BaseType {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -144,6 +139,10 @@ public class DynamicType extends BaseType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DynamicType(
             String key,
@@ -160,11 +159,65 @@ public class DynamicType extends BaseType {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("typeHandler")
-    DynamicTypeHandler typeHandler;
+    private final DynamicTypeHandler typeHandler;
+
+    public DynamicTypeHandler getTypeHandler() {
+        return typeHandler;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configDefinition")
-    ConfigDefinition configDefinition;
+    private final ConfigDefinition configDefinition;
+
+    public ConfigDefinition getConfigDefinition() {
+        return configDefinition;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DynamicType(");
+        sb.append("super=").append(super.toString());
+        sb.append(", typeHandler=").append(String.valueOf(this.typeHandler));
+        sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DynamicType)) {
+            return false;
+        }
+
+        DynamicType other = (DynamicType) o;
+        return java.util.Objects.equals(this.typeHandler, other.typeHandler)
+                && java.util.Objects.equals(this.configDefinition, other.configDefinition)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.typeHandler == null ? 43 : this.typeHandler.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configDefinition == null ? 43 : this.configDefinition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.licensemanager.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/CreateLicenseRecordExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateLicenseRecordRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateLicenseRecordRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.licensemanager.model.CreateLicenseRecordDetails> {
@@ -27,11 +19,18 @@ public class CreateLicenseRecordRequest
     private com.oracle.bmc.licensemanager.model.CreateLicenseRecordDetails
             createLicenseRecordDetails;
 
+    public com.oracle.bmc.licensemanager.model.CreateLicenseRecordDetails
+            getCreateLicenseRecordDetails() {
+        return createLicenseRecordDetails;
+    }
     /**
      * Unique product license identifier.
      */
     private String productLicenseId;
 
+    public String getProductLicenseId() {
+        return productLicenseId;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -39,6 +38,9 @@ public class CreateLicenseRecordRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
      * risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before
@@ -47,6 +49,10 @@ public class CreateLicenseRecordRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,6 +71,59 @@ public class CreateLicenseRecordRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.licensemanager.model.CreateLicenseRecordDetails
+                createLicenseRecordDetails = null;
+
+        /**
+         * Details needed to create a new license record.
+         * @return this builder instance
+         */
+        public Builder createLicenseRecordDetails(
+                com.oracle.bmc.licensemanager.model.CreateLicenseRecordDetails
+                        createLicenseRecordDetails) {
+            this.createLicenseRecordDetails = createLicenseRecordDetails;
+            return this;
+        }
+
+        private String productLicenseId = null;
+
+        /**
+         * Unique product license identifier.
+         * @return this builder instance
+         */
+        public Builder productLicenseId(String productLicenseId) {
+            this.productLicenseId = productLicenseId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
+         * risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been deleted and purged from the system,
+         * then a retry of the original creation request might be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +189,89 @@ public class CreateLicenseRecordRequest
             createLicenseRecordDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateLicenseRecordRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateLicenseRecordRequest
+         */
+        public CreateLicenseRecordRequest buildWithoutInvocationCallback() {
+            CreateLicenseRecordRequest request = new CreateLicenseRecordRequest();
+            request.createLicenseRecordDetails = createLicenseRecordDetails;
+            request.productLicenseId = productLicenseId;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateLicenseRecordRequest(createLicenseRecordDetails, productLicenseId, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createLicenseRecordDetails(createLicenseRecordDetails)
+                .productLicenseId(productLicenseId)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createLicenseRecordDetails=")
+                .append(String.valueOf(this.createLicenseRecordDetails));
+        sb.append(",productLicenseId=").append(String.valueOf(this.productLicenseId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateLicenseRecordRequest)) {
+            return false;
+        }
+
+        CreateLicenseRecordRequest other = (CreateLicenseRecordRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createLicenseRecordDetails, other.createLicenseRecordDetails)
+                && java.util.Objects.equals(this.productLicenseId, other.productLicenseId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createLicenseRecordDetails == null
+                                ? 43
+                                : this.createLicenseRecordDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.productLicenseId == null ? 43 : this.productLicenseId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

@@ -23,14 +23,77 @@ package com.oracle.bmc.ocvp.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EsxiHost.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EsxiHost {
+public final class EsxiHost {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "sddcId",
+        "compartmentId",
+        "computeInstanceId",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "currentSku",
+        "nextSku",
+        "billingContractEndDate",
+        "failedEsxiHostId",
+        "replacementEsxiHostId",
+        "gracePeriodEndDate",
+        "computeAvailabilityDomain",
+        "hostShapeName",
+        "hostOcpuCount",
+        "capacityReservationId",
+        "freeformTags",
+        "definedTags"
+    })
+    public EsxiHost(
+            String id,
+            String displayName,
+            String sddcId,
+            String compartmentId,
+            String computeInstanceId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            LifecycleStates lifecycleState,
+            Sku currentSku,
+            Sku nextSku,
+            java.util.Date billingContractEndDate,
+            String failedEsxiHostId,
+            String replacementEsxiHostId,
+            java.util.Date gracePeriodEndDate,
+            String computeAvailabilityDomain,
+            String hostShapeName,
+            Float hostOcpuCount,
+            String capacityReservationId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.sddcId = sddcId;
+        this.compartmentId = compartmentId;
+        this.computeInstanceId = computeInstanceId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.currentSku = currentSku;
+        this.nextSku = nextSku;
+        this.billingContractEndDate = billingContractEndDate;
+        this.failedEsxiHostId = failedEsxiHostId;
+        this.replacementEsxiHostId = replacementEsxiHostId;
+        this.gracePeriodEndDate = gracePeriodEndDate;
+        this.computeAvailabilityDomain = computeAvailabilityDomain;
+        this.hostShapeName = hostShapeName;
+        this.hostOcpuCount = hostOcpuCount;
+        this.capacityReservationId = capacityReservationId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -279,12 +342,20 @@ public class EsxiHost {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * A descriptive name for the ESXi host. Does not have to be unique, and it's changeable.
@@ -292,7 +363,11 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC that the
@@ -300,7 +375,11 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sddcId")
-    String sddcId;
+    private final String sddcId;
+
+    public String getSddcId() {
+        return sddcId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
@@ -308,7 +387,11 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * In terms of implementation, an ESXi host is a Compute instance that
@@ -317,7 +400,11 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceId")
-    String computeInstanceId;
+    private final String computeInstanceId;
+
+    public String getComputeInstanceId() {
+        return computeInstanceId;
+    }
 
     /**
      * The date and time the ESXi host was created, in the format defined by
@@ -327,7 +414,11 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the ESXi host was updated, in the format defined by
@@ -335,13 +426,21 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the ESXi host.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The billing option currently used by the ESXi host.
@@ -349,7 +448,11 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
-    Sku currentSku;
+    private final Sku currentSku;
+
+    public Sku getCurrentSku() {
+        return currentSku;
+    }
 
     /**
      * The billing option to switch to after the current billing cycle ends.
@@ -358,7 +461,11 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
-    Sku nextSku;
+    private final Sku nextSku;
+
+    public Sku getNextSku() {
+        return nextSku;
+    }
 
     /**
      * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are different, the value specified in {@code nextSku}
@@ -367,14 +474,22 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
-    java.util.Date billingContractEndDate;
+    private final java.util.Date billingContractEndDate;
+
+    public java.util.Date getBillingContractEndDate() {
+        return billingContractEndDate;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
-    String failedEsxiHostId;
+    private final String failedEsxiHostId;
+
+    public String getFailedEsxiHostId() {
+        return failedEsxiHostId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
@@ -382,7 +497,11 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replacementEsxiHostId")
-    String replacementEsxiHostId;
+    private final String replacementEsxiHostId;
+
+    public String getReplacementEsxiHostId() {
+        return replacementEsxiHostId;
+    }
 
     /**
      * The date and time when the new esxi host should start billing cycle.
@@ -391,14 +510,22 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gracePeriodEndDate")
-    java.util.Date gracePeriodEndDate;
+    private final java.util.Date gracePeriodEndDate;
+
+    public java.util.Date getGracePeriodEndDate() {
+        return gracePeriodEndDate;
+    }
 
     /**
      * The availability domain of the ESXi host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
-    String computeAvailabilityDomain;
+    private final String computeAvailabilityDomain;
+
+    public String getComputeAvailabilityDomain() {
+        return computeAvailabilityDomain;
+    }
 
     /**
      * The compute shape name of the ESXi host.
@@ -406,21 +533,33 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostShapeName")
-    String hostShapeName;
+    private final String hostShapeName;
+
+    public String getHostShapeName() {
+        return hostShapeName;
+    }
 
     /**
      * The OCPU count of the ESXi host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuCount")
-    Float hostOcpuCount;
+    private final Float hostOcpuCount;
+
+    public Float getHostOcpuCount() {
+        return hostOcpuCount;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
-    String capacityReservationId;
+    private final String capacityReservationId;
+
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -430,7 +569,11 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -440,8 +583,143 @@ public class EsxiHost {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EsxiHost(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", sddcId=").append(String.valueOf(this.sddcId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", computeInstanceId=").append(String.valueOf(this.computeInstanceId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", currentSku=").append(String.valueOf(this.currentSku));
+        sb.append(", nextSku=").append(String.valueOf(this.nextSku));
+        sb.append(", billingContractEndDate=").append(String.valueOf(this.billingContractEndDate));
+        sb.append(", failedEsxiHostId=").append(String.valueOf(this.failedEsxiHostId));
+        sb.append(", replacementEsxiHostId=").append(String.valueOf(this.replacementEsxiHostId));
+        sb.append(", gracePeriodEndDate=").append(String.valueOf(this.gracePeriodEndDate));
+        sb.append(", computeAvailabilityDomain=")
+                .append(String.valueOf(this.computeAvailabilityDomain));
+        sb.append(", hostShapeName=").append(String.valueOf(this.hostShapeName));
+        sb.append(", hostOcpuCount=").append(String.valueOf(this.hostOcpuCount));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EsxiHost)) {
+            return false;
+        }
+
+        EsxiHost other = (EsxiHost) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.sddcId, other.sddcId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.computeInstanceId, other.computeInstanceId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.currentSku, other.currentSku)
+                && java.util.Objects.equals(this.nextSku, other.nextSku)
+                && java.util.Objects.equals(
+                        this.billingContractEndDate, other.billingContractEndDate)
+                && java.util.Objects.equals(this.failedEsxiHostId, other.failedEsxiHostId)
+                && java.util.Objects.equals(this.replacementEsxiHostId, other.replacementEsxiHostId)
+                && java.util.Objects.equals(this.gracePeriodEndDate, other.gracePeriodEndDate)
+                && java.util.Objects.equals(
+                        this.computeAvailabilityDomain, other.computeAvailabilityDomain)
+                && java.util.Objects.equals(this.hostShapeName, other.hostShapeName)
+                && java.util.Objects.equals(this.hostOcpuCount, other.hostOcpuCount)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.sddcId == null ? 43 : this.sddcId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeInstanceId == null ? 43 : this.computeInstanceId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.currentSku == null ? 43 : this.currentSku.hashCode());
+        result = (result * PRIME) + (this.nextSku == null ? 43 : this.nextSku.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.billingContractEndDate == null
+                                ? 43
+                                : this.billingContractEndDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failedEsxiHostId == null ? 43 : this.failedEsxiHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replacementEsxiHostId == null
+                                ? 43
+                                : this.replacementEsxiHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.gracePeriodEndDate == null
+                                ? 43
+                                : this.gracePeriodEndDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeAvailabilityDomain == null
+                                ? 43
+                                : this.computeAvailabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostShapeName == null ? 43 : this.hostShapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostOcpuCount == null ? 43 : this.hostOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

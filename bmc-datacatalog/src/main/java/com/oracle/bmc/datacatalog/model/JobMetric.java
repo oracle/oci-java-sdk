@@ -18,14 +18,62 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobMetric.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JobMetric {
+public final class JobMetric {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "description",
+        "jobExecutionKey",
+        "timeInserted",
+        "category",
+        "displayName",
+        "subCategory",
+        "unit",
+        "value",
+        "batchKey",
+        "uri",
+        "timeCreated",
+        "timeUpdated",
+        "createdById",
+        "updatedById"
+    })
+    public JobMetric(
+            String key,
+            String description,
+            String jobExecutionKey,
+            java.util.Date timeInserted,
+            String category,
+            String displayName,
+            String subCategory,
+            String unit,
+            String value,
+            String batchKey,
+            String uri,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String createdById,
+            String updatedById) {
+        super();
+        this.key = key;
+        this.description = description;
+        this.jobExecutionKey = jobExecutionKey;
+        this.timeInserted = timeInserted;
+        this.category = category;
+        this.displayName = displayName;
+        this.subCategory = subCategory;
+        this.unit = unit;
+        this.value = value;
+        this.batchKey = batchKey;
+        this.uri = uri;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.createdById = createdById;
+        this.updatedById = updatedById;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -218,23 +266,39 @@ public class JobMetric {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Key of the job metric that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Detailed description of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The unique key of the parent job execution for which the job metric resource is being created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
-    String jobExecutionKey;
+    private final String jobExecutionKey;
+
+    public String getJobExecutionKey() {
+        return jobExecutionKey;
+    }
 
     /**
      * The time the metric was logged or captured in the system where the job executed.
@@ -242,13 +306,21 @@ public class JobMetric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeInserted")
-    java.util.Date timeInserted;
+    private final java.util.Date timeInserted;
+
+    public java.util.Date getTimeInserted() {
+        return timeInserted;
+    }
 
     /**
      * Category of this metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    String category;
+    private final String category;
+
+    public String getCategory() {
+        return category;
+    }
 
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
@@ -256,37 +328,61 @@ public class JobMetric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Sub category of this metric under the category. Used for aggregating values. May be null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subCategory")
-    String subCategory;
+    private final String subCategory;
+
+    public String getSubCategory() {
+        return subCategory;
+    }
 
     /**
      * Unit of this metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    String unit;
+    private final String unit;
+
+    public String getUnit() {
+        return unit;
+    }
 
     /**
      * Value of this metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
 
     /**
      * Batch key for grouping, may be null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchKey")
-    String batchKey;
+    private final String batchKey;
+
+    public String getBatchKey() {
+        return batchKey;
+    }
 
     /**
      * URI to the job metric instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
 
     /**
      * The date and time the job metric was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -294,28 +390,127 @@ public class JobMetric {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The last time that this metric was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * OCID of the user who created the metric for this job. Usually the executor of the job instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
-    String createdById;
+    private final String createdById;
+
+    public String getCreatedById() {
+        return createdById;
+    }
 
     /**
      * OCID of the user who created the metric for this job. Usually the executor of the job instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
-    String updatedById;
+    private final String updatedById;
+
+    public String getUpdatedById() {
+        return updatedById;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JobMetric(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", jobExecutionKey=").append(String.valueOf(this.jobExecutionKey));
+        sb.append(", timeInserted=").append(String.valueOf(this.timeInserted));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", subCategory=").append(String.valueOf(this.subCategory));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", batchKey=").append(String.valueOf(this.batchKey));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", createdById=").append(String.valueOf(this.createdById));
+        sb.append(", updatedById=").append(String.valueOf(this.updatedById));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JobMetric)) {
+            return false;
+        }
+
+        JobMetric other = (JobMetric) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.jobExecutionKey, other.jobExecutionKey)
+                && java.util.Objects.equals(this.timeInserted, other.timeInserted)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.subCategory, other.subCategory)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.batchKey, other.batchKey)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.createdById, other.createdById)
+                && java.util.Objects.equals(this.updatedById, other.updatedById)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobExecutionKey == null ? 43 : this.jobExecutionKey.hashCode());
+        result = (result * PRIME) + (this.timeInserted == null ? 43 : this.timeInserted.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.subCategory == null ? 43 : this.subCategory.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.batchKey == null ? 43 : this.batchKey.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.createdById == null ? 43 : this.createdById.hashCode());
+        result = (result * PRIME) + (this.updatedById == null ? 43 : this.updatedById.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,21 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HeaderValidationRequestPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HeaderValidationRequestPolicy {
+public final class HeaderValidationRequestPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({"headers", "validationMode"})
+    public HeaderValidationRequestPolicy(
+            java.util.List<HeaderValidationItem> headers, ValidationMode validationMode) {
+        super();
+        this.headers = headers;
+        this.validationMode = validationMode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<HeaderValidationItem> headers;
@@ -70,8 +75,17 @@ public class HeaderValidationRequestPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
-    java.util.List<HeaderValidationItem> headers;
+    private final java.util.List<HeaderValidationItem> headers;
+
+    public java.util.List<HeaderValidationItem> getHeaders() {
+        return headers;
+    }
+
     /**
      * Validation behavior mode.
      * <p>
@@ -130,8 +144,56 @@ public class HeaderValidationRequestPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationMode")
-    ValidationMode validationMode;
+    private final ValidationMode validationMode;
+
+    public ValidationMode getValidationMode() {
+        return validationMode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HeaderValidationRequestPolicy(");
+        sb.append("headers=").append(String.valueOf(this.headers));
+        sb.append(", validationMode=").append(String.valueOf(this.validationMode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HeaderValidationRequestPolicy)) {
+            return false;
+        }
+
+        HeaderValidationRequestPolicy other = (HeaderValidationRequestPolicy) o;
+        return java.util.Objects.equals(this.headers, other.headers)
+                && java.util.Objects.equals(this.validationMode, other.validationMode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.validationMode == null ? 43 : this.validationMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

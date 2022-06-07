@@ -15,14 +15,86 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OdaInstance.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OdaInstance {
+public final class OdaInstance {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "description",
+        "compartmentId",
+        "shapeName",
+        "webAppUrl",
+        "connectorUrl",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "lifecycleSubState",
+        "stateMessage",
+        "freeformTags",
+        "definedTags",
+        "isRoleBasedAccess",
+        "identityDomain",
+        "identityAppGuid",
+        "identityAppConsoleUrl",
+        "importedPackageNames",
+        "importedPackageIds",
+        "attachmentTypes",
+        "attachmentIds",
+        "restrictedOperations"
+    })
+    public OdaInstance(
+            String id,
+            String displayName,
+            String description,
+            String compartmentId,
+            ShapeName shapeName,
+            String webAppUrl,
+            String connectorUrl,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            LifecycleState lifecycleState,
+            LifecycleSubState lifecycleSubState,
+            String stateMessage,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isRoleBasedAccess,
+            String identityDomain,
+            String identityAppGuid,
+            String identityAppConsoleUrl,
+            java.util.List<String> importedPackageNames,
+            java.util.List<String> importedPackageIds,
+            java.util.List<String> attachmentTypes,
+            java.util.List<String> attachmentIds,
+            java.util.List<RestrictedOperation> restrictedOperations) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.shapeName = shapeName;
+        this.webAppUrl = webAppUrl;
+        this.connectorUrl = connectorUrl;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleSubState = lifecycleSubState;
+        this.stateMessage = stateMessage;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.isRoleBasedAccess = isRoleBasedAccess;
+        this.identityDomain = identityDomain;
+        this.identityAppGuid = identityAppGuid;
+        this.identityAppConsoleUrl = identityAppConsoleUrl;
+        this.importedPackageNames = importedPackageNames;
+        this.importedPackageIds = importedPackageIds;
+        this.attachmentTypes = attachmentTypes;
+        this.attachmentIds = attachmentIds;
+        this.restrictedOperations = restrictedOperations;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -305,11 +377,19 @@ public class OdaInstance {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique immutable identifier that was assigned when the instance was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * User-defined name for the Digital Assistant instance. Avoid entering confidential information.
@@ -317,23 +397,35 @@ public class OdaInstance {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the Digital Assistant instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Identifier of the compartment that the instance belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /**
      * Shape or size of the instance.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ShapeName {
         Development("DEVELOPMENT"),
         Production("PRODUCTION"),
@@ -343,6 +435,9 @@ public class OdaInstance {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ShapeName.class);
 
         private final String value;
         private static java.util.Map<String, ShapeName> map;
@@ -380,35 +475,55 @@ public class OdaInstance {
      * Shape or size of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    ShapeName shapeName;
+    private final ShapeName shapeName;
+
+    public ShapeName getShapeName() {
+        return shapeName;
+    }
 
     /**
      * URL for the Digital Assistant web application that's associated with the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("webAppUrl")
-    String webAppUrl;
+    private final String webAppUrl;
+
+    public String getWebAppUrl() {
+        return webAppUrl;
+    }
 
     /**
      * URL for the connector's endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorUrl")
-    String connectorUrl;
+    private final String connectorUrl;
+
+    public String getConnectorUrl() {
+        return connectorUrl;
+    }
 
     /**
      * When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
     /**
      * The current state of the Digital Assistant instance.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -423,6 +538,9 @@ public class OdaInstance {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -460,11 +578,15 @@ public class OdaInstance {
      * The current state of the Digital Assistant instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     /**
      * The current sub-state of the Digital Assistant instance.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleSubState {
         Creating("CREATING"),
         Starting("STARTING"),
@@ -485,6 +607,9 @@ public class OdaInstance {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleSubState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleSubState> map;
@@ -522,7 +647,11 @@ public class OdaInstance {
      * The current sub-state of the Digital Assistant instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
-    LifecycleSubState lifecycleSubState;
+    private final LifecycleSubState lifecycleSubState;
+
+    public LifecycleSubState getLifecycleSubState() {
+        return lifecycleSubState;
+    }
 
     /**
      * A message that describes the current state in more detail.
@@ -530,7 +659,11 @@ public class OdaInstance {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
-    String stateMessage;
+    private final String stateMessage;
+
+    public String getStateMessage() {
+        return stateMessage;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.
@@ -538,7 +671,11 @@ public class OdaInstance {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -546,62 +683,239 @@ public class OdaInstance {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
-    Boolean isRoleBasedAccess;
+    private final Boolean isRoleBasedAccess;
+
+    public Boolean getIsRoleBasedAccess() {
+        return isRoleBasedAccess;
+    }
 
     /**
      * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
-    String identityDomain;
+    private final String identityDomain;
+
+    public String getIdentityDomain() {
+        return identityDomain;
+    }
 
     /**
      * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityAppGuid")
-    String identityAppGuid;
+    private final String identityAppGuid;
+
+    public String getIdentityAppGuid() {
+        return identityAppGuid;
+    }
 
     /**
      * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityAppConsoleUrl")
-    String identityAppConsoleUrl;
+    private final String identityAppConsoleUrl;
+
+    public String getIdentityAppConsoleUrl() {
+        return identityAppConsoleUrl;
+    }
 
     /**
      * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("importedPackageNames")
-    java.util.List<String> importedPackageNames;
+    private final java.util.List<String> importedPackageNames;
+
+    public java.util.List<String> getImportedPackageNames() {
+        return importedPackageNames;
+    }
 
     /**
      * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("importedPackageIds")
-    java.util.List<String> importedPackageIds;
+    private final java.util.List<String> importedPackageIds;
+
+    public java.util.List<String> getImportedPackageIds() {
+        return importedPackageIds;
+    }
 
     /**
      * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentTypes")
-    java.util.List<String> attachmentTypes;
+    private final java.util.List<String> attachmentTypes;
+
+    public java.util.List<String> getAttachmentTypes() {
+        return attachmentTypes;
+    }
 
     /**
      * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentIds")
-    java.util.List<String> attachmentIds;
+    private final java.util.List<String> attachmentIds;
+
+    public java.util.List<String> getAttachmentIds() {
+        return attachmentIds;
+    }
 
     /**
      * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
-    java.util.List<RestrictedOperation> restrictedOperations;
+    private final java.util.List<RestrictedOperation> restrictedOperations;
+
+    public java.util.List<RestrictedOperation> getRestrictedOperations() {
+        return restrictedOperations;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OdaInstance(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", webAppUrl=").append(String.valueOf(this.webAppUrl));
+        sb.append(", connectorUrl=").append(String.valueOf(this.connectorUrl));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleSubState=").append(String.valueOf(this.lifecycleSubState));
+        sb.append(", stateMessage=").append(String.valueOf(this.stateMessage));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isRoleBasedAccess=").append(String.valueOf(this.isRoleBasedAccess));
+        sb.append(", identityDomain=").append(String.valueOf(this.identityDomain));
+        sb.append(", identityAppGuid=").append(String.valueOf(this.identityAppGuid));
+        sb.append(", identityAppConsoleUrl=").append(String.valueOf(this.identityAppConsoleUrl));
+        sb.append(", importedPackageNames=").append(String.valueOf(this.importedPackageNames));
+        sb.append(", importedPackageIds=").append(String.valueOf(this.importedPackageIds));
+        sb.append(", attachmentTypes=").append(String.valueOf(this.attachmentTypes));
+        sb.append(", attachmentIds=").append(String.valueOf(this.attachmentIds));
+        sb.append(", restrictedOperations=").append(String.valueOf(this.restrictedOperations));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OdaInstance)) {
+            return false;
+        }
+
+        OdaInstance other = (OdaInstance) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.webAppUrl, other.webAppUrl)
+                && java.util.Objects.equals(this.connectorUrl, other.connectorUrl)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleSubState, other.lifecycleSubState)
+                && java.util.Objects.equals(this.stateMessage, other.stateMessage)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.isRoleBasedAccess, other.isRoleBasedAccess)
+                && java.util.Objects.equals(this.identityDomain, other.identityDomain)
+                && java.util.Objects.equals(this.identityAppGuid, other.identityAppGuid)
+                && java.util.Objects.equals(this.identityAppConsoleUrl, other.identityAppConsoleUrl)
+                && java.util.Objects.equals(this.importedPackageNames, other.importedPackageNames)
+                && java.util.Objects.equals(this.importedPackageIds, other.importedPackageIds)
+                && java.util.Objects.equals(this.attachmentTypes, other.attachmentTypes)
+                && java.util.Objects.equals(this.attachmentIds, other.attachmentIds)
+                && java.util.Objects.equals(this.restrictedOperations, other.restrictedOperations)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.webAppUrl == null ? 43 : this.webAppUrl.hashCode());
+        result = (result * PRIME) + (this.connectorUrl == null ? 43 : this.connectorUrl.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleSubState == null ? 43 : this.lifecycleSubState.hashCode());
+        result = (result * PRIME) + (this.stateMessage == null ? 43 : this.stateMessage.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRoleBasedAccess == null ? 43 : this.isRoleBasedAccess.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identityDomain == null ? 43 : this.identityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identityAppGuid == null ? 43 : this.identityAppGuid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identityAppConsoleUrl == null
+                                ? 43
+                                : this.identityAppConsoleUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importedPackageNames == null
+                                ? 43
+                                : this.importedPackageNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importedPackageIds == null
+                                ? 43
+                                : this.importedPackageIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachmentTypes == null ? 43 : this.attachmentTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachmentIds == null ? 43 : this.attachmentIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.restrictedOperations == null
+                                ? 43
+                                : this.restrictedOperations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

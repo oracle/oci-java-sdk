@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMaintenanceRunRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateMaintenanceRunRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.UpdateMaintenanceRunDetails> {
@@ -26,11 +18,18 @@ public class UpdateMaintenanceRunRequest
      */
     private String maintenanceRunId;
 
+    public String getMaintenanceRunId() {
+        return maintenanceRunId;
+    }
     /**
      * Request to update the properties of a maintenance run.
      */
     private com.oracle.bmc.database.model.UpdateMaintenanceRunDetails updateMaintenanceRunDetails;
 
+    public com.oracle.bmc.database.model.UpdateMaintenanceRunDetails
+            getUpdateMaintenanceRunDetails() {
+        return updateMaintenanceRunDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -38,6 +37,10 @@ public class UpdateMaintenanceRunRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +59,45 @@ public class UpdateMaintenanceRunRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String maintenanceRunId = null;
+
+        /**
+         * The maintenance run OCID.
+         * @return this builder instance
+         */
+        public Builder maintenanceRunId(String maintenanceRunId) {
+            this.maintenanceRunId = maintenanceRunId;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.UpdateMaintenanceRunDetails
+                updateMaintenanceRunDetails = null;
+
+        /**
+         * Request to update the properties of a maintenance run.
+         * @return this builder instance
+         */
+        public Builder updateMaintenanceRunDetails(
+                com.oracle.bmc.database.model.UpdateMaintenanceRunDetails
+                        updateMaintenanceRunDetails) {
+            this.updateMaintenanceRunDetails = updateMaintenanceRunDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +162,82 @@ public class UpdateMaintenanceRunRequest
             updateMaintenanceRunDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateMaintenanceRunRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateMaintenanceRunRequest
+         */
+        public UpdateMaintenanceRunRequest buildWithoutInvocationCallback() {
+            UpdateMaintenanceRunRequest request = new UpdateMaintenanceRunRequest();
+            request.maintenanceRunId = maintenanceRunId;
+            request.updateMaintenanceRunDetails = updateMaintenanceRunDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateMaintenanceRunRequest(maintenanceRunId, updateMaintenanceRunDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .maintenanceRunId(maintenanceRunId)
+                .updateMaintenanceRunDetails(updateMaintenanceRunDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",maintenanceRunId=").append(String.valueOf(this.maintenanceRunId));
+        sb.append(",updateMaintenanceRunDetails=")
+                .append(String.valueOf(this.updateMaintenanceRunDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateMaintenanceRunRequest)) {
+            return false;
+        }
+
+        UpdateMaintenanceRunRequest other = (UpdateMaintenanceRunRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.maintenanceRunId, other.maintenanceRunId)
+                && java.util.Objects.equals(
+                        this.updateMaintenanceRunDetails, other.updateMaintenanceRunDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.maintenanceRunId == null ? 43 : this.maintenanceRunId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateMaintenanceRunDetails == null
+                                ? 43
+                                : this.updateMaintenanceRunDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

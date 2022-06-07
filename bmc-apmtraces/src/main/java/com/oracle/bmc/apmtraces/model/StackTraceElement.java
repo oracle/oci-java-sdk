@@ -16,16 +16,34 @@ package com.oracle.bmc.apmtraces.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StackTraceElement.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StackTraceElement {
+public final class StackTraceElement {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "methodName",
+        "fileName",
+        "lineNumber",
+        "className",
+        "weightage"
+    })
+    public StackTraceElement(
+            String methodName,
+            String fileName,
+            Integer lineNumber,
+            String className,
+            Float weightage) {
+        super();
+        this.methodName = methodName;
+        this.fileName = fileName;
+        this.lineNumber = lineNumber;
+        this.className = className;
+        this.weightage = weightage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("methodName")
         private String methodName;
@@ -103,41 +121,116 @@ public class StackTraceElement {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the method containing the execution point.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("methodName")
-    String methodName;
+    private final String methodName;
+
+    public String getMethodName() {
+        return methodName;
+    }
 
     /**
      * Name of the source file containing the execution point.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileName")
-    String fileName;
+    private final String fileName;
+
+    public String getFileName() {
+        return fileName;
+    }
 
     /**
      * Line number of the source line containing the execution point.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lineNumber")
-    Integer lineNumber;
+    private final Integer lineNumber;
+
+    public Integer getLineNumber() {
+        return lineNumber;
+    }
 
     /**
      * Name of the class containing the execution point.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("className")
-    String className;
+    private final String className;
+
+    public String getClassName() {
+        return className;
+    }
 
     /**
      * The weight distribution that denotes the percentage occurrence of a method in the captured snapshots.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weightage")
-    Float weightage;
+    private final Float weightage;
+
+    public Float getWeightage() {
+        return weightage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StackTraceElement(");
+        sb.append("methodName=").append(String.valueOf(this.methodName));
+        sb.append(", fileName=").append(String.valueOf(this.fileName));
+        sb.append(", lineNumber=").append(String.valueOf(this.lineNumber));
+        sb.append(", className=").append(String.valueOf(this.className));
+        sb.append(", weightage=").append(String.valueOf(this.weightage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StackTraceElement)) {
+            return false;
+        }
+
+        StackTraceElement other = (StackTraceElement) o;
+        return java.util.Objects.equals(this.methodName, other.methodName)
+                && java.util.Objects.equals(this.fileName, other.fileName)
+                && java.util.Objects.equals(this.lineNumber, other.lineNumber)
+                && java.util.Objects.equals(this.className, other.className)
+                && java.util.Objects.equals(this.weightage, other.weightage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.methodName == null ? 43 : this.methodName.hashCode());
+        result = (result * PRIME) + (this.fileName == null ? 43 : this.fileName.hashCode());
+        result = (result * PRIME) + (this.lineNumber == null ? 43 : this.lineNumber.hashCode());
+        result = (result * PRIME) + (this.className == null ? 43 : this.className.hashCode());
+        result = (result * PRIME) + (this.weightage == null ? 43 : this.weightage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

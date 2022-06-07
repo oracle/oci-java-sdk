@@ -15,16 +15,37 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateExternalPublicationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateExternalPublicationDetails {
+public final class CreateExternalPublicationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "applicationId",
+        "applicationCompartmentId",
+        "displayName",
+        "description",
+        "resourceConfiguration",
+        "configurationDetails"
+    })
+    public CreateExternalPublicationDetails(
+            String applicationId,
+            String applicationCompartmentId,
+            String displayName,
+            String description,
+            ResourceConfiguration resourceConfiguration,
+            ConfigurationDetails configurationDetails) {
+        super();
+        this.applicationId = applicationId;
+        this.applicationCompartmentId = applicationCompartmentId;
+        this.displayName = displayName;
+        this.description = description;
+        this.resourceConfiguration = resourceConfiguration;
+        this.configurationDetails = configurationDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
@@ -118,36 +139,134 @@ public class CreateExternalPublicationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
-    String applicationId;
+    private final String applicationId;
+
+    public String getApplicationId() {
+        return applicationId;
+    }
 
     /**
      * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationCompartmentId")
-    String applicationCompartmentId;
+    private final String applicationCompartmentId;
+
+    public String getApplicationCompartmentId() {
+        return applicationCompartmentId;
+    }
 
     /**
      * The name of the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The details of the data flow or the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("resourceConfiguration")
-    ResourceConfiguration resourceConfiguration;
+    private final ResourceConfiguration resourceConfiguration;
+
+    public ResourceConfiguration getResourceConfiguration() {
+        return resourceConfiguration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
-    ConfigurationDetails configurationDetails;
+    private final ConfigurationDetails configurationDetails;
+
+    public ConfigurationDetails getConfigurationDetails() {
+        return configurationDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateExternalPublicationDetails(");
+        sb.append("applicationId=").append(String.valueOf(this.applicationId));
+        sb.append(", applicationCompartmentId=")
+                .append(String.valueOf(this.applicationCompartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", resourceConfiguration=").append(String.valueOf(this.resourceConfiguration));
+        sb.append(", configurationDetails=").append(String.valueOf(this.configurationDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateExternalPublicationDetails)) {
+            return false;
+        }
+
+        CreateExternalPublicationDetails other = (CreateExternalPublicationDetails) o;
+        return java.util.Objects.equals(this.applicationId, other.applicationId)
+                && java.util.Objects.equals(
+                        this.applicationCompartmentId, other.applicationCompartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.resourceConfiguration, other.resourceConfiguration)
+                && java.util.Objects.equals(this.configurationDetails, other.configurationDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.applicationId == null ? 43 : this.applicationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationCompartmentId == null
+                                ? 43
+                                : this.applicationCompartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceConfiguration == null
+                                ? 43
+                                : this.resourceConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurationDetails == null
+                                ? 43
+                                : this.configurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

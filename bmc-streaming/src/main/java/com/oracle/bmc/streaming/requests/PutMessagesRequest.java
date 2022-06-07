@@ -9,14 +9,6 @@ import com.oracle.bmc.streaming.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/PutMessagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PutMessagesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class PutMessagesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.streaming.model.PutMessagesDetails> {
@@ -27,17 +19,27 @@ public class PutMessagesRequest
      */
     private String streamId;
 
+    public String getStreamId() {
+        return streamId;
+    }
     /**
      * Array of messages to put into the stream.
      */
     private com.oracle.bmc.streaming.model.PutMessagesDetails putMessagesDetails;
 
+    public com.oracle.bmc.streaming.model.PutMessagesDetails getPutMessagesDetails() {
+        return putMessagesDetails;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -55,6 +57,43 @@ public class PutMessagesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String streamId = null;
+
+        /**
+         * The OCID of the stream.
+         *
+         * @return this builder instance
+         */
+        public Builder streamId(String streamId) {
+            this.streamId = streamId;
+            return this;
+        }
+
+        private com.oracle.bmc.streaming.model.PutMessagesDetails putMessagesDetails = null;
+
+        /**
+         * Array of messages to put into the stream.
+         * @return this builder instance
+         */
+        public Builder putMessagesDetails(
+                com.oracle.bmc.streaming.model.PutMessagesDetails putMessagesDetails) {
+            this.putMessagesDetails = putMessagesDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -119,5 +158,78 @@ public class PutMessagesRequest
             putMessagesDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of PutMessagesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of PutMessagesRequest
+         */
+        public PutMessagesRequest buildWithoutInvocationCallback() {
+            PutMessagesRequest request = new PutMessagesRequest();
+            request.streamId = streamId;
+            request.putMessagesDetails = putMessagesDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new PutMessagesRequest(streamId, putMessagesDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .streamId(streamId)
+                .putMessagesDetails(putMessagesDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",streamId=").append(String.valueOf(this.streamId));
+        sb.append(",putMessagesDetails=").append(String.valueOf(this.putMessagesDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PutMessagesRequest)) {
+            return false;
+        }
+
+        PutMessagesRequest other = (PutMessagesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.streamId, other.streamId)
+                && java.util.Objects.equals(this.putMessagesDetails, other.putMessagesDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.putMessagesDetails == null
+                                ? 43
+                                : this.putMessagesDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

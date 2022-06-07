@@ -16,16 +16,73 @@ package com.oracle.bmc.goldengate.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDatabaseRegistrationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDatabaseRegistrationDetails {
+public final class CreateDatabaseRegistrationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "compartmentId",
+        "freeformTags",
+        "definedTags",
+        "fqdn",
+        "ipAddress",
+        "subnetId",
+        "databaseId",
+        "username",
+        "password",
+        "connectionString",
+        "sessionMode",
+        "wallet",
+        "aliasName",
+        "vaultId",
+        "keyId",
+        "secretCompartmentId"
+    })
+    public CreateDatabaseRegistrationDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String fqdn,
+            String ipAddress,
+            String subnetId,
+            String databaseId,
+            String username,
+            String password,
+            String connectionString,
+            SessionMode sessionMode,
+            String wallet,
+            String aliasName,
+            String vaultId,
+            String keyId,
+            String secretCompartmentId) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.fqdn = fqdn;
+        this.ipAddress = ipAddress;
+        this.subnetId = subnetId;
+        this.databaseId = databaseId;
+        this.username = username;
+        this.password = password;
+        this.connectionString = connectionString;
+        this.sessionMode = sessionMode;
+        this.wallet = wallet;
+        this.aliasName = aliasName;
+        this.vaultId = vaultId;
+        this.keyId = keyId;
+        this.secretCompartmentId = secretCompartmentId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -252,26 +309,42 @@ public class CreateDatabaseRegistrationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An object's Display Name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Metadata about this specific object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
@@ -279,7 +352,11 @@ public class CreateDatabaseRegistrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
@@ -287,56 +364,89 @@ public class CreateDatabaseRegistrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
-    String fqdn;
+    private final String fqdn;
+
+    public String getFqdn() {
+        return fqdn;
+    }
 
     /**
      * The private IP address in the customer's VCN of the customer's endpoint, typically a database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    String databaseId;
+    private final String databaseId;
+
+    public String getDatabaseId() {
+        return databaseId;
+    }
 
     /**
      * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
-    String username;
+    private final String username;
+
+    public String getUsername() {
+        return username;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    String password;
+    private final String password;
+
+    public String getPassword() {
+        return password;
+    }
 
     /**
      * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
-    String connectionString;
+    private final String connectionString;
+
+    public String getConnectionString() {
+        return connectionString;
+    }
+
     /**
      * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      *
@@ -378,43 +488,165 @@ public class CreateDatabaseRegistrationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
-    SessionMode sessionMode;
+    private final SessionMode sessionMode;
+
+    public SessionMode getSessionMode() {
+        return sessionMode;
+    }
 
     /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wallet")
-    String wallet;
+    private final String wallet;
+
+    public String getWallet() {
+        return wallet;
+    }
 
     /**
      * Credential store alias.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
-    String aliasName;
+    private final String aliasName;
+
+    public String getAliasName() {
+        return aliasName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretCompartmentId")
-    String secretCompartmentId;
+    private final String secretCompartmentId;
+
+    public String getSecretCompartmentId() {
+        return secretCompartmentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDatabaseRegistrationDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", fqdn=").append(String.valueOf(this.fqdn));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
+        sb.append(", wallet=").append(String.valueOf(this.wallet));
+        sb.append(", aliasName=").append(String.valueOf(this.aliasName));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", secretCompartmentId=").append(String.valueOf(this.secretCompartmentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDatabaseRegistrationDetails)) {
+            return false;
+        }
+
+        CreateDatabaseRegistrationDetails other = (CreateDatabaseRegistrationDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.fqdn, other.fqdn)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.sessionMode, other.sessionMode)
+                && java.util.Objects.equals(this.wallet, other.wallet)
+                && java.util.Objects.equals(this.aliasName, other.aliasName)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.secretCompartmentId, other.secretCompartmentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result = (result * PRIME) + (this.sessionMode == null ? 43 : this.sessionMode.hashCode());
+        result = (result * PRIME) + (this.wallet == null ? 43 : this.wallet.hashCode());
+        result = (result * PRIME) + (this.aliasName == null ? 43 : this.aliasName.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretCompartmentId == null
+                                ? 43
+                                : this.secretCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

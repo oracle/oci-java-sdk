@@ -15,12 +15,6 @@ package com.oracle.bmc.servicecatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,32 +29,69 @@ package com.oracle.bmc.servicecatalog.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class PrivateApplicationPackage {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "privateApplicationId",
+        "displayName",
+        "version",
+        "timeCreated"
+    })
+    protected PrivateApplicationPackage(
+            String id,
+            String privateApplicationId,
+            String displayName,
+            String version,
+            java.util.Date timeCreated) {
+        super();
+        this.id = id;
+        this.privateApplicationId = privateApplicationId;
+        this.displayName = displayName;
+        this.version = version;
+        this.timeCreated = timeCreated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application package.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateApplicationId")
-    String privateApplicationId;
+    private final String privateApplicationId;
+
+    public String getPrivateApplicationId() {
+        return privateApplicationId;
+    }
 
     /**
      * The display name of the package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The package version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -70,5 +101,55 @@ public class PrivateApplicationPackage {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PrivateApplicationPackage(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", privateApplicationId=").append(String.valueOf(this.privateApplicationId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PrivateApplicationPackage)) {
+            return false;
+        }
+
+        PrivateApplicationPackage other = (PrivateApplicationPackage) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.privateApplicationId, other.privateApplicationId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateApplicationId == null
+                                ? 43
+                                : this.privateApplicationId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        return result;
+    }
 }

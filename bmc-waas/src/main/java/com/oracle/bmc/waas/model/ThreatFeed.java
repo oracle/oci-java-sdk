@@ -15,14 +15,20 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ThreatFeed.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ThreatFeed {
+public final class ThreatFeed {
+    @Deprecated
+    @java.beans.ConstructorProperties({"key", "name", "action", "description"})
+    public ThreatFeed(String key, String name, Action action, String description) {
+        super();
+        this.key = key;
+        this.name = name;
+        this.action = action;
+        this.description = description;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -89,21 +95,33 @@ public class ThreatFeed {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key of the threat intelligence feed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The name of the threat intelligence feed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Off("OFF"),
         Detect("DETECT"),
@@ -114,6 +132,8 @@ public class ThreatFeed {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -151,14 +171,70 @@ public class ThreatFeed {
      * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * The description of the threat intelligence feed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ThreatFeed(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ThreatFeed)) {
+            return false;
+        }
+
+        ThreatFeed other = (ThreatFeed) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

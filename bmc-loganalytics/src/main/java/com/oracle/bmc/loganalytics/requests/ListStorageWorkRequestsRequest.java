@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListStorageWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListStorageWorkRequestsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListStorageWorkRequestsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,27 +17,42 @@ public class ListStorageWorkRequestsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -88,6 +95,10 @@ public class ListStorageWorkRequestsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * This is the query parameter of which field to sort by. Only one sort order may be provided. Default order for timeAccepted
      * is descending. If no value is specified timeAccepted is default.
@@ -133,35 +144,58 @@ public class ListStorageWorkRequestsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The is the work request type query parameter
      */
     private com.oracle.bmc.loganalytics.model.StorageOperationType operationType;
 
+    public com.oracle.bmc.loganalytics.model.StorageOperationType getOperationType() {
+        return operationType;
+    }
     /**
      * The is the work request status query parameter
      */
     private com.oracle.bmc.loganalytics.model.WorkRequestStatus status;
 
+    public com.oracle.bmc.loganalytics.model.WorkRequestStatus getStatus() {
+        return status;
+    }
     /**
      * The is the query parameter of when the processing of work request was started
      */
     private java.util.Date timeStarted;
 
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
     /**
      * The is the query parameter of when the processing of work request was finished
      */
     private java.util.Date timeFinished;
 
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
     /**
      * This is the query parameter of purge policy name
      */
     private String policyName;
 
+    public String getPolicyName() {
+        return policyName;
+    }
     /**
      * This is the query parameter of purge policy ID
      */
     private String policyId;
+
+    public String getPolicyId() {
+        return policyId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -169,6 +203,154 @@ public class ListStorageWorkRequestsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * This is the query parameter of which field to sort by. Only one sort order may be provided. Default order for timeAccepted
+         * is descending. If no value is specified timeAccepted is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.StorageOperationType operationType = null;
+
+        /**
+         * The is the work request type query parameter
+         * @return this builder instance
+         */
+        public Builder operationType(
+                com.oracle.bmc.loganalytics.model.StorageOperationType operationType) {
+            this.operationType = operationType;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.WorkRequestStatus status = null;
+
+        /**
+         * The is the work request status query parameter
+         * @return this builder instance
+         */
+        public Builder status(com.oracle.bmc.loganalytics.model.WorkRequestStatus status) {
+            this.status = status;
+            return this;
+        }
+
+        private java.util.Date timeStarted = null;
+
+        /**
+         * The is the query parameter of when the processing of work request was started
+         * @return this builder instance
+         */
+        public Builder timeStarted(java.util.Date timeStarted) {
+            this.timeStarted = timeStarted;
+            return this;
+        }
+
+        private java.util.Date timeFinished = null;
+
+        /**
+         * The is the query parameter of when the processing of work request was finished
+         * @return this builder instance
+         */
+        public Builder timeFinished(java.util.Date timeFinished) {
+            this.timeFinished = timeFinished;
+            return this;
+        }
+
+        private String policyName = null;
+
+        /**
+         * This is the query parameter of purge policy name
+         * @return this builder instance
+         */
+        public Builder policyName(String policyName) {
+            this.policyName = policyName;
+            return this;
+        }
+
+        private String policyId = null;
+
+        /**
+         * This is the query parameter of purge policy ID
+         * @return this builder instance
+         */
+        public Builder policyId(String policyId) {
+            this.policyId = policyId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -232,5 +414,130 @@ public class ListStorageWorkRequestsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListStorageWorkRequestsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListStorageWorkRequestsRequest
+         */
+        public ListStorageWorkRequestsRequest buildWithoutInvocationCallback() {
+            ListStorageWorkRequestsRequest request = new ListStorageWorkRequestsRequest();
+            request.compartmentId = compartmentId;
+            request.namespaceName = namespaceName;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.operationType = operationType;
+            request.status = status;
+            request.timeStarted = timeStarted;
+            request.timeFinished = timeFinished;
+            request.policyName = policyName;
+            request.policyId = policyId;
+            return request;
+            // new ListStorageWorkRequestsRequest(compartmentId, namespaceName, opcRequestId, limit, page, sortOrder, sortBy, operationType, status, timeStarted, timeFinished, policyName, policyId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .namespaceName(namespaceName)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .operationType(operationType)
+                .status(status)
+                .timeStarted(timeStarted)
+                .timeFinished(timeFinished)
+                .policyName(policyName)
+                .policyId(policyId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",operationType=").append(String.valueOf(this.operationType));
+        sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(",timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(",policyName=").append(String.valueOf(this.policyName));
+        sb.append(",policyId=").append(String.valueOf(this.policyId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListStorageWorkRequestsRequest)) {
+            return false;
+        }
+
+        ListStorageWorkRequestsRequest other = (ListStorageWorkRequestsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.policyName, other.policyName)
+                && java.util.Objects.equals(this.policyId, other.policyId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result = (result * PRIME) + (this.policyName == null ? 43 : this.policyName.hashCode());
+        result = (result * PRIME) + (this.policyId == null ? 43 : this.policyId.hashCode());
+        return result;
     }
 }

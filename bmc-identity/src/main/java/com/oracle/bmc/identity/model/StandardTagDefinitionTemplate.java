@@ -15,16 +15,37 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StandardTagDefinitionTemplate.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StandardTagDefinitionTemplate {
+public final class StandardTagDefinitionTemplate {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "tagDefinitionName",
+        "type",
+        "possibleValues",
+        "isCostTracking",
+        "enumMutability"
+    })
+    public StandardTagDefinitionTemplate(
+            String description,
+            String tagDefinitionName,
+            Type type,
+            java.util.List<String> possibleValues,
+            Boolean isCostTracking,
+            EnumMutability enumMutability) {
+        super();
+        this.description = description;
+        this.tagDefinitionName = tagDefinitionName;
+        this.type = type;
+        this.possibleValues = possibleValues;
+        this.isCostTracking = isCostTracking;
+        this.enumMutability = enumMutability;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -118,21 +139,33 @@ public class StandardTagDefinitionTemplate {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The default description of the tag namespace that users can use to create the tag definition
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The name of this standard tag definition
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
-    String tagDefinitionName;
+    private final String tagDefinitionName;
+
+    public String getTagDefinitionName() {
+        return tagDefinitionName;
+    }
+
     /**
      * The type of tag definition. Enum or string.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Enum("ENUM"),
         String("STRING"),
@@ -142,6 +175,8 @@ public class StandardTagDefinitionTemplate {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -178,23 +213,35 @@ public class StandardTagDefinitionTemplate {
      * The type of tag definition. Enum or string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * List of possible values. An optional parameter that will be present if the type of definition is enum.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
-    java.util.List<String> possibleValues;
+    private final java.util.List<String> possibleValues;
+
+    public java.util.List<String> getPossibleValues() {
+        return possibleValues;
+    }
 
     /**
      * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
-    Boolean isCostTracking;
+    private final Boolean isCostTracking;
+
+    public Boolean getIsCostTracking() {
+        return isCostTracking;
+    }
+
     /**
      * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EnumMutability {
         Immutable("IMMUTABLE"),
         Mutable("MUTABLE"),
@@ -205,6 +252,9 @@ public class StandardTagDefinitionTemplate {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EnumMutability.class);
 
         private final String value;
         private static java.util.Map<String, EnumMutability> map;
@@ -242,8 +292,74 @@ public class StandardTagDefinitionTemplate {
      * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enumMutability")
-    EnumMutability enumMutability;
+    private final EnumMutability enumMutability;
+
+    public EnumMutability getEnumMutability() {
+        return enumMutability;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StandardTagDefinitionTemplate(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", tagDefinitionName=").append(String.valueOf(this.tagDefinitionName));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", possibleValues=").append(String.valueOf(this.possibleValues));
+        sb.append(", isCostTracking=").append(String.valueOf(this.isCostTracking));
+        sb.append(", enumMutability=").append(String.valueOf(this.enumMutability));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StandardTagDefinitionTemplate)) {
+            return false;
+        }
+
+        StandardTagDefinitionTemplate other = (StandardTagDefinitionTemplate) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.tagDefinitionName, other.tagDefinitionName)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.possibleValues, other.possibleValues)
+                && java.util.Objects.equals(this.isCostTracking, other.isCostTracking)
+                && java.util.Objects.equals(this.enumMutability, other.enumMutability)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tagDefinitionName == null ? 43 : this.tagDefinitionName.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.possibleValues == null ? 43 : this.possibleValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCostTracking == null ? 43 : this.isCostTracking.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enumMutability == null ? 43 : this.enumMutability.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

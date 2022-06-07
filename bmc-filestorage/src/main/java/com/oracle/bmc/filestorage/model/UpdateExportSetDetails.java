@@ -15,16 +15,21 @@ package com.oracle.bmc.filestorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateExportSetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateExportSetDetails {
+public final class UpdateExportSetDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"displayName", "maxFsStatBytes", "maxFsStatFiles"})
+    public UpdateExportSetDetails(String displayName, Long maxFsStatBytes, Long maxFsStatFiles) {
+        super();
+        this.displayName = displayName;
+        this.maxFsStatBytes = maxFsStatBytes;
+        this.maxFsStatFiles = maxFsStatFiles;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -82,6 +87,10 @@ public class UpdateExportSetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
@@ -90,7 +99,11 @@ public class UpdateExportSetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Controls the maximum {@code tbytes}, {@code fbytes}, and {@code abytes}
@@ -105,7 +118,11 @@ public class UpdateExportSetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatBytes")
-    Long maxFsStatBytes;
+    private final Long maxFsStatBytes;
+
+    public Long getMaxFsStatBytes() {
+        return maxFsStatBytes;
+    }
 
     /**
      * Controls the maximum {@code ffiles}, {@code ffiles}, and {@code afiles}
@@ -120,8 +137,61 @@ public class UpdateExportSetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatFiles")
-    Long maxFsStatFiles;
+    private final Long maxFsStatFiles;
+
+    public Long getMaxFsStatFiles() {
+        return maxFsStatFiles;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateExportSetDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", maxFsStatBytes=").append(String.valueOf(this.maxFsStatBytes));
+        sb.append(", maxFsStatFiles=").append(String.valueOf(this.maxFsStatFiles));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateExportSetDetails)) {
+            return false;
+        }
+
+        UpdateExportSetDetails other = (UpdateExportSetDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.maxFsStatBytes, other.maxFsStatBytes)
+                && java.util.Objects.equals(this.maxFsStatFiles, other.maxFsStatFiles)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxFsStatBytes == null ? 43 : this.maxFsStatBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxFsStatFiles == null ? 43 : this.maxFsStatFiles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

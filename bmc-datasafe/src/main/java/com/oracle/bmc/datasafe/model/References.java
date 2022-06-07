@@ -15,14 +15,19 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = References.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class References {
+public final class References {
+    @Deprecated
+    @java.beans.ConstructorProperties({"stig", "cis", "gdpr"})
+    public References(String stig, String cis, String gdpr) {
+        super();
+        this.stig = stig;
+        this.cis = cis;
+        this.gdpr = gdpr;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("stig")
         private String stig;
@@ -76,24 +81,85 @@ public class References {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Relevant section from STIG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stig")
-    String stig;
+    private final String stig;
+
+    public String getStig() {
+        return stig;
+    }
 
     /**
      * Relevant section from CIS.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cis")
-    String cis;
+    private final String cis;
+
+    public String getCis() {
+        return cis;
+    }
 
     /**
      * Relevant section from GDPR.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gdpr")
-    String gdpr;
+    private final String gdpr;
+
+    public String getGdpr() {
+        return gdpr;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("References(");
+        sb.append("stig=").append(String.valueOf(this.stig));
+        sb.append(", cis=").append(String.valueOf(this.cis));
+        sb.append(", gdpr=").append(String.valueOf(this.gdpr));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof References)) {
+            return false;
+        }
+
+        References other = (References) o;
+        return java.util.Objects.equals(this.stig, other.stig)
+                && java.util.Objects.equals(this.cis, other.cis)
+                && java.util.Objects.equals(this.gdpr, other.gdpr)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.stig == null ? 43 : this.stig.hashCode());
+        result = (result * PRIME) + (this.cis == null ? 43 : this.cis.hashCode());
+        result = (result * PRIME) + (this.gdpr == null ? 43 : this.gdpr.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

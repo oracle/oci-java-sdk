@@ -15,16 +15,34 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateLookupMetadataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateLookupMetadataDetails {
+public final class UpdateLookupMetadataDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "defaultMatchValue",
+        "description",
+        "fields",
+        "maxMatches",
+        "categories"
+    })
+    public UpdateLookupMetadataDetails(
+            String defaultMatchValue,
+            String description,
+            java.util.List<LogAnalyticsLookupFields> fields,
+            Long maxMatches,
+            java.util.List<LogAnalyticsCategory> categories) {
+        super();
+        this.defaultMatchValue = defaultMatchValue;
+        this.description = description;
+        this.fields = fields;
+        this.maxMatches = maxMatches;
+        this.categories = categories;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
         private String defaultMatchValue;
@@ -103,29 +121,49 @@ public class UpdateLookupMetadataDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The default match value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
-    String defaultMatchValue;
+    private final String defaultMatchValue;
+
+    public String getDefaultMatchValue() {
+        return defaultMatchValue;
+    }
 
     /**
      * The lookup description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The lookup fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
-    java.util.List<LogAnalyticsLookupFields> fields;
+    private final java.util.List<LogAnalyticsLookupFields> fields;
+
+    public java.util.List<LogAnalyticsLookupFields> getFields() {
+        return fields;
+    }
 
     /**
      * The maximum number of matches.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxMatches")
-    Long maxMatches;
+    private final Long maxMatches;
+
+    public Long getMaxMatches() {
+        return maxMatches;
+    }
 
     /**
      * An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
@@ -133,8 +171,65 @@ public class UpdateLookupMetadataDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
-    java.util.List<LogAnalyticsCategory> categories;
+    private final java.util.List<LogAnalyticsCategory> categories;
+
+    public java.util.List<LogAnalyticsCategory> getCategories() {
+        return categories;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateLookupMetadataDetails(");
+        sb.append("defaultMatchValue=").append(String.valueOf(this.defaultMatchValue));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", fields=").append(String.valueOf(this.fields));
+        sb.append(", maxMatches=").append(String.valueOf(this.maxMatches));
+        sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLookupMetadataDetails)) {
+            return false;
+        }
+
+        UpdateLookupMetadataDetails other = (UpdateLookupMetadataDetails) o;
+        return java.util.Objects.equals(this.defaultMatchValue, other.defaultMatchValue)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.maxMatches, other.maxMatches)
+                && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.defaultMatchValue == null ? 43 : this.defaultMatchValue.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.maxMatches == null ? 43 : this.maxMatches.hashCode());
+        result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

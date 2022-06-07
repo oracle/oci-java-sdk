@@ -7,6 +7,7 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 import com.oracle.bmc.tenantmanagercontrolplane.internal.http.*;
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for DomainGovernance service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.extern.slf4j.Slf4j
 public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
     /**
      * Service instance for DomainGovernance.
@@ -35,7 +35,9 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                             "https://organizations.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DomainGovernanceAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -319,9 +321,13 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
          * @return the client
          */
         public DomainGovernanceAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DomainGovernanceAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -331,6 +337,10 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

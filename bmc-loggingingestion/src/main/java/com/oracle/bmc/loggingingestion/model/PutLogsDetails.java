@@ -15,14 +15,18 @@ package com.oracle.bmc.loggingingestion.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PutLogsDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PutLogsDetails {
+public final class PutLogsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"specversion", "logEntryBatches"})
+    public PutLogsDetails(String specversion, java.util.List<LogEntryBatch> logEntryBatches) {
+        super();
+        this.specversion = specversion;
+        this.logEntryBatches = logEntryBatches;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("specversion")
         private String specversion;
@@ -68,21 +72,77 @@ public class PutLogsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Required for identifying the version of the data format being used.
      * Permitted values include: "1.0"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("specversion")
-    String specversion;
+    private final String specversion;
+
+    public String getSpecversion() {
+        return specversion;
+    }
 
     /**
      * List of log-batches. Each batch has a single source, type and subject.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logEntryBatches")
-    java.util.List<LogEntryBatch> logEntryBatches;
+    private final java.util.List<LogEntryBatch> logEntryBatches;
+
+    public java.util.List<LogEntryBatch> getLogEntryBatches() {
+        return logEntryBatches;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PutLogsDetails(");
+        sb.append("specversion=").append(String.valueOf(this.specversion));
+        sb.append(", logEntryBatches=").append(String.valueOf(this.logEntryBatches));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PutLogsDetails)) {
+            return false;
+        }
+
+        PutLogsDetails other = (PutLogsDetails) o;
+        return java.util.Objects.equals(this.specversion, other.specversion)
+                && java.util.Objects.equals(this.logEntryBatches, other.logEntryBatches)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.specversion == null ? 43 : this.specversion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logEntryBatches == null ? 43 : this.logEntryBatches.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

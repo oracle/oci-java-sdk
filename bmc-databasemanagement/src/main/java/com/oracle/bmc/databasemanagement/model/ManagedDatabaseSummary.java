@@ -15,16 +15,52 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagedDatabaseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagedDatabaseSummary {
+public final class ManagedDatabaseSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "name",
+        "databaseType",
+        "databaseSubType",
+        "deploymentType",
+        "managementOption",
+        "workloadType",
+        "isCluster",
+        "parentContainerId",
+        "timeCreated"
+    })
+    public ManagedDatabaseSummary(
+            String id,
+            String compartmentId,
+            String name,
+            DatabaseType databaseType,
+            DatabaseSubType databaseSubType,
+            DeploymentType deploymentType,
+            ManagementOption managementOption,
+            WorkloadType workloadType,
+            Boolean isCluster,
+            String parentContainerId,
+            java.util.Date timeCreated) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.databaseType = databaseType;
+        this.databaseSubType = databaseSubType;
+        this.deploymentType = deploymentType;
+        this.managementOption = managementOption;
+        this.workloadType = workloadType;
+        this.isCluster = isCluster;
+        this.parentContainerId = parentContainerId;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -173,29 +209,49 @@ public class ManagedDatabaseSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of the Managed Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The type of Oracle Database installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    DatabaseType databaseType;
+    private final DatabaseType databaseType;
+
+    public DatabaseType getDatabaseType() {
+        return databaseType;
+    }
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
@@ -203,31 +259,51 @@ public class ManagedDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
-    DatabaseSubType databaseSubType;
+    private final DatabaseSubType databaseSubType;
+
+    public DatabaseSubType getDatabaseSubType() {
+        return databaseSubType;
+    }
 
     /**
      * The infrastructure used to deploy the Oracle Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
-    DeploymentType deploymentType;
+    private final DeploymentType deploymentType;
+
+    public DeploymentType getDeploymentType() {
+        return deploymentType;
+    }
 
     /**
      * The management option used when enabling Database Management.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementOption")
-    ManagementOption managementOption;
+    private final ManagementOption managementOption;
+
+    public ManagementOption getManagementOption() {
+        return managementOption;
+    }
 
     /**
      * The workload type of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
-    WorkloadType workloadType;
+    private final WorkloadType workloadType;
+
+    public WorkloadType getWorkloadType() {
+        return workloadType;
+    }
 
     /**
      * Indicates whether the Oracle Database is part of a cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
-    Boolean isCluster;
+    private final Boolean isCluster;
+
+    public Boolean getIsCluster() {
+        return isCluster;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent Container Database
@@ -235,14 +311,101 @@ public class ManagedDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentContainerId")
-    String parentContainerId;
+    private final String parentContainerId;
+
+    public String getParentContainerId() {
+        return parentContainerId;
+    }
 
     /**
      * The date and time the Managed Database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagedDatabaseSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
+        sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
+        sb.append(", managementOption=").append(String.valueOf(this.managementOption));
+        sb.append(", workloadType=").append(String.valueOf(this.workloadType));
+        sb.append(", isCluster=").append(String.valueOf(this.isCluster));
+        sb.append(", parentContainerId=").append(String.valueOf(this.parentContainerId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagedDatabaseSummary)) {
+            return false;
+        }
+
+        ManagedDatabaseSummary other = (ManagedDatabaseSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
+                && java.util.Objects.equals(this.managementOption, other.managementOption)
+                && java.util.Objects.equals(this.workloadType, other.workloadType)
+                && java.util.Objects.equals(this.isCluster, other.isCluster)
+                && java.util.Objects.equals(this.parentContainerId, other.parentContainerId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSubType == null ? 43 : this.databaseSubType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementOption == null ? 43 : this.managementOption.hashCode());
+        result = (result * PRIME) + (this.workloadType == null ? 43 : this.workloadType.hashCode());
+        result = (result * PRIME) + (this.isCluster == null ? 43 : this.isCluster.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentContainerId == null ? 43 : this.parentContainerId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

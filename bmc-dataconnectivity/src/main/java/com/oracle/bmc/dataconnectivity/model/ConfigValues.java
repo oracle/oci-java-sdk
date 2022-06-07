@@ -15,14 +15,20 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ConfigValues.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConfigValues {
+public final class ConfigValues {
+    @Deprecated
+    @java.beans.ConstructorProperties({"configParamValues", "parentRef"})
+    public ConfigValues(
+            java.util.Map<String, ConfigParameterValue> configParamValues,
+            ParentReference parentRef) {
+        super();
+        this.configParamValues = configParamValues;
+        this.parentRef = parentRef;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("configParamValues")
         private java.util.Map<String, ConfigParameterValue> configParamValues;
@@ -69,15 +75,71 @@ public class ConfigValues {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The configuration parameter values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configParamValues")
-    java.util.Map<String, ConfigParameterValue> configParamValues;
+    private final java.util.Map<String, ConfigParameterValue> configParamValues;
+
+    public java.util.Map<String, ConfigParameterValue> getConfigParamValues() {
+        return configParamValues;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConfigValues(");
+        sb.append("configParamValues=").append(String.valueOf(this.configParamValues));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConfigValues)) {
+            return false;
+        }
+
+        ConfigValues other = (ConfigValues) o;
+        return java.util.Objects.equals(this.configParamValues, other.configParamValues)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.configParamValues == null ? 43 : this.configParamValues.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

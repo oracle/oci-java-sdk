@@ -16,14 +16,83 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JobSummary {
+public final class JobSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "uri",
+        "displayName",
+        "catalogId",
+        "jobDefinitionKey",
+        "lifecycleState",
+        "jobType",
+        "scheduleType",
+        "description",
+        "timeCreated",
+        "timeUpdated",
+        "createdById",
+        "updatedById",
+        "scheduleCronExpression",
+        "timeScheduleBegin",
+        "executionCount",
+        "timeOfLatestExecution",
+        "jobDefinitionName",
+        "dataAssetKey",
+        "errorCode",
+        "errorMessage",
+        "executions"
+    })
+    public JobSummary(
+            String key,
+            String uri,
+            String displayName,
+            String catalogId,
+            String jobDefinitionKey,
+            JobLifecycleState lifecycleState,
+            JobType jobType,
+            String scheduleType,
+            String description,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String createdById,
+            String updatedById,
+            String scheduleCronExpression,
+            java.util.Date timeScheduleBegin,
+            Integer executionCount,
+            java.util.Date timeOfLatestExecution,
+            String jobDefinitionName,
+            String dataAssetKey,
+            String errorCode,
+            String errorMessage,
+            java.util.List<JobExecutionSummary> executions) {
+        super();
+        this.key = key;
+        this.uri = uri;
+        this.displayName = displayName;
+        this.catalogId = catalogId;
+        this.jobDefinitionKey = jobDefinitionKey;
+        this.lifecycleState = lifecycleState;
+        this.jobType = jobType;
+        this.scheduleType = scheduleType;
+        this.description = description;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.createdById = createdById;
+        this.updatedById = updatedById;
+        this.scheduleCronExpression = scheduleCronExpression;
+        this.timeScheduleBegin = timeScheduleBegin;
+        this.executionCount = executionCount;
+        this.timeOfLatestExecution = timeOfLatestExecution;
+        this.jobDefinitionName = jobDefinitionName;
+        this.dataAssetKey = dataAssetKey;
+        this.errorCode = errorCode;
+        this.errorMessage = errorMessage;
+        this.executions = executions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -293,17 +362,29 @@ public class JobSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique key of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * URI to the job instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
 
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
@@ -311,43 +392,71 @@ public class JobSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The data catalog's OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
-    String catalogId;
+    private final String catalogId;
+
+    public String getCatalogId() {
+        return catalogId;
+    }
 
     /**
      * The unique key of the job definition resource that defined the scope of this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
-    String jobDefinitionKey;
+    private final String jobDefinitionKey;
+
+    public String getJobDefinitionKey() {
+        return jobDefinitionKey;
+    }
 
     /**
      * Lifecycle state of the job, such as running, paused, or completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    JobLifecycleState lifecycleState;
+    private final JobLifecycleState lifecycleState;
+
+    public JobLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Type of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobType")
-    JobType jobType;
+    private final JobType jobType;
+
+    public JobType getJobType() {
+        return jobType;
+    }
 
     /**
      * Type of job schedule that is inferred from the scheduling properties.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
-    String scheduleType;
+    private final String scheduleType;
+
+    public String getScheduleType() {
+        return scheduleType;
+    }
 
     /**
      * Detailed description of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The date and time the job was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -355,25 +464,41 @@ public class JobSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Time that this job was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * OCID of the user who created this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
-    String createdById;
+    private final String createdById;
+
+    public String getCreatedById() {
+        return createdById;
+    }
 
     /**
      * OCID of the user who updated this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
-    String updatedById;
+    private final String updatedById;
+
+    public String getUpdatedById() {
+        return updatedById;
+    }
 
     /**
      * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
@@ -381,20 +506,32 @@ public class JobSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
-    String scheduleCronExpression;
+    private final String scheduleCronExpression;
+
+    public String getScheduleCronExpression() {
+        return scheduleCronExpression;
+    }
 
     /**
      * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleBegin")
-    java.util.Date timeScheduleBegin;
+    private final java.util.Date timeScheduleBegin;
+
+    public java.util.Date getTimeScheduleBegin() {
+        return timeScheduleBegin;
+    }
 
     /**
      * The total number of executions for this job schedule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionCount")
-    Integer executionCount;
+    private final Integer executionCount;
+
+    public Integer getExecutionCount() {
+        return executionCount;
+    }
 
     /**
      * The date and time of the most recent execution for this job, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -402,40 +539,185 @@ public class JobSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLatestExecution")
-    java.util.Date timeOfLatestExecution;
+    private final java.util.Date timeOfLatestExecution;
+
+    public java.util.Date getTimeOfLatestExecution() {
+        return timeOfLatestExecution;
+    }
 
     /**
      * The display name of the job definition resource that defined the scope of this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
-    String jobDefinitionName;
+    private final String jobDefinitionName;
+
+    public String getJobDefinitionName() {
+        return jobDefinitionName;
+    }
 
     /**
      * Unique key of the data asset to which this job applies, if the job involves a data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
-    String dataAssetKey;
+    private final String dataAssetKey;
+
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
 
     /**
      * Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
-    String errorCode;
+    private final String errorCode;
+
+    public String getErrorCode() {
+        return errorCode;
+    }
 
     /**
      * Error message returned from the latest job execution for this job. Useful when the latest Job Execution is in a FAILED state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     /**
      * Array of the executions summary associated with this job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executions")
-    java.util.List<JobExecutionSummary> executions;
+    private final java.util.List<JobExecutionSummary> executions;
+
+    public java.util.List<JobExecutionSummary> getExecutions() {
+        return executions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JobSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(", jobDefinitionKey=").append(String.valueOf(this.jobDefinitionKey));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", jobType=").append(String.valueOf(this.jobType));
+        sb.append(", scheduleType=").append(String.valueOf(this.scheduleType));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", createdById=").append(String.valueOf(this.createdById));
+        sb.append(", updatedById=").append(String.valueOf(this.updatedById));
+        sb.append(", scheduleCronExpression=").append(String.valueOf(this.scheduleCronExpression));
+        sb.append(", timeScheduleBegin=").append(String.valueOf(this.timeScheduleBegin));
+        sb.append(", executionCount=").append(String.valueOf(this.executionCount));
+        sb.append(", timeOfLatestExecution=").append(String.valueOf(this.timeOfLatestExecution));
+        sb.append(", jobDefinitionName=").append(String.valueOf(this.jobDefinitionName));
+        sb.append(", dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(", errorCode=").append(String.valueOf(this.errorCode));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", executions=").append(String.valueOf(this.executions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JobSummary)) {
+            return false;
+        }
+
+        JobSummary other = (JobSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.jobDefinitionKey, other.jobDefinitionKey)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.jobType, other.jobType)
+                && java.util.Objects.equals(this.scheduleType, other.scheduleType)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.createdById, other.createdById)
+                && java.util.Objects.equals(this.updatedById, other.updatedById)
+                && java.util.Objects.equals(
+                        this.scheduleCronExpression, other.scheduleCronExpression)
+                && java.util.Objects.equals(this.timeScheduleBegin, other.timeScheduleBegin)
+                && java.util.Objects.equals(this.executionCount, other.executionCount)
+                && java.util.Objects.equals(this.timeOfLatestExecution, other.timeOfLatestExecution)
+                && java.util.Objects.equals(this.jobDefinitionName, other.jobDefinitionName)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.errorCode, other.errorCode)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.executions, other.executions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobDefinitionKey == null ? 43 : this.jobDefinitionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.jobType == null ? 43 : this.jobType.hashCode());
+        result = (result * PRIME) + (this.scheduleType == null ? 43 : this.scheduleType.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.createdById == null ? 43 : this.createdById.hashCode());
+        result = (result * PRIME) + (this.updatedById == null ? 43 : this.updatedById.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduleCronExpression == null
+                                ? 43
+                                : this.scheduleCronExpression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduleBegin == null ? 43 : this.timeScheduleBegin.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionCount == null ? 43 : this.executionCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLatestExecution == null
+                                ? 43
+                                : this.timeOfLatestExecution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobDefinitionName == null ? 43 : this.jobDefinitionName.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.errorCode == null ? 43 : this.errorCode.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result = (result * PRIME) + (this.executions == null ? 43 : this.executions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

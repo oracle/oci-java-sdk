@@ -16,22 +16,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HostMemoryStatistics.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "resourceName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HostMemoryStatistics extends HostResourceStatistics {
+public final class HostMemoryStatistics extends HostResourceStatistics {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
@@ -180,6 +175,10 @@ public class HostMemoryStatistics extends HostResourceStatistics {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HostMemoryStatistics(
             Double usage,
@@ -204,42 +203,139 @@ public class HostMemoryStatistics extends HostResourceStatistics {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("freeMemory")
-    Double freeMemory;
+    private final Double freeMemory;
+
+    public Double getFreeMemory() {
+        return freeMemory;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("availableMemory")
-    Double availableMemory;
+    private final Double availableMemory;
+
+    public Double getAvailableMemory() {
+        return availableMemory;
+    }
 
     /**
      * Total number of huge pages.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
-    Integer hugePagesTotal;
+    private final Integer hugePagesTotal;
+
+    public Integer getHugePagesTotal() {
+        return hugePagesTotal;
+    }
 
     /**
      * Size of huge pages in megabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInMB")
-    Double hugePageSizeInMB;
+    private final Double hugePageSizeInMB;
+
+    public Double getHugePageSizeInMB() {
+        return hugePageSizeInMB;
+    }
 
     /**
      * Total number of available huge pages.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesFree")
-    Integer hugePagesFree;
+    private final Integer hugePagesFree;
+
+    public Integer getHugePagesFree() {
+        return hugePagesFree;
+    }
 
     /**
      * Total number of huge pages which are used or reserved.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesReserved")
-    Integer hugePagesReserved;
+    private final Integer hugePagesReserved;
+
+    public Integer getHugePagesReserved() {
+        return hugePagesReserved;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("load")
-    SummaryStatistics load;
+    private final SummaryStatistics load;
+
+    public SummaryStatistics getLoad() {
+        return load;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostMemoryStatistics(");
+        sb.append("super=").append(super.toString());
+        sb.append(", freeMemory=").append(String.valueOf(this.freeMemory));
+        sb.append(", availableMemory=").append(String.valueOf(this.availableMemory));
+        sb.append(", hugePagesTotal=").append(String.valueOf(this.hugePagesTotal));
+        sb.append(", hugePageSizeInMB=").append(String.valueOf(this.hugePageSizeInMB));
+        sb.append(", hugePagesFree=").append(String.valueOf(this.hugePagesFree));
+        sb.append(", hugePagesReserved=").append(String.valueOf(this.hugePagesReserved));
+        sb.append(", load=").append(String.valueOf(this.load));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostMemoryStatistics)) {
+            return false;
+        }
+
+        HostMemoryStatistics other = (HostMemoryStatistics) o;
+        return java.util.Objects.equals(this.freeMemory, other.freeMemory)
+                && java.util.Objects.equals(this.availableMemory, other.availableMemory)
+                && java.util.Objects.equals(this.hugePagesTotal, other.hugePagesTotal)
+                && java.util.Objects.equals(this.hugePageSizeInMB, other.hugePageSizeInMB)
+                && java.util.Objects.equals(this.hugePagesFree, other.hugePagesFree)
+                && java.util.Objects.equals(this.hugePagesReserved, other.hugePagesReserved)
+                && java.util.Objects.equals(this.load, other.load)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.freeMemory == null ? 43 : this.freeMemory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableMemory == null ? 43 : this.availableMemory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hugePagesTotal == null ? 43 : this.hugePagesTotal.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hugePageSizeInMB == null ? 43 : this.hugePageSizeInMB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hugePagesFree == null ? 43 : this.hugePagesFree.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hugePagesReserved == null ? 43 : this.hugePagesReserved.hashCode());
+        result = (result * PRIME) + (this.load == null ? 43 : this.load.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

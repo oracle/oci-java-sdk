@@ -15,16 +15,21 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TypeCustomPropertyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TypeCustomPropertyDetails {
+public final class TypeCustomPropertyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"customPropertyIds", "isEventEnabled"})
+    public TypeCustomPropertyDetails(
+            java.util.List<String> customPropertyIds, Boolean isEventEnabled) {
+        super();
+        this.customPropertyIds = customPropertyIds;
+        this.isEventEnabled = isEventEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyIds")
         private java.util.List<String> customPropertyIds;
@@ -72,18 +77,76 @@ public class TypeCustomPropertyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * array of custom property Ids
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyIds")
-    java.util.List<String> customPropertyIds;
+    private final java.util.List<String> customPropertyIds;
+
+    public java.util.List<String> getCustomPropertyIds() {
+        return customPropertyIds;
+    }
 
     /**
      * If an OCI Event will be emitted when the custom property is modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
-    Boolean isEventEnabled;
+    private final Boolean isEventEnabled;
+
+    public Boolean getIsEventEnabled() {
+        return isEventEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TypeCustomPropertyDetails(");
+        sb.append("customPropertyIds=").append(String.valueOf(this.customPropertyIds));
+        sb.append(", isEventEnabled=").append(String.valueOf(this.isEventEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TypeCustomPropertyDetails)) {
+            return false;
+        }
+
+        TypeCustomPropertyDetails other = (TypeCustomPropertyDetails) o;
+        return java.util.Objects.equals(this.customPropertyIds, other.customPropertyIds)
+                && java.util.Objects.equals(this.isEventEnabled, other.isEventEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.customPropertyIds == null ? 43 : this.customPropertyIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEventEnabled == null ? 43 : this.isEventEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

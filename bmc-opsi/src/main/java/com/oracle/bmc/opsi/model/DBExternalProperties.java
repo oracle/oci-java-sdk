@@ -15,22 +15,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DBExternalProperties.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "metricName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DBExternalProperties extends DatabaseConfigurationMetricGroup {
+public final class DBExternalProperties extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
@@ -179,6 +174,10 @@ public class DBExternalProperties extends DatabaseConfigurationMetricGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DBExternalProperties(
             java.util.Date timeCollected,
@@ -209,62 +208,174 @@ public class DBExternalProperties extends DatabaseConfigurationMetricGroup {
      * Name of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Archive log mode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logMode")
-    String logMode;
+    private final String logMode;
+
+    public String getLogMode() {
+        return logMode;
+    }
 
     /**
      * Indicates if it is a CDB or not. This would be 'yes' or 'no'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdb")
-    String cdb;
+    private final String cdb;
+
+    public String getCdb() {
+        return cdb;
+    }
 
     /**
      * Open mode information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
-    String openMode;
+    private final String openMode;
+
+    public String getOpenMode() {
+        return openMode;
+    }
 
     /**
      * Current role of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseRole")
-    String databaseRole;
+    private final String databaseRole;
+
+    public String getDatabaseRole() {
+        return databaseRole;
+    }
 
     /**
      * Data protection policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("guardStatus")
-    String guardStatus;
+    private final String guardStatus;
+
+    public String getGuardStatus() {
+        return guardStatus;
+    }
 
     /**
      * Platform name of the database, OS with architecture.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformName")
-    String platformName;
+    private final String platformName;
+
+    public String getPlatformName() {
+        return platformName;
+    }
 
     /**
      * Type of control file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("controlFileType")
-    String controlFileType;
+    private final String controlFileType;
+
+    public String getControlFileType() {
+        return controlFileType;
+    }
 
     /**
      * Indicates whether switchover is allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("switchoverStatus")
-    String switchoverStatus;
+    private final String switchoverStatus;
+
+    public String getSwitchoverStatus() {
+        return switchoverStatus;
+    }
 
     /**
      * Creation time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("created")
-    java.util.Date created;
+    private final java.util.Date created;
+
+    public java.util.Date getCreated() {
+        return created;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DBExternalProperties(");
+        sb.append("super=").append(super.toString());
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", logMode=").append(String.valueOf(this.logMode));
+        sb.append(", cdb=").append(String.valueOf(this.cdb));
+        sb.append(", openMode=").append(String.valueOf(this.openMode));
+        sb.append(", databaseRole=").append(String.valueOf(this.databaseRole));
+        sb.append(", guardStatus=").append(String.valueOf(this.guardStatus));
+        sb.append(", platformName=").append(String.valueOf(this.platformName));
+        sb.append(", controlFileType=").append(String.valueOf(this.controlFileType));
+        sb.append(", switchoverStatus=").append(String.valueOf(this.switchoverStatus));
+        sb.append(", created=").append(String.valueOf(this.created));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DBExternalProperties)) {
+            return false;
+        }
+
+        DBExternalProperties other = (DBExternalProperties) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.logMode, other.logMode)
+                && java.util.Objects.equals(this.cdb, other.cdb)
+                && java.util.Objects.equals(this.openMode, other.openMode)
+                && java.util.Objects.equals(this.databaseRole, other.databaseRole)
+                && java.util.Objects.equals(this.guardStatus, other.guardStatus)
+                && java.util.Objects.equals(this.platformName, other.platformName)
+                && java.util.Objects.equals(this.controlFileType, other.controlFileType)
+                && java.util.Objects.equals(this.switchoverStatus, other.switchoverStatus)
+                && java.util.Objects.equals(this.created, other.created)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.logMode == null ? 43 : this.logMode.hashCode());
+        result = (result * PRIME) + (this.cdb == null ? 43 : this.cdb.hashCode());
+        result = (result * PRIME) + (this.openMode == null ? 43 : this.openMode.hashCode());
+        result = (result * PRIME) + (this.databaseRole == null ? 43 : this.databaseRole.hashCode());
+        result = (result * PRIME) + (this.guardStatus == null ? 43 : this.guardStatus.hashCode());
+        result = (result * PRIME) + (this.platformName == null ? 43 : this.platformName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.controlFileType == null ? 43 : this.controlFileType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.switchoverStatus == null ? 43 : this.switchoverStatus.hashCode());
+        result = (result * PRIME) + (this.created == null ? 43 : this.created.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

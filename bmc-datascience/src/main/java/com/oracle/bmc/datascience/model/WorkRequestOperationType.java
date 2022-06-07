@@ -8,7 +8,6 @@ package com.oracle.bmc.datascience.model;
  * The types of work request operations.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.extern.slf4j.Slf4j
 public enum WorkRequestOperationType {
     NotebookSessionCreate("NOTEBOOK_SESSION_CREATE"),
     NotebookSessionDelete("NOTEBOOK_SESSION_DELETE"),
@@ -28,6 +27,9 @@ public enum WorkRequestOperationType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WorkRequestOperationType.class);
 
     private final String value;
     private static java.util.Map<String, WorkRequestOperationType> map;

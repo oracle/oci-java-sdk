@@ -8,7 +8,6 @@ package com.oracle.bmc.datascience.model;
  * The status of a job.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-@lombok.extern.slf4j.Slf4j
 public enum JobLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
@@ -21,6 +20,9 @@ public enum JobLifecycleState {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(JobLifecycleState.class);
 
     private final String value;
     private static java.util.Map<String, JobLifecycleState> map;

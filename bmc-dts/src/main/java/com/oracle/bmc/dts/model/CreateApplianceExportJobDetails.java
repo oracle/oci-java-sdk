@@ -15,16 +15,46 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateApplianceExportJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateApplianceExportJobDetails {
+public final class CreateApplianceExportJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "bucketName",
+        "displayName",
+        "prefix",
+        "rangeStart",
+        "rangeEnd",
+        "customerShippingAddress",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateApplianceExportJobDetails(
+            String compartmentId,
+            String bucketName,
+            String displayName,
+            String prefix,
+            String rangeStart,
+            String rangeEnd,
+            ShippingAddress customerShippingAddress,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.compartmentId = compartmentId;
+        this.bucketName = bucketName;
+        this.displayName = displayName;
+        this.prefix = prefix;
+        this.rangeStart = rangeStart;
+        this.rangeEnd = rangeEnd;
+        this.customerShippingAddress = customerShippingAddress;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -152,35 +182,67 @@ public class CreateApplianceExportJobDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
+    private final String bucketName;
+
+    public String getBucketName() {
+        return bucketName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * List of objects with names matching this prefix would be part of this export job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
-    String prefix;
+    private final String prefix;
+
+    public String getPrefix() {
+        return prefix;
+    }
 
     /**
      * Object names returned by a list query must be greater or equal to this parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeStart")
-    String rangeStart;
+    private final String rangeStart;
+
+    public String getRangeStart() {
+        return rangeStart;
+    }
 
     /**
      * Object names returned by a list query must be strictly less than this parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeEnd")
-    String rangeEnd;
+    private final String rangeEnd;
+
+    public String getRangeEnd() {
+        return rangeEnd;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("customerShippingAddress")
-    ShippingAddress customerShippingAddress;
+    private final ShippingAddress customerShippingAddress;
+
+    public ShippingAddress getCustomerShippingAddress() {
+        return customerShippingAddress;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -190,7 +252,11 @@ public class CreateApplianceExportJobDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -200,8 +266,83 @@ public class CreateApplianceExportJobDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateApplianceExportJobDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", prefix=").append(String.valueOf(this.prefix));
+        sb.append(", rangeStart=").append(String.valueOf(this.rangeStart));
+        sb.append(", rangeEnd=").append(String.valueOf(this.rangeEnd));
+        sb.append(", customerShippingAddress=")
+                .append(String.valueOf(this.customerShippingAddress));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateApplianceExportJobDetails)) {
+            return false;
+        }
+
+        CreateApplianceExportJobDetails other = (CreateApplianceExportJobDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.prefix, other.prefix)
+                && java.util.Objects.equals(this.rangeStart, other.rangeStart)
+                && java.util.Objects.equals(this.rangeEnd, other.rangeEnd)
+                && java.util.Objects.equals(
+                        this.customerShippingAddress, other.customerShippingAddress)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
+        result = (result * PRIME) + (this.rangeStart == null ? 43 : this.rangeStart.hashCode());
+        result = (result * PRIME) + (this.rangeEnd == null ? 43 : this.rangeEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerShippingAddress == null
+                                ? 43
+                                : this.customerShippingAddress.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

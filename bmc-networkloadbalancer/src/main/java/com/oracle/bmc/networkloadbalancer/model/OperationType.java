@@ -8,7 +8,6 @@ package com.oracle.bmc.networkloadbalancer.model;
  * Possible operations.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.extern.slf4j.Slf4j
 public enum OperationType {
     CreateNetworkLoadBalancer("CREATE_NETWORK_LOAD_BALANCER"),
     UpdateNetworkLoadBalancer("UPDATE_NETWORK_LOAD_BALANCER"),
@@ -33,6 +32,9 @@ public enum OperationType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OperationType.class);
 
     private final String value;
     private static java.util.Map<String, OperationType> map;

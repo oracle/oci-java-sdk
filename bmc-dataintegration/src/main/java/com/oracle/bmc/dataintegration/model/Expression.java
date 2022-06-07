@@ -15,14 +15,38 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Expression.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Expression {
+public final class Expression {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelType",
+        "modelVersion",
+        "parentRef",
+        "exprString",
+        "configValues",
+        "objectStatus"
+    })
+    public Expression(
+            String key,
+            String modelType,
+            String modelVersion,
+            ParentReference parentRef,
+            String exprString,
+            ConfigValues configValues,
+            Integer objectStatus) {
+        super();
+        this.key = key;
+        this.modelType = modelType;
+        this.modelVersion = modelVersion;
+        this.parentRef = parentRef;
+        this.exprString = exprString;
+        this.configValues = configValues;
+        this.objectStatus = objectStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -127,42 +151,131 @@ public class Expression {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The object type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    String modelType;
+    private final String modelType;
+
+    public String getModelType() {
+        return modelType;
+    }
 
     /**
      * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * The expression string for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exprString")
-    String exprString;
+    private final String exprString;
+
+    public String getExprString() {
+        return exprString;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configValues")
-    ConfigValues configValues;
+    private final ConfigValues configValues;
+
+    public ConfigValues getConfigValues() {
+        return configValues;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Expression(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", exprString=").append(String.valueOf(this.exprString));
+        sb.append(", configValues=").append(String.valueOf(this.configValues));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Expression)) {
+            return false;
+        }
+
+        Expression other = (Expression) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.exprString, other.exprString)
+                && java.util.Objects.equals(this.configValues, other.configValues)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.exprString == null ? 43 : this.exprString.hashCode());
+        result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

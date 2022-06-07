@@ -9,14 +9,6 @@ import com.oracle.bmc.functions.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/InvokeFunctionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use InvokeFunctionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
@@ -25,6 +17,9 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String functionId;
 
+    public String getFunctionId() {
+        return functionId;
+    }
     /**
      * The body of the function invocation.
      * Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
@@ -32,6 +27,9 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.io.InputStream invokeFunctionBody;
 
+    public java.io.InputStream getInvokeFunctionBody() {
+        return invokeFunctionBody;
+    }
     /**
      * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
      *
@@ -74,6 +72,10 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
             throw new IllegalArgumentException("Invalid FnIntent: " + key);
         }
     };
+
+    public FnIntent getFnIntent() {
+        return fnIntent;
+    }
     /**
      * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,
      * or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
@@ -118,12 +120,20 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
             throw new IllegalArgumentException("Invalid FnInvokeType: " + key);
         }
     };
+
+    public FnInvokeType getFnInvokeType() {
+        return fnInvokeType;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -141,6 +151,69 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String functionId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
+         *
+         * @return this builder instance
+         */
+        public Builder functionId(String functionId) {
+            this.functionId = functionId;
+            return this;
+        }
+
+        private java.io.InputStream invokeFunctionBody = null;
+
+        /**
+         * The body of the function invocation.
+         * Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+         *
+         * @return this builder instance
+         */
+        public Builder invokeFunctionBody(java.io.InputStream invokeFunctionBody) {
+            this.invokeFunctionBody = invokeFunctionBody;
+            return this;
+        }
+
+        private FnIntent fnIntent = null;
+
+        /**
+         * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
+         *
+         * @return this builder instance
+         */
+        public Builder fnIntent(FnIntent fnIntent) {
+            this.fnIntent = fnIntent;
+            return this;
+        }
+
+        private FnInvokeType fnInvokeType = null;
+
+        /**
+         * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,
+         * or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
+         *
+         * @return this builder instance
+         */
+        public Builder fnInvokeType(FnInvokeType fnInvokeType) {
+            this.fnInvokeType = fnInvokeType;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -207,5 +280,88 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
             invokeFunctionBody(body);
             return this;
         }
+
+        /**
+         * Build the instance of InvokeFunctionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of InvokeFunctionRequest
+         */
+        public InvokeFunctionRequest buildWithoutInvocationCallback() {
+            InvokeFunctionRequest request = new InvokeFunctionRequest();
+            request.functionId = functionId;
+            request.invokeFunctionBody = invokeFunctionBody;
+            request.fnIntent = fnIntent;
+            request.fnInvokeType = fnInvokeType;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new InvokeFunctionRequest(functionId, invokeFunctionBody, fnIntent, fnInvokeType, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .functionId(functionId)
+                .invokeFunctionBody(invokeFunctionBody)
+                .fnIntent(fnIntent)
+                .fnInvokeType(fnInvokeType)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",functionId=").append(String.valueOf(this.functionId));
+        sb.append(",invokeFunctionBody=").append(String.valueOf(this.invokeFunctionBody));
+        sb.append(",fnIntent=").append(String.valueOf(this.fnIntent));
+        sb.append(",fnInvokeType=").append(String.valueOf(this.fnInvokeType));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InvokeFunctionRequest)) {
+            return false;
+        }
+
+        InvokeFunctionRequest other = (InvokeFunctionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.functionId, other.functionId)
+                && java.util.Objects.equals(this.invokeFunctionBody, other.invokeFunctionBody)
+                && java.util.Objects.equals(this.fnIntent, other.fnIntent)
+                && java.util.Objects.equals(this.fnInvokeType, other.fnInvokeType)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.functionId == null ? 43 : this.functionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.invokeFunctionBody == null
+                                ? 43
+                                : this.invokeFunctionBody.hashCode());
+        result = (result * PRIME) + (this.fnIntent == null ? 43 : this.fnIntent.hashCode());
+        result = (result * PRIME) + (this.fnInvokeType == null ? 43 : this.fnInvokeType.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

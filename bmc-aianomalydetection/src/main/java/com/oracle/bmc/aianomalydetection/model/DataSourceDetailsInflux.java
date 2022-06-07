@@ -15,22 +15,17 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DataSourceDetailsInflux.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "dataSourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataSourceDetailsInflux extends DataSourceDetails {
+public final class DataSourceDetailsInflux extends DataSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("versionSpecificDetails")
         private InfluxDetails versionSpecificDetails;
@@ -113,6 +108,10 @@ public class DataSourceDetailsInflux extends DataSourceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DataSourceDetailsInflux(
             InfluxDetails versionSpecificDetails,
@@ -129,32 +128,113 @@ public class DataSourceDetailsInflux extends DataSourceDetails {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("versionSpecificDetails")
-    InfluxDetails versionSpecificDetails;
+    private final InfluxDetails versionSpecificDetails;
+
+    public InfluxDetails getVersionSpecificDetails() {
+        return versionSpecificDetails;
+    }
 
     /**
      * Username for connection to Influx
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * Password Secret Id for the influx connection
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
-    String passwordSecretId;
+    private final String passwordSecretId;
+
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
 
     /**
      * Measurement name for influx
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("measurementName")
-    String measurementName;
+    private final String measurementName;
+
+    public String getMeasurementName() {
+        return measurementName;
+    }
 
     /**
      * public IP address and port to influx DB
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataSourceDetailsInflux(");
+        sb.append("super=").append(super.toString());
+        sb.append(", versionSpecificDetails=").append(String.valueOf(this.versionSpecificDetails));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", measurementName=").append(String.valueOf(this.measurementName));
+        sb.append(", url=").append(String.valueOf(this.url));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataSourceDetailsInflux)) {
+            return false;
+        }
+
+        DataSourceDetailsInflux other = (DataSourceDetailsInflux) o;
+        return java.util.Objects.equals(this.versionSpecificDetails, other.versionSpecificDetails)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.measurementName, other.measurementName)
+                && java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.versionSpecificDetails == null
+                                ? 43
+                                : this.versionSpecificDetails.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.measurementName == null ? 43 : this.measurementName.hashCode());
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

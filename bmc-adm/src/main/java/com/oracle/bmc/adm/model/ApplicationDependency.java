@@ -15,16 +15,22 @@ package com.oracle.bmc.adm.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApplicationDependency.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApplicationDependency {
+public final class ApplicationDependency {
+    @Deprecated
+    @java.beans.ConstructorProperties({"gav", "nodeId", "applicationDependencyNodeIds"})
+    public ApplicationDependency(
+            String gav, String nodeId, java.util.List<String> applicationDependencyNodeIds) {
+        super();
+        this.gav = gav;
+        this.nodeId = nodeId;
+        this.applicationDependencyNodeIds = applicationDependencyNodeIds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("gav")
         private String gav;
@@ -83,24 +89,91 @@ public class ApplicationDependency {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gav")
-    String gav;
+    private final String gav;
+
+    public String getGav() {
+        return gav;
+    }
 
     /**
      * Unique identifier of an Application Dependency node, e.g. nodeId1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
-    String nodeId;
+    private final String nodeId;
+
+    public String getNodeId() {
+        return nodeId;
+    }
 
     /**
      * List of (Application Dependencies) node identifiers on which this node depends.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationDependencyNodeIds")
-    java.util.List<String> applicationDependencyNodeIds;
+    private final java.util.List<String> applicationDependencyNodeIds;
+
+    public java.util.List<String> getApplicationDependencyNodeIds() {
+        return applicationDependencyNodeIds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApplicationDependency(");
+        sb.append("gav=").append(String.valueOf(this.gav));
+        sb.append(", nodeId=").append(String.valueOf(this.nodeId));
+        sb.append(", applicationDependencyNodeIds=")
+                .append(String.valueOf(this.applicationDependencyNodeIds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApplicationDependency)) {
+            return false;
+        }
+
+        ApplicationDependency other = (ApplicationDependency) o;
+        return java.util.Objects.equals(this.gav, other.gav)
+                && java.util.Objects.equals(this.nodeId, other.nodeId)
+                && java.util.Objects.equals(
+                        this.applicationDependencyNodeIds, other.applicationDependencyNodeIds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.gav == null ? 43 : this.gav.hashCode());
+        result = (result * PRIME) + (this.nodeId == null ? 43 : this.nodeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationDependencyNodeIds == null
+                                ? 43
+                                : this.applicationDependencyNodeIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,22 +15,17 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstalledDatabaseDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "databaseType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstalledDatabaseDetails extends DatabaseDetails {
+public final class InstalledDatabaseDetails extends DatabaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
         private InfrastructureType infrastructureType;
@@ -109,6 +104,10 @@ public class InstalledDatabaseDetails extends DatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public InstalledDatabaseDetails(
             InfrastructureType infrastructureType,
@@ -127,27 +126,93 @@ public class InstalledDatabaseDetails extends DatabaseDetails {
      * The OCID of the compute instance on which the database is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
 
     /**
      * The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
-    java.util.List<String> ipAddresses;
+    private final java.util.List<String> ipAddresses;
+
+    public java.util.List<String> getIpAddresses() {
+        return ipAddresses;
+    }
 
     /**
      * The port number of the database listener.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
-    Integer listenerPort;
+    private final Integer listenerPort;
+
+    public Integer getListenerPort() {
+        return listenerPort;
+    }
 
     /**
      * The service name of the database registered as target database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstalledDatabaseDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
+        sb.append(", listenerPort=").append(String.valueOf(this.listenerPort));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstalledDatabaseDetails)) {
+            return false;
+        }
+
+        InstalledDatabaseDetails other = (InstalledDatabaseDetails) o;
+        return java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.ipAddresses, other.ipAddresses)
+                && java.util.Objects.equals(this.listenerPort, other.listenerPort)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result = (result * PRIME) + (this.ipAddresses == null ? 43 : this.ipAddresses.hashCode());
+        result = (result * PRIME) + (this.listenerPort == null ? 43 : this.listenerPort.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

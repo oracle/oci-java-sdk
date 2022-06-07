@@ -15,16 +15,34 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExecuteOperationJob.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExecuteOperationJob {
+public final class ExecuteOperationJob {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "operationStatus",
+        "errorMessage",
+        "operationName",
+        "outParams",
+        "operationResult"
+    })
+    public ExecuteOperationJob(
+            String operationStatus,
+            String errorMessage,
+            String operationName,
+            java.util.List<String> outParams,
+            java.util.List<OperationExecResult> operationResult) {
+        super();
+        this.operationStatus = operationStatus;
+        this.errorMessage = errorMessage;
+        this.operationName = operationName;
+        this.outParams = outParams;
+        this.operationResult = operationResult;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private String operationStatus;
@@ -107,36 +125,117 @@ public class ExecuteOperationJob {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Status of the operation job for all sets of input.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
-    String operationStatus;
+    private final String operationStatus;
+
+    public String getOperationStatus() {
+        return operationStatus;
+    }
 
     /**
      * Error message, if whole operation is failed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     /**
      * Name of the operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
-    String operationName;
+    private final String operationName;
+
+    public String getOperationName() {
+        return operationName;
+    }
 
     /**
      * List of names of OUT/INOUT params.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outParams")
-    java.util.List<String> outParams;
+    private final java.util.List<String> outParams;
+
+    public java.util.List<String> getOutParams() {
+        return outParams;
+    }
 
     /**
      * List of operation execution result for each input set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationResult")
-    java.util.List<OperationExecResult> operationResult;
+    private final java.util.List<OperationExecResult> operationResult;
+
+    public java.util.List<OperationExecResult> getOperationResult() {
+        return operationResult;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExecuteOperationJob(");
+        sb.append("operationStatus=").append(String.valueOf(this.operationStatus));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", operationName=").append(String.valueOf(this.operationName));
+        sb.append(", outParams=").append(String.valueOf(this.outParams));
+        sb.append(", operationResult=").append(String.valueOf(this.operationResult));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExecuteOperationJob)) {
+            return false;
+        }
+
+        ExecuteOperationJob other = (ExecuteOperationJob) o;
+        return java.util.Objects.equals(this.operationStatus, other.operationStatus)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.operationName, other.operationName)
+                && java.util.Objects.equals(this.outParams, other.outParams)
+                && java.util.Objects.equals(this.operationResult, other.operationResult)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.operationStatus == null ? 43 : this.operationStatus.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationName == null ? 43 : this.operationName.hashCode());
+        result = (result * PRIME) + (this.outParams == null ? 43 : this.outParams.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationResult == null ? 43 : this.operationResult.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

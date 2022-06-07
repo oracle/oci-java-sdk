@@ -15,20 +15,15 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PurgeAction.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PurgeAction extends Action {
+public final class PurgeAction extends Action {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
@@ -111,6 +106,10 @@ public class PurgeAction extends Action {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public PurgeAction(
             String queryString,
@@ -130,13 +129,21 @@ public class PurgeAction extends Action {
      * Purge query string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
-    String queryString;
+    private final String queryString;
+
+    public String getQueryString() {
+        return queryString;
+    }
 
     /**
      * the type of the log data to be purged
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    StorageDataType dataType;
+    private final StorageDataType dataType;
+
+    public StorageDataType getDataType() {
+        return dataType;
+    }
 
     /**
      * The duration of data to be retained, which is used to
@@ -148,20 +155,96 @@ public class PurgeAction extends Action {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeDuration")
-    String purgeDuration;
+    private final String purgeDuration;
+
+    public String getPurgeDuration() {
+        return purgeDuration;
+    }
 
     /**
      * the compartment OCID under which the data will be purged
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeCompartmentId")
-    String purgeCompartmentId;
+    private final String purgeCompartmentId;
+
+    public String getPurgeCompartmentId() {
+        return purgeCompartmentId;
+    }
 
     /**
      * if true, purge child compartments data
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
-    Boolean compartmentIdInSubtree;
+    private final Boolean compartmentIdInSubtree;
+
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PurgeAction(");
+        sb.append("super=").append(super.toString());
+        sb.append(", queryString=").append(String.valueOf(this.queryString));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", purgeDuration=").append(String.valueOf(this.purgeDuration));
+        sb.append(", purgeCompartmentId=").append(String.valueOf(this.purgeCompartmentId));
+        sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PurgeAction)) {
+            return false;
+        }
+
+        PurgeAction other = (PurgeAction) o;
+        return java.util.Objects.equals(this.queryString, other.queryString)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.purgeDuration, other.purgeDuration)
+                && java.util.Objects.equals(this.purgeCompartmentId, other.purgeCompartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.queryString == null ? 43 : this.queryString.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.purgeDuration == null ? 43 : this.purgeDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.purgeCompartmentId == null
+                                ? 43
+                                : this.purgeCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

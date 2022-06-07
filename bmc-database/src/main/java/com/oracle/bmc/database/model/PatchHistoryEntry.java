@@ -15,16 +15,40 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PatchHistoryEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PatchHistoryEntry {
+public final class PatchHistoryEntry {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "patchId",
+        "action",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeStarted",
+        "timeEnded"
+    })
+    public PatchHistoryEntry(
+            String id,
+            String patchId,
+            Action action,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded) {
+        super();
+        this.id = id;
+        this.patchId = patchId;
+        this.action = action;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -129,21 +153,33 @@ public class PatchHistoryEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
-    String patchId;
+    private final String patchId;
+
+    public String getPatchId() {
+        return patchId;
+    }
+
     /**
      * The action being performed or was completed.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Apply("APPLY"),
         Precheck("PRECHECK"),
@@ -153,6 +189,8 @@ public class PatchHistoryEntry {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -190,11 +228,15 @@ public class PatchHistoryEntry {
      * The action being performed or was completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
+
     /**
      * The current state of the action.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
@@ -205,6 +247,9 @@ public class PatchHistoryEntry {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -242,7 +287,11 @@ public class PatchHistoryEntry {
      * The current state of the action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A descriptive text associated with the lifecycleState.
@@ -250,20 +299,93 @@ public class PatchHistoryEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time when the patch action started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The date and time when the patch action completed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PatchHistoryEntry(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", patchId=").append(String.valueOf(this.patchId));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PatchHistoryEntry)) {
+            return false;
+        }
+
+        PatchHistoryEntry other = (PatchHistoryEntry) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.patchId, other.patchId)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.patchId == null ? 43 : this.patchId.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

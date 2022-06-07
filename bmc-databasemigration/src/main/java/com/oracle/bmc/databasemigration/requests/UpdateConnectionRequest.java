@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemigration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateConnectionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConnectionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemigration.model.UpdateConnectionDetails> {
@@ -27,12 +19,19 @@ public class UpdateConnectionRequest
      */
     private String connectionId;
 
+    public String getConnectionId() {
+        return connectionId;
+    }
     /**
      * Database Connection properties.
      *
      */
     private com.oracle.bmc.databasemigration.model.UpdateConnectionDetails updateConnectionDetails;
 
+    public com.oracle.bmc.databasemigration.model.UpdateConnectionDetails
+            getUpdateConnectionDetails() {
+        return updateConnectionDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -40,6 +39,9 @@ public class UpdateConnectionRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -49,6 +51,10 @@ public class UpdateConnectionRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -67,6 +73,62 @@ public class UpdateConnectionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String connectionId = null;
+
+        /**
+         * The OCID of the database connection
+         *
+         * @return this builder instance
+         */
+        public Builder connectionId(String connectionId) {
+            this.connectionId = connectionId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemigration.model.UpdateConnectionDetails
+                updateConnectionDetails = null;
+
+        /**
+         * Database Connection properties.
+         *
+         * @return this builder instance
+         */
+        public Builder updateConnectionDetails(
+                com.oracle.bmc.databasemigration.model.UpdateConnectionDetails
+                        updateConnectionDetails) {
+            this.updateConnectionDetails = updateConnectionDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -132,5 +194,84 @@ public class UpdateConnectionRequest
             updateConnectionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateConnectionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateConnectionRequest
+         */
+        public UpdateConnectionRequest buildWithoutInvocationCallback() {
+            UpdateConnectionRequest request = new UpdateConnectionRequest();
+            request.connectionId = connectionId;
+            request.updateConnectionDetails = updateConnectionDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateConnectionRequest(connectionId, updateConnectionDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .connectionId(connectionId)
+                .updateConnectionDetails(updateConnectionDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",connectionId=").append(String.valueOf(this.connectionId));
+        sb.append(",updateConnectionDetails=").append(String.valueOf(this.updateConnectionDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateConnectionRequest)) {
+            return false;
+        }
+
+        UpdateConnectionRequest other = (UpdateConnectionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.connectionId, other.connectionId)
+                && java.util.Objects.equals(
+                        this.updateConnectionDetails, other.updateConnectionDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateConnectionDetails == null
+                                ? 43
+                                : this.updateConnectionDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

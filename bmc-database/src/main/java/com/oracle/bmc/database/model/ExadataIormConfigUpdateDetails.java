@@ -16,16 +16,21 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExadataIormConfigUpdateDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExadataIormConfigUpdateDetails {
+public final class ExadataIormConfigUpdateDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"objective", "dbPlans"})
+    public ExadataIormConfigUpdateDetails(
+            Objective objective, java.util.List<DbIormConfigUpdateDetail> dbPlans) {
+        super();
+        this.objective = objective;
+        this.dbPlans = dbPlans;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objective")
         private Objective objective;
@@ -69,6 +74,10 @@ public class ExadataIormConfigUpdateDetails {
      */
     public static Builder builder() {
         return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
     }
 
     /**
@@ -117,7 +126,11 @@ public class ExadataIormConfigUpdateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objective")
-    Objective objective;
+    private final Objective objective;
+
+    public Objective getObjective() {
+        return objective;
+    }
 
     /**
      * Array of IORM Setting for all the database in
@@ -125,8 +138,54 @@ public class ExadataIormConfigUpdateDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPlans")
-    java.util.List<DbIormConfigUpdateDetail> dbPlans;
+    private final java.util.List<DbIormConfigUpdateDetail> dbPlans;
+
+    public java.util.List<DbIormConfigUpdateDetail> getDbPlans() {
+        return dbPlans;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExadataIormConfigUpdateDetails(");
+        sb.append("objective=").append(String.valueOf(this.objective));
+        sb.append(", dbPlans=").append(String.valueOf(this.dbPlans));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExadataIormConfigUpdateDetails)) {
+            return false;
+        }
+
+        ExadataIormConfigUpdateDetails other = (ExadataIormConfigUpdateDetails) o;
+        return java.util.Objects.equals(this.objective, other.objective)
+                && java.util.Objects.equals(this.dbPlans, other.dbPlans)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.objective == null ? 43 : this.objective.hashCode());
+        result = (result * PRIME) + (this.dbPlans == null ? 43 : this.dbPlans.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

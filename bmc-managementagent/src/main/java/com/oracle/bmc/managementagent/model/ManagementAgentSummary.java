@@ -15,16 +15,88 @@ package com.oracle.bmc.managementagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ManagementAgentSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ManagementAgentSummary {
+public final class ManagementAgentSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "installKeyId",
+        "displayName",
+        "platformType",
+        "platformName",
+        "platformVersion",
+        "version",
+        "resourceArtifactVersion",
+        "isAgentAutoUpgradable",
+        "timeCreated",
+        "timeUpdated",
+        "host",
+        "hostId",
+        "pluginList",
+        "compartmentId",
+        "timeLastHeartbeat",
+        "availabilityStatus",
+        "lifecycleState",
+        "lifecycleDetails",
+        "isCustomerDeployed",
+        "installType",
+        "freeformTags",
+        "definedTags"
+    })
+    public ManagementAgentSummary(
+            String id,
+            String installKeyId,
+            String displayName,
+            PlatformTypes platformType,
+            String platformName,
+            String platformVersion,
+            String version,
+            String resourceArtifactVersion,
+            Boolean isAgentAutoUpgradable,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String host,
+            String hostId,
+            java.util.List<ManagementAgentPluginDetails> pluginList,
+            String compartmentId,
+            java.util.Date timeLastHeartbeat,
+            AvailabilityStatus availabilityStatus,
+            LifecycleStates lifecycleState,
+            String lifecycleDetails,
+            Boolean isCustomerDeployed,
+            InstallTypes installType,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.installKeyId = installKeyId;
+        this.displayName = displayName;
+        this.platformType = platformType;
+        this.platformName = platformName;
+        this.platformVersion = platformVersion;
+        this.version = version;
+        this.resourceArtifactVersion = resourceArtifactVersion;
+        this.isAgentAutoUpgradable = isAgentAutoUpgradable;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.host = host;
+        this.hostId = hostId;
+        this.pluginList = pluginList;
+        this.compartmentId = compartmentId;
+        this.timeLastHeartbeat = timeLastHeartbeat;
+        this.availabilityStatus = availabilityStatus;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.isCustomerDeployed = isCustomerDeployed;
+        this.installType = installType;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -306,47 +378,79 @@ public class ManagementAgentSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * agent identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * agent install key identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installKeyId")
-    String installKeyId;
+    private final String installKeyId;
+
+    public String getInstallKeyId() {
+        return installKeyId;
+    }
 
     /**
      * Management Agent Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Platform Type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
-    PlatformTypes platformType;
+    private final PlatformTypes platformType;
+
+    public PlatformTypes getPlatformType() {
+        return platformType;
+    }
 
     /**
      * Platform Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformName")
-    String platformName;
+    private final String platformName;
+
+    public String getPlatformName() {
+        return platformName;
+    }
 
     /**
      * Platform Version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
-    String platformVersion;
+    private final String platformVersion;
+
+    public String getPlatformVersion() {
+        return platformVersion;
+    }
 
     /**
      * Management Agent Version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     /**
      * Version of the deployment artifact instantiated by this Management Agent.
@@ -357,85 +461,141 @@ public class ManagementAgentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceArtifactVersion")
-    String resourceArtifactVersion;
+    private final String resourceArtifactVersion;
+
+    public String getResourceArtifactVersion() {
+        return resourceArtifactVersion;
+    }
 
     /**
      * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
-    Boolean isAgentAutoUpgradable;
+    private final Boolean isAgentAutoUpgradable;
+
+    public Boolean getIsAgentAutoUpgradable() {
+        return isAgentAutoUpgradable;
+    }
 
     /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the Management Agent was last updated. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * Management Agent host machine name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * Host resource ocid
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostId")
-    String hostId;
+    private final String hostId;
+
+    public String getHostId() {
+        return hostId;
+    }
 
     /**
      * list of managementAgentPlugins associated with the agent
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginList")
-    java.util.List<ManagementAgentPluginDetails> pluginList;
+    private final java.util.List<ManagementAgentPluginDetails> pluginList;
+
+    public java.util.List<ManagementAgentPluginDetails> getPluginList() {
+        return pluginList;
+    }
 
     /**
      * Compartment Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The time the Management Agent has last recorded its heartbeat. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastHeartbeat")
-    java.util.Date timeLastHeartbeat;
+    private final java.util.Date timeLastHeartbeat;
+
+    public java.util.Date getTimeLastHeartbeat() {
+        return timeLastHeartbeat;
+    }
 
     /**
      * The current availability status of managementAgent
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
-    AvailabilityStatus availabilityStatus;
+    private final AvailabilityStatus availabilityStatus;
+
+    public AvailabilityStatus getAvailabilityStatus() {
+        return availabilityStatus;
+    }
 
     /**
      * The current state of managementAgent
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomerDeployed")
-    Boolean isCustomerDeployed;
+    private final Boolean isCustomerDeployed;
+
+    public Boolean getIsCustomerDeployed() {
+        return isCustomerDeployed;
+    }
 
     /**
      * The install type, either AGENT or GATEWAY
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installType")
-    InstallTypes installType;
+    private final InstallTypes installType;
+
+    public InstallTypes getInstallType() {
+        return installType;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -443,7 +603,11 @@ public class ManagementAgentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -451,8 +615,145 @@ public class ManagementAgentSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ManagementAgentSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", installKeyId=").append(String.valueOf(this.installKeyId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", platformType=").append(String.valueOf(this.platformType));
+        sb.append(", platformName=").append(String.valueOf(this.platformName));
+        sb.append(", platformVersion=").append(String.valueOf(this.platformVersion));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", resourceArtifactVersion=")
+                .append(String.valueOf(this.resourceArtifactVersion));
+        sb.append(", isAgentAutoUpgradable=").append(String.valueOf(this.isAgentAutoUpgradable));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", host=").append(String.valueOf(this.host));
+        sb.append(", hostId=").append(String.valueOf(this.hostId));
+        sb.append(", pluginList=").append(String.valueOf(this.pluginList));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeLastHeartbeat=").append(String.valueOf(this.timeLastHeartbeat));
+        sb.append(", availabilityStatus=").append(String.valueOf(this.availabilityStatus));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", isCustomerDeployed=").append(String.valueOf(this.isCustomerDeployed));
+        sb.append(", installType=").append(String.valueOf(this.installType));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ManagementAgentSummary)) {
+            return false;
+        }
+
+        ManagementAgentSummary other = (ManagementAgentSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.installKeyId, other.installKeyId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.platformType, other.platformType)
+                && java.util.Objects.equals(this.platformName, other.platformName)
+                && java.util.Objects.equals(this.platformVersion, other.platformVersion)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(
+                        this.resourceArtifactVersion, other.resourceArtifactVersion)
+                && java.util.Objects.equals(this.isAgentAutoUpgradable, other.isAgentAutoUpgradable)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.hostId, other.hostId)
+                && java.util.Objects.equals(this.pluginList, other.pluginList)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeLastHeartbeat, other.timeLastHeartbeat)
+                && java.util.Objects.equals(this.availabilityStatus, other.availabilityStatus)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.isCustomerDeployed, other.isCustomerDeployed)
+                && java.util.Objects.equals(this.installType, other.installType)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.installKeyId == null ? 43 : this.installKeyId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
+        result = (result * PRIME) + (this.platformName == null ? 43 : this.platformName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformVersion == null ? 43 : this.platformVersion.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceArtifactVersion == null
+                                ? 43
+                                : this.resourceArtifactVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAgentAutoUpgradable == null
+                                ? 43
+                                : this.isAgentAutoUpgradable.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
+        result = (result * PRIME) + (this.pluginList == null ? 43 : this.pluginList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastHeartbeat == null ? 43 : this.timeLastHeartbeat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityStatus == null
+                                ? 43
+                                : this.availabilityStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCustomerDeployed == null
+                                ? 43
+                                : this.isCustomerDeployed.hashCode());
+        result = (result * PRIME) + (this.installType == null ? 43 : this.installType.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

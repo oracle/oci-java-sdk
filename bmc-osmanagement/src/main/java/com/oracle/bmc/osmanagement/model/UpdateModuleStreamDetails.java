@@ -15,16 +15,40 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateModuleStreamDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateModuleStreamDetails {
+public final class UpdateModuleStreamDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "streamName",
+        "status",
+        "timeModified",
+        "softwareSourceName",
+        "softwareSourceUrl",
+        "isDefault",
+        "profiles"
+    })
+    public UpdateModuleStreamDetails(
+            String streamName,
+            Status status,
+            java.util.Date timeModified,
+            String softwareSourceName,
+            String softwareSourceUrl,
+            Boolean isDefault,
+            java.util.List<UpdateModuleStreamProfileDetails> profiles) {
+        super();
+        this.streamName = streamName;
+        this.status = status;
+        this.timeModified = timeModified;
+        this.softwareSourceName = softwareSourceName;
+        this.softwareSourceUrl = softwareSourceUrl;
+        this.isDefault = isDefault;
+        this.profiles = profiles;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
@@ -129,11 +153,20 @@ public class UpdateModuleStreamDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the stream of the parent module
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
-    String streamName;
+    private final String streamName;
+
+    public String getStreamName() {
+        return streamName;
+    }
+
     /**
      * The status of the stream
      * <p>
@@ -202,7 +235,11 @@ public class UpdateModuleStreamDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The date and time of the last status change for this object, as
@@ -211,32 +248,115 @@ public class UpdateModuleStreamDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
-    java.util.Date timeModified;
+    private final java.util.Date timeModified;
+
+    public java.util.Date getTimeModified() {
+        return timeModified;
+    }
 
     /**
      * The name of the software source that publishes this stream.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceName")
-    String softwareSourceName;
+    private final String softwareSourceName;
+
+    public String getSoftwareSourceName() {
+        return softwareSourceName;
+    }
 
     /**
      * The URL of the software source that publishes this stream.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceUrl")
-    String softwareSourceUrl;
+    private final String softwareSourceUrl;
+
+    public String getSoftwareSourceUrl() {
+        return softwareSourceUrl;
+    }
 
     /**
      * Indicates if the module stream is the default
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
 
     /**
      * The profiles of the stream
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profiles")
-    java.util.List<UpdateModuleStreamProfileDetails> profiles;
+    private final java.util.List<UpdateModuleStreamProfileDetails> profiles;
+
+    public java.util.List<UpdateModuleStreamProfileDetails> getProfiles() {
+        return profiles;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateModuleStreamDetails(");
+        sb.append("streamName=").append(String.valueOf(this.streamName));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeModified=").append(String.valueOf(this.timeModified));
+        sb.append(", softwareSourceName=").append(String.valueOf(this.softwareSourceName));
+        sb.append(", softwareSourceUrl=").append(String.valueOf(this.softwareSourceUrl));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", profiles=").append(String.valueOf(this.profiles));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateModuleStreamDetails)) {
+            return false;
+        }
+
+        UpdateModuleStreamDetails other = (UpdateModuleStreamDetails) o;
+        return java.util.Objects.equals(this.streamName, other.streamName)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeModified, other.timeModified)
+                && java.util.Objects.equals(this.softwareSourceName, other.softwareSourceName)
+                && java.util.Objects.equals(this.softwareSourceUrl, other.softwareSourceUrl)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.profiles, other.profiles)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.streamName == null ? 43 : this.streamName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeModified == null ? 43 : this.timeModified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceName == null
+                                ? 43
+                                : this.softwareSourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceUrl == null ? 43 : this.softwareSourceUrl.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result = (result * PRIME) + (this.profiles == null ? 43 : this.profiles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

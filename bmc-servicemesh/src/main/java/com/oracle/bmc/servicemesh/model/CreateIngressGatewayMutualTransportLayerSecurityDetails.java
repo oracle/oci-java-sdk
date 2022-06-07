@@ -16,16 +16,19 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateIngressGatewayMutualTransportLayerSecurityDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateIngressGatewayMutualTransportLayerSecurityDetails {
+public final class CreateIngressGatewayMutualTransportLayerSecurityDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"maximumValidity"})
+    public CreateIngressGatewayMutualTransportLayerSecurityDetails(Integer maximumValidity) {
+        super();
+        this.maximumValidity = maximumValidity;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("maximumValidity")
         private Integer maximumValidity;
@@ -62,6 +65,10 @@ public class CreateIngressGatewayMutualTransportLayerSecurityDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
      * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
@@ -70,8 +77,54 @@ public class CreateIngressGatewayMutualTransportLayerSecurityDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumValidity")
-    Integer maximumValidity;
+    private final Integer maximumValidity;
+
+    public Integer getMaximumValidity() {
+        return maximumValidity;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateIngressGatewayMutualTransportLayerSecurityDetails(");
+        sb.append("maximumValidity=").append(String.valueOf(this.maximumValidity));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateIngressGatewayMutualTransportLayerSecurityDetails)) {
+            return false;
+        }
+
+        CreateIngressGatewayMutualTransportLayerSecurityDetails other =
+                (CreateIngressGatewayMutualTransportLayerSecurityDetails) o;
+        return java.util.Objects.equals(this.maximumValidity, other.maximumValidity)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.maximumValidity == null ? 43 : this.maximumValidity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

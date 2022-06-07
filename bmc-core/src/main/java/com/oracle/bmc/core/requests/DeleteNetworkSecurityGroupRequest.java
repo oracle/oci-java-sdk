@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteNetworkSecurityGroupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DeleteNetworkSecurityGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class DeleteNetworkSecurityGroupRequest
      */
     private String networkSecurityGroupId;
 
+    public String getNetworkSecurityGroupId() {
+        return networkSecurityGroupId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -33,12 +28,41 @@ public class DeleteNetworkSecurityGroupRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteNetworkSecurityGroupRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String networkSecurityGroupId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         * @return this builder instance
+         */
+        public Builder networkSecurityGroupId(String networkSecurityGroupId) {
+            this.networkSecurityGroupId = networkSecurityGroupId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -91,5 +115,72 @@ public class DeleteNetworkSecurityGroupRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of DeleteNetworkSecurityGroupRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DeleteNetworkSecurityGroupRequest
+         */
+        public DeleteNetworkSecurityGroupRequest buildWithoutInvocationCallback() {
+            DeleteNetworkSecurityGroupRequest request = new DeleteNetworkSecurityGroupRequest();
+            request.networkSecurityGroupId = networkSecurityGroupId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new DeleteNetworkSecurityGroupRequest(networkSecurityGroupId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().networkSecurityGroupId(networkSecurityGroupId).ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",networkSecurityGroupId=").append(String.valueOf(this.networkSecurityGroupId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeleteNetworkSecurityGroupRequest)) {
+            return false;
+        }
+
+        DeleteNetworkSecurityGroupRequest other = (DeleteNetworkSecurityGroupRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupId, other.networkSecurityGroupId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupId == null
+                                ? 43
+                                : this.networkSecurityGroupId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

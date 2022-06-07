@@ -8,7 +8,6 @@ package com.oracle.bmc.cims.model;
  * The list of availability domains supported by the Support Management API.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.extern.slf4j.Slf4j
 public enum AvailabilityDomain {
     Dev1("DEV_1"),
     Dev2("DEV_2"),
@@ -52,6 +51,9 @@ public enum AvailabilityDomain {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AvailabilityDomain.class);
 
     private final String value;
     private static java.util.Map<String, AvailabilityDomain> map;

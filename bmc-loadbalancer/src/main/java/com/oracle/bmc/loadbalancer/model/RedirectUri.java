@@ -48,14 +48,21 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RedirectUri.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RedirectUri {
+public final class RedirectUri {
+    @Deprecated
+    @java.beans.ConstructorProperties({"protocol", "host", "port", "path", "query"})
+    public RedirectUri(String protocol, String host, Integer port, String path, String query) {
+        super();
+        this.protocol = protocol;
+        this.host = host;
+        this.port = port;
+        this.path = path;
+        this.query = query;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
@@ -132,6 +139,10 @@ public class RedirectUri {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The HTTP protocol to use in the redirect URI.
      * <p>
@@ -148,7 +159,11 @@ public class RedirectUri {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    String protocol;
+    private final String protocol;
+
+    public String getProtocol() {
+        return protocol;
+    }
 
     /**
      * The valid domain name (hostname) or IP address to use in the redirect URI.
@@ -172,7 +187,11 @@ public class RedirectUri {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * The communication port to use in the redirect URI.
@@ -185,7 +204,11 @@ public class RedirectUri {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The HTTP URI path to use in the redirect URI.
@@ -221,7 +244,11 @@ public class RedirectUri {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * The query string to use in the redirect URI.
@@ -261,8 +288,63 @@ public class RedirectUri {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
-    String query;
+    private final String query;
+
+    public String getQuery() {
+        return query;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RedirectUri(");
+        sb.append("protocol=").append(String.valueOf(this.protocol));
+        sb.append(", host=").append(String.valueOf(this.host));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", query=").append(String.valueOf(this.query));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RedirectUri)) {
+            return false;
+        }
+
+        RedirectUri other = (RedirectUri) o;
+        return java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.query, other.query)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

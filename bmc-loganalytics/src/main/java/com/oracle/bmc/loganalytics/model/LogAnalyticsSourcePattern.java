@@ -15,16 +15,76 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsSourcePattern.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsSourcePattern {
+public final class LogAnalyticsSourcePattern {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "convertedText",
+        "dbParserId",
+        "dbPatternDateTimeColumns",
+        "dbPatternDateTimeField",
+        "dbPatternSequenceColumn",
+        "fields",
+        "isInclude",
+        "isDefault",
+        "patternFilter",
+        "alias",
+        "description",
+        "isEnabled",
+        "patternId",
+        "isSystem",
+        "sourceId",
+        "isAgentWarningSuppressed",
+        "patternText",
+        "patternType",
+        "entityType"
+    })
+    public LogAnalyticsSourcePattern(
+            String convertedText,
+            Long dbParserId,
+            String dbPatternDateTimeColumns,
+            String dbPatternDateTimeField,
+            String dbPatternSequenceColumn,
+            java.util.List<LogAnalyticsParserField> fields,
+            Boolean isInclude,
+            Boolean isDefault,
+            LogAnalyticsPatternFilter patternFilter,
+            String alias,
+            String description,
+            Boolean isEnabled,
+            Long patternId,
+            Boolean isSystem,
+            Long sourceId,
+            Boolean isAgentWarningSuppressed,
+            String patternText,
+            Long patternType,
+            java.util.List<String> entityType) {
+        super();
+        this.convertedText = convertedText;
+        this.dbParserId = dbParserId;
+        this.dbPatternDateTimeColumns = dbPatternDateTimeColumns;
+        this.dbPatternDateTimeField = dbPatternDateTimeField;
+        this.dbPatternSequenceColumn = dbPatternSequenceColumn;
+        this.fields = fields;
+        this.isInclude = isInclude;
+        this.isDefault = isDefault;
+        this.patternFilter = patternFilter;
+        this.alias = alias;
+        this.description = description;
+        this.isEnabled = isEnabled;
+        this.patternId = patternId;
+        this.isSystem = isSystem;
+        this.sourceId = sourceId;
+        this.isAgentWarningSuppressed = isAgentWarningSuppressed;
+        this.patternText = patternText;
+        this.patternType = patternType;
+        this.entityType = entityType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("convertedText")
         private String convertedText;
@@ -261,83 +321,139 @@ public class LogAnalyticsSourcePattern {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The converted text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("convertedText")
-    String convertedText;
+    private final String convertedText;
+
+    public String getConvertedText() {
+        return convertedText;
+    }
 
     /**
      * The parser unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbParserId")
-    Long dbParserId;
+    private final Long dbParserId;
+
+    public Long getDbParserId() {
+        return dbParserId;
+    }
 
     /**
      * The date time columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPatternDateTimeColumns")
-    String dbPatternDateTimeColumns;
+    private final String dbPatternDateTimeColumns;
+
+    public String getDbPatternDateTimeColumns() {
+        return dbPatternDateTimeColumns;
+    }
 
     /**
      * The date time field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPatternDateTimeField")
-    String dbPatternDateTimeField;
+    private final String dbPatternDateTimeField;
+
+    public String getDbPatternDateTimeField() {
+        return dbPatternDateTimeField;
+    }
 
     /**
      * The sequence column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPatternSequenceColumn")
-    String dbPatternSequenceColumn;
+    private final String dbPatternSequenceColumn;
+
+    public String getDbPatternSequenceColumn() {
+        return dbPatternSequenceColumn;
+    }
 
     /**
      * The parser field list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
-    java.util.List<LogAnalyticsParserField> fields;
+    private final java.util.List<LogAnalyticsParserField> fields;
+
+    public java.util.List<LogAnalyticsParserField> getFields() {
+        return fields;
+    }
 
     /**
      * A flag indicating if this is source pattern is included.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInclude")
-    Boolean isInclude;
+    private final Boolean isInclude;
+
+    public Boolean getIsInclude() {
+        return isInclude;
+    }
 
     /**
      * A flag indicating if this is the default source pattern.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("patternFilter")
-    LogAnalyticsPatternFilter patternFilter;
+    private final LogAnalyticsPatternFilter patternFilter;
+
+    public LogAnalyticsPatternFilter getPatternFilter() {
+        return patternFilter;
+    }
 
     /**
      * The source pattern alias.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
-    String alias;
+    private final String alias;
+
+    public String getAlias() {
+        return alias;
+    }
 
     /**
      * The source pattern description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A flag inidcating whether or not the source pattern is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * The source pattern unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternId")
-    Long patternId;
+    private final Long patternId;
+
+    public Long getPatternId() {
+        return patternId;
+    }
 
     /**
      * The system flag.  A value of false denotes a custom, or user
@@ -345,13 +461,21 @@ public class LogAnalyticsSourcePattern {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    Long sourceId;
+    private final Long sourceId;
+
+    public Long getSourceId() {
+        return sourceId;
+    }
 
     /**
      * A flag indicating whether or not agent warnings are suppressed for
@@ -359,26 +483,162 @@ public class LogAnalyticsSourcePattern {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentWarningSuppressed")
-    Boolean isAgentWarningSuppressed;
+    private final Boolean isAgentWarningSuppressed;
+
+    public Boolean getIsAgentWarningSuppressed() {
+        return isAgentWarningSuppressed;
+    }
 
     /**
      * The pattern text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternText")
-    String patternText;
+    private final String patternText;
+
+    public String getPatternText() {
+        return patternText;
+    }
 
     /**
      * The pattern type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternType")
-    Long patternType;
+    private final Long patternType;
+
+    public Long getPatternType() {
+        return patternType;
+    }
 
     /**
      * The source entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
-    java.util.List<String> entityType;
+    private final java.util.List<String> entityType;
+
+    public java.util.List<String> getEntityType() {
+        return entityType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsSourcePattern(");
+        sb.append("convertedText=").append(String.valueOf(this.convertedText));
+        sb.append(", dbParserId=").append(String.valueOf(this.dbParserId));
+        sb.append(", dbPatternDateTimeColumns=")
+                .append(String.valueOf(this.dbPatternDateTimeColumns));
+        sb.append(", dbPatternDateTimeField=").append(String.valueOf(this.dbPatternDateTimeField));
+        sb.append(", dbPatternSequenceColumn=")
+                .append(String.valueOf(this.dbPatternSequenceColumn));
+        sb.append(", fields=").append(String.valueOf(this.fields));
+        sb.append(", isInclude=").append(String.valueOf(this.isInclude));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", patternFilter=").append(String.valueOf(this.patternFilter));
+        sb.append(", alias=").append(String.valueOf(this.alias));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", patternId=").append(String.valueOf(this.patternId));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", isAgentWarningSuppressed=")
+                .append(String.valueOf(this.isAgentWarningSuppressed));
+        sb.append(", patternText=").append(String.valueOf(this.patternText));
+        sb.append(", patternType=").append(String.valueOf(this.patternType));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsSourcePattern)) {
+            return false;
+        }
+
+        LogAnalyticsSourcePattern other = (LogAnalyticsSourcePattern) o;
+        return java.util.Objects.equals(this.convertedText, other.convertedText)
+                && java.util.Objects.equals(this.dbParserId, other.dbParserId)
+                && java.util.Objects.equals(
+                        this.dbPatternDateTimeColumns, other.dbPatternDateTimeColumns)
+                && java.util.Objects.equals(
+                        this.dbPatternDateTimeField, other.dbPatternDateTimeField)
+                && java.util.Objects.equals(
+                        this.dbPatternSequenceColumn, other.dbPatternSequenceColumn)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.isInclude, other.isInclude)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.patternFilter, other.patternFilter)
+                && java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.patternId, other.patternId)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(
+                        this.isAgentWarningSuppressed, other.isAgentWarningSuppressed)
+                && java.util.Objects.equals(this.patternText, other.patternText)
+                && java.util.Objects.equals(this.patternType, other.patternType)
+                && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.convertedText == null ? 43 : this.convertedText.hashCode());
+        result = (result * PRIME) + (this.dbParserId == null ? 43 : this.dbParserId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbPatternDateTimeColumns == null
+                                ? 43
+                                : this.dbPatternDateTimeColumns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbPatternDateTimeField == null
+                                ? 43
+                                : this.dbPatternDateTimeField.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbPatternSequenceColumn == null
+                                ? 43
+                                : this.dbPatternSequenceColumn.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.isInclude == null ? 43 : this.isInclude.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patternFilter == null ? 43 : this.patternFilter.hashCode());
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.patternId == null ? 43 : this.patternId.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAgentWarningSuppressed == null
+                                ? 43
+                                : this.isAgentWarningSuppressed.hashCode());
+        result = (result * PRIME) + (this.patternText == null ? 43 : this.patternText.hashCode());
+        result = (result * PRIME) + (this.patternType == null ? 43 : this.patternType.hashCode());
+        result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

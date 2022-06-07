@@ -15,16 +15,21 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MeasuredBootReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MeasuredBootReport {
+public final class MeasuredBootReport {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isPolicyVerificationSuccessful", "measurements"})
+    public MeasuredBootReport(
+            Boolean isPolicyVerificationSuccessful, MeasuredBootReportMeasurements measurements) {
+        super();
+        this.isPolicyVerificationSuccessful = isPolicyVerificationSuccessful;
+        this.measurements = measurements;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isPolicyVerificationSuccessful")
         private Boolean isPolicyVerificationSuccessful;
@@ -72,16 +77,76 @@ public class MeasuredBootReport {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Whether the verification succeeded, and the new values match the expected values.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPolicyVerificationSuccessful")
-    Boolean isPolicyVerificationSuccessful;
+    private final Boolean isPolicyVerificationSuccessful;
+
+    public Boolean getIsPolicyVerificationSuccessful() {
+        return isPolicyVerificationSuccessful;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("measurements")
-    MeasuredBootReportMeasurements measurements;
+    private final MeasuredBootReportMeasurements measurements;
+
+    public MeasuredBootReportMeasurements getMeasurements() {
+        return measurements;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MeasuredBootReport(");
+        sb.append("isPolicyVerificationSuccessful=")
+                .append(String.valueOf(this.isPolicyVerificationSuccessful));
+        sb.append(", measurements=").append(String.valueOf(this.measurements));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MeasuredBootReport)) {
+            return false;
+        }
+
+        MeasuredBootReport other = (MeasuredBootReport) o;
+        return java.util.Objects.equals(
+                        this.isPolicyVerificationSuccessful, other.isPolicyVerificationSuccessful)
+                && java.util.Objects.equals(this.measurements, other.measurements)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isPolicyVerificationSuccessful == null
+                                ? 43
+                                : this.isPolicyVerificationSuccessful.hashCode());
+        result = (result * PRIME) + (this.measurements == null ? 43 : this.measurements.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

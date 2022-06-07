@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.UpdateCompartmentDetails> {
@@ -26,11 +18,17 @@ public class UpdateCompartmentRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Request object for updating a compartment.
      */
     private com.oracle.bmc.identity.model.UpdateCompartmentDetails updateCompartmentDetails;
 
+    public com.oracle.bmc.identity.model.UpdateCompartmentDetails getUpdateCompartmentDetails() {
+        return updateCompartmentDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -38,6 +36,10 @@ public class UpdateCompartmentRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +58,44 @@ public class UpdateCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.UpdateCompartmentDetails updateCompartmentDetails =
+                null;
+
+        /**
+         * Request object for updating a compartment.
+         * @return this builder instance
+         */
+        public Builder updateCompartmentDetails(
+                com.oracle.bmc.identity.model.UpdateCompartmentDetails updateCompartmentDetails) {
+            this.updateCompartmentDetails = updateCompartmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +160,82 @@ public class UpdateCompartmentRequest
             updateCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateCompartmentRequest
+         */
+        public UpdateCompartmentRequest buildWithoutInvocationCallback() {
+            UpdateCompartmentRequest request = new UpdateCompartmentRequest();
+            request.compartmentId = compartmentId;
+            request.updateCompartmentDetails = updateCompartmentDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateCompartmentRequest(compartmentId, updateCompartmentDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .updateCompartmentDetails(updateCompartmentDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",updateCompartmentDetails=")
+                .append(String.valueOf(this.updateCompartmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateCompartmentRequest)) {
+            return false;
+        }
+
+        UpdateCompartmentRequest other = (UpdateCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.updateCompartmentDetails, other.updateCompartmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateCompartmentDetails == null
+                                ? 43
+                                : this.updateCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

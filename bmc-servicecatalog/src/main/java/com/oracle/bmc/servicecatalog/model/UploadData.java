@@ -15,14 +15,19 @@ package com.oracle.bmc.servicecatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UploadData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UploadData {
+public final class UploadData {
+    @Deprecated
+    @java.beans.ConstructorProperties({"displayName", "contentUrl", "mimeType"})
+    public UploadData(String displayName, String contentUrl, String mimeType) {
+        super();
+        this.displayName = displayName;
+        this.contentUrl = contentUrl;
+        this.mimeType = mimeType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -79,24 +84,85 @@ public class UploadData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name used to refer to the uploaded data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The content URL of the uploaded data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
-    String contentUrl;
+    private final String contentUrl;
+
+    public String getContentUrl() {
+        return contentUrl;
+    }
 
     /**
      * The MIME type of the uploaded data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
-    String mimeType;
+    private final String mimeType;
+
+    public String getMimeType() {
+        return mimeType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UploadData(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", contentUrl=").append(String.valueOf(this.contentUrl));
+        sb.append(", mimeType=").append(String.valueOf(this.mimeType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UploadData)) {
+            return false;
+        }
+
+        UploadData other = (UploadData) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.contentUrl, other.contentUrl)
+                && java.util.Objects.equals(this.mimeType, other.mimeType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.contentUrl == null ? 43 : this.contentUrl.hashCode());
+        result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,50 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InstanceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstanceSummary {
+public final class InstanceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "availabilityDomain",
+        "compartmentId",
+        "displayName",
+        "faultDomain",
+        "instanceConfigurationId",
+        "region",
+        "shape",
+        "state",
+        "timeCreated",
+        "loadBalancerBackends"
+    })
+    public InstanceSummary(
+            String id,
+            String availabilityDomain,
+            String compartmentId,
+            String displayName,
+            String faultDomain,
+            String instanceConfigurationId,
+            String region,
+            String shape,
+            String state,
+            java.util.Date timeCreated,
+            java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends) {
+        super();
+        this.id = id;
+        this.availabilityDomain = availabilityDomain;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.faultDomain = faultDomain;
+        this.instanceConfigurationId = instanceConfigurationId;
+        this.region = region;
+        this.shape = shape;
+        this.state = state;
+        this.timeCreated = timeCreated;
+        this.loadBalancerBackends = loadBalancerBackends;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -172,23 +208,39 @@ public class InstanceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The availability domain the instance is running in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The OCID of the compartment that contains the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -196,25 +248,41 @@ public class InstanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The fault domain the instance is running in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
 
     /**
      * The OCID of the instance confgiuration used to create the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
-    String instanceConfigurationId;
+    private final String instanceConfigurationId;
+
+    public String getInstanceConfigurationId() {
+        return instanceConfigurationId;
+    }
 
     /**
      * The region that contains the availability domain the instance is running in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory,
@@ -224,13 +292,21 @@ public class InstanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The current state of the instance pool instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
-    String state;
+    private final String state;
+
+    public String getState() {
+        return state;
+    }
 
     /**
      * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -238,15 +314,108 @@ public class InstanceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The load balancer backends that are configured for the instance pool instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerBackends")
-    java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends;
+    private final java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends;
+
+    public java.util.List<InstancePoolInstanceLoadBalancerBackend> getLoadBalancerBackends() {
+        return loadBalancerBackends;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", instanceConfigurationId=")
+                .append(String.valueOf(this.instanceConfigurationId));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", state=").append(String.valueOf(this.state));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", loadBalancerBackends=").append(String.valueOf(this.loadBalancerBackends));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceSummary)) {
+            return false;
+        }
+
+        InstanceSummary other = (InstanceSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(
+                        this.instanceConfigurationId, other.instanceConfigurationId)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.state, other.state)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.loadBalancerBackends, other.loadBalancerBackends)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceConfigurationId == null
+                                ? 43
+                                : this.instanceConfigurationId.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerBackends == null
+                                ? 43
+                                : this.loadBalancerBackends.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

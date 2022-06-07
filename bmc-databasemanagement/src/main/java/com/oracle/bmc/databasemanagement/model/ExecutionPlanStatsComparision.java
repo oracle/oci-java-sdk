@@ -16,16 +16,21 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExecutionPlanStatsComparision.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExecutionPlanStatsComparision {
+public final class ExecutionPlanStatsComparision {
+    @Deprecated
+    @java.beans.ConstructorProperties({"original", "modified"})
+    public ExecutionPlanStatsComparision(
+            SqlTuningTaskPlanStats original, SqlTuningTaskPlanStats modified) {
+        super();
+        this.original = original;
+        this.modified = modified;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("original")
         private SqlTuningTaskPlanStats original;
@@ -71,12 +76,66 @@ public class ExecutionPlanStatsComparision {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("original")
-    SqlTuningTaskPlanStats original;
+    private final SqlTuningTaskPlanStats original;
+
+    public SqlTuningTaskPlanStats getOriginal() {
+        return original;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("modified")
-    SqlTuningTaskPlanStats modified;
+    private final SqlTuningTaskPlanStats modified;
+
+    public SqlTuningTaskPlanStats getModified() {
+        return modified;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExecutionPlanStatsComparision(");
+        sb.append("original=").append(String.valueOf(this.original));
+        sb.append(", modified=").append(String.valueOf(this.modified));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExecutionPlanStatsComparision)) {
+            return false;
+        }
+
+        ExecutionPlanStatsComparision other = (ExecutionPlanStatsComparision) o;
+        return java.util.Objects.equals(this.original, other.original)
+                && java.util.Objects.equals(this.modified, other.modified)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.original == null ? 43 : this.original.hashCode());
+        result = (result * PRIME) + (this.modified == null ? 43 : this.modified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

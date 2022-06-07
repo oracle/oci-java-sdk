@@ -15,22 +15,17 @@ package com.oracle.bmc.autoscaling.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateScheduledPolicyDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "policyType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateScheduledPolicyDetails extends UpdateAutoScalingPolicyDetails {
+public final class UpdateScheduledPolicyDetails extends UpdateAutoScalingPolicyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -109,6 +104,10 @@ public class UpdateScheduledPolicyDetails extends UpdateAutoScalingPolicyDetails
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public UpdateScheduledPolicyDetails(
             String displayName,
@@ -125,11 +124,67 @@ public class UpdateScheduledPolicyDetails extends UpdateAutoScalingPolicyDetails
      * The schedule for executing the autoscaling policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionSchedule")
-    ExecutionSchedule executionSchedule;
+    private final ExecutionSchedule executionSchedule;
+
+    public ExecutionSchedule getExecutionSchedule() {
+        return executionSchedule;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
-    ResourceAction resourceAction;
+    private final ResourceAction resourceAction;
+
+    public ResourceAction getResourceAction() {
+        return resourceAction;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateScheduledPolicyDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", executionSchedule=").append(String.valueOf(this.executionSchedule));
+        sb.append(", resourceAction=").append(String.valueOf(this.resourceAction));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateScheduledPolicyDetails)) {
+            return false;
+        }
+
+        UpdateScheduledPolicyDetails other = (UpdateScheduledPolicyDetails) o;
+        return java.util.Objects.equals(this.executionSchedule, other.executionSchedule)
+                && java.util.Objects.equals(this.resourceAction, other.resourceAction)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.executionSchedule == null ? 43 : this.executionSchedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceAction == null ? 43 : this.resourceAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

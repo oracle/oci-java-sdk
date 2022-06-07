@@ -7,6 +7,7 @@ package com.oracle.bmc.announcementsservice;
 import com.oracle.bmc.announcementsservice.internal.http.*;
 import com.oracle.bmc.announcementsservice.requests.*;
 import com.oracle.bmc.announcementsservice.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for AnnouncementSubscription service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.announcementsservice.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-@lombok.extern.slf4j.Slf4j
 public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscriptionAsync {
     /**
      * Service instance for AnnouncementSubscription.
@@ -35,7 +35,9 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                             "https://announcements.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AnnouncementSubscriptionAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -319,9 +321,13 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
          * @return the client
          */
         public AnnouncementSubscriptionAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new AnnouncementSubscriptionAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -331,6 +337,10 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

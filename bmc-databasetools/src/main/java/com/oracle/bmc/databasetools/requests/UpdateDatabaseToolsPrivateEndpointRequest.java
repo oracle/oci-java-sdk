@@ -9,14 +9,6 @@ import com.oracle.bmc.databasetools.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/UpdateDatabaseToolsPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDatabaseToolsPrivateEndpointRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateDatabaseToolsPrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasetools.model.UpdateDatabaseToolsPrivateEndpointDetails> {
@@ -26,12 +18,19 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
      */
     private String databaseToolsPrivateEndpointId;
 
+    public String getDatabaseToolsPrivateEndpointId() {
+        return databaseToolsPrivateEndpointId;
+    }
     /**
      * The information to be updated.
      */
     private com.oracle.bmc.databasetools.model.UpdateDatabaseToolsPrivateEndpointDetails
             updateDatabaseToolsPrivateEndpointDetails;
 
+    public com.oracle.bmc.databasetools.model.UpdateDatabaseToolsPrivateEndpointDetails
+            getUpdateDatabaseToolsPrivateEndpointDetails() {
+        return updateDatabaseToolsPrivateEndpointDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -42,10 +41,17 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +70,59 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String databaseToolsPrivateEndpointId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+         * @return this builder instance
+         */
+        public Builder databaseToolsPrivateEndpointId(String databaseToolsPrivateEndpointId) {
+            this.databaseToolsPrivateEndpointId = databaseToolsPrivateEndpointId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasetools.model.UpdateDatabaseToolsPrivateEndpointDetails
+                updateDatabaseToolsPrivateEndpointDetails = null;
+
+        /**
+         * The information to be updated.
+         * @return this builder instance
+         */
+        public Builder updateDatabaseToolsPrivateEndpointDetails(
+                com.oracle.bmc.databasetools.model.UpdateDatabaseToolsPrivateEndpointDetails
+                        updateDatabaseToolsPrivateEndpointDetails) {
+            this.updateDatabaseToolsPrivateEndpointDetails =
+                    updateDatabaseToolsPrivateEndpointDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -131,5 +190,96 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
             updateDatabaseToolsPrivateEndpointDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateDatabaseToolsPrivateEndpointRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateDatabaseToolsPrivateEndpointRequest
+         */
+        public UpdateDatabaseToolsPrivateEndpointRequest buildWithoutInvocationCallback() {
+            UpdateDatabaseToolsPrivateEndpointRequest request =
+                    new UpdateDatabaseToolsPrivateEndpointRequest();
+            request.databaseToolsPrivateEndpointId = databaseToolsPrivateEndpointId;
+            request.updateDatabaseToolsPrivateEndpointDetails =
+                    updateDatabaseToolsPrivateEndpointDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateDatabaseToolsPrivateEndpointRequest(databaseToolsPrivateEndpointId, updateDatabaseToolsPrivateEndpointDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .databaseToolsPrivateEndpointId(databaseToolsPrivateEndpointId)
+                .updateDatabaseToolsPrivateEndpointDetails(
+                        updateDatabaseToolsPrivateEndpointDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",databaseToolsPrivateEndpointId=")
+                .append(String.valueOf(this.databaseToolsPrivateEndpointId));
+        sb.append(",updateDatabaseToolsPrivateEndpointDetails=")
+                .append(String.valueOf(this.updateDatabaseToolsPrivateEndpointDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDatabaseToolsPrivateEndpointRequest)) {
+            return false;
+        }
+
+        UpdateDatabaseToolsPrivateEndpointRequest other =
+                (UpdateDatabaseToolsPrivateEndpointRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.databaseToolsPrivateEndpointId, other.databaseToolsPrivateEndpointId)
+                && java.util.Objects.equals(
+                        this.updateDatabaseToolsPrivateEndpointDetails,
+                        other.updateDatabaseToolsPrivateEndpointDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.databaseToolsPrivateEndpointId == null
+                                ? 43
+                                : this.databaseToolsPrivateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateDatabaseToolsPrivateEndpointDetails == null
+                                ? 43
+                                : this.updateDatabaseToolsPrivateEndpointDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

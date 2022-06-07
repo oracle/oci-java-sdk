@@ -9,14 +9,6 @@ import com.oracle.bmc.healthchecks.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateOnDemandPingProbeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateOnDemandPingProbeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateOnDemandPingProbeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails> {
@@ -27,12 +19,20 @@ public class CreateOnDemandPingProbeRequest
     private com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
             createOnDemandPingProbeDetails;
 
+    public com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
+            getCreateOnDemandPingProbeDetails() {
+        return createOnDemandPingProbeDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -51,6 +51,33 @@ public class CreateOnDemandPingProbeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
+                createOnDemandPingProbeDetails = null;
+
+        /**
+         * Configuration details for creating an on-demand ping probe.
+         * @return this builder instance
+         */
+        public Builder createOnDemandPingProbeDetails(
+                com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
+                        createOnDemandPingProbeDetails) {
+            this.createOnDemandPingProbeDetails = createOnDemandPingProbeDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -115,5 +142,75 @@ public class CreateOnDemandPingProbeRequest
             createOnDemandPingProbeDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateOnDemandPingProbeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateOnDemandPingProbeRequest
+         */
+        public CreateOnDemandPingProbeRequest buildWithoutInvocationCallback() {
+            CreateOnDemandPingProbeRequest request = new CreateOnDemandPingProbeRequest();
+            request.createOnDemandPingProbeDetails = createOnDemandPingProbeDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new CreateOnDemandPingProbeRequest(createOnDemandPingProbeDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createOnDemandPingProbeDetails(createOnDemandPingProbeDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createOnDemandPingProbeDetails=")
+                .append(String.valueOf(this.createOnDemandPingProbeDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOnDemandPingProbeRequest)) {
+            return false;
+        }
+
+        CreateOnDemandPingProbeRequest other = (CreateOnDemandPingProbeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createOnDemandPingProbeDetails, other.createOnDemandPingProbeDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createOnDemandPingProbeDetails == null
+                                ? 43
+                                : this.createOnDemandPingProbeDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

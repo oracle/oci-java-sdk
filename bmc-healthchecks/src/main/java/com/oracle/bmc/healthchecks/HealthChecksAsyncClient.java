@@ -7,6 +7,7 @@ package com.oracle.bmc.healthchecks;
 import com.oracle.bmc.healthchecks.internal.http.*;
 import com.oracle.bmc.healthchecks.requests.*;
 import com.oracle.bmc.healthchecks.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for HealthChecks service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.healthchecks.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.extern.slf4j.Slf4j
 public class HealthChecksAsyncClient implements HealthChecksAsync {
     /**
      * Service instance for HealthChecks.
@@ -35,7 +35,9 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                             "https://healthchecks.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(HealthChecksAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
          * @return the client
          */
         public HealthChecksAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new HealthChecksAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

@@ -9,14 +9,6 @@ import com.oracle.bmc.servicemesh.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualDeploymentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVirtualDeploymentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetVirtualDeploymentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,10 +17,17 @@ public class GetVirtualDeploymentRequest
      */
     private String virtualDeploymentId;
 
+    public String getVirtualDeploymentId() {
+        return virtualDeploymentId;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -36,6 +35,28 @@ public class GetVirtualDeploymentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String virtualDeploymentId = null;
+
+        /**
+         * Unique VirtualDeployment identifier.
+         * @return this builder instance
+         */
+        public Builder virtualDeploymentId(String virtualDeploymentId) {
+            this.virtualDeploymentId = virtualDeploymentId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -88,5 +109,71 @@ public class GetVirtualDeploymentRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetVirtualDeploymentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetVirtualDeploymentRequest
+         */
+        public GetVirtualDeploymentRequest buildWithoutInvocationCallback() {
+            GetVirtualDeploymentRequest request = new GetVirtualDeploymentRequest();
+            request.virtualDeploymentId = virtualDeploymentId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetVirtualDeploymentRequest(virtualDeploymentId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().virtualDeploymentId(virtualDeploymentId).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",virtualDeploymentId=").append(String.valueOf(this.virtualDeploymentId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetVirtualDeploymentRequest)) {
+            return false;
+        }
+
+        GetVirtualDeploymentRequest other = (GetVirtualDeploymentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.virtualDeploymentId, other.virtualDeploymentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.virtualDeploymentId == null
+                                ? 43
+                                : this.virtualDeploymentId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

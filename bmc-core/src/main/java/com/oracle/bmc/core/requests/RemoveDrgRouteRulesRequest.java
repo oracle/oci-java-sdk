@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RemoveDrgRouteRulesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class RemoveDrgRouteRulesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails> {
@@ -26,11 +18,18 @@ public class RemoveDrgRouteRulesRequest
      */
     private String drgRouteTableId;
 
+    public String getDrgRouteTableId() {
+        return drgRouteTableId;
+    }
     /**
      * Request to remove one or more route rules in the DRG route table.
      *
      */
     private com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails removeDrgRouteRulesDetails;
+
+    public com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails getRemoveDrgRouteRulesDetails() {
+        return removeDrgRouteRulesDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -49,6 +48,31 @@ public class RemoveDrgRouteRulesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String drgRouteTableId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+         * @return this builder instance
+         */
+        public Builder drgRouteTableId(String drgRouteTableId) {
+            this.drgRouteTableId = drgRouteTableId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails removeDrgRouteRulesDetails =
+                null;
+
+        /**
+         * Request to remove one or more route rules in the DRG route table.
+         *
+         * @return this builder instance
+         */
+        public Builder removeDrgRouteRulesDetails(
+                com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails removeDrgRouteRulesDetails) {
+            this.removeDrgRouteRulesDetails = removeDrgRouteRulesDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -112,5 +136,77 @@ public class RemoveDrgRouteRulesRequest
             removeDrgRouteRulesDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of RemoveDrgRouteRulesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of RemoveDrgRouteRulesRequest
+         */
+        public RemoveDrgRouteRulesRequest buildWithoutInvocationCallback() {
+            RemoveDrgRouteRulesRequest request = new RemoveDrgRouteRulesRequest();
+            request.drgRouteTableId = drgRouteTableId;
+            request.removeDrgRouteRulesDetails = removeDrgRouteRulesDetails;
+            return request;
+            // new RemoveDrgRouteRulesRequest(drgRouteTableId, removeDrgRouteRulesDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .drgRouteTableId(drgRouteTableId)
+                .removeDrgRouteRulesDetails(removeDrgRouteRulesDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",drgRouteTableId=").append(String.valueOf(this.drgRouteTableId));
+        sb.append(",removeDrgRouteRulesDetails=")
+                .append(String.valueOf(this.removeDrgRouteRulesDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RemoveDrgRouteRulesRequest)) {
+            return false;
+        }
+
+        RemoveDrgRouteRulesRequest other = (RemoveDrgRouteRulesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.drgRouteTableId, other.drgRouteTableId)
+                && java.util.Objects.equals(
+                        this.removeDrgRouteRulesDetails, other.removeDrgRouteRulesDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.drgRouteTableId == null ? 43 : this.drgRouteTableId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.removeDrgRouteRulesDetails == null
+                                ? 43
+                                : this.removeDrgRouteRulesDetails.hashCode());
+        return result;
     }
 }

@@ -15,14 +15,32 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NamespaceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NamespaceSummary {
+public final class NamespaceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "namespaceName",
+        "compartmentId",
+        "isOnboarded",
+        "isLogSetEnabled",
+        "isDataEverIngested"
+    })
+    public NamespaceSummary(
+            String namespaceName,
+            String compartmentId,
+            Boolean isOnboarded,
+            Boolean isLogSetEnabled,
+            Boolean isDataEverIngested) {
+        super();
+        this.namespaceName = namespaceName;
+        this.compartmentId = compartmentId;
+        this.isOnboarded = isOnboarded;
+        this.isLogSetEnabled = isLogSetEnabled;
+        this.isDataEverIngested = isDataEverIngested;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
@@ -105,36 +123,121 @@ public class NamespaceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This is the namespace name of a tenancy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
-    String namespaceName;
+    private final String namespaceName;
+
+    public String getNamespaceName() {
+        return namespaceName;
+    }
 
     /**
      * The is the tenancy ID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * This indicates if the tenancy is onboarded to Logging Analytics
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOnboarded")
-    Boolean isOnboarded;
+    private final Boolean isOnboarded;
+
+    public Boolean getIsOnboarded() {
+        return isOnboarded;
+    }
 
     /**
      * This indicates if the log set feature is enabled for the tenancy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLogSetEnabled")
-    Boolean isLogSetEnabled;
+    private final Boolean isLogSetEnabled;
+
+    public Boolean getIsLogSetEnabled() {
+        return isLogSetEnabled;
+    }
 
     /**
      * This indicates if data has ever been ingested for the tenancy in Logging Analytics
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataEverIngested")
-    Boolean isDataEverIngested;
+    private final Boolean isDataEverIngested;
+
+    public Boolean getIsDataEverIngested() {
+        return isDataEverIngested;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NamespaceSummary(");
+        sb.append("namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", isOnboarded=").append(String.valueOf(this.isOnboarded));
+        sb.append(", isLogSetEnabled=").append(String.valueOf(this.isLogSetEnabled));
+        sb.append(", isDataEverIngested=").append(String.valueOf(this.isDataEverIngested));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NamespaceSummary)) {
+            return false;
+        }
+
+        NamespaceSummary other = (NamespaceSummary) o;
+        return java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.isOnboarded, other.isOnboarded)
+                && java.util.Objects.equals(this.isLogSetEnabled, other.isLogSetEnabled)
+                && java.util.Objects.equals(this.isDataEverIngested, other.isDataEverIngested)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.isOnboarded == null ? 43 : this.isOnboarded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLogSetEnabled == null ? 43 : this.isLogSetEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDataEverIngested == null
+                                ? 43
+                                : this.isDataEverIngested.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

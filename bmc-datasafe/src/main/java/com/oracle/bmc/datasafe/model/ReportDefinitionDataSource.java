@@ -8,7 +8,6 @@ package com.oracle.bmc.datasafe.model;
  * Specifies the name of a resource that provides data for the report. For example alerts, events.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public enum ReportDefinitionDataSource {
     Events("EVENTS"),
     Alerts("ALERTS"),
@@ -18,6 +17,9 @@ public enum ReportDefinitionDataSource {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ReportDefinitionDataSource.class);
 
     private final String value;
     private static java.util.Map<String, ReportDefinitionDataSource> map;

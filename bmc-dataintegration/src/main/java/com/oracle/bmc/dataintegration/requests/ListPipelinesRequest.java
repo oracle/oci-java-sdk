@@ -9,14 +9,6 @@ import com.oracle.bmc.dataintegration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPipelinesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPipelinesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String workspaceId;
 
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -32,37 +27,58 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Used to filter by the project or the folder object.
      *
      */
     private String aggregatorKey;
 
+    public String getAggregatorKey() {
+        return aggregatorKey;
+    }
     /**
      * Specifies the fields to get for an object.
      */
     private java.util.List<String> fields;
 
+    public java.util.List<String> getFields() {
+        return fields;
+    }
     /**
      * Used to filter by the name of the object.
      */
     private String name;
 
+    public String getName() {
+        return name;
+    }
     /**
      * Used to filter by the identifier of the object.
      */
     private java.util.List<String> identifier;
 
+    public java.util.List<String> getIdentifier() {
+        return identifier;
+    }
     /**
      * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
      */
@@ -103,6 +119,10 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
      */
@@ -144,12 +164,53 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPipelinesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String workspaceId = null;
+
+        /**
+         * The workspace ID.
+         * @return this builder instance
+         */
+        public Builder workspaceId(String workspaceId) {
+            this.workspaceId = workspaceId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String aggregatorKey = null;
+
+        /**
+         * Used to filter by the project or the folder object.
+         *
+         * @return this builder instance
+         */
+        public Builder aggregatorKey(String aggregatorKey) {
+            this.aggregatorKey = aggregatorKey;
+            return this;
+        }
 
         private java.util.List<String> fields = null;
 
@@ -170,6 +231,17 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        private String name = null;
+
+        /**
+         * Used to filter by the name of the object.
+         * @return this builder instance
+         */
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
         private java.util.List<String> identifier = null;
 
         /**
@@ -187,6 +259,50 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder identifier(String singularValue) {
             return this.identifier(java.util.Arrays.asList(singularValue));
+        }
+
+        private Integer limit = null;
+
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
         }
 
         /**
@@ -248,5 +364,111 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListPipelinesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListPipelinesRequest
+         */
+        public ListPipelinesRequest buildWithoutInvocationCallback() {
+            ListPipelinesRequest request = new ListPipelinesRequest();
+            request.workspaceId = workspaceId;
+            request.opcRequestId = opcRequestId;
+            request.aggregatorKey = aggregatorKey;
+            request.fields = fields;
+            request.name = name;
+            request.identifier = identifier;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            return request;
+            // new ListPipelinesRequest(workspaceId, opcRequestId, aggregatorKey, fields, name, identifier, limit, page, sortOrder, sortBy);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .workspaceId(workspaceId)
+                .opcRequestId(opcRequestId)
+                .aggregatorKey(aggregatorKey)
+                .fields(fields)
+                .name(name)
+                .identifier(identifier)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",workspaceId=").append(String.valueOf(this.workspaceId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",aggregatorKey=").append(String.valueOf(this.aggregatorKey));
+        sb.append(",fields=").append(String.valueOf(this.fields));
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",identifier=").append(String.valueOf(this.identifier));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListPipelinesRequest)) {
+            return false;
+        }
+
+        ListPipelinesRequest other = (ListPipelinesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.workspaceId, other.workspaceId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.aggregatorKey, other.aggregatorKey)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.workspaceId == null ? 43 : this.workspaceId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aggregatorKey == null ? 43 : this.aggregatorKey.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        return result;
     }
 }

@@ -15,14 +15,68 @@ package com.oracle.bmc.bds.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Node.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Node {
+public final class Node {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "instanceId",
+        "displayName",
+        "lifecycleState",
+        "nodeType",
+        "shape",
+        "attachedBlockVolumes",
+        "subnetId",
+        "ipAddress",
+        "hostname",
+        "imageId",
+        "sshFingerprint",
+        "availabilityDomain",
+        "faultDomain",
+        "timeCreated",
+        "timeUpdated",
+        "ocpus",
+        "memoryInGBs"
+    })
+    public Node(
+            String instanceId,
+            String displayName,
+            LifecycleState lifecycleState,
+            NodeType nodeType,
+            String shape,
+            java.util.List<VolumeAttachmentDetail> attachedBlockVolumes,
+            String subnetId,
+            String ipAddress,
+            String hostname,
+            String imageId,
+            String sshFingerprint,
+            String availabilityDomain,
+            String faultDomain,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            Integer ocpus,
+            Integer memoryInGBs) {
+        super();
+        this.instanceId = instanceId;
+        this.displayName = displayName;
+        this.lifecycleState = lifecycleState;
+        this.nodeType = nodeType;
+        this.shape = shape;
+        this.attachedBlockVolumes = attachedBlockVolumes;
+        this.subnetId = subnetId;
+        this.ipAddress = ipAddress;
+        this.hostname = hostname;
+        this.imageId = imageId;
+        this.sshFingerprint = sshFingerprint;
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomain = faultDomain;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.ocpus = ocpus;
+        this.memoryInGBs = memoryInGBs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
@@ -238,21 +292,33 @@ public class Node {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
 
     /**
      * The name of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
     /**
      * The state of the node.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -267,6 +333,9 @@ public class Node {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -304,11 +373,15 @@ public class Node {
      * The state of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     /**
      * Cluster node type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum NodeType {
         Master("MASTER"),
         Edge("EDGE"),
@@ -323,6 +396,9 @@ public class Node {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NodeType.class);
 
         private final String value;
         private static java.util.Map<String, NodeType> map;
@@ -360,86 +436,241 @@ public class Node {
      * Cluster node type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
-    NodeType nodeType;
+    private final NodeType nodeType;
+
+    public NodeType getNodeType() {
+        return nodeType;
+    }
 
     /**
      * Shape of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The list of block volumes attached to a given node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachedBlockVolumes")
-    java.util.List<VolumeAttachmentDetail> attachedBlockVolumes;
+    private final java.util.List<VolumeAttachmentDetail> attachedBlockVolumes;
+
+    public java.util.List<VolumeAttachmentDetail> getAttachedBlockVolumes() {
+        return attachedBlockVolumes;
+    }
 
     /**
      * The OCID of the subnet in which the node is to be created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * IP address of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * The fully-qualified hostname (FQDN) of the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    private final String hostname;
+
+    public String getHostname() {
+        return hostname;
+    }
 
     /**
      * The OCID of the image from which the node was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
-    String imageId;
+    private final String imageId;
+
+    public String getImageId() {
+        return imageId;
+    }
 
     /**
      * The fingerprint of the SSH key used for node access.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshFingerprint")
-    String sshFingerprint;
+    private final String sshFingerprint;
+
+    public String getSshFingerprint() {
+        return sshFingerprint;
+    }
 
     /**
      * The name of the availability domain in which the node is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The name of the fault domain in which the node is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
 
     /**
      * The time the node was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The total number of OCPUs available to the node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
-    Integer ocpus;
+    private final Integer ocpus;
+
+    public Integer getOcpus() {
+        return ocpus;
+    }
 
     /**
      * The total amount of memory available to the node, in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
-    Integer memoryInGBs;
+    private final Integer memoryInGBs;
+
+    public Integer getMemoryInGBs() {
+        return memoryInGBs;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Node(");
+        sb.append("instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", nodeType=").append(String.valueOf(this.nodeType));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", attachedBlockVolumes=").append(String.valueOf(this.attachedBlockVolumes));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", imageId=").append(String.valueOf(this.imageId));
+        sb.append(", sshFingerprint=").append(String.valueOf(this.sshFingerprint));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", ocpus=").append(String.valueOf(this.ocpus));
+        sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Node)) {
+            return false;
+        }
+
+        Node other = (Node) o;
+        return java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.nodeType, other.nodeType)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.attachedBlockVolumes, other.attachedBlockVolumes)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.sshFingerprint, other.sshFingerprint)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.ocpus, other.ocpus)
+                && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.nodeType == null ? 43 : this.nodeType.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachedBlockVolumes == null
+                                ? 43
+                                : this.attachedBlockVolumes.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sshFingerprint == null ? 43 : this.sshFingerprint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
+        result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

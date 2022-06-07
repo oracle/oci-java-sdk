@@ -8,7 +8,6 @@ package com.oracle.bmc.healthchecks.model;
  * The supported HTTP methods available for probes.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.extern.slf4j.Slf4j
 public enum HttpProbeMethod {
     Get("GET"),
     Head("HEAD"),
@@ -18,6 +17,9 @@ public enum HttpProbeMethod {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(HttpProbeMethod.class);
 
     private final String value;
     private static java.util.Map<String, HttpProbeMethod> map;

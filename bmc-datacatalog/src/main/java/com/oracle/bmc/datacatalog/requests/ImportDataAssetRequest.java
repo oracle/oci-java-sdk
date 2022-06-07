@@ -9,14 +9,6 @@ import com.oracle.bmc.datacatalog.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportDataAssetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ImportDataAssetRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ImportDataAssetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.ImportDataAssetDetails> {
@@ -26,32 +18,51 @@ public class ImportDataAssetRequest
      */
     private String catalogId;
 
+    public String getCatalogId() {
+        return catalogId;
+    }
     /**
      * Unique data asset key.
      */
     private String dataAssetKey;
 
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
     /**
      * The file contents to be imported.
      */
     private com.oracle.bmc.datacatalog.model.ImportDataAssetDetails importDataAssetDetails;
 
+    public com.oracle.bmc.datacatalog.model.ImportDataAssetDetails getImportDataAssetDetails() {
+        return importDataAssetDetails;
+    }
     /**
      * Type of import.
      */
     private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
             importType;
 
+    public java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
+            getImportType() {
+        return importType;
+    }
     /**
      * Specify whether to ignore the missing values in the import file.
      */
     private Boolean isMissingValueIgnored;
 
+    public Boolean getIsMissingValueIgnored() {
+        return isMissingValueIgnored;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -61,6 +72,10 @@ public class ImportDataAssetRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -79,6 +94,41 @@ public class ImportDataAssetRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String catalogId = null;
+
+        /**
+         * Unique catalog identifier.
+         * @return this builder instance
+         */
+        public Builder catalogId(String catalogId) {
+            this.catalogId = catalogId;
+            return this;
+        }
+
+        private String dataAssetKey = null;
+
+        /**
+         * Unique data asset key.
+         * @return this builder instance
+         */
+        public Builder dataAssetKey(String dataAssetKey) {
+            this.dataAssetKey = dataAssetKey;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.ImportDataAssetDetails importDataAssetDetails =
+                null;
+
+        /**
+         * The file contents to be imported.
+         * @return this builder instance
+         */
+        public Builder importDataAssetDetails(
+                com.oracle.bmc.datacatalog.model.ImportDataAssetDetails importDataAssetDetails) {
+            this.importDataAssetDetails = importDataAssetDetails;
+            return this;
+        }
 
         private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
                 importType = null;
@@ -100,6 +150,44 @@ public class ImportDataAssetRequest
          */
         public Builder importType(DataAssetImportExportTypeFilter singularValue) {
             return this.importType(java.util.Arrays.asList(singularValue));
+        }
+
+        private Boolean isMissingValueIgnored = null;
+
+        /**
+         * Specify whether to ignore the missing values in the import file.
+         * @return this builder instance
+         */
+        public Builder isMissingValueIgnored(Boolean isMissingValueIgnored) {
+            this.isMissingValueIgnored = isMissingValueIgnored;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
         }
 
         /**
@@ -169,5 +257,105 @@ public class ImportDataAssetRequest
             importDataAssetDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ImportDataAssetRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ImportDataAssetRequest
+         */
+        public ImportDataAssetRequest buildWithoutInvocationCallback() {
+            ImportDataAssetRequest request = new ImportDataAssetRequest();
+            request.catalogId = catalogId;
+            request.dataAssetKey = dataAssetKey;
+            request.importDataAssetDetails = importDataAssetDetails;
+            request.importType = importType;
+            request.isMissingValueIgnored = isMissingValueIgnored;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new ImportDataAssetRequest(catalogId, dataAssetKey, importDataAssetDetails, importType, isMissingValueIgnored, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .catalogId(catalogId)
+                .dataAssetKey(dataAssetKey)
+                .importDataAssetDetails(importDataAssetDetails)
+                .importType(importType)
+                .isMissingValueIgnored(isMissingValueIgnored)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(",dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(",importDataAssetDetails=").append(String.valueOf(this.importDataAssetDetails));
+        sb.append(",importType=").append(String.valueOf(this.importType));
+        sb.append(",isMissingValueIgnored=").append(String.valueOf(this.isMissingValueIgnored));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImportDataAssetRequest)) {
+            return false;
+        }
+
+        ImportDataAssetRequest other = (ImportDataAssetRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(
+                        this.importDataAssetDetails, other.importDataAssetDetails)
+                && java.util.Objects.equals(this.importType, other.importType)
+                && java.util.Objects.equals(this.isMissingValueIgnored, other.isMissingValueIgnored)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importDataAssetDetails == null
+                                ? 43
+                                : this.importDataAssetDetails.hashCode());
+        result = (result * PRIME) + (this.importType == null ? 43 : this.importType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMissingValueIgnored == null
+                                ? 43
+                                : this.isMissingValueIgnored.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

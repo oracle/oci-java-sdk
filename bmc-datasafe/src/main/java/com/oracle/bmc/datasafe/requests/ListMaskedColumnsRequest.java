@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskedColumnsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaskedColumnsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,16 +16,25 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String maskingReportId;
 
+    public String getMaskingReportId() {
+        return maskingReportId;
+    }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending (ASC) or descending (DESC).
      */
@@ -74,6 +75,10 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. You can specify only one sort order (sortOrder). The default order for all the fields is ascending.
      *
@@ -116,21 +121,34 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * A filter to return only items related to specific schema name.
      */
     private java.util.List<String> schemaName;
 
+    public java.util.List<String> getSchemaName() {
+        return schemaName;
+    }
     /**
      * A filter to return only items related to a specific object name.
      */
     private java.util.List<String> objectName;
 
+    public java.util.List<String> getObjectName() {
+        return objectName;
+    }
     /**
      * A filter to return only a specific column based on column name.
      */
     private java.util.List<String> columnName;
 
+    public java.util.List<String> getColumnName() {
+        return columnName;
+    }
     /**
      * A filter to return only items related to a specific object type.
      */
@@ -172,20 +190,34 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             throw new IllegalArgumentException("Invalid ObjectType: " + key);
         }
     };
+
+    public java.util.List<ObjectType> getObjectType() {
+        return objectType;
+    }
     /**
      * A filter to return only the resources that match the specified masking column group.
      */
     private java.util.List<String> maskingColumnGroup;
 
+    public java.util.List<String> getMaskingColumnGroup() {
+        return maskingColumnGroup;
+    }
     /**
      * A filter to return only items related to a specific sensitive type OCID.
      */
     private String sensitiveTypeId;
 
+    public String getSensitiveTypeId() {
+        return sensitiveTypeId;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -193,6 +225,62 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String maskingReportId = null;
+
+        /**
+         * The OCID of the masking report.
+         * @return this builder instance
+         */
+        public Builder maskingReportId(String maskingReportId) {
+            this.maskingReportId = maskingReportId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order for all the fields is ascending.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
 
         private java.util.List<String> schemaName = null;
 
@@ -289,6 +377,28 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             return this.maskingColumnGroup(java.util.Arrays.asList(singularValue));
         }
 
+        private String sensitiveTypeId = null;
+
+        /**
+         * A filter to return only items related to a specific sensitive type OCID.
+         * @return this builder instance
+         */
+        public Builder sensitiveTypeId(String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
@@ -350,5 +460,127 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListMaskedColumnsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListMaskedColumnsRequest
+         */
+        public ListMaskedColumnsRequest buildWithoutInvocationCallback() {
+            ListMaskedColumnsRequest request = new ListMaskedColumnsRequest();
+            request.maskingReportId = maskingReportId;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.schemaName = schemaName;
+            request.objectName = objectName;
+            request.columnName = columnName;
+            request.objectType = objectType;
+            request.maskingColumnGroup = maskingColumnGroup;
+            request.sensitiveTypeId = sensitiveTypeId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListMaskedColumnsRequest(maskingReportId, limit, page, sortOrder, sortBy, schemaName, objectName, columnName, objectType, maskingColumnGroup, sensitiveTypeId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .maskingReportId(maskingReportId)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .schemaName(schemaName)
+                .objectName(objectName)
+                .columnName(columnName)
+                .objectType(objectType)
+                .maskingColumnGroup(maskingColumnGroup)
+                .sensitiveTypeId(sensitiveTypeId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",maskingReportId=").append(String.valueOf(this.maskingReportId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",schemaName=").append(String.valueOf(this.schemaName));
+        sb.append(",objectName=").append(String.valueOf(this.objectName));
+        sb.append(",columnName=").append(String.valueOf(this.columnName));
+        sb.append(",objectType=").append(String.valueOf(this.objectType));
+        sb.append(",maskingColumnGroup=").append(String.valueOf(this.maskingColumnGroup));
+        sb.append(",sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListMaskedColumnsRequest)) {
+            return false;
+        }
+
+        ListMaskedColumnsRequest other = (ListMaskedColumnsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.maskingReportId, other.maskingReportId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.schemaName, other.schemaName)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.columnName, other.columnName)
+                && java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.maskingColumnGroup, other.maskingColumnGroup)
+                && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.maskingReportId == null ? 43 : this.maskingReportId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingColumnGroup == null
+                                ? 43
+                                : this.maskingColumnGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeId == null ? 43 : this.sensitiveTypeId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

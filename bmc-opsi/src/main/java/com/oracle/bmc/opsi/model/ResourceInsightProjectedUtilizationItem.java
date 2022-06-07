@@ -15,16 +15,20 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceInsightProjectedUtilizationItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceInsightProjectedUtilizationItem {
+public final class ResourceInsightProjectedUtilizationItem {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "daysToReach"})
+    public ResourceInsightProjectedUtilizationItem(String id, Integer daysToReach) {
+        super();
+        this.id = id;
+        this.daysToReach = daysToReach;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -70,18 +74,72 @@ public class ResourceInsightProjectedUtilizationItem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Db id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Days to reach projected utilization
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReach")
-    Integer daysToReach;
+    private final Integer daysToReach;
+
+    public Integer getDaysToReach() {
+        return daysToReach;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceInsightProjectedUtilizationItem(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", daysToReach=").append(String.valueOf(this.daysToReach));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceInsightProjectedUtilizationItem)) {
+            return false;
+        }
+
+        ResourceInsightProjectedUtilizationItem other = (ResourceInsightProjectedUtilizationItem) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.daysToReach, other.daysToReach)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.daysToReach == null ? 43 : this.daysToReach.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

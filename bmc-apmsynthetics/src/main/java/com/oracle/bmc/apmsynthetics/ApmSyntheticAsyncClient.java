@@ -7,6 +7,7 @@ package com.oracle.bmc.apmsynthetics;
 import com.oracle.bmc.apmsynthetics.internal.http.*;
 import com.oracle.bmc.apmsynthetics.requests.*;
 import com.oracle.bmc.apmsynthetics.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ApmSynthetic service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.apmsynthetics.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.extern.slf4j.Slf4j
 public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     /**
      * Service instance for ApmSynthetic.
@@ -35,7 +35,9 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                             "https://apm-synthetic.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ApmSyntheticAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
          * @return the client
          */
         public ApmSyntheticAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new ApmSyntheticAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

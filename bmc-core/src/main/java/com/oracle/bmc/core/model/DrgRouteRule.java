@@ -18,14 +18,44 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DrgRouteRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DrgRouteRule {
+public final class DrgRouteRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "destination",
+        "destinationType",
+        "nextHopDrgAttachmentId",
+        "routeType",
+        "isConflict",
+        "isBlackhole",
+        "id",
+        "routeProvenance",
+        "attributes"
+    })
+    public DrgRouteRule(
+            String destination,
+            DestinationType destinationType,
+            String nextHopDrgAttachmentId,
+            RouteType routeType,
+            Boolean isConflict,
+            Boolean isBlackhole,
+            String id,
+            RouteProvenance routeProvenance,
+            Object attributes) {
+        super();
+        this.destination = destination;
+        this.destinationType = destinationType;
+        this.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
+        this.routeType = routeType;
+        this.isConflict = isConflict;
+        this.isBlackhole = isBlackhole;
+        this.id = id;
+        this.routeProvenance = routeProvenance;
+        this.attributes = attributes;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
@@ -152,6 +182,10 @@ public class DrgRouteRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Represents the range of IP addresses to match against when routing traffic.
      * <p>
@@ -163,7 +197,12 @@ public class DrgRouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
-    String destination;
+    private final String destination;
+
+    public String getDestination() {
+        return destination;
+    }
+
     /**
      * The type of destination for the rule. the type is required if {@code direction} = {@code EGRESS}.
      * <p>
@@ -175,7 +214,6 @@ public class DrgRouteRule {
      *     particular {@code Service} through a service gateway).
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DestinationType {
         CidrBlock("CIDR_BLOCK"),
         ServiceCidrBlock("SERVICE_CIDR_BLOCK"),
@@ -185,6 +223,9 @@ public class DrgRouteRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DestinationType.class);
 
         private final String value;
         private static java.util.Map<String, DestinationType> map;
@@ -230,7 +271,11 @@ public class DrgRouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
-    DestinationType destinationType;
+    private final DestinationType destinationType;
+
+    public DestinationType getDestinationType() {
+        return destinationType;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment responsible
@@ -240,13 +285,17 @@ public class DrgRouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
-    String nextHopDrgAttachmentId;
+    private final String nextHopDrgAttachmentId;
+
+    public String getNextHopDrgAttachmentId() {
+        return nextHopDrgAttachmentId;
+    }
+
     /**
      * You can specify static routes for the DRG route table using the API.
      * The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RouteType {
         Static("STATIC"),
         Dynamic("DYNAMIC"),
@@ -256,6 +305,9 @@ public class DrgRouteRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RouteType.class);
 
         private final String value;
         private static java.util.Map<String, RouteType> map;
@@ -295,28 +347,45 @@ public class DrgRouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeType")
-    RouteType routeType;
+    private final RouteType routeType;
+
+    public RouteType getRouteType() {
+        return routeType;
+    }
 
     /**
      * Indicates that the route was not imported due to a conflict between route rules.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isConflict")
-    Boolean isConflict;
+    private final Boolean isConflict;
+
+    public Boolean getIsConflict() {
+        return isConflict;
+    }
 
     /**
      * Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBlackhole")
-    Boolean isBlackhole;
+    private final Boolean isBlackhole;
+
+    public Boolean getIsBlackhole() {
+        return isBlackhole;
+    }
 
     /**
      * The Oracle-assigned ID of the DRG route rule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment,
      * and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains {@code IPSEC_TUNNEL},
@@ -326,7 +395,6 @@ public class DrgRouteRule {
      * regardless of the attachment's export distribution.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RouteProvenance {
         Static("STATIC"),
         Vcn("VCN"),
@@ -338,6 +406,9 @@ public class DrgRouteRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RouteProvenance.class);
 
         private final String value;
         private static java.util.Map<String, RouteProvenance> map;
@@ -381,15 +452,95 @@ public class DrgRouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeProvenance")
-    RouteProvenance routeProvenance;
+    private final RouteProvenance routeProvenance;
+
+    public RouteProvenance getRouteProvenance() {
+        return routeProvenance;
+    }
 
     /**
      * Additional properties for the route, computed by the service.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
-    Object attributes;
+    private final Object attributes;
+
+    public Object getAttributes() {
+        return attributes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DrgRouteRule(");
+        sb.append("destination=").append(String.valueOf(this.destination));
+        sb.append(", destinationType=").append(String.valueOf(this.destinationType));
+        sb.append(", nextHopDrgAttachmentId=").append(String.valueOf(this.nextHopDrgAttachmentId));
+        sb.append(", routeType=").append(String.valueOf(this.routeType));
+        sb.append(", isConflict=").append(String.valueOf(this.isConflict));
+        sb.append(", isBlackhole=").append(String.valueOf(this.isBlackhole));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", routeProvenance=").append(String.valueOf(this.routeProvenance));
+        sb.append(", attributes=").append(String.valueOf(this.attributes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DrgRouteRule)) {
+            return false;
+        }
+
+        DrgRouteRule other = (DrgRouteRule) o;
+        return java.util.Objects.equals(this.destination, other.destination)
+                && java.util.Objects.equals(this.destinationType, other.destinationType)
+                && java.util.Objects.equals(
+                        this.nextHopDrgAttachmentId, other.nextHopDrgAttachmentId)
+                && java.util.Objects.equals(this.routeType, other.routeType)
+                && java.util.Objects.equals(this.isConflict, other.isConflict)
+                && java.util.Objects.equals(this.isBlackhole, other.isBlackhole)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.routeProvenance, other.routeProvenance)
+                && java.util.Objects.equals(this.attributes, other.attributes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.destination == null ? 43 : this.destination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationType == null ? 43 : this.destinationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextHopDrgAttachmentId == null
+                                ? 43
+                                : this.nextHopDrgAttachmentId.hashCode());
+        result = (result * PRIME) + (this.routeType == null ? 43 : this.routeType.hashCode());
+        result = (result * PRIME) + (this.isConflict == null ? 43 : this.isConflict.hashCode());
+        result = (result * PRIME) + (this.isBlackhole == null ? 43 : this.isBlackhole.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.routeProvenance == null ? 43 : this.routeProvenance.hashCode());
+        result = (result * PRIME) + (this.attributes == null ? 43 : this.attributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

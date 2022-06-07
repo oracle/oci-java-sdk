@@ -7,10 +7,6 @@ package com.oracle.bmc.threatintelligence.responses;
 import com.oracle.bmc.threatintelligence.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListIndicatorCountsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,11 +15,20 @@ public class ListIndicatorCountsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned IndicatorCountCollection instance.
      */
     private com.oracle.bmc.threatintelligence.model.IndicatorCountCollection
             indicatorCountCollection;
+
+    public com.oracle.bmc.threatintelligence.model.IndicatorCountCollection
+            getIndicatorCountCollection() {
+        return indicatorCountCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -48,6 +53,23 @@ public class ListIndicatorCountsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.threatintelligence.model.IndicatorCountCollection
+                indicatorCountCollection;
+
+        public Builder indicatorCountCollection(
+                com.oracle.bmc.threatintelligence.model.IndicatorCountCollection
+                        indicatorCountCollection) {
+            this.indicatorCountCollection = indicatorCountCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -64,5 +86,49 @@ public class ListIndicatorCountsResponse extends com.oracle.bmc.responses.BmcRes
             return new ListIndicatorCountsResponse(
                     __httpStatusCode__, opcRequestId, indicatorCountCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",indicatorCountCollection=").append(String.valueOf(indicatorCountCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListIndicatorCountsResponse)) {
+            return false;
+        }
+
+        ListIndicatorCountsResponse other = (ListIndicatorCountsResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.indicatorCountCollection, other.indicatorCountCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.indicatorCountCollection == null
+                                ? 43
+                                : this.indicatorCountCollection.hashCode());
+        return result;
     }
 }

@@ -15,14 +15,19 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetadataDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MetadataDetails {
+public final class MetadataDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"paramName", "paramValue", "isJsonValue"})
+    public MetadataDetails(String paramName, String paramValue, Boolean isJsonValue) {
+        super();
+        this.paramName = paramName;
+        this.paramValue = paramValue;
+        this.isJsonValue = isJsonValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("paramName")
         private String paramName;
@@ -79,24 +84,85 @@ public class MetadataDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Metadata param name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("paramName")
-    String paramName;
+    private final String paramName;
+
+    public String getParamName() {
+        return paramName;
+    }
 
     /**
      * Metadata param value. Complex value will be a JSON string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("paramValue")
-    String paramValue;
+    private final String paramValue;
+
+    public String getParamValue() {
+        return paramValue;
+    }
 
     /**
      * Indicates if the value is a JSON string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isJsonValue")
-    Boolean isJsonValue;
+    private final Boolean isJsonValue;
+
+    public Boolean getIsJsonValue() {
+        return isJsonValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MetadataDetails(");
+        sb.append("paramName=").append(String.valueOf(this.paramName));
+        sb.append(", paramValue=").append(String.valueOf(this.paramValue));
+        sb.append(", isJsonValue=").append(String.valueOf(this.isJsonValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MetadataDetails)) {
+            return false;
+        }
+
+        MetadataDetails other = (MetadataDetails) o;
+        return java.util.Objects.equals(this.paramName, other.paramName)
+                && java.util.Objects.equals(this.paramValue, other.paramValue)
+                && java.util.Objects.equals(this.isJsonValue, other.isJsonValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.paramName == null ? 43 : this.paramName.hashCode());
+        result = (result * PRIME) + (this.paramValue == null ? 43 : this.paramValue.hashCode());
+        result = (result * PRIME) + (this.isJsonValue == null ? 43 : this.isJsonValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

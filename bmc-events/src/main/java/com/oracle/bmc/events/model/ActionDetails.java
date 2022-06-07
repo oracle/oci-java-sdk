@@ -16,12 +16,6 @@ package com.oracle.bmc.events.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -44,6 +38,13 @@ package com.oracle.bmc.events.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ActionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isEnabled", "description"})
+    protected ActionDetails(Boolean isEnabled, String description) {
+        super();
+        this.isEnabled = isEnabled;
+        this.description = description;
+    }
 
     /**
      * Whether or not this action is currently enabled.
@@ -52,7 +53,11 @@ public class ActionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering
@@ -60,7 +65,44 @@ public class ActionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ActionDetails(");
+        sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ActionDetails)) {
+            return false;
+        }
+
+        ActionDetails other = (ActionDetails) o;
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.description, other.description);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        return result;
+    }
 
     /**
      * The action to perform if the condition in the rule matches an event.

@@ -15,16 +15,19 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AnomalyDetectResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AnomalyDetectResult {
+public final class AnomalyDetectResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({"detectionResults"})
+    public AnomalyDetectResult(java.util.List<DetectionResultItem> detectionResults) {
+        super();
+        this.detectionResults = detectionResults;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("detectionResults")
         private java.util.List<DetectionResultItem> detectionResults;
@@ -60,12 +63,61 @@ public class AnomalyDetectResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A list to hold anomaly points grouped by timestamp/row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectionResults")
-    java.util.List<DetectionResultItem> detectionResults;
+    private final java.util.List<DetectionResultItem> detectionResults;
+
+    public java.util.List<DetectionResultItem> getDetectionResults() {
+        return detectionResults;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AnomalyDetectResult(");
+        sb.append("detectionResults=").append(String.valueOf(this.detectionResults));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AnomalyDetectResult)) {
+            return false;
+        }
+
+        AnomalyDetectResult other = (AnomalyDetectResult) o;
+        return java.util.Objects.equals(this.detectionResults, other.detectionResults)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.detectionResults == null ? 43 : this.detectionResults.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

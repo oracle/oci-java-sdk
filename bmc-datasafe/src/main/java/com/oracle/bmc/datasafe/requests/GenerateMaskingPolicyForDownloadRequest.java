@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateMaskingPolicyForDownloadExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateMaskingPolicyForDownloadRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GenerateMaskingPolicyForDownloadRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.GenerateMaskingPolicyForDownloadDetails> {
@@ -26,16 +18,27 @@ public class GenerateMaskingPolicyForDownloadRequest
      */
     private String maskingPolicyId;
 
+    public String getMaskingPolicyId() {
+        return maskingPolicyId;
+    }
     /**
      * Details to generate a masking policy file.
      */
     private com.oracle.bmc.datasafe.model.GenerateMaskingPolicyForDownloadDetails
             generateMaskingPolicyForDownloadDetails;
 
+    public com.oracle.bmc.datasafe.model.GenerateMaskingPolicyForDownloadDetails
+            getGenerateMaskingPolicyForDownloadDetails() {
+        return generateMaskingPolicyForDownloadDetails;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -54,6 +57,42 @@ public class GenerateMaskingPolicyForDownloadRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String maskingPolicyId = null;
+
+        /**
+         * The OCID of the masking policy.
+         * @return this builder instance
+         */
+        public Builder maskingPolicyId(String maskingPolicyId) {
+            this.maskingPolicyId = maskingPolicyId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.GenerateMaskingPolicyForDownloadDetails
+                generateMaskingPolicyForDownloadDetails = null;
+
+        /**
+         * Details to generate a masking policy file.
+         * @return this builder instance
+         */
+        public Builder generateMaskingPolicyForDownloadDetails(
+                com.oracle.bmc.datasafe.model.GenerateMaskingPolicyForDownloadDetails
+                        generateMaskingPolicyForDownloadDetails) {
+            this.generateMaskingPolicyForDownloadDetails = generateMaskingPolicyForDownloadDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -119,5 +158,85 @@ public class GenerateMaskingPolicyForDownloadRequest
             generateMaskingPolicyForDownloadDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of GenerateMaskingPolicyForDownloadRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GenerateMaskingPolicyForDownloadRequest
+         */
+        public GenerateMaskingPolicyForDownloadRequest buildWithoutInvocationCallback() {
+            GenerateMaskingPolicyForDownloadRequest request =
+                    new GenerateMaskingPolicyForDownloadRequest();
+            request.maskingPolicyId = maskingPolicyId;
+            request.generateMaskingPolicyForDownloadDetails =
+                    generateMaskingPolicyForDownloadDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GenerateMaskingPolicyForDownloadRequest(maskingPolicyId, generateMaskingPolicyForDownloadDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .maskingPolicyId(maskingPolicyId)
+                .generateMaskingPolicyForDownloadDetails(generateMaskingPolicyForDownloadDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
+        sb.append(",generateMaskingPolicyForDownloadDetails=")
+                .append(String.valueOf(this.generateMaskingPolicyForDownloadDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateMaskingPolicyForDownloadRequest)) {
+            return false;
+        }
+
+        GenerateMaskingPolicyForDownloadRequest other = (GenerateMaskingPolicyForDownloadRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.maskingPolicyId, other.maskingPolicyId)
+                && java.util.Objects.equals(
+                        this.generateMaskingPolicyForDownloadDetails,
+                        other.generateMaskingPolicyForDownloadDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.maskingPolicyId == null ? 43 : this.maskingPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.generateMaskingPolicyForDownloadDetails == null
+                                ? 43
+                                : this.generateMaskingPolicyForDownloadDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

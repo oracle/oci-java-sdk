@@ -15,14 +15,44 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateRowDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateRowDetails {
+public final class UpdateRowDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "value",
+        "option",
+        "isGetReturnRow",
+        "timeoutInMs",
+        "ttl",
+        "isTtlUseTableDefault",
+        "identityCacheSize",
+        "isExactMatch"
+    })
+    public UpdateRowDetails(
+            String compartmentId,
+            java.util.Map<String, Object> value,
+            Option option,
+            Boolean isGetReturnRow,
+            Integer timeoutInMs,
+            Integer ttl,
+            Boolean isTtlUseTableDefault,
+            Integer identityCacheSize,
+            Boolean isExactMatch) {
+        super();
+        this.compartmentId = compartmentId;
+        this.value = value;
+        this.option = option;
+        this.isGetReturnRow = isGetReturnRow;
+        this.timeoutInMs = timeoutInMs;
+        this.ttl = ttl;
+        this.isTtlUseTableDefault = isTtlUseTableDefault;
+        this.identityCacheSize = identityCacheSize;
+        this.isExactMatch = isExactMatch;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -149,6 +179,10 @@ public class UpdateRowDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the table's compartment.  Required
      * if the tableNameOrId path parameter is a table name.
@@ -158,13 +192,22 @@ public class UpdateRowDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The map of values from a row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    java.util.Map<String, Object> value;
+    private final java.util.Map<String, Object> value;
+
+    public java.util.Map<String, Object> getValue() {
+        return value;
+    }
+
     /**
      * Specifies a condition for the put operation.
      **/
@@ -204,7 +247,11 @@ public class UpdateRowDetails {
      * Specifies a condition for the put operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("option")
-    Option option;
+    private final Option option;
+
+    public Option getOption() {
+        return option;
+    }
 
     /**
      * If true, and the put fails due to an option setting, then
@@ -212,26 +259,42 @@ public class UpdateRowDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGetReturnRow")
-    Boolean isGetReturnRow;
+    private final Boolean isGetReturnRow;
+
+    public Boolean getIsGetReturnRow() {
+        return isGetReturnRow;
+    }
 
     /**
      * Timeout setting for the put.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMs")
-    Integer timeoutInMs;
+    private final Integer timeoutInMs;
+
+    public Integer getTimeoutInMs() {
+        return timeoutInMs;
+    }
 
     /**
      * Time-to-live for the row, in days.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
-    Integer ttl;
+    private final Integer ttl;
+
+    public Integer getTtl() {
+        return ttl;
+    }
 
     /**
      * If true, set time-to-live for this row to the table's default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTtlUseTableDefault")
-    Boolean isTtlUseTableDefault;
+    private final Boolean isTtlUseTableDefault;
+
+    public Boolean getIsTtlUseTableDefault() {
+        return isTtlUseTableDefault;
+    }
 
     /**
      * Sets the number of generated identity values that are
@@ -240,7 +303,11 @@ public class UpdateRowDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityCacheSize")
-    Integer identityCacheSize;
+    private final Integer identityCacheSize;
+
+    public Integer getIdentityCacheSize() {
+        return identityCacheSize;
+    }
 
     /**
      * If present and true, the presented row value must exactly
@@ -249,8 +316,85 @@ public class UpdateRowDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isExactMatch")
-    Boolean isExactMatch;
+    private final Boolean isExactMatch;
+
+    public Boolean getIsExactMatch() {
+        return isExactMatch;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateRowDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", option=").append(String.valueOf(this.option));
+        sb.append(", isGetReturnRow=").append(String.valueOf(this.isGetReturnRow));
+        sb.append(", timeoutInMs=").append(String.valueOf(this.timeoutInMs));
+        sb.append(", ttl=").append(String.valueOf(this.ttl));
+        sb.append(", isTtlUseTableDefault=").append(String.valueOf(this.isTtlUseTableDefault));
+        sb.append(", identityCacheSize=").append(String.valueOf(this.identityCacheSize));
+        sb.append(", isExactMatch=").append(String.valueOf(this.isExactMatch));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateRowDetails)) {
+            return false;
+        }
+
+        UpdateRowDetails other = (UpdateRowDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.option, other.option)
+                && java.util.Objects.equals(this.isGetReturnRow, other.isGetReturnRow)
+                && java.util.Objects.equals(this.timeoutInMs, other.timeoutInMs)
+                && java.util.Objects.equals(this.ttl, other.ttl)
+                && java.util.Objects.equals(this.isTtlUseTableDefault, other.isTtlUseTableDefault)
+                && java.util.Objects.equals(this.identityCacheSize, other.identityCacheSize)
+                && java.util.Objects.equals(this.isExactMatch, other.isExactMatch)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.option == null ? 43 : this.option.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isGetReturnRow == null ? 43 : this.isGetReturnRow.hashCode());
+        result = (result * PRIME) + (this.timeoutInMs == null ? 43 : this.timeoutInMs.hashCode());
+        result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isTtlUseTableDefault == null
+                                ? 43
+                                : this.isTtlUseTableDefault.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identityCacheSize == null ? 43 : this.identityCacheSize.hashCode());
+        result = (result * PRIME) + (this.isExactMatch == null ? 43 : this.isExactMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

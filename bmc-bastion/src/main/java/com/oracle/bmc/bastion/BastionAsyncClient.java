@@ -7,6 +7,7 @@ package com.oracle.bmc.bastion;
 import com.oracle.bmc.bastion.internal.http.*;
 import com.oracle.bmc.bastion.requests.*;
 import com.oracle.bmc.bastion.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Bastion service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.bastion.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.extern.slf4j.Slf4j
 public class BastionAsyncClient implements BastionAsync {
     /**
      * Service instance for Bastion.
@@ -34,7 +34,9 @@ public class BastionAsyncClient implements BastionAsync {
                     .serviceEndpointTemplate("https://bastion.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(BastionAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class BastionAsyncClient implements BastionAsync {
          * @return the client
          */
         public BastionAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new BastionAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class BastionAsyncClient implements BastionAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

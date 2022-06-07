@@ -8,7 +8,6 @@ package com.oracle.bmc.jms.model;
  * The types of managed instance.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.extern.slf4j.Slf4j
 public enum ManagedInstanceType {
     OracleManagementAgent("ORACLE_MANAGEMENT_AGENT"),
 
@@ -17,6 +16,9 @@ public enum ManagedInstanceType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ManagedInstanceType.class);
 
     private final String value;
     private static java.util.Map<String, ManagedInstanceType> map;

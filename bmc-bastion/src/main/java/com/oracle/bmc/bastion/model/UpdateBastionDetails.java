@@ -15,16 +15,34 @@ package com.oracle.bmc.bastion.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateBastionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateBastionDetails {
+public final class UpdateBastionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "maxSessionTtlInSeconds",
+        "staticJumpHostIpAddresses",
+        "clientCidrBlockAllowList",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateBastionDetails(
+            Integer maxSessionTtlInSeconds,
+            java.util.List<String> staticJumpHostIpAddresses,
+            java.util.List<String> clientCidrBlockAllowList,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
+        this.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
+        this.clientCidrBlockAllowList = clientCidrBlockAllowList;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("maxSessionTtlInSeconds")
         private Integer maxSessionTtlInSeconds;
@@ -108,24 +126,40 @@ public class UpdateBastionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The maximum amount of time that any session on the bastion can remain active.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSessionTtlInSeconds")
-    Integer maxSessionTtlInSeconds;
+    private final Integer maxSessionTtlInSeconds;
+
+    public Integer getMaxSessionTtlInSeconds() {
+        return maxSessionTtlInSeconds;
+    }
 
     /**
      * A list of IP addresses of the hosts that the bastion has access to. Not applicable to {@code standard} bastions.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("staticJumpHostIpAddresses")
-    java.util.List<String> staticJumpHostIpAddresses;
+    private final java.util.List<String> staticJumpHostIpAddresses;
+
+    public java.util.List<String> getStaticJumpHostIpAddresses() {
+        return staticJumpHostIpAddresses;
+    }
 
     /**
      * A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientCidrBlockAllowList")
-    java.util.List<String> clientCidrBlockAllowList;
+    private final java.util.List<String> clientCidrBlockAllowList;
+
+    public java.util.List<String> getClientCidrBlockAllowList() {
+        return clientCidrBlockAllowList;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -133,7 +167,11 @@ public class UpdateBastionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -141,8 +179,79 @@ public class UpdateBastionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateBastionDetails(");
+        sb.append("maxSessionTtlInSeconds=").append(String.valueOf(this.maxSessionTtlInSeconds));
+        sb.append(", staticJumpHostIpAddresses=")
+                .append(String.valueOf(this.staticJumpHostIpAddresses));
+        sb.append(", clientCidrBlockAllowList=")
+                .append(String.valueOf(this.clientCidrBlockAllowList));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBastionDetails)) {
+            return false;
+        }
+
+        UpdateBastionDetails other = (UpdateBastionDetails) o;
+        return java.util.Objects.equals(this.maxSessionTtlInSeconds, other.maxSessionTtlInSeconds)
+                && java.util.Objects.equals(
+                        this.staticJumpHostIpAddresses, other.staticJumpHostIpAddresses)
+                && java.util.Objects.equals(
+                        this.clientCidrBlockAllowList, other.clientCidrBlockAllowList)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.maxSessionTtlInSeconds == null
+                                ? 43
+                                : this.maxSessionTtlInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.staticJumpHostIpAddresses == null
+                                ? 43
+                                : this.staticJumpHostIpAddresses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientCidrBlockAllowList == null
+                                ? 43
+                                : this.clientCidrBlockAllowList.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

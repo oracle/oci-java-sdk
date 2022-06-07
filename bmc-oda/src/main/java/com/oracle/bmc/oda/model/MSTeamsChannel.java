@@ -15,20 +15,15 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MSTeamsChannel.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MSTeamsChannel extends Channel {
+public final class MSTeamsChannel extends Channel {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -202,6 +197,10 @@ public class MSTeamsChannel extends Channel {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public MSTeamsChannel(
             String id,
@@ -237,13 +236,21 @@ public class MSTeamsChannel extends Channel {
      * The Microsoft App ID that you obtained when you created your bot registration in Azure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("msaAppId")
-    String msaAppId;
+    private final String msaAppId;
+
+    public String getMsaAppId() {
+        return msaAppId;
+    }
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
-    String botId;
+    private final String botId;
+
+    public String getBotId() {
+        return botId;
+    }
 
     /**
      * The URL to use to send messages to this channel.
@@ -251,8 +258,59 @@ public class MSTeamsChannel extends Channel {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
-    String webhookUrl;
+    private final String webhookUrl;
+
+    public String getWebhookUrl() {
+        return webhookUrl;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MSTeamsChannel(");
+        sb.append("super=").append(super.toString());
+        sb.append(", msaAppId=").append(String.valueOf(this.msaAppId));
+        sb.append(", botId=").append(String.valueOf(this.botId));
+        sb.append(", webhookUrl=").append(String.valueOf(this.webhookUrl));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MSTeamsChannel)) {
+            return false;
+        }
+
+        MSTeamsChannel other = (MSTeamsChannel) o;
+        return java.util.Objects.equals(this.msaAppId, other.msaAppId)
+                && java.util.Objects.equals(this.botId, other.botId)
+                && java.util.Objects.equals(this.webhookUrl, other.webhookUrl)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.msaAppId == null ? 43 : this.msaAppId.hashCode());
+        result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
+        result = (result * PRIME) + (this.webhookUrl == null ? 43 : this.webhookUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

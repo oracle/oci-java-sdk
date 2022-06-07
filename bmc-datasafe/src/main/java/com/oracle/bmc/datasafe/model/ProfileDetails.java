@@ -16,14 +16,50 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProfileDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProfileDetails {
+public final class ProfileDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "numUsers",
+        "connectTime",
+        "failedLoginAttempts",
+        "idleTime",
+        "inactiveAccountTime",
+        "passwordGraceTime",
+        "passwordLifeTime",
+        "passwordLockTime",
+        "passwordReuseTime",
+        "passwordReuseMax",
+        "passwordVerifyFunction"
+    })
+    public ProfileDetails(
+            Integer numUsers,
+            String connectTime,
+            String failedLoginAttempts,
+            String idleTime,
+            String inactiveAccountTime,
+            String passwordGraceTime,
+            String passwordLifeTime,
+            String passwordLockTime,
+            String passwordReuseTime,
+            String passwordReuseMax,
+            String passwordVerifyFunction) {
+        super();
+        this.numUsers = numUsers;
+        this.connectTime = connectTime;
+        this.failedLoginAttempts = failedLoginAttempts;
+        this.idleTime = idleTime;
+        this.inactiveAccountTime = inactiveAccountTime;
+        this.passwordGraceTime = passwordGraceTime;
+        this.passwordLifeTime = passwordLifeTime;
+        this.passwordLockTime = passwordLockTime;
+        this.passwordReuseTime = passwordReuseTime;
+        this.passwordReuseMax = passwordReuseMax;
+        this.passwordVerifyFunction = passwordVerifyFunction;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("numUsers")
         private Integer numUsers;
@@ -172,72 +208,212 @@ public class ProfileDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of users using this profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numUsers")
-    Integer numUsers;
+    private final Integer numUsers;
+
+    public Integer getNumUsers() {
+        return numUsers;
+    }
 
     /**
      * The value of the CONNECT_TIME resource parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectTime")
-    String connectTime;
+    private final String connectTime;
+
+    public String getConnectTime() {
+        return connectTime;
+    }
 
     /**
      * The value of the FAILED_LOGIN_ATTEMPTS password parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
-    String failedLoginAttempts;
+    private final String failedLoginAttempts;
+
+    public String getFailedLoginAttempts() {
+        return failedLoginAttempts;
+    }
 
     /**
      * The value of the IDLE_TIME resource parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idleTime")
-    String idleTime;
+    private final String idleTime;
+
+    public String getIdleTime() {
+        return idleTime;
+    }
 
     /**
      * The value of the INACTIVE_ACCOUNT_TIME password parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveAccountTime")
-    String inactiveAccountTime;
+    private final String inactiveAccountTime;
+
+    public String getInactiveAccountTime() {
+        return inactiveAccountTime;
+    }
 
     /**
      * The value of the PASSWORD_GRACE_TIME password parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordGraceTime")
-    String passwordGraceTime;
+    private final String passwordGraceTime;
+
+    public String getPasswordGraceTime() {
+        return passwordGraceTime;
+    }
 
     /**
      * The value of the PASSWORD_LIFE_TIME password parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordLifeTime")
-    String passwordLifeTime;
+    private final String passwordLifeTime;
+
+    public String getPasswordLifeTime() {
+        return passwordLifeTime;
+    }
 
     /**
      * The value of the PASSWORD_LOCK_TIME password parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordLockTime")
-    String passwordLockTime;
+    private final String passwordLockTime;
+
+    public String getPasswordLockTime() {
+        return passwordLockTime;
+    }
 
     /**
      * The value of the PASSWORD_REUSE_TIME password parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseTime")
-    String passwordReuseTime;
+    private final String passwordReuseTime;
+
+    public String getPasswordReuseTime() {
+        return passwordReuseTime;
+    }
 
     /**
      * The value of the PASSWORD_REUSE_MAX resource parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseMax")
-    String passwordReuseMax;
+    private final String passwordReuseMax;
+
+    public String getPasswordReuseMax() {
+        return passwordReuseMax;
+    }
 
     /**
      * The value of the PASSWORD_VERIFY_FUNCTION resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVerifyFunction")
-    String passwordVerifyFunction;
+    private final String passwordVerifyFunction;
+
+    public String getPasswordVerifyFunction() {
+        return passwordVerifyFunction;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProfileDetails(");
+        sb.append("numUsers=").append(String.valueOf(this.numUsers));
+        sb.append(", connectTime=").append(String.valueOf(this.connectTime));
+        sb.append(", failedLoginAttempts=").append(String.valueOf(this.failedLoginAttempts));
+        sb.append(", idleTime=").append(String.valueOf(this.idleTime));
+        sb.append(", inactiveAccountTime=").append(String.valueOf(this.inactiveAccountTime));
+        sb.append(", passwordGraceTime=").append(String.valueOf(this.passwordGraceTime));
+        sb.append(", passwordLifeTime=").append(String.valueOf(this.passwordLifeTime));
+        sb.append(", passwordLockTime=").append(String.valueOf(this.passwordLockTime));
+        sb.append(", passwordReuseTime=").append(String.valueOf(this.passwordReuseTime));
+        sb.append(", passwordReuseMax=").append(String.valueOf(this.passwordReuseMax));
+        sb.append(", passwordVerifyFunction=").append(String.valueOf(this.passwordVerifyFunction));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProfileDetails)) {
+            return false;
+        }
+
+        ProfileDetails other = (ProfileDetails) o;
+        return java.util.Objects.equals(this.numUsers, other.numUsers)
+                && java.util.Objects.equals(this.connectTime, other.connectTime)
+                && java.util.Objects.equals(this.failedLoginAttempts, other.failedLoginAttempts)
+                && java.util.Objects.equals(this.idleTime, other.idleTime)
+                && java.util.Objects.equals(this.inactiveAccountTime, other.inactiveAccountTime)
+                && java.util.Objects.equals(this.passwordGraceTime, other.passwordGraceTime)
+                && java.util.Objects.equals(this.passwordLifeTime, other.passwordLifeTime)
+                && java.util.Objects.equals(this.passwordLockTime, other.passwordLockTime)
+                && java.util.Objects.equals(this.passwordReuseTime, other.passwordReuseTime)
+                && java.util.Objects.equals(this.passwordReuseMax, other.passwordReuseMax)
+                && java.util.Objects.equals(
+                        this.passwordVerifyFunction, other.passwordVerifyFunction)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.numUsers == null ? 43 : this.numUsers.hashCode());
+        result = (result * PRIME) + (this.connectTime == null ? 43 : this.connectTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failedLoginAttempts == null
+                                ? 43
+                                : this.failedLoginAttempts.hashCode());
+        result = (result * PRIME) + (this.idleTime == null ? 43 : this.idleTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inactiveAccountTime == null
+                                ? 43
+                                : this.inactiveAccountTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordGraceTime == null ? 43 : this.passwordGraceTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordLifeTime == null ? 43 : this.passwordLifeTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordLockTime == null ? 43 : this.passwordLockTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordReuseTime == null ? 43 : this.passwordReuseTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordReuseMax == null ? 43 : this.passwordReuseMax.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordVerifyFunction == null
+                                ? 43
+                                : this.passwordVerifyFunction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

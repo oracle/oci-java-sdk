@@ -9,14 +9,6 @@ import com.oracle.bmc.identitydataplane.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydataplane/GenerateScopedAccessTokenExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateScopedAccessTokenRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GenerateScopedAccessTokenRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails> {
@@ -26,6 +18,11 @@ public class GenerateScopedAccessTokenRequest
      */
     private com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
             generateScopedAccessTokenDetails;
+
+    public com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
+            getGenerateScopedAccessTokenDetails() {
+        return generateScopedAccessTokenDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -44,6 +41,20 @@ public class GenerateScopedAccessTokenRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
+                generateScopedAccessTokenDetails = null;
+
+        /**
+         * Scoped Access token request
+         * @return this builder instance
+         */
+        public Builder generateScopedAccessTokenDetails(
+                com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
+                        generateScopedAccessTokenDetails) {
+            this.generateScopedAccessTokenDetails = generateScopedAccessTokenDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -107,5 +118,70 @@ public class GenerateScopedAccessTokenRequest
             generateScopedAccessTokenDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of GenerateScopedAccessTokenRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GenerateScopedAccessTokenRequest
+         */
+        public GenerateScopedAccessTokenRequest buildWithoutInvocationCallback() {
+            GenerateScopedAccessTokenRequest request = new GenerateScopedAccessTokenRequest();
+            request.generateScopedAccessTokenDetails = generateScopedAccessTokenDetails;
+            return request;
+            // new GenerateScopedAccessTokenRequest(generateScopedAccessTokenDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().generateScopedAccessTokenDetails(generateScopedAccessTokenDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",generateScopedAccessTokenDetails=")
+                .append(String.valueOf(this.generateScopedAccessTokenDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateScopedAccessTokenRequest)) {
+            return false;
+        }
+
+        GenerateScopedAccessTokenRequest other = (GenerateScopedAccessTokenRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.generateScopedAccessTokenDetails,
+                        other.generateScopedAccessTokenDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.generateScopedAccessTokenDetails == null
+                                ? 43
+                                : this.generateScopedAccessTokenDetails.hashCode());
+        return result;
     }
 }

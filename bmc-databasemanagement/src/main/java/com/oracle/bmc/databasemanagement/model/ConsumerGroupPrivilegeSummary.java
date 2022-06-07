@@ -15,16 +15,22 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConsumerGroupPrivilegeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConsumerGroupPrivilegeSummary {
+public final class ConsumerGroupPrivilegeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "grantOption", "initialGroup"})
+    public ConsumerGroupPrivilegeSummary(
+            String name, GrantOption grantOption, InitialGroup initialGroup) {
+        super();
+        this.name = name;
+        this.grantOption = grantOption;
+        this.initialGroup = initialGroup;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -82,15 +88,23 @@ public class ConsumerGroupPrivilegeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the granted consumer group privilege.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum GrantOption {
         Yes("YES"),
         No("NO"),
@@ -100,6 +114,9 @@ public class ConsumerGroupPrivilegeSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(GrantOption.class);
 
         private final String value;
         private static java.util.Map<String, GrantOption> map;
@@ -137,11 +154,15 @@ public class ConsumerGroupPrivilegeSummary {
      * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
-    GrantOption grantOption;
+    private final GrantOption grantOption;
+
+    public GrantOption getGrantOption() {
+        return grantOption;
+    }
+
     /**
      * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum InitialGroup {
         Yes("YES"),
         No("NO"),
@@ -151,6 +172,9 @@ public class ConsumerGroupPrivilegeSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(InitialGroup.class);
 
         private final String value;
         private static java.util.Map<String, InitialGroup> map;
@@ -188,8 +212,57 @@ public class ConsumerGroupPrivilegeSummary {
      * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialGroup")
-    InitialGroup initialGroup;
+    private final InitialGroup initialGroup;
+
+    public InitialGroup getInitialGroup() {
+        return initialGroup;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConsumerGroupPrivilegeSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", grantOption=").append(String.valueOf(this.grantOption));
+        sb.append(", initialGroup=").append(String.valueOf(this.initialGroup));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConsumerGroupPrivilegeSummary)) {
+            return false;
+        }
+
+        ConsumerGroupPrivilegeSummary other = (ConsumerGroupPrivilegeSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.grantOption, other.grantOption)
+                && java.util.Objects.equals(this.initialGroup, other.initialGroup)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.grantOption == null ? 43 : this.grantOption.hashCode());
+        result = (result * PRIME) + (this.initialGroup == null ? 43 : this.initialGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

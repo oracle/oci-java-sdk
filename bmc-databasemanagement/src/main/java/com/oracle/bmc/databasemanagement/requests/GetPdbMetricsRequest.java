@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetPdbMetricsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPdbMetricsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String managedDatabaseId;
 
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
     /**
      * The start time of the time range to retrieve the health metrics of a Managed Database
      * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
@@ -31,6 +26,9 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String startTime;
 
+    public String getStartTime() {
+        return startTime;
+    }
     /**
      * The end time of the time range to retrieve the health metrics of a Managed Database
      * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
@@ -38,25 +36,41 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String endTime;
 
+    public String getEndTime() {
+        return endTime;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The time window used for metrics comparison.
      */
     private com.oracle.bmc.databasemanagement.model.CompareType compareType;
 
+    public com.oracle.bmc.databasemanagement.model.CompareType getCompareType() {
+        return compareType;
+    }
     /**
      * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
      */
     private String filterByMetricNames;
+
+    public String getFilterByMetricNames() {
+        return filterByMetricNames;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -64,6 +78,88 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedDatabaseId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @return this builder instance
+         */
+        public Builder managedDatabaseId(String managedDatabaseId) {
+            this.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        private String startTime = null;
+
+        /**
+         * The start time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
+         * @return this builder instance
+         */
+        public Builder startTime(String startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+
+        private String endTime = null;
+
+        /**
+         * The end time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
+         * @return this builder instance
+         */
+        public Builder endTime(String endTime) {
+            this.endTime = endTime;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.CompareType compareType = null;
+
+        /**
+         * The time window used for metrics comparison.
+         * @return this builder instance
+         */
+        public Builder compareType(
+                com.oracle.bmc.databasemanagement.model.CompareType compareType) {
+            this.compareType = compareType;
+            return this;
+        }
+
+        private String filterByMetricNames = null;
+
+        /**
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+         * @return this builder instance
+         */
+        public Builder filterByMetricNames(String filterByMetricNames) {
+            this.filterByMetricNames = filterByMetricNames;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -121,5 +217,102 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetPdbMetricsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetPdbMetricsRequest
+         */
+        public GetPdbMetricsRequest buildWithoutInvocationCallback() {
+            GetPdbMetricsRequest request = new GetPdbMetricsRequest();
+            request.managedDatabaseId = managedDatabaseId;
+            request.startTime = startTime;
+            request.endTime = endTime;
+            request.opcRequestId = opcRequestId;
+            request.compartmentId = compartmentId;
+            request.compareType = compareType;
+            request.filterByMetricNames = filterByMetricNames;
+            return request;
+            // new GetPdbMetricsRequest(managedDatabaseId, startTime, endTime, opcRequestId, compartmentId, compareType, filterByMetricNames);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedDatabaseId(managedDatabaseId)
+                .startTime(startTime)
+                .endTime(endTime)
+                .opcRequestId(opcRequestId)
+                .compartmentId(compartmentId)
+                .compareType(compareType)
+                .filterByMetricNames(filterByMetricNames);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(",startTime=").append(String.valueOf(this.startTime));
+        sb.append(",endTime=").append(String.valueOf(this.endTime));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compareType=").append(String.valueOf(this.compareType));
+        sb.append(",filterByMetricNames=").append(String.valueOf(this.filterByMetricNames));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetPdbMetricsRequest)) {
+            return false;
+        }
+
+        GetPdbMetricsRequest other = (GetPdbMetricsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(this.startTime, other.startTime)
+                && java.util.Objects.equals(this.endTime, other.endTime)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.compareType, other.compareType)
+                && java.util.Objects.equals(this.filterByMetricNames, other.filterByMetricNames);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result = (result * PRIME) + (this.startTime == null ? 43 : this.startTime.hashCode());
+        result = (result * PRIME) + (this.endTime == null ? 43 : this.endTime.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.compareType == null ? 43 : this.compareType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterByMetricNames == null
+                                ? 43
+                                : this.filterByMetricNames.hashCode());
+        return result;
     }
 }

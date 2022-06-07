@@ -9,14 +9,6 @@ import com.oracle.bmc.cloudguard.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedActivityProblemsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RequestSummarizedActivityProblemsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class RequestSummarizedActivityProblemsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class RequestSummarizedActivityProblemsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Default is false.
      * When set to true, the hierarchy of compartments is traversed
@@ -34,6 +29,9 @@ public class RequestSummarizedActivityProblemsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
      * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
@@ -84,11 +82,18 @@ public class RequestSummarizedActivityProblemsRequest
             throw new IllegalArgumentException("Invalid AccessLevel: " + key);
         }
     };
+
+    public AccessLevel getAccessLevel() {
+        return accessLevel;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * Default is false.
      * When set to true, the summary of activity problems that has unknown values for
@@ -97,15 +102,25 @@ public class RequestSummarizedActivityProblemsRequest
      */
     private Boolean includeUnknownLocations;
 
+    public Boolean getIncludeUnknownLocations() {
+        return includeUnknownLocations;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -113,6 +128,95 @@ public class RequestSummarizedActivityProblemsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        private AccessLevel accessLevel = null;
+
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         * @return this builder instance
+         */
+        public Builder accessLevel(AccessLevel accessLevel) {
+            this.accessLevel = accessLevel;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private Boolean includeUnknownLocations = null;
+
+        /**
+         * Default is false.
+         * When set to true, the summary of activity problems that has unknown values for
+         * city, state or country will be included.
+         *
+         * @return this builder instance
+         */
+        public Builder includeUnknownLocations(Boolean includeUnknownLocations) {
+            this.includeUnknownLocations = includeUnknownLocations;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -170,5 +274,108 @@ public class RequestSummarizedActivityProblemsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of RequestSummarizedActivityProblemsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of RequestSummarizedActivityProblemsRequest
+         */
+        public RequestSummarizedActivityProblemsRequest buildWithoutInvocationCallback() {
+            RequestSummarizedActivityProblemsRequest request =
+                    new RequestSummarizedActivityProblemsRequest();
+            request.compartmentId = compartmentId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
+            request.accessLevel = accessLevel;
+            request.limit = limit;
+            request.includeUnknownLocations = includeUnknownLocations;
+            request.page = page;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new RequestSummarizedActivityProblemsRequest(compartmentId, compartmentIdInSubtree, accessLevel, limit, includeUnknownLocations, page, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
+                .accessLevel(accessLevel)
+                .limit(limit)
+                .includeUnknownLocations(includeUnknownLocations)
+                .page(page)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",includeUnknownLocations=").append(String.valueOf(this.includeUnknownLocations));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RequestSummarizedActivityProblemsRequest)) {
+            return false;
+        }
+
+        RequestSummarizedActivityProblemsRequest other =
+                (RequestSummarizedActivityProblemsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.accessLevel, other.accessLevel)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(
+                        this.includeUnknownLocations, other.includeUnknownLocations)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includeUnknownLocations == null
+                                ? 43
+                                : this.includeUnknownLocations.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

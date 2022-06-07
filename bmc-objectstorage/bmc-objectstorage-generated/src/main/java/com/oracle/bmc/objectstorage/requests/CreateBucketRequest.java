@@ -9,14 +9,6 @@ import com.oracle.bmc.objectstorage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateBucketExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateBucketRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateBucketRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.objectstorage.model.CreateBucketDetails> {
@@ -26,15 +18,25 @@ public class CreateBucketRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * Request object for creating a bucket.
      */
     private com.oracle.bmc.objectstorage.model.CreateBucketDetails createBucketDetails;
 
+    public com.oracle.bmc.objectstorage.model.CreateBucketDetails getCreateBucketDetails() {
+        return createBucketDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcClientRequestId;
+
+    public String getOpcClientRequestId() {
+        return opcClientRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -52,6 +54,40 @@ public class CreateBucketRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Object Storage namespace used for the request.
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private com.oracle.bmc.objectstorage.model.CreateBucketDetails createBucketDetails = null;
+
+        /**
+         * Request object for creating a bucket.
+         * @return this builder instance
+         */
+        public Builder createBucketDetails(
+                com.oracle.bmc.objectstorage.model.CreateBucketDetails createBucketDetails) {
+            this.createBucketDetails = createBucketDetails;
+            return this;
+        }
+
+        private String opcClientRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcClientRequestId(String opcClientRequestId) {
+            this.opcClientRequestId = opcClientRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -116,5 +152,84 @@ public class CreateBucketRequest
             createBucketDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateBucketRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateBucketRequest
+         */
+        public CreateBucketRequest buildWithoutInvocationCallback() {
+            CreateBucketRequest request = new CreateBucketRequest();
+            request.namespaceName = namespaceName;
+            request.createBucketDetails = createBucketDetails;
+            request.opcClientRequestId = opcClientRequestId;
+            return request;
+            // new CreateBucketRequest(namespaceName, createBucketDetails, opcClientRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .createBucketDetails(createBucketDetails)
+                .opcClientRequestId(opcClientRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",createBucketDetails=").append(String.valueOf(this.createBucketDetails));
+        sb.append(",opcClientRequestId=").append(String.valueOf(this.opcClientRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateBucketRequest)) {
+            return false;
+        }
+
+        CreateBucketRequest other = (CreateBucketRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.createBucketDetails, other.createBucketDetails)
+                && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createBucketDetails == null
+                                ? 43
+                                : this.createBucketDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcClientRequestId == null
+                                ? 43
+                                : this.opcClientRequestId.hashCode());
+        return result;
     }
 }

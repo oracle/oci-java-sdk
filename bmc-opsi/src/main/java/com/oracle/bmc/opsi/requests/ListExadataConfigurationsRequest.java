@@ -9,14 +9,6 @@ import com.oracle.bmc.opsi.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListExadataConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListExadataConfigurationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListExadataConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,12 +17,18 @@ public class ListExadataConfigurationsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     private java.util.List<String> exadataInsightId;
 
+    public java.util.List<String> getExadataInsightId() {
+        return exadataInsightId;
+    }
     /**
      * Filter by one or more Exadata types.
      * Possible value are DBMACHINE, EXACS, and EXACC.
@@ -38,6 +36,9 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> exadataType;
 
+    public java.util.List<String> getExadataType() {
+        return exadataType;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to
      * return in a paginated "List" call.
@@ -48,6 +49,9 @@ public class ListExadataConfigurationsRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from
      * the previous "List" call. For important details about how pagination works,
@@ -56,12 +60,18 @@ public class ListExadataConfigurationsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
      */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Exadata configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
      *
@@ -105,6 +115,10 @@ public class ListExadataConfigurationsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
      * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
@@ -114,6 +128,9 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> definedTagEquals;
 
+    public java.util.List<String> getDefinedTagEquals() {
+        return definedTagEquals;
+    }
     /**
      * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
      * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
@@ -122,6 +139,9 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> freeformTagEquals;
 
+    public java.util.List<String> getFreeformTagEquals() {
+        return freeformTagEquals;
+    }
     /**
      * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
      * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
@@ -133,6 +153,9 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> definedTagExists;
 
+    public java.util.List<String> getDefinedTagExists() {
+        return definedTagExists;
+    }
     /**
      * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
      * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
@@ -142,6 +165,9 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> freeformTagExists;
 
+    public java.util.List<String> getFreeformTagExists() {
+        return freeformTagExists;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -149,12 +175,27 @@ public class ListExadataConfigurationsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListExadataConfigurationsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         private java.util.List<String> exadataInsightId = null;
 
@@ -198,6 +239,60 @@ public class ListExadataConfigurationsRequest
          */
         public Builder exadataType(String singularValue) {
             return this.exadataType(java.util.Arrays.asList(singularValue));
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.opsi.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * Exadata configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
         }
 
         private java.util.List<String> definedTagEquals = null;
@@ -310,6 +405,19 @@ public class ListExadataConfigurationsRequest
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
@@ -371,5 +479,131 @@ public class ListExadataConfigurationsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListExadataConfigurationsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListExadataConfigurationsRequest
+         */
+        public ListExadataConfigurationsRequest buildWithoutInvocationCallback() {
+            ListExadataConfigurationsRequest request = new ListExadataConfigurationsRequest();
+            request.compartmentId = compartmentId;
+            request.exadataInsightId = exadataInsightId;
+            request.exadataType = exadataType;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.definedTagEquals = definedTagEquals;
+            request.freeformTagEquals = freeformTagEquals;
+            request.definedTagExists = definedTagExists;
+            request.freeformTagExists = freeformTagExists;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListExadataConfigurationsRequest(compartmentId, exadataInsightId, exadataType, limit, page, sortOrder, sortBy, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .exadataInsightId(exadataInsightId)
+                .exadataType(exadataType)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .definedTagEquals(definedTagEquals)
+                .freeformTagEquals(freeformTagEquals)
+                .definedTagExists(definedTagExists)
+                .freeformTagExists(freeformTagExists)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append(",exadataType=").append(String.valueOf(this.exadataType));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",definedTagEquals=").append(String.valueOf(this.definedTagEquals));
+        sb.append(",freeformTagEquals=").append(String.valueOf(this.freeformTagEquals));
+        sb.append(",definedTagExists=").append(String.valueOf(this.definedTagExists));
+        sb.append(",freeformTagExists=").append(String.valueOf(this.freeformTagExists));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListExadataConfigurationsRequest)) {
+            return false;
+        }
+
+        ListExadataConfigurationsRequest other = (ListExadataConfigurationsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(this.exadataType, other.exadataType)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.definedTagEquals, other.definedTagEquals)
+                && java.util.Objects.equals(this.freeformTagEquals, other.freeformTagEquals)
+                && java.util.Objects.equals(this.definedTagExists, other.definedTagExists)
+                && java.util.Objects.equals(this.freeformTagExists, other.freeformTagExists)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result = (result * PRIME) + (this.exadataType == null ? 43 : this.exadataType.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedTagEquals == null ? 43 : this.definedTagEquals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeformTagEquals == null ? 43 : this.freeformTagEquals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedTagExists == null ? 43 : this.definedTagExists.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeformTagExists == null ? 43 : this.freeformTagExists.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

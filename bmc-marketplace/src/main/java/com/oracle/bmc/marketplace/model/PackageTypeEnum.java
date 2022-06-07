@@ -8,7 +8,6 @@ package com.oracle.bmc.marketplace.model;
  * Possible values for a package type.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.extern.slf4j.Slf4j
 public enum PackageTypeEnum {
     Orchestration("ORCHESTRATION"),
     Image("IMAGE"),
@@ -18,6 +17,9 @@ public enum PackageTypeEnum {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(PackageTypeEnum.class);
 
     private final String value;
     private static java.util.Map<String, PackageTypeEnum> map;

@@ -20,16 +20,22 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateObjectStorageTierDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateObjectStorageTierDetails {
+public final class UpdateObjectStorageTierDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"objectName", "storageTier", "versionId"})
+    public UpdateObjectStorageTierDetails(
+            String objectName, StorageTier storageTier, String versionId) {
+        super();
+        this.objectName = objectName;
+        this.storageTier = storageTier;
+        this.versionId = versionId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
@@ -87,25 +93,86 @@ public class UpdateObjectStorageTierDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An object for which the storage tier needs to be changed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * The storage tier that the object should be moved to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
-    StorageTier storageTier;
+    private final StorageTier storageTier;
+
+    public StorageTier getStorageTier() {
+        return storageTier;
+    }
 
     /**
      * The versionId of the object. Current object version is used by default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionId")
-    String versionId;
+    private final String versionId;
+
+    public String getVersionId() {
+        return versionId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateObjectStorageTierDetails(");
+        sb.append("objectName=").append(String.valueOf(this.objectName));
+        sb.append(", storageTier=").append(String.valueOf(this.storageTier));
+        sb.append(", versionId=").append(String.valueOf(this.versionId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateObjectStorageTierDetails)) {
+            return false;
+        }
+
+        UpdateObjectStorageTierDetails other = (UpdateObjectStorageTierDetails) o;
+        return java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.storageTier, other.storageTier)
+                && java.util.Objects.equals(this.versionId, other.versionId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.storageTier == null ? 43 : this.storageTier.hashCode());
+        result = (result * PRIME) + (this.versionId == null ? 43 : this.versionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

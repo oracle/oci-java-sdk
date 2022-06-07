@@ -9,14 +9,6 @@ import com.oracle.bmc.dashboardservice.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ListDashboardsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDashboardsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,36 +16,57 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String dashboardGroupId;
 
+    public String getDashboardGroupId() {
+        return dashboardGroupId;
+    }
     /**
      * A filter that returns dashboard resources that match the lifecycle state specified.
      */
     private com.oracle.bmc.dashboardservice.model.Dashboard.LifecycleState lifecycleState;
 
+    public com.oracle.bmc.dashboardservice.model.Dashboard.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * A case-sensitive filter that returns resources that match the entire display name specified.
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This value is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      */
     private com.oracle.bmc.dashboardservice.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.dashboardservice.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}).
      * Default order for TIMECREATED is descending.
@@ -102,11 +115,18 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * To identify if the call is cross-regional. In CRUD calls for a resource, to
      * identify that the call originates from different region, set the
@@ -117,12 +137,137 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcCrossRegion;
 
+    public String getOpcCrossRegion() {
+        return opcCrossRegion;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDashboardsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String dashboardGroupId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group that the dashboard belongs to.
+         * @return this builder instance
+         */
+        public Builder dashboardGroupId(String dashboardGroupId) {
+            this.dashboardGroupId = dashboardGroupId;
+            return this;
+        }
+
+        private com.oracle.bmc.dashboardservice.model.Dashboard.LifecycleState lifecycleState =
+                null;
+
+        /**
+         * A filter that returns dashboard resources that match the lifecycle state specified.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.dashboardservice.model.Dashboard.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A case-sensitive filter that returns resources that match the entire display name specified.
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private String id = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This value is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.dashboardservice.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.dashboardservice.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}).
+         * Default order for TIMECREATED is descending.
+         * Default order for DISPLAYNAME is ascending.
+         * The DISPLAYNAME sort order is case sensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcCrossRegion = null;
+
+        /**
+         * To identify if the call is cross-regional. In CRUD calls for a resource, to
+         * identify that the call originates from different region, set the
+         * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
+         * The call will be served from a Replicated bucket.
+         * For same-region calls, the value is unassigned.
+         *
+         * @return this builder instance
+         */
+        public Builder opcCrossRegion(String opcCrossRegion) {
+            this.opcCrossRegion = opcCrossRegion;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -183,5 +328,115 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListDashboardsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListDashboardsRequest
+         */
+        public ListDashboardsRequest buildWithoutInvocationCallback() {
+            ListDashboardsRequest request = new ListDashboardsRequest();
+            request.dashboardGroupId = dashboardGroupId;
+            request.lifecycleState = lifecycleState;
+            request.displayName = displayName;
+            request.id = id;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            request.opcCrossRegion = opcCrossRegion;
+            return request;
+            // new ListDashboardsRequest(dashboardGroupId, lifecycleState, displayName, id, limit, page, sortOrder, sortBy, opcRequestId, opcCrossRegion);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .dashboardGroupId(dashboardGroupId)
+                .lifecycleState(lifecycleState)
+                .displayName(displayName)
+                .id(id)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId)
+                .opcCrossRegion(opcCrossRegion);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",dashboardGroupId=").append(String.valueOf(this.dashboardGroupId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcCrossRegion=").append(String.valueOf(this.opcCrossRegion));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListDashboardsRequest)) {
+            return false;
+        }
+
+        ListDashboardsRequest other = (ListDashboardsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.dashboardGroupId, other.dashboardGroupId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcCrossRegion, other.opcCrossRegion);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.dashboardGroupId == null ? 43 : this.dashboardGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcCrossRegion == null ? 43 : this.opcCrossRegion.hashCode());
+        return result;
     }
 }

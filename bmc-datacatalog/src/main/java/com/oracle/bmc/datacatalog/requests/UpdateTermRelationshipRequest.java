@@ -9,14 +9,6 @@ import com.oracle.bmc.datacatalog.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateTermRelationshipExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTermRelationshipRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateTermRelationshipRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.UpdateTermRelationshipDetails> {
@@ -26,27 +18,43 @@ public class UpdateTermRelationshipRequest
      */
     private String catalogId;
 
+    public String getCatalogId() {
+        return catalogId;
+    }
     /**
      * Unique glossary key.
      */
     private String glossaryKey;
 
+    public String getGlossaryKey() {
+        return glossaryKey;
+    }
     /**
      * Unique glossary term key.
      */
     private String termKey;
 
+    public String getTermKey() {
+        return termKey;
+    }
     /**
      * Unique glossary term relationship key.
      */
     private String termRelationshipKey;
 
+    public String getTermRelationshipKey() {
+        return termRelationshipKey;
+    }
     /**
      * The information to be updated in the term relationship.
      */
     private com.oracle.bmc.datacatalog.model.UpdateTermRelationshipDetails
             updateTermRelationshipDetails;
 
+    public com.oracle.bmc.datacatalog.model.UpdateTermRelationshipDetails
+            getUpdateTermRelationshipDetails() {
+        return updateTermRelationshipDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -57,10 +65,17 @@ public class UpdateTermRelationshipRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -79,6 +94,91 @@ public class UpdateTermRelationshipRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String catalogId = null;
+
+        /**
+         * Unique catalog identifier.
+         * @return this builder instance
+         */
+        public Builder catalogId(String catalogId) {
+            this.catalogId = catalogId;
+            return this;
+        }
+
+        private String glossaryKey = null;
+
+        /**
+         * Unique glossary key.
+         * @return this builder instance
+         */
+        public Builder glossaryKey(String glossaryKey) {
+            this.glossaryKey = glossaryKey;
+            return this;
+        }
+
+        private String termKey = null;
+
+        /**
+         * Unique glossary term key.
+         * @return this builder instance
+         */
+        public Builder termKey(String termKey) {
+            this.termKey = termKey;
+            return this;
+        }
+
+        private String termRelationshipKey = null;
+
+        /**
+         * Unique glossary term relationship key.
+         * @return this builder instance
+         */
+        public Builder termRelationshipKey(String termRelationshipKey) {
+            this.termRelationshipKey = termRelationshipKey;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.UpdateTermRelationshipDetails
+                updateTermRelationshipDetails = null;
+
+        /**
+         * The information to be updated in the term relationship.
+         * @return this builder instance
+         */
+        public Builder updateTermRelationshipDetails(
+                com.oracle.bmc.datacatalog.model.UpdateTermRelationshipDetails
+                        updateTermRelationshipDetails) {
+            this.updateTermRelationshipDetails = updateTermRelationshipDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -147,5 +247,104 @@ public class UpdateTermRelationshipRequest
             updateTermRelationshipDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateTermRelationshipRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateTermRelationshipRequest
+         */
+        public UpdateTermRelationshipRequest buildWithoutInvocationCallback() {
+            UpdateTermRelationshipRequest request = new UpdateTermRelationshipRequest();
+            request.catalogId = catalogId;
+            request.glossaryKey = glossaryKey;
+            request.termKey = termKey;
+            request.termRelationshipKey = termRelationshipKey;
+            request.updateTermRelationshipDetails = updateTermRelationshipDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateTermRelationshipRequest(catalogId, glossaryKey, termKey, termRelationshipKey, updateTermRelationshipDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .catalogId(catalogId)
+                .glossaryKey(glossaryKey)
+                .termKey(termKey)
+                .termRelationshipKey(termRelationshipKey)
+                .updateTermRelationshipDetails(updateTermRelationshipDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(",glossaryKey=").append(String.valueOf(this.glossaryKey));
+        sb.append(",termKey=").append(String.valueOf(this.termKey));
+        sb.append(",termRelationshipKey=").append(String.valueOf(this.termRelationshipKey));
+        sb.append(",updateTermRelationshipDetails=")
+                .append(String.valueOf(this.updateTermRelationshipDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTermRelationshipRequest)) {
+            return false;
+        }
+
+        UpdateTermRelationshipRequest other = (UpdateTermRelationshipRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
+                && java.util.Objects.equals(this.termKey, other.termKey)
+                && java.util.Objects.equals(this.termRelationshipKey, other.termRelationshipKey)
+                && java.util.Objects.equals(
+                        this.updateTermRelationshipDetails, other.updateTermRelationshipDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result = (result * PRIME) + (this.glossaryKey == null ? 43 : this.glossaryKey.hashCode());
+        result = (result * PRIME) + (this.termKey == null ? 43 : this.termKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.termRelationshipKey == null
+                                ? 43
+                                : this.termRelationshipKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateTermRelationshipDetails == null
+                                ? 43
+                                : this.updateTermRelationshipDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

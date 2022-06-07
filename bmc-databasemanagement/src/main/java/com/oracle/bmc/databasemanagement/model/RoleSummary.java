@@ -15,14 +15,35 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoleSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RoleSummary {
+public final class RoleSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "adminOption",
+        "delegateOption",
+        "defaultRole",
+        "common",
+        "inherited"
+    })
+    public RoleSummary(
+            String name,
+            AdminOption adminOption,
+            DelegateOption delegateOption,
+            DefaultRole defaultRole,
+            Common common,
+            Inherited inherited) {
+        super();
+        this.name = name;
+        this.adminOption = adminOption;
+        this.delegateOption = delegateOption;
+        this.defaultRole = defaultRole;
+        this.common = common;
+        this.inherited = inherited;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -111,15 +132,23 @@ public class RoleSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the role granted to the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AdminOption {
         Yes("YES"),
         No("NO"),
@@ -129,6 +158,9 @@ public class RoleSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AdminOption.class);
 
         private final String value;
         private static java.util.Map<String, AdminOption> map;
@@ -166,11 +198,15 @@ public class RoleSummary {
      * Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminOption")
-    AdminOption adminOption;
+    private final AdminOption adminOption;
+
+    public AdminOption getAdminOption() {
+        return adminOption;
+    }
+
     /**
      * Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DelegateOption {
         Yes("YES"),
         No("NO"),
@@ -180,6 +216,9 @@ public class RoleSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DelegateOption.class);
 
         private final String value;
         private static java.util.Map<String, DelegateOption> map;
@@ -217,11 +256,15 @@ public class RoleSummary {
      * Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("delegateOption")
-    DelegateOption delegateOption;
+    private final DelegateOption delegateOption;
+
+    public DelegateOption getDelegateOption() {
+        return delegateOption;
+    }
+
     /**
      * Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DefaultRole {
         Yes("YES"),
         No("NO"),
@@ -231,6 +274,9 @@ public class RoleSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DefaultRole.class);
 
         private final String value;
         private static java.util.Map<String, DefaultRole> map;
@@ -268,14 +314,18 @@ public class RoleSummary {
      * Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRole")
-    DefaultRole defaultRole;
+    private final DefaultRole defaultRole;
+
+    public DefaultRole getDefaultRole() {
+        return defaultRole;
+    }
+
     /**
      * Indicates how the role was granted. Possible values:
      * YES if the role is granted commonly (CONTAINER=ALL is used)
      * NO if the role is granted locally (CONTAINER=ALL is not used)
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Common {
         Yes("YES"),
         No("NO"),
@@ -285,6 +335,8 @@ public class RoleSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Common.class);
 
         private final String value;
         private static java.util.Map<String, Common> map;
@@ -325,11 +377,15 @@ public class RoleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("common")
-    Common common;
+    private final Common common;
+
+    public Common getCommon() {
+        return common;
+    }
+
     /**
      * Indicates whether the granted role is inherited from another container (YES) or not (NO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Inherited {
         Yes("YES"),
         No("NO"),
@@ -339,6 +395,9 @@ public class RoleSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Inherited.class);
 
         private final String value;
         private static java.util.Map<String, Inherited> map;
@@ -376,8 +435,68 @@ public class RoleSummary {
      * Indicates whether the granted role is inherited from another container (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
-    Inherited inherited;
+    private final Inherited inherited;
+
+    public Inherited getInherited() {
+        return inherited;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RoleSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", adminOption=").append(String.valueOf(this.adminOption));
+        sb.append(", delegateOption=").append(String.valueOf(this.delegateOption));
+        sb.append(", defaultRole=").append(String.valueOf(this.defaultRole));
+        sb.append(", common=").append(String.valueOf(this.common));
+        sb.append(", inherited=").append(String.valueOf(this.inherited));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RoleSummary)) {
+            return false;
+        }
+
+        RoleSummary other = (RoleSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.adminOption, other.adminOption)
+                && java.util.Objects.equals(this.delegateOption, other.delegateOption)
+                && java.util.Objects.equals(this.defaultRole, other.defaultRole)
+                && java.util.Objects.equals(this.common, other.common)
+                && java.util.Objects.equals(this.inherited, other.inherited)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.adminOption == null ? 43 : this.adminOption.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.delegateOption == null ? 43 : this.delegateOption.hashCode());
+        result = (result * PRIME) + (this.defaultRole == null ? 43 : this.defaultRole.hashCode());
+        result = (result * PRIME) + (this.common == null ? 43 : this.common.hashCode());
+        result = (result * PRIME) + (this.inherited == null ? 43 : this.inherited.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

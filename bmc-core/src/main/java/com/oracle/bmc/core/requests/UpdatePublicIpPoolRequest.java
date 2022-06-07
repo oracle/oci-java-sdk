@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePublicIpPoolExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdatePublicIpPoolRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdatePublicIpPoolRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdatePublicIpPoolDetails> {
@@ -26,11 +18,17 @@ public class UpdatePublicIpPoolRequest
      */
     private String publicIpPoolId;
 
+    public String getPublicIpPoolId() {
+        return publicIpPoolId;
+    }
     /**
      * Public IP pool details.
      */
     private com.oracle.bmc.core.model.UpdatePublicIpPoolDetails updatePublicIpPoolDetails;
 
+    public com.oracle.bmc.core.model.UpdatePublicIpPoolDetails getUpdatePublicIpPoolDetails() {
+        return updatePublicIpPoolDetails;
+    }
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -38,6 +36,9 @@ public class UpdatePublicIpPoolRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -45,6 +46,10 @@ public class UpdatePublicIpPoolRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +68,57 @@ public class UpdatePublicIpPoolRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String publicIpPoolId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         * @return this builder instance
+         */
+        public Builder publicIpPoolId(String publicIpPoolId) {
+            this.publicIpPoolId = publicIpPoolId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdatePublicIpPoolDetails updatePublicIpPoolDetails =
+                null;
+
+        /**
+         * Public IP pool details.
+         * @return this builder instance
+         */
+        public Builder updatePublicIpPoolDetails(
+                com.oracle.bmc.core.model.UpdatePublicIpPoolDetails updatePublicIpPoolDetails) {
+            this.updatePublicIpPoolDetails = updatePublicIpPoolDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +184,87 @@ public class UpdatePublicIpPoolRequest
             updatePublicIpPoolDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdatePublicIpPoolRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdatePublicIpPoolRequest
+         */
+        public UpdatePublicIpPoolRequest buildWithoutInvocationCallback() {
+            UpdatePublicIpPoolRequest request = new UpdatePublicIpPoolRequest();
+            request.publicIpPoolId = publicIpPoolId;
+            request.updatePublicIpPoolDetails = updatePublicIpPoolDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdatePublicIpPoolRequest(publicIpPoolId, updatePublicIpPoolDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .publicIpPoolId(publicIpPoolId)
+                .updatePublicIpPoolDetails(updatePublicIpPoolDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",publicIpPoolId=").append(String.valueOf(this.publicIpPoolId));
+        sb.append(",updatePublicIpPoolDetails=")
+                .append(String.valueOf(this.updatePublicIpPoolDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdatePublicIpPoolRequest)) {
+            return false;
+        }
+
+        UpdatePublicIpPoolRequest other = (UpdatePublicIpPoolRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.publicIpPoolId, other.publicIpPoolId)
+                && java.util.Objects.equals(
+                        this.updatePublicIpPoolDetails, other.updatePublicIpPoolDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.publicIpPoolId == null ? 43 : this.publicIpPoolId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updatePublicIpPoolDetails == null
+                                ? 43
+                                : this.updatePublicIpPoolDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

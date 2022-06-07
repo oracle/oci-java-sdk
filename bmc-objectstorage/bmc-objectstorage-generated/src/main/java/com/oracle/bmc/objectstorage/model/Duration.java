@@ -18,14 +18,18 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Duration.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Duration {
+public final class Duration {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timeAmount", "timeUnit"})
+    public Duration(Long timeAmount, TimeUnit timeUnit) {
+        super();
+        this.timeAmount = timeAmount;
+        this.timeUnit = timeUnit;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeAmount")
         private Long timeAmount;
@@ -70,17 +74,25 @@ public class Duration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation
      * to each object's Last-Modified timestamp.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAmount")
-    Long timeAmount;
+    private final Long timeAmount;
+
+    public Long getTimeAmount() {
+        return timeAmount;
+    }
+
     /**
      * The unit that should be used to interpret timeAmount.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TimeUnit {
         Years("YEARS"),
         Days("DAYS"),
@@ -90,6 +102,9 @@ public class Duration {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TimeUnit.class);
 
         private final String value;
         private static java.util.Map<String, TimeUnit> map;
@@ -127,8 +142,54 @@ public class Duration {
      * The unit that should be used to interpret timeAmount.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUnit")
-    TimeUnit timeUnit;
+    private final TimeUnit timeUnit;
+
+    public TimeUnit getTimeUnit() {
+        return timeUnit;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Duration(");
+        sb.append("timeAmount=").append(String.valueOf(this.timeAmount));
+        sb.append(", timeUnit=").append(String.valueOf(this.timeUnit));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Duration)) {
+            return false;
+        }
+
+        Duration other = (Duration) o;
+        return java.util.Objects.equals(this.timeAmount, other.timeAmount)
+                && java.util.Objects.equals(this.timeUnit, other.timeUnit)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timeAmount == null ? 43 : this.timeAmount.hashCode());
+        result = (result * PRIME) + (this.timeUnit == null ? 43 : this.timeUnit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

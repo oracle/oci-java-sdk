@@ -15,16 +15,26 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResponderRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResponderRuleDetails {
+public final class ResponderRuleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"condition", "configurations", "isEnabled", "mode"})
+    public ResponderRuleDetails(
+            Condition condition,
+            java.util.List<ResponderConfiguration> configurations,
+            Boolean isEnabled,
+            ResponderModeTypes mode) {
+        super();
+        this.condition = condition;
+        this.configurations = configurations;
+        this.isEnabled = isEnabled;
+        this.mode = mode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private Condition condition;
@@ -92,27 +102,97 @@ public class ResponderRuleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
-    Condition condition;
+    private final Condition condition;
+
+    public Condition getCondition() {
+        return condition;
+    }
 
     /**
      * ResponderRule configurations
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
-    java.util.List<ResponderConfiguration> configurations;
+    private final java.util.List<ResponderConfiguration> configurations;
+
+    public java.util.List<ResponderConfiguration> getConfigurations() {
+        return configurations;
+    }
 
     /**
      * Identifies state for ResponderRule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * Execution Mode for ResponderRule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
-    ResponderModeTypes mode;
+    private final ResponderModeTypes mode;
+
+    public ResponderModeTypes getMode() {
+        return mode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResponderRuleDetails(");
+        sb.append("condition=").append(String.valueOf(this.condition));
+        sb.append(", configurations=").append(String.valueOf(this.configurations));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", mode=").append(String.valueOf(this.mode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResponderRuleDetails)) {
+            return false;
+        }
+
+        ResponderRuleDetails other = (ResponderRuleDetails) o;
+        return java.util.Objects.equals(this.condition, other.condition)
+                && java.util.Objects.equals(this.configurations, other.configurations)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.mode, other.mode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurations == null ? 43 : this.configurations.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.mode == null ? 43 : this.mode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

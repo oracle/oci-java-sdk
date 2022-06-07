@@ -16,12 +16,6 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -212,47 +206,141 @@ package com.oracle.bmc.loganalytics.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AbstractCommandDescriptor {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayQueryString",
+        "internalQueryString",
+        "category",
+        "referencedFields",
+        "declaredFields"
+    })
+    protected AbstractCommandDescriptor(
+            String displayQueryString,
+            String internalQueryString,
+            String category,
+            java.util.List<AbstractField> referencedFields,
+            java.util.List<AbstractField> declaredFields) {
+        super();
+        this.displayQueryString = displayQueryString;
+        this.internalQueryString = internalQueryString;
+        this.category = category;
+        this.referencedFields = referencedFields;
+        this.declaredFields = declaredFields;
+    }
 
     /**
      * Command fragment display string from user specified query string formatted by query builder.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
-    String displayQueryString;
+    private final String displayQueryString;
+
+    public String getDisplayQueryString() {
+        return displayQueryString;
+    }
 
     /**
      * Command fragment internal string from user specified query string formatted by query builder.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
-    String internalQueryString;
+    private final String internalQueryString;
+
+    public String getInternalQueryString() {
+        return internalQueryString;
+    }
 
     /**
      * querylanguage command designation for example; reporting vs filtering
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    String category;
+    private final String category;
+
+    public String getCategory() {
+        return category;
+    }
 
     /**
      * Fields referenced in command fragment from user specified query string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedFields")
-    java.util.List<AbstractField> referencedFields;
+    private final java.util.List<AbstractField> referencedFields;
+
+    public java.util.List<AbstractField> getReferencedFields() {
+        return referencedFields;
+    }
 
     /**
      * Fields declared in command fragment from user specified query string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("declaredFields")
-    java.util.List<AbstractField> declaredFields;
+    private final java.util.List<AbstractField> declaredFields;
+
+    public java.util.List<AbstractField> getDeclaredFields() {
+        return declaredFields;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AbstractCommandDescriptor(");
+        sb.append("displayQueryString=").append(String.valueOf(this.displayQueryString));
+        sb.append(", internalQueryString=").append(String.valueOf(this.internalQueryString));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", referencedFields=").append(String.valueOf(this.referencedFields));
+        sb.append(", declaredFields=").append(String.valueOf(this.declaredFields));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AbstractCommandDescriptor)) {
+            return false;
+        }
+
+        AbstractCommandDescriptor other = (AbstractCommandDescriptor) o;
+        return java.util.Objects.equals(this.displayQueryString, other.displayQueryString)
+                && java.util.Objects.equals(this.internalQueryString, other.internalQueryString)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.referencedFields, other.referencedFields)
+                && java.util.Objects.equals(this.declaredFields, other.declaredFields);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.displayQueryString == null
+                                ? 43
+                                : this.displayQueryString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.internalQueryString == null
+                                ? 43
+                                : this.internalQueryString.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.referencedFields == null ? 43 : this.referencedFields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.declaredFields == null ? 43 : this.declaredFields.hashCode());
+        return result;
+    }
 
     /**
      * Name of querylanguage command
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Name {
         Command("COMMAND"),
         Search("SEARCH"),
@@ -305,6 +393,8 @@ public class AbstractCommandDescriptor {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Name.class);
 
         private final String value;
         private static java.util.Map<String, Name> map;

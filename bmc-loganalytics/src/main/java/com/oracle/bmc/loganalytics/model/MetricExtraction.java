@@ -17,14 +17,21 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetricExtraction.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MetricExtraction {
+public final class MetricExtraction {
+    @Deprecated
+    @java.beans.ConstructorProperties({"compartmentId", "namespace", "metricName", "resourceGroup"})
+    public MetricExtraction(
+            String compartmentId, String namespace, String metricName, String resourceGroup) {
+        super();
+        this.compartmentId = compartmentId;
+        this.namespace = namespace;
+        this.metricName = metricName;
+        this.resourceGroup = resourceGroup;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -92,12 +99,20 @@ public class MetricExtraction {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The compartment OCID (/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The namespace of the extracted metric.
@@ -106,7 +121,11 @@ public class MetricExtraction {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    String namespace;
+    private final String namespace;
+
+    public String getNamespace() {
+        return namespace;
+    }
 
     /**
      * The metric name of the extracted metric.
@@ -115,7 +134,11 @@ public class MetricExtraction {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
-    String metricName;
+    private final String metricName;
+
+    public String getMetricName() {
+        return metricName;
+    }
 
     /**
      * The resourceGroup of the extracted metric.
@@ -124,8 +147,64 @@ public class MetricExtraction {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
-    String resourceGroup;
+    private final String resourceGroup;
+
+    public String getResourceGroup() {
+        return resourceGroup;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MetricExtraction(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", metricName=").append(String.valueOf(this.metricName));
+        sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MetricExtraction)) {
+            return false;
+        }
+
+        MetricExtraction other = (MetricExtraction) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.metricName, other.metricName)
+                && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

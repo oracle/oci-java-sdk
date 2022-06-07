@@ -16,14 +16,35 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CorsPolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CorsPolicy {
+public final class CorsPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "allowedOrigins",
+        "allowedMethods",
+        "allowedHeaders",
+        "exposedHeaders",
+        "isAllowCredentialsEnabled",
+        "maxAgeInSeconds"
+    })
+    public CorsPolicy(
+            java.util.List<String> allowedOrigins,
+            java.util.List<String> allowedMethods,
+            java.util.List<String> allowedHeaders,
+            java.util.List<String> exposedHeaders,
+            Boolean isAllowCredentialsEnabled,
+            Integer maxAgeInSeconds) {
+        super();
+        this.allowedOrigins = allowedOrigins;
+        this.allowedMethods = allowedMethods;
+        this.allowedHeaders = allowedHeaders;
+        this.exposedHeaders = exposedHeaders;
+        this.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
+        this.maxAgeInSeconds = maxAgeInSeconds;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("allowedOrigins")
         private java.util.List<String> allowedOrigins;
@@ -117,6 +138,10 @@ public class CorsPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will
      * send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match
@@ -125,7 +150,11 @@ public class CorsPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedOrigins")
-    java.util.List<String> allowedOrigins;
+    private final java.util.List<String> allowedOrigins;
+
+    public java.util.List<String> getAllowedOrigins() {
+        return allowedOrigins;
+    }
 
     /**
      * The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the
@@ -133,7 +162,11 @@ public class CorsPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedMethods")
-    java.util.List<String> allowedMethods;
+    private final java.util.List<String> allowedMethods;
+
+    public java.util.List<String> getAllowedMethods() {
+        return allowedMethods;
+    }
 
     /**
      * The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header.
@@ -141,7 +174,11 @@ public class CorsPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedHeaders")
-    java.util.List<String> allowedHeaders;
+    private final java.util.List<String> allowedHeaders;
+
+    public java.util.List<String> getAllowedHeaders() {
+        return allowedHeaders;
+    }
 
     /**
      * The list of headers that the client will be allowed to see from the response as indicated by the
@@ -149,14 +186,22 @@ public class CorsPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exposedHeaders")
-    java.util.List<String> exposedHeaders;
+    private final java.util.List<String> exposedHeaders;
+
+    public java.util.List<String> getExposedHeaders() {
+        return exposedHeaders;
+    }
 
     /**
      * Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAllowCredentialsEnabled")
-    Boolean isAllowCredentialsEnabled;
+    private final Boolean isAllowCredentialsEnabled;
+
+    public Boolean getIsAllowCredentialsEnabled() {
+        return isAllowCredentialsEnabled;
+    }
 
     /**
      * The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age
@@ -164,8 +209,82 @@ public class CorsPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxAgeInSeconds")
-    Integer maxAgeInSeconds;
+    private final Integer maxAgeInSeconds;
+
+    public Integer getMaxAgeInSeconds() {
+        return maxAgeInSeconds;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CorsPolicy(");
+        sb.append("allowedOrigins=").append(String.valueOf(this.allowedOrigins));
+        sb.append(", allowedMethods=").append(String.valueOf(this.allowedMethods));
+        sb.append(", allowedHeaders=").append(String.valueOf(this.allowedHeaders));
+        sb.append(", exposedHeaders=").append(String.valueOf(this.exposedHeaders));
+        sb.append(", isAllowCredentialsEnabled=")
+                .append(String.valueOf(this.isAllowCredentialsEnabled));
+        sb.append(", maxAgeInSeconds=").append(String.valueOf(this.maxAgeInSeconds));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CorsPolicy)) {
+            return false;
+        }
+
+        CorsPolicy other = (CorsPolicy) o;
+        return java.util.Objects.equals(this.allowedOrigins, other.allowedOrigins)
+                && java.util.Objects.equals(this.allowedMethods, other.allowedMethods)
+                && java.util.Objects.equals(this.allowedHeaders, other.allowedHeaders)
+                && java.util.Objects.equals(this.exposedHeaders, other.exposedHeaders)
+                && java.util.Objects.equals(
+                        this.isAllowCredentialsEnabled, other.isAllowCredentialsEnabled)
+                && java.util.Objects.equals(this.maxAgeInSeconds, other.maxAgeInSeconds)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.allowedOrigins == null ? 43 : this.allowedOrigins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedMethods == null ? 43 : this.allowedMethods.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedHeaders == null ? 43 : this.allowedHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exposedHeaders == null ? 43 : this.exposedHeaders.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAllowCredentialsEnabled == null
+                                ? 43
+                                : this.isAllowCredentialsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxAgeInSeconds == null ? 43 : this.maxAgeInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,23 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = JobScheduleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JobScheduleDetails {
+public final class JobScheduleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"startTime", "endTime", "intervalType", "intervalValue"})
+    public JobScheduleDetails(
+            String startTime, String endTime, IntervalType intervalType, String intervalValue) {
+        super();
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.intervalType = intervalType;
+        this.intervalValue = intervalValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private String startTime;
@@ -92,21 +99,33 @@ public class JobScheduleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The start time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
-    String startTime;
+    private final String startTime;
+
+    public String getStartTime() {
+        return startTime;
+    }
 
     /**
      * The end time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTime")
-    String endTime;
+    private final String endTime;
+
+    public String getEndTime() {
+        return endTime;
+    }
+
     /**
      * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum IntervalType {
         Daily("DAILY"),
         Hourly("HOURLY"),
@@ -119,6 +138,9 @@ public class JobScheduleDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IntervalType.class);
 
         private final String value;
         private static java.util.Map<String, IntervalType> map;
@@ -156,14 +178,72 @@ public class JobScheduleDetails {
      * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
-    IntervalType intervalType;
+    private final IntervalType intervalType;
+
+    public IntervalType getIntervalType() {
+        return intervalType;
+    }
 
     /**
      * The value for the interval period for a recurring scheduled job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
-    String intervalValue;
+    private final String intervalValue;
+
+    public String getIntervalValue() {
+        return intervalValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JobScheduleDetails(");
+        sb.append("startTime=").append(String.valueOf(this.startTime));
+        sb.append(", endTime=").append(String.valueOf(this.endTime));
+        sb.append(", intervalType=").append(String.valueOf(this.intervalType));
+        sb.append(", intervalValue=").append(String.valueOf(this.intervalValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JobScheduleDetails)) {
+            return false;
+        }
+
+        JobScheduleDetails other = (JobScheduleDetails) o;
+        return java.util.Objects.equals(this.startTime, other.startTime)
+                && java.util.Objects.equals(this.endTime, other.endTime)
+                && java.util.Objects.equals(this.intervalType, other.intervalType)
+                && java.util.Objects.equals(this.intervalValue, other.intervalValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.startTime == null ? 43 : this.startTime.hashCode());
+        result = (result * PRIME) + (this.endTime == null ? 43 : this.endTime.hashCode());
+        result = (result * PRIME) + (this.intervalType == null ? 43 : this.intervalType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.intervalValue == null ? 43 : this.intervalValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

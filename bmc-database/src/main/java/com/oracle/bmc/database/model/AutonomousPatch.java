@@ -15,14 +15,47 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AutonomousPatch.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousPatch {
+public final class AutonomousPatch {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "description",
+        "type",
+        "lifecycleDetails",
+        "lifecycleState",
+        "timeReleased",
+        "version",
+        "patchModel",
+        "quarter",
+        "year"
+    })
+    public AutonomousPatch(
+            String id,
+            String description,
+            String type,
+            String lifecycleDetails,
+            LifecycleState lifecycleState,
+            java.util.Date timeReleased,
+            String version,
+            PatchModel patchModel,
+            String quarter,
+            String year) {
+        super();
+        this.id = id;
+        this.description = description;
+        this.type = type;
+        this.lifecycleDetails = lifecycleDetails;
+        this.lifecycleState = lifecycleState;
+        this.timeReleased = timeReleased;
+        this.version = version;
+        this.patchModel = patchModel;
+        this.quarter = quarter;
+        this.year = year;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -160,23 +193,39 @@ public class AutonomousPatch {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The text describing this patch package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The type of patch. BUNDLE is one example.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * A descriptive text associated with the lifecycleState.
@@ -184,11 +233,15 @@ public class AutonomousPatch {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /**
      * The current state of the patch as a result of lastAction.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Available("AVAILABLE"),
         Success("SUCCESS"),
@@ -200,6 +253,9 @@ public class AutonomousPatch {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -237,23 +293,35 @@ public class AutonomousPatch {
      * The current state of the patch as a result of lastAction.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time that the patch was released.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
-    java.util.Date timeReleased;
+    private final java.util.Date timeReleased;
+
+    public java.util.Date getTimeReleased() {
+        return timeReleased;
+    }
 
     /**
      * The version of this patch package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
+
     /**
      * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PatchModel {
         ReleaseUpdates("RELEASE_UPDATES"),
         ReleaseUpdateRevisions("RELEASE_UPDATE_REVISIONS"),
@@ -263,6 +331,9 @@ public class AutonomousPatch {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchModel.class);
 
         private final String value;
         private static java.util.Map<String, PatchModel> map;
@@ -300,20 +371,102 @@ public class AutonomousPatch {
      * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
-    PatchModel patchModel;
+    private final PatchModel patchModel;
+
+    public PatchModel getPatchModel() {
+        return patchModel;
+    }
 
     /**
      * First month of the quarter in which the patch was released.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quarter")
-    String quarter;
+    private final String quarter;
+
+    public String getQuarter() {
+        return quarter;
+    }
 
     /**
      * Year in which the patch was released.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("year")
-    String year;
+    private final String year;
+
+    public String getYear() {
+        return year;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousPatch(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeReleased=").append(String.valueOf(this.timeReleased));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", patchModel=").append(String.valueOf(this.patchModel));
+        sb.append(", quarter=").append(String.valueOf(this.quarter));
+        sb.append(", year=").append(String.valueOf(this.year));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousPatch)) {
+            return false;
+        }
+
+        AutonomousPatch other = (AutonomousPatch) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeReleased, other.timeReleased)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.patchModel, other.patchModel)
+                && java.util.Objects.equals(this.quarter, other.quarter)
+                && java.util.Objects.equals(this.year, other.year)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeReleased == null ? 43 : this.timeReleased.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.patchModel == null ? 43 : this.patchModel.hashCode());
+        result = (result * PRIME) + (this.quarter == null ? 43 : this.quarter.hashCode());
+        result = (result * PRIME) + (this.year == null ? 43 : this.year.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -21,16 +21,28 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DefaultDrgRouteTables.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DefaultDrgRouteTables {
+public final class DefaultDrgRouteTables {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "vcn",
+        "ipsecTunnel",
+        "virtualCircuit",
+        "remotePeeringConnection"
+    })
+    public DefaultDrgRouteTables(
+            String vcn, String ipsecTunnel, String virtualCircuit, String remotePeeringConnection) {
+        super();
+        this.vcn = vcn;
+        this.ipsecTunnel = ipsecTunnel;
+        this.virtualCircuit = virtualCircuit;
+        this.remotePeeringConnection = remotePeeringConnection;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("vcn")
         private String vcn;
@@ -99,13 +111,21 @@ public class DefaultDrgRouteTables {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
      * of type VCN on creation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcn")
-    String vcn;
+    private final String vcn;
+
+    public String getVcn() {
+        return vcn;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
@@ -113,7 +133,11 @@ public class DefaultDrgRouteTables {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipsecTunnel")
-    String ipsecTunnel;
+    private final String ipsecTunnel;
+
+    public String getIpsecTunnel() {
+        return ipsecTunnel;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
@@ -121,7 +145,11 @@ public class DefaultDrgRouteTables {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualCircuit")
-    String virtualCircuit;
+    private final String virtualCircuit;
+
+    public String getVirtualCircuit() {
+        return virtualCircuit;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
@@ -129,8 +157,68 @@ public class DefaultDrgRouteTables {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remotePeeringConnection")
-    String remotePeeringConnection;
+    private final String remotePeeringConnection;
+
+    public String getRemotePeeringConnection() {
+        return remotePeeringConnection;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DefaultDrgRouteTables(");
+        sb.append("vcn=").append(String.valueOf(this.vcn));
+        sb.append(", ipsecTunnel=").append(String.valueOf(this.ipsecTunnel));
+        sb.append(", virtualCircuit=").append(String.valueOf(this.virtualCircuit));
+        sb.append(", remotePeeringConnection=")
+                .append(String.valueOf(this.remotePeeringConnection));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DefaultDrgRouteTables)) {
+            return false;
+        }
+
+        DefaultDrgRouteTables other = (DefaultDrgRouteTables) o;
+        return java.util.Objects.equals(this.vcn, other.vcn)
+                && java.util.Objects.equals(this.ipsecTunnel, other.ipsecTunnel)
+                && java.util.Objects.equals(this.virtualCircuit, other.virtualCircuit)
+                && java.util.Objects.equals(
+                        this.remotePeeringConnection, other.remotePeeringConnection)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.vcn == null ? 43 : this.vcn.hashCode());
+        result = (result * PRIME) + (this.ipsecTunnel == null ? 43 : this.ipsecTunnel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualCircuit == null ? 43 : this.virtualCircuit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remotePeeringConnection == null
+                                ? 43
+                                : this.remotePeeringConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,20 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DiskPerformanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DiskPerformanceDetails {
+public final class DiskPerformanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"diskIops", "diskThroughputInMbps"})
+    public DiskPerformanceDetails(Float diskIops, Float diskThroughputInMbps) {
+        super();
+        this.diskIops = diskIops;
+        this.diskThroughputInMbps = diskThroughputInMbps;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("diskIops")
         private Float diskIops;
@@ -72,18 +76,76 @@ public class DiskPerformanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Disk IOPS in thousands.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskIops")
-    Float diskIops;
+    private final Float diskIops;
+
+    public Float getDiskIops() {
+        return diskIops;
+    }
 
     /**
      * Disk Throughput in Mbps.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskThroughputInMbps")
-    Float diskThroughputInMbps;
+    private final Float diskThroughputInMbps;
+
+    public Float getDiskThroughputInMbps() {
+        return diskThroughputInMbps;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DiskPerformanceDetails(");
+        sb.append("diskIops=").append(String.valueOf(this.diskIops));
+        sb.append(", diskThroughputInMbps=").append(String.valueOf(this.diskThroughputInMbps));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DiskPerformanceDetails)) {
+            return false;
+        }
+
+        DiskPerformanceDetails other = (DiskPerformanceDetails) o;
+        return java.util.Objects.equals(this.diskIops, other.diskIops)
+                && java.util.Objects.equals(this.diskThroughputInMbps, other.diskThroughputInMbps)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.diskIops == null ? 43 : this.diskIops.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diskThroughputInMbps == null
+                                ? 43
+                                : this.diskThroughputInMbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

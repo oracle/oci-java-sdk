@@ -9,14 +9,6 @@ import com.oracle.bmc.email.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateSenderExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSenderRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateSenderRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.email.model.UpdateSenderDetails> {
 
@@ -25,11 +17,17 @@ public class UpdateSenderRequest
      */
     private String senderId;
 
+    public String getSenderId() {
+        return senderId;
+    }
     /**
      * update details for sender.
      */
     private com.oracle.bmc.email.model.UpdateSenderDetails updateSenderDetails;
 
+    public com.oracle.bmc.email.model.UpdateSenderDetails getUpdateSenderDetails() {
+        return updateSenderDetails;
+    }
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
@@ -38,10 +36,17 @@ public class UpdateSenderRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The request ID for tracing from the system
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -59,6 +64,54 @@ public class UpdateSenderRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String senderId = null;
+
+        /**
+         * The unique OCID of the sender.
+         * @return this builder instance
+         */
+        public Builder senderId(String senderId) {
+            this.senderId = senderId;
+            return this;
+        }
+
+        private com.oracle.bmc.email.model.UpdateSenderDetails updateSenderDetails = null;
+
+        /**
+         * update details for sender.
+         * @return this builder instance
+         */
+        public Builder updateSenderDetails(
+                com.oracle.bmc.email.model.UpdateSenderDetails updateSenderDetails) {
+            this.updateSenderDetails = updateSenderDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The request ID for tracing from the system
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -124,5 +177,83 @@ public class UpdateSenderRequest
             updateSenderDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateSenderRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateSenderRequest
+         */
+        public UpdateSenderRequest buildWithoutInvocationCallback() {
+            UpdateSenderRequest request = new UpdateSenderRequest();
+            request.senderId = senderId;
+            request.updateSenderDetails = updateSenderDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateSenderRequest(senderId, updateSenderDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .senderId(senderId)
+                .updateSenderDetails(updateSenderDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",senderId=").append(String.valueOf(this.senderId));
+        sb.append(",updateSenderDetails=").append(String.valueOf(this.updateSenderDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateSenderRequest)) {
+            return false;
+        }
+
+        UpdateSenderRequest other = (UpdateSenderRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.senderId, other.senderId)
+                && java.util.Objects.equals(this.updateSenderDetails, other.updateSenderDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.senderId == null ? 43 : this.senderId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateSenderDetails == null
+                                ? 43
+                                : this.updateSenderDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

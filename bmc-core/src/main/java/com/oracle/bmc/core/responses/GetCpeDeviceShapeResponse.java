@@ -7,10 +7,6 @@ package com.oracle.bmc.core.responses;
 import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned CpeDeviceShapeDetail instance.
      */
     private com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail;
+
+    public com.oracle.bmc.core.model.CpeDeviceShapeDetail getCpeDeviceShapeDetail() {
+        return cpeDeviceShapeDetail;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -46,6 +50,21 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail;
+
+        public Builder cpeDeviceShapeDetail(
+                com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail) {
+            this.cpeDeviceShapeDetail = cpeDeviceShapeDetail;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -62,5 +81,48 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
             return new GetCpeDeviceShapeResponse(
                     __httpStatusCode__, opcRequestId, cpeDeviceShapeDetail);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",cpeDeviceShapeDetail=").append(String.valueOf(cpeDeviceShapeDetail));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetCpeDeviceShapeResponse)) {
+            return false;
+        }
+
+        GetCpeDeviceShapeResponse other = (GetCpeDeviceShapeResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.cpeDeviceShapeDetail, other.cpeDeviceShapeDetail);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpeDeviceShapeDetail == null
+                                ? 43
+                                : this.cpeDeviceShapeDetail.hashCode());
+        return result;
     }
 }

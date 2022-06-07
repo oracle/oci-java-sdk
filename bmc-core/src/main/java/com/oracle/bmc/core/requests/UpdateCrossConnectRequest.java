@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCrossConnectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCrossConnectRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateCrossConnectRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateCrossConnectDetails> {
@@ -26,11 +18,17 @@ public class UpdateCrossConnectRequest
      */
     private String crossConnectId;
 
+    public String getCrossConnectId() {
+        return crossConnectId;
+    }
     /**
      * Update CrossConnect fields.
      */
     private com.oracle.bmc.core.model.UpdateCrossConnectDetails updateCrossConnectDetails;
 
+    public com.oracle.bmc.core.model.UpdateCrossConnectDetails getUpdateCrossConnectDetails() {
+        return updateCrossConnectDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -38,6 +36,10 @@ public class UpdateCrossConnectRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +58,44 @@ public class UpdateCrossConnectRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String crossConnectId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+         * @return this builder instance
+         */
+        public Builder crossConnectId(String crossConnectId) {
+            this.crossConnectId = crossConnectId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateCrossConnectDetails updateCrossConnectDetails =
+                null;
+
+        /**
+         * Update CrossConnect fields.
+         * @return this builder instance
+         */
+        public Builder updateCrossConnectDetails(
+                com.oracle.bmc.core.model.UpdateCrossConnectDetails updateCrossConnectDetails) {
+            this.updateCrossConnectDetails = updateCrossConnectDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +160,82 @@ public class UpdateCrossConnectRequest
             updateCrossConnectDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateCrossConnectRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateCrossConnectRequest
+         */
+        public UpdateCrossConnectRequest buildWithoutInvocationCallback() {
+            UpdateCrossConnectRequest request = new UpdateCrossConnectRequest();
+            request.crossConnectId = crossConnectId;
+            request.updateCrossConnectDetails = updateCrossConnectDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateCrossConnectRequest(crossConnectId, updateCrossConnectDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .crossConnectId(crossConnectId)
+                .updateCrossConnectDetails(updateCrossConnectDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",crossConnectId=").append(String.valueOf(this.crossConnectId));
+        sb.append(",updateCrossConnectDetails=")
+                .append(String.valueOf(this.updateCrossConnectDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateCrossConnectRequest)) {
+            return false;
+        }
+
+        UpdateCrossConnectRequest other = (UpdateCrossConnectRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.crossConnectId, other.crossConnectId)
+                && java.util.Objects.equals(
+                        this.updateCrossConnectDetails, other.updateCrossConnectDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.crossConnectId == null ? 43 : this.crossConnectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateCrossConnectDetails == null
+                                ? 43
+                                : this.updateCrossConnectDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

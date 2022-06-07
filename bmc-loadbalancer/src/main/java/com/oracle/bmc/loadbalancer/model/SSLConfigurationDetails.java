@@ -18,16 +18,43 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SSLConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SSLConfigurationDetails {
+public final class SSLConfigurationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "verifyDepth",
+        "verifyPeerCertificate",
+        "trustedCertificateAuthorityIds",
+        "certificateIds",
+        "certificateName",
+        "protocols",
+        "cipherSuiteName",
+        "serverOrderPreference"
+    })
+    public SSLConfigurationDetails(
+            Integer verifyDepth,
+            Boolean verifyPeerCertificate,
+            java.util.List<String> trustedCertificateAuthorityIds,
+            java.util.List<String> certificateIds,
+            String certificateName,
+            java.util.List<String> protocols,
+            String cipherSuiteName,
+            ServerOrderPreference serverOrderPreference) {
+        super();
+        this.verifyDepth = verifyDepth;
+        this.verifyPeerCertificate = verifyPeerCertificate;
+        this.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
+        this.certificateIds = certificateIds;
+        this.certificateName = certificateName;
+        this.protocols = protocols;
+        this.cipherSuiteName = cipherSuiteName;
+        this.serverOrderPreference = serverOrderPreference;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
         private Integer verifyDepth;
@@ -144,6 +171,10 @@ public class SSLConfigurationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The maximum depth for peer certificate chain verification.
      * <p>
@@ -151,7 +182,11 @@ public class SSLConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
-    Integer verifyDepth;
+    private final Integer verifyDepth;
+
+    public Integer getVerifyDepth() {
+        return verifyDepth;
+    }
 
     /**
      * Whether the load balancer listener should verify peer certificates.
@@ -160,7 +195,11 @@ public class SSLConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
-    Boolean verifyPeerCertificate;
+    private final Boolean verifyPeerCertificate;
+
+    public Boolean getVerifyPeerCertificate() {
+        return verifyPeerCertificate;
+    }
 
     /**
      * Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
@@ -169,7 +208,11 @@ public class SSLConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustedCertificateAuthorityIds")
-    java.util.List<String> trustedCertificateAuthorityIds;
+    private final java.util.List<String> trustedCertificateAuthorityIds;
+
+    public java.util.List<String> getTrustedCertificateAuthorityIds() {
+        return trustedCertificateAuthorityIds;
+    }
 
     /**
      * Ids for OCI certificates service certificates. Currently only a single Id may be passed.
@@ -178,7 +221,11 @@ public class SSLConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateIds")
-    java.util.List<String> certificateIds;
+    private final java.util.List<String> certificateIds;
+
+    public java.util.List<String> getCertificateIds() {
+        return certificateIds;
+    }
 
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
@@ -189,7 +236,11 @@ public class SSLConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
-    String certificateName;
+    private final String certificateName;
+
+    public String getCertificateName() {
+        return certificateName;
+    }
 
     /**
      * A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
@@ -219,7 +270,11 @@ public class SSLConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocols")
-    java.util.List<String> protocols;
+    private final java.util.List<String> protocols;
+
+    public java.util.List<String> getProtocols() {
+        return protocols;
+    }
 
     /**
      * The name of the cipher suite to use for HTTPS or SSL connections.
@@ -250,7 +305,12 @@ public class SSLConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cipherSuiteName")
-    String cipherSuiteName;
+    private final String cipherSuiteName;
+
+    public String getCipherSuiteName() {
+        return cipherSuiteName;
+    }
+
     /**
      * When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client
      * ciphers.
@@ -300,8 +360,92 @@ public class SSLConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serverOrderPreference")
-    ServerOrderPreference serverOrderPreference;
+    private final ServerOrderPreference serverOrderPreference;
+
+    public ServerOrderPreference getServerOrderPreference() {
+        return serverOrderPreference;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SSLConfigurationDetails(");
+        sb.append("verifyDepth=").append(String.valueOf(this.verifyDepth));
+        sb.append(", verifyPeerCertificate=").append(String.valueOf(this.verifyPeerCertificate));
+        sb.append(", trustedCertificateAuthorityIds=")
+                .append(String.valueOf(this.trustedCertificateAuthorityIds));
+        sb.append(", certificateIds=").append(String.valueOf(this.certificateIds));
+        sb.append(", certificateName=").append(String.valueOf(this.certificateName));
+        sb.append(", protocols=").append(String.valueOf(this.protocols));
+        sb.append(", cipherSuiteName=").append(String.valueOf(this.cipherSuiteName));
+        sb.append(", serverOrderPreference=").append(String.valueOf(this.serverOrderPreference));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SSLConfigurationDetails)) {
+            return false;
+        }
+
+        SSLConfigurationDetails other = (SSLConfigurationDetails) o;
+        return java.util.Objects.equals(this.verifyDepth, other.verifyDepth)
+                && java.util.Objects.equals(this.verifyPeerCertificate, other.verifyPeerCertificate)
+                && java.util.Objects.equals(
+                        this.trustedCertificateAuthorityIds, other.trustedCertificateAuthorityIds)
+                && java.util.Objects.equals(this.certificateIds, other.certificateIds)
+                && java.util.Objects.equals(this.certificateName, other.certificateName)
+                && java.util.Objects.equals(this.protocols, other.protocols)
+                && java.util.Objects.equals(this.cipherSuiteName, other.cipherSuiteName)
+                && java.util.Objects.equals(this.serverOrderPreference, other.serverOrderPreference)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.verifyDepth == null ? 43 : this.verifyDepth.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.verifyPeerCertificate == null
+                                ? 43
+                                : this.verifyPeerCertificate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustedCertificateAuthorityIds == null
+                                ? 43
+                                : this.trustedCertificateAuthorityIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateIds == null ? 43 : this.certificateIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateName == null ? 43 : this.certificateName.hashCode());
+        result = (result * PRIME) + (this.protocols == null ? 43 : this.protocols.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cipherSuiteName == null ? 43 : this.cipherSuiteName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serverOrderPreference == null
+                                ? 43
+                                : this.serverOrderPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

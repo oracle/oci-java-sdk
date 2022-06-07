@@ -15,12 +15,6 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,42 +29,114 @@ package com.oracle.bmc.opsi.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ExadataInsightSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "exadataName",
+        "exadataDisplayName",
+        "exadataType",
+        "exadataRackType",
+        "freeformTags",
+        "definedTags",
+        "systemTags",
+        "status",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "lifecycleDetails"
+    })
+    protected ExadataInsightSummary(
+            String id,
+            String compartmentId,
+            String exadataName,
+            String exadataDisplayName,
+            ExadataType exadataType,
+            ExadataRackType exadataRackType,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            ResourceStatus status,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            ExadataInsightLifecycleState lifecycleState,
+            String lifecycleDetails) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.exadataName = exadataName;
+        this.exadataDisplayName = exadataDisplayName;
+        this.exadataType = exadataType;
+        this.exadataRackType = exadataRackType;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.status = status;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataName")
-    String exadataName;
+    private final String exadataName;
+
+    public String getExadataName() {
+        return exadataName;
+    }
 
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
-    String exadataDisplayName;
+    private final String exadataDisplayName;
+
+    public String getExadataDisplayName() {
+        return exadataDisplayName;
+    }
 
     /**
      * Operations Insights internal representation of the the Exadata system type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataType")
-    ExadataType exadataType;
+    private final ExadataType exadataType;
+
+    public ExadataType getExadataType() {
+        return exadataType;
+    }
 
     /**
      * Operations Insights internal representation of the the Exadata system rack type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataRackType")
-    ExadataRackType exadataRackType;
+    private final ExadataRackType exadataRackType;
+
+    public ExadataRackType getExadataRackType() {
+        return exadataRackType;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -78,7 +144,11 @@ public class ExadataInsightSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -86,7 +156,11 @@ public class ExadataInsightSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
@@ -94,35 +168,140 @@ public class ExadataInsightSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
 
     /**
      * Indicates the status of an Exadata insight in Operations Insights
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    ResourceStatus status;
+    private final ResourceStatus status;
+
+    public ResourceStatus getStatus() {
+        return status;
+    }
 
     /**
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The time the Exadata insight was updated. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The current state of the Exadata insight.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ExadataInsightLifecycleState lifecycleState;
+    private final ExadataInsightLifecycleState lifecycleState;
+
+    public ExadataInsightLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExadataInsightSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", exadataName=").append(String.valueOf(this.exadataName));
+        sb.append(", exadataDisplayName=").append(String.valueOf(this.exadataDisplayName));
+        sb.append(", exadataType=").append(String.valueOf(this.exadataType));
+        sb.append(", exadataRackType=").append(String.valueOf(this.exadataRackType));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExadataInsightSummary)) {
+            return false;
+        }
+
+        ExadataInsightSummary other = (ExadataInsightSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.exadataName, other.exadataName)
+                && java.util.Objects.equals(this.exadataDisplayName, other.exadataDisplayName)
+                && java.util.Objects.equals(this.exadataType, other.exadataType)
+                && java.util.Objects.equals(this.exadataRackType, other.exadataRackType)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.exadataName == null ? 43 : this.exadataName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataDisplayName == null
+                                ? 43
+                                : this.exadataDisplayName.hashCode());
+        result = (result * PRIME) + (this.exadataType == null ? 43 : this.exadataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataRackType == null ? 43 : this.exadataRackType.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        return result;
+    }
 }

@@ -16,16 +16,34 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SecurityAssessmentComparison.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SecurityAssessmentComparison {
+public final class SecurityAssessmentComparison {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "baselineId",
+        "lifecycleState",
+        "timeCreated",
+        "targets"
+    })
+    public SecurityAssessmentComparison(
+            String id,
+            String baselineId,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.List<SecurityAssessmentComparisonPerTarget> targets) {
+        super();
+        this.id = id;
+        this.baselineId = baselineId;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.targets = targets;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -104,21 +122,33 @@ public class SecurityAssessmentComparison {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the security assessment that is being compared with a baseline security assessment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the security assessment that is set as a baseline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineId")
-    String baselineId;
+    private final String baselineId;
+
+    public String getBaselineId() {
+        return baselineId;
+    }
+
     /**
      * The current state of the security assessment comparison.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Succeeded("SUCCEEDED"),
@@ -129,6 +159,9 @@ public class SecurityAssessmentComparison {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -166,20 +199,85 @@ public class SecurityAssessmentComparison {
      * The current state of the security assessment comparison.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * A target-based comparison between two security assessments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
-    java.util.List<SecurityAssessmentComparisonPerTarget> targets;
+    private final java.util.List<SecurityAssessmentComparisonPerTarget> targets;
+
+    public java.util.List<SecurityAssessmentComparisonPerTarget> getTargets() {
+        return targets;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SecurityAssessmentComparison(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", baselineId=").append(String.valueOf(this.baselineId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", targets=").append(String.valueOf(this.targets));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SecurityAssessmentComparison)) {
+            return false;
+        }
+
+        SecurityAssessmentComparison other = (SecurityAssessmentComparison) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.baselineId, other.baselineId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.targets, other.targets)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.baselineId == null ? 43 : this.baselineId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.targets == null ? 43 : this.targets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

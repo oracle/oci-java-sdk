@@ -7,25 +7,33 @@ package com.oracle.bmc.dts.responses;
 import com.oracle.bmc.dts.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateTransferDeviceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      *
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      *
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * The returned NewTransferDevice instance.
      */
     private com.oracle.bmc.dts.model.NewTransferDevice newTransferDevice;
+
+    public com.oracle.bmc.dts.model.NewTransferDevice getNewTransferDevice() {
+        return newTransferDevice;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -52,6 +60,28 @@ public class CreateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private com.oracle.bmc.dts.model.NewTransferDevice newTransferDevice;
+
+        public Builder newTransferDevice(
+                com.oracle.bmc.dts.model.NewTransferDevice newTransferDevice) {
+            this.newTransferDevice = newTransferDevice;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -69,5 +99,49 @@ public class CreateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
             return new CreateTransferDeviceResponse(
                     __httpStatusCode__, opcRequestId, etag, newTransferDevice);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",newTransferDevice=").append(String.valueOf(newTransferDevice));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateTransferDeviceResponse)) {
+            return false;
+        }
+
+        CreateTransferDeviceResponse other = (CreateTransferDeviceResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.newTransferDevice, other.newTransferDevice);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.newTransferDevice == null ? 43 : this.newTransferDevice.hashCode());
+        return result;
     }
 }

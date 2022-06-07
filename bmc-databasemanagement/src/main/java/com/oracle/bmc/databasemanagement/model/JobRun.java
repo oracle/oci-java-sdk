@@ -15,14 +15,47 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobRun.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JobRun {
+public final class JobRun {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "compartmentId",
+        "jobId",
+        "jobName",
+        "managedDatabaseGroupId",
+        "managedDatabaseId",
+        "runStatus",
+        "timeSubmitted",
+        "timeUpdated"
+    })
+    public JobRun(
+            String id,
+            String name,
+            String compartmentId,
+            String jobId,
+            String jobName,
+            String managedDatabaseGroupId,
+            String managedDatabaseId,
+            RunStatus runStatus,
+            java.util.Date timeSubmitted,
+            java.util.Date timeUpdated) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.compartmentId = compartmentId;
+        this.jobId = jobId;
+        this.jobName = jobName;
+        this.managedDatabaseGroupId = managedDatabaseGroupId;
+        this.managedDatabaseId = managedDatabaseId;
+        this.runStatus = runStatus;
+        this.timeSubmitted = timeSubmitted;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -160,51 +193,83 @@ public class JobRun {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The identifier of the job run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the job run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the parent job resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobId")
-    String jobId;
+    private final String jobId;
+
+    public String getJobId() {
+        return jobId;
+    }
 
     /**
      * The name of the parent job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobName")
-    String jobName;
+    private final String jobName;
+
+    public String getJobName() {
+        return jobName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the parent job has to be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
-    String managedDatabaseGroupId;
+    private final String managedDatabaseGroupId;
+
+    public String getManagedDatabaseGroupId() {
+        return managedDatabaseGroupId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Managed Database where the parent job has to be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
-    String managedDatabaseId;
+    private final String managedDatabaseId;
+
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
+
     /**
      * The status of the job run.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RunStatus {
         Completed("COMPLETED"),
         Failed("FAILED"),
@@ -215,6 +280,9 @@ public class JobRun {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RunStatus.class);
 
         private final String value;
         private static java.util.Map<String, RunStatus> map;
@@ -252,20 +320,109 @@ public class JobRun {
      * The status of the job run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("runStatus")
-    RunStatus runStatus;
+    private final RunStatus runStatus;
+
+    public RunStatus getRunStatus() {
+        return runStatus;
+    }
 
     /**
      * The date and time when the job run was submitted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSubmitted")
-    java.util.Date timeSubmitted;
+    private final java.util.Date timeSubmitted;
+
+    public java.util.Date getTimeSubmitted() {
+        return timeSubmitted;
+    }
 
     /**
      * The date and time when the job run was last updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JobRun(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", jobId=").append(String.valueOf(this.jobId));
+        sb.append(", jobName=").append(String.valueOf(this.jobName));
+        sb.append(", managedDatabaseGroupId=").append(String.valueOf(this.managedDatabaseGroupId));
+        sb.append(", managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(", runStatus=").append(String.valueOf(this.runStatus));
+        sb.append(", timeSubmitted=").append(String.valueOf(this.timeSubmitted));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JobRun)) {
+            return false;
+        }
+
+        JobRun other = (JobRun) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.jobId, other.jobId)
+                && java.util.Objects.equals(this.jobName, other.jobName)
+                && java.util.Objects.equals(
+                        this.managedDatabaseGroupId, other.managedDatabaseGroupId)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(this.runStatus, other.runStatus)
+                && java.util.Objects.equals(this.timeSubmitted, other.timeSubmitted)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
+        result = (result * PRIME) + (this.jobName == null ? 43 : this.jobName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseGroupId == null
+                                ? 43
+                                : this.managedDatabaseGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result = (result * PRIME) + (this.runStatus == null ? 43 : this.runStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSubmitted == null ? 43 : this.timeSubmitted.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

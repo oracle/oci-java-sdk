@@ -15,16 +15,40 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CertificateIssuerName.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CertificateIssuerName {
+public final class CertificateIssuerName {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "country",
+        "stateProvince",
+        "locality",
+        "organization",
+        "organizationalUnit",
+        "commonName",
+        "emailAddress"
+    })
+    public CertificateIssuerName(
+            String country,
+            String stateProvince,
+            String locality,
+            String organization,
+            String organizationalUnit,
+            String commonName,
+            String emailAddress) {
+        super();
+        this.country = country;
+        this.stateProvince = stateProvince;
+        this.locality = locality;
+        this.organization = organization;
+        this.organizationalUnit = organizationalUnit;
+        this.commonName = commonName;
+        this.emailAddress = emailAddress;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
@@ -129,48 +153,143 @@ public class CertificateIssuerName {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
-    String country;
+    private final String country;
+
+    public String getCountry() {
+        return country;
+    }
 
     /**
      * The province where the organization is located.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateProvince")
-    String stateProvince;
+    private final String stateProvince;
+
+    public String getStateProvince() {
+        return stateProvince;
+    }
 
     /**
      * The city in which the organization is located.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("locality")
-    String locality;
+    private final String locality;
+
+    public String getLocality() {
+        return locality;
+    }
 
     /**
      * The organization name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("organization")
-    String organization;
+    private final String organization;
+
+    public String getOrganization() {
+        return organization;
+    }
 
     /**
      * The field to differentiate between divisions within an organization.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("organizationalUnit")
-    String organizationalUnit;
+    private final String organizationalUnit;
+
+    public String getOrganizationalUnit() {
+        return organizationalUnit;
+    }
 
     /**
      * The Certificate Authority (CA) name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commonName")
-    String commonName;
+    private final String commonName;
+
+    public String getCommonName() {
+        return commonName;
+    }
 
     /**
      * The email address of the server's administrator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
-    String emailAddress;
+    private final String emailAddress;
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CertificateIssuerName(");
+        sb.append("country=").append(String.valueOf(this.country));
+        sb.append(", stateProvince=").append(String.valueOf(this.stateProvince));
+        sb.append(", locality=").append(String.valueOf(this.locality));
+        sb.append(", organization=").append(String.valueOf(this.organization));
+        sb.append(", organizationalUnit=").append(String.valueOf(this.organizationalUnit));
+        sb.append(", commonName=").append(String.valueOf(this.commonName));
+        sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CertificateIssuerName)) {
+            return false;
+        }
+
+        CertificateIssuerName other = (CertificateIssuerName) o;
+        return java.util.Objects.equals(this.country, other.country)
+                && java.util.Objects.equals(this.stateProvince, other.stateProvince)
+                && java.util.Objects.equals(this.locality, other.locality)
+                && java.util.Objects.equals(this.organization, other.organization)
+                && java.util.Objects.equals(this.organizationalUnit, other.organizationalUnit)
+                && java.util.Objects.equals(this.commonName, other.commonName)
+                && java.util.Objects.equals(this.emailAddress, other.emailAddress)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stateProvince == null ? 43 : this.stateProvince.hashCode());
+        result = (result * PRIME) + (this.locality == null ? 43 : this.locality.hashCode());
+        result = (result * PRIME) + (this.organization == null ? 43 : this.organization.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.organizationalUnit == null
+                                ? 43
+                                : this.organizationalUnit.hashCode());
+        result = (result * PRIME) + (this.commonName == null ? 43 : this.commonName.hashCode());
+        result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

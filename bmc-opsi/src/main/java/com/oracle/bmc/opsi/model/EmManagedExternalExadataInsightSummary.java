@@ -15,22 +15,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = EmManagedExternalExadataInsightSummary.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "entitySource"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EmManagedExternalExadataInsightSummary extends ExadataInsightSummary {
+public final class EmManagedExternalExadataInsightSummary extends ExadataInsightSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -282,6 +277,10 @@ public class EmManagedExternalExadataInsightSummary extends ExadataInsightSummar
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public EmManagedExternalExadataInsightSummary(
             String id,
@@ -331,38 +330,156 @@ public class EmManagedExternalExadataInsightSummary extends ExadataInsightSummar
      * Enterprise Manager Unique Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
-    String enterpriseManagerIdentifier;
+    private final String enterpriseManagerIdentifier;
+
+    public String getEnterpriseManagerIdentifier() {
+        return enterpriseManagerIdentifier;
+    }
 
     /**
      * Enterprise Manager Entity Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityName")
-    String enterpriseManagerEntityName;
+    private final String enterpriseManagerEntityName;
+
+    public String getEnterpriseManagerEntityName() {
+        return enterpriseManagerEntityName;
+    }
 
     /**
      * Enterprise Manager Entity Type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityType")
-    String enterpriseManagerEntityType;
+    private final String enterpriseManagerEntityType;
+
+    public String getEnterpriseManagerEntityType() {
+        return enterpriseManagerEntityType;
+    }
 
     /**
      * Enterprise Manager Entity Unique Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
-    String enterpriseManagerEntityIdentifier;
+    private final String enterpriseManagerEntityIdentifier;
+
+    public String getEnterpriseManagerEntityIdentifier() {
+        return enterpriseManagerEntityIdentifier;
+    }
 
     /**
      * Enterprise Manager Entity Display Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityDisplayName")
-    String enterpriseManagerEntityDisplayName;
+    private final String enterpriseManagerEntityDisplayName;
+
+    public String getEnterpriseManagerEntityDisplayName() {
+        return enterpriseManagerEntityDisplayName;
+    }
 
     /**
      * OPSI Enterprise Manager Bridge OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
-    String enterpriseManagerBridgeId;
+    private final String enterpriseManagerBridgeId;
+
+    public String getEnterpriseManagerBridgeId() {
+        return enterpriseManagerBridgeId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EmManagedExternalExadataInsightSummary(");
+        sb.append("super=").append(super.toString());
+        sb.append(", enterpriseManagerIdentifier=")
+                .append(String.valueOf(this.enterpriseManagerIdentifier));
+        sb.append(", enterpriseManagerEntityName=")
+                .append(String.valueOf(this.enterpriseManagerEntityName));
+        sb.append(", enterpriseManagerEntityType=")
+                .append(String.valueOf(this.enterpriseManagerEntityType));
+        sb.append(", enterpriseManagerEntityIdentifier=")
+                .append(String.valueOf(this.enterpriseManagerEntityIdentifier));
+        sb.append(", enterpriseManagerEntityDisplayName=")
+                .append(String.valueOf(this.enterpriseManagerEntityDisplayName));
+        sb.append(", enterpriseManagerBridgeId=")
+                .append(String.valueOf(this.enterpriseManagerBridgeId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EmManagedExternalExadataInsightSummary)) {
+            return false;
+        }
+
+        EmManagedExternalExadataInsightSummary other = (EmManagedExternalExadataInsightSummary) o;
+        return java.util.Objects.equals(
+                        this.enterpriseManagerIdentifier, other.enterpriseManagerIdentifier)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerEntityName, other.enterpriseManagerEntityName)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerEntityType, other.enterpriseManagerEntityType)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerEntityIdentifier,
+                        other.enterpriseManagerEntityIdentifier)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerEntityDisplayName,
+                        other.enterpriseManagerEntityDisplayName)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerBridgeId, other.enterpriseManagerBridgeId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerIdentifier == null
+                                ? 43
+                                : this.enterpriseManagerIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerEntityName == null
+                                ? 43
+                                : this.enterpriseManagerEntityName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerEntityType == null
+                                ? 43
+                                : this.enterpriseManagerEntityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerEntityIdentifier == null
+                                ? 43
+                                : this.enterpriseManagerEntityIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerEntityDisplayName == null
+                                ? 43
+                                : this.enterpriseManagerEntityDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerBridgeId == null
+                                ? 43
+                                : this.enterpriseManagerBridgeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

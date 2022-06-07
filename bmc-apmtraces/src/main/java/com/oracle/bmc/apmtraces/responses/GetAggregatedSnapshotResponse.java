@@ -7,10 +7,6 @@ package com.oracle.bmc.apmtraces.responses;
 import com.oracle.bmc.apmtraces.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned AggregatedSnapshot instance.
      */
     private com.oracle.bmc.apmtraces.model.AggregatedSnapshot aggregatedSnapshot;
+
+    public com.oracle.bmc.apmtraces.model.AggregatedSnapshot getAggregatedSnapshot() {
+        return aggregatedSnapshot;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "aggregatedSnapshot"})
     private GetAggregatedSnapshotResponse(
@@ -42,6 +46,21 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.apmtraces.model.AggregatedSnapshot aggregatedSnapshot;
+
+        public Builder aggregatedSnapshot(
+                com.oracle.bmc.apmtraces.model.AggregatedSnapshot aggregatedSnapshot) {
+            this.aggregatedSnapshot = aggregatedSnapshot;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -58,5 +77,48 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
             return new GetAggregatedSnapshotResponse(
                     __httpStatusCode__, opcRequestId, aggregatedSnapshot);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",aggregatedSnapshot=").append(String.valueOf(aggregatedSnapshot));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetAggregatedSnapshotResponse)) {
+            return false;
+        }
+
+        GetAggregatedSnapshotResponse other = (GetAggregatedSnapshotResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.aggregatedSnapshot, other.aggregatedSnapshot);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aggregatedSnapshot == null
+                                ? 43
+                                : this.aggregatedSnapshot.hashCode());
+        return result;
     }
 }

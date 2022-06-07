@@ -9,14 +9,6 @@ import com.oracle.bmc.osubusage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubusage/GetComputedUsageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetComputedUsageRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +16,17 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String computedUsageId;
 
+    public String getComputedUsageId() {
+        return computedUsageId;
+    }
     /**
      * The OCID of the root compartment.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Partial response refers to an optimization technique offered
      * by the RESTful web APIs to return only the information
@@ -38,17 +36,27 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.List<String> fields;
 
+    public java.util.List<String> getFields() {
+        return fields;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
      *
      */
     private String xOneOriginRegion;
+
+    public String getXOneOriginRegion() {
+        return xOneOriginRegion;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -56,6 +64,28 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String computedUsageId = null;
+
+        /**
+         * The Computed Usage Id
+         * @return this builder instance
+         */
+        public Builder computedUsageId(String computedUsageId) {
+            this.computedUsageId = computedUsageId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the root compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         private java.util.List<String> fields = null;
 
@@ -82,6 +112,30 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder fields(String singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String xOneOriginRegion = null;
+
+        /**
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+         *
+         * @return this builder instance
+         */
+        public Builder xOneOriginRegion(String xOneOriginRegion) {
+            this.xOneOriginRegion = xOneOriginRegion;
+            return this;
         }
 
         /**
@@ -138,5 +192,90 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetComputedUsageRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetComputedUsageRequest
+         */
+        public GetComputedUsageRequest buildWithoutInvocationCallback() {
+            GetComputedUsageRequest request = new GetComputedUsageRequest();
+            request.computedUsageId = computedUsageId;
+            request.compartmentId = compartmentId;
+            request.fields = fields;
+            request.opcRequestId = opcRequestId;
+            request.xOneOriginRegion = xOneOriginRegion;
+            return request;
+            // new GetComputedUsageRequest(computedUsageId, compartmentId, fields, opcRequestId, xOneOriginRegion);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .computedUsageId(computedUsageId)
+                .compartmentId(compartmentId)
+                .fields(fields)
+                .opcRequestId(opcRequestId)
+                .xOneOriginRegion(xOneOriginRegion);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",computedUsageId=").append(String.valueOf(this.computedUsageId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",fields=").append(String.valueOf(this.fields));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",xOneOriginRegion=").append(String.valueOf(this.xOneOriginRegion));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetComputedUsageRequest)) {
+            return false;
+        }
+
+        GetComputedUsageRequest other = (GetComputedUsageRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.computedUsageId, other.computedUsageId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.xOneOriginRegion, other.xOneOriginRegion);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.computedUsageId == null ? 43 : this.computedUsageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.xOneOriginRegion == null ? 43 : this.xOneOriginRegion.hashCode());
+        return result;
     }
 }

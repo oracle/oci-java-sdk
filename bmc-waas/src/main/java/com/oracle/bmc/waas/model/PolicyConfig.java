@@ -15,14 +15,59 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PolicyConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PolicyConfig {
+public final class PolicyConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "certificateId",
+        "isHttpsEnabled",
+        "isHttpsForced",
+        "tlsProtocols",
+        "isOriginCompressionEnabled",
+        "isBehindCdn",
+        "clientAddressHeader",
+        "isCacheControlRespected",
+        "isResponseBufferingEnabled",
+        "cipherGroup",
+        "loadBalancingMethod",
+        "websocketPathPrefixes",
+        "isSniEnabled",
+        "healthChecks"
+    })
+    public PolicyConfig(
+            String certificateId,
+            Boolean isHttpsEnabled,
+            Boolean isHttpsForced,
+            java.util.List<TlsProtocols> tlsProtocols,
+            Boolean isOriginCompressionEnabled,
+            Boolean isBehindCdn,
+            ClientAddressHeader clientAddressHeader,
+            Boolean isCacheControlRespected,
+            Boolean isResponseBufferingEnabled,
+            CipherGroup cipherGroup,
+            LoadBalancingMethod loadBalancingMethod,
+            java.util.List<String> websocketPathPrefixes,
+            Boolean isSniEnabled,
+            HealthCheck healthChecks) {
+        super();
+        this.certificateId = certificateId;
+        this.isHttpsEnabled = isHttpsEnabled;
+        this.isHttpsForced = isHttpsForced;
+        this.tlsProtocols = tlsProtocols;
+        this.isOriginCompressionEnabled = isOriginCompressionEnabled;
+        this.isBehindCdn = isBehindCdn;
+        this.clientAddressHeader = clientAddressHeader;
+        this.isCacheControlRespected = isCacheControlRespected;
+        this.isResponseBufferingEnabled = isResponseBufferingEnabled;
+        this.cipherGroup = cipherGroup;
+        this.loadBalancingMethod = loadBalancingMethod;
+        this.websocketPathPrefixes = websocketPathPrefixes;
+        this.isSniEnabled = isSniEnabled;
+        this.healthChecks = healthChecks;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
@@ -204,26 +249,42 @@ public class PolicyConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the SSL certificate to use if HTTPS is supported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
-    String certificateId;
+    private final String certificateId;
+
+    public String getCertificateId() {
+        return certificateId;
+    }
 
     /**
      * Enable or disable HTTPS support. If true, a {@code certificateId} is required. If unspecified, defaults to {@code false}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHttpsEnabled")
-    Boolean isHttpsEnabled;
+    private final Boolean isHttpsEnabled;
+
+    public Boolean getIsHttpsEnabled() {
+        return isHttpsEnabled;
+    }
 
     /**
      * Force HTTP to HTTPS redirection. If unspecified, defaults to {@code false}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHttpsForced")
-    Boolean isHttpsForced;
+    private final Boolean isHttpsForced;
+
+    public Boolean getIsHttpsForced() {
+        return isHttpsForced;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TlsProtocols {
         TlsV1("TLS_V1"),
         TlsV11("TLS_V1_1"),
@@ -235,6 +296,9 @@ public class PolicyConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TlsProtocols.class);
 
         private final String value;
         private static java.util.Map<String, TlsProtocols> map;
@@ -282,19 +346,32 @@ public class PolicyConfig {
      * Enabled TLS protocols must go in a row. For example if {@code TLS_v1_1} and {@code TLS_V1_3} are enabled, {@code TLS_V1_2} must be enabled too.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsProtocols")
-    java.util.List<TlsProtocols> tlsProtocols;
+    private final java.util.List<TlsProtocols> tlsProtocols;
+
+    public java.util.List<TlsProtocols> getTlsProtocols() {
+        return tlsProtocols;
+    }
 
     /**
      * Enable or disable GZIP compression of origin responses. If enabled, the header {@code Accept-Encoding: gzip} is sent to origin, otherwise, the empty {@code Accept-Encoding:} header is used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOriginCompressionEnabled")
-    Boolean isOriginCompressionEnabled;
+    private final Boolean isOriginCompressionEnabled;
+
+    public Boolean getIsOriginCompressionEnabled() {
+        return isOriginCompressionEnabled;
+    }
 
     /**
      * Enabling {@code isBehindCdn} allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBehindCdn")
-    Boolean isBehindCdn;
+    private final Boolean isBehindCdn;
+
+    public Boolean getIsBehindCdn() {
+        return isBehindCdn;
+    }
+
     /**
      * Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if {@code isBehindCdn} is enabled.
      * <p>
@@ -314,7 +391,6 @@ public class PolicyConfig {
      * <p>
      * - **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ClientAddressHeader {
         XForwardedFor("X_FORWARDED_FOR"),
         XClientIp("X_CLIENT_IP"),
@@ -327,6 +403,9 @@ public class PolicyConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ClientAddressHeader.class);
 
         private final String value;
         private static java.util.Map<String, ClientAddressHeader> map;
@@ -380,24 +459,36 @@ public class PolicyConfig {
      * - **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientAddressHeader")
-    ClientAddressHeader clientAddressHeader;
+    private final ClientAddressHeader clientAddressHeader;
+
+    public ClientAddressHeader getClientAddressHeader() {
+        return clientAddressHeader;
+    }
 
     /**
      * Enable or disable automatic content caching based on the response {@code cache-control} header. This feature enables the origin to act as a proxy cache. Caching is usually defined using {@code cache-control} header. For example {@code cache-control: max-age=120} means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCacheControlRespected")
-    Boolean isCacheControlRespected;
+    private final Boolean isCacheControlRespected;
+
+    public Boolean getIsCacheControlRespected() {
+        return isCacheControlRespected;
+    }
 
     /**
      * Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResponseBufferingEnabled")
-    Boolean isResponseBufferingEnabled;
+    private final Boolean isResponseBufferingEnabled;
+
+    public Boolean getIsResponseBufferingEnabled() {
+        return isResponseBufferingEnabled;
+    }
+
     /**
      * The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
      * - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CipherGroup {
         Default("DEFAULT"),
 
@@ -406,6 +497,9 @@ public class PolicyConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CipherGroup.class);
 
         private final String value;
         private static java.util.Map<String, CipherGroup> map;
@@ -444,29 +538,163 @@ public class PolicyConfig {
      * - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cipherGroup")
-    CipherGroup cipherGroup;
+    private final CipherGroup cipherGroup;
+
+    public CipherGroup getCipherGroup() {
+        return cipherGroup;
+    }
 
     /**
      * An object that represents a load balancing method and its properties.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancingMethod")
-    LoadBalancingMethod loadBalancingMethod;
+    private final LoadBalancingMethod loadBalancingMethod;
+
+    public LoadBalancingMethod getLoadBalancingMethod() {
+        return loadBalancingMethod;
+    }
 
     /**
      * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of {@code websocketPathPrefixes} array value. In All other cases challenges, like JSC, HIC and etc., remain active.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("websocketPathPrefixes")
-    java.util.List<String> websocketPathPrefixes;
+    private final java.util.List<String> websocketPathPrefixes;
+
+    public java.util.List<String> getWebsocketPathPrefixes() {
+        return websocketPathPrefixes;
+    }
 
     /**
      * SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSniEnabled")
-    Boolean isSniEnabled;
+    private final Boolean isSniEnabled;
+
+    public Boolean getIsSniEnabled() {
+        return isSniEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("healthChecks")
-    HealthCheck healthChecks;
+    private final HealthCheck healthChecks;
+
+    public HealthCheck getHealthChecks() {
+        return healthChecks;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PolicyConfig(");
+        sb.append("certificateId=").append(String.valueOf(this.certificateId));
+        sb.append(", isHttpsEnabled=").append(String.valueOf(this.isHttpsEnabled));
+        sb.append(", isHttpsForced=").append(String.valueOf(this.isHttpsForced));
+        sb.append(", tlsProtocols=").append(String.valueOf(this.tlsProtocols));
+        sb.append(", isOriginCompressionEnabled=")
+                .append(String.valueOf(this.isOriginCompressionEnabled));
+        sb.append(", isBehindCdn=").append(String.valueOf(this.isBehindCdn));
+        sb.append(", clientAddressHeader=").append(String.valueOf(this.clientAddressHeader));
+        sb.append(", isCacheControlRespected=")
+                .append(String.valueOf(this.isCacheControlRespected));
+        sb.append(", isResponseBufferingEnabled=")
+                .append(String.valueOf(this.isResponseBufferingEnabled));
+        sb.append(", cipherGroup=").append(String.valueOf(this.cipherGroup));
+        sb.append(", loadBalancingMethod=").append(String.valueOf(this.loadBalancingMethod));
+        sb.append(", websocketPathPrefixes=").append(String.valueOf(this.websocketPathPrefixes));
+        sb.append(", isSniEnabled=").append(String.valueOf(this.isSniEnabled));
+        sb.append(", healthChecks=").append(String.valueOf(this.healthChecks));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PolicyConfig)) {
+            return false;
+        }
+
+        PolicyConfig other = (PolicyConfig) o;
+        return java.util.Objects.equals(this.certificateId, other.certificateId)
+                && java.util.Objects.equals(this.isHttpsEnabled, other.isHttpsEnabled)
+                && java.util.Objects.equals(this.isHttpsForced, other.isHttpsForced)
+                && java.util.Objects.equals(this.tlsProtocols, other.tlsProtocols)
+                && java.util.Objects.equals(
+                        this.isOriginCompressionEnabled, other.isOriginCompressionEnabled)
+                && java.util.Objects.equals(this.isBehindCdn, other.isBehindCdn)
+                && java.util.Objects.equals(this.clientAddressHeader, other.clientAddressHeader)
+                && java.util.Objects.equals(
+                        this.isCacheControlRespected, other.isCacheControlRespected)
+                && java.util.Objects.equals(
+                        this.isResponseBufferingEnabled, other.isResponseBufferingEnabled)
+                && java.util.Objects.equals(this.cipherGroup, other.cipherGroup)
+                && java.util.Objects.equals(this.loadBalancingMethod, other.loadBalancingMethod)
+                && java.util.Objects.equals(this.websocketPathPrefixes, other.websocketPathPrefixes)
+                && java.util.Objects.equals(this.isSniEnabled, other.isSniEnabled)
+                && java.util.Objects.equals(this.healthChecks, other.healthChecks)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.certificateId == null ? 43 : this.certificateId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHttpsEnabled == null ? 43 : this.isHttpsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHttpsForced == null ? 43 : this.isHttpsForced.hashCode());
+        result = (result * PRIME) + (this.tlsProtocols == null ? 43 : this.tlsProtocols.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOriginCompressionEnabled == null
+                                ? 43
+                                : this.isOriginCompressionEnabled.hashCode());
+        result = (result * PRIME) + (this.isBehindCdn == null ? 43 : this.isBehindCdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientAddressHeader == null
+                                ? 43
+                                : this.clientAddressHeader.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCacheControlRespected == null
+                                ? 43
+                                : this.isCacheControlRespected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isResponseBufferingEnabled == null
+                                ? 43
+                                : this.isResponseBufferingEnabled.hashCode());
+        result = (result * PRIME) + (this.cipherGroup == null ? 43 : this.cipherGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancingMethod == null
+                                ? 43
+                                : this.loadBalancingMethod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.websocketPathPrefixes == null
+                                ? 43
+                                : this.websocketPathPrefixes.hashCode());
+        result = (result * PRIME) + (this.isSniEnabled == null ? 43 : this.isSniEnabled.hashCode());
+        result = (result * PRIME) + (this.healthChecks == null ? 43 : this.healthChecks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

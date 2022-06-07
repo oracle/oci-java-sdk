@@ -22,16 +22,38 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BackendSetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BackendSetDetails {
+public final class BackendSetDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "policy",
+        "backends",
+        "healthChecker",
+        "sslConfiguration",
+        "sessionPersistenceConfiguration",
+        "lbCookieSessionPersistenceConfiguration"
+    })
+    public BackendSetDetails(
+            String policy,
+            java.util.List<BackendDetails> backends,
+            HealthCheckerDetails healthChecker,
+            SSLConfigurationDetails sslConfiguration,
+            SessionPersistenceConfigurationDetails sessionPersistenceConfiguration,
+            LBCookieSessionPersistenceConfigurationDetails
+                    lbCookieSessionPersistenceConfiguration) {
+        super();
+        this.policy = policy;
+        this.backends = backends;
+        this.healthChecker = healthChecker;
+        this.sslConfiguration = sslConfiguration;
+        this.sessionPersistenceConfiguration = sessionPersistenceConfiguration;
+        this.lbCookieSessionPersistenceConfiguration = lbCookieSessionPersistenceConfiguration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
@@ -130,6 +152,10 @@ public class BackendSetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The load balancer policy for the backend set. To get a list of available policies, use the
      * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
@@ -138,23 +164,120 @@ public class BackendSetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
-    String policy;
+    private final String policy;
+
+    public String getPolicy() {
+        return policy;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backends")
-    java.util.List<BackendDetails> backends;
+    private final java.util.List<BackendDetails> backends;
+
+    public java.util.List<BackendDetails> getBackends() {
+        return backends;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
-    HealthCheckerDetails healthChecker;
+    private final HealthCheckerDetails healthChecker;
+
+    public HealthCheckerDetails getHealthChecker() {
+        return healthChecker;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
-    SSLConfigurationDetails sslConfiguration;
+    private final SSLConfigurationDetails sslConfiguration;
+
+    public SSLConfigurationDetails getSslConfiguration() {
+        return sslConfiguration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
-    SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
+    private final SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
+
+    public SessionPersistenceConfigurationDetails getSessionPersistenceConfiguration() {
+        return sessionPersistenceConfiguration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("lbCookieSessionPersistenceConfiguration")
-    LBCookieSessionPersistenceConfigurationDetails lbCookieSessionPersistenceConfiguration;
+    private final LBCookieSessionPersistenceConfigurationDetails
+            lbCookieSessionPersistenceConfiguration;
+
+    public LBCookieSessionPersistenceConfigurationDetails
+            getLbCookieSessionPersistenceConfiguration() {
+        return lbCookieSessionPersistenceConfiguration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BackendSetDetails(");
+        sb.append("policy=").append(String.valueOf(this.policy));
+        sb.append(", backends=").append(String.valueOf(this.backends));
+        sb.append(", healthChecker=").append(String.valueOf(this.healthChecker));
+        sb.append(", sslConfiguration=").append(String.valueOf(this.sslConfiguration));
+        sb.append(", sessionPersistenceConfiguration=")
+                .append(String.valueOf(this.sessionPersistenceConfiguration));
+        sb.append(", lbCookieSessionPersistenceConfiguration=")
+                .append(String.valueOf(this.lbCookieSessionPersistenceConfiguration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BackendSetDetails)) {
+            return false;
+        }
+
+        BackendSetDetails other = (BackendSetDetails) o;
+        return java.util.Objects.equals(this.policy, other.policy)
+                && java.util.Objects.equals(this.backends, other.backends)
+                && java.util.Objects.equals(this.healthChecker, other.healthChecker)
+                && java.util.Objects.equals(this.sslConfiguration, other.sslConfiguration)
+                && java.util.Objects.equals(
+                        this.sessionPersistenceConfiguration, other.sessionPersistenceConfiguration)
+                && java.util.Objects.equals(
+                        this.lbCookieSessionPersistenceConfiguration,
+                        other.lbCookieSessionPersistenceConfiguration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
+        result = (result * PRIME) + (this.backends == null ? 43 : this.backends.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.healthChecker == null ? 43 : this.healthChecker.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslConfiguration == null ? 43 : this.sslConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sessionPersistenceConfiguration == null
+                                ? 43
+                                : this.sessionPersistenceConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lbCookieSessionPersistenceConfiguration == null
+                                ? 43
+                                : this.lbCookieSessionPersistenceConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropTablespaceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DropTablespaceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DropTablespaceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemanagement.model.DropTablespaceDetails> {
@@ -26,21 +18,34 @@ public class DropTablespaceRequest
      */
     private String managedDatabaseId;
 
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
     /**
      * The name of the tablespace.
      */
     private String tablespaceName;
 
+    public String getTablespaceName() {
+        return tablespaceName;
+    }
     /**
      * The details required to drop a tablespace.
      */
     private com.oracle.bmc.databasemanagement.model.DropTablespaceDetails dropTablespaceDetails;
 
+    public com.oracle.bmc.databasemanagement.model.DropTablespaceDetails
+            getDropTablespaceDetails() {
+        return dropTablespaceDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -50,6 +55,10 @@ public class DropTablespaceRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -68,6 +77,69 @@ public class DropTablespaceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedDatabaseId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @return this builder instance
+         */
+        public Builder managedDatabaseId(String managedDatabaseId) {
+            this.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        private String tablespaceName = null;
+
+        /**
+         * The name of the tablespace.
+         * @return this builder instance
+         */
+        public Builder tablespaceName(String tablespaceName) {
+            this.tablespaceName = tablespaceName;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.DropTablespaceDetails
+                dropTablespaceDetails = null;
+
+        /**
+         * The details required to drop a tablespace.
+         * @return this builder instance
+         */
+        public Builder dropTablespaceDetails(
+                com.oracle.bmc.databasemanagement.model.DropTablespaceDetails
+                        dropTablespaceDetails) {
+            this.dropTablespaceDetails = dropTablespaceDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -134,5 +206,94 @@ public class DropTablespaceRequest
             dropTablespaceDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of DropTablespaceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DropTablespaceRequest
+         */
+        public DropTablespaceRequest buildWithoutInvocationCallback() {
+            DropTablespaceRequest request = new DropTablespaceRequest();
+            request.managedDatabaseId = managedDatabaseId;
+            request.tablespaceName = tablespaceName;
+            request.dropTablespaceDetails = dropTablespaceDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new DropTablespaceRequest(managedDatabaseId, tablespaceName, dropTablespaceDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedDatabaseId(managedDatabaseId)
+                .tablespaceName(tablespaceName)
+                .dropTablespaceDetails(dropTablespaceDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(",tablespaceName=").append(String.valueOf(this.tablespaceName));
+        sb.append(",dropTablespaceDetails=").append(String.valueOf(this.dropTablespaceDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DropTablespaceRequest)) {
+            return false;
+        }
+
+        DropTablespaceRequest other = (DropTablespaceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(this.tablespaceName, other.tablespaceName)
+                && java.util.Objects.equals(this.dropTablespaceDetails, other.dropTablespaceDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tablespaceName == null ? 43 : this.tablespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dropTablespaceDetails == null
+                                ? 43
+                                : this.dropTablespaceDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

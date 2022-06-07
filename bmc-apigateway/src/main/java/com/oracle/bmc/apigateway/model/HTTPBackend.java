@@ -16,20 +16,15 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HTTPBackend.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HTTPBackend extends ApiSpecificationRouteBackend {
+public final class HTTPBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
@@ -112,6 +107,10 @@ public class HTTPBackend extends ApiSpecificationRouteBackend {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HTTPBackend(
             String url,
@@ -128,36 +127,127 @@ public class HTTPBackend extends ApiSpecificationRouteBackend {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("url")
-    String url;
+    private final String url;
+
+    public String getUrl() {
+        return url;
+    }
 
     /**
      * Defines a timeout for establishing a connection with a proxied server.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectTimeoutInSeconds")
-    Float connectTimeoutInSeconds;
+    private final Float connectTimeoutInSeconds;
+
+    public Float getConnectTimeoutInSeconds() {
+        return connectTimeoutInSeconds;
+    }
 
     /**
      * Defines a timeout for reading a response from the proxied server.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("readTimeoutInSeconds")
-    Float readTimeoutInSeconds;
+    private final Float readTimeoutInSeconds;
+
+    public Float getReadTimeoutInSeconds() {
+        return readTimeoutInSeconds;
+    }
 
     /**
      * Defines a timeout for transmitting a request to the proxied server.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sendTimeoutInSeconds")
-    Float sendTimeoutInSeconds;
+    private final Float sendTimeoutInSeconds;
+
+    public Float getSendTimeoutInSeconds() {
+        return sendTimeoutInSeconds;
+    }
 
     /**
      * Defines whether or not to uphold SSL verification.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyDisabled")
-    Boolean isSslVerifyDisabled;
+    private final Boolean isSslVerifyDisabled;
+
+    public Boolean getIsSslVerifyDisabled() {
+        return isSslVerifyDisabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HTTPBackend(");
+        sb.append("super=").append(super.toString());
+        sb.append(", url=").append(String.valueOf(this.url));
+        sb.append(", connectTimeoutInSeconds=")
+                .append(String.valueOf(this.connectTimeoutInSeconds));
+        sb.append(", readTimeoutInSeconds=").append(String.valueOf(this.readTimeoutInSeconds));
+        sb.append(", sendTimeoutInSeconds=").append(String.valueOf(this.sendTimeoutInSeconds));
+        sb.append(", isSslVerifyDisabled=").append(String.valueOf(this.isSslVerifyDisabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HTTPBackend)) {
+            return false;
+        }
+
+        HTTPBackend other = (HTTPBackend) o;
+        return java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(
+                        this.connectTimeoutInSeconds, other.connectTimeoutInSeconds)
+                && java.util.Objects.equals(this.readTimeoutInSeconds, other.readTimeoutInSeconds)
+                && java.util.Objects.equals(this.sendTimeoutInSeconds, other.sendTimeoutInSeconds)
+                && java.util.Objects.equals(this.isSslVerifyDisabled, other.isSslVerifyDisabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectTimeoutInSeconds == null
+                                ? 43
+                                : this.connectTimeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.readTimeoutInSeconds == null
+                                ? 43
+                                : this.readTimeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sendTimeoutInSeconds == null
+                                ? 43
+                                : this.sendTimeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSslVerifyDisabled == null
+                                ? 43
+                                : this.isSslVerifyDisabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

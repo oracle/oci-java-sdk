@@ -16,14 +16,26 @@ package com.oracle.bmc.audit.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Request.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Request {
+public final class Request {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "path", "action", "parameters", "headers"})
+    public Request(
+            String id,
+            String path,
+            String action,
+            java.util.Map<String, java.util.List<String>> parameters,
+            java.util.Map<String, java.util.List<String>> headers) {
+        super();
+        this.id = id;
+        this.path = path;
+        this.action = action;
+        this.parameters = parameters;
+        this.headers = headers;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -100,12 +112,20 @@ public class Request {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The opc-request-id of the request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The full path of the API request.
@@ -114,7 +134,11 @@ public class Request {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * The HTTP method of the request.
@@ -123,14 +147,22 @@ public class Request {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    String action;
+    private final String action;
+
+    public String getAction() {
+        return action;
+    }
 
     /**
      * The parameters supplied by the caller during this operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.Map<String, java.util.List<String>> parameters;
+    private final java.util.Map<String, java.util.List<String>> parameters;
+
+    public java.util.Map<String, java.util.List<String>> getParameters() {
+        return parameters;
+    }
 
     /**
      * The HTTP header fields and values in the request.
@@ -177,8 +209,63 @@ public class Request {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
-    java.util.Map<String, java.util.List<String>> headers;
+    private final java.util.Map<String, java.util.List<String>> headers;
+
+    public java.util.Map<String, java.util.List<String>> getHeaders() {
+        return headers;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Request(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", headers=").append(String.valueOf(this.headers));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Request)) {
+            return false;
+        }
+
+        Request other = (Request) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.headers, other.headers)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

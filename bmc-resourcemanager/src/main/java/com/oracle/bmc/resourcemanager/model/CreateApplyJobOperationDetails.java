@@ -16,22 +16,17 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateApplyJobOperationDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "operation"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateApplyJobOperationDetails extends CreateJobOperationDetails {
+public final class CreateApplyJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
         private TerraformAdvancedOptions terraformAdvancedOptions;
@@ -91,6 +86,10 @@ public class CreateApplyJobOperationDetails extends CreateJobOperationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateApplyJobOperationDetails(
             TerraformAdvancedOptions terraformAdvancedOptions,
@@ -103,7 +102,11 @@ public class CreateApplyJobOperationDetails extends CreateJobOperationDetails {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
-    TerraformAdvancedOptions terraformAdvancedOptions;
+    private final TerraformAdvancedOptions terraformAdvancedOptions;
+
+    public TerraformAdvancedOptions getTerraformAdvancedOptions() {
+        return terraformAdvancedOptions;
+    }
 
     /**
      * Specifies the source of the execution plan to apply.
@@ -111,15 +114,84 @@ public class CreateApplyJobOperationDetails extends CreateJobOperationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
-    ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
+    private final ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
+
+    public ApplyJobOperationDetails.ExecutionPlanStrategy getExecutionPlanStrategy() {
+        return executionPlanStrategy;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
-    String executionPlanJobId;
+    private final String executionPlanJobId;
+
+    public String getExecutionPlanJobId() {
+        return executionPlanJobId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateApplyJobOperationDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", terraformAdvancedOptions=")
+                .append(String.valueOf(this.terraformAdvancedOptions));
+        sb.append(", executionPlanStrategy=").append(String.valueOf(this.executionPlanStrategy));
+        sb.append(", executionPlanJobId=").append(String.valueOf(this.executionPlanJobId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateApplyJobOperationDetails)) {
+            return false;
+        }
+
+        CreateApplyJobOperationDetails other = (CreateApplyJobOperationDetails) o;
+        return java.util.Objects.equals(
+                        this.terraformAdvancedOptions, other.terraformAdvancedOptions)
+                && java.util.Objects.equals(this.executionPlanStrategy, other.executionPlanStrategy)
+                && java.util.Objects.equals(this.executionPlanJobId, other.executionPlanJobId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.terraformAdvancedOptions == null
+                                ? 43
+                                : this.terraformAdvancedOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionPlanStrategy == null
+                                ? 43
+                                : this.executionPlanStrategy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionPlanJobId == null
+                                ? 43
+                                : this.executionPlanJobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,124 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousContainerDatabaseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousContainerDatabaseSummary {
+public final class AutonomousContainerDatabaseSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "dbUniqueName",
+        "serviceLevelAgreementType",
+        "autonomousExadataInfrastructureId",
+        "autonomousVmClusterId",
+        "infrastructureType",
+        "cloudAutonomousVmClusterId",
+        "kmsKeyId",
+        "vaultId",
+        "kmsKeyVersionId",
+        "keyHistoryEntry",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "patchModel",
+        "patchId",
+        "lastMaintenanceRunId",
+        "nextMaintenanceRunId",
+        "maintenanceWindow",
+        "standbyMaintenanceBufferInDays",
+        "freeformTags",
+        "definedTags",
+        "role",
+        "availabilityDomain",
+        "dbVersion",
+        "backupConfig",
+        "keyStoreId",
+        "keyStoreWalletName",
+        "memoryPerOracleComputeUnitInGBs",
+        "availableCpus",
+        "totalCpus",
+        "reclaimableCpus",
+        "provisionableCpus"
+    })
+    public AutonomousContainerDatabaseSummary(
+            String id,
+            String compartmentId,
+            String displayName,
+            String dbUniqueName,
+            ServiceLevelAgreementType serviceLevelAgreementType,
+            String autonomousExadataInfrastructureId,
+            String autonomousVmClusterId,
+            InfrastructureType infrastructureType,
+            String cloudAutonomousVmClusterId,
+            String kmsKeyId,
+            String vaultId,
+            String kmsKeyVersionId,
+            java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            PatchModel patchModel,
+            String patchId,
+            String lastMaintenanceRunId,
+            String nextMaintenanceRunId,
+            MaintenanceWindow maintenanceWindow,
+            Integer standbyMaintenanceBufferInDays,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Role role,
+            String availabilityDomain,
+            String dbVersion,
+            AutonomousContainerDatabaseBackupConfig backupConfig,
+            String keyStoreId,
+            String keyStoreWalletName,
+            Integer memoryPerOracleComputeUnitInGBs,
+            Float availableCpus,
+            Integer totalCpus,
+            Float reclaimableCpus,
+            java.util.List<Float> provisionableCpus) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.dbUniqueName = dbUniqueName;
+        this.serviceLevelAgreementType = serviceLevelAgreementType;
+        this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+        this.autonomousVmClusterId = autonomousVmClusterId;
+        this.infrastructureType = infrastructureType;
+        this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+        this.kmsKeyId = kmsKeyId;
+        this.vaultId = vaultId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.keyHistoryEntry = keyHistoryEntry;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.patchModel = patchModel;
+        this.patchId = patchId;
+        this.lastMaintenanceRunId = lastMaintenanceRunId;
+        this.nextMaintenanceRunId = nextMaintenanceRunId;
+        this.maintenanceWindow = maintenanceWindow;
+        this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.role = role;
+        this.availabilityDomain = availabilityDomain;
+        this.dbVersion = dbVersion;
+        this.backupConfig = backupConfig;
+        this.keyStoreId = keyStoreId;
+        this.keyStoreWalletName = keyStoreWalletName;
+        this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.availableCpus = availableCpus;
+        this.totalCpus = totalCpus;
+        this.reclaimableCpus = reclaimableCpus;
+        this.provisionableCpus = provisionableCpus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -442,34 +550,54 @@ public class AutonomousContainerDatabaseSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The user-provided name for the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * **Deprecated.** The {@code DB_UNIQUE_NAME} value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-    String dbUniqueName;
+    private final String dbUniqueName;
+
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
+
     /**
      * The service level agreement type of the container database. The default is STANDARD.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ServiceLevelAgreementType {
         Standard("STANDARD"),
         MissionCritical("MISSION_CRITICAL"),
@@ -480,6 +608,9 @@ public class AutonomousContainerDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ServiceLevelAgreementType.class);
 
         private final String value;
         private static java.util.Map<String, ServiceLevelAgreementType> map;
@@ -517,24 +648,36 @@ public class AutonomousContainerDatabaseSummary {
      * The service level agreement type of the container database. The default is STANDARD.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLevelAgreementType")
-    ServiceLevelAgreementType serviceLevelAgreementType;
+    private final ServiceLevelAgreementType serviceLevelAgreementType;
+
+    public ServiceLevelAgreementType getServiceLevelAgreementType() {
+        return serviceLevelAgreementType;
+    }
 
     /**
      * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified {@code cloudAutonomousVmCluster}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
-    String autonomousExadataInfrastructureId;
+    private final String autonomousExadataInfrastructureId;
+
+    public String getAutonomousExadataInfrastructureId() {
+        return autonomousExadataInfrastructureId;
+    }
 
     /**
      * The OCID of the Autonomous VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
-    String autonomousVmClusterId;
+    private final String autonomousVmClusterId;
+
+    public String getAutonomousVmClusterId() {
+        return autonomousVmClusterId;
+    }
+
     /**
      * The infrastructure type this resource belongs to.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum InfrastructureType {
         Cloud("CLOUD"),
         CloudAtCustomer("CLOUD_AT_CUSTOMER"),
@@ -544,6 +687,9 @@ public class AutonomousContainerDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(InfrastructureType.class);
 
         private final String value;
         private static java.util.Map<String, InfrastructureType> map;
@@ -581,42 +727,66 @@ public class AutonomousContainerDatabaseSummary {
      * The infrastructure type this resource belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
-    InfrastructureType infrastructureType;
+    private final InfrastructureType infrastructureType;
+
+    public InfrastructureType getInfrastructureType() {
+        return infrastructureType;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
-    String cloudAutonomousVmClusterId;
+    private final String cloudAutonomousVmClusterId;
+
+    public String getCloudAutonomousVmClusterId() {
+        return cloudAutonomousVmClusterId;
+    }
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
-    String kmsKeyVersionId;
+    private final String kmsKeyVersionId;
+
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
+    }
 
     /**
      * Key History Entry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyHistoryEntry")
-    java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry;
+    private final java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry;
+
+    public java.util.List<AutonomousDatabaseKeyHistoryEntry> getKeyHistoryEntry() {
+        return keyHistoryEntry;
+    }
+
     /**
      * The current state of the Autonomous Container Database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -637,6 +807,9 @@ public class AutonomousContainerDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -674,23 +847,35 @@ public class AutonomousContainerDatabaseSummary {
      * The current state of the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time the Autonomous Container Database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * Database patch model preference.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PatchModel {
         ReleaseUpdates("RELEASE_UPDATES"),
         ReleaseUpdateRevisions("RELEASE_UPDATE_REVISIONS"),
@@ -700,6 +885,9 @@ public class AutonomousContainerDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchModel.class);
 
         private final String value;
         private static java.util.Map<String, PatchModel> map;
@@ -737,28 +925,48 @@ public class AutonomousContainerDatabaseSummary {
      * Database patch model preference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
-    PatchModel patchModel;
+    private final PatchModel patchModel;
+
+    public PatchModel getPatchModel() {
+        return patchModel;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
-    String patchId;
+    private final String patchId;
+
+    public String getPatchId() {
+        return patchId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
-    String lastMaintenanceRunId;
+    private final String lastMaintenanceRunId;
+
+    public String getLastMaintenanceRunId() {
+        return lastMaintenanceRunId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
-    String nextMaintenanceRunId;
+    private final String nextMaintenanceRunId;
+
+    public String getNextMaintenanceRunId() {
+        return nextMaintenanceRunId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
-    MaintenanceWindow maintenanceWindow;
+    private final MaintenanceWindow maintenanceWindow;
+
+    public MaintenanceWindow getMaintenanceWindow() {
+        return maintenanceWindow;
+    }
 
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
@@ -766,7 +974,11 @@ public class AutonomousContainerDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
-    Integer standbyMaintenanceBufferInDays;
+    private final Integer standbyMaintenanceBufferInDays;
+
+    public Integer getStandbyMaintenanceBufferInDays() {
+        return standbyMaintenanceBufferInDays;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -776,7 +988,11 @@ public class AutonomousContainerDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -784,11 +1000,15 @@ public class AutonomousContainerDatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     /**
      * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Role {
         Primary("PRIMARY"),
         Standby("STANDBY"),
@@ -799,6 +1019,8 @@ public class AutonomousContainerDatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Role.class);
 
         private final String value;
         private static java.util.Map<String, Role> map;
@@ -835,65 +1057,323 @@ public class AutonomousContainerDatabaseSummary {
      * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
-    Role role;
+    private final Role role;
+
+    public Role getRole() {
+        return role;
+    }
 
     /**
      * The availability domain of the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * Oracle Database version of the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-    String dbVersion;
+    private final String dbVersion;
+
+    public String getDbVersion() {
+        return dbVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backupConfig")
-    AutonomousContainerDatabaseBackupConfig backupConfig;
+    private final AutonomousContainerDatabaseBackupConfig backupConfig;
+
+    public AutonomousContainerDatabaseBackupConfig getBackupConfig() {
+        return backupConfig;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
-    String keyStoreId;
+    private final String keyStoreId;
+
+    public String getKeyStoreId() {
+        return keyStoreId;
+    }
 
     /**
      * The wallet name for Oracle Key Vault.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
-    String keyStoreWalletName;
+    private final String keyStoreWalletName;
+
+    public String getKeyStoreWalletName() {
+        return keyStoreWalletName;
+    }
 
     /**
      * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
-    Integer memoryPerOracleComputeUnitInGBs;
+    private final Integer memoryPerOracleComputeUnitInGBs;
+
+    public Integer getMemoryPerOracleComputeUnitInGBs() {
+        return memoryPerOracleComputeUnitInGBs;
+    }
 
     /**
      * Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
-    Float availableCpus;
+    private final Float availableCpus;
+
+    public Float getAvailableCpus() {
+        return availableCpus;
+    }
 
     /**
      * The number of CPU cores allocated to the Autonomous VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
-    Integer totalCpus;
+    private final Integer totalCpus;
+
+    public Integer getTotalCpus() {
+        return totalCpus;
+    }
 
     /**
      * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
-    Float reclaimableCpus;
+    private final Float reclaimableCpus;
+
+    public Float getReclaimableCpus() {
+        return reclaimableCpus;
+    }
 
     /**
      * An array of CPU values that can be used to successfully provision a single Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
-    java.util.List<Float> provisionableCpus;
+    private final java.util.List<Float> provisionableCpus;
+
+    public java.util.List<Float> getProvisionableCpus() {
+        return provisionableCpus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousContainerDatabaseSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", serviceLevelAgreementType=")
+                .append(String.valueOf(this.serviceLevelAgreementType));
+        sb.append(", autonomousExadataInfrastructureId=")
+                .append(String.valueOf(this.autonomousExadataInfrastructureId));
+        sb.append(", autonomousVmClusterId=").append(String.valueOf(this.autonomousVmClusterId));
+        sb.append(", infrastructureType=").append(String.valueOf(this.infrastructureType));
+        sb.append(", cloudAutonomousVmClusterId=")
+                .append(String.valueOf(this.cloudAutonomousVmClusterId));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", keyHistoryEntry=").append(String.valueOf(this.keyHistoryEntry));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", patchModel=").append(String.valueOf(this.patchModel));
+        sb.append(", patchId=").append(String.valueOf(this.patchId));
+        sb.append(", lastMaintenanceRunId=").append(String.valueOf(this.lastMaintenanceRunId));
+        sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
+        sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", standbyMaintenanceBufferInDays=")
+                .append(String.valueOf(this.standbyMaintenanceBufferInDays));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", role=").append(String.valueOf(this.role));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
+        sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append(", keyStoreWalletName=").append(String.valueOf(this.keyStoreWalletName));
+        sb.append(", memoryPerOracleComputeUnitInGBs=")
+                .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", availableCpus=").append(String.valueOf(this.availableCpus));
+        sb.append(", totalCpus=").append(String.valueOf(this.totalCpus));
+        sb.append(", reclaimableCpus=").append(String.valueOf(this.reclaimableCpus));
+        sb.append(", provisionableCpus=").append(String.valueOf(this.provisionableCpus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousContainerDatabaseSummary)) {
+            return false;
+        }
+
+        AutonomousContainerDatabaseSummary other = (AutonomousContainerDatabaseSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(
+                        this.serviceLevelAgreementType, other.serviceLevelAgreementType)
+                && java.util.Objects.equals(
+                        this.autonomousExadataInfrastructureId,
+                        other.autonomousExadataInfrastructureId)
+                && java.util.Objects.equals(this.autonomousVmClusterId, other.autonomousVmClusterId)
+                && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
+                && java.util.Objects.equals(
+                        this.cloudAutonomousVmClusterId, other.cloudAutonomousVmClusterId)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.keyHistoryEntry, other.keyHistoryEntry)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.patchModel, other.patchModel)
+                && java.util.Objects.equals(this.patchId, other.patchId)
+                && java.util.Objects.equals(this.lastMaintenanceRunId, other.lastMaintenanceRunId)
+                && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
+                && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(
+                        this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(this.backupConfig, other.backupConfig)
+                && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(this.keyStoreWalletName, other.keyStoreWalletName)
+                && java.util.Objects.equals(
+                        this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(this.availableCpus, other.availableCpus)
+                && java.util.Objects.equals(this.totalCpus, other.totalCpus)
+                && java.util.Objects.equals(this.reclaimableCpus, other.reclaimableCpus)
+                && java.util.Objects.equals(this.provisionableCpus, other.provisionableCpus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceLevelAgreementType == null
+                                ? 43
+                                : this.serviceLevelAgreementType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousExadataInfrastructureId == null
+                                ? 43
+                                : this.autonomousExadataInfrastructureId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousVmClusterId == null
+                                ? 43
+                                : this.autonomousVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureType == null
+                                ? 43
+                                : this.infrastructureType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutonomousVmClusterId == null
+                                ? 43
+                                : this.cloudAutonomousVmClusterId.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyHistoryEntry == null ? 43 : this.keyHistoryEntry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.patchModel == null ? 43 : this.patchModel.hashCode());
+        result = (result * PRIME) + (this.patchId == null ? 43 : this.patchId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastMaintenanceRunId == null
+                                ? 43
+                                : this.lastMaintenanceRunId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextMaintenanceRunId == null
+                                ? 43
+                                : this.nextMaintenanceRunId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standbyMaintenanceBufferInDays == null
+                                ? 43
+                                : this.standbyMaintenanceBufferInDays.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());
+        result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreWalletName == null
+                                ? 43
+                                : this.keyStoreWalletName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryPerOracleComputeUnitInGBs == null
+                                ? 43
+                                : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableCpus == null ? 43 : this.availableCpus.hashCode());
+        result = (result * PRIME) + (this.totalCpus == null ? 43 : this.totalCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reclaimableCpus == null ? 43 : this.reclaimableCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionableCpus == null ? 43 : this.provisionableCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

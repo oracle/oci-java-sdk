@@ -9,14 +9,6 @@ import com.oracle.bmc.dts.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListShippingVendorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListShippingVendorsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListShippingVendorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     public static class Builder
@@ -76,5 +68,59 @@ public class ListShippingVendorsRequest extends com.oracle.bmc.requests.BmcReque
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListShippingVendorsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListShippingVendorsRequest
+         */
+        public ListShippingVendorsRequest buildWithoutInvocationCallback() {
+            ListShippingVendorsRequest request = new ListShippingVendorsRequest();
+            return request;
+            // new ListShippingVendorsRequest();
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder();
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListShippingVendorsRequest)) {
+            return false;
+        }
+
+        ListShippingVendorsRequest other = (ListShippingVendorsRequest) o;
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        return result;
     }
 }

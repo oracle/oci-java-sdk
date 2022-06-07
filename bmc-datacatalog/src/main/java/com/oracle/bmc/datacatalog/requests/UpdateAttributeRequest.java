@@ -9,14 +9,6 @@ import com.oracle.bmc.datacatalog.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateAttributeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAttributeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateAttributeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.UpdateAttributeDetails> {
@@ -26,26 +18,41 @@ public class UpdateAttributeRequest
      */
     private String catalogId;
 
+    public String getCatalogId() {
+        return catalogId;
+    }
     /**
      * Unique data asset key.
      */
     private String dataAssetKey;
 
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
     /**
      * Unique entity key.
      */
     private String entityKey;
 
+    public String getEntityKey() {
+        return entityKey;
+    }
     /**
      * Unique attribute key.
      */
     private String attributeKey;
 
+    public String getAttributeKey() {
+        return attributeKey;
+    }
     /**
      * The information to be updated in the attribute.
      */
     private com.oracle.bmc.datacatalog.model.UpdateAttributeDetails updateAttributeDetails;
 
+    public com.oracle.bmc.datacatalog.model.UpdateAttributeDetails getUpdateAttributeDetails() {
+        return updateAttributeDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -56,10 +63,17 @@ public class UpdateAttributeRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -78,6 +92,90 @@ public class UpdateAttributeRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String catalogId = null;
+
+        /**
+         * Unique catalog identifier.
+         * @return this builder instance
+         */
+        public Builder catalogId(String catalogId) {
+            this.catalogId = catalogId;
+            return this;
+        }
+
+        private String dataAssetKey = null;
+
+        /**
+         * Unique data asset key.
+         * @return this builder instance
+         */
+        public Builder dataAssetKey(String dataAssetKey) {
+            this.dataAssetKey = dataAssetKey;
+            return this;
+        }
+
+        private String entityKey = null;
+
+        /**
+         * Unique entity key.
+         * @return this builder instance
+         */
+        public Builder entityKey(String entityKey) {
+            this.entityKey = entityKey;
+            return this;
+        }
+
+        private String attributeKey = null;
+
+        /**
+         * Unique attribute key.
+         * @return this builder instance
+         */
+        public Builder attributeKey(String attributeKey) {
+            this.attributeKey = attributeKey;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.UpdateAttributeDetails updateAttributeDetails =
+                null;
+
+        /**
+         * The information to be updated in the attribute.
+         * @return this builder instance
+         */
+        public Builder updateAttributeDetails(
+                com.oracle.bmc.datacatalog.model.UpdateAttributeDetails updateAttributeDetails) {
+            this.updateAttributeDetails = updateAttributeDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -146,5 +244,99 @@ public class UpdateAttributeRequest
             updateAttributeDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateAttributeRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateAttributeRequest
+         */
+        public UpdateAttributeRequest buildWithoutInvocationCallback() {
+            UpdateAttributeRequest request = new UpdateAttributeRequest();
+            request.catalogId = catalogId;
+            request.dataAssetKey = dataAssetKey;
+            request.entityKey = entityKey;
+            request.attributeKey = attributeKey;
+            request.updateAttributeDetails = updateAttributeDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateAttributeRequest(catalogId, dataAssetKey, entityKey, attributeKey, updateAttributeDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .catalogId(catalogId)
+                .dataAssetKey(dataAssetKey)
+                .entityKey(entityKey)
+                .attributeKey(attributeKey)
+                .updateAttributeDetails(updateAttributeDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(",dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(",entityKey=").append(String.valueOf(this.entityKey));
+        sb.append(",attributeKey=").append(String.valueOf(this.attributeKey));
+        sb.append(",updateAttributeDetails=").append(String.valueOf(this.updateAttributeDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateAttributeRequest)) {
+            return false;
+        }
+
+        UpdateAttributeRequest other = (UpdateAttributeRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.entityKey, other.entityKey)
+                && java.util.Objects.equals(this.attributeKey, other.attributeKey)
+                && java.util.Objects.equals(
+                        this.updateAttributeDetails, other.updateAttributeDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.entityKey == null ? 43 : this.entityKey.hashCode());
+        result = (result * PRIME) + (this.attributeKey == null ? 43 : this.attributeKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateAttributeDetails == null
+                                ? 43
+                                : this.updateAttributeDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

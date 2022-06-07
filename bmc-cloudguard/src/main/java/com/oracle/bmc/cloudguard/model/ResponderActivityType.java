@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Possible Responder activity types
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum ResponderActivityType {
     Started("STARTED"),
     Completed("COMPLETED"),
@@ -18,6 +17,9 @@ public enum ResponderActivityType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ResponderActivityType.class);
 
     private final String value;
     private static java.util.Map<String, ResponderActivityType> map;

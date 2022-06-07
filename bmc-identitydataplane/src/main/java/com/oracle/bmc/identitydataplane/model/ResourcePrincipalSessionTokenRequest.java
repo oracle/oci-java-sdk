@@ -15,16 +15,28 @@ package com.oracle.bmc.identitydataplane.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourcePrincipalSessionTokenRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourcePrincipalSessionTokenRequest {
+public final class ResourcePrincipalSessionTokenRequest {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "resourcePrincipalToken",
+        "servicePrincipalSessionToken",
+        "sessionPublicKey"
+    })
+    public ResourcePrincipalSessionTokenRequest(
+            String resourcePrincipalToken,
+            String servicePrincipalSessionToken,
+            String sessionPublicKey) {
+        super();
+        this.resourcePrincipalToken = resourcePrincipalToken;
+        this.servicePrincipalSessionToken = servicePrincipalSessionToken;
+        this.sessionPublicKey = sessionPublicKey;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalToken")
         private String resourcePrincipalToken;
@@ -83,24 +95,97 @@ public class ResourcePrincipalSessionTokenRequest {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The resource principal token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalToken")
-    String resourcePrincipalToken;
+    private final String resourcePrincipalToken;
+
+    public String getResourcePrincipalToken() {
+        return resourcePrincipalToken;
+    }
 
     /**
      * The service principal session token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipalSessionToken")
-    String servicePrincipalSessionToken;
+    private final String servicePrincipalSessionToken;
+
+    public String getServicePrincipalSessionToken() {
+        return servicePrincipalSessionToken;
+    }
 
     /**
      * The session public key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionPublicKey")
-    String sessionPublicKey;
+    private final String sessionPublicKey;
+
+    public String getSessionPublicKey() {
+        return sessionPublicKey;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourcePrincipalSessionTokenRequest(");
+        sb.append("resourcePrincipalToken=").append(String.valueOf(this.resourcePrincipalToken));
+        sb.append(", servicePrincipalSessionToken=")
+                .append(String.valueOf(this.servicePrincipalSessionToken));
+        sb.append(", sessionPublicKey=").append(String.valueOf(this.sessionPublicKey));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourcePrincipalSessionTokenRequest)) {
+            return false;
+        }
+
+        ResourcePrincipalSessionTokenRequest other = (ResourcePrincipalSessionTokenRequest) o;
+        return java.util.Objects.equals(this.resourcePrincipalToken, other.resourcePrincipalToken)
+                && java.util.Objects.equals(
+                        this.servicePrincipalSessionToken, other.servicePrincipalSessionToken)
+                && java.util.Objects.equals(this.sessionPublicKey, other.sessionPublicKey)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.resourcePrincipalToken == null
+                                ? 43
+                                : this.resourcePrincipalToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.servicePrincipalSessionToken == null
+                                ? 43
+                                : this.servicePrincipalSessionToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sessionPublicKey == null ? 43 : this.sessionPublicKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

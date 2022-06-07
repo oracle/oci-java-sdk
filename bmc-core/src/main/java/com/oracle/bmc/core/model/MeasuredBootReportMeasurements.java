@@ -16,16 +16,21 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MeasuredBootReportMeasurements.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MeasuredBootReportMeasurements {
+public final class MeasuredBootReportMeasurements {
+    @Deprecated
+    @java.beans.ConstructorProperties({"policy", "actual"})
+    public MeasuredBootReportMeasurements(
+            java.util.List<MeasuredBootEntry> policy, java.util.List<MeasuredBootEntry> actual) {
+        super();
+        this.policy = policy;
+        this.actual = actual;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private java.util.List<MeasuredBootEntry> policy;
@@ -71,18 +76,72 @@ public class MeasuredBootReportMeasurements {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The list of expected PCR entries to use during verification.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
-    java.util.List<MeasuredBootEntry> policy;
+    private final java.util.List<MeasuredBootEntry> policy;
+
+    public java.util.List<MeasuredBootEntry> getPolicy() {
+        return policy;
+    }
 
     /**
      * The list of actual PCR entries measured during boot.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actual")
-    java.util.List<MeasuredBootEntry> actual;
+    private final java.util.List<MeasuredBootEntry> actual;
+
+    public java.util.List<MeasuredBootEntry> getActual() {
+        return actual;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MeasuredBootReportMeasurements(");
+        sb.append("policy=").append(String.valueOf(this.policy));
+        sb.append(", actual=").append(String.valueOf(this.actual));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MeasuredBootReportMeasurements)) {
+            return false;
+        }
+
+        MeasuredBootReportMeasurements other = (MeasuredBootReportMeasurements) o;
+        return java.util.Objects.equals(this.policy, other.policy)
+                && java.util.Objects.equals(this.actual, other.actual)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
+        result = (result * PRIME) + (this.actual == null ? 43 : this.actual.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

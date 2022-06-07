@@ -15,16 +15,34 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDetectorRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateDetectorRuleDetails {
+public final class UpdateDetectorRuleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isEnabled",
+        "riskLevel",
+        "configurations",
+        "condition",
+        "labels"
+    })
+    public UpdateDetectorRuleDetails(
+            Boolean isEnabled,
+            RiskLevel riskLevel,
+            java.util.List<DetectorConfiguration> configurations,
+            Condition condition,
+            java.util.List<String> labels) {
+        super();
+        this.isEnabled = isEnabled;
+        this.riskLevel = riskLevel;
+        this.configurations = configurations;
+        this.condition = condition;
+        this.labels = labels;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
@@ -103,33 +121,110 @@ public class UpdateDetectorRuleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Enables the control
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * The Risk Level
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
-    RiskLevel riskLevel;
+    private final RiskLevel riskLevel;
+
+    public RiskLevel getRiskLevel() {
+        return riskLevel;
+    }
 
     /**
      * Configuration details
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
-    java.util.List<DetectorConfiguration> configurations;
+    private final java.util.List<DetectorConfiguration> configurations;
+
+    public java.util.List<DetectorConfiguration> getConfigurations() {
+        return configurations;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
-    Condition condition;
+    private final Condition condition;
+
+    public Condition getCondition() {
+        return condition;
+    }
 
     /**
      * user defined labels for a detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
-    java.util.List<String> labels;
+    private final java.util.List<String> labels;
+
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateDetectorRuleDetails(");
+        sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", riskLevel=").append(String.valueOf(this.riskLevel));
+        sb.append(", configurations=").append(String.valueOf(this.configurations));
+        sb.append(", condition=").append(String.valueOf(this.condition));
+        sb.append(", labels=").append(String.valueOf(this.labels));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDetectorRuleDetails)) {
+            return false;
+        }
+
+        UpdateDetectorRuleDetails other = (UpdateDetectorRuleDetails) o;
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.riskLevel, other.riskLevel)
+                && java.util.Objects.equals(this.configurations, other.configurations)
+                && java.util.Objects.equals(this.condition, other.condition)
+                && java.util.Objects.equals(this.labels, other.labels)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.riskLevel == null ? 43 : this.riskLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurations == null ? 43 : this.configurations.hashCode());
+        result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
+        result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

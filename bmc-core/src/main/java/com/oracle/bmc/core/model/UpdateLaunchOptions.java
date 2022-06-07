@@ -16,16 +16,28 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateLaunchOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateLaunchOptions {
+public final class UpdateLaunchOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bootVolumeType",
+        "networkType",
+        "isPvEncryptionInTransitEnabled"
+    })
+    public UpdateLaunchOptions(
+            BootVolumeType bootVolumeType,
+            NetworkType networkType,
+            Boolean isPvEncryptionInTransitEnabled) {
+        super();
+        this.bootVolumeType = bootVolumeType;
+        this.networkType = networkType;
+        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
         private BootVolumeType bootVolumeType;
@@ -82,6 +94,10 @@ public class UpdateLaunchOptions {
      */
     public static Builder builder() {
         return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
     }
 
     /**
@@ -149,7 +165,12 @@ public class UpdateLaunchOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
-    BootVolumeType bootVolumeType;
+    private final BootVolumeType bootVolumeType;
+
+    public BootVolumeType getBootVolumeType() {
+        return bootVolumeType;
+    }
+
     /**
      * Emulation type for the physical network interface card (NIC).
      * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
@@ -221,7 +242,11 @@ public class UpdateLaunchOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkType")
-    NetworkType networkType;
+    private final NetworkType networkType;
+
+    public NetworkType getNetworkType() {
+        return networkType;
+    }
 
     /**
      * Whether to enable in-transit encryption for the volume's paravirtualized attachment.
@@ -238,8 +263,65 @@ public class UpdateLaunchOptions {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
-    Boolean isPvEncryptionInTransitEnabled;
+    private final Boolean isPvEncryptionInTransitEnabled;
+
+    public Boolean getIsPvEncryptionInTransitEnabled() {
+        return isPvEncryptionInTransitEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateLaunchOptions(");
+        sb.append("bootVolumeType=").append(String.valueOf(this.bootVolumeType));
+        sb.append(", networkType=").append(String.valueOf(this.networkType));
+        sb.append(", isPvEncryptionInTransitEnabled=")
+                .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLaunchOptions)) {
+            return false;
+        }
+
+        UpdateLaunchOptions other = (UpdateLaunchOptions) o;
+        return java.util.Objects.equals(this.bootVolumeType, other.bootVolumeType)
+                && java.util.Objects.equals(this.networkType, other.networkType)
+                && java.util.Objects.equals(
+                        this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.bootVolumeType == null ? 43 : this.bootVolumeType.hashCode());
+        result = (result * PRIME) + (this.networkType == null ? 43 : this.networkType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPvEncryptionInTransitEnabled == null
+                                ? 43
+                                : this.isPvEncryptionInTransitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,56 @@ package com.oracle.bmc.rover.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShapeSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ShapeSummary {
+public final class ShapeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "gpuDescription",
+        "gpus",
+        "memoryInGBs",
+        "networkingBandwidthInGbps",
+        "ocpus",
+        "processorDescription",
+        "shape",
+        "usbControllerDescription",
+        "numberOfUsbControllers",
+        "tags",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public ShapeSummary(
+            String gpuDescription,
+            Integer gpus,
+            Float memoryInGBs,
+            Float networkingBandwidthInGbps,
+            Integer ocpus,
+            String processorDescription,
+            String shape,
+            String usbControllerDescription,
+            Integer numberOfUsbControllers,
+            String tags,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.gpuDescription = gpuDescription;
+        this.gpus = gpus;
+        this.memoryInGBs = memoryInGBs;
+        this.networkingBandwidthInGbps = networkingBandwidthInGbps;
+        this.ocpus = ocpus;
+        this.processorDescription = processorDescription;
+        this.shape = shape;
+        this.usbControllerDescription = usbControllerDescription;
+        this.numberOfUsbControllers = numberOfUsbControllers;
+        this.tags = tags;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
         private String gpuDescription;
@@ -194,66 +236,110 @@ public class ShapeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A short description of the graphics processing unit (GPU) available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
-    String gpuDescription;
+    private final String gpuDescription;
+
+    public String getGpuDescription() {
+        return gpuDescription;
+    }
 
     /**
      * The number of GPUs available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpus")
-    Integer gpus;
+    private final Integer gpus;
+
+    public Integer getGpus() {
+        return gpus;
+    }
 
     /**
      * The default amount of memory available for this shape, in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
-    Float memoryInGBs;
+    private final Float memoryInGBs;
+
+    public Float getMemoryInGBs() {
+        return memoryInGBs;
+    }
 
     /**
      * The networking bandwidth available for this shape, in gigabits per second.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
-    Float networkingBandwidthInGbps;
+    private final Float networkingBandwidthInGbps;
+
+    public Float getNetworkingBandwidthInGbps() {
+        return networkingBandwidthInGbps;
+    }
 
     /**
      * The default number of OCPUs available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
-    Integer ocpus;
+    private final Integer ocpus;
+
+    public Integer getOcpus() {
+        return ocpus;
+    }
 
     /**
      * A short description of the shape's processor (CPU).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
-    String processorDescription;
+    private final String processorDescription;
+
+    public String getProcessorDescription() {
+        return processorDescription;
+    }
 
     /**
      * The name of the shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * A short description of the USB controller available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usbControllerDescription")
-    String usbControllerDescription;
+    private final String usbControllerDescription;
+
+    public String getUsbControllerDescription() {
+        return usbControllerDescription;
+    }
 
     /**
      * The number of USB controllers available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfUsbControllers")
-    Integer numberOfUsbControllers;
+    private final Integer numberOfUsbControllers;
+
+    public Integer getNumberOfUsbControllers() {
+        return numberOfUsbControllers;
+    }
 
     /**
      * The tags associated with tagSlug.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
-    String tags;
+    private final String tags;
+
+    public String getTags() {
+        return tags;
+    }
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
@@ -262,7 +348,11 @@ public class ShapeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
@@ -271,7 +361,11 @@ public class ShapeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
@@ -280,8 +374,110 @@ public class ShapeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ShapeSummary(");
+        sb.append("gpuDescription=").append(String.valueOf(this.gpuDescription));
+        sb.append(", gpus=").append(String.valueOf(this.gpus));
+        sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", networkingBandwidthInGbps=")
+                .append(String.valueOf(this.networkingBandwidthInGbps));
+        sb.append(", ocpus=").append(String.valueOf(this.ocpus));
+        sb.append(", processorDescription=").append(String.valueOf(this.processorDescription));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", usbControllerDescription=")
+                .append(String.valueOf(this.usbControllerDescription));
+        sb.append(", numberOfUsbControllers=").append(String.valueOf(this.numberOfUsbControllers));
+        sb.append(", tags=").append(String.valueOf(this.tags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ShapeSummary)) {
+            return false;
+        }
+
+        ShapeSummary other = (ShapeSummary) o;
+        return java.util.Objects.equals(this.gpuDescription, other.gpuDescription)
+                && java.util.Objects.equals(this.gpus, other.gpus)
+                && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(
+                        this.networkingBandwidthInGbps, other.networkingBandwidthInGbps)
+                && java.util.Objects.equals(this.ocpus, other.ocpus)
+                && java.util.Objects.equals(this.processorDescription, other.processorDescription)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(
+                        this.usbControllerDescription, other.usbControllerDescription)
+                && java.util.Objects.equals(
+                        this.numberOfUsbControllers, other.numberOfUsbControllers)
+                && java.util.Objects.equals(this.tags, other.tags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.gpuDescription == null ? 43 : this.gpuDescription.hashCode());
+        result = (result * PRIME) + (this.gpus == null ? 43 : this.gpus.hashCode());
+        result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkingBandwidthInGbps == null
+                                ? 43
+                                : this.networkingBandwidthInGbps.hashCode());
+        result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.processorDescription == null
+                                ? 43
+                                : this.processorDescription.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usbControllerDescription == null
+                                ? 43
+                                : this.usbControllerDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfUsbControllers == null
+                                ? 43
+                                : this.numberOfUsbControllers.hashCode());
+        result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

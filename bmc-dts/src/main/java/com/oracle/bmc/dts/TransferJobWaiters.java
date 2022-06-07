@@ -6,6 +6,7 @@ package com.oracle.bmc.dts;
 
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -14,10 +15,15 @@ import com.oracle.bmc.dts.responses.*;
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.RequiredArgsConstructor
 public class TransferJobWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final TransferJob client;
+
+    public TransferJobWaiters(
+            java.util.concurrent.ExecutorService executorService, TransferJob client) {
+        this.executorService = executorService;
+        this.client = client;
+    }
 
     /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.

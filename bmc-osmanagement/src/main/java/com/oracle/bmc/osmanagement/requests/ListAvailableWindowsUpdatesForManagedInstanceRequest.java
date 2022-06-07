@@ -9,14 +9,6 @@ import com.oracle.bmc.osmanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListAvailableWindowsUpdatesForManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAvailableWindowsUpdatesForManagedInstanceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAvailableWindowsUpdatesForManagedInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
      */
     private String managedInstanceId;
 
+    public String getManagedInstanceId() {
+        return managedInstanceId;
+    }
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
@@ -33,21 +28,33 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
@@ -88,6 +95,10 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
      *
@@ -130,15 +141,27 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * Indicator of whether the update can be installed using OSMS.
      */
     private com.oracle.bmc.osmanagement.model.IsEligibleForInstallation isEligibleForInstallation;
+
+    public com.oracle.bmc.osmanagement.model.IsEligibleForInstallation
+            getIsEligibleForInstallation() {
+        return isEligibleForInstallation;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -146,6 +169,112 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedInstanceId = null;
+
+        /**
+         * OCID for the managed instance
+         * @return this builder instance
+         */
+        public Builder managedInstanceId(String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
+         *
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.IsEligibleForInstallation
+                isEligibleForInstallation = null;
+
+        /**
+         * Indicator of whether the update can be installed using OSMS.
+         * @return this builder instance
+         */
+        public Builder isEligibleForInstallation(
+                com.oracle.bmc.osmanagement.model.IsEligibleForInstallation
+                        isEligibleForInstallation) {
+            this.isEligibleForInstallation = isEligibleForInstallation;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -206,5 +335,117 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListAvailableWindowsUpdatesForManagedInstanceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListAvailableWindowsUpdatesForManagedInstanceRequest
+         */
+        public ListAvailableWindowsUpdatesForManagedInstanceRequest
+                buildWithoutInvocationCallback() {
+            ListAvailableWindowsUpdatesForManagedInstanceRequest request =
+                    new ListAvailableWindowsUpdatesForManagedInstanceRequest();
+            request.managedInstanceId = managedInstanceId;
+            request.displayName = displayName;
+            request.compartmentId = compartmentId;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            request.isEligibleForInstallation = isEligibleForInstallation;
+            return request;
+            // new ListAvailableWindowsUpdatesForManagedInstanceRequest(managedInstanceId, displayName, compartmentId, limit, page, sortOrder, sortBy, opcRequestId, isEligibleForInstallation);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedInstanceId(managedInstanceId)
+                .displayName(displayName)
+                .compartmentId(compartmentId)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId)
+                .isEligibleForInstallation(isEligibleForInstallation);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isEligibleForInstallation=")
+                .append(String.valueOf(this.isEligibleForInstallation));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAvailableWindowsUpdatesForManagedInstanceRequest)) {
+            return false;
+        }
+
+        ListAvailableWindowsUpdatesForManagedInstanceRequest other =
+                (ListAvailableWindowsUpdatesForManagedInstanceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.isEligibleForInstallation, other.isEligibleForInstallation);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEligibleForInstallation == null
+                                ? 43
+                                : this.isEligibleForInstallation.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,55 @@ package com.oracle.bmc.apmsynthetics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateMonitorDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateMonitorDetails {
+public final class UpdateMonitorDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "vantagePoints",
+        "scriptId",
+        "status",
+        "repeatIntervalInSeconds",
+        "isRunOnce",
+        "timeoutInSeconds",
+        "target",
+        "scriptParameters",
+        "configuration",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateMonitorDetails(
+            String displayName,
+            java.util.List<String> vantagePoints,
+            String scriptId,
+            MonitorStatus status,
+            Integer repeatIntervalInSeconds,
+            Boolean isRunOnce,
+            Integer timeoutInSeconds,
+            String target,
+            java.util.List<MonitorScriptParameter> scriptParameters,
+            MonitorConfiguration configuration,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.vantagePoints = vantagePoints;
+        this.scriptId = scriptId;
+        this.status = status;
+        this.repeatIntervalInSeconds = repeatIntervalInSeconds;
+        this.isRunOnce = isRunOnce;
+        this.timeoutInSeconds = timeoutInSeconds;
+        this.target = target;
+        this.scriptParameters = scriptParameters;
+        this.configuration = configuration;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -185,11 +224,19 @@ public class UpdateMonitorDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique name that can be edited. The name should not contain any confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A list of public and dedicated vantage points from which to execute the monitor.
@@ -197,7 +244,11 @@ public class UpdateMonitorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePoints")
-    java.util.List<String> vantagePoints;
+    private final java.util.List<String> vantagePoints;
+
+    public java.util.List<String> getVantagePoints() {
+        return vantagePoints;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the script.
@@ -205,13 +256,21 @@ public class UpdateMonitorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scriptId")
-    String scriptId;
+    private final String scriptId;
+
+    public String getScriptId() {
+        return scriptId;
+    }
 
     /**
      * Enables or disables the monitor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    MonitorStatus status;
+    private final MonitorStatus status;
+
+    public MonitorStatus getStatus() {
+        return status;
+    }
 
     /**
      * Interval in seconds after the start time when the job should be repeated.
@@ -219,13 +278,21 @@ public class UpdateMonitorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repeatIntervalInSeconds")
-    Integer repeatIntervalInSeconds;
+    private final Integer repeatIntervalInSeconds;
+
+    public Integer getRepeatIntervalInSeconds() {
+        return repeatIntervalInSeconds;
+    }
 
     /**
      * If runOnce is enabled, then the monitor will run once.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRunOnce")
-    Boolean isRunOnce;
+    private final Boolean isRunOnce;
+
+    public Boolean getIsRunOnce() {
+        return isRunOnce;
+    }
 
     /**
      * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
@@ -234,7 +301,11 @@ public class UpdateMonitorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
-    Integer timeoutInSeconds;
+    private final Integer timeoutInSeconds;
+
+    public Integer getTimeoutInSeconds() {
+        return timeoutInSeconds;
+    }
 
     /**
      * Specify the endpoint on which to run the monitor.
@@ -244,7 +315,11 @@ public class UpdateMonitorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    String target;
+    private final String target;
+
+    public String getTarget() {
+        return target;
+    }
 
     /**
      * List of script parameters in the monitor.
@@ -253,10 +328,18 @@ public class UpdateMonitorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scriptParameters")
-    java.util.List<MonitorScriptParameter> scriptParameters;
+    private final java.util.List<MonitorScriptParameter> scriptParameters;
+
+    public java.util.List<MonitorScriptParameter> getScriptParameters() {
+        return scriptParameters;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
-    MonitorConfiguration configuration;
+    private final MonitorConfiguration configuration;
+
+    public MonitorConfiguration getConfiguration() {
+        return configuration;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -264,7 +347,11 @@ public class UpdateMonitorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -272,8 +359,98 @@ public class UpdateMonitorDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateMonitorDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", vantagePoints=").append(String.valueOf(this.vantagePoints));
+        sb.append(", scriptId=").append(String.valueOf(this.scriptId));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", repeatIntervalInSeconds=")
+                .append(String.valueOf(this.repeatIntervalInSeconds));
+        sb.append(", isRunOnce=").append(String.valueOf(this.isRunOnce));
+        sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", scriptParameters=").append(String.valueOf(this.scriptParameters));
+        sb.append(", configuration=").append(String.valueOf(this.configuration));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateMonitorDetails)) {
+            return false;
+        }
+
+        UpdateMonitorDetails other = (UpdateMonitorDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.vantagePoints, other.vantagePoints)
+                && java.util.Objects.equals(this.scriptId, other.scriptId)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(
+                        this.repeatIntervalInSeconds, other.repeatIntervalInSeconds)
+                && java.util.Objects.equals(this.isRunOnce, other.isRunOnce)
+                && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.scriptParameters, other.scriptParameters)
+                && java.util.Objects.equals(this.configuration, other.configuration)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vantagePoints == null ? 43 : this.vantagePoints.hashCode());
+        result = (result * PRIME) + (this.scriptId == null ? 43 : this.scriptId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repeatIntervalInSeconds == null
+                                ? 43
+                                : this.repeatIntervalInSeconds.hashCode());
+        result = (result * PRIME) + (this.isRunOnce == null ? 43 : this.isRunOnce.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeoutInSeconds == null ? 43 : this.timeoutInSeconds.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scriptParameters == null ? 43 : this.scriptParameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configuration == null ? 43 : this.configuration.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

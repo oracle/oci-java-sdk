@@ -7,6 +7,7 @@ package com.oracle.bmc.identitydataplane;
 import com.oracle.bmc.identitydataplane.internal.http.*;
 import com.oracle.bmc.identitydataplane.requests.*;
 import com.oracle.bmc.identitydataplane.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Dataplane service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.identitydataplane.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-@lombok.extern.slf4j.Slf4j
 public class DataplaneAsyncClient implements DataplaneAsync {
     /**
      * Service instance for Dataplane.
@@ -34,7 +34,9 @@ public class DataplaneAsyncClient implements DataplaneAsync {
                     .serviceEndpointTemplate("https://auth.{region}.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DataplaneAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class DataplaneAsyncClient implements DataplaneAsync {
          * @return the client
          */
         public DataplaneAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DataplaneAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class DataplaneAsyncClient implements DataplaneAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

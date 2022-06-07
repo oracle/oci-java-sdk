@@ -15,16 +15,26 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ImageShapeCompatibilityEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ImageShapeCompatibilityEntry {
+public final class ImageShapeCompatibilityEntry {
+    @Deprecated
+    @java.beans.ConstructorProperties({"imageId", "shape", "memoryConstraints", "ocpuConstraints"})
+    public ImageShapeCompatibilityEntry(
+            String imageId,
+            String shape,
+            ImageMemoryConstraints memoryConstraints,
+            ImageOcpuConstraints ocpuConstraints) {
+        super();
+        this.imageId = imageId;
+        this.shape = shape;
+        this.memoryConstraints = memoryConstraints;
+        this.ocpuConstraints = ocpuConstraints;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
@@ -93,24 +103,96 @@ public class ImageShapeCompatibilityEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The image OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
-    String imageId;
+    private final String imageId;
+
+    public String getImageId() {
+        return imageId;
+    }
 
     /**
      * The shape name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("memoryConstraints")
-    ImageMemoryConstraints memoryConstraints;
+    private final ImageMemoryConstraints memoryConstraints;
+
+    public ImageMemoryConstraints getMemoryConstraints() {
+        return memoryConstraints;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuConstraints")
-    ImageOcpuConstraints ocpuConstraints;
+    private final ImageOcpuConstraints ocpuConstraints;
+
+    public ImageOcpuConstraints getOcpuConstraints() {
+        return ocpuConstraints;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImageShapeCompatibilityEntry(");
+        sb.append("imageId=").append(String.valueOf(this.imageId));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", memoryConstraints=").append(String.valueOf(this.memoryConstraints));
+        sb.append(", ocpuConstraints=").append(String.valueOf(this.ocpuConstraints));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImageShapeCompatibilityEntry)) {
+            return false;
+        }
+
+        ImageShapeCompatibilityEntry other = (ImageShapeCompatibilityEntry) o;
+        return java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.memoryConstraints, other.memoryConstraints)
+                && java.util.Objects.equals(this.ocpuConstraints, other.ocpuConstraints)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryConstraints == null ? 43 : this.memoryConstraints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ocpuConstraints == null ? 43 : this.ocpuConstraints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Actor type who performed the operation
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum ActorType {
     CloudGuardService("CLOUD_GUARD_SERVICE"),
     Correlation("CORRELATION"),
@@ -20,6 +19,8 @@ public enum ActorType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(ActorType.class);
 
     private final String value;
     private static java.util.Map<String, ActorType> map;

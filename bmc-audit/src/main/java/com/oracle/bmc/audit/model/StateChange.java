@@ -16,14 +16,19 @@ package com.oracle.bmc.audit.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StateChange.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StateChange {
+public final class StateChange {
+    @Deprecated
+    @java.beans.ConstructorProperties({"previous", "current"})
+    public StateChange(
+            java.util.Map<String, Object> previous, java.util.Map<String, Object> current) {
+        super();
+        this.previous = previous;
+        this.current = current;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("previous")
         private java.util.Map<String, Object> previous;
@@ -68,6 +73,10 @@ public class StateChange {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Provides the previous state of fields that may have changed during an operation. To determine
      * how the current operation changed a resource, compare the information in this attribute to
@@ -75,7 +84,11 @@ public class StateChange {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("previous")
-    java.util.Map<String, Object> previous;
+    private final java.util.Map<String, Object> previous;
+
+    public java.util.Map<String, Object> getPrevious() {
+        return previous;
+    }
 
     /**
      * Provides the current state of fields that may have changed during an operation. To determine
@@ -84,8 +97,54 @@ public class StateChange {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("current")
-    java.util.Map<String, Object> current;
+    private final java.util.Map<String, Object> current;
+
+    public java.util.Map<String, Object> getCurrent() {
+        return current;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StateChange(");
+        sb.append("previous=").append(String.valueOf(this.previous));
+        sb.append(", current=").append(String.valueOf(this.current));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StateChange)) {
+            return false;
+        }
+
+        StateChange other = (StateChange) o;
+        return java.util.Objects.equals(this.previous, other.previous)
+                && java.util.Objects.equals(this.current, other.current)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.previous == null ? 43 : this.previous.hashCode());
+        result = (result * PRIME) + (this.current == null ? 43 : this.current.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

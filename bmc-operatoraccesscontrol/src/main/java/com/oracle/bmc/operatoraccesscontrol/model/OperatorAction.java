@@ -21,14 +21,38 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OperatorAction.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class OperatorAction {
+public final class OperatorAction {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "customerDisplayName",
+        "component",
+        "resourceType",
+        "description",
+        "properties"
+    })
+    public OperatorAction(
+            String id,
+            String name,
+            String customerDisplayName,
+            String component,
+            ResourceTypes resourceType,
+            String description,
+            java.util.List<OperatorActionProperties> properties) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.customerDisplayName = customerDisplayName;
+        this.component = component;
+        this.resourceType = resourceType;
+        this.description = description;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -133,35 +157,59 @@ public class OperatorAction {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique Oracle assigned identifier for the operator action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Unique name of the operator action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Display Name of the operator action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerDisplayName")
-    String customerDisplayName;
+    private final String customerDisplayName;
+
+    public String getCustomerDisplayName() {
+        return customerDisplayName;
+    }
 
     /**
      * Name of the infrastructure layer associated with the operator action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("component")
-    String component;
+    private final String component;
+
+    public String getComponent() {
+        return component;
+    }
 
     /**
      * resourceType for which the OperatorAction is applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    ResourceTypes resourceType;
+    private final ResourceTypes resourceType;
+
+    public ResourceTypes getResourceType() {
+        return resourceType;
+    }
 
     /**
      * Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made
@@ -169,14 +217,83 @@ public class OperatorAction {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Fine grained properties associated with the operator control.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.List<OperatorActionProperties> properties;
+    private final java.util.List<OperatorActionProperties> properties;
+
+    public java.util.List<OperatorActionProperties> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OperatorAction(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", customerDisplayName=").append(String.valueOf(this.customerDisplayName));
+        sb.append(", component=").append(String.valueOf(this.component));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OperatorAction)) {
+            return false;
+        }
+
+        OperatorAction other = (OperatorAction) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.customerDisplayName, other.customerDisplayName)
+                && java.util.Objects.equals(this.component, other.component)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerDisplayName == null
+                                ? 43
+                                : this.customerDisplayName.hashCode());
+        result = (result * PRIME) + (this.component == null ? 43 : this.component.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

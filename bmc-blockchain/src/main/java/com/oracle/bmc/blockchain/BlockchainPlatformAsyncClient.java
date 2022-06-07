@@ -7,6 +7,7 @@ package com.oracle.bmc.blockchain;
 import com.oracle.bmc.blockchain.internal.http.*;
 import com.oracle.bmc.blockchain.requests.*;
 import com.oracle.bmc.blockchain.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for BlockchainPlatform service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.blockchain.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.extern.slf4j.Slf4j
 public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
     /**
      * Service instance for BlockchainPlatform.
@@ -34,7 +34,9 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                     .serviceEndpointTemplate("https://blockchain.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(BlockchainPlatformAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
          * @return the client
          */
         public BlockchainPlatformAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new BlockchainPlatformAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

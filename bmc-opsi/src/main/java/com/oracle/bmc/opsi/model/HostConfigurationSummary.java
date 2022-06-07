@@ -15,12 +15,6 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,31 +33,106 @@ package com.oracle.bmc.opsi.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class HostConfigurationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "hostInsightId",
+        "compartmentId",
+        "hostName",
+        "platformType",
+        "platformVersion",
+        "platformVendor",
+        "totalCpus",
+        "totalMemoryInGBs",
+        "cpuArchitecture",
+        "cpuCacheInMBs",
+        "cpuVendor",
+        "cpuFrequencyInMhz",
+        "cpuImplementation",
+        "coresPerSocket",
+        "totalSockets",
+        "threadsPerSocket",
+        "isHyperThreadingEnabled",
+        "definedTags",
+        "freeformTags"
+    })
+    protected HostConfigurationSummary(
+            String hostInsightId,
+            String compartmentId,
+            String hostName,
+            PlatformType platformType,
+            String platformVersion,
+            String platformVendor,
+            Integer totalCpus,
+            Double totalMemoryInGBs,
+            String cpuArchitecture,
+            Double cpuCacheInMBs,
+            String cpuVendor,
+            Double cpuFrequencyInMhz,
+            String cpuImplementation,
+            Integer coresPerSocket,
+            Integer totalSockets,
+            Integer threadsPerSocket,
+            Boolean isHyperThreadingEnabled,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags) {
+        super();
+        this.hostInsightId = hostInsightId;
+        this.compartmentId = compartmentId;
+        this.hostName = hostName;
+        this.platformType = platformType;
+        this.platformVersion = platformVersion;
+        this.platformVendor = platformVendor;
+        this.totalCpus = totalCpus;
+        this.totalMemoryInGBs = totalMemoryInGBs;
+        this.cpuArchitecture = cpuArchitecture;
+        this.cpuCacheInMBs = cpuCacheInMBs;
+        this.cpuVendor = cpuVendor;
+        this.cpuFrequencyInMhz = cpuFrequencyInMhz;
+        this.cpuImplementation = cpuImplementation;
+        this.coresPerSocket = coresPerSocket;
+        this.totalSockets = totalSockets;
+        this.threadsPerSocket = threadsPerSocket;
+        this.isHyperThreadingEnabled = isHyperThreadingEnabled;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostInsightId")
-    String hostInsightId;
+    private final String hostInsightId;
+
+    public String getHostInsightId() {
+        return hostInsightId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The host name. The host name is unique amongst the hosts managed by the same management agent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
-    String hostName;
+    private final String hostName;
+
+    public String getHostName() {
+        return hostName;
+    }
+
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PlatformType {
         Linux("LINUX"),
         Solaris("SOLARIS"),
@@ -75,6 +144,9 @@ public class HostConfigurationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlatformType.class);
 
         private final String value;
         private static java.util.Map<String, PlatformType> map;
@@ -115,91 +187,147 @@ public class HostConfigurationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
-    PlatformType platformType;
+    private final PlatformType platformType;
+
+    public PlatformType getPlatformType() {
+        return platformType;
+    }
 
     /**
      * Platform version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
-    String platformVersion;
+    private final String platformVersion;
+
+    public String getPlatformVersion() {
+        return platformVersion;
+    }
 
     /**
      * Platform vendor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformVendor")
-    String platformVendor;
+    private final String platformVendor;
+
+    public String getPlatformVendor() {
+        return platformVendor;
+    }
 
     /**
      * Total CPU on this host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
-    Integer totalCpus;
+    private final Integer totalCpus;
+
+    public Integer getTotalCpus() {
+        return totalCpus;
+    }
 
     /**
      * Total amount of usable physical memory in gibabytes
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGBs")
-    Double totalMemoryInGBs;
+    private final Double totalMemoryInGBs;
+
+    public Double getTotalMemoryInGBs() {
+        return totalMemoryInGBs;
+    }
 
     /**
      * CPU architechure
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuArchitecture")
-    String cpuArchitecture;
+    private final String cpuArchitecture;
+
+    public String getCpuArchitecture() {
+        return cpuArchitecture;
+    }
 
     /**
      * Size of cache memory in megabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCacheInMBs")
-    Double cpuCacheInMBs;
+    private final Double cpuCacheInMBs;
+
+    public Double getCpuCacheInMBs() {
+        return cpuCacheInMBs;
+    }
 
     /**
      * Name of the CPU vendor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuVendor")
-    String cpuVendor;
+    private final String cpuVendor;
+
+    public String getCpuVendor() {
+        return cpuVendor;
+    }
 
     /**
      * Clock frequency of the processor in megahertz.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuFrequencyInMhz")
-    Double cpuFrequencyInMhz;
+    private final Double cpuFrequencyInMhz;
+
+    public Double getCpuFrequencyInMhz() {
+        return cpuFrequencyInMhz;
+    }
 
     /**
      * Model name of processor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuImplementation")
-    String cpuImplementation;
+    private final String cpuImplementation;
+
+    public String getCpuImplementation() {
+        return cpuImplementation;
+    }
 
     /**
      * Number of cores per socket.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coresPerSocket")
-    Integer coresPerSocket;
+    private final Integer coresPerSocket;
+
+    public Integer getCoresPerSocket() {
+        return coresPerSocket;
+    }
 
     /**
      * Number of total sockets.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSockets")
-    Integer totalSockets;
+    private final Integer totalSockets;
+
+    public Integer getTotalSockets() {
+        return totalSockets;
+    }
 
     /**
      * Number of threads per socket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threadsPerSocket")
-    Integer threadsPerSocket;
+    private final Integer threadsPerSocket;
+
+    public Integer getThreadsPerSocket() {
+        return threadsPerSocket;
+    }
 
     /**
      * Indicates if hyper-threading is enabled or not
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHyperThreadingEnabled")
-    Boolean isHyperThreadingEnabled;
+    private final Boolean isHyperThreadingEnabled;
+
+    public Boolean getIsHyperThreadingEnabled() {
+        return isHyperThreadingEnabled;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -207,7 +335,11 @@ public class HostConfigurationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -215,5 +347,121 @@ public class HostConfigurationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostConfigurationSummary(");
+        sb.append("hostInsightId=").append(String.valueOf(this.hostInsightId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", platformType=").append(String.valueOf(this.platformType));
+        sb.append(", platformVersion=").append(String.valueOf(this.platformVersion));
+        sb.append(", platformVendor=").append(String.valueOf(this.platformVendor));
+        sb.append(", totalCpus=").append(String.valueOf(this.totalCpus));
+        sb.append(", totalMemoryInGBs=").append(String.valueOf(this.totalMemoryInGBs));
+        sb.append(", cpuArchitecture=").append(String.valueOf(this.cpuArchitecture));
+        sb.append(", cpuCacheInMBs=").append(String.valueOf(this.cpuCacheInMBs));
+        sb.append(", cpuVendor=").append(String.valueOf(this.cpuVendor));
+        sb.append(", cpuFrequencyInMhz=").append(String.valueOf(this.cpuFrequencyInMhz));
+        sb.append(", cpuImplementation=").append(String.valueOf(this.cpuImplementation));
+        sb.append(", coresPerSocket=").append(String.valueOf(this.coresPerSocket));
+        sb.append(", totalSockets=").append(String.valueOf(this.totalSockets));
+        sb.append(", threadsPerSocket=").append(String.valueOf(this.threadsPerSocket));
+        sb.append(", isHyperThreadingEnabled=")
+                .append(String.valueOf(this.isHyperThreadingEnabled));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostConfigurationSummary)) {
+            return false;
+        }
+
+        HostConfigurationSummary other = (HostConfigurationSummary) o;
+        return java.util.Objects.equals(this.hostInsightId, other.hostInsightId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.platformType, other.platformType)
+                && java.util.Objects.equals(this.platformVersion, other.platformVersion)
+                && java.util.Objects.equals(this.platformVendor, other.platformVendor)
+                && java.util.Objects.equals(this.totalCpus, other.totalCpus)
+                && java.util.Objects.equals(this.totalMemoryInGBs, other.totalMemoryInGBs)
+                && java.util.Objects.equals(this.cpuArchitecture, other.cpuArchitecture)
+                && java.util.Objects.equals(this.cpuCacheInMBs, other.cpuCacheInMBs)
+                && java.util.Objects.equals(this.cpuVendor, other.cpuVendor)
+                && java.util.Objects.equals(this.cpuFrequencyInMhz, other.cpuFrequencyInMhz)
+                && java.util.Objects.equals(this.cpuImplementation, other.cpuImplementation)
+                && java.util.Objects.equals(this.coresPerSocket, other.coresPerSocket)
+                && java.util.Objects.equals(this.totalSockets, other.totalSockets)
+                && java.util.Objects.equals(this.threadsPerSocket, other.threadsPerSocket)
+                && java.util.Objects.equals(
+                        this.isHyperThreadingEnabled, other.isHyperThreadingEnabled)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.hostInsightId == null ? 43 : this.hostInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformVersion == null ? 43 : this.platformVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformVendor == null ? 43 : this.platformVendor.hashCode());
+        result = (result * PRIME) + (this.totalCpus == null ? 43 : this.totalCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMemoryInGBs == null ? 43 : this.totalMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuArchitecture == null ? 43 : this.cpuArchitecture.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuCacheInMBs == null ? 43 : this.cpuCacheInMBs.hashCode());
+        result = (result * PRIME) + (this.cpuVendor == null ? 43 : this.cpuVendor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuFrequencyInMhz == null ? 43 : this.cpuFrequencyInMhz.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuImplementation == null ? 43 : this.cpuImplementation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coresPerSocket == null ? 43 : this.coresPerSocket.hashCode());
+        result = (result * PRIME) + (this.totalSockets == null ? 43 : this.totalSockets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.threadsPerSocket == null ? 43 : this.threadsPerSocket.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHyperThreadingEnabled == null
+                                ? 43
+                                : this.isHyperThreadingEnabled.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        return result;
+    }
 }

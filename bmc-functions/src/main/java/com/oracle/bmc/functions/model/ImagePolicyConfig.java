@@ -16,16 +16,20 @@ package com.oracle.bmc.functions.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ImagePolicyConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ImagePolicyConfig {
+public final class ImagePolicyConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isPolicyEnabled", "keyDetails"})
+    public ImagePolicyConfig(Boolean isPolicyEnabled, java.util.List<KeyDetails> keyDetails) {
+        super();
+        this.isPolicyEnabled = isPolicyEnabled;
+        this.keyDetails = keyDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isPolicyEnabled")
         private Boolean isPolicyEnabled;
@@ -71,19 +75,75 @@ public class ImagePolicyConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Define if image signature verification policy is enabled for the application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPolicyEnabled")
-    Boolean isPolicyEnabled;
+    private final Boolean isPolicyEnabled;
+
+    public Boolean getIsPolicyEnabled() {
+        return isPolicyEnabled;
+    }
 
     /**
      * A list of KMS key details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyDetails")
-    java.util.List<KeyDetails> keyDetails;
+    private final java.util.List<KeyDetails> keyDetails;
+
+    public java.util.List<KeyDetails> getKeyDetails() {
+        return keyDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ImagePolicyConfig(");
+        sb.append("isPolicyEnabled=").append(String.valueOf(this.isPolicyEnabled));
+        sb.append(", keyDetails=").append(String.valueOf(this.keyDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ImagePolicyConfig)) {
+            return false;
+        }
+
+        ImagePolicyConfig other = (ImagePolicyConfig) o;
+        return java.util.Objects.equals(this.isPolicyEnabled, other.isPolicyEnabled)
+                && java.util.Objects.equals(this.keyDetails, other.keyDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isPolicyEnabled == null ? 43 : this.isPolicyEnabled.hashCode());
+        result = (result * PRIME) + (this.keyDetails == null ? 43 : this.keyDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

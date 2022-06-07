@@ -7,10 +7,6 @@ package com.oracle.bmc.databasemanagement.responses;
 import com.oracle.bmc.databasemanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListTablespacesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -18,6 +14,10 @@ public class ListTablespacesResponse extends com.oracle.bmc.responses.BmcRespons
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -27,10 +27,18 @@ public class ListTablespacesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned TablespaceCollection instance.
      */
     private com.oracle.bmc.databasemanagement.model.TablespaceCollection tablespaceCollection;
+
+    public com.oracle.bmc.databasemanagement.model.TablespaceCollection getTablespaceCollection() {
+        return tablespaceCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -57,6 +65,28 @@ public class ListTablespacesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.TablespaceCollection tablespaceCollection;
+
+        public Builder tablespaceCollection(
+                com.oracle.bmc.databasemanagement.model.TablespaceCollection tablespaceCollection) {
+            this.tablespaceCollection = tablespaceCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -74,5 +104,51 @@ public class ListTablespacesResponse extends com.oracle.bmc.responses.BmcRespons
             return new ListTablespacesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, tablespaceCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",tablespaceCollection=").append(String.valueOf(tablespaceCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListTablespacesResponse)) {
+            return false;
+        }
+
+        ListTablespacesResponse other = (ListTablespacesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.tablespaceCollection, other.tablespaceCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tablespaceCollection == null
+                                ? 43
+                                : this.tablespaceCollection.hashCode());
+        return result;
     }
 }

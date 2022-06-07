@@ -15,16 +15,31 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SchemaDriftConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SchemaDriftConfig {
+public final class SchemaDriftConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "extraColumnHandling",
+        "missingColumnHandling",
+        "dataTypeChangeHandling",
+        "isValidationWarningIfAllowed"
+    })
+    public SchemaDriftConfig(
+            ExtraColumnHandling extraColumnHandling,
+            MissingColumnHandling missingColumnHandling,
+            DataTypeChangeHandling dataTypeChangeHandling,
+            Boolean isValidationWarningIfAllowed) {
+        super();
+        this.extraColumnHandling = extraColumnHandling;
+        this.missingColumnHandling = missingColumnHandling;
+        this.dataTypeChangeHandling = dataTypeChangeHandling;
+        this.isValidationWarningIfAllowed = isValidationWarningIfAllowed;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("extraColumnHandling")
         private ExtraColumnHandling extraColumnHandling;
@@ -96,6 +111,10 @@ public class SchemaDriftConfig {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
      **/
@@ -136,7 +155,12 @@ public class SchemaDriftConfig {
      * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extraColumnHandling")
-    ExtraColumnHandling extraColumnHandling;
+    private final ExtraColumnHandling extraColumnHandling;
+
+    public ExtraColumnHandling getExtraColumnHandling() {
+        return extraColumnHandling;
+    }
+
     /**
      * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
      **/
@@ -177,7 +201,12 @@ public class SchemaDriftConfig {
      * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("missingColumnHandling")
-    MissingColumnHandling missingColumnHandling;
+    private final MissingColumnHandling missingColumnHandling;
+
+    public MissingColumnHandling getMissingColumnHandling() {
+        return missingColumnHandling;
+    }
+
     /**
      * The setting for how to handle columns/fields with changed data types.
      **/
@@ -218,14 +247,89 @@ public class SchemaDriftConfig {
      * The setting for how to handle columns/fields with changed data types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeChangeHandling")
-    DataTypeChangeHandling dataTypeChangeHandling;
+    private final DataTypeChangeHandling dataTypeChangeHandling;
+
+    public DataTypeChangeHandling getDataTypeChangeHandling() {
+        return dataTypeChangeHandling;
+    }
 
     /**
      * If true, display a validation warning for schema changes, even if they are allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValidationWarningIfAllowed")
-    Boolean isValidationWarningIfAllowed;
+    private final Boolean isValidationWarningIfAllowed;
+
+    public Boolean getIsValidationWarningIfAllowed() {
+        return isValidationWarningIfAllowed;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SchemaDriftConfig(");
+        sb.append("extraColumnHandling=").append(String.valueOf(this.extraColumnHandling));
+        sb.append(", missingColumnHandling=").append(String.valueOf(this.missingColumnHandling));
+        sb.append(", dataTypeChangeHandling=").append(String.valueOf(this.dataTypeChangeHandling));
+        sb.append(", isValidationWarningIfAllowed=")
+                .append(String.valueOf(this.isValidationWarningIfAllowed));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SchemaDriftConfig)) {
+            return false;
+        }
+
+        SchemaDriftConfig other = (SchemaDriftConfig) o;
+        return java.util.Objects.equals(this.extraColumnHandling, other.extraColumnHandling)
+                && java.util.Objects.equals(this.missingColumnHandling, other.missingColumnHandling)
+                && java.util.Objects.equals(
+                        this.dataTypeChangeHandling, other.dataTypeChangeHandling)
+                && java.util.Objects.equals(
+                        this.isValidationWarningIfAllowed, other.isValidationWarningIfAllowed)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.extraColumnHandling == null
+                                ? 43
+                                : this.extraColumnHandling.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.missingColumnHandling == null
+                                ? 43
+                                : this.missingColumnHandling.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataTypeChangeHandling == null
+                                ? 43
+                                : this.dataTypeChangeHandling.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isValidationWarningIfAllowed == null
+                                ? 43
+                                : this.isValidationWarningIfAllowed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

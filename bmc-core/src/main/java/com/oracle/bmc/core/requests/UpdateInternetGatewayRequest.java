@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInternetGatewayExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateInternetGatewayRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateInternetGatewayRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateInternetGatewayDetails> {
@@ -26,11 +18,18 @@ public class UpdateInternetGatewayRequest
      */
     private String igId;
 
+    public String getIgId() {
+        return igId;
+    }
     /**
      * Details for updating the internet gateway.
      */
     private com.oracle.bmc.core.model.UpdateInternetGatewayDetails updateInternetGatewayDetails;
 
+    public com.oracle.bmc.core.model.UpdateInternetGatewayDetails
+            getUpdateInternetGatewayDetails() {
+        return updateInternetGatewayDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -38,6 +37,10 @@ public class UpdateInternetGatewayRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +59,45 @@ public class UpdateInternetGatewayRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String igId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the internet gateway.
+         * @return this builder instance
+         */
+        public Builder igId(String igId) {
+            this.igId = igId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateInternetGatewayDetails
+                updateInternetGatewayDetails = null;
+
+        /**
+         * Details for updating the internet gateway.
+         * @return this builder instance
+         */
+        public Builder updateInternetGatewayDetails(
+                com.oracle.bmc.core.model.UpdateInternetGatewayDetails
+                        updateInternetGatewayDetails) {
+            this.updateInternetGatewayDetails = updateInternetGatewayDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -120,5 +162,80 @@ public class UpdateInternetGatewayRequest
             updateInternetGatewayDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateInternetGatewayRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateInternetGatewayRequest
+         */
+        public UpdateInternetGatewayRequest buildWithoutInvocationCallback() {
+            UpdateInternetGatewayRequest request = new UpdateInternetGatewayRequest();
+            request.igId = igId;
+            request.updateInternetGatewayDetails = updateInternetGatewayDetails;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateInternetGatewayRequest(igId, updateInternetGatewayDetails, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .igId(igId)
+                .updateInternetGatewayDetails(updateInternetGatewayDetails)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",igId=").append(String.valueOf(this.igId));
+        sb.append(",updateInternetGatewayDetails=")
+                .append(String.valueOf(this.updateInternetGatewayDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateInternetGatewayRequest)) {
+            return false;
+        }
+
+        UpdateInternetGatewayRequest other = (UpdateInternetGatewayRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.igId, other.igId)
+                && java.util.Objects.equals(
+                        this.updateInternetGatewayDetails, other.updateInternetGatewayDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.igId == null ? 43 : this.igId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateInternetGatewayDetails == null
+                                ? 43
+                                : this.updateInternetGatewayDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

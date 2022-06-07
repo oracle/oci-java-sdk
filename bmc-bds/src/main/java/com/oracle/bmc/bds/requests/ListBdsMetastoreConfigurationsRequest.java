@@ -9,14 +9,6 @@ import com.oracle.bmc.bds.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsMetastoreConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBdsMetastoreConfigurationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListBdsMetastoreConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,36 +17,57 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private String bdsInstanceId;
 
+    public String getBdsInstanceId() {
+        return bdsInstanceId;
+    }
     /**
      * The type of the metastore in the metastore configuration
      */
     private com.oracle.bmc.bds.model.BdsMetastoreConfiguration.MetastoreType metastoreType;
 
+    public com.oracle.bmc.bds.model.BdsMetastoreConfiguration.MetastoreType getMetastoreType() {
+        return metastoreType;
+    }
     /**
      * The OCID of the Data Catalog metastore in the metastore configuration
      */
     private String metastoreId;
 
+    public String getMetastoreId() {
+        return metastoreId;
+    }
     /**
      * The lifecycle state of the metastore in the metastore configuration
      */
     private com.oracle.bmc.bds.model.BdsMetastoreConfiguration.LifecycleState lifecycleState;
 
+    public com.oracle.bmc.bds.model.BdsMetastoreConfiguration.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * The ID of the API key that is associated with the external metastore in the metastore configuration
      */
     private String bdsApiKeyId;
 
+    public String getBdsApiKeyId() {
+        return bdsApiKeyId;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
      *
@@ -97,20 +110,34 @@ public class ListBdsMetastoreConfigurationsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
     private com.oracle.bmc.bds.model.SortOrders sortOrder;
 
+    public com.oracle.bmc.bds.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
     /**
      * A filter to return only resources that match the entire display name given.
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -118,6 +145,132 @@ public class ListBdsMetastoreConfigurationsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String bdsInstanceId = null;
+
+        /**
+         * The OCID of the cluster.
+         * @return this builder instance
+         */
+        public Builder bdsInstanceId(String bdsInstanceId) {
+            this.bdsInstanceId = bdsInstanceId;
+            return this;
+        }
+
+        private com.oracle.bmc.bds.model.BdsMetastoreConfiguration.MetastoreType metastoreType =
+                null;
+
+        /**
+         * The type of the metastore in the metastore configuration
+         * @return this builder instance
+         */
+        public Builder metastoreType(
+                com.oracle.bmc.bds.model.BdsMetastoreConfiguration.MetastoreType metastoreType) {
+            this.metastoreType = metastoreType;
+            return this;
+        }
+
+        private String metastoreId = null;
+
+        /**
+         * The OCID of the Data Catalog metastore in the metastore configuration
+         * @return this builder instance
+         */
+        public Builder metastoreId(String metastoreId) {
+            this.metastoreId = metastoreId;
+            return this;
+        }
+
+        private com.oracle.bmc.bds.model.BdsMetastoreConfiguration.LifecycleState lifecycleState =
+                null;
+
+        /**
+         * The lifecycle state of the metastore in the metastore configuration
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.bds.model.BdsMetastoreConfiguration.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private String bdsApiKeyId = null;
+
+        /**
+         * The ID of the API key that is associated with the external metastore in the metastore configuration
+         * @return this builder instance
+         */
+        public Builder bdsApiKeyId(String bdsApiKeyId) {
+            this.bdsApiKeyId = bdsApiKeyId;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private com.oracle.bmc.bds.model.SortOrders sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.bds.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A filter to return only resources that match the entire display name given.
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -179,5 +332,121 @@ public class ListBdsMetastoreConfigurationsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListBdsMetastoreConfigurationsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListBdsMetastoreConfigurationsRequest
+         */
+        public ListBdsMetastoreConfigurationsRequest buildWithoutInvocationCallback() {
+            ListBdsMetastoreConfigurationsRequest request =
+                    new ListBdsMetastoreConfigurationsRequest();
+            request.bdsInstanceId = bdsInstanceId;
+            request.metastoreType = metastoreType;
+            request.metastoreId = metastoreId;
+            request.lifecycleState = lifecycleState;
+            request.bdsApiKeyId = bdsApiKeyId;
+            request.page = page;
+            request.limit = limit;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.displayName = displayName;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListBdsMetastoreConfigurationsRequest(bdsInstanceId, metastoreType, metastoreId, lifecycleState, bdsApiKeyId, page, limit, sortBy, sortOrder, displayName, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .bdsInstanceId(bdsInstanceId)
+                .metastoreType(metastoreType)
+                .metastoreId(metastoreId)
+                .lifecycleState(lifecycleState)
+                .bdsApiKeyId(bdsApiKeyId)
+                .page(page)
+                .limit(limit)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .displayName(displayName)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",bdsInstanceId=").append(String.valueOf(this.bdsInstanceId));
+        sb.append(",metastoreType=").append(String.valueOf(this.metastoreType));
+        sb.append(",metastoreId=").append(String.valueOf(this.metastoreId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",bdsApiKeyId=").append(String.valueOf(this.bdsApiKeyId));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListBdsMetastoreConfigurationsRequest)) {
+            return false;
+        }
+
+        ListBdsMetastoreConfigurationsRequest other = (ListBdsMetastoreConfigurationsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.bdsInstanceId, other.bdsInstanceId)
+                && java.util.Objects.equals(this.metastoreType, other.metastoreType)
+                && java.util.Objects.equals(this.metastoreId, other.metastoreId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.bdsApiKeyId, other.bdsApiKeyId)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.bdsInstanceId == null ? 43 : this.bdsInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metastoreType == null ? 43 : this.metastoreType.hashCode());
+        result = (result * PRIME) + (this.metastoreId == null ? 43 : this.metastoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.bdsApiKeyId == null ? 43 : this.bdsApiKeyId.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

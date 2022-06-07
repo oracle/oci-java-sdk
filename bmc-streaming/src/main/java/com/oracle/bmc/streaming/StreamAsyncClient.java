@@ -7,6 +7,7 @@ package com.oracle.bmc.streaming;
 import com.oracle.bmc.streaming.internal.http.*;
 import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Stream service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.streaming.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
-@lombok.extern.slf4j.Slf4j
 public class StreamAsyncClient implements StreamAsync {
     /**
      * Service instance for Stream.
@@ -34,7 +34,9 @@ public class StreamAsyncClient implements StreamAsync {
                     .serviceEndpointTemplate("https://streaming.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(StreamAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -282,6 +284,10 @@ public class StreamAsyncClient implements StreamAsync {
      */
     public static com.oracle.bmc.streaming.StreamAsyncClientBuilder builder() {
         return new com.oracle.bmc.streaming.StreamAsyncClientBuilder(SERVICE);
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

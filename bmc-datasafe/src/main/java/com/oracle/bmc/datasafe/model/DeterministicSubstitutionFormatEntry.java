@@ -26,22 +26,17 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DeterministicSubstitutionFormatEntry.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DeterministicSubstitutionFormatEntry extends FormatEntry {
+public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -110,6 +105,10 @@ public class DeterministicSubstitutionFormatEntry extends FormatEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DeterministicSubstitutionFormatEntry(
             String description, String schemaName, String tableName, String columnName) {
@@ -123,20 +122,79 @@ public class DeterministicSubstitutionFormatEntry extends FormatEntry {
      * The name of the schema that contains the substitution column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
-    String schemaName;
+    private final String schemaName;
+
+    public String getSchemaName() {
+        return schemaName;
+    }
 
     /**
      * The name of the table that contains the substitution column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
-    String tableName;
+    private final String tableName;
+
+    public String getTableName() {
+        return tableName;
+    }
 
     /**
      * The name of the substitution column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
-    String columnName;
+    private final String columnName;
+
+    public String getColumnName() {
+        return columnName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DeterministicSubstitutionFormatEntry(");
+        sb.append("super=").append(super.toString());
+        sb.append(", schemaName=").append(String.valueOf(this.schemaName));
+        sb.append(", tableName=").append(String.valueOf(this.tableName));
+        sb.append(", columnName=").append(String.valueOf(this.columnName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DeterministicSubstitutionFormatEntry)) {
+            return false;
+        }
+
+        DeterministicSubstitutionFormatEntry other = (DeterministicSubstitutionFormatEntry) o;
+        return java.util.Objects.equals(this.schemaName, other.schemaName)
+                && java.util.Objects.equals(this.tableName, other.tableName)
+                && java.util.Objects.equals(this.columnName, other.columnName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
+        result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
+        result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

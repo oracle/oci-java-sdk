@@ -15,12 +15,6 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,11 +29,43 @@ package com.oracle.bmc.devops.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class OkeBlueGreenStrategy {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected OkeBlueGreenStrategy() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("OkeBlueGreenStrategy(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OkeBlueGreenStrategy)) {
+            return false;
+        }
+
+        OkeBlueGreenStrategy other = (OkeBlueGreenStrategy) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * Blue-Green strategy type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum StrategyType {
         NginxBlueGreenStrategy("NGINX_BLUE_GREEN_STRATEGY"),
 
@@ -48,6 +74,9 @@ public class OkeBlueGreenStrategy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StrategyType.class);
 
         private final String value;
         private static java.util.Map<String, StrategyType> map;

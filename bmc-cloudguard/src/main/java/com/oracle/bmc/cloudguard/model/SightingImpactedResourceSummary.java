@@ -15,16 +15,46 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SightingImpactedResourceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SightingImpactedResourceSummary {
+public final class SightingImpactedResourceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "resourceId",
+        "sightingId",
+        "problemId",
+        "compartmentId",
+        "resourceName",
+        "resourceType",
+        "region",
+        "timeIdentified"
+    })
+    public SightingImpactedResourceSummary(
+            String id,
+            String resourceId,
+            String sightingId,
+            String problemId,
+            String compartmentId,
+            String resourceName,
+            String resourceType,
+            String region,
+            java.util.Date timeIdentified) {
+        super();
+        this.id = id;
+        this.resourceId = resourceId;
+        this.sightingId = sightingId;
+        this.problemId = problemId;
+        this.compartmentId = compartmentId;
+        this.resourceName = resourceName;
+        this.resourceType = resourceType;
+        this.region = region;
+        this.timeIdentified = timeIdentified;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -151,60 +181,167 @@ public class SightingImpactedResourceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier for impacted resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Impacted resource Id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * Sighting Id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingId")
-    String sightingId;
+    private final String sightingId;
+
+    public String getSightingId() {
+        return sightingId;
+    }
 
     /**
      * Problem Id for impacted resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
-    String problemId;
+    private final String problemId;
+
+    public String getProblemId() {
+        return problemId;
+    }
 
     /**
      * Compartment Id for impacted resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Resource name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * Resource type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     /**
      * Region for impacted resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * Time when the impacted resource is identified for given sighting.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIdentified")
-    java.util.Date timeIdentified;
+    private final java.util.Date timeIdentified;
+
+    public java.util.Date getTimeIdentified() {
+        return timeIdentified;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SightingImpactedResourceSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", sightingId=").append(String.valueOf(this.sightingId));
+        sb.append(", problemId=").append(String.valueOf(this.problemId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", timeIdentified=").append(String.valueOf(this.timeIdentified));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SightingImpactedResourceSummary)) {
+            return false;
+        }
+
+        SightingImpactedResourceSummary other = (SightingImpactedResourceSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.sightingId, other.sightingId)
+                && java.util.Objects.equals(this.problemId, other.problemId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.timeIdentified, other.timeIdentified)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.sightingId == null ? 43 : this.sightingId.hashCode());
+        result = (result * PRIME) + (this.problemId == null ? 43 : this.problemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIdentified == null ? 43 : this.timeIdentified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

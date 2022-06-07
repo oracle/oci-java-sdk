@@ -15,22 +15,17 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = VirtualDeploymentTrafficRuleTarget.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget {
+public final class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("virtualDeploymentId")
         private String virtualDeploymentId;
@@ -88,6 +83,10 @@ public class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public VirtualDeploymentTrafficRuleTarget(
             String virtualDeploymentId, Integer port, Integer weight) {
@@ -101,7 +100,11 @@ public class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget {
      * The OCID of the virtual deployment where the request will be routed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualDeploymentId")
-    String virtualDeploymentId;
+    private final String virtualDeploymentId;
+
+    public String getVirtualDeploymentId() {
+        return virtualDeploymentId;
+    }
 
     /**
      * Port on virtual deployment to target.
@@ -109,14 +112,73 @@ public class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * Weight of traffic target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    Integer weight;
+    private final Integer weight;
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VirtualDeploymentTrafficRuleTarget(");
+        sb.append("super=").append(super.toString());
+        sb.append(", virtualDeploymentId=").append(String.valueOf(this.virtualDeploymentId));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", weight=").append(String.valueOf(this.weight));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VirtualDeploymentTrafficRuleTarget)) {
+            return false;
+        }
+
+        VirtualDeploymentTrafficRuleTarget other = (VirtualDeploymentTrafficRuleTarget) o;
+        return java.util.Objects.equals(this.virtualDeploymentId, other.virtualDeploymentId)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.virtualDeploymentId == null
+                                ? 43
+                                : this.virtualDeploymentId.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

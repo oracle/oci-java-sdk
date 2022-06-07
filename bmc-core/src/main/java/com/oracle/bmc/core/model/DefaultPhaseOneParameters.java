@@ -15,16 +15,28 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DefaultPhaseOneParameters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DefaultPhaseOneParameters {
+public final class DefaultPhaseOneParameters {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "defaultEncryptionAlgorithms",
+        "defaultAuthenticationAlgorithms",
+        "defaultDhGroups"
+    })
+    public DefaultPhaseOneParameters(
+            java.util.List<String> defaultEncryptionAlgorithms,
+            java.util.List<String> defaultAuthenticationAlgorithms,
+            java.util.List<String> defaultDhGroups) {
+        super();
+        this.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
+        this.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
+        this.defaultDhGroups = defaultDhGroups;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("defaultEncryptionAlgorithms")
         private java.util.List<String> defaultEncryptionAlgorithms;
@@ -87,24 +99,99 @@ public class DefaultPhaseOneParameters {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Default phase one encryption algorithms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultEncryptionAlgorithms")
-    java.util.List<String> defaultEncryptionAlgorithms;
+    private final java.util.List<String> defaultEncryptionAlgorithms;
+
+    public java.util.List<String> getDefaultEncryptionAlgorithms() {
+        return defaultEncryptionAlgorithms;
+    }
 
     /**
      * Default phase one authentication algorithms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultAuthenticationAlgorithms")
-    java.util.List<String> defaultAuthenticationAlgorithms;
+    private final java.util.List<String> defaultAuthenticationAlgorithms;
+
+    public java.util.List<String> getDefaultAuthenticationAlgorithms() {
+        return defaultAuthenticationAlgorithms;
+    }
 
     /**
      * Default phase one Diffie-Hellman groups.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultDhGroups")
-    java.util.List<String> defaultDhGroups;
+    private final java.util.List<String> defaultDhGroups;
+
+    public java.util.List<String> getDefaultDhGroups() {
+        return defaultDhGroups;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DefaultPhaseOneParameters(");
+        sb.append("defaultEncryptionAlgorithms=")
+                .append(String.valueOf(this.defaultEncryptionAlgorithms));
+        sb.append(", defaultAuthenticationAlgorithms=")
+                .append(String.valueOf(this.defaultAuthenticationAlgorithms));
+        sb.append(", defaultDhGroups=").append(String.valueOf(this.defaultDhGroups));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DefaultPhaseOneParameters)) {
+            return false;
+        }
+
+        DefaultPhaseOneParameters other = (DefaultPhaseOneParameters) o;
+        return java.util.Objects.equals(
+                        this.defaultEncryptionAlgorithms, other.defaultEncryptionAlgorithms)
+                && java.util.Objects.equals(
+                        this.defaultAuthenticationAlgorithms, other.defaultAuthenticationAlgorithms)
+                && java.util.Objects.equals(this.defaultDhGroups, other.defaultDhGroups)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.defaultEncryptionAlgorithms == null
+                                ? 43
+                                : this.defaultEncryptionAlgorithms.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultAuthenticationAlgorithms == null
+                                ? 43
+                                : this.defaultAuthenticationAlgorithms.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultDhGroups == null ? 43 : this.defaultDhGroups.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

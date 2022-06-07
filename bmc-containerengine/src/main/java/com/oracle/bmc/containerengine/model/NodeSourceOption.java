@@ -15,12 +15,6 @@ package com.oracle.bmc.containerengine.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,11 +29,51 @@ package com.oracle.bmc.containerengine.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class NodeSourceOption {
+    @Deprecated
+    @java.beans.ConstructorProperties({"sourceName"})
+    protected NodeSourceOption(String sourceName) {
+        super();
+        this.sourceName = sourceName;
+    }
 
     /**
      * The user-friendly name of the entity corresponding to the OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
-    String sourceName;
+    private final String sourceName;
+
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NodeSourceOption(");
+        sb.append("sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NodeSourceOption)) {
+            return false;
+        }
+
+        NodeSourceOption other = (NodeSourceOption) o;
+        return java.util.Objects.equals(this.sourceName, other.sourceName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        return result;
+    }
 }

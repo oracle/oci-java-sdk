@@ -15,22 +15,17 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateInvokeFunctionDeployStageDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "deployStageType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateInvokeFunctionDeployStageDetails extends CreateDeployStageDetails {
+public final class CreateInvokeFunctionDeployStageDetails extends CreateDeployStageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -171,6 +166,10 @@ public class CreateInvokeFunctionDeployStageDetails extends CreateDeployStageDet
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateInvokeFunctionDeployStageDetails(
             String description,
@@ -200,26 +199,104 @@ public class CreateInvokeFunctionDeployStageDetails extends CreateDeployStageDet
      * Function environment OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
-    String functionDeployEnvironmentId;
+    private final String functionDeployEnvironmentId;
+
+    public String getFunctionDeployEnvironmentId() {
+        return functionDeployEnvironmentId;
+    }
 
     /**
      * Optional binary artifact OCID user may provide to this stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
-    String deployArtifactId;
+    private final String deployArtifactId;
+
+    public String getDeployArtifactId() {
+        return deployArtifactId;
+    }
 
     /**
      * A boolean flag specifies whether this stage executes asynchronously.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAsync")
-    Boolean isAsync;
+    private final Boolean isAsync;
+
+    public Boolean getIsAsync() {
+        return isAsync;
+    }
 
     /**
      * A boolean flag specifies whether the invoked function should be validated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValidationEnabled")
-    Boolean isValidationEnabled;
+    private final Boolean isValidationEnabled;
+
+    public Boolean getIsValidationEnabled() {
+        return isValidationEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateInvokeFunctionDeployStageDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", functionDeployEnvironmentId=")
+                .append(String.valueOf(this.functionDeployEnvironmentId));
+        sb.append(", deployArtifactId=").append(String.valueOf(this.deployArtifactId));
+        sb.append(", isAsync=").append(String.valueOf(this.isAsync));
+        sb.append(", isValidationEnabled=").append(String.valueOf(this.isValidationEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateInvokeFunctionDeployStageDetails)) {
+            return false;
+        }
+
+        CreateInvokeFunctionDeployStageDetails other = (CreateInvokeFunctionDeployStageDetails) o;
+        return java.util.Objects.equals(
+                        this.functionDeployEnvironmentId, other.functionDeployEnvironmentId)
+                && java.util.Objects.equals(this.deployArtifactId, other.deployArtifactId)
+                && java.util.Objects.equals(this.isAsync, other.isAsync)
+                && java.util.Objects.equals(this.isValidationEnabled, other.isValidationEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.functionDeployEnvironmentId == null
+                                ? 43
+                                : this.functionDeployEnvironmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployArtifactId == null ? 43 : this.deployArtifactId.hashCode());
+        result = (result * PRIME) + (this.isAsync == null ? 43 : this.isAsync.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isValidationEnabled == null
+                                ? 43
+                                : this.isValidationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,10 +7,6 @@ package com.oracle.bmc.core.responses;
 import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetFastConnectProviderServiceKeyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,19 @@ public class GetFastConnectProviderServiceKeyResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned FastConnectProviderServiceKey instance.
      */
     private com.oracle.bmc.core.model.FastConnectProviderServiceKey fastConnectProviderServiceKey;
+
+    public com.oracle.bmc.core.model.FastConnectProviderServiceKey
+            getFastConnectProviderServiceKey() {
+        return fastConnectProviderServiceKey;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -46,6 +51,23 @@ public class GetFastConnectProviderServiceKeyResponse extends com.oracle.bmc.res
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.FastConnectProviderServiceKey
+                fastConnectProviderServiceKey;
+
+        public Builder fastConnectProviderServiceKey(
+                com.oracle.bmc.core.model.FastConnectProviderServiceKey
+                        fastConnectProviderServiceKey) {
+            this.fastConnectProviderServiceKey = fastConnectProviderServiceKey;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -62,5 +84,51 @@ public class GetFastConnectProviderServiceKeyResponse extends com.oracle.bmc.res
             return new GetFastConnectProviderServiceKeyResponse(
                     __httpStatusCode__, opcRequestId, fastConnectProviderServiceKey);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",fastConnectProviderServiceKey=")
+                .append(String.valueOf(fastConnectProviderServiceKey));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetFastConnectProviderServiceKeyResponse)) {
+            return false;
+        }
+
+        GetFastConnectProviderServiceKeyResponse other =
+                (GetFastConnectProviderServiceKeyResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.fastConnectProviderServiceKey, other.fastConnectProviderServiceKey);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fastConnectProviderServiceKey == null
+                                ? 43
+                                : this.fastConnectProviderServiceKey.hashCode());
+        return result;
     }
 }

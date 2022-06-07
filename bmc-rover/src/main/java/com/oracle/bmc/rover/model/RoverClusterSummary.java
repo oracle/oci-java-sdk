@@ -15,16 +15,55 @@ package com.oracle.bmc.rover.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RoverClusterSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class RoverClusterSummary {
+public final class RoverClusterSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "timeCreated",
+        "nodes",
+        "clusterSize",
+        "clusterType",
+        "lifecycleState",
+        "lifecycleStateDetails",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public RoverClusterSummary(
+            String id,
+            String compartmentId,
+            String displayName,
+            java.util.Date timeCreated,
+            java.util.List<String> nodes,
+            Integer clusterSize,
+            ClusterType clusterType,
+            LifecycleState lifecycleState,
+            String lifecycleStateDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
+        this.nodes = nodes;
+        this.clusterSize = clusterSize;
+        this.clusterType = clusterType;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleStateDetails = lifecycleStateDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -185,59 +224,99 @@ public class RoverClusterSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of RoverCluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the compartment containing the RoverCluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The time the the RoverCluster was created. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The nodes that are part of this cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
-    java.util.List<String> nodes;
+    private final java.util.List<String> nodes;
+
+    public java.util.List<String> getNodes() {
+        return nodes;
+    }
 
     /**
      * Size of the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
-    Integer clusterSize;
+    private final Integer clusterSize;
+
+    public Integer getClusterSize() {
+        return clusterSize;
+    }
 
     /**
      * Type of cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterType")
-    ClusterType clusterType;
+    private final ClusterType clusterType;
+
+    public ClusterType getClusterType() {
+        return clusterType;
+    }
 
     /**
      * The current state of the RoverCluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * A property that can contain details on the lifecycle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
-    String lifecycleStateDetails;
+    private final String lifecycleStateDetails;
+
+    public String getLifecycleStateDetails() {
+        return lifecycleStateDetails;
+    }
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
@@ -246,7 +325,11 @@ public class RoverClusterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
@@ -255,7 +338,11 @@ public class RoverClusterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
@@ -264,8 +351,92 @@ public class RoverClusterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("RoverClusterSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", nodes=").append(String.valueOf(this.nodes));
+        sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
+        sb.append(", clusterType=").append(String.valueOf(this.clusterType));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RoverClusterSummary)) {
+            return false;
+        }
+
+        RoverClusterSummary other = (RoverClusterSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.nodes, other.nodes)
+                && java.util.Objects.equals(this.clusterSize, other.clusterSize)
+                && java.util.Objects.equals(this.clusterType, other.clusterType)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.nodes == null ? 43 : this.nodes.hashCode());
+        result = (result * PRIME) + (this.clusterSize == null ? 43 : this.clusterSize.hashCode());
+        result = (result * PRIME) + (this.clusterType == null ? 43 : this.clusterType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStateDetails == null
+                                ? 43
+                                : this.lifecycleStateDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

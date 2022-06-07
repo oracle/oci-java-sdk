@@ -9,14 +9,6 @@ import com.oracle.bmc.objectstorage.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CopyObjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CopyObjectRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CopyObjectRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.objectstorage.model.CopyObjectDetails> {
@@ -26,6 +18,9 @@ public class CopyObjectRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The name of the bucket. Avoid entering confidential information.
      * Example: {@code my-new-bucket1}
@@ -33,16 +28,25 @@ public class CopyObjectRequest
      */
     private String bucketName;
 
+    public String getBucketName() {
+        return bucketName;
+    }
     /**
      * The source and destination of the object to be copied.
      */
     private com.oracle.bmc.objectstorage.model.CopyObjectDetails copyObjectDetails;
 
+    public com.oracle.bmc.objectstorage.model.CopyObjectDetails getCopyObjectDetails() {
+        return copyObjectDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcClientRequestId;
 
+    public String getOpcClientRequestId() {
+        return opcClientRequestId;
+    }
     /**
      * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
      * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
@@ -50,6 +54,9 @@ public class CopyObjectRequest
      */
     private String opcSseCustomerAlgorithm;
 
+    public String getOpcSseCustomerAlgorithm() {
+        return opcSseCustomerAlgorithm;
+    }
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
      * decrypt the data. For more information, see
@@ -58,6 +65,9 @@ public class CopyObjectRequest
      */
     private String opcSseCustomerKey;
 
+    public String getOpcSseCustomerKey() {
+        return opcSseCustomerKey;
+    }
     /**
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see
@@ -66,6 +76,9 @@ public class CopyObjectRequest
      */
     private String opcSseCustomerKeySha256;
 
+    public String getOpcSseCustomerKeySha256() {
+        return opcSseCustomerKeySha256;
+    }
     /**
      * The optional header that specifies "AES256" as the encryption algorithm to use to decrypt the source
      * object. For more information, see
@@ -74,6 +87,9 @@ public class CopyObjectRequest
      */
     private String opcSourceSseCustomerAlgorithm;
 
+    public String getOpcSourceSseCustomerAlgorithm() {
+        return opcSourceSseCustomerAlgorithm;
+    }
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to decrypt
      * the source object. For more information, see
@@ -82,6 +98,9 @@ public class CopyObjectRequest
      */
     private String opcSourceSseCustomerKey;
 
+    public String getOpcSourceSseCustomerKey() {
+        return opcSourceSseCustomerKey;
+    }
     /**
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key used to
      * decrypt the source object. This value is used to check the integrity of the encryption key. For
@@ -91,12 +110,19 @@ public class CopyObjectRequest
      */
     private String opcSourceSseCustomerKeySha256;
 
+    public String getOpcSourceSseCustomerKeySha256() {
+        return opcSourceSseCustomerKeySha256;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
      * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      *
      */
     private String opcSseKmsKeyId;
+
+    public String getOpcSseKmsKeyId() {
+        return opcSseKmsKeyId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -114,6 +140,150 @@ public class CopyObjectRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Object Storage namespace used for the request.
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String bucketName = null;
+
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         * @return this builder instance
+         */
+        public Builder bucketName(String bucketName) {
+            this.bucketName = bucketName;
+            return this;
+        }
+
+        private com.oracle.bmc.objectstorage.model.CopyObjectDetails copyObjectDetails = null;
+
+        /**
+         * The source and destination of the object to be copied.
+         * @return this builder instance
+         */
+        public Builder copyObjectDetails(
+                com.oracle.bmc.objectstorage.model.CopyObjectDetails copyObjectDetails) {
+            this.copyObjectDetails = copyObjectDetails;
+            return this;
+        }
+
+        private String opcClientRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcClientRequestId(String opcClientRequestId) {
+            this.opcClientRequestId = opcClientRequestId;
+            return this;
+        }
+
+        private String opcSseCustomerAlgorithm = null;
+
+        /**
+         * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder opcSseCustomerAlgorithm(String opcSseCustomerAlgorithm) {
+            this.opcSseCustomerAlgorithm = opcSseCustomerAlgorithm;
+            return this;
+        }
+
+        private String opcSseCustomerKey = null;
+
+        /**
+         * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+         * decrypt the data. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder opcSseCustomerKey(String opcSseCustomerKey) {
+            this.opcSseCustomerKey = opcSseCustomerKey;
+            return this;
+        }
+
+        private String opcSseCustomerKeySha256 = null;
+
+        /**
+         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+         * value is used to check the integrity of the encryption key. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder opcSseCustomerKeySha256(String opcSseCustomerKeySha256) {
+            this.opcSseCustomerKeySha256 = opcSseCustomerKeySha256;
+            return this;
+        }
+
+        private String opcSourceSseCustomerAlgorithm = null;
+
+        /**
+         * The optional header that specifies "AES256" as the encryption algorithm to use to decrypt the source
+         * object. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder opcSourceSseCustomerAlgorithm(String opcSourceSseCustomerAlgorithm) {
+            this.opcSourceSseCustomerAlgorithm = opcSourceSseCustomerAlgorithm;
+            return this;
+        }
+
+        private String opcSourceSseCustomerKey = null;
+
+        /**
+         * The optional header that specifies the base64-encoded 256-bit encryption key to use to decrypt
+         * the source object. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder opcSourceSseCustomerKey(String opcSourceSseCustomerKey) {
+            this.opcSourceSseCustomerKey = opcSourceSseCustomerKey;
+            return this;
+        }
+
+        private String opcSourceSseCustomerKeySha256 = null;
+
+        /**
+         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key used to
+         * decrypt the source object. This value is used to check the integrity of the encryption key. For
+         * more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder opcSourceSseCustomerKeySha256(String opcSourceSseCustomerKeySha256) {
+            this.opcSourceSseCustomerKeySha256 = opcSourceSseCustomerKeySha256;
+            return this;
+        }
+
+        private String opcSseKmsKeyId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+         * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+         *
+         * @return this builder instance
+         */
+        public Builder opcSseKmsKeyId(String opcSseKmsKeyId) {
+            this.opcSseKmsKeyId = opcSseKmsKeyId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -186,5 +356,153 @@ public class CopyObjectRequest
             copyObjectDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CopyObjectRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CopyObjectRequest
+         */
+        public CopyObjectRequest buildWithoutInvocationCallback() {
+            CopyObjectRequest request = new CopyObjectRequest();
+            request.namespaceName = namespaceName;
+            request.bucketName = bucketName;
+            request.copyObjectDetails = copyObjectDetails;
+            request.opcClientRequestId = opcClientRequestId;
+            request.opcSseCustomerAlgorithm = opcSseCustomerAlgorithm;
+            request.opcSseCustomerKey = opcSseCustomerKey;
+            request.opcSseCustomerKeySha256 = opcSseCustomerKeySha256;
+            request.opcSourceSseCustomerAlgorithm = opcSourceSseCustomerAlgorithm;
+            request.opcSourceSseCustomerKey = opcSourceSseCustomerKey;
+            request.opcSourceSseCustomerKeySha256 = opcSourceSseCustomerKeySha256;
+            request.opcSseKmsKeyId = opcSseKmsKeyId;
+            return request;
+            // new CopyObjectRequest(namespaceName, bucketName, copyObjectDetails, opcClientRequestId, opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256, opcSourceSseCustomerAlgorithm, opcSourceSseCustomerKey, opcSourceSseCustomerKeySha256, opcSseKmsKeyId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .bucketName(bucketName)
+                .copyObjectDetails(copyObjectDetails)
+                .opcClientRequestId(opcClientRequestId)
+                .opcSseCustomerAlgorithm(opcSseCustomerAlgorithm)
+                .opcSseCustomerKey(opcSseCustomerKey)
+                .opcSseCustomerKeySha256(opcSseCustomerKeySha256)
+                .opcSourceSseCustomerAlgorithm(opcSourceSseCustomerAlgorithm)
+                .opcSourceSseCustomerKey(opcSourceSseCustomerKey)
+                .opcSourceSseCustomerKeySha256(opcSourceSseCustomerKeySha256)
+                .opcSseKmsKeyId(opcSseKmsKeyId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(",copyObjectDetails=").append(String.valueOf(this.copyObjectDetails));
+        sb.append(",opcClientRequestId=").append(String.valueOf(this.opcClientRequestId));
+        sb.append(",opcSseCustomerAlgorithm=").append(String.valueOf(this.opcSseCustomerAlgorithm));
+        sb.append(",opcSseCustomerKey=").append(String.valueOf(this.opcSseCustomerKey));
+        sb.append(",opcSseCustomerKeySha256=").append(String.valueOf(this.opcSseCustomerKeySha256));
+        sb.append(",opcSourceSseCustomerAlgorithm=")
+                .append(String.valueOf(this.opcSourceSseCustomerAlgorithm));
+        sb.append(",opcSourceSseCustomerKey=").append(String.valueOf(this.opcSourceSseCustomerKey));
+        sb.append(",opcSourceSseCustomerKeySha256=")
+                .append(String.valueOf(this.opcSourceSseCustomerKeySha256));
+        sb.append(",opcSseKmsKeyId=").append(String.valueOf(this.opcSseKmsKeyId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CopyObjectRequest)) {
+            return false;
+        }
+
+        CopyObjectRequest other = (CopyObjectRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(this.copyObjectDetails, other.copyObjectDetails)
+                && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId)
+                && java.util.Objects.equals(
+                        this.opcSseCustomerAlgorithm, other.opcSseCustomerAlgorithm)
+                && java.util.Objects.equals(this.opcSseCustomerKey, other.opcSseCustomerKey)
+                && java.util.Objects.equals(
+                        this.opcSseCustomerKeySha256, other.opcSseCustomerKeySha256)
+                && java.util.Objects.equals(
+                        this.opcSourceSseCustomerAlgorithm, other.opcSourceSseCustomerAlgorithm)
+                && java.util.Objects.equals(
+                        this.opcSourceSseCustomerKey, other.opcSourceSseCustomerKey)
+                && java.util.Objects.equals(
+                        this.opcSourceSseCustomerKeySha256, other.opcSourceSseCustomerKeySha256)
+                && java.util.Objects.equals(this.opcSseKmsKeyId, other.opcSseKmsKeyId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.copyObjectDetails == null ? 43 : this.copyObjectDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcClientRequestId == null
+                                ? 43
+                                : this.opcClientRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcSseCustomerAlgorithm == null
+                                ? 43
+                                : this.opcSseCustomerAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcSseCustomerKey == null ? 43 : this.opcSseCustomerKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcSseCustomerKeySha256 == null
+                                ? 43
+                                : this.opcSseCustomerKeySha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcSourceSseCustomerAlgorithm == null
+                                ? 43
+                                : this.opcSourceSseCustomerAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcSourceSseCustomerKey == null
+                                ? 43
+                                : this.opcSourceSseCustomerKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcSourceSseCustomerKeySha256 == null
+                                ? 43
+                                : this.opcSourceSseCustomerKeySha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcSseKmsKeyId == null ? 43 : this.opcSseKmsKeyId.hashCode());
+        return result;
     }
 }

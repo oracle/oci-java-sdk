@@ -15,14 +15,62 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceProfile.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceProfile {
+public final class ResourceProfile {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sightingsCount",
+        "id",
+        "resourceId",
+        "displayName",
+        "type",
+        "problemIds",
+        "compartmentId",
+        "targetId",
+        "riskScore",
+        "riskLevel",
+        "peakRiskScore",
+        "timePeakScore",
+        "timeFirstDetected",
+        "timeLastDetected",
+        "tactics"
+    })
+    public ResourceProfile(
+            Integer sightingsCount,
+            String id,
+            String resourceId,
+            String displayName,
+            String type,
+            java.util.List<String> problemIds,
+            String compartmentId,
+            String targetId,
+            Double riskScore,
+            RiskLevel riskLevel,
+            Double peakRiskScore,
+            java.util.Date timePeakScore,
+            java.util.Date timeFirstDetected,
+            java.util.Date timeLastDetected,
+            java.util.List<TacticSummary> tactics) {
+        super();
+        this.sightingsCount = sightingsCount;
+        this.id = id;
+        this.resourceId = resourceId;
+        this.displayName = displayName;
+        this.type = type;
+        this.problemIds = problemIds;
+        this.compartmentId = compartmentId;
+        this.targetId = targetId;
+        this.riskScore = riskScore;
+        this.riskLevel = riskLevel;
+        this.peakRiskScore = peakRiskScore;
+        this.timePeakScore = timePeakScore;
+        this.timeFirstDetected = timeFirstDetected;
+        this.timeLastDetected = timeLastDetected;
+        this.tactics = tactics;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sightingsCount")
         private Integer sightingsCount;
@@ -215,96 +263,253 @@ public class ResourceProfile {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Number of sightings associated with this resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingsCount")
-    Integer sightingsCount;
+    private final Integer sightingsCount;
+
+    public Integer getSightingsCount() {
+        return sightingsCount;
+    }
 
     /**
      * Unique identifier for resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Unique identifier for resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * Resource name for resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Resource type for resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * List of Problems associated with the resource profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemIds")
-    java.util.List<String> problemIds;
+    private final java.util.List<String> problemIds;
+
+    public java.util.List<String> getProblemIds() {
+        return problemIds;
+    }
 
     /**
      * Compartment Id for resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Target Id for resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * Risk Score for the resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
-    Double riskScore;
+    private final Double riskScore;
+
+    public Double getRiskScore() {
+        return riskScore;
+    }
 
     /**
      * Risk Level associated with resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
-    RiskLevel riskLevel;
+    private final RiskLevel riskLevel;
+
+    public RiskLevel getRiskLevel() {
+        return riskLevel;
+    }
 
     /**
      * Peak Risk Score for the resource profile
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScore")
-    Double peakRiskScore;
+    private final Double peakRiskScore;
+
+    public Double getPeakRiskScore() {
+        return peakRiskScore;
+    }
 
     /**
      * The date and time for peak risk score. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePeakScore")
-    java.util.Date timePeakScore;
+    private final java.util.Date timePeakScore;
+
+    public java.util.Date getTimePeakScore() {
+        return timePeakScore;
+    }
 
     /**
      * The date and time the resource profile was first detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
-    java.util.Date timeFirstDetected;
+    private final java.util.Date timeFirstDetected;
+
+    public java.util.Date getTimeFirstDetected() {
+        return timeFirstDetected;
+    }
 
     /**
      * The date and time the resource profile was last detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
-    java.util.Date timeLastDetected;
+    private final java.util.Date timeLastDetected;
+
+    public java.util.Date getTimeLastDetected() {
+        return timeLastDetected;
+    }
 
     /**
      * List of tactic summary associated with the resource profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tactics")
-    java.util.List<TacticSummary> tactics;
+    private final java.util.List<TacticSummary> tactics;
+
+    public java.util.List<TacticSummary> getTactics() {
+        return tactics;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceProfile(");
+        sb.append("sightingsCount=").append(String.valueOf(this.sightingsCount));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", problemIds=").append(String.valueOf(this.problemIds));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", riskScore=").append(String.valueOf(this.riskScore));
+        sb.append(", riskLevel=").append(String.valueOf(this.riskLevel));
+        sb.append(", peakRiskScore=").append(String.valueOf(this.peakRiskScore));
+        sb.append(", timePeakScore=").append(String.valueOf(this.timePeakScore));
+        sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
+        sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
+        sb.append(", tactics=").append(String.valueOf(this.tactics));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceProfile)) {
+            return false;
+        }
+
+        ResourceProfile other = (ResourceProfile) o;
+        return java.util.Objects.equals(this.sightingsCount, other.sightingsCount)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.problemIds, other.problemIds)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.riskScore, other.riskScore)
+                && java.util.Objects.equals(this.riskLevel, other.riskLevel)
+                && java.util.Objects.equals(this.peakRiskScore, other.peakRiskScore)
+                && java.util.Objects.equals(this.timePeakScore, other.timePeakScore)
+                && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
+                && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
+                && java.util.Objects.equals(this.tactics, other.tactics)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sightingsCount == null ? 43 : this.sightingsCount.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.problemIds == null ? 43 : this.problemIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.riskScore == null ? 43 : this.riskScore.hashCode());
+        result = (result * PRIME) + (this.riskLevel == null ? 43 : this.riskLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peakRiskScore == null ? 43 : this.peakRiskScore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePeakScore == null ? 43 : this.timePeakScore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstDetected == null ? 43 : this.timeFirstDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
+        result = (result * PRIME) + (this.tactics == null ? 43 : this.tactics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

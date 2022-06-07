@@ -16,22 +16,17 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ClassifyCommandDescriptor.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "name"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
+public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
@@ -147,6 +142,10 @@ public class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ClassifyCommandDescriptor(
             String displayQueryString,
@@ -168,22 +167,81 @@ public class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topCount")
-    Integer topCount;
+    private final Integer topCount;
+
+    public Integer getTopCount() {
+        return topCount;
+    }
 
     /**
      * Value specified in CLASSIFY command in queryString if set limits the results returned to bottom N.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bottomCount")
-    Integer bottomCount;
+    private final Integer bottomCount;
+
+    public Integer getBottomCount() {
+        return bottomCount;
+    }
 
     /**
      * Fields specified in CLASSIFY command in queryString if set include / exclude fields in correlate results.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("correlate")
-    java.util.List<FieldsAddRemoveField> correlate;
+    private final java.util.List<FieldsAddRemoveField> correlate;
+
+    public java.util.List<FieldsAddRemoveField> getCorrelate() {
+        return correlate;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClassifyCommandDescriptor(");
+        sb.append("super=").append(super.toString());
+        sb.append(", topCount=").append(String.valueOf(this.topCount));
+        sb.append(", bottomCount=").append(String.valueOf(this.bottomCount));
+        sb.append(", correlate=").append(String.valueOf(this.correlate));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClassifyCommandDescriptor)) {
+            return false;
+        }
+
+        ClassifyCommandDescriptor other = (ClassifyCommandDescriptor) o;
+        return java.util.Objects.equals(this.topCount, other.topCount)
+                && java.util.Objects.equals(this.bottomCount, other.bottomCount)
+                && java.util.Objects.equals(this.correlate, other.correlate)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.topCount == null ? 43 : this.topCount.hashCode());
+        result = (result * PRIME) + (this.bottomCount == null ? 43 : this.bottomCount.hashCode());
+        result = (result * PRIME) + (this.correlate == null ? 43 : this.correlate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

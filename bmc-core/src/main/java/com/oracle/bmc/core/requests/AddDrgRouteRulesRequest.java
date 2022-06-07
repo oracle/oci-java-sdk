@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddDrgRouteRulesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AddDrgRouteRulesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.AddDrgRouteRulesDetails> {
@@ -26,11 +18,17 @@ public class AddDrgRouteRulesRequest
      */
     private String drgRouteTableId;
 
+    public String getDrgRouteTableId() {
+        return drgRouteTableId;
+    }
     /**
      * Request for one or more route rules to be inserted into the DRG route table.
      */
     private com.oracle.bmc.core.model.AddDrgRouteRulesDetails addDrgRouteRulesDetails;
 
+    public com.oracle.bmc.core.model.AddDrgRouteRulesDetails getAddDrgRouteRulesDetails() {
+        return addDrgRouteRulesDetails;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -40,6 +38,10 @@ public class AddDrgRouteRulesRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -57,6 +59,45 @@ public class AddDrgRouteRulesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String drgRouteTableId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+         * @return this builder instance
+         */
+        public Builder drgRouteTableId(String drgRouteTableId) {
+            this.drgRouteTableId = drgRouteTableId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.AddDrgRouteRulesDetails addDrgRouteRulesDetails = null;
+
+        /**
+         * Request for one or more route rules to be inserted into the DRG route table.
+         * @return this builder instance
+         */
+        public Builder addDrgRouteRulesDetails(
+                com.oracle.bmc.core.model.AddDrgRouteRulesDetails addDrgRouteRulesDetails) {
+            this.addDrgRouteRulesDetails = addDrgRouteRulesDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -121,5 +162,83 @@ public class AddDrgRouteRulesRequest
             addDrgRouteRulesDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of AddDrgRouteRulesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of AddDrgRouteRulesRequest
+         */
+        public AddDrgRouteRulesRequest buildWithoutInvocationCallback() {
+            AddDrgRouteRulesRequest request = new AddDrgRouteRulesRequest();
+            request.drgRouteTableId = drgRouteTableId;
+            request.addDrgRouteRulesDetails = addDrgRouteRulesDetails;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new AddDrgRouteRulesRequest(drgRouteTableId, addDrgRouteRulesDetails, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .drgRouteTableId(drgRouteTableId)
+                .addDrgRouteRulesDetails(addDrgRouteRulesDetails)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",drgRouteTableId=").append(String.valueOf(this.drgRouteTableId));
+        sb.append(",addDrgRouteRulesDetails=").append(String.valueOf(this.addDrgRouteRulesDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AddDrgRouteRulesRequest)) {
+            return false;
+        }
+
+        AddDrgRouteRulesRequest other = (AddDrgRouteRulesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.drgRouteTableId, other.drgRouteTableId)
+                && java.util.Objects.equals(
+                        this.addDrgRouteRulesDetails, other.addDrgRouteRulesDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.drgRouteTableId == null ? 43 : this.drgRouteTableId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.addDrgRouteRulesDetails == null
+                                ? 43
+                                : this.addDrgRouteRulesDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

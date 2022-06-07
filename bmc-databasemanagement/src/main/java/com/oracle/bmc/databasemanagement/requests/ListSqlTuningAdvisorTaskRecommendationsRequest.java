@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTaskRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSqlTuningAdvisorTaskRecommendationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListSqlTuningAdvisorTaskRecommendationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,22 +17,34 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private String managedDatabaseId;
 
+    public String getManagedDatabaseId() {
+        return managedDatabaseId;
+    }
     /**
      * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private Long sqlTuningAdvisorTaskId;
 
+    public Long getSqlTuningAdvisorTaskId() {
+        return sqlTuningAdvisorTaskId;
+    }
     /**
      * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private Long sqlObjectId;
 
+    public Long getSqlObjectId() {
+        return sqlObjectId;
+    }
     /**
      * The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      */
     private Long executionId;
 
+    public Long getExecutionId() {
+        return executionId;
+    }
     /**
      * The possible sortBy values of an object's recommendations.
      */
@@ -81,11 +85,18 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The page token representing the page from where the next set of paginated results
      * are retrieved. This is usually retrieved from a previous list call.
@@ -93,15 +104,25 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The maximum number of records returned in the paginated response.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -109,6 +130,108 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedDatabaseId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @return this builder instance
+         */
+        public Builder managedDatabaseId(String managedDatabaseId) {
+            this.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        private Long sqlTuningAdvisorTaskId = null;
+
+        /**
+         * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder sqlTuningAdvisorTaskId(Long sqlTuningAdvisorTaskId) {
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            return this;
+        }
+
+        private Long sqlObjectId = null;
+
+        /**
+         * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder sqlObjectId(Long sqlObjectId) {
+            this.sqlObjectId = sqlObjectId;
+            return this;
+        }
+
+        private Long executionId = null;
+
+        /**
+         * The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder executionId(Long executionId) {
+            this.executionId = executionId;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The possible sortBy values of an object's recommendations.
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
+
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of records returned in the paginated response.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -169,5 +292,113 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListSqlTuningAdvisorTaskRecommendationsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListSqlTuningAdvisorTaskRecommendationsRequest
+         */
+        public ListSqlTuningAdvisorTaskRecommendationsRequest buildWithoutInvocationCallback() {
+            ListSqlTuningAdvisorTaskRecommendationsRequest request =
+                    new ListSqlTuningAdvisorTaskRecommendationsRequest();
+            request.managedDatabaseId = managedDatabaseId;
+            request.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            request.sqlObjectId = sqlObjectId;
+            request.executionId = executionId;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.page = page;
+            request.limit = limit;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListSqlTuningAdvisorTaskRecommendationsRequest(managedDatabaseId, sqlTuningAdvisorTaskId, sqlObjectId, executionId, sortBy, sortOrder, page, limit, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedDatabaseId(managedDatabaseId)
+                .sqlTuningAdvisorTaskId(sqlTuningAdvisorTaskId)
+                .sqlObjectId(sqlObjectId)
+                .executionId(executionId)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .page(page)
+                .limit(limit)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
+        sb.append(",sqlTuningAdvisorTaskId=").append(String.valueOf(this.sqlTuningAdvisorTaskId));
+        sb.append(",sqlObjectId=").append(String.valueOf(this.sqlObjectId));
+        sb.append(",executionId=").append(String.valueOf(this.executionId));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListSqlTuningAdvisorTaskRecommendationsRequest)) {
+            return false;
+        }
+
+        ListSqlTuningAdvisorTaskRecommendationsRequest other =
+                (ListSqlTuningAdvisorTaskRecommendationsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
+                && java.util.Objects.equals(
+                        this.sqlTuningAdvisorTaskId, other.sqlTuningAdvisorTaskId)
+                && java.util.Objects.equals(this.sqlObjectId, other.sqlObjectId)
+                && java.util.Objects.equals(this.executionId, other.executionId)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sqlTuningAdvisorTaskId == null
+                                ? 43
+                                : this.sqlTuningAdvisorTaskId.hashCode());
+        result = (result * PRIME) + (this.sqlObjectId == null ? 43 : this.sqlObjectId.hashCode());
+        result = (result * PRIME) + (this.executionId == null ? 43 : this.executionId.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

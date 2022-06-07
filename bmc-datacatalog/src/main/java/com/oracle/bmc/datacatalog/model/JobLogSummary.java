@@ -18,14 +18,35 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobLogSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JobLogSummary {
+public final class JobLogSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "jobExecutionKey",
+        "uri",
+        "timeCreated",
+        "severity",
+        "logMessage"
+    })
+    public JobLogSummary(
+            String key,
+            String jobExecutionKey,
+            String uri,
+            java.util.Date timeCreated,
+            String severity,
+            String logMessage) {
+        super();
+        this.key = key;
+        this.jobExecutionKey = jobExecutionKey;
+        this.uri = uri;
+        this.timeCreated = timeCreated;
+        this.severity = severity;
+        this.logMessage = logMessage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -113,23 +134,39 @@ public class JobLogSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique key of the job log that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The unique key of the parent job execution for which the log resource was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
-    String jobExecutionKey;
+    private final String jobExecutionKey;
+
+    public String getJobExecutionKey() {
+        return jobExecutionKey;
+    }
 
     /**
      * URI to the job log instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
 
     /**
      * The date and time the job log was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -137,20 +174,88 @@ public class JobLogSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Severity level for this log.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    String severity;
+    private final String severity;
+
+    public String getSeverity() {
+        return severity;
+    }
 
     /**
      * Message for this job log.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logMessage")
-    String logMessage;
+    private final String logMessage;
+
+    public String getLogMessage() {
+        return logMessage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JobLogSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", jobExecutionKey=").append(String.valueOf(this.jobExecutionKey));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", logMessage=").append(String.valueOf(this.logMessage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JobLogSummary)) {
+            return false;
+        }
+
+        JobLogSummary other = (JobLogSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.jobExecutionKey, other.jobExecutionKey)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.logMessage, other.logMessage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobExecutionKey == null ? 43 : this.jobExecutionKey.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.logMessage == null ? 43 : this.logMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

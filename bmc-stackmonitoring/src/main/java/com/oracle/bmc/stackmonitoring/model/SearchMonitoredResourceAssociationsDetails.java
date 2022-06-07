@@ -15,16 +15,49 @@ package com.oracle.bmc.stackmonitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SearchMonitoredResourceAssociationsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SearchMonitoredResourceAssociationsDetails {
+public final class SearchMonitoredResourceAssociationsDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "sourceResourceId",
+        "sourceResourceName",
+        "sourceResourceType",
+        "destinationResourceId",
+        "destinationResourceName",
+        "destinationResourceType",
+        "associationType",
+        "sortBy",
+        "sortOrder"
+    })
+    public SearchMonitoredResourceAssociationsDetails(
+            String compartmentId,
+            String sourceResourceId,
+            String sourceResourceName,
+            String sourceResourceType,
+            String destinationResourceId,
+            String destinationResourceName,
+            String destinationResourceType,
+            String associationType,
+            SortBy sortBy,
+            SortOrder sortOrder) {
+        super();
+        this.compartmentId = compartmentId;
+        this.sourceResourceId = sourceResourceId;
+        this.sourceResourceName = sourceResourceName;
+        this.sourceResourceType = sourceResourceType;
+        this.destinationResourceId = destinationResourceId;
+        this.destinationResourceName = destinationResourceName;
+        this.destinationResourceType = destinationResourceType;
+        this.associationType = associationType;
+        this.sortBy = sortBy;
+        this.sortOrder = sortOrder;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -162,53 +195,90 @@ public class SearchMonitoredResourceAssociationsDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
-    String sourceResourceId;
+    private final String sourceResourceId;
+
+    public String getSourceResourceId() {
+        return sourceResourceId;
+    }
 
     /**
      * Source Monitored Resource Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceName")
-    String sourceResourceName;
+    private final String sourceResourceName;
+
+    public String getSourceResourceName() {
+        return sourceResourceName;
+    }
 
     /**
      * Source Monitored Resource Type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceType")
-    String sourceResourceType;
+    private final String sourceResourceType;
+
+    public String getSourceResourceType() {
+        return sourceResourceType;
+    }
 
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
-    String destinationResourceId;
+    private final String destinationResourceId;
+
+    public String getDestinationResourceId() {
+        return destinationResourceId;
+    }
 
     /**
      * Source Monitored Resource Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceName")
-    String destinationResourceName;
+    private final String destinationResourceName;
+
+    public String getDestinationResourceName() {
+        return destinationResourceName;
+    }
 
     /**
      * Source Monitored Resource Type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceType")
-    String destinationResourceType;
+    private final String destinationResourceType;
+
+    public String getDestinationResourceType() {
+        return destinationResourceType;
+    }
 
     /**
      * Association type to be created between source and destination resources
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
-    String associationType;
+    private final String associationType;
+
+    public String getAssociationType() {
+        return associationType;
+    }
+
     /**
      * The field to sort by. Only one sort order may be provided.
      * Default order for timeCreated is descending. Default order for assocType is descending.
@@ -252,14 +322,119 @@ public class SearchMonitoredResourceAssociationsDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
-    SortBy sortBy;
+    private final SortBy sortBy;
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
 
     /**
      * The sort order to use, either 'ASC' or 'DESC'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
-    SortOrder sortOrder;
+    private final SortOrder sortOrder;
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SearchMonitoredResourceAssociationsDetails(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", sourceResourceId=").append(String.valueOf(this.sourceResourceId));
+        sb.append(", sourceResourceName=").append(String.valueOf(this.sourceResourceName));
+        sb.append(", sourceResourceType=").append(String.valueOf(this.sourceResourceType));
+        sb.append(", destinationResourceId=").append(String.valueOf(this.destinationResourceId));
+        sb.append(", destinationResourceName=")
+                .append(String.valueOf(this.destinationResourceName));
+        sb.append(", destinationResourceType=")
+                .append(String.valueOf(this.destinationResourceType));
+        sb.append(", associationType=").append(String.valueOf(this.associationType));
+        sb.append(", sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(", sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SearchMonitoredResourceAssociationsDetails)) {
+            return false;
+        }
+
+        SearchMonitoredResourceAssociationsDetails other =
+                (SearchMonitoredResourceAssociationsDetails) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.sourceResourceId, other.sourceResourceId)
+                && java.util.Objects.equals(this.sourceResourceName, other.sourceResourceName)
+                && java.util.Objects.equals(this.sourceResourceType, other.sourceResourceType)
+                && java.util.Objects.equals(this.destinationResourceId, other.destinationResourceId)
+                && java.util.Objects.equals(
+                        this.destinationResourceName, other.destinationResourceName)
+                && java.util.Objects.equals(
+                        this.destinationResourceType, other.destinationResourceType)
+                && java.util.Objects.equals(this.associationType, other.associationType)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceResourceId == null ? 43 : this.sourceResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceResourceName == null
+                                ? 43
+                                : this.sourceResourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceResourceType == null
+                                ? 43
+                                : this.sourceResourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationResourceId == null
+                                ? 43
+                                : this.destinationResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationResourceName == null
+                                ? 43
+                                : this.destinationResourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationResourceType == null
+                                ? 43
+                                : this.destinationResourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associationType == null ? 43 : this.associationType.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

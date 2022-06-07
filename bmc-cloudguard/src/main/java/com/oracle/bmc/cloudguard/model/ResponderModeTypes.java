@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Possible mode type for responder rule resource.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum ResponderModeTypes {
     Autoaction("AUTOACTION"),
     Useraction("USERACTION"),
@@ -18,6 +17,9 @@ public enum ResponderModeTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ResponderModeTypes.class);
 
     private final String value;
     private static java.util.Map<String, ResponderModeTypes> map;

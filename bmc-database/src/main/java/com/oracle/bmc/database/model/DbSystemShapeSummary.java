@@ -20,16 +20,85 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DbSystemShapeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbSystemShapeSummary {
+public final class DbSystemShapeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "shapeFamily",
+        "shapeType",
+        "shape",
+        "availableCoreCount",
+        "minimumCoreCount",
+        "coreCountIncrement",
+        "minStorageCount",
+        "maxStorageCount",
+        "availableDataStoragePerServerInTBs",
+        "availableMemoryPerNodeInGBs",
+        "availableDbNodePerNodeInGBs",
+        "minCoreCountPerNode",
+        "availableMemoryInGBs",
+        "minMemoryPerNodeInGBs",
+        "availableDbNodeStorageInGBs",
+        "minDbNodeStoragePerNodeInGBs",
+        "availableDataStorageInTBs",
+        "minDataStorageInTBs",
+        "minimumNodeCount",
+        "maximumNodeCount",
+        "availableCoreCountPerNode"
+    })
+    public DbSystemShapeSummary(
+            String name,
+            String shapeFamily,
+            ShapeType shapeType,
+            String shape,
+            Integer availableCoreCount,
+            Integer minimumCoreCount,
+            Integer coreCountIncrement,
+            Integer minStorageCount,
+            Integer maxStorageCount,
+            Double availableDataStoragePerServerInTBs,
+            Integer availableMemoryPerNodeInGBs,
+            Integer availableDbNodePerNodeInGBs,
+            Integer minCoreCountPerNode,
+            Integer availableMemoryInGBs,
+            Integer minMemoryPerNodeInGBs,
+            Integer availableDbNodeStorageInGBs,
+            Integer minDbNodeStoragePerNodeInGBs,
+            Integer availableDataStorageInTBs,
+            Integer minDataStorageInTBs,
+            Integer minimumNodeCount,
+            Integer maximumNodeCount,
+            Integer availableCoreCountPerNode) {
+        super();
+        this.name = name;
+        this.shapeFamily = shapeFamily;
+        this.shapeType = shapeType;
+        this.shape = shape;
+        this.availableCoreCount = availableCoreCount;
+        this.minimumCoreCount = minimumCoreCount;
+        this.coreCountIncrement = coreCountIncrement;
+        this.minStorageCount = minStorageCount;
+        this.maxStorageCount = maxStorageCount;
+        this.availableDataStoragePerServerInTBs = availableDataStoragePerServerInTBs;
+        this.availableMemoryPerNodeInGBs = availableMemoryPerNodeInGBs;
+        this.availableDbNodePerNodeInGBs = availableDbNodePerNodeInGBs;
+        this.minCoreCountPerNode = minCoreCountPerNode;
+        this.availableMemoryInGBs = availableMemoryInGBs;
+        this.minMemoryPerNodeInGBs = minMemoryPerNodeInGBs;
+        this.availableDbNodeStorageInGBs = availableDbNodeStorageInGBs;
+        this.minDbNodeStoragePerNodeInGBs = minDbNodeStoragePerNodeInGBs;
+        this.availableDataStorageInTBs = availableDataStorageInTBs;
+        this.minDataStorageInTBs = minDataStorageInTBs;
+        this.minimumNodeCount = minimumNodeCount;
+        this.maximumNodeCount = maximumNodeCount;
+        this.availableCoreCountPerNode = availableCoreCountPerNode;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -301,21 +370,33 @@ public class DbSystemShapeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the shape used for the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The family of the shape used for the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeFamily")
-    String shapeFamily;
+    private final String shapeFamily;
+
+    public String getShapeFamily() {
+        return shapeFamily;
+    }
+
     /**
      * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} and {@code INTEL}.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ShapeType {
         Amd("AMD"),
         Intel("INTEL"),
@@ -325,6 +406,9 @@ public class DbSystemShapeSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ShapeType.class);
 
         private final String value;
         private static java.util.Map<String, ShapeType> map;
@@ -362,122 +446,381 @@ public class DbSystemShapeSummary {
      * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} and {@code INTEL}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
-    ShapeType shapeType;
+    private final ShapeType shapeType;
+
+    public ShapeType getShapeType() {
+        return shapeType;
+    }
 
     /**
      * Deprecated. Use {@code name} instead of {@code shape}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The maximum number of CPU cores that can be enabled on the DB system for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
-    Integer availableCoreCount;
+    private final Integer availableCoreCount;
+
+    public Integer getAvailableCoreCount() {
+        return availableCoreCount;
+    }
 
     /**
      * The minimum number of CPU cores that can be enabled on the DB system for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
-    Integer minimumCoreCount;
+    private final Integer minimumCoreCount;
+
+    public Integer getMinimumCoreCount() {
+        return minimumCoreCount;
+    }
 
     /**
      * The discrete number by which the CPU core count for this shape can be increased or decreased.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
-    Integer coreCountIncrement;
+    private final Integer coreCountIncrement;
+
+    public Integer getCoreCountIncrement() {
+        return coreCountIncrement;
+    }
 
     /**
      * The minimum number of Exadata storage servers available for the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minStorageCount")
-    Integer minStorageCount;
+    private final Integer minStorageCount;
+
+    public Integer getMinStorageCount() {
+        return minStorageCount;
+    }
 
     /**
      * The maximum number of Exadata storage servers available for the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxStorageCount")
-    Integer maxStorageCount;
+    private final Integer maxStorageCount;
+
+    public Integer getMaxStorageCount() {
+        return maxStorageCount;
+    }
 
     /**
      * The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDataStoragePerServerInTBs")
-    Double availableDataStoragePerServerInTBs;
+    private final Double availableDataStoragePerServerInTBs;
+
+    public Double getAvailableDataStoragePerServerInTBs() {
+        return availableDataStoragePerServerInTBs;
+    }
 
     /**
      * The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryPerNodeInGBs")
-    Integer availableMemoryPerNodeInGBs;
+    private final Integer availableMemoryPerNodeInGBs;
+
+    public Integer getAvailableMemoryPerNodeInGBs() {
+        return availableMemoryPerNodeInGBs;
+    }
 
     /**
      * The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodePerNodeInGBs")
-    Integer availableDbNodePerNodeInGBs;
+    private final Integer availableDbNodePerNodeInGBs;
+
+    public Integer getAvailableDbNodePerNodeInGBs() {
+        return availableDbNodePerNodeInGBs;
+    }
 
     /**
      * The minimum number of CPU cores that can be enabled per node for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minCoreCountPerNode")
-    Integer minCoreCountPerNode;
+    private final Integer minCoreCountPerNode;
+
+    public Integer getMinCoreCountPerNode() {
+        return minCoreCountPerNode;
+    }
 
     /**
      * The maximum memory that can be enabled for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryInGBs")
-    Integer availableMemoryInGBs;
+    private final Integer availableMemoryInGBs;
+
+    public Integer getAvailableMemoryInGBs() {
+        return availableMemoryInGBs;
+    }
 
     /**
      * The minimum memory that need be allocated per node for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minMemoryPerNodeInGBs")
-    Integer minMemoryPerNodeInGBs;
+    private final Integer minMemoryPerNodeInGBs;
+
+    public Integer getMinMemoryPerNodeInGBs() {
+        return minMemoryPerNodeInGBs;
+    }
 
     /**
      * The maximum Db Node storage that can be enabled for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodeStorageInGBs")
-    Integer availableDbNodeStorageInGBs;
+    private final Integer availableDbNodeStorageInGBs;
+
+    public Integer getAvailableDbNodeStorageInGBs() {
+        return availableDbNodeStorageInGBs;
+    }
 
     /**
      * The minimum Db Node storage that need be allocated per node for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minDbNodeStoragePerNodeInGBs")
-    Integer minDbNodeStoragePerNodeInGBs;
+    private final Integer minDbNodeStoragePerNodeInGBs;
+
+    public Integer getMinDbNodeStoragePerNodeInGBs() {
+        return minDbNodeStoragePerNodeInGBs;
+    }
 
     /**
      * The maximum DATA storage that can be enabled for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDataStorageInTBs")
-    Integer availableDataStorageInTBs;
+    private final Integer availableDataStorageInTBs;
+
+    public Integer getAvailableDataStorageInTBs() {
+        return availableDataStorageInTBs;
+    }
 
     /**
      * The minimum data storage that need be allocated for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minDataStorageInTBs")
-    Integer minDataStorageInTBs;
+    private final Integer minDataStorageInTBs;
+
+    public Integer getMinDataStorageInTBs() {
+        return minDataStorageInTBs;
+    }
 
     /**
      * The minimum number of database nodes available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
-    Integer minimumNodeCount;
+    private final Integer minimumNodeCount;
+
+    public Integer getMinimumNodeCount() {
+        return minimumNodeCount;
+    }
 
     /**
      * The maximum number of database nodes available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
-    Integer maximumNodeCount;
+    private final Integer maximumNodeCount;
+
+    public Integer getMaximumNodeCount() {
+        return maximumNodeCount;
+    }
 
     /**
      * The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCountPerNode")
-    Integer availableCoreCountPerNode;
+    private final Integer availableCoreCountPerNode;
+
+    public Integer getAvailableCoreCountPerNode() {
+        return availableCoreCountPerNode;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbSystemShapeSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", shapeFamily=").append(String.valueOf(this.shapeFamily));
+        sb.append(", shapeType=").append(String.valueOf(this.shapeType));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", availableCoreCount=").append(String.valueOf(this.availableCoreCount));
+        sb.append(", minimumCoreCount=").append(String.valueOf(this.minimumCoreCount));
+        sb.append(", coreCountIncrement=").append(String.valueOf(this.coreCountIncrement));
+        sb.append(", minStorageCount=").append(String.valueOf(this.minStorageCount));
+        sb.append(", maxStorageCount=").append(String.valueOf(this.maxStorageCount));
+        sb.append(", availableDataStoragePerServerInTBs=")
+                .append(String.valueOf(this.availableDataStoragePerServerInTBs));
+        sb.append(", availableMemoryPerNodeInGBs=")
+                .append(String.valueOf(this.availableMemoryPerNodeInGBs));
+        sb.append(", availableDbNodePerNodeInGBs=")
+                .append(String.valueOf(this.availableDbNodePerNodeInGBs));
+        sb.append(", minCoreCountPerNode=").append(String.valueOf(this.minCoreCountPerNode));
+        sb.append(", availableMemoryInGBs=").append(String.valueOf(this.availableMemoryInGBs));
+        sb.append(", minMemoryPerNodeInGBs=").append(String.valueOf(this.minMemoryPerNodeInGBs));
+        sb.append(", availableDbNodeStorageInGBs=")
+                .append(String.valueOf(this.availableDbNodeStorageInGBs));
+        sb.append(", minDbNodeStoragePerNodeInGBs=")
+                .append(String.valueOf(this.minDbNodeStoragePerNodeInGBs));
+        sb.append(", availableDataStorageInTBs=")
+                .append(String.valueOf(this.availableDataStorageInTBs));
+        sb.append(", minDataStorageInTBs=").append(String.valueOf(this.minDataStorageInTBs));
+        sb.append(", minimumNodeCount=").append(String.valueOf(this.minimumNodeCount));
+        sb.append(", maximumNodeCount=").append(String.valueOf(this.maximumNodeCount));
+        sb.append(", availableCoreCountPerNode=")
+                .append(String.valueOf(this.availableCoreCountPerNode));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbSystemShapeSummary)) {
+            return false;
+        }
+
+        DbSystemShapeSummary other = (DbSystemShapeSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.shapeFamily, other.shapeFamily)
+                && java.util.Objects.equals(this.shapeType, other.shapeType)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.availableCoreCount, other.availableCoreCount)
+                && java.util.Objects.equals(this.minimumCoreCount, other.minimumCoreCount)
+                && java.util.Objects.equals(this.coreCountIncrement, other.coreCountIncrement)
+                && java.util.Objects.equals(this.minStorageCount, other.minStorageCount)
+                && java.util.Objects.equals(this.maxStorageCount, other.maxStorageCount)
+                && java.util.Objects.equals(
+                        this.availableDataStoragePerServerInTBs,
+                        other.availableDataStoragePerServerInTBs)
+                && java.util.Objects.equals(
+                        this.availableMemoryPerNodeInGBs, other.availableMemoryPerNodeInGBs)
+                && java.util.Objects.equals(
+                        this.availableDbNodePerNodeInGBs, other.availableDbNodePerNodeInGBs)
+                && java.util.Objects.equals(this.minCoreCountPerNode, other.minCoreCountPerNode)
+                && java.util.Objects.equals(this.availableMemoryInGBs, other.availableMemoryInGBs)
+                && java.util.Objects.equals(this.minMemoryPerNodeInGBs, other.minMemoryPerNodeInGBs)
+                && java.util.Objects.equals(
+                        this.availableDbNodeStorageInGBs, other.availableDbNodeStorageInGBs)
+                && java.util.Objects.equals(
+                        this.minDbNodeStoragePerNodeInGBs, other.minDbNodeStoragePerNodeInGBs)
+                && java.util.Objects.equals(
+                        this.availableDataStorageInTBs, other.availableDataStorageInTBs)
+                && java.util.Objects.equals(this.minDataStorageInTBs, other.minDataStorageInTBs)
+                && java.util.Objects.equals(this.minimumNodeCount, other.minimumNodeCount)
+                && java.util.Objects.equals(this.maximumNodeCount, other.maximumNodeCount)
+                && java.util.Objects.equals(
+                        this.availableCoreCountPerNode, other.availableCoreCountPerNode)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.shapeFamily == null ? 43 : this.shapeFamily.hashCode());
+        result = (result * PRIME) + (this.shapeType == null ? 43 : this.shapeType.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableCoreCount == null
+                                ? 43
+                                : this.availableCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minimumCoreCount == null ? 43 : this.minimumCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coreCountIncrement == null
+                                ? 43
+                                : this.coreCountIncrement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minStorageCount == null ? 43 : this.minStorageCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxStorageCount == null ? 43 : this.maxStorageCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableDataStoragePerServerInTBs == null
+                                ? 43
+                                : this.availableDataStoragePerServerInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableMemoryPerNodeInGBs == null
+                                ? 43
+                                : this.availableMemoryPerNodeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableDbNodePerNodeInGBs == null
+                                ? 43
+                                : this.availableDbNodePerNodeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minCoreCountPerNode == null
+                                ? 43
+                                : this.minCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableMemoryInGBs == null
+                                ? 43
+                                : this.availableMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minMemoryPerNodeInGBs == null
+                                ? 43
+                                : this.minMemoryPerNodeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableDbNodeStorageInGBs == null
+                                ? 43
+                                : this.availableDbNodeStorageInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minDbNodeStoragePerNodeInGBs == null
+                                ? 43
+                                : this.minDbNodeStoragePerNodeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableDataStorageInTBs == null
+                                ? 43
+                                : this.availableDataStorageInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minDataStorageInTBs == null
+                                ? 43
+                                : this.minDataStorageInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minimumNodeCount == null ? 43 : this.minimumNodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maximumNodeCount == null ? 43 : this.maximumNodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableCoreCountPerNode == null
+                                ? 43
+                                : this.availableCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

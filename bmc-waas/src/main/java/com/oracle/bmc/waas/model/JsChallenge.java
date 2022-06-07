@@ -15,14 +15,44 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JsChallenge.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JsChallenge {
+public final class JsChallenge {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isEnabled",
+        "action",
+        "failureThreshold",
+        "actionExpirationInSeconds",
+        "setHttpHeader",
+        "challengeSettings",
+        "areRedirectsChallenged",
+        "criteria",
+        "isNatEnabled"
+    })
+    public JsChallenge(
+            Boolean isEnabled,
+            Action action,
+            Integer failureThreshold,
+            Integer actionExpirationInSeconds,
+            Header setHttpHeader,
+            BlockChallengeSettings challengeSettings,
+            Boolean areRedirectsChallenged,
+            java.util.List<AccessRuleCriteria> criteria,
+            Boolean isNatEnabled) {
+        super();
+        this.isEnabled = isEnabled;
+        this.action = action;
+        this.failureThreshold = failureThreshold;
+        this.actionExpirationInSeconds = actionExpirationInSeconds;
+        this.setHttpHeader = setHttpHeader;
+        this.challengeSettings = challengeSettings;
+        this.areRedirectsChallenged = areRedirectsChallenged;
+        this.criteria = criteria;
+        this.isNatEnabled = isNatEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
@@ -149,15 +179,23 @@ public class JsChallenge {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Enables or disables the JavaScript challenge Web Application Firewall feature.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
+
     /**
      * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Detect("DETECT"),
         Block("BLOCK"),
@@ -167,6 +205,8 @@ public class JsChallenge {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -204,47 +244,159 @@ public class JsChallenge {
      * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * The number of failed requests before taking action. If unspecified, defaults to {@code 10}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
-    Integer failureThreshold;
+    private final Integer failureThreshold;
+
+    public Integer getFailureThreshold() {
+        return failureThreshold;
+    }
 
     /**
      * The number of seconds between challenges from the same IP address. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
-    Integer actionExpirationInSeconds;
+    private final Integer actionExpirationInSeconds;
+
+    public Integer getActionExpirationInSeconds() {
+        return actionExpirationInSeconds;
+    }
 
     /**
      * Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the {@code action} is set to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("setHttpHeader")
-    Header setHttpHeader;
+    private final Header setHttpHeader;
+
+    public Header getSetHttpHeader() {
+        return setHttpHeader;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("challengeSettings")
-    BlockChallengeSettings challengeSettings;
+    private final BlockChallengeSettings challengeSettings;
+
+    public BlockChallengeSettings getChallengeSettings() {
+        return challengeSettings;
+    }
 
     /**
      * When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areRedirectsChallenged")
-    Boolean areRedirectsChallenged;
+    private final Boolean areRedirectsChallenged;
+
+    public Boolean getAreRedirectsChallenged() {
+        return areRedirectsChallenged;
+    }
 
     /**
      * When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criteria")
-    java.util.List<AccessRuleCriteria> criteria;
+    private final java.util.List<AccessRuleCriteria> criteria;
+
+    public java.util.List<AccessRuleCriteria> getCriteria() {
+        return criteria;
+    }
 
     /**
      * When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNatEnabled")
-    Boolean isNatEnabled;
+    private final Boolean isNatEnabled;
+
+    public Boolean getIsNatEnabled() {
+        return isNatEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JsChallenge(");
+        sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", failureThreshold=").append(String.valueOf(this.failureThreshold));
+        sb.append(", actionExpirationInSeconds=")
+                .append(String.valueOf(this.actionExpirationInSeconds));
+        sb.append(", setHttpHeader=").append(String.valueOf(this.setHttpHeader));
+        sb.append(", challengeSettings=").append(String.valueOf(this.challengeSettings));
+        sb.append(", areRedirectsChallenged=").append(String.valueOf(this.areRedirectsChallenged));
+        sb.append(", criteria=").append(String.valueOf(this.criteria));
+        sb.append(", isNatEnabled=").append(String.valueOf(this.isNatEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JsChallenge)) {
+            return false;
+        }
+
+        JsChallenge other = (JsChallenge) o;
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.failureThreshold, other.failureThreshold)
+                && java.util.Objects.equals(
+                        this.actionExpirationInSeconds, other.actionExpirationInSeconds)
+                && java.util.Objects.equals(this.setHttpHeader, other.setHttpHeader)
+                && java.util.Objects.equals(this.challengeSettings, other.challengeSettings)
+                && java.util.Objects.equals(
+                        this.areRedirectsChallenged, other.areRedirectsChallenged)
+                && java.util.Objects.equals(this.criteria, other.criteria)
+                && java.util.Objects.equals(this.isNatEnabled, other.isNatEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureThreshold == null ? 43 : this.failureThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actionExpirationInSeconds == null
+                                ? 43
+                                : this.actionExpirationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.setHttpHeader == null ? 43 : this.setHttpHeader.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.challengeSettings == null ? 43 : this.challengeSettings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areRedirectsChallenged == null
+                                ? 43
+                                : this.areRedirectsChallenged.hashCode());
+        result = (result * PRIME) + (this.criteria == null ? 43 : this.criteria.hashCode());
+        result = (result * PRIME) + (this.isNatEnabled == null ? 43 : this.isNatEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

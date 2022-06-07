@@ -15,14 +15,44 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AwrSourceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AwrSourceSummary {
+public final class AwrSourceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "awrHubId",
+        "name",
+        "awrSourceDatabaseId",
+        "snapshotsUploaded",
+        "minSnapshotIdentifier",
+        "maxSnapshotIdentifier",
+        "timeFirstSnapshotGenerated",
+        "timeLastSnapshotGenerated",
+        "hoursSinceLastImport"
+    })
+    public AwrSourceSummary(
+            String awrHubId,
+            String name,
+            String awrSourceDatabaseId,
+            java.math.BigDecimal snapshotsUploaded,
+            java.math.BigDecimal minSnapshotIdentifier,
+            java.math.BigDecimal maxSnapshotIdentifier,
+            java.util.Date timeFirstSnapshotGenerated,
+            java.util.Date timeLastSnapshotGenerated,
+            Double hoursSinceLastImport) {
+        super();
+        this.awrHubId = awrHubId;
+        this.name = name;
+        this.awrSourceDatabaseId = awrSourceDatabaseId;
+        this.snapshotsUploaded = snapshotsUploaded;
+        this.minSnapshotIdentifier = minSnapshotIdentifier;
+        this.maxSnapshotIdentifier = maxSnapshotIdentifier;
+        this.timeFirstSnapshotGenerated = timeFirstSnapshotGenerated;
+        this.timeLastSnapshotGenerated = timeLastSnapshotGenerated;
+        this.hoursSinceLastImport = hoursSinceLastImport;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("awrHubId")
         private String awrHubId;
@@ -149,60 +179,193 @@ public class AwrSourceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * AWR Hub OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("awrHubId")
-    String awrHubId;
+    private final String awrHubId;
+
+    public String getAwrHubId() {
+        return awrHubId;
+    }
 
     /**
      * Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("awrSourceDatabaseId")
-    String awrSourceDatabaseId;
+    private final String awrSourceDatabaseId;
+
+    public String getAwrSourceDatabaseId() {
+        return awrSourceDatabaseId;
+    }
 
     /**
      * Number of AWR snapshots uploaded from the Source database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotsUploaded")
-    java.math.BigDecimal snapshotsUploaded;
+    private final java.math.BigDecimal snapshotsUploaded;
+
+    public java.math.BigDecimal getSnapshotsUploaded() {
+        return snapshotsUploaded;
+    }
 
     /**
      * The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minSnapshotIdentifier")
-    java.math.BigDecimal minSnapshotIdentifier;
+    private final java.math.BigDecimal minSnapshotIdentifier;
+
+    public java.math.BigDecimal getMinSnapshotIdentifier() {
+        return minSnapshotIdentifier;
+    }
 
     /**
      * The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSnapshotIdentifier")
-    java.math.BigDecimal maxSnapshotIdentifier;
+    private final java.math.BigDecimal maxSnapshotIdentifier;
+
+    public java.math.BigDecimal getMaxSnapshotIdentifier() {
+        return maxSnapshotIdentifier;
+    }
 
     /**
      * The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSnapshotGenerated")
-    java.util.Date timeFirstSnapshotGenerated;
+    private final java.util.Date timeFirstSnapshotGenerated;
+
+    public java.util.Date getTimeFirstSnapshotGenerated() {
+        return timeFirstSnapshotGenerated;
+    }
 
     /**
      * The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSnapshotGenerated")
-    java.util.Date timeLastSnapshotGenerated;
+    private final java.util.Date timeLastSnapshotGenerated;
+
+    public java.util.Date getTimeLastSnapshotGenerated() {
+        return timeLastSnapshotGenerated;
+    }
 
     /**
      * Number of hours since last AWR snapshots import happened from the Source database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hoursSinceLastImport")
-    Double hoursSinceLastImport;
+    private final Double hoursSinceLastImport;
+
+    public Double getHoursSinceLastImport() {
+        return hoursSinceLastImport;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AwrSourceSummary(");
+        sb.append("awrHubId=").append(String.valueOf(this.awrHubId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", awrSourceDatabaseId=").append(String.valueOf(this.awrSourceDatabaseId));
+        sb.append(", snapshotsUploaded=").append(String.valueOf(this.snapshotsUploaded));
+        sb.append(", minSnapshotIdentifier=").append(String.valueOf(this.minSnapshotIdentifier));
+        sb.append(", maxSnapshotIdentifier=").append(String.valueOf(this.maxSnapshotIdentifier));
+        sb.append(", timeFirstSnapshotGenerated=")
+                .append(String.valueOf(this.timeFirstSnapshotGenerated));
+        sb.append(", timeLastSnapshotGenerated=")
+                .append(String.valueOf(this.timeLastSnapshotGenerated));
+        sb.append(", hoursSinceLastImport=").append(String.valueOf(this.hoursSinceLastImport));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AwrSourceSummary)) {
+            return false;
+        }
+
+        AwrSourceSummary other = (AwrSourceSummary) o;
+        return java.util.Objects.equals(this.awrHubId, other.awrHubId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.awrSourceDatabaseId, other.awrSourceDatabaseId)
+                && java.util.Objects.equals(this.snapshotsUploaded, other.snapshotsUploaded)
+                && java.util.Objects.equals(this.minSnapshotIdentifier, other.minSnapshotIdentifier)
+                && java.util.Objects.equals(this.maxSnapshotIdentifier, other.maxSnapshotIdentifier)
+                && java.util.Objects.equals(
+                        this.timeFirstSnapshotGenerated, other.timeFirstSnapshotGenerated)
+                && java.util.Objects.equals(
+                        this.timeLastSnapshotGenerated, other.timeLastSnapshotGenerated)
+                && java.util.Objects.equals(this.hoursSinceLastImport, other.hoursSinceLastImport)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.awrHubId == null ? 43 : this.awrHubId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.awrSourceDatabaseId == null
+                                ? 43
+                                : this.awrSourceDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.snapshotsUploaded == null ? 43 : this.snapshotsUploaded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minSnapshotIdentifier == null
+                                ? 43
+                                : this.minSnapshotIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxSnapshotIdentifier == null
+                                ? 43
+                                : this.maxSnapshotIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstSnapshotGenerated == null
+                                ? 43
+                                : this.timeFirstSnapshotGenerated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastSnapshotGenerated == null
+                                ? 43
+                                : this.timeLastSnapshotGenerated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hoursSinceLastImport == null
+                                ? 43
+                                : this.hoursSinceLastImport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

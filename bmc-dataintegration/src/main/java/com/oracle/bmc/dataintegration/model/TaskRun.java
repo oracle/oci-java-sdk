@@ -15,14 +15,113 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaskRun.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TaskRun {
+public final class TaskRun {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "modelType",
+        "modelVersion",
+        "parentRef",
+        "name",
+        "description",
+        "objectVersion",
+        "configProvider",
+        "status",
+        "startTimeMillis",
+        "endTimeMillis",
+        "lastUpdated",
+        "recordsWritten",
+        "bytesProcessed",
+        "errorMessage",
+        "expectedDuration",
+        "expectedDurationUnit",
+        "taskKey",
+        "externalId",
+        "retryAttempt",
+        "taskSchedule",
+        "metrics",
+        "outputs",
+        "executionErrors",
+        "terminationErrors",
+        "authMode",
+        "opcRequestId",
+        "objectStatus",
+        "taskType",
+        "identifier",
+        "metadata",
+        "keyMap"
+    })
+    public TaskRun(
+            String key,
+            String modelType,
+            String modelVersion,
+            ParentReference parentRef,
+            String name,
+            String description,
+            Integer objectVersion,
+            ConfigProvider configProvider,
+            Status status,
+            Long startTimeMillis,
+            Long endTimeMillis,
+            Long lastUpdated,
+            Long recordsWritten,
+            Long bytesProcessed,
+            String errorMessage,
+            Double expectedDuration,
+            ExpectedDurationUnit expectedDurationUnit,
+            String taskKey,
+            String externalId,
+            Integer retryAttempt,
+            TaskSchedule taskSchedule,
+            java.util.Map<String, Float> metrics,
+            java.util.Map<String, ParameterValue> outputs,
+            java.util.List<String> executionErrors,
+            java.util.List<String> terminationErrors,
+            AuthMode authMode,
+            String opcRequestId,
+            Integer objectStatus,
+            TaskType taskType,
+            String identifier,
+            ObjectMetadata metadata,
+            java.util.Map<String, String> keyMap) {
+        super();
+        this.key = key;
+        this.modelType = modelType;
+        this.modelVersion = modelVersion;
+        this.parentRef = parentRef;
+        this.name = name;
+        this.description = description;
+        this.objectVersion = objectVersion;
+        this.configProvider = configProvider;
+        this.status = status;
+        this.startTimeMillis = startTimeMillis;
+        this.endTimeMillis = endTimeMillis;
+        this.lastUpdated = lastUpdated;
+        this.recordsWritten = recordsWritten;
+        this.bytesProcessed = bytesProcessed;
+        this.errorMessage = errorMessage;
+        this.expectedDuration = expectedDuration;
+        this.expectedDurationUnit = expectedDurationUnit;
+        this.taskKey = taskKey;
+        this.externalId = externalId;
+        this.retryAttempt = retryAttempt;
+        this.taskSchedule = taskSchedule;
+        this.metrics = metrics;
+        this.outputs = outputs;
+        this.executionErrors = executionErrors;
+        this.terminationErrors = terminationErrors;
+        this.authMode = authMode;
+        this.opcRequestId = opcRequestId;
+        this.objectStatus = objectStatus;
+        this.taskType = taskType;
+        this.identifier = identifier;
+        this.metadata = metadata;
+        this.keyMap = keyMap;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -402,51 +501,87 @@ public class TaskRun {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The type of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
-    String modelType;
+    private final String modelType;
+
+    public String getModelType() {
+        return modelType;
+    }
 
     /**
      * The model version of an object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
-    String modelVersion;
+    private final String modelVersion;
+
+    public String getModelVersion() {
+        return modelVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("parentRef")
-    ParentReference parentRef;
+    private final ParentReference parentRef;
+
+    public ParentReference getParentRef() {
+        return parentRef;
+    }
 
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Detailed description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The version of the object that is used to track changes in the object instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
-    Integer objectVersion;
+    private final Integer objectVersion;
+
+    public Integer getObjectVersion() {
+        return objectVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configProvider")
-    ConfigProvider configProvider;
+    private final ConfigProvider configProvider;
+
+    public ConfigProvider getConfigProvider() {
+        return configProvider;
+    }
+
     /**
      * The status of the task run.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         NotStarted("NOT_STARTED"),
         Queued("QUEUED"),
@@ -461,6 +596,8 @@ public class TaskRun {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -498,53 +635,85 @@ public class TaskRun {
      * The status of the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTimeMillis")
-    Long startTimeMillis;
+    private final Long startTimeMillis;
+
+    public Long getStartTimeMillis() {
+        return startTimeMillis;
+    }
 
     /**
      * The end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimeMillis")
-    Long endTimeMillis;
+    private final Long endTimeMillis;
+
+    public Long getEndTimeMillis() {
+        return endTimeMillis;
+    }
 
     /**
      * The date and time the object was last updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdated")
-    Long lastUpdated;
+    private final Long lastUpdated;
+
+    public Long getLastUpdated() {
+        return lastUpdated;
+    }
 
     /**
      * The number of records processed in the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordsWritten")
-    Long recordsWritten;
+    private final Long recordsWritten;
+
+    public Long getRecordsWritten() {
+        return recordsWritten;
+    }
 
     /**
      * The number of bytes processed in the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bytesProcessed")
-    Long bytesProcessed;
+    private final Long bytesProcessed;
+
+    public Long getBytesProcessed() {
+        return bytesProcessed;
+    }
 
     /**
      * Contains an error message if status is {@code ERROR}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
-    String errorMessage;
+    private final String errorMessage;
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     /**
      * The expected duration for the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
-    Double expectedDuration;
+    private final Double expectedDuration;
+
+    public Double getExpectedDuration() {
+        return expectedDuration;
+    }
+
     /**
      * The expected duration unit of measure.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ExpectedDurationUnit {
         Seconds("SECONDS"),
         Minutes("MINUTES"),
@@ -556,6 +725,9 @@ public class TaskRun {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ExpectedDurationUnit.class);
 
         private final String value;
         private static java.util.Map<String, ExpectedDurationUnit> map;
@@ -593,56 +765,92 @@ public class TaskRun {
      * The expected duration unit of measure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
-    ExpectedDurationUnit expectedDurationUnit;
+    private final ExpectedDurationUnit expectedDurationUnit;
+
+    public ExpectedDurationUnit getExpectedDurationUnit() {
+        return expectedDurationUnit;
+    }
 
     /**
      * Task Key of the task for which TaskRun is being created. If not specified, the AggregatorKey in RegistryMetadata will be assumed to be the TaskKey
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskKey")
-    String taskKey;
+    private final String taskKey;
+
+    public String getTaskKey() {
+        return taskKey;
+    }
 
     /**
      * The external identifier for the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
-    String externalId;
+    private final String externalId;
+
+    public String getExternalId() {
+        return externalId;
+    }
 
     /**
      * Holds the particular attempt number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryAttempt")
-    Integer retryAttempt;
+    private final Integer retryAttempt;
+
+    public Integer getRetryAttempt() {
+        return retryAttempt;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("taskSchedule")
-    TaskSchedule taskSchedule;
+    private final TaskSchedule taskSchedule;
+
+    public TaskSchedule getTaskSchedule() {
+        return taskSchedule;
+    }
 
     /**
      * A map of metrics for the run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
-    java.util.Map<String, Float> metrics;
+    private final java.util.Map<String, Float> metrics;
+
+    public java.util.Map<String, Float> getMetrics() {
+        return metrics;
+    }
 
     /**
      * A map of the outputs of the run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputs")
-    java.util.Map<String, ParameterValue> outputs;
+    private final java.util.Map<String, ParameterValue> outputs;
+
+    public java.util.Map<String, ParameterValue> getOutputs() {
+        return outputs;
+    }
 
     /**
      * An array of execution errors from the run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionErrors")
-    java.util.List<String> executionErrors;
+    private final java.util.List<String> executionErrors;
+
+    public java.util.List<String> getExecutionErrors() {
+        return executionErrors;
+    }
 
     /**
      * An array of termination errors from the run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("terminationErrors")
-    java.util.List<String> terminationErrors;
+    private final java.util.List<String> terminationErrors;
+
+    public java.util.List<String> getTerminationErrors() {
+        return terminationErrors;
+    }
+
     /**
      * The autorization mode for when the task was executed.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AuthMode {
         Obo("OBO"),
         ResourcePrincipal("RESOURCE_PRINCIPAL"),
@@ -653,6 +861,9 @@ public class TaskRun {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AuthMode.class);
 
         private final String value;
         private static java.util.Map<String, AuthMode> map;
@@ -690,23 +901,35 @@ public class TaskRun {
      * The autorization mode for when the task was executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authMode")
-    AuthMode authMode;
+    private final AuthMode authMode;
+
+    public AuthMode getAuthMode() {
+        return authMode;
+    }
 
     /**
      * The OPC request ID of execution of the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("opcRequestId")
-    String opcRequestId;
+    private final String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
-    Integer objectStatus;
+    private final Integer objectStatus;
+
+    public Integer getObjectStatus() {
+        return objectStatus;
+    }
+
     /**
      * The type of task run.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TaskType {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
@@ -720,6 +943,9 @@ public class TaskRun {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TaskType.class);
 
         private final String value;
         private static java.util.Map<String, TaskType> map;
@@ -757,23 +983,193 @@ public class TaskRun {
      * The type of task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
-    TaskType taskType;
+    private final TaskType taskType;
+
+    public TaskType getTaskType() {
+        return taskType;
+    }
 
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    ObjectMetadata metadata;
+    private final ObjectMetadata metadata;
+
+    public ObjectMetadata getMetadata() {
+        return metadata;
+    }
 
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
-    java.util.Map<String, String> keyMap;
+    private final java.util.Map<String, String> keyMap;
+
+    public java.util.Map<String, String> getKeyMap() {
+        return keyMap;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TaskRun(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", parentRef=").append(String.valueOf(this.parentRef));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
+        sb.append(", configProvider=").append(String.valueOf(this.configProvider));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", startTimeMillis=").append(String.valueOf(this.startTimeMillis));
+        sb.append(", endTimeMillis=").append(String.valueOf(this.endTimeMillis));
+        sb.append(", lastUpdated=").append(String.valueOf(this.lastUpdated));
+        sb.append(", recordsWritten=").append(String.valueOf(this.recordsWritten));
+        sb.append(", bytesProcessed=").append(String.valueOf(this.bytesProcessed));
+        sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", expectedDuration=").append(String.valueOf(this.expectedDuration));
+        sb.append(", expectedDurationUnit=").append(String.valueOf(this.expectedDurationUnit));
+        sb.append(", taskKey=").append(String.valueOf(this.taskKey));
+        sb.append(", externalId=").append(String.valueOf(this.externalId));
+        sb.append(", retryAttempt=").append(String.valueOf(this.retryAttempt));
+        sb.append(", taskSchedule=").append(String.valueOf(this.taskSchedule));
+        sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append(", outputs=").append(String.valueOf(this.outputs));
+        sb.append(", executionErrors=").append(String.valueOf(this.executionErrors));
+        sb.append(", terminationErrors=").append(String.valueOf(this.terminationErrors));
+        sb.append(", authMode=").append(String.valueOf(this.authMode));
+        sb.append(", opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", taskType=").append(String.valueOf(this.taskType));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", keyMap=").append(String.valueOf(this.keyMap));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TaskRun)) {
+            return false;
+        }
+
+        TaskRun other = (TaskRun) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.objectVersion, other.objectVersion)
+                && java.util.Objects.equals(this.configProvider, other.configProvider)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.startTimeMillis, other.startTimeMillis)
+                && java.util.Objects.equals(this.endTimeMillis, other.endTimeMillis)
+                && java.util.Objects.equals(this.lastUpdated, other.lastUpdated)
+                && java.util.Objects.equals(this.recordsWritten, other.recordsWritten)
+                && java.util.Objects.equals(this.bytesProcessed, other.bytesProcessed)
+                && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.expectedDuration, other.expectedDuration)
+                && java.util.Objects.equals(this.expectedDurationUnit, other.expectedDurationUnit)
+                && java.util.Objects.equals(this.taskKey, other.taskKey)
+                && java.util.Objects.equals(this.externalId, other.externalId)
+                && java.util.Objects.equals(this.retryAttempt, other.retryAttempt)
+                && java.util.Objects.equals(this.taskSchedule, other.taskSchedule)
+                && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.outputs, other.outputs)
+                && java.util.Objects.equals(this.executionErrors, other.executionErrors)
+                && java.util.Objects.equals(this.terminationErrors, other.terminationErrors)
+                && java.util.Objects.equals(this.authMode, other.authMode)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(this.taskType, other.taskType)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.keyMap, other.keyMap)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configProvider == null ? 43 : this.configProvider.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.startTimeMillis == null ? 43 : this.startTimeMillis.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.endTimeMillis == null ? 43 : this.endTimeMillis.hashCode());
+        result = (result * PRIME) + (this.lastUpdated == null ? 43 : this.lastUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recordsWritten == null ? 43 : this.recordsWritten.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bytesProcessed == null ? 43 : this.bytesProcessed.hashCode());
+        result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expectedDuration == null ? 43 : this.expectedDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expectedDurationUnit == null
+                                ? 43
+                                : this.expectedDurationUnit.hashCode());
+        result = (result * PRIME) + (this.taskKey == null ? 43 : this.taskKey.hashCode());
+        result = (result * PRIME) + (this.externalId == null ? 43 : this.externalId.hashCode());
+        result = (result * PRIME) + (this.retryAttempt == null ? 43 : this.retryAttempt.hashCode());
+        result = (result * PRIME) + (this.taskSchedule == null ? 43 : this.taskSchedule.hashCode());
+        result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result = (result * PRIME) + (this.outputs == null ? 43 : this.outputs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionErrors == null ? 43 : this.executionErrors.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.terminationErrors == null ? 43 : this.terminationErrors.hashCode());
+        result = (result * PRIME) + (this.authMode == null ? 43 : this.authMode.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

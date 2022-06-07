@@ -16,14 +16,89 @@ package com.oracle.bmc.mysql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemSnapshot.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbSystemSnapshot {
+public final class DbSystemSnapshot {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "description",
+        "compartmentId",
+        "subnetId",
+        "availabilityDomain",
+        "faultDomain",
+        "shapeName",
+        "mysqlVersion",
+        "adminUsername",
+        "backupPolicy",
+        "configurationId",
+        "dataStorageSizeInGBs",
+        "hostnameLabel",
+        "ipAddress",
+        "port",
+        "portX",
+        "isHighlyAvailable",
+        "endpoints",
+        "maintenance",
+        "deletionPolicy",
+        "freeformTags",
+        "definedTags",
+        "crashRecovery"
+    })
+    public DbSystemSnapshot(
+            String id,
+            String displayName,
+            String description,
+            String compartmentId,
+            String subnetId,
+            String availabilityDomain,
+            String faultDomain,
+            String shapeName,
+            String mysqlVersion,
+            String adminUsername,
+            BackupPolicy backupPolicy,
+            String configurationId,
+            Integer dataStorageSizeInGBs,
+            String hostnameLabel,
+            String ipAddress,
+            Integer port,
+            Integer portX,
+            Boolean isHighlyAvailable,
+            java.util.List<DbSystemEndpoint> endpoints,
+            MaintenanceDetails maintenance,
+            DeletionPolicyDetails deletionPolicy,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            CrashRecoveryStatus crashRecovery) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.subnetId = subnetId;
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomain = faultDomain;
+        this.shapeName = shapeName;
+        this.mysqlVersion = mysqlVersion;
+        this.adminUsername = adminUsername;
+        this.backupPolicy = backupPolicy;
+        this.configurationId = configurationId;
+        this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.hostnameLabel = hostnameLabel;
+        this.ipAddress = ipAddress;
+        this.port = port;
+        this.portX = portX;
+        this.isHighlyAvailable = isHighlyAvailable;
+        this.endpoints = endpoints;
+        this.maintenance = maintenance;
+        this.deletionPolicy = deletionPolicy;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.crashRecovery = crashRecovery;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -316,50 +391,82 @@ public class DbSystemSnapshot {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The user-friendly name for the DB System. It does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * User-provided data about the DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The OCID of the compartment the DB System belongs in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The OCID of the subnet the DB System is associated with.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    private final String subnetId;
+
+    public String getSubnetId() {
+        return subnetId;
+    }
 
     /**
      * The Availability Domain where the primary DB System should be located.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    private final String availabilityDomain;
+
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     /**
      * The name of the Fault Domain the DB System is located in.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
-    String faultDomain;
+    private final String faultDomain;
+
+    public String getFaultDomain() {
+        return faultDomain;
+    }
 
     /**
      * The shape of the primary instances of the DB System. The shape
@@ -370,35 +477,59 @@ public class DbSystemSnapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    String shapeName;
+    private final String shapeName;
+
+    public String getShapeName() {
+        return shapeName;
+    }
 
     /**
      * Name of the MySQL Version in use for the DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
-    String mysqlVersion;
+    private final String mysqlVersion;
+
+    public String getMysqlVersion() {
+        return mysqlVersion;
+    }
 
     /**
      * The username for the administrative user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
-    String adminUsername;
+    private final String adminUsername;
+
+    public String getAdminUsername() {
+        return adminUsername;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
-    BackupPolicy backupPolicy;
+    private final BackupPolicy backupPolicy;
+
+    public BackupPolicy getBackupPolicy() {
+        return backupPolicy;
+    }
 
     /**
      * The OCID of the Configuration to be used for Instances in this DB System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationId")
-    String configurationId;
+    private final String configurationId;
+
+    public String getConfigurationId() {
+        return configurationId;
+    }
 
     /**
      * Initial size of the data volume in GiBs that will be created and attached.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
-    Integer dataStorageSizeInGBs;
+    private final Integer dataStorageSizeInGBs;
+
+    public Integer getDataStorageSizeInGBs() {
+        return dataStorageSizeInGBs;
+    }
 
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS.
@@ -408,7 +539,11 @@ public class DbSystemSnapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
-    String hostnameLabel;
+    private final String hostnameLabel;
+
+    public String getHostnameLabel() {
+        return hostnameLabel;
+    }
 
     /**
      * The IP address the DB System is configured to listen on. A private
@@ -418,40 +553,68 @@ public class DbSystemSnapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * The port for primary endpoint of the DB System to listen on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portX")
-    Integer portX;
+    private final Integer portX;
+
+    public Integer getPortX() {
+        return portX;
+    }
 
     /**
      * Specifies if the DB System is highly available.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
-    Boolean isHighlyAvailable;
+    private final Boolean isHighlyAvailable;
+
+    public Boolean getIsHighlyAvailable() {
+        return isHighlyAvailable;
+    }
 
     /**
      * The network endpoints available for this DB System.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
-    java.util.List<DbSystemEndpoint> endpoints;
+    private final java.util.List<DbSystemEndpoint> endpoints;
+
+    public java.util.List<DbSystemEndpoint> getEndpoints() {
+        return endpoints;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenance")
-    MaintenanceDetails maintenance;
+    private final MaintenanceDetails maintenance;
+
+    public MaintenanceDetails getMaintenance() {
+        return maintenance;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
-    DeletionPolicyDetails deletionPolicy;
+    private final DeletionPolicyDetails deletionPolicy;
+
+    public DeletionPolicyDetails getDeletionPolicy() {
+        return deletionPolicy;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -459,7 +622,11 @@ public class DbSystemSnapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -467,7 +634,11 @@ public class DbSystemSnapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
@@ -475,8 +646,142 @@ public class DbSystemSnapshot {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
-    CrashRecoveryStatus crashRecovery;
+    private final CrashRecoveryStatus crashRecovery;
+
+    public CrashRecoveryStatus getCrashRecovery() {
+        return crashRecovery;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbSystemSnapshot(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
+        sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
+        sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
+        sb.append(", configurationId=").append(String.valueOf(this.configurationId));
+        sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", portX=").append(String.valueOf(this.portX));
+        sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
+        sb.append(", endpoints=").append(String.valueOf(this.endpoints));
+        sb.append(", maintenance=").append(String.valueOf(this.maintenance));
+        sb.append(", deletionPolicy=").append(String.valueOf(this.deletionPolicy));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbSystemSnapshot)) {
+            return false;
+        }
+
+        DbSystemSnapshot other = (DbSystemSnapshot) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
+                && java.util.Objects.equals(this.adminUsername, other.adminUsername)
+                && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
+                && java.util.Objects.equals(this.configurationId, other.configurationId)
+                && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.portX, other.portX)
+                && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
+                && java.util.Objects.equals(this.endpoints, other.endpoints)
+                && java.util.Objects.equals(this.maintenance, other.maintenance)
+                && java.util.Objects.equals(this.deletionPolicy, other.deletionPolicy)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.mysqlVersion == null ? 43 : this.mysqlVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminUsername == null ? 43 : this.adminUsername.hashCode());
+        result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurationId == null ? 43 : this.configurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInGBs == null
+                                ? 43
+                                : this.dataStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());
+        result = (result * PRIME) + (this.endpoints == null ? 43 : this.endpoints.hashCode());
+        result = (result * PRIME) + (this.maintenance == null ? 43 : this.maintenance.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deletionPolicy == null ? 43 : this.deletionPolicy.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

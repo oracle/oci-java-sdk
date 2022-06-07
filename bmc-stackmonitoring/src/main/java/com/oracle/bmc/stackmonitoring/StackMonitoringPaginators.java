@@ -26,9 +26,12 @@ import com.oracle.bmc.stackmonitoring.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.RequiredArgsConstructor
 public class StackMonitoringPaginators {
     private final StackMonitoring client;
+
+    public StackMonitoringPaginators(StackMonitoring client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listDiscoveryJobLogs operation. This iterable

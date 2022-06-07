@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeScheduledTaskCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeScheduledTaskCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ChangeScheduledTaskCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails> {
@@ -27,6 +19,9 @@ public class ChangeScheduledTaskCompartmentRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * Unique scheduledTask id returned from task create.
      * If invalid will lead to a 404 not found.
@@ -34,12 +29,19 @@ public class ChangeScheduledTaskCompartmentRequest
      */
     private String scheduledTaskId;
 
+    public String getScheduledTaskId() {
+        return scheduledTaskId;
+    }
     /**
      * The destination compartment identifier.
      */
     private com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails
             changeScheduledTaskCompartmentDetails;
 
+    public com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails
+            getChangeScheduledTaskCompartmentDetails() {
+        return changeScheduledTaskCompartmentDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -50,11 +52,17 @@ public class ChangeScheduledTaskCompartmentRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -64,6 +72,10 @@ public class ChangeScheduledTaskCompartmentRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -87,6 +99,88 @@ public class ChangeScheduledTaskCompartmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String scheduledTaskId = null;
+
+        /**
+         * Unique scheduledTask id returned from task create.
+         * If invalid will lead to a 404 not found.
+         *
+         * @return this builder instance
+         */
+        public Builder scheduledTaskId(String scheduledTaskId) {
+            this.scheduledTaskId = scheduledTaskId;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails
+                changeScheduledTaskCompartmentDetails = null;
+
+        /**
+         * The destination compartment identifier.
+         * @return this builder instance
+         */
+        public Builder changeScheduledTaskCompartmentDetails(
+                com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails
+                        changeScheduledTaskCompartmentDetails) {
+            this.changeScheduledTaskCompartmentDetails = changeScheduledTaskCompartmentDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -155,5 +249,103 @@ public class ChangeScheduledTaskCompartmentRequest
             changeScheduledTaskCompartmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ChangeScheduledTaskCompartmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ChangeScheduledTaskCompartmentRequest
+         */
+        public ChangeScheduledTaskCompartmentRequest buildWithoutInvocationCallback() {
+            ChangeScheduledTaskCompartmentRequest request =
+                    new ChangeScheduledTaskCompartmentRequest();
+            request.namespaceName = namespaceName;
+            request.scheduledTaskId = scheduledTaskId;
+            request.changeScheduledTaskCompartmentDetails = changeScheduledTaskCompartmentDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new ChangeScheduledTaskCompartmentRequest(namespaceName, scheduledTaskId, changeScheduledTaskCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .scheduledTaskId(scheduledTaskId)
+                .changeScheduledTaskCompartmentDetails(changeScheduledTaskCompartmentDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",scheduledTaskId=").append(String.valueOf(this.scheduledTaskId));
+        sb.append(",changeScheduledTaskCompartmentDetails=")
+                .append(String.valueOf(this.changeScheduledTaskCompartmentDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ChangeScheduledTaskCompartmentRequest)) {
+            return false;
+        }
+
+        ChangeScheduledTaskCompartmentRequest other = (ChangeScheduledTaskCompartmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.scheduledTaskId, other.scheduledTaskId)
+                && java.util.Objects.equals(
+                        this.changeScheduledTaskCompartmentDetails,
+                        other.changeScheduledTaskCompartmentDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledTaskId == null ? 43 : this.scheduledTaskId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeScheduledTaskCompartmentDetails == null
+                                ? 43
+                                : this.changeScheduledTaskCompartmentDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

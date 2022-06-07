@@ -15,20 +15,15 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Select.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Select extends PushDownOperation {
+public final class Select extends PushDownOperation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isDistinct")
         private Boolean isDistinct;
@@ -74,6 +69,10 @@ public class Select extends PushDownOperation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public Select(Boolean isDistinct, java.util.List<ShapeField> selectColumns) {
         super();
@@ -85,14 +84,68 @@ public class Select extends PushDownOperation {
      * Specifies whether the object is distinct.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDistinct")
-    Boolean isDistinct;
+    private final Boolean isDistinct;
+
+    public Boolean getIsDistinct() {
+        return isDistinct;
+    }
 
     /**
      * An array of selected columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("selectColumns")
-    java.util.List<ShapeField> selectColumns;
+    private final java.util.List<ShapeField> selectColumns;
+
+    public java.util.List<ShapeField> getSelectColumns() {
+        return selectColumns;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Select(");
+        sb.append("super=").append(super.toString());
+        sb.append(", isDistinct=").append(String.valueOf(this.isDistinct));
+        sb.append(", selectColumns=").append(String.valueOf(this.selectColumns));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Select)) {
+            return false;
+        }
+
+        Select other = (Select) o;
+        return java.util.Objects.equals(this.isDistinct, other.isDistinct)
+                && java.util.Objects.equals(this.selectColumns, other.selectColumns)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.isDistinct == null ? 43 : this.isDistinct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.selectColumns == null ? 43 : this.selectColumns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

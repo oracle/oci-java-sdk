@@ -23,12 +23,6 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -67,33 +61,111 @@ package com.oracle.bmc.core.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class InstanceConfigurationLaunchInstancePlatformConfig {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isSecureBootEnabled",
+        "isTrustedPlatformModuleEnabled",
+        "isMeasuredBootEnabled"
+    })
+    protected InstanceConfigurationLaunchInstancePlatformConfig(
+            Boolean isSecureBootEnabled,
+            Boolean isTrustedPlatformModuleEnabled,
+            Boolean isMeasuredBootEnabled) {
+        super();
+        this.isSecureBootEnabled = isSecureBootEnabled;
+        this.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
+        this.isMeasuredBootEnabled = isMeasuredBootEnabled;
+    }
 
     /**
      * Whether Secure Boot is enabled on the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecureBootEnabled")
-    Boolean isSecureBootEnabled;
+    private final Boolean isSecureBootEnabled;
+
+    public Boolean getIsSecureBootEnabled() {
+        return isSecureBootEnabled;
+    }
 
     /**
      * Whether the Trusted Platform Module (TPM) is enabled on the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTrustedPlatformModuleEnabled")
-    Boolean isTrustedPlatformModuleEnabled;
+    private final Boolean isTrustedPlatformModuleEnabled;
+
+    public Boolean getIsTrustedPlatformModuleEnabled() {
+        return isTrustedPlatformModuleEnabled;
+    }
 
     /**
      * Whether the Measured Boot feature is enabled on the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMeasuredBootEnabled")
-    Boolean isMeasuredBootEnabled;
+    private final Boolean isMeasuredBootEnabled;
+
+    public Boolean getIsMeasuredBootEnabled() {
+        return isMeasuredBootEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstanceConfigurationLaunchInstancePlatformConfig(");
+        sb.append("isSecureBootEnabled=").append(String.valueOf(this.isSecureBootEnabled));
+        sb.append(", isTrustedPlatformModuleEnabled=")
+                .append(String.valueOf(this.isTrustedPlatformModuleEnabled));
+        sb.append(", isMeasuredBootEnabled=").append(String.valueOf(this.isMeasuredBootEnabled));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstanceConfigurationLaunchInstancePlatformConfig)) {
+            return false;
+        }
+
+        InstanceConfigurationLaunchInstancePlatformConfig other =
+                (InstanceConfigurationLaunchInstancePlatformConfig) o;
+        return java.util.Objects.equals(this.isSecureBootEnabled, other.isSecureBootEnabled)
+                && java.util.Objects.equals(
+                        this.isTrustedPlatformModuleEnabled, other.isTrustedPlatformModuleEnabled)
+                && java.util.Objects.equals(
+                        this.isMeasuredBootEnabled, other.isMeasuredBootEnabled);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isSecureBootEnabled == null
+                                ? 43
+                                : this.isSecureBootEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isTrustedPlatformModuleEnabled == null
+                                ? 43
+                                : this.isTrustedPlatformModuleEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMeasuredBootEnabled == null
+                                ? 43
+                                : this.isMeasuredBootEnabled.hashCode());
+        return result;
+    }
 
     /**
      * The type of platform being configured.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         AmdMilanBm("AMD_MILAN_BM"),
         AmdRomeBm("AMD_ROME_BM"),
@@ -108,6 +180,8 @@ public class InstanceConfigurationLaunchInstancePlatformConfig {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;

@@ -16,16 +16,40 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SummarizeHostInsightResourceUsageAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SummarizeHostInsightResourceUsageAggregation {
+public final class SummarizeHostInsightResourceUsageAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeIntervalStart",
+        "timeIntervalEnd",
+        "resourceMetric",
+        "usageUnit",
+        "usage",
+        "capacity",
+        "usageChangePercent"
+    })
+    public SummarizeHostInsightResourceUsageAggregation(
+            java.util.Date timeIntervalStart,
+            java.util.Date timeIntervalEnd,
+            ResourceMetric resourceMetric,
+            UsageUnit usageUnit,
+            Double usage,
+            Double capacity,
+            Double usageChangePercent) {
+        super();
+        this.timeIntervalStart = timeIntervalStart;
+        this.timeIntervalEnd = timeIntervalEnd;
+        this.resourceMetric = resourceMetric;
+        this.usageUnit = usageUnit;
+        this.usage = usage;
+        this.capacity = capacity;
+        this.usageChangePercent = usageChangePercent;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
@@ -130,22 +154,34 @@ public class SummarizeHostInsightResourceUsageAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The start timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
-    java.util.Date timeIntervalStart;
+    private final java.util.Date timeIntervalStart;
+
+    public java.util.Date getTimeIntervalStart() {
+        return timeIntervalStart;
+    }
 
     /**
      * The end timestamp that was passed into the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
-    java.util.Date timeIntervalEnd;
+    private final java.util.Date timeIntervalEnd;
+
+    public java.util.Date getTimeIntervalEnd() {
+        return timeIntervalEnd;
+    }
+
     /**
      * Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ResourceMetric {
         Cpu("CPU"),
         Memory("MEMORY"),
@@ -156,6 +192,9 @@ public class SummarizeHostInsightResourceUsageAggregation {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceMetric.class);
 
         private final String value;
         private static java.util.Map<String, ResourceMetric> map;
@@ -194,35 +233,123 @@ public class SummarizeHostInsightResourceUsageAggregation {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
-    ResourceMetric resourceMetric;
+    private final ResourceMetric resourceMetric;
+
+    public ResourceMetric getResourceMetric() {
+        return resourceMetric;
+    }
 
     /**
      * Displays usage unit (CORES, GB)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
-    UsageUnit usageUnit;
+    private final UsageUnit usageUnit;
+
+    public UsageUnit getUsageUnit() {
+        return usageUnit;
+    }
 
     /**
      * Total amount used of the resource metric type (CPU, STORAGE).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
-    Double usage;
+    private final Double usage;
+
+    public Double getUsage() {
+        return usage;
+    }
 
     /**
      * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
-    Double capacity;
+    private final Double capacity;
+
+    public Double getCapacity() {
+        return capacity;
+    }
 
     /**
      * Percentage change in resource usage during the current period calculated using linear regression functions
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
-    Double usageChangePercent;
+    private final Double usageChangePercent;
+
+    public Double getUsageChangePercent() {
+        return usageChangePercent;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SummarizeHostInsightResourceUsageAggregation(");
+        sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
+        sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(", resourceMetric=").append(String.valueOf(this.resourceMetric));
+        sb.append(", usageUnit=").append(String.valueOf(this.usageUnit));
+        sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append(", capacity=").append(String.valueOf(this.capacity));
+        sb.append(", usageChangePercent=").append(String.valueOf(this.usageChangePercent));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeHostInsightResourceUsageAggregation)) {
+            return false;
+        }
+
+        SummarizeHostInsightResourceUsageAggregation other =
+                (SummarizeHostInsightResourceUsageAggregation) o;
+        return java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
+                && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(this.resourceMetric, other.resourceMetric)
+                && java.util.Objects.equals(this.usageUnit, other.usageUnit)
+                && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.capacity, other.capacity)
+                && java.util.Objects.equals(this.usageChangePercent, other.usageChangePercent)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalStart == null ? 43 : this.timeIntervalStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceMetric == null ? 43 : this.resourceMetric.hashCode());
+        result = (result * PRIME) + (this.usageUnit == null ? 43 : this.usageUnit.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usageChangePercent == null
+                                ? 43
+                                : this.usageChangePercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -8,7 +8,6 @@ package com.oracle.bmc.cloudguard.model;
  * Possible status values of Cloud Guard Tenants.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.extern.slf4j.Slf4j
 public enum CloudGuardStatus {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
@@ -18,6 +17,9 @@ public enum CloudGuardStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(CloudGuardStatus.class);
 
     private final String value;
     private static java.util.Map<String, CloudGuardStatus> map;

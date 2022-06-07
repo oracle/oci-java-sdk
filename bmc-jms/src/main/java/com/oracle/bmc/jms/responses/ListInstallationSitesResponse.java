@@ -7,10 +7,6 @@ package com.oracle.bmc.jms.responses;
 import com.oracle.bmc.jms.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -18,6 +14,10 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For list pagination. When this header appears in the response, additional pages of results remain.
@@ -27,10 +27,18 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned InstallationSiteCollection instance.
      */
     private com.oracle.bmc.jms.model.InstallationSiteCollection installationSiteCollection;
+
+    public com.oracle.bmc.jms.model.InstallationSiteCollection getInstallationSiteCollection() {
+        return installationSiteCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -57,6 +65,28 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.jms.model.InstallationSiteCollection installationSiteCollection;
+
+        public Builder installationSiteCollection(
+                com.oracle.bmc.jms.model.InstallationSiteCollection installationSiteCollection) {
+            this.installationSiteCollection = installationSiteCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -74,5 +104,53 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
             return new ListInstallationSitesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, installationSiteCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",installationSiteCollection=")
+                .append(String.valueOf(installationSiteCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListInstallationSitesResponse)) {
+            return false;
+        }
+
+        ListInstallationSitesResponse other = (ListInstallationSitesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(
+                        this.installationSiteCollection, other.installationSiteCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.installationSiteCollection == null
+                                ? 43
+                                : this.installationSiteCollection.hashCode());
+        return result;
     }
 }

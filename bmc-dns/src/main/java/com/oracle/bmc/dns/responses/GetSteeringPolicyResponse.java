@@ -7,10 +7,6 @@ package com.oracle.bmc.dns.responses;
 import com.oracle.bmc.dns.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
@@ -18,6 +14,10 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * The current version of the resource, ending with a
@@ -27,10 +27,18 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String eTag;
 
+    public String getETag() {
+        return eTag;
+    }
+
     /**
      * The returned SteeringPolicy instance, or null if {@link #isNotModified()} is true.
      */
     private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
+
+    public com.oracle.bmc.dns.model.SteeringPolicy getSteeringPolicy() {
+        return steeringPolicy;
+    }
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,
@@ -39,6 +47,10 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
      * response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
+
+    public boolean isNotModified() {
+        return isNotModified;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -68,6 +80,34 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String eTag;
+
+        public Builder eTag(String eTag) {
+            this.eTag = eTag;
+            return this;
+        }
+
+        private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
+
+        public Builder steeringPolicy(com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy) {
+            this.steeringPolicy = steeringPolicy;
+            return this;
+        }
+
+        private boolean isNotModified;
+
+        public Builder isNotModified(boolean isNotModified) {
+            this.isNotModified = isNotModified;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -85,5 +125,52 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
             return new GetSteeringPolicyResponse(
                     __httpStatusCode__, opcRequestId, eTag, steeringPolicy, isNotModified);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",eTag=").append(String.valueOf(eTag));
+        sb.append(",steeringPolicy=").append(String.valueOf(steeringPolicy));
+        sb.append(",isNotModified=").append(isNotModified);
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetSteeringPolicyResponse)) {
+            return false;
+        }
+
+        GetSteeringPolicyResponse other = (GetSteeringPolicyResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.eTag, other.eTag)
+                && java.util.Objects.equals(this.steeringPolicy, other.steeringPolicy)
+                && this.isNotModified == other.isNotModified;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.eTag == null ? 43 : this.eTag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.steeringPolicy == null ? 43 : this.steeringPolicy.hashCode());
+        result = (result * PRIME) + (this.isNotModified ? 79 : 97);
+        return result;
     }
 }

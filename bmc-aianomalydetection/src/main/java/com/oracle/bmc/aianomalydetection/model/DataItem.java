@@ -15,14 +15,18 @@ package com.oracle.bmc.aianomalydetection.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataItem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataItem {
+public final class DataItem {
+    @Deprecated
+    @java.beans.ConstructorProperties({"timestamp", "values"})
+    public DataItem(java.util.Date timestamp, java.util.List<Double> values) {
+        super();
+        this.timestamp = timestamp;
+        this.values = values;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
@@ -67,18 +71,72 @@ public class DataItem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Nullable string representing timestamp.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * Array of double precision values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
-    java.util.List<Double> values;
+    private final java.util.List<Double> values;
+
+    public java.util.List<Double> getValues() {
+        return values;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataItem(");
+        sb.append("timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", values=").append(String.valueOf(this.values));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataItem)) {
+            return false;
+        }
+
+        DataItem other = (DataItem) o;
+        return java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.values, other.values)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result = (result * PRIME) + (this.values == null ? 43 : this.values.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

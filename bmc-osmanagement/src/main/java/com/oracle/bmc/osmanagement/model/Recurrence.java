@@ -15,14 +15,18 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Recurrence.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Recurrence {
+public final class Recurrence {
+    @Deprecated
+    @java.beans.ConstructorProperties({"intervalType", "intervalValue"})
+    public Recurrence(IntervalType intervalType, String intervalValue) {
+        super();
+        this.intervalType = intervalType;
+        this.intervalValue = intervalValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
         private IntervalType intervalType;
@@ -68,6 +72,10 @@ public class Recurrence {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * the interval period for the recurrence
      **/
@@ -109,14 +117,66 @@ public class Recurrence {
      * the interval period for the recurrence
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
-    IntervalType intervalType;
+    private final IntervalType intervalType;
+
+    public IntervalType getIntervalType() {
+        return intervalType;
+    }
 
     /**
      * the value for the interval period for the recurrence
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
-    String intervalValue;
+    private final String intervalValue;
+
+    public String getIntervalValue() {
+        return intervalValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Recurrence(");
+        sb.append("intervalType=").append(String.valueOf(this.intervalType));
+        sb.append(", intervalValue=").append(String.valueOf(this.intervalValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Recurrence)) {
+            return false;
+        }
+
+        Recurrence other = (Recurrence) o;
+        return java.util.Objects.equals(this.intervalType, other.intervalType)
+                && java.util.Objects.equals(this.intervalValue, other.intervalValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.intervalType == null ? 43 : this.intervalType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.intervalValue == null ? 43 : this.intervalValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

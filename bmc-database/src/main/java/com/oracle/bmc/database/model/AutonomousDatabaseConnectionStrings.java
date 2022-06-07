@@ -62,16 +62,37 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AutonomousDatabaseConnectionStrings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AutonomousDatabaseConnectionStrings {
+public final class AutonomousDatabaseConnectionStrings {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "high",
+        "medium",
+        "low",
+        "dedicated",
+        "allConnectionStrings",
+        "profiles"
+    })
+    public AutonomousDatabaseConnectionStrings(
+            String high,
+            String medium,
+            String low,
+            String dedicated,
+            java.util.Map<String, String> allConnectionStrings,
+            java.util.List<DatabaseConnectionStringProfile> profiles) {
+        super();
+        this.high = high;
+        this.medium = medium;
+        this.low = low;
+        this.dedicated = dedicated;
+        this.allConnectionStrings = allConnectionStrings;
+        this.profiles = profiles;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private String high;
@@ -160,29 +181,49 @@ public class AutonomousDatabaseConnectionStrings {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("high")
-    String high;
+    private final String high;
+
+    public String getHigh() {
+        return high;
+    }
 
     /**
      * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("medium")
-    String medium;
+    private final String medium;
+
+    public String getMedium() {
+        return medium;
+    }
 
     /**
      * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("low")
-    String low;
+    private final String low;
+
+    public String getLow() {
+        return low;
+    }
 
     /**
      * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicated")
-    String dedicated;
+    private final String dedicated;
+
+    public String getDedicated() {
+        return dedicated;
+    }
 
     /**
      * Returns all connection strings that can be used to connect to the Autonomous Database.
@@ -190,15 +231,81 @@ public class AutonomousDatabaseConnectionStrings {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
-    java.util.Map<String, String> allConnectionStrings;
+    private final java.util.Map<String, String> allConnectionStrings;
+
+    public java.util.Map<String, String> getAllConnectionStrings() {
+        return allConnectionStrings;
+    }
 
     /**
      * A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profiles")
-    java.util.List<DatabaseConnectionStringProfile> profiles;
+    private final java.util.List<DatabaseConnectionStringProfile> profiles;
+
+    public java.util.List<DatabaseConnectionStringProfile> getProfiles() {
+        return profiles;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AutonomousDatabaseConnectionStrings(");
+        sb.append("high=").append(String.valueOf(this.high));
+        sb.append(", medium=").append(String.valueOf(this.medium));
+        sb.append(", low=").append(String.valueOf(this.low));
+        sb.append(", dedicated=").append(String.valueOf(this.dedicated));
+        sb.append(", allConnectionStrings=").append(String.valueOf(this.allConnectionStrings));
+        sb.append(", profiles=").append(String.valueOf(this.profiles));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AutonomousDatabaseConnectionStrings)) {
+            return false;
+        }
+
+        AutonomousDatabaseConnectionStrings other = (AutonomousDatabaseConnectionStrings) o;
+        return java.util.Objects.equals(this.high, other.high)
+                && java.util.Objects.equals(this.medium, other.medium)
+                && java.util.Objects.equals(this.low, other.low)
+                && java.util.Objects.equals(this.dedicated, other.dedicated)
+                && java.util.Objects.equals(this.allConnectionStrings, other.allConnectionStrings)
+                && java.util.Objects.equals(this.profiles, other.profiles)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.high == null ? 43 : this.high.hashCode());
+        result = (result * PRIME) + (this.medium == null ? 43 : this.medium.hashCode());
+        result = (result * PRIME) + (this.low == null ? 43 : this.low.hashCode());
+        result = (result * PRIME) + (this.dedicated == null ? 43 : this.dedicated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allConnectionStrings == null
+                                ? 43
+                                : this.allConnectionStrings.hashCode());
+        result = (result * PRIME) + (this.profiles == null ? 43 : this.profiles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

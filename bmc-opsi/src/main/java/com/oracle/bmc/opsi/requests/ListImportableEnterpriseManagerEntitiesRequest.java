@@ -9,14 +9,6 @@ import com.oracle.bmc.opsi.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListImportableEnterpriseManagerEntitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListImportableEnterpriseManagerEntitiesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListImportableEnterpriseManagerEntitiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private String enterpriseManagerBridgeId;
 
+    public String getEnterpriseManagerBridgeId() {
+        return enterpriseManagerBridgeId;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to
      * return in a paginated "List" call.
@@ -35,6 +30,9 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from
      * the previous "List" call. For important details about how pagination works,
@@ -43,24 +41,36 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Filter by one or more Enterprise Manager entity types. Currently, the supported types are "oracle_pdb", "oracle_database", "host", "oracle_dbmachine", "oracle_exa_cloud_service", and "oracle_oci_exadata_cloud_service". If this parameter is not specified, targets of all supported entity types are returned by default.
      *
      */
     private java.util.List<String> enterpriseManagerEntityType;
 
+    public java.util.List<String> getEnterpriseManagerEntityType() {
+        return enterpriseManagerEntityType;
+    }
     /**
      * Used in combination with enterpriseManagerParentEntityIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular Enterprise Manager parent entity.
      *
      */
     private String enterpriseManagerIdentifier;
 
+    public String getEnterpriseManagerIdentifier() {
+        return enterpriseManagerIdentifier;
+    }
     /**
      * Used in combination with enterpriseManagerIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular  Enterprise Manager parent entity.
      *
      */
     private String enterpriseManagerParentEntityIdentifier;
 
+    public String getEnterpriseManagerParentEntityIdentifier() {
+        return enterpriseManagerParentEntityIdentifier;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -68,12 +78,57 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListImportableEnterpriseManagerEntitiesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String enterpriseManagerBridgeId = null;
+
+        /**
+         * Unique Enterprise Manager bridge identifier
+         * @return this builder instance
+         */
+        public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
+            this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
 
         private java.util.List<String> enterpriseManagerEntityType = null;
 
@@ -95,6 +150,44 @@ public class ListImportableEnterpriseManagerEntitiesRequest
          */
         public Builder enterpriseManagerEntityType(String singularValue) {
             return this.enterpriseManagerEntityType(java.util.Arrays.asList(singularValue));
+        }
+
+        private String enterpriseManagerIdentifier = null;
+
+        /**
+         * Used in combination with enterpriseManagerParentEntityIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular Enterprise Manager parent entity.
+         *
+         * @return this builder instance
+         */
+        public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
+            this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
+            return this;
+        }
+
+        private String enterpriseManagerParentEntityIdentifier = null;
+
+        /**
+         * Used in combination with enterpriseManagerIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular  Enterprise Manager parent entity.
+         *
+         * @return this builder instance
+         */
+        public Builder enterpriseManagerParentEntityIdentifier(
+                String enterpriseManagerParentEntityIdentifier) {
+            this.enterpriseManagerParentEntityIdentifier = enterpriseManagerParentEntityIdentifier;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -154,5 +247,122 @@ public class ListImportableEnterpriseManagerEntitiesRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListImportableEnterpriseManagerEntitiesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListImportableEnterpriseManagerEntitiesRequest
+         */
+        public ListImportableEnterpriseManagerEntitiesRequest buildWithoutInvocationCallback() {
+            ListImportableEnterpriseManagerEntitiesRequest request =
+                    new ListImportableEnterpriseManagerEntitiesRequest();
+            request.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            request.limit = limit;
+            request.page = page;
+            request.enterpriseManagerEntityType = enterpriseManagerEntityType;
+            request.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
+            request.enterpriseManagerParentEntityIdentifier =
+                    enterpriseManagerParentEntityIdentifier;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListImportableEnterpriseManagerEntitiesRequest(enterpriseManagerBridgeId, limit, page, enterpriseManagerEntityType, enterpriseManagerIdentifier, enterpriseManagerParentEntityIdentifier, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .enterpriseManagerBridgeId(enterpriseManagerBridgeId)
+                .limit(limit)
+                .page(page)
+                .enterpriseManagerEntityType(enterpriseManagerEntityType)
+                .enterpriseManagerIdentifier(enterpriseManagerIdentifier)
+                .enterpriseManagerParentEntityIdentifier(enterpriseManagerParentEntityIdentifier)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",enterpriseManagerBridgeId=")
+                .append(String.valueOf(this.enterpriseManagerBridgeId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",enterpriseManagerEntityType=")
+                .append(String.valueOf(this.enterpriseManagerEntityType));
+        sb.append(",enterpriseManagerIdentifier=")
+                .append(String.valueOf(this.enterpriseManagerIdentifier));
+        sb.append(",enterpriseManagerParentEntityIdentifier=")
+                .append(String.valueOf(this.enterpriseManagerParentEntityIdentifier));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListImportableEnterpriseManagerEntitiesRequest)) {
+            return false;
+        }
+
+        ListImportableEnterpriseManagerEntitiesRequest other =
+                (ListImportableEnterpriseManagerEntitiesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerBridgeId, other.enterpriseManagerBridgeId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerEntityType, other.enterpriseManagerEntityType)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerIdentifier, other.enterpriseManagerIdentifier)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerParentEntityIdentifier,
+                        other.enterpriseManagerParentEntityIdentifier)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerBridgeId == null
+                                ? 43
+                                : this.enterpriseManagerBridgeId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerEntityType == null
+                                ? 43
+                                : this.enterpriseManagerEntityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerIdentifier == null
+                                ? 43
+                                : this.enterpriseManagerIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerParentEntityIdentifier == null
+                                ? 43
+                                : this.enterpriseManagerParentEntityIdentifier.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

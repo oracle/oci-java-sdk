@@ -15,16 +15,19 @@ package com.oracle.bmc.servicemesh.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MeshMutualTransportLayerSecurity.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MeshMutualTransportLayerSecurity {
+public final class MeshMutualTransportLayerSecurity {
+    @Deprecated
+    @java.beans.ConstructorProperties({"minimum"})
+    public MeshMutualTransportLayerSecurity(MutualTransportLayerSecurity.Mode minimum) {
+        super();
+        this.minimum = minimum;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("minimum")
         private MutualTransportLayerSecurity.Mode minimum;
@@ -61,6 +64,10 @@ public class MeshMutualTransportLayerSecurity {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode.
      * PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes.
@@ -68,8 +75,51 @@ public class MeshMutualTransportLayerSecurity {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimum")
-    MutualTransportLayerSecurity.Mode minimum;
+    private final MutualTransportLayerSecurity.Mode minimum;
+
+    public MutualTransportLayerSecurity.Mode getMinimum() {
+        return minimum;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MeshMutualTransportLayerSecurity(");
+        sb.append("minimum=").append(String.valueOf(this.minimum));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MeshMutualTransportLayerSecurity)) {
+            return false;
+        }
+
+        MeshMutualTransportLayerSecurity other = (MeshMutualTransportLayerSecurity) o;
+        return java.util.Objects.equals(this.minimum, other.minimum)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.minimum == null ? 43 : this.minimum.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.cims.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/UpdateIncidentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateIncidentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateIncidentRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.cims.model.UpdateIncident> {
 
@@ -25,35 +17,57 @@ public class UpdateIncidentRequest
      */
     private String incidentKey;
 
+    public String getIncidentKey() {
+        return incidentKey;
+    }
     /**
      * The Customer Support Identifier associated with the support account.
      */
     private String csi;
 
+    public String getCsi() {
+        return csi;
+    }
     /**
      * Details about the support ticket being updated.
      */
     private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails;
 
+    public com.oracle.bmc.cims.model.UpdateIncident getUpdateIncidentDetails() {
+        return updateIncidentDetails;
+    }
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
      */
     private String ocid;
 
+    public String getOcid() {
+        return ocid;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The region of the tenancy.
      */
     private String homeregion;
+
+    public String getHomeregion() {
+        return homeregion;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -71,6 +85,84 @@ public class UpdateIncidentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String incidentKey = null;
+
+        /**
+         * Unique identifier for the support ticket.
+         * @return this builder instance
+         */
+        public Builder incidentKey(String incidentKey) {
+            this.incidentKey = incidentKey;
+            return this;
+        }
+
+        private String csi = null;
+
+        /**
+         * The Customer Support Identifier associated with the support account.
+         * @return this builder instance
+         */
+        public Builder csi(String csi) {
+            this.csi = csi;
+            return this;
+        }
+
+        private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails = null;
+
+        /**
+         * Details about the support ticket being updated.
+         * @return this builder instance
+         */
+        public Builder updateIncidentDetails(
+                com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails) {
+            this.updateIncidentDetails = updateIncidentDetails;
+            return this;
+        }
+
+        private String ocid = null;
+
+        /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * @return this builder instance
+         */
+        public Builder ocid(String ocid) {
+            this.ocid = ocid;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String homeregion = null;
+
+        /**
+         * The region of the tenancy.
+         * @return this builder instance
+         */
+        public Builder homeregion(String homeregion) {
+            this.homeregion = homeregion;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -139,5 +231,98 @@ public class UpdateIncidentRequest
             updateIncidentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateIncidentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateIncidentRequest
+         */
+        public UpdateIncidentRequest buildWithoutInvocationCallback() {
+            UpdateIncidentRequest request = new UpdateIncidentRequest();
+            request.incidentKey = incidentKey;
+            request.csi = csi;
+            request.updateIncidentDetails = updateIncidentDetails;
+            request.ocid = ocid;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            request.homeregion = homeregion;
+            return request;
+            // new UpdateIncidentRequest(incidentKey, csi, updateIncidentDetails, ocid, opcRequestId, ifMatch, homeregion);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .incidentKey(incidentKey)
+                .csi(csi)
+                .updateIncidentDetails(updateIncidentDetails)
+                .ocid(ocid)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch)
+                .homeregion(homeregion);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",incidentKey=").append(String.valueOf(this.incidentKey));
+        sb.append(",csi=").append(String.valueOf(this.csi));
+        sb.append(",updateIncidentDetails=").append(String.valueOf(this.updateIncidentDetails));
+        sb.append(",ocid=").append(String.valueOf(this.ocid));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",homeregion=").append(String.valueOf(this.homeregion));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateIncidentRequest)) {
+            return false;
+        }
+
+        UpdateIncidentRequest other = (UpdateIncidentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.incidentKey, other.incidentKey)
+                && java.util.Objects.equals(this.csi, other.csi)
+                && java.util.Objects.equals(this.updateIncidentDetails, other.updateIncidentDetails)
+                && java.util.Objects.equals(this.ocid, other.ocid)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.homeregion, other.homeregion);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.incidentKey == null ? 43 : this.incidentKey.hashCode());
+        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateIncidentDetails == null
+                                ? 43
+                                : this.updateIncidentDetails.hashCode());
+        result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.homeregion == null ? 43 : this.homeregion.hashCode());
+        return result;
     }
 }

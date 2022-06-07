@@ -15,16 +15,100 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TestParserPayloadDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TestParserPayloadDetails {
+public final class TestParserPayloadDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "content",
+        "description",
+        "displayName",
+        "encoding",
+        "exampleContent",
+        "fieldMaps",
+        "footerContent",
+        "headerContent",
+        "name",
+        "isDefault",
+        "isSingleLineContent",
+        "isSystem",
+        "language",
+        "timeUpdated",
+        "logTypeTestRequestVersion",
+        "metadata",
+        "parserIgnorelineCharacters",
+        "isHidden",
+        "parserSequence",
+        "parserTimezone",
+        "isParserWrittenOnce",
+        "parserFunctions",
+        "shouldTokenizeOriginalText",
+        "fieldDelimiter",
+        "fieldQualifier",
+        "type",
+        "isNamespaceAware"
+    })
+    public TestParserPayloadDetails(
+            String content,
+            String description,
+            String displayName,
+            String encoding,
+            String exampleContent,
+            java.util.List<LogAnalyticsParserField> fieldMaps,
+            String footerContent,
+            String headerContent,
+            String name,
+            Boolean isDefault,
+            Boolean isSingleLineContent,
+            Boolean isSystem,
+            String language,
+            java.util.Date timeUpdated,
+            Integer logTypeTestRequestVersion,
+            UiParserTestMetadata metadata,
+            String parserIgnorelineCharacters,
+            Long isHidden,
+            Integer parserSequence,
+            String parserTimezone,
+            Boolean isParserWrittenOnce,
+            java.util.List<LogAnalyticsParserFunction> parserFunctions,
+            Boolean shouldTokenizeOriginalText,
+            String fieldDelimiter,
+            String fieldQualifier,
+            Type type,
+            Boolean isNamespaceAware) {
+        super();
+        this.content = content;
+        this.description = description;
+        this.displayName = displayName;
+        this.encoding = encoding;
+        this.exampleContent = exampleContent;
+        this.fieldMaps = fieldMaps;
+        this.footerContent = footerContent;
+        this.headerContent = headerContent;
+        this.name = name;
+        this.isDefault = isDefault;
+        this.isSingleLineContent = isSingleLineContent;
+        this.isSystem = isSystem;
+        this.language = language;
+        this.timeUpdated = timeUpdated;
+        this.logTypeTestRequestVersion = logTypeTestRequestVersion;
+        this.metadata = metadata;
+        this.parserIgnorelineCharacters = parserIgnorelineCharacters;
+        this.isHidden = isHidden;
+        this.parserSequence = parserSequence;
+        this.parserTimezone = parserTimezone;
+        this.isParserWrittenOnce = isParserWrittenOnce;
+        this.parserFunctions = parserFunctions;
+        this.shouldTokenizeOriginalText = shouldTokenizeOriginalText;
+        this.fieldDelimiter = fieldDelimiter;
+        this.fieldQualifier = fieldQualifier;
+        this.type = type;
+        this.isNamespaceAware = isNamespaceAware;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
@@ -349,73 +433,121 @@ public class TestParserPayloadDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The content used for testing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
-    String content;
+    private final String content;
+
+    public String getContent() {
+        return content;
+    }
 
     /**
      * The parser description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The parser display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The content encoding.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
-    String encoding;
+    private final String encoding;
+
+    public String getEncoding() {
+        return encoding;
+    }
 
     /**
      * The example content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
-    String exampleContent;
+    private final String exampleContent;
+
+    public String getExampleContent() {
+        return exampleContent;
+    }
 
     /**
      * The parser fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldMaps")
-    java.util.List<LogAnalyticsParserField> fieldMaps;
+    private final java.util.List<LogAnalyticsParserField> fieldMaps;
+
+    public java.util.List<LogAnalyticsParserField> getFieldMaps() {
+        return fieldMaps;
+    }
 
     /**
      * The footer regular expression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("footerContent")
-    String footerContent;
+    private final String footerContent;
+
+    public String getFooterContent() {
+        return footerContent;
+    }
 
     /**
      * The header content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerContent")
-    String headerContent;
+    private final String headerContent;
+
+    public String getHeaderContent() {
+        return headerContent;
+    }
 
     /**
      * The parser name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A flag indicating if this is a default parser.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
 
     /**
      * A flag indicating if this is a single line content parser.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleLineContent")
-    Boolean isSingleLineContent;
+    private final Boolean isSingleLineContent;
+
+    public Boolean getIsSingleLineContent() {
+        return isSingleLineContent;
+    }
 
     /**
      * The system flag.  A value of false denotes a custom, or user
@@ -423,84 +555,141 @@ public class TestParserPayloadDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The language.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
-    String language;
+    private final String language;
+
+    public String getLanguage() {
+        return language;
+    }
 
     /**
      * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The log type test request version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logTypeTestRequestVersion")
-    Integer logTypeTestRequestVersion;
+    private final Integer logTypeTestRequestVersion;
+
+    public Integer getLogTypeTestRequestVersion() {
+        return logTypeTestRequestVersion;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    UiParserTestMetadata metadata;
+    private final UiParserTestMetadata metadata;
+
+    public UiParserTestMetadata getMetadata() {
+        return metadata;
+    }
 
     /**
      * The line characters for the parser to ignore.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserIgnorelineCharacters")
-    String parserIgnorelineCharacters;
+    private final String parserIgnorelineCharacters;
+
+    public String getParserIgnorelineCharacters() {
+        return parserIgnorelineCharacters;
+    }
 
     /**
      * A flag indicating if the parser is hidden or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
-    Long isHidden;
+    private final Long isHidden;
+
+    public Long getIsHidden() {
+        return isHidden;
+    }
 
     /**
      * The parser sequence.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserSequence")
-    Integer parserSequence;
+    private final Integer parserSequence;
+
+    public Integer getParserSequence() {
+        return parserSequence;
+    }
 
     /**
      * The parser timezone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserTimezone")
-    String parserTimezone;
+    private final String parserTimezone;
+
+    public String getParserTimezone() {
+        return parserTimezone;
+    }
 
     /**
      * A flag indicating whther or not the parser is write once.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isParserWrittenOnce")
-    Boolean isParserWrittenOnce;
+    private final Boolean isParserWrittenOnce;
+
+    public Boolean getIsParserWrittenOnce() {
+        return isParserWrittenOnce;
+    }
 
     /**
      * The parser function list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctions")
-    java.util.List<LogAnalyticsParserFunction> parserFunctions;
+    private final java.util.List<LogAnalyticsParserFunction> parserFunctions;
+
+    public java.util.List<LogAnalyticsParserFunction> getParserFunctions() {
+        return parserFunctions;
+    }
 
     /**
      * A flag indicating whether or not to tokenize the original text.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldTokenizeOriginalText")
-    Boolean shouldTokenizeOriginalText;
+    private final Boolean shouldTokenizeOriginalText;
+
+    public Boolean getShouldTokenizeOriginalText() {
+        return shouldTokenizeOriginalText;
+    }
 
     /**
      * The parser field delimiter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDelimiter")
-    String fieldDelimiter;
+    private final String fieldDelimiter;
+
+    public String getFieldDelimiter() {
+        return fieldDelimiter;
+    }
 
     /**
      * The parser field qualifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldQualifier")
-    String fieldQualifier;
+    private final String fieldQualifier;
+
+    public String getFieldQualifier() {
+        return fieldQualifier;
+    }
+
     /**
      * The parser type.  Default value is REGEX.
      **/
@@ -543,15 +732,184 @@ public class TestParserPayloadDetails {
      * The parser type.  Default value is REGEX.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * A flag indicating whether the XML parser should consider the namespace(s) while processing the log data.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNamespaceAware")
-    Boolean isNamespaceAware;
+    private final Boolean isNamespaceAware;
+
+    public Boolean getIsNamespaceAware() {
+        return isNamespaceAware;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TestParserPayloadDetails(");
+        sb.append("content=").append(String.valueOf(this.content));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", encoding=").append(String.valueOf(this.encoding));
+        sb.append(", exampleContent=").append(String.valueOf(this.exampleContent));
+        sb.append(", fieldMaps=").append(String.valueOf(this.fieldMaps));
+        sb.append(", footerContent=").append(String.valueOf(this.footerContent));
+        sb.append(", headerContent=").append(String.valueOf(this.headerContent));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", isSingleLineContent=").append(String.valueOf(this.isSingleLineContent));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", language=").append(String.valueOf(this.language));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", logTypeTestRequestVersion=")
+                .append(String.valueOf(this.logTypeTestRequestVersion));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", parserIgnorelineCharacters=")
+                .append(String.valueOf(this.parserIgnorelineCharacters));
+        sb.append(", isHidden=").append(String.valueOf(this.isHidden));
+        sb.append(", parserSequence=").append(String.valueOf(this.parserSequence));
+        sb.append(", parserTimezone=").append(String.valueOf(this.parserTimezone));
+        sb.append(", isParserWrittenOnce=").append(String.valueOf(this.isParserWrittenOnce));
+        sb.append(", parserFunctions=").append(String.valueOf(this.parserFunctions));
+        sb.append(", shouldTokenizeOriginalText=")
+                .append(String.valueOf(this.shouldTokenizeOriginalText));
+        sb.append(", fieldDelimiter=").append(String.valueOf(this.fieldDelimiter));
+        sb.append(", fieldQualifier=").append(String.valueOf(this.fieldQualifier));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", isNamespaceAware=").append(String.valueOf(this.isNamespaceAware));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TestParserPayloadDetails)) {
+            return false;
+        }
+
+        TestParserPayloadDetails other = (TestParserPayloadDetails) o;
+        return java.util.Objects.equals(this.content, other.content)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.encoding, other.encoding)
+                && java.util.Objects.equals(this.exampleContent, other.exampleContent)
+                && java.util.Objects.equals(this.fieldMaps, other.fieldMaps)
+                && java.util.Objects.equals(this.footerContent, other.footerContent)
+                && java.util.Objects.equals(this.headerContent, other.headerContent)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.isSingleLineContent, other.isSingleLineContent)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.language, other.language)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(
+                        this.logTypeTestRequestVersion, other.logTypeTestRequestVersion)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(
+                        this.parserIgnorelineCharacters, other.parserIgnorelineCharacters)
+                && java.util.Objects.equals(this.isHidden, other.isHidden)
+                && java.util.Objects.equals(this.parserSequence, other.parserSequence)
+                && java.util.Objects.equals(this.parserTimezone, other.parserTimezone)
+                && java.util.Objects.equals(this.isParserWrittenOnce, other.isParserWrittenOnce)
+                && java.util.Objects.equals(this.parserFunctions, other.parserFunctions)
+                && java.util.Objects.equals(
+                        this.shouldTokenizeOriginalText, other.shouldTokenizeOriginalText)
+                && java.util.Objects.equals(this.fieldDelimiter, other.fieldDelimiter)
+                && java.util.Objects.equals(this.fieldQualifier, other.fieldQualifier)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.isNamespaceAware, other.isNamespaceAware)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.encoding == null ? 43 : this.encoding.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exampleContent == null ? 43 : this.exampleContent.hashCode());
+        result = (result * PRIME) + (this.fieldMaps == null ? 43 : this.fieldMaps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.footerContent == null ? 43 : this.footerContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.headerContent == null ? 43 : this.headerContent.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSingleLineContent == null
+                                ? 43
+                                : this.isSingleLineContent.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logTypeTestRequestVersion == null
+                                ? 43
+                                : this.logTypeTestRequestVersion.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserIgnorelineCharacters == null
+                                ? 43
+                                : this.parserIgnorelineCharacters.hashCode());
+        result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserSequence == null ? 43 : this.parserSequence.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserTimezone == null ? 43 : this.parserTimezone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isParserWrittenOnce == null
+                                ? 43
+                                : this.isParserWrittenOnce.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parserFunctions == null ? 43 : this.parserFunctions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldTokenizeOriginalText == null
+                                ? 43
+                                : this.shouldTokenizeOriginalText.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fieldDelimiter == null ? 43 : this.fieldDelimiter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fieldQualifier == null ? 43 : this.fieldQualifier.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isNamespaceAware == null ? 43 : this.isNamespaceAware.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

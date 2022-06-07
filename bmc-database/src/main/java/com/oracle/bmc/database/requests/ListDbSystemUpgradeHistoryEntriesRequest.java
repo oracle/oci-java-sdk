@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemUpgradeHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDbSystemUpgradeHistoryEntriesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListDbSystemUpgradeHistoryEntriesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,16 +17,25 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
      */
     private String dbSystemId;
 
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
     /**
      * The maximum number of items to return per page.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The pagination token to continue listing from.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      */
@@ -75,6 +76,10 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
      *
@@ -116,22 +121,38 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
      */
     private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.Action upgradeAction;
 
+    public com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.Action
+            getUpgradeAction() {
+        return upgradeAction;
+    }
     /**
      * A filter to return only upgrade history entries that match the given lifecycle state exactly.
      */
     private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.LifecycleState
             lifecycleState;
 
+    public com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.LifecycleState
+            getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * Unique identifier for the request.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -139,6 +160,102 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String dbSystemId = null;
+
+        /**
+         * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return per page.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The pagination token to continue listing from.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.Action
+                upgradeAction = null;
+
+        /**
+         * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+         * @return this builder instance
+         */
+        public Builder upgradeAction(
+                com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.Action
+                        upgradeAction) {
+            this.upgradeAction = upgradeAction;
+            return this;
+        }
+
+        private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.LifecycleState
+                lifecycleState = null;
+
+        /**
+         * A filter to return only upgrade history entries that match the given lifecycle state exactly.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.LifecycleState
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -197,5 +314,105 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListDbSystemUpgradeHistoryEntriesRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListDbSystemUpgradeHistoryEntriesRequest
+         */
+        public ListDbSystemUpgradeHistoryEntriesRequest buildWithoutInvocationCallback() {
+            ListDbSystemUpgradeHistoryEntriesRequest request =
+                    new ListDbSystemUpgradeHistoryEntriesRequest();
+            request.dbSystemId = dbSystemId;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.upgradeAction = upgradeAction;
+            request.lifecycleState = lifecycleState;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListDbSystemUpgradeHistoryEntriesRequest(dbSystemId, limit, page, sortOrder, sortBy, upgradeAction, lifecycleState, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .dbSystemId(dbSystemId)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .upgradeAction(upgradeAction)
+                .lifecycleState(lifecycleState)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",upgradeAction=").append(String.valueOf(this.upgradeAction));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListDbSystemUpgradeHistoryEntriesRequest)) {
+            return false;
+        }
+
+        ListDbSystemUpgradeHistoryEntriesRequest other =
+                (ListDbSystemUpgradeHistoryEntriesRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.upgradeAction, other.upgradeAction)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upgradeAction == null ? 43 : this.upgradeAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

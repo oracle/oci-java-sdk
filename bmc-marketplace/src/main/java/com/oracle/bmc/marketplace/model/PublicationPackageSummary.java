@@ -15,16 +15,34 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PublicationPackageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PublicationPackageSummary {
+public final class PublicationPackageSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "listingId",
+        "packageVersion",
+        "packageType",
+        "resourceId",
+        "timeCreated"
+    })
+    public PublicationPackageSummary(
+            String listingId,
+            String packageVersion,
+            PackageTypeEnum packageType,
+            String resourceId,
+            java.util.Date timeCreated) {
+        super();
+        this.listingId = listingId;
+        this.packageVersion = packageVersion;
+        this.packageType = packageType;
+        this.resourceId = resourceId;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
@@ -103,29 +121,49 @@ public class PublicationPackageSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The ID of the listing that the specified package belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * The version of the specified package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
-    String packageVersion;
+    private final String packageVersion;
+
+    public String getPackageVersion() {
+        return packageVersion;
+    }
 
     /**
      * The specified package's type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
-    PackageTypeEnum packageType;
+    private final PackageTypeEnum packageType;
+
+    public PackageTypeEnum getPackageType() {
+        return packageType;
+    }
 
     /**
      * The unique identifier for the package resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -135,8 +173,65 @@ public class PublicationPackageSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PublicationPackageSummary(");
+        sb.append("listingId=").append(String.valueOf(this.listingId));
+        sb.append(", packageVersion=").append(String.valueOf(this.packageVersion));
+        sb.append(", packageType=").append(String.valueOf(this.packageType));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PublicationPackageSummary)) {
+            return false;
+        }
+
+        PublicationPackageSummary other = (PublicationPackageSummary) o;
+        return java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.packageVersion, other.packageVersion)
+                && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageVersion == null ? 43 : this.packageVersion.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,16 +16,20 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceDiscoveryServiceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceDiscoveryServiceSummary {
+public final class ResourceDiscoveryServiceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "discoveryScope"})
+    public ResourceDiscoveryServiceSummary(String name, DiscoveryScope discoveryScope) {
+        super();
+        this.name = name;
+        this.discoveryScope = discoveryScope;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -71,20 +75,28 @@ public class ResourceDiscoveryServiceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A supported service. Example: {@code core}
      * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The scope of the service as used with Resource Discovery.
      * This property determines the type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code COMPARTMENT}).
      * For example, {@code identity} is at the root compartment scope while {@code database} is at the compartment scope.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DiscoveryScope {
         Tenancy("TENANCY"),
         Compartment("COMPARTMENT"),
@@ -94,6 +106,9 @@ public class ResourceDiscoveryServiceSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DiscoveryScope.class);
 
         private final String value;
         private static java.util.Map<String, DiscoveryScope> map;
@@ -134,8 +149,56 @@ public class ResourceDiscoveryServiceSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryScope")
-    DiscoveryScope discoveryScope;
+    private final DiscoveryScope discoveryScope;
+
+    public DiscoveryScope getDiscoveryScope() {
+        return discoveryScope;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceDiscoveryServiceSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", discoveryScope=").append(String.valueOf(this.discoveryScope));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceDiscoveryServiceSummary)) {
+            return false;
+        }
+
+        ResourceDiscoveryServiceSummary other = (ResourceDiscoveryServiceSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.discoveryScope, other.discoveryScope)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryScope == null ? 43 : this.discoveryScope.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

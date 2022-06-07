@@ -7,10 +7,6 @@ package com.oracle.bmc.ons.responses;
 import com.oracle.bmc.ons.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetUnsubscriptionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetUnsubscriptionResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned String instance.
      */
     private String value;
+
+    public String getValue() {
+        return value;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "value"})
     private GetUnsubscriptionResponse(int __httpStatusCode__, String opcRequestId, String value) {
@@ -36,6 +40,20 @@ public class GetUnsubscriptionResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String value;
+
+        public Builder value(String value) {
+            this.value = value;
             return this;
         }
 
@@ -54,5 +72,44 @@ public class GetUnsubscriptionResponse extends com.oracle.bmc.responses.BmcRespo
         public GetUnsubscriptionResponse build() {
             return new GetUnsubscriptionResponse(__httpStatusCode__, opcRequestId, value);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",value=").append(String.valueOf(value));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetUnsubscriptionResponse)) {
+            return false;
+        }
+
+        GetUnsubscriptionResponse other = (GetUnsubscriptionResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.value, other.value);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        return result;
     }
 }

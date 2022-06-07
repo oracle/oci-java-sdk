@@ -15,14 +15,134 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Tablespace.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Tablespace {
+public final class Tablespace {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "type",
+        "status",
+        "blockSizeBytes",
+        "logging",
+        "isForceLogging",
+        "extentManagement",
+        "allocationType",
+        "isPluggedIn",
+        "segmentSpaceManagement",
+        "defaultTableCompression",
+        "retention",
+        "isBigfile",
+        "predicateEvaluation",
+        "isEncrypted",
+        "compressFor",
+        "defaultInMemory",
+        "defaultInMemoryPriority",
+        "defaultInMemoryDistribute",
+        "defaultInMemoryCompression",
+        "defaultInMemoryDuplicate",
+        "shared",
+        "defaultIndexCompression",
+        "indexCompressFor",
+        "defaultCellMemory",
+        "defaultInMemoryService",
+        "defaultInMemoryServiceName",
+        "lostWriteProtect",
+        "isChunkTablespace",
+        "tempGroup",
+        "maxSizeKB",
+        "allocatedSizeKB",
+        "userSizeKB",
+        "freeSpaceKB",
+        "usedSpaceKB",
+        "usedPercentAvailable",
+        "usedPercentAllocated",
+        "isDefault",
+        "datafiles"
+    })
+    public Tablespace(
+            String name,
+            Type type,
+            Status status,
+            java.math.BigDecimal blockSizeBytes,
+            Logging logging,
+            Boolean isForceLogging,
+            ExtentManagement extentManagement,
+            AllocationType allocationType,
+            Boolean isPluggedIn,
+            SegmentSpaceManagement segmentSpaceManagement,
+            DefaultTableCompression defaultTableCompression,
+            Retention retention,
+            Boolean isBigfile,
+            PredicateEvaluation predicateEvaluation,
+            Boolean isEncrypted,
+            CompressFor compressFor,
+            DefaultInMemory defaultInMemory,
+            DefaultInMemoryPriority defaultInMemoryPriority,
+            DefaultInMemoryDistribute defaultInMemoryDistribute,
+            DefaultInMemoryCompression defaultInMemoryCompression,
+            DefaultInMemoryDuplicate defaultInMemoryDuplicate,
+            Shared shared,
+            DefaultIndexCompression defaultIndexCompression,
+            IndexCompressFor indexCompressFor,
+            String defaultCellMemory,
+            DefaultInMemoryService defaultInMemoryService,
+            String defaultInMemoryServiceName,
+            LostWriteProtect lostWriteProtect,
+            Boolean isChunkTablespace,
+            String tempGroup,
+            java.math.BigDecimal maxSizeKB,
+            java.math.BigDecimal allocatedSizeKB,
+            java.math.BigDecimal userSizeKB,
+            java.math.BigDecimal freeSpaceKB,
+            java.math.BigDecimal usedSpaceKB,
+            Double usedPercentAvailable,
+            Double usedPercentAllocated,
+            Boolean isDefault,
+            java.util.List<Datafile> datafiles) {
+        super();
+        this.name = name;
+        this.type = type;
+        this.status = status;
+        this.blockSizeBytes = blockSizeBytes;
+        this.logging = logging;
+        this.isForceLogging = isForceLogging;
+        this.extentManagement = extentManagement;
+        this.allocationType = allocationType;
+        this.isPluggedIn = isPluggedIn;
+        this.segmentSpaceManagement = segmentSpaceManagement;
+        this.defaultTableCompression = defaultTableCompression;
+        this.retention = retention;
+        this.isBigfile = isBigfile;
+        this.predicateEvaluation = predicateEvaluation;
+        this.isEncrypted = isEncrypted;
+        this.compressFor = compressFor;
+        this.defaultInMemory = defaultInMemory;
+        this.defaultInMemoryPriority = defaultInMemoryPriority;
+        this.defaultInMemoryDistribute = defaultInMemoryDistribute;
+        this.defaultInMemoryCompression = defaultInMemoryCompression;
+        this.defaultInMemoryDuplicate = defaultInMemoryDuplicate;
+        this.shared = shared;
+        this.defaultIndexCompression = defaultIndexCompression;
+        this.indexCompressFor = indexCompressFor;
+        this.defaultCellMemory = defaultCellMemory;
+        this.defaultInMemoryService = defaultInMemoryService;
+        this.defaultInMemoryServiceName = defaultInMemoryServiceName;
+        this.lostWriteProtect = lostWriteProtect;
+        this.isChunkTablespace = isChunkTablespace;
+        this.tempGroup = tempGroup;
+        this.maxSizeKB = maxSizeKB;
+        this.allocatedSizeKB = allocatedSizeKB;
+        this.userSizeKB = userSizeKB;
+        this.freeSpaceKB = freeSpaceKB;
+        this.usedSpaceKB = usedSpaceKB;
+        this.usedPercentAvailable = usedPercentAvailable;
+        this.usedPercentAllocated = usedPercentAllocated;
+        this.isDefault = isDefault;
+        this.datafiles = datafiles;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -481,15 +601,23 @@ public class Tablespace {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The type of tablespace.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Undo("UNDO"),
         LostWriteProtection("LOST_WRITE_PROTECTION"),
@@ -501,6 +629,8 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -537,11 +667,15 @@ public class Tablespace {
      * The type of tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
+
     /**
      * The status of the tablespace.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Online("ONLINE"),
         Offline("OFFLINE"),
@@ -552,6 +686,8 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -589,17 +725,25 @@ public class Tablespace {
      * The status of the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The tablespace block size.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockSizeBytes")
-    java.math.BigDecimal blockSizeBytes;
+    private final java.math.BigDecimal blockSizeBytes;
+
+    public java.math.BigDecimal getBlockSizeBytes() {
+        return blockSizeBytes;
+    }
+
     /**
      * The default logging attribute.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Logging {
         Logging("LOGGING"),
         Nologging("NOLOGGING"),
@@ -609,6 +753,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Logging.class);
 
         private final String value;
         private static java.util.Map<String, Logging> map;
@@ -646,17 +793,25 @@ public class Tablespace {
      * The default logging attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logging")
-    Logging logging;
+    private final Logging logging;
+
+    public Logging getLogging() {
+        return logging;
+    }
 
     /**
      * Indicates whether the tablespace is under Force Logging mode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForceLogging")
-    Boolean isForceLogging;
+    private final Boolean isForceLogging;
+
+    public Boolean getIsForceLogging() {
+        return isForceLogging;
+    }
+
     /**
      * Indicates whether the extents in the tablespace are Locally managed or Dictionary managed.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ExtentManagement {
         Local("LOCAL"),
         Dictionary("DICTIONARY"),
@@ -666,6 +821,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ExtentManagement.class);
 
         private final String value;
         private static java.util.Map<String, ExtentManagement> map;
@@ -703,11 +861,15 @@ public class Tablespace {
      * Indicates whether the extents in the tablespace are Locally managed or Dictionary managed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extentManagement")
-    ExtentManagement extentManagement;
+    private final ExtentManagement extentManagement;
+
+    public ExtentManagement getExtentManagement() {
+        return extentManagement;
+    }
+
     /**
      * The type of extent allocation in effect for the tablespace.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AllocationType {
         System("SYSTEM"),
         Uniform("UNIFORM"),
@@ -718,6 +880,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AllocationType.class);
 
         private final String value;
         private static java.util.Map<String, AllocationType> map;
@@ -755,17 +920,25 @@ public class Tablespace {
      * The type of extent allocation in effect for the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allocationType")
-    AllocationType allocationType;
+    private final AllocationType allocationType;
+
+    public AllocationType getAllocationType() {
+        return allocationType;
+    }
 
     /**
      * Indicates whether the tablespace is plugged in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPluggedIn")
-    Boolean isPluggedIn;
+    private final Boolean isPluggedIn;
+
+    public Boolean getIsPluggedIn() {
+        return isPluggedIn;
+    }
+
     /**
      * Indicates whether the free and used segment space in the tablespace is managed using free lists (MANUAL) or bitmaps (AUTO).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum SegmentSpaceManagement {
         Manual("MANUAL"),
         Auto("AUTO"),
@@ -775,6 +948,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SegmentSpaceManagement.class);
 
         private final String value;
         private static java.util.Map<String, SegmentSpaceManagement> map;
@@ -812,11 +988,15 @@ public class Tablespace {
      * Indicates whether the free and used segment space in the tablespace is managed using free lists (MANUAL) or bitmaps (AUTO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("segmentSpaceManagement")
-    SegmentSpaceManagement segmentSpaceManagement;
+    private final SegmentSpaceManagement segmentSpaceManagement;
+
+    public SegmentSpaceManagement getSegmentSpaceManagement() {
+        return segmentSpaceManagement;
+    }
+
     /**
      * Indicates whether default table compression is enabled or disabled.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DefaultTableCompression {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
@@ -826,6 +1006,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DefaultTableCompression.class);
 
         private final String value;
         private static java.util.Map<String, DefaultTableCompression> map;
@@ -863,11 +1046,15 @@ public class Tablespace {
      * Indicates whether default table compression is enabled or disabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultTableCompression")
-    DefaultTableCompression defaultTableCompression;
+    private final DefaultTableCompression defaultTableCompression;
+
+    public DefaultTableCompression getDefaultTableCompression() {
+        return defaultTableCompression;
+    }
+
     /**
      * Indicates whether undo retention guarantee is enabled for the tablespace.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Retention {
         Guarantee("GUARANTEE"),
         Noguarantee("NOGUARANTEE"),
@@ -878,6 +1065,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Retention.class);
 
         private final String value;
         private static java.util.Map<String, Retention> map;
@@ -915,17 +1105,25 @@ public class Tablespace {
      * Indicates whether undo retention guarantee is enabled for the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retention")
-    Retention retention;
+    private final Retention retention;
+
+    public Retention getRetention() {
+        return retention;
+    }
 
     /**
      * Indicates whether the tablespace is a Bigfile tablespace or a Smallfile tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBigfile")
-    Boolean isBigfile;
+    private final Boolean isBigfile;
+
+    public Boolean getIsBigfile() {
+        return isBigfile;
+    }
+
     /**
      * Indicates whether predicates are evaluated by Host or by Storage.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PredicateEvaluation {
         Host("HOST"),
         Storage("STORAGE"),
@@ -935,6 +1133,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PredicateEvaluation.class);
 
         private final String value;
         private static java.util.Map<String, PredicateEvaluation> map;
@@ -972,17 +1173,25 @@ public class Tablespace {
      * Indicates whether predicates are evaluated by Host or by Storage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("predicateEvaluation")
-    PredicateEvaluation predicateEvaluation;
+    private final PredicateEvaluation predicateEvaluation;
+
+    public PredicateEvaluation getPredicateEvaluation() {
+        return predicateEvaluation;
+    }
 
     /**
      * Indicates whether the tablespace is encrypted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEncrypted")
-    Boolean isEncrypted;
+    private final Boolean isEncrypted;
+
+    public Boolean getIsEncrypted() {
+        return isEncrypted;
+    }
+
     /**
      * The operation type for which default compression is enabled.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CompressFor {
         Basic("BASIC"),
         Advanced("ADVANCED"),
@@ -998,6 +1207,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CompressFor.class);
 
         private final String value;
         private static java.util.Map<String, CompressFor> map;
@@ -1035,11 +1247,15 @@ public class Tablespace {
      * The operation type for which default compression is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compressFor")
-    CompressFor compressFor;
+    private final CompressFor compressFor;
+
+    public CompressFor getCompressFor() {
+        return compressFor;
+    }
+
     /**
      * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemory {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
@@ -1049,6 +1265,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DefaultInMemory.class);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemory> map;
@@ -1086,11 +1305,15 @@ public class Tablespace {
      * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemory")
-    DefaultInMemory defaultInMemory;
+    private final DefaultInMemory defaultInMemory;
+
+    public DefaultInMemory getDefaultInMemory() {
+        return defaultInMemory;
+    }
+
     /**
      * Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryPriority {
         Low("LOW"),
         Medium("MEDIUM"),
@@ -1103,6 +1326,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DefaultInMemoryPriority.class);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryPriority> map;
@@ -1140,11 +1366,15 @@ public class Tablespace {
      * Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryPriority")
-    DefaultInMemoryPriority defaultInMemoryPriority;
+    private final DefaultInMemoryPriority defaultInMemoryPriority;
+
+    public DefaultInMemoryPriority getDefaultInMemoryPriority() {
+        return defaultInMemoryPriority;
+    }
+
     /**
      * Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryDistribute {
         Auto("AUTO"),
         ByRowidRange("BY_ROWID_RANGE"),
@@ -1156,6 +1386,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DefaultInMemoryDistribute.class);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryDistribute> map;
@@ -1193,11 +1426,15 @@ public class Tablespace {
      * Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryDistribute")
-    DefaultInMemoryDistribute defaultInMemoryDistribute;
+    private final DefaultInMemoryDistribute defaultInMemoryDistribute;
+
+    public DefaultInMemoryDistribute getDefaultInMemoryDistribute() {
+        return defaultInMemoryDistribute;
+    }
+
     /**
      * Indicates the default compression level for the IM column store for the tablespace.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryCompression {
         NoMemcompress("NO_MEMCOMPRESS"),
         ForDml("FOR_DML"),
@@ -1211,6 +1448,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DefaultInMemoryCompression.class);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryCompression> map;
@@ -1248,11 +1488,15 @@ public class Tablespace {
      * Indicates the default compression level for the IM column store for the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryCompression")
-    DefaultInMemoryCompression defaultInMemoryCompression;
+    private final DefaultInMemoryCompression defaultInMemoryCompression;
+
+    public DefaultInMemoryCompression getDefaultInMemoryCompression() {
+        return defaultInMemoryCompression;
+    }
+
     /**
      * Indicates the duplicate setting for the IM column store in an Oracle RAC environment.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryDuplicate {
         NoDuplicate("NO_DUPLICATE"),
         Duplicate("DUPLICATE"),
@@ -1263,6 +1507,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DefaultInMemoryDuplicate.class);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryDuplicate> map;
@@ -1300,11 +1547,15 @@ public class Tablespace {
      * Indicates the duplicate setting for the IM column store in an Oracle RAC environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryDuplicate")
-    DefaultInMemoryDuplicate defaultInMemoryDuplicate;
+    private final DefaultInMemoryDuplicate defaultInMemoryDuplicate;
+
+    public DefaultInMemoryDuplicate getDefaultInMemoryDuplicate() {
+        return defaultInMemoryDuplicate;
+    }
+
     /**
      * Indicates whether the tablespace is for shared tablespace, or for local temporary tablespace for leaf (read-only) instances, or for local temporary tablespace for all instance types.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Shared {
         Shared("SHARED"),
         LocalOnLeaf("LOCAL_ON_LEAF"),
@@ -1315,6 +1566,8 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Shared.class);
 
         private final String value;
         private static java.util.Map<String, Shared> map;
@@ -1352,11 +1605,15 @@ public class Tablespace {
      * Indicates whether the tablespace is for shared tablespace, or for local temporary tablespace for leaf (read-only) instances, or for local temporary tablespace for all instance types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shared")
-    Shared shared;
+    private final Shared shared;
+
+    public Shared getShared() {
+        return shared;
+    }
+
     /**
      * Indicates whether default index compression is enabled or disabled.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DefaultIndexCompression {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
@@ -1366,6 +1623,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DefaultIndexCompression.class);
 
         private final String value;
         private static java.util.Map<String, DefaultIndexCompression> map;
@@ -1403,11 +1663,15 @@ public class Tablespace {
      * Indicates whether default index compression is enabled or disabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultIndexCompression")
-    DefaultIndexCompression defaultIndexCompression;
+    private final DefaultIndexCompression defaultIndexCompression;
+
+    public DefaultIndexCompression getDefaultIndexCompression() {
+        return defaultIndexCompression;
+    }
+
     /**
      * The operation type for which default index compression is enabled.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum IndexCompressFor {
         AdvancedLow("ADVANCED_LOW"),
         AdvancedHigh("ADVANCED_HIGH"),
@@ -1418,6 +1682,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IndexCompressFor.class);
 
         private final String value;
         private static java.util.Map<String, IndexCompressFor> map;
@@ -1455,17 +1722,25 @@ public class Tablespace {
      * The operation type for which default index compression is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("indexCompressFor")
-    IndexCompressFor indexCompressFor;
+    private final IndexCompressFor indexCompressFor;
+
+    public IndexCompressFor getIndexCompressFor() {
+        return indexCompressFor;
+    }
 
     /**
      * This specifies the default value for the CELLMEMORY attribute that tables created in the tablespace will inherit unless the behavior is overridden explicitly. This column is intended for use with Oracle Exadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultCellMemory")
-    String defaultCellMemory;
+    private final String defaultCellMemory;
+
+    public String getDefaultCellMemory() {
+        return defaultCellMemory;
+    }
+
     /**
      * Indicates how the IM column store is populated on various instances by default for the tablespace.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryService {
         Default("DEFAULT"),
         None("NONE"),
@@ -1477,6 +1752,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DefaultInMemoryService.class);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryService> map;
@@ -1514,17 +1792,25 @@ public class Tablespace {
      * Indicates how the IM column store is populated on various instances by default for the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryService")
-    DefaultInMemoryService defaultInMemoryService;
+    private final DefaultInMemoryService defaultInMemoryService;
+
+    public DefaultInMemoryService getDefaultInMemoryService() {
+        return defaultInMemoryService;
+    }
 
     /**
      * Indicates the service name for the service on which the IM column store should be populated by default for the tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryServiceName")
-    String defaultInMemoryServiceName;
+    private final String defaultInMemoryServiceName;
+
+    public String getDefaultInMemoryServiceName() {
+        return defaultInMemoryServiceName;
+    }
+
     /**
      * The lost write protection setting for the tablespace.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LostWriteProtect {
         Enabled("ENABLED"),
         ProtectOff("PROTECT_OFF"),
@@ -1535,6 +1821,9 @@ public class Tablespace {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LostWriteProtect.class);
 
         private final String value;
         private static java.util.Map<String, LostWriteProtect> map;
@@ -1572,74 +1861,359 @@ public class Tablespace {
      * The lost write protection setting for the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lostWriteProtect")
-    LostWriteProtect lostWriteProtect;
+    private final LostWriteProtect lostWriteProtect;
+
+    public LostWriteProtect getLostWriteProtect() {
+        return lostWriteProtect;
+    }
 
     /**
      * Indicates whether this is a chunk tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isChunkTablespace")
-    Boolean isChunkTablespace;
+    private final Boolean isChunkTablespace;
+
+    public Boolean getIsChunkTablespace() {
+        return isChunkTablespace;
+    }
 
     /**
      * The temporary tablespace group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempGroup")
-    String tempGroup;
+    private final String tempGroup;
+
+    public String getTempGroup() {
+        return tempGroup;
+    }
 
     /**
      * The maximum tablespace size in KB. If the tablespace contains any data files with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its data files is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only data files with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all data files in the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSizeKB")
-    java.math.BigDecimal maxSizeKB;
+    private final java.math.BigDecimal maxSizeKB;
+
+    public java.math.BigDecimal getMaxSizeKB() {
+        return maxSizeKB;
+    }
 
     /**
      * The allocated tablespace size in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allocatedSizeKB")
-    java.math.BigDecimal allocatedSizeKB;
+    private final java.math.BigDecimal allocatedSizeKB;
+
+    public java.math.BigDecimal getAllocatedSizeKB() {
+        return allocatedSizeKB;
+    }
 
     /**
      * The size of the tablespace available for user data in KB. The difference between tablespace size and user data size is used for storing metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userSizeKB")
-    java.math.BigDecimal userSizeKB;
+    private final java.math.BigDecimal userSizeKB;
+
+    public java.math.BigDecimal getUserSizeKB() {
+        return userSizeKB;
+    }
 
     /**
      * The free space available in the tablespace in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeSpaceKB")
-    java.math.BigDecimal freeSpaceKB;
+    private final java.math.BigDecimal freeSpaceKB;
+
+    public java.math.BigDecimal getFreeSpaceKB() {
+        return freeSpaceKB;
+    }
 
     /**
      * The total space used by the tablespace in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedSpaceKB")
-    java.math.BigDecimal usedSpaceKB;
+    private final java.math.BigDecimal usedSpaceKB;
+
+    public java.math.BigDecimal getUsedSpaceKB() {
+        return usedSpaceKB;
+    }
 
     /**
      * The percentage of used space out of the maximum available space in the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAvailable")
-    Double usedPercentAvailable;
+    private final Double usedPercentAvailable;
+
+    public Double getUsedPercentAvailable() {
+        return usedPercentAvailable;
+    }
 
     /**
      * The percentage of used space out of the total allocated space in the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAllocated")
-    Double usedPercentAllocated;
+    private final Double usedPercentAllocated;
+
+    public Double getUsedPercentAllocated() {
+        return usedPercentAllocated;
+    }
 
     /**
      * Indicates whether this is the default tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
 
     /**
      * A list of the data files associated with the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datafiles")
-    java.util.List<Datafile> datafiles;
+    private final java.util.List<Datafile> datafiles;
+
+    public java.util.List<Datafile> getDatafiles() {
+        return datafiles;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Tablespace(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", blockSizeBytes=").append(String.valueOf(this.blockSizeBytes));
+        sb.append(", logging=").append(String.valueOf(this.logging));
+        sb.append(", isForceLogging=").append(String.valueOf(this.isForceLogging));
+        sb.append(", extentManagement=").append(String.valueOf(this.extentManagement));
+        sb.append(", allocationType=").append(String.valueOf(this.allocationType));
+        sb.append(", isPluggedIn=").append(String.valueOf(this.isPluggedIn));
+        sb.append(", segmentSpaceManagement=").append(String.valueOf(this.segmentSpaceManagement));
+        sb.append(", defaultTableCompression=")
+                .append(String.valueOf(this.defaultTableCompression));
+        sb.append(", retention=").append(String.valueOf(this.retention));
+        sb.append(", isBigfile=").append(String.valueOf(this.isBigfile));
+        sb.append(", predicateEvaluation=").append(String.valueOf(this.predicateEvaluation));
+        sb.append(", isEncrypted=").append(String.valueOf(this.isEncrypted));
+        sb.append(", compressFor=").append(String.valueOf(this.compressFor));
+        sb.append(", defaultInMemory=").append(String.valueOf(this.defaultInMemory));
+        sb.append(", defaultInMemoryPriority=")
+                .append(String.valueOf(this.defaultInMemoryPriority));
+        sb.append(", defaultInMemoryDistribute=")
+                .append(String.valueOf(this.defaultInMemoryDistribute));
+        sb.append(", defaultInMemoryCompression=")
+                .append(String.valueOf(this.defaultInMemoryCompression));
+        sb.append(", defaultInMemoryDuplicate=")
+                .append(String.valueOf(this.defaultInMemoryDuplicate));
+        sb.append(", shared=").append(String.valueOf(this.shared));
+        sb.append(", defaultIndexCompression=")
+                .append(String.valueOf(this.defaultIndexCompression));
+        sb.append(", indexCompressFor=").append(String.valueOf(this.indexCompressFor));
+        sb.append(", defaultCellMemory=").append(String.valueOf(this.defaultCellMemory));
+        sb.append(", defaultInMemoryService=").append(String.valueOf(this.defaultInMemoryService));
+        sb.append(", defaultInMemoryServiceName=")
+                .append(String.valueOf(this.defaultInMemoryServiceName));
+        sb.append(", lostWriteProtect=").append(String.valueOf(this.lostWriteProtect));
+        sb.append(", isChunkTablespace=").append(String.valueOf(this.isChunkTablespace));
+        sb.append(", tempGroup=").append(String.valueOf(this.tempGroup));
+        sb.append(", maxSizeKB=").append(String.valueOf(this.maxSizeKB));
+        sb.append(", allocatedSizeKB=").append(String.valueOf(this.allocatedSizeKB));
+        sb.append(", userSizeKB=").append(String.valueOf(this.userSizeKB));
+        sb.append(", freeSpaceKB=").append(String.valueOf(this.freeSpaceKB));
+        sb.append(", usedSpaceKB=").append(String.valueOf(this.usedSpaceKB));
+        sb.append(", usedPercentAvailable=").append(String.valueOf(this.usedPercentAvailable));
+        sb.append(", usedPercentAllocated=").append(String.valueOf(this.usedPercentAllocated));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", datafiles=").append(String.valueOf(this.datafiles));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Tablespace)) {
+            return false;
+        }
+
+        Tablespace other = (Tablespace) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.blockSizeBytes, other.blockSizeBytes)
+                && java.util.Objects.equals(this.logging, other.logging)
+                && java.util.Objects.equals(this.isForceLogging, other.isForceLogging)
+                && java.util.Objects.equals(this.extentManagement, other.extentManagement)
+                && java.util.Objects.equals(this.allocationType, other.allocationType)
+                && java.util.Objects.equals(this.isPluggedIn, other.isPluggedIn)
+                && java.util.Objects.equals(
+                        this.segmentSpaceManagement, other.segmentSpaceManagement)
+                && java.util.Objects.equals(
+                        this.defaultTableCompression, other.defaultTableCompression)
+                && java.util.Objects.equals(this.retention, other.retention)
+                && java.util.Objects.equals(this.isBigfile, other.isBigfile)
+                && java.util.Objects.equals(this.predicateEvaluation, other.predicateEvaluation)
+                && java.util.Objects.equals(this.isEncrypted, other.isEncrypted)
+                && java.util.Objects.equals(this.compressFor, other.compressFor)
+                && java.util.Objects.equals(this.defaultInMemory, other.defaultInMemory)
+                && java.util.Objects.equals(
+                        this.defaultInMemoryPriority, other.defaultInMemoryPriority)
+                && java.util.Objects.equals(
+                        this.defaultInMemoryDistribute, other.defaultInMemoryDistribute)
+                && java.util.Objects.equals(
+                        this.defaultInMemoryCompression, other.defaultInMemoryCompression)
+                && java.util.Objects.equals(
+                        this.defaultInMemoryDuplicate, other.defaultInMemoryDuplicate)
+                && java.util.Objects.equals(this.shared, other.shared)
+                && java.util.Objects.equals(
+                        this.defaultIndexCompression, other.defaultIndexCompression)
+                && java.util.Objects.equals(this.indexCompressFor, other.indexCompressFor)
+                && java.util.Objects.equals(this.defaultCellMemory, other.defaultCellMemory)
+                && java.util.Objects.equals(
+                        this.defaultInMemoryService, other.defaultInMemoryService)
+                && java.util.Objects.equals(
+                        this.defaultInMemoryServiceName, other.defaultInMemoryServiceName)
+                && java.util.Objects.equals(this.lostWriteProtect, other.lostWriteProtect)
+                && java.util.Objects.equals(this.isChunkTablespace, other.isChunkTablespace)
+                && java.util.Objects.equals(this.tempGroup, other.tempGroup)
+                && java.util.Objects.equals(this.maxSizeKB, other.maxSizeKB)
+                && java.util.Objects.equals(this.allocatedSizeKB, other.allocatedSizeKB)
+                && java.util.Objects.equals(this.userSizeKB, other.userSizeKB)
+                && java.util.Objects.equals(this.freeSpaceKB, other.freeSpaceKB)
+                && java.util.Objects.equals(this.usedSpaceKB, other.usedSpaceKB)
+                && java.util.Objects.equals(this.usedPercentAvailable, other.usedPercentAvailable)
+                && java.util.Objects.equals(this.usedPercentAllocated, other.usedPercentAllocated)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.datafiles, other.datafiles)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockSizeBytes == null ? 43 : this.blockSizeBytes.hashCode());
+        result = (result * PRIME) + (this.logging == null ? 43 : this.logging.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isForceLogging == null ? 43 : this.isForceLogging.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extentManagement == null ? 43 : this.extentManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allocationType == null ? 43 : this.allocationType.hashCode());
+        result = (result * PRIME) + (this.isPluggedIn == null ? 43 : this.isPluggedIn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.segmentSpaceManagement == null
+                                ? 43
+                                : this.segmentSpaceManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultTableCompression == null
+                                ? 43
+                                : this.defaultTableCompression.hashCode());
+        result = (result * PRIME) + (this.retention == null ? 43 : this.retention.hashCode());
+        result = (result * PRIME) + (this.isBigfile == null ? 43 : this.isBigfile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.predicateEvaluation == null
+                                ? 43
+                                : this.predicateEvaluation.hashCode());
+        result = (result * PRIME) + (this.isEncrypted == null ? 43 : this.isEncrypted.hashCode());
+        result = (result * PRIME) + (this.compressFor == null ? 43 : this.compressFor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultInMemory == null ? 43 : this.defaultInMemory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultInMemoryPriority == null
+                                ? 43
+                                : this.defaultInMemoryPriority.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultInMemoryDistribute == null
+                                ? 43
+                                : this.defaultInMemoryDistribute.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultInMemoryCompression == null
+                                ? 43
+                                : this.defaultInMemoryCompression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultInMemoryDuplicate == null
+                                ? 43
+                                : this.defaultInMemoryDuplicate.hashCode());
+        result = (result * PRIME) + (this.shared == null ? 43 : this.shared.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultIndexCompression == null
+                                ? 43
+                                : this.defaultIndexCompression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.indexCompressFor == null ? 43 : this.indexCompressFor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultCellMemory == null ? 43 : this.defaultCellMemory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultInMemoryService == null
+                                ? 43
+                                : this.defaultInMemoryService.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultInMemoryServiceName == null
+                                ? 43
+                                : this.defaultInMemoryServiceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lostWriteProtect == null ? 43 : this.lostWriteProtect.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isChunkTablespace == null ? 43 : this.isChunkTablespace.hashCode());
+        result = (result * PRIME) + (this.tempGroup == null ? 43 : this.tempGroup.hashCode());
+        result = (result * PRIME) + (this.maxSizeKB == null ? 43 : this.maxSizeKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allocatedSizeKB == null ? 43 : this.allocatedSizeKB.hashCode());
+        result = (result * PRIME) + (this.userSizeKB == null ? 43 : this.userSizeKB.hashCode());
+        result = (result * PRIME) + (this.freeSpaceKB == null ? 43 : this.freeSpaceKB.hashCode());
+        result = (result * PRIME) + (this.usedSpaceKB == null ? 43 : this.usedSpaceKB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usedPercentAvailable == null
+                                ? 43
+                                : this.usedPercentAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usedPercentAllocated == null
+                                ? 43
+                                : this.usedPercentAllocated.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result = (result * PRIME) + (this.datafiles == null ? 43 : this.datafiles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

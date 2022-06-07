@@ -8,7 +8,6 @@ package com.oracle.bmc.osmanagement.model;
  * Possible CPU architecture types
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.extern.slf4j.Slf4j
 public enum ArchTypes {
     Ia32("IA_32"),
     X8664("X86_64"),
@@ -21,6 +20,8 @@ public enum ArchTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(ArchTypes.class);
 
     private final String value;
     private static java.util.Map<String, ArchTypes> map;

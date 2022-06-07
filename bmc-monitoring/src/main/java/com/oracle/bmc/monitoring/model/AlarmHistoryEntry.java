@@ -17,16 +17,22 @@ package com.oracle.bmc.monitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AlarmHistoryEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AlarmHistoryEntry {
+public final class AlarmHistoryEntry {
+    @Deprecated
+    @java.beans.ConstructorProperties({"summary", "timestamp", "timestampTriggered"})
+    public AlarmHistoryEntry(
+            String summary, java.util.Date timestamp, java.util.Date timestampTriggered) {
+        super();
+        this.summary = summary;
+        this.timestamp = timestamp;
+        this.timestampTriggered = timestampTriggered;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
@@ -84,6 +90,10 @@ public class AlarmHistoryEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Description for this alarm history entry.
      * <p>
@@ -93,7 +103,11 @@ public class AlarmHistoryEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
-    String summary;
+    private final String summary;
+
+    public String getSummary() {
+        return summary;
+    }
 
     /**
      * Timestamp for this alarm history entry. Format defined by RFC3339.
@@ -102,7 +116,11 @@ public class AlarmHistoryEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
 
     /**
      * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
@@ -112,8 +130,61 @@ public class AlarmHistoryEntry {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
-    java.util.Date timestampTriggered;
+    private final java.util.Date timestampTriggered;
+
+    public java.util.Date getTimestampTriggered() {
+        return timestampTriggered;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AlarmHistoryEntry(");
+        sb.append("summary=").append(String.valueOf(this.summary));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", timestampTriggered=").append(String.valueOf(this.timestampTriggered));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AlarmHistoryEntry)) {
+            return false;
+        }
+
+        AlarmHistoryEntry other = (AlarmHistoryEntry) o;
+        return java.util.Objects.equals(this.summary, other.summary)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.timestampTriggered, other.timestampTriggered)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timestampTriggered == null
+                                ? 43
+                                : this.timestampTriggered.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

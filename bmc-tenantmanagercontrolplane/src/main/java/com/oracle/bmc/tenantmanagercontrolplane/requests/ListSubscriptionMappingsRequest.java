@@ -9,14 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListSubscriptionMappingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSubscriptionMappingsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListSubscriptionMappingsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,42 +17,67 @@ public class ListSubscriptionMappingsRequest
      */
     private String subscriptionId;
 
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
     /**
      * SubscriptionMappingId is a unique ID for subscription and tenancy mapping.
      */
     private String subscriptionMappingId;
 
+    public String getSubscriptionMappingId() {
+        return subscriptionMappingId;
+    }
     /**
      * The ID of the compartment in which to list resources.
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The lifecycle state of the resource.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping.LifecycleState
             lifecycleState;
 
+    public com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping.LifecycleState
+            getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The sort order to use, whether 'asc' or 'desc'.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order can be provided.
      * * The default order for timeCreated is descending.
@@ -110,12 +127,123 @@ public class ListSubscriptionMappingsRequest
         }
     };
 
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSubscriptionMappingsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String subscriptionId = null;
+
+        /**
+         * The ID of the subscription to which the tenancy is associated.
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        private String subscriptionMappingId = null;
+
+        /**
+         * SubscriptionMappingId is a unique ID for subscription and tenancy mapping.
+         * @return this builder instance
+         */
+        public Builder subscriptionMappingId(String subscriptionMappingId) {
+            this.subscriptionMappingId = subscriptionMappingId;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping.LifecycleState
+                lifecycleState = null;
+
+        /**
+         * The lifecycle state of the resource.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping.LifecycleState
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(
+                com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order can be provided.
+         * * The default order for timeCreated is descending.
+         * * The default order for displayName is ascending.
+         * * If no value is specified, timeCreated is the default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -175,5 +303,114 @@ public class ListSubscriptionMappingsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListSubscriptionMappingsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListSubscriptionMappingsRequest
+         */
+        public ListSubscriptionMappingsRequest buildWithoutInvocationCallback() {
+            ListSubscriptionMappingsRequest request = new ListSubscriptionMappingsRequest();
+            request.subscriptionId = subscriptionId;
+            request.subscriptionMappingId = subscriptionMappingId;
+            request.compartmentId = compartmentId;
+            request.lifecycleState = lifecycleState;
+            request.opcRequestId = opcRequestId;
+            request.page = page;
+            request.limit = limit;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            return request;
+            // new ListSubscriptionMappingsRequest(subscriptionId, subscriptionMappingId, compartmentId, lifecycleState, opcRequestId, page, limit, sortOrder, sortBy);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .subscriptionId(subscriptionId)
+                .subscriptionMappingId(subscriptionMappingId)
+                .compartmentId(compartmentId)
+                .lifecycleState(lifecycleState)
+                .opcRequestId(opcRequestId)
+                .page(page)
+                .limit(limit)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(",subscriptionMappingId=").append(String.valueOf(this.subscriptionMappingId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListSubscriptionMappingsRequest)) {
+            return false;
+        }
+
+        ListSubscriptionMappingsRequest other = (ListSubscriptionMappingsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.subscriptionMappingId, other.subscriptionMappingId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionMappingId == null
+                                ? 43
+                                : this.subscriptionMappingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        return result;
     }
 }

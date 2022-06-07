@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateInstanceConfigurationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateInstanceConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails> {
@@ -26,12 +18,19 @@ public class UpdateInstanceConfigurationRequest
      */
     private String instanceConfigurationId;
 
+    public String getInstanceConfigurationId() {
+        return instanceConfigurationId;
+    }
     /**
      * Updates the freeFormTags, definedTags, and display name of an instance configuration.
      */
     private com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails
             updateInstanceConfigurationDetails;
 
+    public com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails
+            getUpdateInstanceConfigurationDetails() {
+        return updateInstanceConfigurationDetails;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -42,6 +41,9 @@ public class UpdateInstanceConfigurationRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
@@ -49,6 +51,10 @@ public class UpdateInstanceConfigurationRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -67,6 +73,61 @@ public class UpdateInstanceConfigurationRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String instanceConfigurationId = null;
+
+        /**
+         * The OCID of the instance configuration.
+         * @return this builder instance
+         */
+        public Builder instanceConfigurationId(String instanceConfigurationId) {
+            this.instanceConfigurationId = instanceConfigurationId;
+            return this;
+        }
+
+        private com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails
+                updateInstanceConfigurationDetails = null;
+
+        /**
+         * Updates the freeFormTags, definedTags, and display name of an instance configuration.
+         * @return this builder instance
+         */
+        public Builder updateInstanceConfigurationDetails(
+                com.oracle.bmc.core.model.UpdateInstanceConfigurationDetails
+                        updateInstanceConfigurationDetails) {
+            this.updateInstanceConfigurationDetails = updateInstanceConfigurationDetails;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -132,5 +193,93 @@ public class UpdateInstanceConfigurationRequest
             updateInstanceConfigurationDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateInstanceConfigurationRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateInstanceConfigurationRequest
+         */
+        public UpdateInstanceConfigurationRequest buildWithoutInvocationCallback() {
+            UpdateInstanceConfigurationRequest request = new UpdateInstanceConfigurationRequest();
+            request.instanceConfigurationId = instanceConfigurationId;
+            request.updateInstanceConfigurationDetails = updateInstanceConfigurationDetails;
+            request.opcRetryToken = opcRetryToken;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateInstanceConfigurationRequest(instanceConfigurationId, updateInstanceConfigurationDetails, opcRetryToken, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .instanceConfigurationId(instanceConfigurationId)
+                .updateInstanceConfigurationDetails(updateInstanceConfigurationDetails)
+                .opcRetryToken(opcRetryToken)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",instanceConfigurationId=").append(String.valueOf(this.instanceConfigurationId));
+        sb.append(",updateInstanceConfigurationDetails=")
+                .append(String.valueOf(this.updateInstanceConfigurationDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateInstanceConfigurationRequest)) {
+            return false;
+        }
+
+        UpdateInstanceConfigurationRequest other = (UpdateInstanceConfigurationRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.instanceConfigurationId, other.instanceConfigurationId)
+                && java.util.Objects.equals(
+                        this.updateInstanceConfigurationDetails,
+                        other.updateInstanceConfigurationDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.instanceConfigurationId == null
+                                ? 43
+                                : this.instanceConfigurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateInstanceConfigurationDetails == null
+                                ? 43
+                                : this.updateInstanceConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

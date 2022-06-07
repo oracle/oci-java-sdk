@@ -8,7 +8,6 @@ package com.oracle.bmc.jms.model;
  * Possible security status of a Java Runtime.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.extern.slf4j.Slf4j
 public enum JreSecurityStatus {
     Unknown("UNKNOWN"),
     UpToDate("UP_TO_DATE"),
@@ -20,6 +19,9 @@ public enum JreSecurityStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(JreSecurityStatus.class);
 
     private final String value;
     private static java.util.Map<String, JreSecurityStatus> map;

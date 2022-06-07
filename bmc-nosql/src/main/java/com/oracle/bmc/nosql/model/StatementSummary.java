@@ -15,14 +15,35 @@ package com.oracle.bmc.nosql.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StatementSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StatementSummary {
+public final class StatementSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "operation",
+        "tableName",
+        "indexName",
+        "isIfExists",
+        "isIfNotExists",
+        "syntaxError"
+    })
+    public StatementSummary(
+            Operation operation,
+            String tableName,
+            String indexName,
+            Boolean isIfExists,
+            Boolean isIfNotExists,
+            String syntaxError) {
+        super();
+        this.operation = operation;
+        this.tableName = tableName;
+        this.indexName = indexName;
+        this.isIfExists = isIfExists;
+        this.isIfNotExists = isIfNotExists;
+        this.syntaxError = syntaxError;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
@@ -116,11 +137,14 @@ public class StatementSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The operation represented in the statement, e.g. CREATE_TABLE.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Operation {
         CreateTable("CREATE_TABLE"),
         AlterTable("ALTER_TABLE"),
@@ -137,6 +161,9 @@ public class StatementSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Operation.class);
 
         private final String value;
         private static java.util.Map<String, Operation> map;
@@ -175,38 +202,118 @@ public class StatementSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
-    Operation operation;
+    private final Operation operation;
+
+    public Operation getOperation() {
+        return operation;
+    }
 
     /**
      * The table name from the SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
-    String tableName;
+    private final String tableName;
+
+    public String getTableName() {
+        return tableName;
+    }
 
     /**
      * The index name from the SQL statement, if present.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("indexName")
-    String indexName;
+    private final String indexName;
+
+    public String getIndexName() {
+        return indexName;
+    }
 
     /**
      * True if the statement includes "IF EXISTS."
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIfExists")
-    Boolean isIfExists;
+    private final Boolean isIfExists;
+
+    public Boolean getIsIfExists() {
+        return isIfExists;
+    }
 
     /**
      * True if the statement includes "IF NOT EXISTS."
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
-    Boolean isIfNotExists;
+    private final Boolean isIfNotExists;
+
+    public Boolean getIsIfNotExists() {
+        return isIfNotExists;
+    }
 
     /**
      * If present, indicates a syntax error in the statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntaxError")
-    String syntaxError;
+    private final String syntaxError;
+
+    public String getSyntaxError() {
+        return syntaxError;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StatementSummary(");
+        sb.append("operation=").append(String.valueOf(this.operation));
+        sb.append(", tableName=").append(String.valueOf(this.tableName));
+        sb.append(", indexName=").append(String.valueOf(this.indexName));
+        sb.append(", isIfExists=").append(String.valueOf(this.isIfExists));
+        sb.append(", isIfNotExists=").append(String.valueOf(this.isIfNotExists));
+        sb.append(", syntaxError=").append(String.valueOf(this.syntaxError));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StatementSummary)) {
+            return false;
+        }
+
+        StatementSummary other = (StatementSummary) o;
+        return java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(this.tableName, other.tableName)
+                && java.util.Objects.equals(this.indexName, other.indexName)
+                && java.util.Objects.equals(this.isIfExists, other.isIfExists)
+                && java.util.Objects.equals(this.isIfNotExists, other.isIfNotExists)
+                && java.util.Objects.equals(this.syntaxError, other.syntaxError)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
+        result = (result * PRIME) + (this.indexName == null ? 43 : this.indexName.hashCode());
+        result = (result * PRIME) + (this.isIfExists == null ? 43 : this.isIfExists.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIfNotExists == null ? 43 : this.isIfNotExists.hashCode());
+        result = (result * PRIME) + (this.syntaxError == null ? 43 : this.syntaxError.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

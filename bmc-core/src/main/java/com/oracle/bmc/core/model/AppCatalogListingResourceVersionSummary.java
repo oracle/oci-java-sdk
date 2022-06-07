@@ -15,16 +15,31 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AppCatalogListingResourceVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AppCatalogListingResourceVersionSummary {
+public final class AppCatalogListingResourceVersionSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "listingId",
+        "timePublished",
+        "listingResourceId",
+        "listingResourceVersion"
+    })
+    public AppCatalogListingResourceVersionSummary(
+            String listingId,
+            java.util.Date timePublished,
+            String listingResourceId,
+            String listingResourceVersion) {
+        super();
+        this.listingId = listingId;
+        this.timePublished = timePublished;
+        this.listingResourceId = listingResourceId;
+        this.listingResourceVersion = listingResourceVersion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
@@ -93,11 +108,19 @@ public class AppCatalogListingResourceVersionSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the listing this resource version belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
@@ -105,20 +128,89 @@ public class AppCatalogListingResourceVersionSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
-    java.util.Date timePublished;
+    private final java.util.Date timePublished;
+
+    public java.util.Date getTimePublished() {
+        return timePublished;
+    }
 
     /**
      * OCID of the listing resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
-    String listingResourceId;
+    private final String listingResourceId;
+
+    public String getListingResourceId() {
+        return listingResourceId;
+    }
 
     /**
      * Resource Version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
-    String listingResourceVersion;
+    private final String listingResourceVersion;
+
+    public String getListingResourceVersion() {
+        return listingResourceVersion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AppCatalogListingResourceVersionSummary(");
+        sb.append("listingId=").append(String.valueOf(this.listingId));
+        sb.append(", timePublished=").append(String.valueOf(this.timePublished));
+        sb.append(", listingResourceId=").append(String.valueOf(this.listingResourceId));
+        sb.append(", listingResourceVersion=").append(String.valueOf(this.listingResourceVersion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AppCatalogListingResourceVersionSummary)) {
+            return false;
+        }
+
+        AppCatalogListingResourceVersionSummary other = (AppCatalogListingResourceVersionSummary) o;
+        return java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.timePublished, other.timePublished)
+                && java.util.Objects.equals(this.listingResourceId, other.listingResourceId)
+                && java.util.Objects.equals(
+                        this.listingResourceVersion, other.listingResourceVersion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePublished == null ? 43 : this.timePublished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listingResourceId == null ? 43 : this.listingResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listingResourceVersion == null
+                                ? 43
+                                : this.listingResourceVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

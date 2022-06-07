@@ -9,14 +9,6 @@ import com.oracle.bmc.osmanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/UpdateManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateManagedInstanceGroupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateManagedInstanceGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails> {
@@ -26,17 +18,27 @@ public class UpdateManagedInstanceGroupRequest
      */
     private String managedInstanceGroupId;
 
+    public String getManagedInstanceGroupId() {
+        return managedInstanceGroupId;
+    }
     /**
      * Details about a Managed Instance Group to update
      */
     private com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails
             updateManagedInstanceGroupDetails;
 
+    public com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails
+            getUpdateManagedInstanceGroupDetails() {
+        return updateManagedInstanceGroupDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -46,6 +48,10 @@ public class UpdateManagedInstanceGroupRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +70,58 @@ public class UpdateManagedInstanceGroupRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String managedInstanceGroupId = null;
+
+        /**
+         * OCID for the managed instance group
+         * @return this builder instance
+         */
+        public Builder managedInstanceGroupId(String managedInstanceGroupId) {
+            this.managedInstanceGroupId = managedInstanceGroupId;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails
+                updateManagedInstanceGroupDetails = null;
+
+        /**
+         * Details about a Managed Instance Group to update
+         * @return this builder instance
+         */
+        public Builder updateManagedInstanceGroupDetails(
+                com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails
+                        updateManagedInstanceGroupDetails) {
+            this.updateManagedInstanceGroupDetails = updateManagedInstanceGroupDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -130,5 +188,91 @@ public class UpdateManagedInstanceGroupRequest
             updateManagedInstanceGroupDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateManagedInstanceGroupRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateManagedInstanceGroupRequest
+         */
+        public UpdateManagedInstanceGroupRequest buildWithoutInvocationCallback() {
+            UpdateManagedInstanceGroupRequest request = new UpdateManagedInstanceGroupRequest();
+            request.managedInstanceGroupId = managedInstanceGroupId;
+            request.updateManagedInstanceGroupDetails = updateManagedInstanceGroupDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateManagedInstanceGroupRequest(managedInstanceGroupId, updateManagedInstanceGroupDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .managedInstanceGroupId(managedInstanceGroupId)
+                .updateManagedInstanceGroupDetails(updateManagedInstanceGroupDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",managedInstanceGroupId=").append(String.valueOf(this.managedInstanceGroupId));
+        sb.append(",updateManagedInstanceGroupDetails=")
+                .append(String.valueOf(this.updateManagedInstanceGroupDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateManagedInstanceGroupRequest)) {
+            return false;
+        }
+
+        UpdateManagedInstanceGroupRequest other = (UpdateManagedInstanceGroupRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.managedInstanceGroupId, other.managedInstanceGroupId)
+                && java.util.Objects.equals(
+                        this.updateManagedInstanceGroupDetails,
+                        other.updateManagedInstanceGroupDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceGroupId == null
+                                ? 43
+                                : this.managedInstanceGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateManagedInstanceGroupDetails == null
+                                ? 43
+                                : this.updateManagedInstanceGroupDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

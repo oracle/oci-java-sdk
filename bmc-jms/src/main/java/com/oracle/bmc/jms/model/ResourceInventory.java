@@ -15,16 +15,34 @@ package com.oracle.bmc.jms.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceInventory.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceInventory {
+public final class ResourceInventory {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "activeFleetCount",
+        "managedInstanceCount",
+        "jreCount",
+        "installationCount",
+        "applicationCount"
+    })
+    public ResourceInventory(
+            Integer activeFleetCount,
+            Integer managedInstanceCount,
+            Integer jreCount,
+            Integer installationCount,
+            Integer applicationCount) {
+        super();
+        this.activeFleetCount = activeFleetCount;
+        this.managedInstanceCount = managedInstanceCount;
+        this.jreCount = jreCount;
+        this.installationCount = installationCount;
+        this.applicationCount = applicationCount;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("activeFleetCount")
         private Integer activeFleetCount;
@@ -107,36 +125,121 @@ public class ResourceInventory {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of _active_ fleets.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activeFleetCount")
-    Integer activeFleetCount;
+    private final Integer activeFleetCount;
+
+    public Integer getActiveFleetCount() {
+        return activeFleetCount;
+    }
 
     /**
      * The number of managed instances.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
-    Integer managedInstanceCount;
+    private final Integer managedInstanceCount;
+
+    public Integer getManagedInstanceCount() {
+        return managedInstanceCount;
+    }
 
     /**
      * The number of Java Runtimes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jreCount")
-    Integer jreCount;
+    private final Integer jreCount;
+
+    public Integer getJreCount() {
+        return jreCount;
+    }
 
     /**
      * The number of Java installations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installationCount")
-    Integer installationCount;
+    private final Integer installationCount;
+
+    public Integer getInstallationCount() {
+        return installationCount;
+    }
 
     /**
      * The number of applications.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationCount")
-    Integer applicationCount;
+    private final Integer applicationCount;
+
+    public Integer getApplicationCount() {
+        return applicationCount;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceInventory(");
+        sb.append("activeFleetCount=").append(String.valueOf(this.activeFleetCount));
+        sb.append(", managedInstanceCount=").append(String.valueOf(this.managedInstanceCount));
+        sb.append(", jreCount=").append(String.valueOf(this.jreCount));
+        sb.append(", installationCount=").append(String.valueOf(this.installationCount));
+        sb.append(", applicationCount=").append(String.valueOf(this.applicationCount));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceInventory)) {
+            return false;
+        }
+
+        ResourceInventory other = (ResourceInventory) o;
+        return java.util.Objects.equals(this.activeFleetCount, other.activeFleetCount)
+                && java.util.Objects.equals(this.managedInstanceCount, other.managedInstanceCount)
+                && java.util.Objects.equals(this.jreCount, other.jreCount)
+                && java.util.Objects.equals(this.installationCount, other.installationCount)
+                && java.util.Objects.equals(this.applicationCount, other.applicationCount)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.activeFleetCount == null ? 43 : this.activeFleetCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceCount == null
+                                ? 43
+                                : this.managedInstanceCount.hashCode());
+        result = (result * PRIME) + (this.jreCount == null ? 43 : this.jreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.installationCount == null ? 43 : this.installationCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationCount == null ? 43 : this.applicationCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

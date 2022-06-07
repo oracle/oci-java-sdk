@@ -9,14 +9,6 @@ import com.oracle.bmc.devops.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetTriggerExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTriggerRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetTriggerRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,10 +16,17 @@ public class GetTriggerRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String triggerId;
 
+    public String getTriggerId() {
+        return triggerId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -35,6 +34,28 @@ public class GetTriggerRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String triggerId = null;
+
+        /**
+         * Unique trigger identifier.
+         * @return this builder instance
+         */
+        public Builder triggerId(String triggerId) {
+            this.triggerId = triggerId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -87,5 +108,67 @@ public class GetTriggerRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetTriggerRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetTriggerRequest
+         */
+        public GetTriggerRequest buildWithoutInvocationCallback() {
+            GetTriggerRequest request = new GetTriggerRequest();
+            request.triggerId = triggerId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetTriggerRequest(triggerId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().triggerId(triggerId).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",triggerId=").append(String.valueOf(this.triggerId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetTriggerRequest)) {
+            return false;
+        }
+
+        GetTriggerRequest other = (GetTriggerRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.triggerId, other.triggerId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.triggerId == null ? 43 : this.triggerId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

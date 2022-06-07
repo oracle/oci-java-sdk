@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomePatchExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDbHomePatchRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,10 +16,17 @@ public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String dbHomeId;
 
+    public String getDbHomeId() {
+        return dbHomeId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
      */
     private String patchId;
+
+    public String getPatchId() {
+        return patchId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -35,6 +34,28 @@ public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String dbHomeId = null;
+
+        /**
+         * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder dbHomeId(String dbHomeId) {
+            this.dbHomeId = dbHomeId;
+            return this;
+        }
+
+        private String patchId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         * @return this builder instance
+         */
+        public Builder patchId(String patchId) {
+            this.patchId = patchId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -87,5 +108,67 @@ public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetDbHomePatchRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetDbHomePatchRequest
+         */
+        public GetDbHomePatchRequest buildWithoutInvocationCallback() {
+            GetDbHomePatchRequest request = new GetDbHomePatchRequest();
+            request.dbHomeId = dbHomeId;
+            request.patchId = patchId;
+            return request;
+            // new GetDbHomePatchRequest(dbHomeId, patchId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().dbHomeId(dbHomeId).patchId(patchId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",dbHomeId=").append(String.valueOf(this.dbHomeId));
+        sb.append(",patchId=").append(String.valueOf(this.patchId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetDbHomePatchRequest)) {
+            return false;
+        }
+
+        GetDbHomePatchRequest other = (GetDbHomePatchRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.dbHomeId, other.dbHomeId)
+                && java.util.Objects.equals(this.patchId, other.patchId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.dbHomeId == null ? 43 : this.dbHomeId.hashCode());
+        result = (result * PRIME) + (this.patchId == null ? 43 : this.patchId.hashCode());
+        return result;
     }
 }

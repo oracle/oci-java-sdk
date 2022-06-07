@@ -7,6 +7,7 @@ package com.oracle.bmc.osuborganizationsubscription;
 import com.oracle.bmc.osuborganizationsubscription.internal.http.*;
 import com.oracle.bmc.osuborganizationsubscription.requests.*;
 import com.oracle.bmc.osuborganizationsubscription.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for OrganizationSubscription service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.osuborganizationsubscription.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
-@lombok.extern.slf4j.Slf4j
 public class OrganizationSubscriptionAsyncClient implements OrganizationSubscriptionAsync {
     /**
      * Service instance for OrganizationSubscription.
@@ -34,7 +34,9 @@ public class OrganizationSubscriptionAsyncClient implements OrganizationSubscrip
                     .serviceEndpointTemplate("https://csaap-e.oracle.com")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OrganizationSubscriptionAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class OrganizationSubscriptionAsyncClient implements OrganizationSubscrip
          * @return the client
          */
         public OrganizationSubscriptionAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new OrganizationSubscriptionAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class OrganizationSubscriptionAsyncClient implements OrganizationSubscrip
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

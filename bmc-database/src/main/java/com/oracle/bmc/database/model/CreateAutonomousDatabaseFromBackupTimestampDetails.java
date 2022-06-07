@@ -16,23 +16,18 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateAutonomousDatabaseFromBackupTimestampDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "source"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateAutonomousDatabaseFromBackupTimestampDetails
+public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -518,6 +513,10 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateAutonomousDatabaseFromBackupTimestampDetails(
             String compartmentId,
@@ -609,13 +608,22 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
-    String autonomousDatabaseId;
+    private final String autonomousDatabaseId;
+
+    public String getAutonomousDatabaseId() {
+        return autonomousDatabaseId;
+    }
 
     /**
      * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
+    private final java.util.Date timestamp;
+
+    public java.util.Date getTimestamp() {
+        return timestamp;
+    }
+
     /**
      * The Autonomous Database clone type.
      **/
@@ -655,8 +663,64 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
      * The Autonomous Database clone type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
-    CloneType cloneType;
+    private final CloneType cloneType;
+
+    public CloneType getCloneType() {
+        return cloneType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateAutonomousDatabaseFromBackupTimestampDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
+        sb.append(", timestamp=").append(String.valueOf(this.timestamp));
+        sb.append(", cloneType=").append(String.valueOf(this.cloneType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateAutonomousDatabaseFromBackupTimestampDetails)) {
+            return false;
+        }
+
+        CreateAutonomousDatabaseFromBackupTimestampDetails other =
+                (CreateAutonomousDatabaseFromBackupTimestampDetails) o;
+        return java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
+                && java.util.Objects.equals(this.timestamp, other.timestamp)
+                && java.util.Objects.equals(this.cloneType, other.cloneType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.autonomousDatabaseId == null
+                                ? 43
+                                : this.autonomousDatabaseId.hashCode());
+        result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
+        result = (result * PRIME) + (this.cloneType == null ? 43 : this.cloneType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

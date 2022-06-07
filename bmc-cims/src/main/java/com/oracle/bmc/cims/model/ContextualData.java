@@ -15,14 +15,21 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ContextualData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ContextualData {
+public final class ContextualData {
+    @Deprecated
+    @java.beans.ConstructorProperties({"clientId", "schemaName", "schemaVersion", "payload"})
+    public ContextualData(
+            String clientId, String schemaName, String schemaVersion, String payload) {
+        super();
+        this.clientId = clientId;
+        this.schemaName = schemaName;
+        this.schemaVersion = schemaVersion;
+        this.payload = payload;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
@@ -90,30 +97,100 @@ public class ContextualData {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique client identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
-    String clientId;
+    private final String clientId;
+
+    public String getClientId() {
+        return clientId;
+    }
 
     /**
      * The schema name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
-    String schemaName;
+    private final String schemaName;
+
+    public String getSchemaName() {
+        return schemaName;
+    }
 
     /**
      * The schema version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaVersion")
-    String schemaVersion;
+    private final String schemaVersion;
+
+    public String getSchemaVersion() {
+        return schemaVersion;
+    }
 
     /**
      * The context data payload
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
-    String payload;
+    private final String payload;
+
+    public String getPayload() {
+        return payload;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ContextualData(");
+        sb.append("clientId=").append(String.valueOf(this.clientId));
+        sb.append(", schemaName=").append(String.valueOf(this.schemaName));
+        sb.append(", schemaVersion=").append(String.valueOf(this.schemaVersion));
+        sb.append(", payload=").append(String.valueOf(this.payload));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ContextualData)) {
+            return false;
+        }
+
+        ContextualData other = (ContextualData) o;
+        return java.util.Objects.equals(this.clientId, other.clientId)
+                && java.util.Objects.equals(this.schemaName, other.schemaName)
+                && java.util.Objects.equals(this.schemaVersion, other.schemaVersion)
+                && java.util.Objects.equals(this.payload, other.payload)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.schemaVersion == null ? 43 : this.schemaVersion.hashCode());
+        result = (result * PRIME) + (this.payload == null ? 43 : this.payload.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

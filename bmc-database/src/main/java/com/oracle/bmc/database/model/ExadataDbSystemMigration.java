@@ -16,16 +16,31 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExadataDbSystemMigration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExadataDbSystemMigration {
+public final class ExadataDbSystemMigration {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "dbSystemId",
+        "cloudVmClusterId",
+        "cloudExadataInfrastructureId",
+        "additionalMigrations"
+    })
+    public ExadataDbSystemMigration(
+            String dbSystemId,
+            String cloudVmClusterId,
+            String cloudExadataInfrastructureId,
+            java.util.List<ExadataDbSystemMigrationSummary> additionalMigrations) {
+        super();
+        this.dbSystemId = dbSystemId;
+        this.cloudVmClusterId = cloudVmClusterId;
+        this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
+        this.additionalMigrations = additionalMigrations;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
@@ -98,30 +113,110 @@ public class ExadataDbSystemMigration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
+    private final String dbSystemId;
+
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudVmClusterId")
-    String cloudVmClusterId;
+    private final String cloudVmClusterId;
+
+    public String getCloudVmClusterId() {
+        return cloudVmClusterId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
-    String cloudExadataInfrastructureId;
+    private final String cloudExadataInfrastructureId;
+
+    public String getCloudExadataInfrastructureId() {
+        return cloudExadataInfrastructureId;
+    }
 
     /**
      * The details of addtional resources related to the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalMigrations")
-    java.util.List<ExadataDbSystemMigrationSummary> additionalMigrations;
+    private final java.util.List<ExadataDbSystemMigrationSummary> additionalMigrations;
+
+    public java.util.List<ExadataDbSystemMigrationSummary> getAdditionalMigrations() {
+        return additionalMigrations;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExadataDbSystemMigration(");
+        sb.append("dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", cloudVmClusterId=").append(String.valueOf(this.cloudVmClusterId));
+        sb.append(", cloudExadataInfrastructureId=")
+                .append(String.valueOf(this.cloudExadataInfrastructureId));
+        sb.append(", additionalMigrations=").append(String.valueOf(this.additionalMigrations));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExadataDbSystemMigration)) {
+            return false;
+        }
+
+        ExadataDbSystemMigration other = (ExadataDbSystemMigration) o;
+        return java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.cloudVmClusterId, other.cloudVmClusterId)
+                && java.util.Objects.equals(
+                        this.cloudExadataInfrastructureId, other.cloudExadataInfrastructureId)
+                && java.util.Objects.equals(this.additionalMigrations, other.additionalMigrations)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudVmClusterId == null ? 43 : this.cloudVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudExadataInfrastructureId == null
+                                ? 43
+                                : this.cloudExadataInfrastructureId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalMigrations == null
+                                ? 43
+                                : this.additionalMigrations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,16 +7,16 @@ package com.oracle.bmc.waf.responses;
 import com.oracle.bmc.waf.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetWebAppFirewallPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -25,10 +25,18 @@ public class GetWebAppFirewallPolicyResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned WebAppFirewallPolicy instance.
      */
     private com.oracle.bmc.waf.model.WebAppFirewallPolicy webAppFirewallPolicy;
+
+    public com.oracle.bmc.waf.model.WebAppFirewallPolicy getWebAppFirewallPolicy() {
+        return webAppFirewallPolicy;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -55,6 +63,28 @@ public class GetWebAppFirewallPolicyResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.waf.model.WebAppFirewallPolicy webAppFirewallPolicy;
+
+        public Builder webAppFirewallPolicy(
+                com.oracle.bmc.waf.model.WebAppFirewallPolicy webAppFirewallPolicy) {
+            this.webAppFirewallPolicy = webAppFirewallPolicy;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -72,5 +102,51 @@ public class GetWebAppFirewallPolicyResponse extends com.oracle.bmc.responses.Bm
             return new GetWebAppFirewallPolicyResponse(
                     __httpStatusCode__, etag, opcRequestId, webAppFirewallPolicy);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",webAppFirewallPolicy=").append(String.valueOf(webAppFirewallPolicy));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetWebAppFirewallPolicyResponse)) {
+            return false;
+        }
+
+        GetWebAppFirewallPolicyResponse other = (GetWebAppFirewallPolicyResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.webAppFirewallPolicy, other.webAppFirewallPolicy);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.webAppFirewallPolicy == null
+                                ? 43
+                                : this.webAppFirewallPolicy.hashCode());
+        return result;
     }
 }

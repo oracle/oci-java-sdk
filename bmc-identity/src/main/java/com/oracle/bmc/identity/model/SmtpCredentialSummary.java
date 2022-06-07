@@ -18,16 +18,43 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SmtpCredentialSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SmtpCredentialSummary {
+public final class SmtpCredentialSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "username",
+        "id",
+        "userId",
+        "description",
+        "timeCreated",
+        "timeExpires",
+        "lifecycleState",
+        "inactiveStatus"
+    })
+    public SmtpCredentialSummary(
+            String username,
+            String id,
+            String userId,
+            String description,
+            java.util.Date timeCreated,
+            java.util.Date timeExpires,
+            LifecycleState lifecycleState,
+            Long inactiveStatus) {
+        super();
+        this.username = username;
+        this.id = id;
+        this.userId = userId;
+        this.description = description;
+        this.timeCreated = timeCreated;
+        this.timeExpires = timeExpires;
+        this.lifecycleState = lifecycleState;
+        this.inactiveStatus = inactiveStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
@@ -143,24 +170,40 @@ public class SmtpCredentialSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The SMTP user name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
-    String username;
+    private final String username;
+
+    public String getUsername() {
+        return username;
+    }
 
     /**
      * The OCID of the SMTP credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the user the SMTP credential belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
@@ -169,7 +212,11 @@ public class SmtpCredentialSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Date and time the {@code SmtpCredential} object was created, in the format defined by RFC3339.
@@ -178,7 +225,11 @@ public class SmtpCredentialSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Date and time when this credential will expire, in the format defined by RFC3339.
@@ -188,13 +239,17 @@ public class SmtpCredentialSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
-    java.util.Date timeExpires;
+    private final java.util.Date timeExpires;
+
+    public java.util.Date getTimeExpires() {
+        return timeExpires;
+    }
+
     /**
      * The credential's current state. After creating a SMTP credential, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -207,6 +262,9 @@ public class SmtpCredentialSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -246,14 +304,86 @@ public class SmtpCredentialSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
-    Long inactiveStatus;
+    private final Long inactiveStatus;
+
+    public Long getInactiveStatus() {
+        return inactiveStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SmtpCredentialSummary(");
+        sb.append("username=").append(String.valueOf(this.username));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", inactiveStatus=").append(String.valueOf(this.inactiveStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SmtpCredentialSummary)) {
+            return false;
+        }
+
+        SmtpCredentialSummary other = (SmtpCredentialSummary) o;
+        return java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeExpires, other.timeExpires)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.inactiveStatus, other.inactiveStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inactiveStatus == null ? 43 : this.inactiveStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

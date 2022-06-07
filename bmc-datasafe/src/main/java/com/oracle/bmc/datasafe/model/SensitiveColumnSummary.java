@@ -15,16 +15,76 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SensitiveColumnSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SensitiveColumnSummary {
+public final class SensitiveColumnSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "sensitiveDataModelId",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "timeUpdated",
+        "appName",
+        "schemaName",
+        "objectName",
+        "columnName",
+        "objectType",
+        "dataType",
+        "status",
+        "sensitiveTypeId",
+        "source",
+        "parentColumnKeys",
+        "relationType",
+        "estimatedDataValueCount",
+        "sampleDataValues"
+    })
+    public SensitiveColumnSummary(
+            String key,
+            String sensitiveDataModelId,
+            SensitiveColumnLifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String appName,
+            String schemaName,
+            String objectName,
+            String columnName,
+            ObjectType objectType,
+            String dataType,
+            Status status,
+            String sensitiveTypeId,
+            Source source,
+            java.util.List<String> parentColumnKeys,
+            RelationType relationType,
+            Long estimatedDataValueCount,
+            java.util.List<String> sampleDataValues) {
+        super();
+        this.key = key;
+        this.sensitiveDataModelId = sensitiveDataModelId;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.appName = appName;
+        this.schemaName = schemaName;
+        this.objectName = objectName;
+        this.columnName = columnName;
+        this.objectType = objectType;
+        this.dataType = dataType;
+        this.status = status;
+        this.sensitiveTypeId = sensitiveTypeId;
+        this.source = source;
+        this.parentColumnKeys = parentColumnKeys;
+        this.relationType = relationType;
+        this.estimatedDataValueCount = estimatedDataValueCount;
+        this.sampleDataValues = sampleDataValues;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -261,29 +321,49 @@ public class SensitiveColumnSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The OCID of the sensitive data model that contains the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
-    String sensitiveDataModelId;
+    private final String sensitiveDataModelId;
+
+    public String getSensitiveDataModelId() {
+        return sensitiveDataModelId;
+    }
 
     /**
      * The current state of the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    SensitiveColumnLifecycleState lifecycleState;
+    private final SensitiveColumnLifecycleState lifecycleState;
+
+    public SensitiveColumnLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Details about the current state of the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
@@ -291,7 +371,11 @@ public class SensitiveColumnSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
@@ -299,7 +383,11 @@ public class SensitiveColumnSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * The name of the application associated with the sensitive column. It's useful when the application name is
@@ -307,29 +395,45 @@ public class SensitiveColumnSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("appName")
-    String appName;
+    private final String appName;
+
+    public String getAppName() {
+        return appName;
+    }
 
     /**
      * The database schema that contains the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
-    String schemaName;
+    private final String schemaName;
+
+    public String getSchemaName() {
+        return schemaName;
+    }
 
     /**
      * The database object that contains the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * The name of the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
-    String columnName;
+    private final String columnName;
+
+    public String getColumnName() {
+        return columnName;
+    }
+
     /**
      * The type of the database object that contains the sensitive column.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ObjectType {
         Table("TABLE"),
         EditioningView("EDITIONING_VIEW"),
@@ -339,6 +443,9 @@ public class SensitiveColumnSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ObjectType.class);
 
         private final String value;
         private static java.util.Map<String, ObjectType> map;
@@ -376,20 +483,28 @@ public class SensitiveColumnSummary {
      * The type of the database object that contains the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
-    ObjectType objectType;
+    private final ObjectType objectType;
+
+    public ObjectType getObjectType() {
+        return objectType;
+    }
 
     /**
      * The data type of the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    String dataType;
+    private final String dataType;
+
+    public String getDataType() {
+        return dataType;
+    }
+
     /**
      * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
      * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an
      * incremental data discovery job does not identify these columns as sensitive again.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Valid("VALID"),
         Invalid("INVALID"),
@@ -399,6 +514,8 @@ public class SensitiveColumnSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -439,19 +556,27 @@ public class SensitiveColumnSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * The OCID of the sensitive type associated with the sensitive column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
-    String sensitiveTypeId;
+    private final String sensitiveTypeId;
+
+    public String getSensitiveTypeId() {
+        return sensitiveTypeId;
+    }
+
     /**
      * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model
      * using a data discovery job. MANUAL indicates that the column was added manually.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Source {
         Manual("MANUAL"),
         Discovery("DISCOVERY"),
@@ -461,6 +586,8 @@ public class SensitiveColumnSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Source.class);
 
         private final String value;
         private static java.util.Map<String, Source> map;
@@ -500,20 +627,28 @@ public class SensitiveColumnSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    Source source;
+    private final Source source;
+
+    public Source getSource() {
+        return source;
+    }
 
     /**
      * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentColumnKeys")
-    java.util.List<String> parentColumnKeys;
+    private final java.util.List<String> parentColumnKeys;
+
+    public java.util.List<String> getParentColumnKeys() {
+        return parentColumnKeys;
+    }
+
     /**
      * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
      * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
      * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RelationType {
         None("NONE"),
         AppDefined("APP_DEFINED"),
@@ -524,6 +659,9 @@ public class SensitiveColumnSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RelationType.class);
 
         private final String value;
         private static java.util.Map<String, RelationType> map;
@@ -564,13 +702,21 @@ public class SensitiveColumnSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("relationType")
-    RelationType relationType;
+    private final RelationType relationType;
+
+    public RelationType getRelationType() {
+        return relationType;
+    }
 
     /**
      * The estimated number of data values the column has in the associated database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedDataValueCount")
-    Long estimatedDataValueCount;
+    private final Long estimatedDataValueCount;
+
+    public Long getEstimatedDataValueCount() {
+        return estimatedDataValueCount;
+    }
 
     /**
      * Original data values collected for the sensitive column from the associated database. Sample data helps review
@@ -580,8 +726,125 @@ public class SensitiveColumnSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleDataValues")
-    java.util.List<String> sampleDataValues;
+    private final java.util.List<String> sampleDataValues;
+
+    public java.util.List<String> getSampleDataValues() {
+        return sampleDataValues;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SensitiveColumnSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", appName=").append(String.valueOf(this.appName));
+        sb.append(", schemaName=").append(String.valueOf(this.schemaName));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", columnName=").append(String.valueOf(this.columnName));
+        sb.append(", objectType=").append(String.valueOf(this.objectType));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", parentColumnKeys=").append(String.valueOf(this.parentColumnKeys));
+        sb.append(", relationType=").append(String.valueOf(this.relationType));
+        sb.append(", estimatedDataValueCount=")
+                .append(String.valueOf(this.estimatedDataValueCount));
+        sb.append(", sampleDataValues=").append(String.valueOf(this.sampleDataValues));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SensitiveColumnSummary)) {
+            return false;
+        }
+
+        SensitiveColumnSummary other = (SensitiveColumnSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.sensitiveDataModelId, other.sensitiveDataModelId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.appName, other.appName)
+                && java.util.Objects.equals(this.schemaName, other.schemaName)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.columnName, other.columnName)
+                && java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.parentColumnKeys, other.parentColumnKeys)
+                && java.util.Objects.equals(this.relationType, other.relationType)
+                && java.util.Objects.equals(
+                        this.estimatedDataValueCount, other.estimatedDataValueCount)
+                && java.util.Objects.equals(this.sampleDataValues, other.sampleDataValues)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveDataModelId == null
+                                ? 43
+                                : this.sensitiveDataModelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.appName == null ? 43 : this.appName.hashCode());
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeId == null ? 43 : this.sensitiveTypeId.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentColumnKeys == null ? 43 : this.parentColumnKeys.hashCode());
+        result = (result * PRIME) + (this.relationType == null ? 43 : this.relationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.estimatedDataValueCount == null
+                                ? 43
+                                : this.estimatedDataValueCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sampleDataValues == null ? 43 : this.sampleDataValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

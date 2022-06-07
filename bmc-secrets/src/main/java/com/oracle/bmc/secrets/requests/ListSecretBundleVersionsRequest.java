@@ -9,14 +9,6 @@ import com.oracle.bmc.secrets.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/secrets/ListSecretBundleVersionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSecretBundleVersionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListSecretBundleVersionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,11 +17,17 @@ public class ListSecretBundleVersionsRequest
      */
     private String secretId;
 
+    public String getSecretId() {
+        return secretId;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The maximum number of items to return in a paginated "List" call. For information about pagination, see
      * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
@@ -37,6 +35,9 @@ public class ListSecretBundleVersionsRequest
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
      * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
@@ -44,6 +45,9 @@ public class ListSecretBundleVersionsRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The field to sort by. You can specify only one sort order. The default
      * order for {@code VERSION_NUMBER} is descending.
@@ -87,6 +91,10 @@ public class ListSecretBundleVersionsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -130,12 +138,89 @@ public class ListSecretBundleVersionsRequest
         }
     };
 
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSecretBundleVersionsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String secretId = null;
+
+        /**
+         * The OCID of the secret.
+         * @return this builder instance
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in a paginated "List" call. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
+         * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can specify only one sort order. The default
+         * order for {@code VERSION_NUMBER} is descending.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -192,5 +277,89 @@ public class ListSecretBundleVersionsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListSecretBundleVersionsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListSecretBundleVersionsRequest
+         */
+        public ListSecretBundleVersionsRequest buildWithoutInvocationCallback() {
+            ListSecretBundleVersionsRequest request = new ListSecretBundleVersionsRequest();
+            request.secretId = secretId;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            return request;
+            // new ListSecretBundleVersionsRequest(secretId, opcRequestId, limit, page, sortBy, sortOrder);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .secretId(secretId)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",secretId=").append(String.valueOf(this.secretId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListSecretBundleVersionsRequest)) {
+            return false;
+        }
+
+        ListSecretBundleVersionsRequest other = (ListSecretBundleVersionsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        return result;
     }
 }

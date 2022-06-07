@@ -8,7 +8,6 @@ package com.oracle.bmc.oda.model;
  * The set of supported Channel types.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.extern.slf4j.Slf4j
 public enum ChannelType {
     Android("ANDROID"),
     Appevent("APPEVENT"),
@@ -31,6 +30,9 @@ public enum ChannelType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ChannelType.class);
 
     private final String value;
     private static java.util.Map<String, ChannelType> map;

@@ -16,16 +16,46 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StackResourceDriftSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StackResourceDriftSummary {
+public final class StackResourceDriftSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "stackId",
+        "compartmentId",
+        "resourceName",
+        "resourceId",
+        "resourceType",
+        "resourceDriftStatus",
+        "actualProperties",
+        "expectedProperties",
+        "timeDriftChecked"
+    })
+    public StackResourceDriftSummary(
+            String stackId,
+            String compartmentId,
+            String resourceName,
+            String resourceId,
+            String resourceType,
+            ResourceDriftStatus resourceDriftStatus,
+            java.util.Map<String, String> actualProperties,
+            java.util.Map<String, String> expectedProperties,
+            java.util.Date timeDriftChecked) {
+        super();
+        this.stackId = stackId;
+        this.compartmentId = compartmentId;
+        this.resourceName = resourceName;
+        this.resourceId = resourceId;
+        this.resourceType = resourceType;
+        this.resourceDriftStatus = resourceDriftStatus;
+        this.actualProperties = actualProperties;
+        this.expectedProperties = expectedProperties;
+        this.timeDriftChecked = timeDriftChecked;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("stackId")
         private String stackId;
@@ -152,29 +182,49 @@ public class StackResourceDriftSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackId")
-    String stackId;
+    private final String stackId;
+
+    public String getStackId() {
+        return stackId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the stack is located.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The name of the resource as defined in the stack.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource provisioned by Terraform.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * The provider resource type.
@@ -183,13 +233,17 @@ public class StackResourceDriftSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
+
     /**
      * The drift status of the resource.
      * A drift status value indicates whether or not the actual state of the resource differs from the expected (defined) state for that resource.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ResourceDriftStatus {
         NotChecked("NOT_CHECKED"),
         InSync("IN_SYNC"),
@@ -201,6 +255,9 @@ public class StackResourceDriftSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceDriftStatus.class);
 
         private final String value;
         private static java.util.Map<String, ResourceDriftStatus> map;
@@ -240,7 +297,11 @@ public class StackResourceDriftSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceDriftStatus")
-    ResourceDriftStatus resourceDriftStatus;
+    private final ResourceDriftStatus resourceDriftStatus;
+
+    public ResourceDriftStatus getResourceDriftStatus() {
+        return resourceDriftStatus;
+    }
 
     /**
      * Actual values of properties that the stack defines for the indicated resource.
@@ -250,7 +311,11 @@ public class StackResourceDriftSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actualProperties")
-    java.util.Map<String, String> actualProperties;
+    private final java.util.Map<String, String> actualProperties;
+
+    public java.util.Map<String, String> getActualProperties() {
+        return actualProperties;
+    }
 
     /**
      * Expected values of properties that the stack defines for the indicated resource.
@@ -260,7 +325,11 @@ public class StackResourceDriftSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedProperties")
-    java.util.Map<String, String> expectedProperties;
+    private final java.util.Map<String, String> expectedProperties;
+
+    public java.util.Map<String, String> getExpectedProperties() {
+        return expectedProperties;
+    }
 
     /**
      * The date and time when the drift detection was executed.
@@ -269,8 +338,89 @@ public class StackResourceDriftSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDriftChecked")
-    java.util.Date timeDriftChecked;
+    private final java.util.Date timeDriftChecked;
+
+    public java.util.Date getTimeDriftChecked() {
+        return timeDriftChecked;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StackResourceDriftSummary(");
+        sb.append("stackId=").append(String.valueOf(this.stackId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", resourceDriftStatus=").append(String.valueOf(this.resourceDriftStatus));
+        sb.append(", actualProperties=").append(String.valueOf(this.actualProperties));
+        sb.append(", expectedProperties=").append(String.valueOf(this.expectedProperties));
+        sb.append(", timeDriftChecked=").append(String.valueOf(this.timeDriftChecked));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StackResourceDriftSummary)) {
+            return false;
+        }
+
+        StackResourceDriftSummary other = (StackResourceDriftSummary) o;
+        return java.util.Objects.equals(this.stackId, other.stackId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.resourceDriftStatus, other.resourceDriftStatus)
+                && java.util.Objects.equals(this.actualProperties, other.actualProperties)
+                && java.util.Objects.equals(this.expectedProperties, other.expectedProperties)
+                && java.util.Objects.equals(this.timeDriftChecked, other.timeDriftChecked)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.stackId == null ? 43 : this.stackId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceDriftStatus == null
+                                ? 43
+                                : this.resourceDriftStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actualProperties == null ? 43 : this.actualProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expectedProperties == null
+                                ? 43
+                                : this.expectedProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDriftChecked == null ? 43 : this.timeDriftChecked.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

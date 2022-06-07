@@ -15,14 +15,74 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlStatistics.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlStatistics {
+public final class SqlStatistics {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "databaseTimeInSec",
+        "executionsPerHour",
+        "executionsCount",
+        "cpuTimeInSec",
+        "ioTimeInSec",
+        "inefficientWaitTimeInSec",
+        "responseTimeInSec",
+        "planCount",
+        "variability",
+        "averageActiveSessions",
+        "databaseTimePct",
+        "inefficiencyInPct",
+        "changeInCpuTimeInPct",
+        "changeInIoTimeInPct",
+        "changeInInefficientWaitTimeInPct",
+        "changeInResponseTimeInPct",
+        "changeInAverageActiveSessionsInPct",
+        "changeInExecutionsPerHourInPct",
+        "changeInInefficiencyInPct"
+    })
+    public SqlStatistics(
+            Double databaseTimeInSec,
+            Double executionsPerHour,
+            Long executionsCount,
+            Double cpuTimeInSec,
+            Double ioTimeInSec,
+            Double inefficientWaitTimeInSec,
+            Double responseTimeInSec,
+            Long planCount,
+            Double variability,
+            Double averageActiveSessions,
+            Double databaseTimePct,
+            Double inefficiencyInPct,
+            Double changeInCpuTimeInPct,
+            Double changeInIoTimeInPct,
+            Double changeInInefficientWaitTimeInPct,
+            Double changeInResponseTimeInPct,
+            Double changeInAverageActiveSessionsInPct,
+            Double changeInExecutionsPerHourInPct,
+            Double changeInInefficiencyInPct) {
+        super();
+        this.databaseTimeInSec = databaseTimeInSec;
+        this.executionsPerHour = executionsPerHour;
+        this.executionsCount = executionsCount;
+        this.cpuTimeInSec = cpuTimeInSec;
+        this.ioTimeInSec = ioTimeInSec;
+        this.inefficientWaitTimeInSec = inefficientWaitTimeInSec;
+        this.responseTimeInSec = responseTimeInSec;
+        this.planCount = planCount;
+        this.variability = variability;
+        this.averageActiveSessions = averageActiveSessions;
+        this.databaseTimePct = databaseTimePct;
+        this.inefficiencyInPct = inefficiencyInPct;
+        this.changeInCpuTimeInPct = changeInCpuTimeInPct;
+        this.changeInIoTimeInPct = changeInIoTimeInPct;
+        this.changeInInefficientWaitTimeInPct = changeInInefficientWaitTimeInPct;
+        this.changeInResponseTimeInPct = changeInResponseTimeInPct;
+        this.changeInAverageActiveSessionsInPct = changeInAverageActiveSessionsInPct;
+        this.changeInExecutionsPerHourInPct = changeInExecutionsPerHourInPct;
+        this.changeInInefficiencyInPct = changeInInefficiencyInPct;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("databaseTimeInSec")
         private Double databaseTimeInSec;
@@ -262,120 +322,355 @@ public class SqlStatistics {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Database Time in seconds
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseTimeInSec")
-    Double databaseTimeInSec;
+    private final Double databaseTimeInSec;
+
+    public Double getDatabaseTimeInSec() {
+        return databaseTimeInSec;
+    }
 
     /**
      * Number of executions per hour
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionsPerHour")
-    Double executionsPerHour;
+    private final Double executionsPerHour;
+
+    public Double getExecutionsPerHour() {
+        return executionsPerHour;
+    }
 
     /**
      * Total number of executions
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
-    Long executionsCount;
+    private final Long executionsCount;
+
+    public Long getExecutionsCount() {
+        return executionsCount;
+    }
 
     /**
      * CPU Time in seconds
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
-    Double cpuTimeInSec;
+    private final Double cpuTimeInSec;
+
+    public Double getCpuTimeInSec() {
+        return cpuTimeInSec;
+    }
 
     /**
      * I/O Time in seconds
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
-    Double ioTimeInSec;
+    private final Double ioTimeInSec;
+
+    public Double getIoTimeInSec() {
+        return ioTimeInSec;
+    }
 
     /**
      * Inefficient Wait Time in seconds
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inefficientWaitTimeInSec")
-    Double inefficientWaitTimeInSec;
+    private final Double inefficientWaitTimeInSec;
+
+    public Double getInefficientWaitTimeInSec() {
+        return inefficientWaitTimeInSec;
+    }
 
     /**
      * Response time is the average elaspsed time per execution. It is the ratio of Total Database Time to the number of executions
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInSec")
-    Double responseTimeInSec;
+    private final Double responseTimeInSec;
+
+    public Double getResponseTimeInSec() {
+        return responseTimeInSec;
+    }
 
     /**
      * Number of SQL execution plans used by the SQL
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planCount")
-    Long planCount;
+    private final Long planCount;
+
+    public Long getPlanCount() {
+        return planCount;
+    }
 
     /**
      * Variability is the ratio of the standard deviation in response time to the mean of response time of the SQL
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variability")
-    Double variability;
+    private final Double variability;
+
+    public Double getVariability() {
+        return variability;
+    }
 
     /**
      * Average Active Sessions represent the average active sessions at a point in time. It is the number of sessions that are either working or waiting.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("averageActiveSessions")
-    Double averageActiveSessions;
+    private final Double averageActiveSessions;
+
+    public Double getAverageActiveSessions() {
+        return averageActiveSessions;
+    }
 
     /**
      * Percentage of Database Time
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseTimePct")
-    Double databaseTimePct;
+    private final Double databaseTimePct;
+
+    public Double getDatabaseTimePct() {
+        return databaseTimePct;
+    }
 
     /**
      * Percentage of Inefficiency. It is calculated by Total Database Time divided by Total Wait Time
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inefficiencyInPct")
-    Double inefficiencyInPct;
+    private final Double inefficiencyInPct;
+
+    public Double getInefficiencyInPct() {
+        return inefficiencyInPct;
+    }
 
     /**
      * Percent change in CPU Time based on linear regression
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeInCpuTimeInPct")
-    Double changeInCpuTimeInPct;
+    private final Double changeInCpuTimeInPct;
+
+    public Double getChangeInCpuTimeInPct() {
+        return changeInCpuTimeInPct;
+    }
 
     /**
      * Percent change in IO Time based on linear regression
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeInIoTimeInPct")
-    Double changeInIoTimeInPct;
+    private final Double changeInIoTimeInPct;
+
+    public Double getChangeInIoTimeInPct() {
+        return changeInIoTimeInPct;
+    }
 
     /**
      * Percent change in Inefficient Wait Time based on linear regression
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeInInefficientWaitTimeInPct")
-    Double changeInInefficientWaitTimeInPct;
+    private final Double changeInInefficientWaitTimeInPct;
+
+    public Double getChangeInInefficientWaitTimeInPct() {
+        return changeInInefficientWaitTimeInPct;
+    }
 
     /**
      * Percent change in Response Time based on linear regression
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeInResponseTimeInPct")
-    Double changeInResponseTimeInPct;
+    private final Double changeInResponseTimeInPct;
+
+    public Double getChangeInResponseTimeInPct() {
+        return changeInResponseTimeInPct;
+    }
 
     /**
      * Percent change in Average Active Sessions based on linear regression
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeInAverageActiveSessionsInPct")
-    Double changeInAverageActiveSessionsInPct;
+    private final Double changeInAverageActiveSessionsInPct;
+
+    public Double getChangeInAverageActiveSessionsInPct() {
+        return changeInAverageActiveSessionsInPct;
+    }
 
     /**
      * Percent change in Executions per hour based on linear regression
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeInExecutionsPerHourInPct")
-    Double changeInExecutionsPerHourInPct;
+    private final Double changeInExecutionsPerHourInPct;
+
+    public Double getChangeInExecutionsPerHourInPct() {
+        return changeInExecutionsPerHourInPct;
+    }
 
     /**
      * Percent change in Inefficiency based on linear regression
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeInInefficiencyInPct")
-    Double changeInInefficiencyInPct;
+    private final Double changeInInefficiencyInPct;
+
+    public Double getChangeInInefficiencyInPct() {
+        return changeInInefficiencyInPct;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlStatistics(");
+        sb.append("databaseTimeInSec=").append(String.valueOf(this.databaseTimeInSec));
+        sb.append(", executionsPerHour=").append(String.valueOf(this.executionsPerHour));
+        sb.append(", executionsCount=").append(String.valueOf(this.executionsCount));
+        sb.append(", cpuTimeInSec=").append(String.valueOf(this.cpuTimeInSec));
+        sb.append(", ioTimeInSec=").append(String.valueOf(this.ioTimeInSec));
+        sb.append(", inefficientWaitTimeInSec=")
+                .append(String.valueOf(this.inefficientWaitTimeInSec));
+        sb.append(", responseTimeInSec=").append(String.valueOf(this.responseTimeInSec));
+        sb.append(", planCount=").append(String.valueOf(this.planCount));
+        sb.append(", variability=").append(String.valueOf(this.variability));
+        sb.append(", averageActiveSessions=").append(String.valueOf(this.averageActiveSessions));
+        sb.append(", databaseTimePct=").append(String.valueOf(this.databaseTimePct));
+        sb.append(", inefficiencyInPct=").append(String.valueOf(this.inefficiencyInPct));
+        sb.append(", changeInCpuTimeInPct=").append(String.valueOf(this.changeInCpuTimeInPct));
+        sb.append(", changeInIoTimeInPct=").append(String.valueOf(this.changeInIoTimeInPct));
+        sb.append(", changeInInefficientWaitTimeInPct=")
+                .append(String.valueOf(this.changeInInefficientWaitTimeInPct));
+        sb.append(", changeInResponseTimeInPct=")
+                .append(String.valueOf(this.changeInResponseTimeInPct));
+        sb.append(", changeInAverageActiveSessionsInPct=")
+                .append(String.valueOf(this.changeInAverageActiveSessionsInPct));
+        sb.append(", changeInExecutionsPerHourInPct=")
+                .append(String.valueOf(this.changeInExecutionsPerHourInPct));
+        sb.append(", changeInInefficiencyInPct=")
+                .append(String.valueOf(this.changeInInefficiencyInPct));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlStatistics)) {
+            return false;
+        }
+
+        SqlStatistics other = (SqlStatistics) o;
+        return java.util.Objects.equals(this.databaseTimeInSec, other.databaseTimeInSec)
+                && java.util.Objects.equals(this.executionsPerHour, other.executionsPerHour)
+                && java.util.Objects.equals(this.executionsCount, other.executionsCount)
+                && java.util.Objects.equals(this.cpuTimeInSec, other.cpuTimeInSec)
+                && java.util.Objects.equals(this.ioTimeInSec, other.ioTimeInSec)
+                && java.util.Objects.equals(
+                        this.inefficientWaitTimeInSec, other.inefficientWaitTimeInSec)
+                && java.util.Objects.equals(this.responseTimeInSec, other.responseTimeInSec)
+                && java.util.Objects.equals(this.planCount, other.planCount)
+                && java.util.Objects.equals(this.variability, other.variability)
+                && java.util.Objects.equals(this.averageActiveSessions, other.averageActiveSessions)
+                && java.util.Objects.equals(this.databaseTimePct, other.databaseTimePct)
+                && java.util.Objects.equals(this.inefficiencyInPct, other.inefficiencyInPct)
+                && java.util.Objects.equals(this.changeInCpuTimeInPct, other.changeInCpuTimeInPct)
+                && java.util.Objects.equals(this.changeInIoTimeInPct, other.changeInIoTimeInPct)
+                && java.util.Objects.equals(
+                        this.changeInInefficientWaitTimeInPct,
+                        other.changeInInefficientWaitTimeInPct)
+                && java.util.Objects.equals(
+                        this.changeInResponseTimeInPct, other.changeInResponseTimeInPct)
+                && java.util.Objects.equals(
+                        this.changeInAverageActiveSessionsInPct,
+                        other.changeInAverageActiveSessionsInPct)
+                && java.util.Objects.equals(
+                        this.changeInExecutionsPerHourInPct, other.changeInExecutionsPerHourInPct)
+                && java.util.Objects.equals(
+                        this.changeInInefficiencyInPct, other.changeInInefficiencyInPct)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.databaseTimeInSec == null ? 43 : this.databaseTimeInSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionsPerHour == null ? 43 : this.executionsPerHour.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executionsCount == null ? 43 : this.executionsCount.hashCode());
+        result = (result * PRIME) + (this.cpuTimeInSec == null ? 43 : this.cpuTimeInSec.hashCode());
+        result = (result * PRIME) + (this.ioTimeInSec == null ? 43 : this.ioTimeInSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inefficientWaitTimeInSec == null
+                                ? 43
+                                : this.inefficientWaitTimeInSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.responseTimeInSec == null ? 43 : this.responseTimeInSec.hashCode());
+        result = (result * PRIME) + (this.planCount == null ? 43 : this.planCount.hashCode());
+        result = (result * PRIME) + (this.variability == null ? 43 : this.variability.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.averageActiveSessions == null
+                                ? 43
+                                : this.averageActiveSessions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseTimePct == null ? 43 : this.databaseTimePct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inefficiencyInPct == null ? 43 : this.inefficiencyInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeInCpuTimeInPct == null
+                                ? 43
+                                : this.changeInCpuTimeInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeInIoTimeInPct == null
+                                ? 43
+                                : this.changeInIoTimeInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeInInefficientWaitTimeInPct == null
+                                ? 43
+                                : this.changeInInefficientWaitTimeInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeInResponseTimeInPct == null
+                                ? 43
+                                : this.changeInResponseTimeInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeInAverageActiveSessionsInPct == null
+                                ? 43
+                                : this.changeInAverageActiveSessionsInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeInExecutionsPerHourInPct == null
+                                ? 43
+                                : this.changeInExecutionsPerHourInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.changeInInefficiencyInPct == null
+                                ? 43
+                                : this.changeInInefficiencyInPct.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

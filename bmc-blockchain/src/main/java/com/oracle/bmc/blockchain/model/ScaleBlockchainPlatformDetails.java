@@ -25,16 +25,43 @@ package com.oracle.bmc.blockchain.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScaleBlockchainPlatformDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScaleBlockchainPlatformDetails {
+public final class ScaleBlockchainPlatformDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "addOsns",
+        "addReplicas",
+        "addPeers",
+        "addStorage",
+        "modifyPeers",
+        "removeReplicas",
+        "removeOsns",
+        "removePeers"
+    })
+    public ScaleBlockchainPlatformDetails(
+            java.util.List<CreateOsnDetails> addOsns,
+            ReplicaDetails addReplicas,
+            java.util.List<CreatePeerDetails> addPeers,
+            ScaleStorageDetails addStorage,
+            java.util.List<ModifyPeerDetails> modifyPeers,
+            ReplicaDetails removeReplicas,
+            java.util.List<String> removeOsns,
+            java.util.List<String> removePeers) {
+        super();
+        this.addOsns = addOsns;
+        this.addReplicas = addReplicas;
+        this.addPeers = addPeers;
+        this.addStorage = addStorage;
+        this.modifyPeers = modifyPeers;
+        this.removeReplicas = removeReplicas;
+        this.removeOsns = removeOsns;
+        this.removePeers = removePeers;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("addOsns")
         private java.util.List<CreateOsnDetails> addOsns;
@@ -150,45 +177,143 @@ public class ScaleBlockchainPlatformDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * new OSNs to add
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addOsns")
-    java.util.List<CreateOsnDetails> addOsns;
+    private final java.util.List<CreateOsnDetails> addOsns;
+
+    public java.util.List<CreateOsnDetails> getAddOsns() {
+        return addOsns;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("addReplicas")
-    ReplicaDetails addReplicas;
+    private final ReplicaDetails addReplicas;
+
+    public ReplicaDetails getAddReplicas() {
+        return addReplicas;
+    }
 
     /**
      * new Peers to add
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addPeers")
-    java.util.List<CreatePeerDetails> addPeers;
+    private final java.util.List<CreatePeerDetails> addPeers;
+
+    public java.util.List<CreatePeerDetails> getAddPeers() {
+        return addPeers;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("addStorage")
-    ScaleStorageDetails addStorage;
+    private final ScaleStorageDetails addStorage;
+
+    public ScaleStorageDetails getAddStorage() {
+        return addStorage;
+    }
 
     /**
      * modify ocpu allocation to existing Peers
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modifyPeers")
-    java.util.List<ModifyPeerDetails> modifyPeers;
+    private final java.util.List<ModifyPeerDetails> modifyPeers;
+
+    public java.util.List<ModifyPeerDetails> getModifyPeers() {
+        return modifyPeers;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("removeReplicas")
-    ReplicaDetails removeReplicas;
+    private final ReplicaDetails removeReplicas;
+
+    public ReplicaDetails getRemoveReplicas() {
+        return removeReplicas;
+    }
 
     /**
      * OSN id list to remove
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("removeOsns")
-    java.util.List<String> removeOsns;
+    private final java.util.List<String> removeOsns;
+
+    public java.util.List<String> getRemoveOsns() {
+        return removeOsns;
+    }
 
     /**
      * Peer id list to remove
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("removePeers")
-    java.util.List<String> removePeers;
+    private final java.util.List<String> removePeers;
+
+    public java.util.List<String> getRemovePeers() {
+        return removePeers;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScaleBlockchainPlatformDetails(");
+        sb.append("addOsns=").append(String.valueOf(this.addOsns));
+        sb.append(", addReplicas=").append(String.valueOf(this.addReplicas));
+        sb.append(", addPeers=").append(String.valueOf(this.addPeers));
+        sb.append(", addStorage=").append(String.valueOf(this.addStorage));
+        sb.append(", modifyPeers=").append(String.valueOf(this.modifyPeers));
+        sb.append(", removeReplicas=").append(String.valueOf(this.removeReplicas));
+        sb.append(", removeOsns=").append(String.valueOf(this.removeOsns));
+        sb.append(", removePeers=").append(String.valueOf(this.removePeers));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScaleBlockchainPlatformDetails)) {
+            return false;
+        }
+
+        ScaleBlockchainPlatformDetails other = (ScaleBlockchainPlatformDetails) o;
+        return java.util.Objects.equals(this.addOsns, other.addOsns)
+                && java.util.Objects.equals(this.addReplicas, other.addReplicas)
+                && java.util.Objects.equals(this.addPeers, other.addPeers)
+                && java.util.Objects.equals(this.addStorage, other.addStorage)
+                && java.util.Objects.equals(this.modifyPeers, other.modifyPeers)
+                && java.util.Objects.equals(this.removeReplicas, other.removeReplicas)
+                && java.util.Objects.equals(this.removeOsns, other.removeOsns)
+                && java.util.Objects.equals(this.removePeers, other.removePeers)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.addOsns == null ? 43 : this.addOsns.hashCode());
+        result = (result * PRIME) + (this.addReplicas == null ? 43 : this.addReplicas.hashCode());
+        result = (result * PRIME) + (this.addPeers == null ? 43 : this.addPeers.hashCode());
+        result = (result * PRIME) + (this.addStorage == null ? 43 : this.addStorage.hashCode());
+        result = (result * PRIME) + (this.modifyPeers == null ? 43 : this.modifyPeers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.removeReplicas == null ? 43 : this.removeReplicas.hashCode());
+        result = (result * PRIME) + (this.removeOsns == null ? 43 : this.removeOsns.hashCode());
+        result = (result * PRIME) + (this.removePeers == null ? 43 : this.removePeers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

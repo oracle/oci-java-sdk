@@ -15,16 +15,43 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ReplicationPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ReplicationPolicy {
+public final class ReplicationPolicy {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "name",
+        "destinationRegionName",
+        "destinationBucketName",
+        "timeCreated",
+        "timeLastSync",
+        "status",
+        "statusMessage"
+    })
+    public ReplicationPolicy(
+            String id,
+            String name,
+            String destinationRegionName,
+            String destinationBucketName,
+            java.util.Date timeCreated,
+            java.util.Date timeLastSync,
+            Status status,
+            String statusMessage) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.destinationRegionName = destinationRegionName;
+        this.destinationBucketName = destinationBucketName;
+        this.timeCreated = timeCreated;
+        this.timeLastSync = timeLastSync;
+        this.status = status;
+        this.statusMessage = statusMessage;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -140,23 +167,39 @@ public class ReplicationPolicy {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The id of the replication policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The destination region to replicate to, for example "us-ashburn-1".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegionName")
-    String destinationRegionName;
+    private final String destinationRegionName;
+
+    public String getDestinationRegionName() {
+        return destinationRegionName;
+    }
 
     /**
      * The bucket to replicate to in the destination region. Replication policy creation does not automatically
@@ -164,27 +207,39 @@ public class ReplicationPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
-    String destinationBucketName;
+    private final String destinationBucketName;
+
+    public String getDestinationBucketName() {
+        return destinationBucketName;
+    }
 
     /**
      * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Changes made to the source bucket before this time has been replicated.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSync")
-    java.util.Date timeLastSync;
+    private final java.util.Date timeLastSync;
+
+    public java.util.Date getTimeLastSync() {
+        return timeLastSync;
+    }
+
     /**
      * The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue
      * described in the status message, the status will become ACTIVE.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Active("ACTIVE"),
         ClientError("CLIENT_ERROR"),
@@ -194,6 +249,8 @@ public class ReplicationPolicy {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -233,14 +290,92 @@ public class ReplicationPolicy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    private final Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
     /**
      * A human-readable description of the status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
-    String statusMessage;
+    private final String statusMessage;
+
+    public String getStatusMessage() {
+        return statusMessage;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ReplicationPolicy(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", destinationRegionName=").append(String.valueOf(this.destinationRegionName));
+        sb.append(", destinationBucketName=").append(String.valueOf(this.destinationBucketName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeLastSync=").append(String.valueOf(this.timeLastSync));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", statusMessage=").append(String.valueOf(this.statusMessage));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ReplicationPolicy)) {
+            return false;
+        }
+
+        ReplicationPolicy other = (ReplicationPolicy) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.destinationRegionName, other.destinationRegionName)
+                && java.util.Objects.equals(this.destinationBucketName, other.destinationBucketName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeLastSync, other.timeLastSync)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.statusMessage, other.statusMessage)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationRegionName == null
+                                ? 43
+                                : this.destinationRegionName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationBucketName == null
+                                ? 43
+                                : this.destinationBucketName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeLastSync == null ? 43 : this.timeLastSync.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statusMessage == null ? 43 : this.statusMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

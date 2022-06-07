@@ -15,14 +15,44 @@ package com.oracle.bmc.email.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Suppression.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Suppression {
+public final class Suppression {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "emailAddress",
+        "id",
+        "reason",
+        "timeCreated",
+        "timeLastSuppressed",
+        "messageId",
+        "errorDetail",
+        "errorSource"
+    })
+    public Suppression(
+            String compartmentId,
+            String emailAddress,
+            String id,
+            Reason reason,
+            java.util.Date timeCreated,
+            java.util.Date timeLastSuppressed,
+            String messageId,
+            String errorDetail,
+            String errorSource) {
+        super();
+        this.compartmentId = compartmentId;
+        this.emailAddress = emailAddress;
+        this.id = id;
+        this.reason = reason;
+        this.timeCreated = timeCreated;
+        this.timeLastSuppressed = timeLastSuppressed;
+        this.messageId = messageId;
+        this.errorDetail = errorDetail;
+        this.errorSource = errorSource;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -149,6 +179,10 @@ public class Suppression {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the compartment to contain the suppression. Since
      * suppressions are at the customer level, this must be the tenancy
@@ -156,23 +190,35 @@ public class Suppression {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Email address of the suppression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
-    String emailAddress;
+    private final String emailAddress;
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
 
     /**
      * The unique ID of the suppression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Reason {
         Unknown("UNKNOWN"),
         Hardbounce("HARDBOUNCE"),
@@ -186,6 +232,8 @@ public class Suppression {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Reason.class);
 
         private final String value;
         private static java.util.Map<String, Reason> map;
@@ -223,7 +271,11 @@ public class Suppression {
      * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
-    Reason reason;
+    private final Reason reason;
+
+    public Reason getReason() {
+        return reason;
+    }
 
     /**
      * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ"
@@ -231,7 +283,11 @@ public class Suppression {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The last date and time the suppression prevented submission
@@ -240,7 +296,11 @@ public class Suppression {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSuppressed")
-    java.util.Date timeLastSuppressed;
+    private final java.util.Date timeLastSuppressed;
+
+    public java.util.Date getTimeLastSuppressed() {
+        return timeLastSuppressed;
+    }
 
     /**
      * The value of the Message-ID header from the email that triggered a suppression.
@@ -249,7 +309,11 @@ public class Suppression {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageId")
-    String messageId;
+    private final String messageId;
+
+    public String getMessageId() {
+        return messageId;
+    }
 
     /**
      * The specific error message returned by a system that resulted in the suppression.
@@ -258,7 +322,11 @@ public class Suppression {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorDetail")
-    String errorDetail;
+    private final String errorDetail;
+
+    public String getErrorDetail() {
+        return errorDetail;
+    }
 
     /**
      * DNS name of the source of the error that caused the suppression.
@@ -269,8 +337,81 @@ public class Suppression {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorSource")
-    String errorSource;
+    private final String errorSource;
+
+    public String getErrorSource() {
+        return errorSource;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Suppression(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", reason=").append(String.valueOf(this.reason));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeLastSuppressed=").append(String.valueOf(this.timeLastSuppressed));
+        sb.append(", messageId=").append(String.valueOf(this.messageId));
+        sb.append(", errorDetail=").append(String.valueOf(this.errorDetail));
+        sb.append(", errorSource=").append(String.valueOf(this.errorSource));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Suppression)) {
+            return false;
+        }
+
+        Suppression other = (Suppression) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.emailAddress, other.emailAddress)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.reason, other.reason)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeLastSuppressed, other.timeLastSuppressed)
+                && java.util.Objects.equals(this.messageId, other.messageId)
+                && java.util.Objects.equals(this.errorDetail, other.errorDetail)
+                && java.util.Objects.equals(this.errorSource, other.errorSource)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.reason == null ? 43 : this.reason.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastSuppressed == null
+                                ? 43
+                                : this.timeLastSuppressed.hashCode());
+        result = (result * PRIME) + (this.messageId == null ? 43 : this.messageId.hashCode());
+        result = (result * PRIME) + (this.errorDetail == null ? 43 : this.errorDetail.hashCode());
+        result = (result * PRIME) + (this.errorSource == null ? 43 : this.errorSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

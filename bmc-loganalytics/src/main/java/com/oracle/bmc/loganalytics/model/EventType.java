@@ -15,14 +15,32 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EventType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EventType {
+public final class EventType {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "eventTypeName",
+        "specVersion",
+        "isEnabled",
+        "isSystem",
+        "timeUpdated"
+    })
+    public EventType(
+            String eventTypeName,
+            String specVersion,
+            Boolean isEnabled,
+            Boolean isSystem,
+            java.util.Date timeUpdated) {
+        super();
+        this.eventTypeName = eventTypeName;
+        this.specVersion = specVersion;
+        this.isEnabled = isEnabled;
+        this.isSystem = isSystem;
+        this.timeUpdated = timeUpdated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("eventTypeName")
         private String eventTypeName;
@@ -100,37 +118,114 @@ public class EventType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the event type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTypeName")
-    String eventTypeName;
+    private final String eventTypeName;
+
+    public String getEventTypeName() {
+        return eventTypeName;
+    }
 
     /**
      * The version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("specVersion")
-    String specVersion;
+    private final String specVersion;
+
+    public String getSpecVersion() {
+        return specVersion;
+    }
 
     /**
      * A flag indicating whether or not the event type is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * A flag indicating whether or not the event type is user defined.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The last updated time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EventType(");
+        sb.append("eventTypeName=").append(String.valueOf(this.eventTypeName));
+        sb.append(", specVersion=").append(String.valueOf(this.specVersion));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EventType)) {
+            return false;
+        }
+
+        EventType other = (EventType) o;
+        return java.util.Objects.equals(this.eventTypeName, other.eventTypeName)
+                && java.util.Objects.equals(this.specVersion, other.specVersion)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.eventTypeName == null ? 43 : this.eventTypeName.hashCode());
+        result = (result * PRIME) + (this.specVersion == null ? 43 : this.specVersion.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

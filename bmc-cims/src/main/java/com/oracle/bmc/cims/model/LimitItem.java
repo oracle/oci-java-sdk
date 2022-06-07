@@ -15,20 +15,15 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LimitItem.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LimitItem extends Item {
+public final class LimitItem extends Item {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("itemKey")
         private String itemKey;
@@ -155,6 +150,10 @@ public class LimitItem extends Item {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public LimitItem(
             String itemKey,
@@ -177,23 +176,35 @@ public class LimitItem extends Item {
      * The currently available limit of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentLimit")
-    Integer currentLimit;
+    private final Integer currentLimit;
+
+    public Integer getCurrentLimit() {
+        return currentLimit;
+    }
 
     /**
      * The current usage of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
-    Integer currentUsage;
+    private final Integer currentUsage;
+
+    public Integer getCurrentUsage() {
+        return currentUsage;
+    }
 
     /**
      * The requested limit for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
-    Integer requestedLimit;
+    private final Integer requestedLimit;
+
+    public Integer getRequestedLimit() {
+        return requestedLimit;
+    }
+
     /**
      * The status of the request.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LimitStatus {
         Approved("APPROVED"),
         PartiallyApproved("PARTIALLY_APPROVED"),
@@ -204,6 +215,9 @@ public class LimitItem extends Item {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LimitStatus.class);
 
         private final String value;
         private static java.util.Map<String, LimitStatus> map;
@@ -241,8 +255,64 @@ public class LimitItem extends Item {
      * The status of the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("limitStatus")
-    LimitStatus limitStatus;
+    private final LimitStatus limitStatus;
+
+    public LimitStatus getLimitStatus() {
+        return limitStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LimitItem(");
+        sb.append("super=").append(super.toString());
+        sb.append(", currentLimit=").append(String.valueOf(this.currentLimit));
+        sb.append(", currentUsage=").append(String.valueOf(this.currentUsage));
+        sb.append(", requestedLimit=").append(String.valueOf(this.requestedLimit));
+        sb.append(", limitStatus=").append(String.valueOf(this.limitStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LimitItem)) {
+            return false;
+        }
+
+        LimitItem other = (LimitItem) o;
+        return java.util.Objects.equals(this.currentLimit, other.currentLimit)
+                && java.util.Objects.equals(this.currentUsage, other.currentUsage)
+                && java.util.Objects.equals(this.requestedLimit, other.requestedLimit)
+                && java.util.Objects.equals(this.limitStatus, other.limitStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.currentLimit == null ? 43 : this.currentLimit.hashCode());
+        result = (result * PRIME) + (this.currentUsage == null ? 43 : this.currentUsage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestedLimit == null ? 43 : this.requestedLimit.hashCode());
+        result = (result * PRIME) + (this.limitStatus == null ? 43 : this.limitStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

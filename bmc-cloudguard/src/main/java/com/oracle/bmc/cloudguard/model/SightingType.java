@@ -15,14 +15,35 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SightingType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SightingType {
+public final class SightingType {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "description",
+        "mitreLink",
+        "tactic",
+        "techniques"
+    })
+    public SightingType(
+            String id,
+            String displayName,
+            String description,
+            String mitreLink,
+            String tactic,
+            java.util.List<String> techniques) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.mitreLink = mitreLink;
+        this.tactic = tactic;
+        this.techniques = techniques;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -110,42 +131,124 @@ public class SightingType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier of sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Name of the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Description of the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Link of the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mitreLink")
-    String mitreLink;
+    private final String mitreLink;
+
+    public String getMitreLink() {
+        return mitreLink;
+    }
 
     /**
      * Mitre Att&ck tactic
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tactic")
-    String tactic;
+    private final String tactic;
+
+    public String getTactic() {
+        return tactic;
+    }
 
     /**
      * List of Mitre Att&ck Techniques
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("techniques")
-    java.util.List<String> techniques;
+    private final java.util.List<String> techniques;
+
+    public java.util.List<String> getTechniques() {
+        return techniques;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SightingType(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", mitreLink=").append(String.valueOf(this.mitreLink));
+        sb.append(", tactic=").append(String.valueOf(this.tactic));
+        sb.append(", techniques=").append(String.valueOf(this.techniques));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SightingType)) {
+            return false;
+        }
+
+        SightingType other = (SightingType) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.mitreLink, other.mitreLink)
+                && java.util.Objects.equals(this.tactic, other.tactic)
+                && java.util.Objects.equals(this.techniques, other.techniques)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.mitreLink == null ? 43 : this.mitreLink.hashCode());
+        result = (result * PRIME) + (this.tactic == null ? 43 : this.tactic.hashCode());
+        result = (result * PRIME) + (this.techniques == null ? 43 : this.techniques.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

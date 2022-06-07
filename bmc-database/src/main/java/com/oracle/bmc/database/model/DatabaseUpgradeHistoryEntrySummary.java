@@ -23,16 +23,55 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseUpgradeHistoryEntrySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseUpgradeHistoryEntrySummary {
+public final class DatabaseUpgradeHistoryEntrySummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "action",
+        "source",
+        "lifecycleState",
+        "lifecycleDetails",
+        "targetDBVersion",
+        "targetDatabaseSoftwareImageId",
+        "targetDbHomeId",
+        "sourceDbHomeId",
+        "timeStarted",
+        "timeEnded",
+        "options"
+    })
+    public DatabaseUpgradeHistoryEntrySummary(
+            String id,
+            Action action,
+            Source source,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            String targetDBVersion,
+            String targetDatabaseSoftwareImageId,
+            String targetDbHomeId,
+            String sourceDbHomeId,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded,
+            String options) {
+        super();
+        this.id = id;
+        this.action = action;
+        this.source = source;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.targetDBVersion = targetDBVersion;
+        this.targetDatabaseSoftwareImageId = targetDatabaseSoftwareImageId;
+        this.targetDbHomeId = targetDbHomeId;
+        this.sourceDbHomeId = sourceDbHomeId;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+        this.options = options;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -192,15 +231,23 @@ public class DatabaseUpgradeHistoryEntrySummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database upgrade history.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
+
     /**
      * The database upgrade action.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Precheck("PRECHECK"),
         Upgrade("UPGRADE"),
@@ -211,6 +258,8 @@ public class DatabaseUpgradeHistoryEntrySummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -248,7 +297,12 @@ public class DatabaseUpgradeHistoryEntrySummary {
      * The database upgrade action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
+
     /**
      * The source of the Oracle Database software to be used for the upgrade.
      *  - Use {@code DB_HOME} to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
@@ -256,7 +310,6 @@ public class DatabaseUpgradeHistoryEntrySummary {
      *  - Use {@code DB_SOFTWARE_IMAGE} to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Source {
         DbHome("DB_HOME"),
         DbVersion("DB_VERSION"),
@@ -267,6 +320,8 @@ public class DatabaseUpgradeHistoryEntrySummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Source.class);
 
         private final String value;
         private static java.util.Map<String, Source> map;
@@ -308,11 +363,15 @@ public class DatabaseUpgradeHistoryEntrySummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    Source source;
+    private final Source source;
+
+    public Source getSource() {
+        return source;
+    }
+
     /**
      * Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
@@ -323,6 +382,9 @@ public class DatabaseUpgradeHistoryEntrySummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -360,49 +422,81 @@ public class DatabaseUpgradeHistoryEntrySummary {
      * Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
 
     /**
      * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDBVersion")
-    String targetDBVersion;
+    private final String targetDBVersion;
+
+    public String getTargetDBVersion() {
+        return targetDBVersion;
+    }
 
     /**
      * the database software image used for upgrading database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseSoftwareImageId")
-    String targetDatabaseSoftwareImageId;
+    private final String targetDatabaseSoftwareImageId;
+
+    public String getTargetDatabaseSoftwareImageId() {
+        return targetDatabaseSoftwareImageId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDbHomeId")
-    String targetDbHomeId;
+    private final String targetDbHomeId;
+
+    public String getTargetDbHomeId() {
+        return targetDbHomeId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbHomeId")
-    String sourceDbHomeId;
+    private final String sourceDbHomeId;
+
+    public String getSourceDbHomeId() {
+        return sourceDbHomeId;
+    }
 
     /**
      * The date and time when the database upgrade started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The date and time when the database upgrade ended.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
 
     /**
      * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
@@ -410,8 +504,100 @@ public class DatabaseUpgradeHistoryEntrySummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
-    String options;
+    private final String options;
+
+    public String getOptions() {
+        return options;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseUpgradeHistoryEntrySummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", targetDBVersion=").append(String.valueOf(this.targetDBVersion));
+        sb.append(", targetDatabaseSoftwareImageId=")
+                .append(String.valueOf(this.targetDatabaseSoftwareImageId));
+        sb.append(", targetDbHomeId=").append(String.valueOf(this.targetDbHomeId));
+        sb.append(", sourceDbHomeId=").append(String.valueOf(this.sourceDbHomeId));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", options=").append(String.valueOf(this.options));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseUpgradeHistoryEntrySummary)) {
+            return false;
+        }
+
+        DatabaseUpgradeHistoryEntrySummary other = (DatabaseUpgradeHistoryEntrySummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.targetDBVersion, other.targetDBVersion)
+                && java.util.Objects.equals(
+                        this.targetDatabaseSoftwareImageId, other.targetDatabaseSoftwareImageId)
+                && java.util.Objects.equals(this.targetDbHomeId, other.targetDbHomeId)
+                && java.util.Objects.equals(this.sourceDbHomeId, other.sourceDbHomeId)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.options, other.options)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDBVersion == null ? 43 : this.targetDBVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseSoftwareImageId == null
+                                ? 43
+                                : this.targetDatabaseSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDbHomeId == null ? 43 : this.targetDbHomeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDbHomeId == null ? 43 : this.sourceDbHomeId.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,22 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceInsightProjectedUtilization.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceInsightProjectedUtilization {
+public final class ResourceInsightProjectedUtilization {
+    @Deprecated
+    @java.beans.ConstructorProperties({"low", "high"})
+    public ResourceInsightProjectedUtilization(
+            java.util.List<ResourceInsightProjectedUtilizationItem> low,
+            java.util.List<ResourceInsightProjectedUtilizationItem> high) {
+        super();
+        this.low = low;
+        this.high = high;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private java.util.List<ResourceInsightProjectedUtilizationItem> low;
@@ -70,18 +76,72 @@ public class ResourceInsightProjectedUtilization {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * List of db ids with low usage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("low")
-    java.util.List<ResourceInsightProjectedUtilizationItem> low;
+    private final java.util.List<ResourceInsightProjectedUtilizationItem> low;
+
+    public java.util.List<ResourceInsightProjectedUtilizationItem> getLow() {
+        return low;
+    }
 
     /**
      * List of db ids with high usage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("high")
-    java.util.List<ResourceInsightProjectedUtilizationItem> high;
+    private final java.util.List<ResourceInsightProjectedUtilizationItem> high;
+
+    public java.util.List<ResourceInsightProjectedUtilizationItem> getHigh() {
+        return high;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceInsightProjectedUtilization(");
+        sb.append("low=").append(String.valueOf(this.low));
+        sb.append(", high=").append(String.valueOf(this.high));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceInsightProjectedUtilization)) {
+            return false;
+        }
+
+        ResourceInsightProjectedUtilization other = (ResourceInsightProjectedUtilization) o;
+        return java.util.Objects.equals(this.low, other.low)
+                && java.util.Objects.equals(this.high, other.high)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.low == null ? 43 : this.low.hashCode());
+        result = (result * PRIME) + (this.high == null ? 43 : this.high.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

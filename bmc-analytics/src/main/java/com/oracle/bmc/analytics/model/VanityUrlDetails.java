@@ -16,14 +16,26 @@ package com.oracle.bmc.analytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VanityUrlDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VanityUrlDetails {
+public final class VanityUrlDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"key", "description", "urls", "hosts", "publicCertificate"})
+    public VanityUrlDetails(
+            String key,
+            String description,
+            java.util.List<String> urls,
+            java.util.List<String> hosts,
+            String publicCertificate) {
+        super();
+        this.key = key;
+        this.description = description;
+        this.urls = urls;
+        this.hosts = hosts;
+        this.publicCertificate = publicCertificate;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -101,41 +113,118 @@ public class VanityUrlDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The vanity url unique identifier key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * Description of the vanity url.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * List of urls supported by this vanity URL definition (max of 3).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("urls")
-    java.util.List<String> urls;
+    private final java.util.List<String> urls;
+
+    public java.util.List<String> getUrls() {
+        return urls;
+    }
 
     /**
      * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
-    java.util.List<String> hosts;
+    private final java.util.List<String> hosts;
+
+    public java.util.List<String> getHosts() {
+        return hosts;
+    }
 
     /**
      * PEM certificate for HTTPS connections.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
-    String publicCertificate;
+    private final String publicCertificate;
+
+    public String getPublicCertificate() {
+        return publicCertificate;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VanityUrlDetails(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", urls=").append(String.valueOf(this.urls));
+        sb.append(", hosts=").append(String.valueOf(this.hosts));
+        sb.append(", publicCertificate=").append(String.valueOf(this.publicCertificate));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VanityUrlDetails)) {
+            return false;
+        }
+
+        VanityUrlDetails other = (VanityUrlDetails) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.urls, other.urls)
+                && java.util.Objects.equals(this.hosts, other.hosts)
+                && java.util.Objects.equals(this.publicCertificate, other.publicCertificate)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.urls == null ? 43 : this.urls.hashCode());
+        result = (result * PRIME) + (this.hosts == null ? 43 : this.hosts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicCertificate == null ? 43 : this.publicCertificate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

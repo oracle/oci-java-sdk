@@ -18,14 +18,18 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NormalizedVertex.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NormalizedVertex {
+public final class NormalizedVertex {
+    @Deprecated
+    @java.beans.ConstructorProperties({"x", "y"})
+    public NormalizedVertex(Double x, Double y) {
+        super();
+        this.x = x;
+        this.y = y;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("x")
         private Double x;
@@ -70,18 +74,72 @@ public class NormalizedVertex {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The X-axis normalized coordinate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("x")
-    Double x;
+    private final Double x;
+
+    public Double getX() {
+        return x;
+    }
 
     /**
      * The Y-axis normalized coordinate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("y")
-    Double y;
+    private final Double y;
+
+    public Double getY() {
+        return y;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NormalizedVertex(");
+        sb.append("x=").append(String.valueOf(this.x));
+        sb.append(", y=").append(String.valueOf(this.y));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NormalizedVertex)) {
+            return false;
+        }
+
+        NormalizedVertex other = (NormalizedVertex) o;
+        return java.util.Objects.equals(this.x, other.x)
+                && java.util.Objects.equals(this.y, other.y)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.x == null ? 43 : this.x.hashCode());
+        result = (result * PRIME) + (this.y == null ? 43 : this.y.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.resourcemanager.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetJobLogsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String jobId;
 
+    public String getJobId() {
+        return jobId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -31,18 +26,27 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A filter that returns only logs of a specified type.
      *
      */
     private java.util.List<LogEntry.Type> type;
 
+    public java.util.List<LogEntry.Type> getType() {
+        return type;
+    }
     /**
      * A filter that returns only log entries that match a given severity level or greater.
      *
      */
     private com.oracle.bmc.resourcemanager.model.LogEntry.Level levelGreaterThanOrEqualTo;
 
+    public com.oracle.bmc.resourcemanager.model.LogEntry.Level getLevelGreaterThanOrEqualTo() {
+        return levelGreaterThanOrEqualTo;
+    }
     /**
      * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
      *
@@ -85,6 +89,10 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The number of items returned in a paginated {@code List} call. For information about pagination, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -92,6 +100,9 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
      * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -99,6 +110,9 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * Time stamp specifying the lower time limit for which logs are returned in a query.
      * Format is defined by RFC3339.
@@ -107,6 +121,9 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date timestampGreaterThanOrEqualTo;
 
+    public java.util.Date getTimestampGreaterThanOrEqualTo() {
+        return timestampGreaterThanOrEqualTo;
+    }
     /**
      * Time stamp specifying the upper time limit for which logs are returned in a query.
      * Format is defined by RFC3339.
@@ -115,12 +132,40 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date timestampLessThanOrEqualTo;
 
+    public java.util.Date getTimestampLessThanOrEqualTo() {
+        return timestampLessThanOrEqualTo;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetJobLogsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String jobId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         * @return this builder instance
+         */
+        public Builder jobId(String jobId) {
+            this.jobId = jobId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         private java.util.List<LogEntry.Type> type = null;
 
@@ -141,6 +186,86 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          */
         public Builder type(LogEntry.Type singularValue) {
             return this.type(java.util.Arrays.asList(singularValue));
+        }
+
+        private com.oracle.bmc.resourcemanager.model.LogEntry.Level levelGreaterThanOrEqualTo =
+                null;
+
+        /**
+         * A filter that returns only log entries that match a given severity level or greater.
+         *
+         * @return this builder instance
+         */
+        public Builder levelGreaterThanOrEqualTo(
+                com.oracle.bmc.resourcemanager.model.LogEntry.Level levelGreaterThanOrEqualTo) {
+            this.levelGreaterThanOrEqualTo = levelGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The number of items returned in a paginated {@code List} call. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+         * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private java.util.Date timestampGreaterThanOrEqualTo = null;
+
+        /**
+         * Time stamp specifying the lower time limit for which logs are returned in a query.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-01T12:00:00.000Z}
+         *
+         * @return this builder instance
+         */
+        public Builder timestampGreaterThanOrEqualTo(java.util.Date timestampGreaterThanOrEqualTo) {
+            this.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timestampLessThanOrEqualTo = null;
+
+        /**
+         * Time stamp specifying the upper time limit for which logs are returned in a query.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-02-01T12:00:00.000Z}
+         *
+         * @return this builder instance
+         */
+        public Builder timestampLessThanOrEqualTo(java.util.Date timestampLessThanOrEqualTo) {
+            this.timestampLessThanOrEqualTo = timestampLessThanOrEqualTo;
+            return this;
         }
 
         /**
@@ -201,5 +326,122 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetJobLogsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetJobLogsRequest
+         */
+        public GetJobLogsRequest buildWithoutInvocationCallback() {
+            GetJobLogsRequest request = new GetJobLogsRequest();
+            request.jobId = jobId;
+            request.opcRequestId = opcRequestId;
+            request.type = type;
+            request.levelGreaterThanOrEqualTo = levelGreaterThanOrEqualTo;
+            request.sortOrder = sortOrder;
+            request.limit = limit;
+            request.page = page;
+            request.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
+            request.timestampLessThanOrEqualTo = timestampLessThanOrEqualTo;
+            return request;
+            // new GetJobLogsRequest(jobId, opcRequestId, type, levelGreaterThanOrEqualTo, sortOrder, limit, page, timestampGreaterThanOrEqualTo, timestampLessThanOrEqualTo);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .jobId(jobId)
+                .opcRequestId(opcRequestId)
+                .type(type)
+                .levelGreaterThanOrEqualTo(levelGreaterThanOrEqualTo)
+                .sortOrder(sortOrder)
+                .limit(limit)
+                .page(page)
+                .timestampGreaterThanOrEqualTo(timestampGreaterThanOrEqualTo)
+                .timestampLessThanOrEqualTo(timestampLessThanOrEqualTo);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",jobId=").append(String.valueOf(this.jobId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",type=").append(String.valueOf(this.type));
+        sb.append(",levelGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.levelGreaterThanOrEqualTo));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",timestampGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timestampGreaterThanOrEqualTo));
+        sb.append(",timestampLessThanOrEqualTo=")
+                .append(String.valueOf(this.timestampLessThanOrEqualTo));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetJobLogsRequest)) {
+            return false;
+        }
+
+        GetJobLogsRequest other = (GetJobLogsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.jobId, other.jobId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(
+                        this.levelGreaterThanOrEqualTo, other.levelGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(
+                        this.timestampGreaterThanOrEqualTo, other.timestampGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timestampLessThanOrEqualTo, other.timestampLessThanOrEqualTo);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.levelGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.levelGreaterThanOrEqualTo.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timestampGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timestampGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timestampLessThanOrEqualTo == null
+                                ? 43
+                                : this.timestampLessThanOrEqualTo.hashCode());
+        return result;
     }
 }

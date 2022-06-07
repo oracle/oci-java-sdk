@@ -15,12 +15,6 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -47,17 +41,58 @@ package com.oracle.bmc.dataintegration.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AbstractFormatAttribute {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isFilePattern"})
+    protected AbstractFormatAttribute(Boolean isFilePattern) {
+        super();
+        this.isFilePattern = isFilePattern;
+    }
 
     /**
      * Defines whether a file pattern is supported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
-    Boolean isFilePattern;
+    private final Boolean isFilePattern;
+
+    public Boolean getIsFilePattern() {
+        return isFilePattern;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AbstractFormatAttribute(");
+        sb.append("isFilePattern=").append(String.valueOf(this.isFilePattern));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AbstractFormatAttribute)) {
+            return false;
+        }
+
+        AbstractFormatAttribute other = (AbstractFormatAttribute) o;
+        return java.util.Objects.equals(this.isFilePattern, other.isFilePattern);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isFilePattern == null ? 43 : this.isFilePattern.hashCode());
+        return result;
+    }
 
     /**
      * The type of the format attribute.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ModelType {
         JsonFormat("JSON_FORMAT"),
         CsvFormat("CSV_FORMAT"),
@@ -68,6 +103,9 @@ public class AbstractFormatAttribute {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ModelType.class);
 
         private final String value;
         private static java.util.Map<String, ModelType> map;

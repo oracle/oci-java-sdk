@@ -15,16 +15,46 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TransferJobSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TransferJobSummary {
+public final class TransferJobSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "uploadBucketName",
+        "displayName",
+        "label",
+        "deviceType",
+        "creationTime",
+        "lifecycleState",
+        "freeformTags",
+        "definedTags"
+    })
+    public TransferJobSummary(
+            String id,
+            String uploadBucketName,
+            String displayName,
+            String label,
+            DeviceType deviceType,
+            java.util.Date creationTime,
+            LifecycleState lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.id = id;
+        this.uploadBucketName = uploadBucketName;
+        this.displayName = displayName;
+        this.label = label;
+        this.deviceType = deviceType;
+        this.creationTime = creationTime;
+        this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -152,20 +182,40 @@ public class TransferJobSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("uploadBucketName")
-    String uploadBucketName;
+    private final String uploadBucketName;
+
+    public String getUploadBucketName() {
+        return uploadBucketName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("label")
-    String label;
+    private final String label;
+
+    public String getLabel() {
+        return label;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DeviceType {
         Disk("DISK"),
         Appliance("APPLIANCE"),
@@ -175,6 +225,9 @@ public class TransferJobSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DeviceType.class);
 
         private final String value;
         private static java.util.Map<String, DeviceType> map;
@@ -210,13 +263,21 @@ public class TransferJobSummary {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("deviceType")
-    DeviceType deviceType;
+    private final DeviceType deviceType;
+
+    public DeviceType getDeviceType() {
+        return deviceType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
-    java.util.Date creationTime;
+    private final java.util.Date creationTime;
+
+    public java.util.Date getCreationTime() {
+        return creationTime;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Initiated("INITIATED"),
         Preparing("PREPARING"),
@@ -229,6 +290,9 @@ public class TransferJobSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -264,7 +328,11 @@ public class TransferJobSummary {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -274,7 +342,11 @@ public class TransferJobSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -284,8 +356,79 @@ public class TransferJobSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TransferJobSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", uploadBucketName=").append(String.valueOf(this.uploadBucketName));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", label=").append(String.valueOf(this.label));
+        sb.append(", deviceType=").append(String.valueOf(this.deviceType));
+        sb.append(", creationTime=").append(String.valueOf(this.creationTime));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TransferJobSummary)) {
+            return false;
+        }
+
+        TransferJobSummary other = (TransferJobSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.uploadBucketName, other.uploadBucketName)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.label, other.label)
+                && java.util.Objects.equals(this.deviceType, other.deviceType)
+                && java.util.Objects.equals(this.creationTime, other.creationTime)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uploadBucketName == null ? 43 : this.uploadBucketName.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.label == null ? 43 : this.label.hashCode());
+        result = (result * PRIME) + (this.deviceType == null ? 43 : this.deviceType.hashCode());
+        result = (result * PRIME) + (this.creationTime == null ? 43 : this.creationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

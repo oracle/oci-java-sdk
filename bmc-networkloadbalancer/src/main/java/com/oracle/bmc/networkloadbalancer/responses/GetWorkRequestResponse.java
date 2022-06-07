@@ -7,10 +7,6 @@ package com.oracle.bmc.networkloadbalancer.responses;
 import com.oracle.bmc.networkloadbalancer.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you must contact
@@ -19,15 +15,27 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Float retryAfter;
 
+    public Float getRetryAfter() {
+        return retryAfter;
+    }
+
     /**
      * The returned WorkRequest instance.
      */
     private com.oracle.bmc.networkloadbalancer.model.WorkRequest workRequest;
+
+    public com.oracle.bmc.networkloadbalancer.model.WorkRequest getWorkRequest() {
+        return workRequest;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -54,6 +62,28 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Float retryAfter;
+
+        public Builder retryAfter(Float retryAfter) {
+            this.retryAfter = retryAfter;
+            return this;
+        }
+
+        private com.oracle.bmc.networkloadbalancer.model.WorkRequest workRequest;
+
+        public Builder workRequest(
+                com.oracle.bmc.networkloadbalancer.model.WorkRequest workRequest) {
+            this.workRequest = workRequest;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -71,5 +101,47 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return new GetWorkRequestResponse(
                     __httpStatusCode__, opcRequestId, retryAfter, workRequest);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",retryAfter=").append(String.valueOf(retryAfter));
+        sb.append(",workRequest=").append(String.valueOf(workRequest));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetWorkRequestResponse)) {
+            return false;
+        }
+
+        GetWorkRequestResponse other = (GetWorkRequestResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.retryAfter, other.retryAfter)
+                && java.util.Objects.equals(this.workRequest, other.workRequest);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.retryAfter == null ? 43 : this.retryAfter.hashCode());
+        result = (result * PRIME) + (this.workRequest == null ? 43 : this.workRequest.hashCode());
+        return result;
     }
 }

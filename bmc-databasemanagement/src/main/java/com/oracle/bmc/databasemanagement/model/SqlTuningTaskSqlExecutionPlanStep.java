@@ -15,16 +15,106 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningTaskSqlExecutionPlanStep.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningTaskSqlExecutionPlanStep {
+public final class SqlTuningTaskSqlExecutionPlanStep {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "planHashValue",
+        "stepId",
+        "parentStepId",
+        "position",
+        "operation",
+        "options",
+        "optimizerMode",
+        "cost",
+        "cardinality",
+        "bytes",
+        "cpuCost",
+        "ioCost",
+        "tempSpace",
+        "time",
+        "objectNode",
+        "objectOwner",
+        "objectName",
+        "objectPosition",
+        "objectType",
+        "partitionStart",
+        "partitionStop",
+        "partitionId",
+        "remarks",
+        "numberOfSearchColumn",
+        "other",
+        "otherTag",
+        "attribute",
+        "accessPredicates",
+        "filterPredicates"
+    })
+    public SqlTuningTaskSqlExecutionPlanStep(
+            Long planHashValue,
+            Integer stepId,
+            Integer parentStepId,
+            Integer position,
+            String operation,
+            String options,
+            String optimizerMode,
+            Double cost,
+            Long cardinality,
+            Long bytes,
+            Double cpuCost,
+            Double ioCost,
+            Long tempSpace,
+            Long time,
+            String objectNode,
+            String objectOwner,
+            String objectName,
+            Integer objectPosition,
+            String objectType,
+            String partitionStart,
+            String partitionStop,
+            Integer partitionId,
+            String remarks,
+            Integer numberOfSearchColumn,
+            String other,
+            String otherTag,
+            String attribute,
+            String accessPredicates,
+            String filterPredicates) {
+        super();
+        this.planHashValue = planHashValue;
+        this.stepId = stepId;
+        this.parentStepId = parentStepId;
+        this.position = position;
+        this.operation = operation;
+        this.options = options;
+        this.optimizerMode = optimizerMode;
+        this.cost = cost;
+        this.cardinality = cardinality;
+        this.bytes = bytes;
+        this.cpuCost = cpuCost;
+        this.ioCost = ioCost;
+        this.tempSpace = tempSpace;
+        this.time = time;
+        this.objectNode = objectNode;
+        this.objectOwner = objectOwner;
+        this.objectName = objectName;
+        this.objectPosition = objectPosition;
+        this.objectType = objectType;
+        this.partitionStart = partitionStart;
+        this.partitionStop = partitionStop;
+        this.partitionId = partitionId;
+        this.remarks = remarks;
+        this.numberOfSearchColumn = numberOfSearchColumn;
+        this.other = other;
+        this.otherTag = otherTag;
+        this.attribute = attribute;
+        this.accessPredicates = accessPredicates;
+        this.filterPredicates = filterPredicates;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("planHashValue")
         private Long planHashValue;
@@ -371,11 +461,19 @@ public class SqlTuningTaskSqlExecutionPlanStep {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The numerical representation of the SQL execution plan.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planHashValue")
-    Long planHashValue;
+    private final Long planHashValue;
+
+    public Long getPlanHashValue() {
+        return planHashValue;
+    }
 
     /**
      * The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
@@ -383,7 +481,11 @@ public class SqlTuningTaskSqlExecutionPlanStep {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
-    Integer stepId;
+    private final Integer stepId;
+
+    public Integer getStepId() {
+        return stepId;
+    }
 
     /**
      * The ID of the next step that operates on the results of this step.
@@ -391,103 +493,171 @@ public class SqlTuningTaskSqlExecutionPlanStep {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentStepId")
-    Integer parentStepId;
+    private final Integer parentStepId;
+
+    public Integer getParentStepId() {
+        return parentStepId;
+    }
 
     /**
      * The order of processing for steps with the same parent ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
-    Integer position;
+    private final Integer position;
+
+    public Integer getPosition() {
+        return position;
+    }
 
     /**
      * The name of the operation performed at this step.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
-    String operation;
+    private final String operation;
+
+    public String getOperation() {
+        return operation;
+    }
 
     /**
      * The options used for the operation performed at this step.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
-    String options;
+    private final String options;
+
+    public String getOptions() {
+        return options;
+    }
 
     /**
      * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("optimizerMode")
-    String optimizerMode;
+    private final String optimizerMode;
+
+    public String getOptimizerMode() {
+        return optimizerMode;
+    }
 
     /**
      * The cost of the current operation estimated by the cost-based optimizer (CBO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
-    Double cost;
+    private final Double cost;
+
+    public Double getCost() {
+        return cost;
+    }
 
     /**
      * The number of rows returned by the current operation (estimated by the CBO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cardinality")
-    Long cardinality;
+    private final Long cardinality;
+
+    public Long getCardinality() {
+        return cardinality;
+    }
 
     /**
      * The number of bytes returned by the current operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bytes")
-    Long bytes;
+    private final Long bytes;
+
+    public Long getBytes() {
+        return bytes;
+    }
 
     /**
      * The CPU cost of the current operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCost")
-    Double cpuCost;
+    private final Double cpuCost;
+
+    public Double getCpuCost() {
+        return cpuCost;
+    }
 
     /**
      * The I/O cost of the current operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioCost")
-    Double ioCost;
+    private final Double ioCost;
+
+    public Double getIoCost() {
+        return ioCost;
+    }
 
     /**
      * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempSpace")
-    Long tempSpace;
+    private final Long tempSpace;
+
+    public Long getTempSpace() {
+        return tempSpace;
+    }
 
     /**
      * The elapsed time (in seconds) of the operation as estimated by the CBO.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
-    Long time;
+    private final Long time;
+
+    public Long getTime() {
+        return time;
+    }
 
     /**
      * The name of the database link used to reference the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNode")
-    String objectNode;
+    private final String objectNode;
+
+    public String getObjectNode() {
+        return objectNode;
+    }
 
     /**
      * The owner of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
-    String objectOwner;
+    private final String objectOwner;
+
+    public String getObjectOwner() {
+        return objectOwner;
+    }
 
     /**
      * The name of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * The numbered position of the object name in the original SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectPosition")
-    Integer objectPosition;
+    private final Integer objectPosition;
+
+    public Integer getObjectPosition() {
+        return objectPosition;
+    }
 
     /**
      * The descriptive modifier that further describes the type of object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
-    String objectType;
+    private final String objectType;
+
+    public String getObjectType() {
+        return objectType;
+    }
 
     /**
      * A step may get data from a range of partitions of a partitioned object, such as table or index,
@@ -496,7 +666,11 @@ public class SqlTuningTaskSqlExecutionPlanStep {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStart")
-    String partitionStart;
+    private final String partitionStart;
+
+    public String getPartitionStart() {
+        return partitionStart;
+    }
 
     /**
      * A step may get data from a range of partitions of a partitioned object, such as table or index,
@@ -505,45 +679,73 @@ public class SqlTuningTaskSqlExecutionPlanStep {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStop")
-    String partitionStop;
+    private final String partitionStop;
+
+    public String getPartitionStop() {
+        return partitionStop;
+    }
 
     /**
      * The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionId")
-    Integer partitionId;
+    private final Integer partitionId;
+
+    public Integer getPartitionId() {
+        return partitionId;
+    }
 
     /**
      * The place for comments that can be added to the steps of the execution plan.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remarks")
-    String remarks;
+    private final String remarks;
+
+    public String getRemarks() {
+        return remarks;
+    }
 
     /**
      * Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfSearchColumn")
-    Integer numberOfSearchColumn;
+    private final Integer numberOfSearchColumn;
+
+    public Integer getNumberOfSearchColumn() {
+        return numberOfSearchColumn;
+    }
 
     /**
      * Information about parallel execution servers and parallel queries
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("other")
-    String other;
+    private final String other;
+
+    public String getOther() {
+        return other;
+    }
 
     /**
      * Describes the function of the SQL text in the OTHER column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherTag")
-    String otherTag;
+    private final String otherTag;
+
+    public String getOtherTag() {
+        return otherTag;
+    }
 
     /**
      * The text string identifying the type of execution plan.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attribute")
-    String attribute;
+    private final String attribute;
+
+    public String getAttribute() {
+        return attribute;
+    }
 
     /**
      * The predicates used to locate rows in an access structure. For example,
@@ -551,14 +753,163 @@ public class SqlTuningTaskSqlExecutionPlanStep {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessPredicates")
-    String accessPredicates;
+    private final String accessPredicates;
+
+    public String getAccessPredicates() {
+        return accessPredicates;
+    }
 
     /**
      * The predicates used to filter rows before producing them.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterPredicates")
-    String filterPredicates;
+    private final String filterPredicates;
+
+    public String getFilterPredicates() {
+        return filterPredicates;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningTaskSqlExecutionPlanStep(");
+        sb.append("planHashValue=").append(String.valueOf(this.planHashValue));
+        sb.append(", stepId=").append(String.valueOf(this.stepId));
+        sb.append(", parentStepId=").append(String.valueOf(this.parentStepId));
+        sb.append(", position=").append(String.valueOf(this.position));
+        sb.append(", operation=").append(String.valueOf(this.operation));
+        sb.append(", options=").append(String.valueOf(this.options));
+        sb.append(", optimizerMode=").append(String.valueOf(this.optimizerMode));
+        sb.append(", cost=").append(String.valueOf(this.cost));
+        sb.append(", cardinality=").append(String.valueOf(this.cardinality));
+        sb.append(", bytes=").append(String.valueOf(this.bytes));
+        sb.append(", cpuCost=").append(String.valueOf(this.cpuCost));
+        sb.append(", ioCost=").append(String.valueOf(this.ioCost));
+        sb.append(", tempSpace=").append(String.valueOf(this.tempSpace));
+        sb.append(", time=").append(String.valueOf(this.time));
+        sb.append(", objectNode=").append(String.valueOf(this.objectNode));
+        sb.append(", objectOwner=").append(String.valueOf(this.objectOwner));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", objectPosition=").append(String.valueOf(this.objectPosition));
+        sb.append(", objectType=").append(String.valueOf(this.objectType));
+        sb.append(", partitionStart=").append(String.valueOf(this.partitionStart));
+        sb.append(", partitionStop=").append(String.valueOf(this.partitionStop));
+        sb.append(", partitionId=").append(String.valueOf(this.partitionId));
+        sb.append(", remarks=").append(String.valueOf(this.remarks));
+        sb.append(", numberOfSearchColumn=").append(String.valueOf(this.numberOfSearchColumn));
+        sb.append(", other=").append(String.valueOf(this.other));
+        sb.append(", otherTag=").append(String.valueOf(this.otherTag));
+        sb.append(", attribute=").append(String.valueOf(this.attribute));
+        sb.append(", accessPredicates=").append(String.valueOf(this.accessPredicates));
+        sb.append(", filterPredicates=").append(String.valueOf(this.filterPredicates));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningTaskSqlExecutionPlanStep)) {
+            return false;
+        }
+
+        SqlTuningTaskSqlExecutionPlanStep other = (SqlTuningTaskSqlExecutionPlanStep) o;
+        return java.util.Objects.equals(this.planHashValue, other.planHashValue)
+                && java.util.Objects.equals(this.stepId, other.stepId)
+                && java.util.Objects.equals(this.parentStepId, other.parentStepId)
+                && java.util.Objects.equals(this.position, other.position)
+                && java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(this.options, other.options)
+                && java.util.Objects.equals(this.optimizerMode, other.optimizerMode)
+                && java.util.Objects.equals(this.cost, other.cost)
+                && java.util.Objects.equals(this.cardinality, other.cardinality)
+                && java.util.Objects.equals(this.bytes, other.bytes)
+                && java.util.Objects.equals(this.cpuCost, other.cpuCost)
+                && java.util.Objects.equals(this.ioCost, other.ioCost)
+                && java.util.Objects.equals(this.tempSpace, other.tempSpace)
+                && java.util.Objects.equals(this.time, other.time)
+                && java.util.Objects.equals(this.objectNode, other.objectNode)
+                && java.util.Objects.equals(this.objectOwner, other.objectOwner)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.objectPosition, other.objectPosition)
+                && java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.partitionStart, other.partitionStart)
+                && java.util.Objects.equals(this.partitionStop, other.partitionStop)
+                && java.util.Objects.equals(this.partitionId, other.partitionId)
+                && java.util.Objects.equals(this.remarks, other.remarks)
+                && java.util.Objects.equals(this.numberOfSearchColumn, other.numberOfSearchColumn)
+                && java.util.Objects.equals(this.other, other.other)
+                && java.util.Objects.equals(this.otherTag, other.otherTag)
+                && java.util.Objects.equals(this.attribute, other.attribute)
+                && java.util.Objects.equals(this.accessPredicates, other.accessPredicates)
+                && java.util.Objects.equals(this.filterPredicates, other.filterPredicates)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.planHashValue == null ? 43 : this.planHashValue.hashCode());
+        result = (result * PRIME) + (this.stepId == null ? 43 : this.stepId.hashCode());
+        result = (result * PRIME) + (this.parentStepId == null ? 43 : this.parentStepId.hashCode());
+        result = (result * PRIME) + (this.position == null ? 43 : this.position.hashCode());
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.optimizerMode == null ? 43 : this.optimizerMode.hashCode());
+        result = (result * PRIME) + (this.cost == null ? 43 : this.cost.hashCode());
+        result = (result * PRIME) + (this.cardinality == null ? 43 : this.cardinality.hashCode());
+        result = (result * PRIME) + (this.bytes == null ? 43 : this.bytes.hashCode());
+        result = (result * PRIME) + (this.cpuCost == null ? 43 : this.cpuCost.hashCode());
+        result = (result * PRIME) + (this.ioCost == null ? 43 : this.ioCost.hashCode());
+        result = (result * PRIME) + (this.tempSpace == null ? 43 : this.tempSpace.hashCode());
+        result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
+        result = (result * PRIME) + (this.objectNode == null ? 43 : this.objectNode.hashCode());
+        result = (result * PRIME) + (this.objectOwner == null ? 43 : this.objectOwner.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectPosition == null ? 43 : this.objectPosition.hashCode());
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partitionStart == null ? 43 : this.partitionStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partitionStop == null ? 43 : this.partitionStop.hashCode());
+        result = (result * PRIME) + (this.partitionId == null ? 43 : this.partitionId.hashCode());
+        result = (result * PRIME) + (this.remarks == null ? 43 : this.remarks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfSearchColumn == null
+                                ? 43
+                                : this.numberOfSearchColumn.hashCode());
+        result = (result * PRIME) + (this.other == null ? 43 : this.other.hashCode());
+        result = (result * PRIME) + (this.otherTag == null ? 43 : this.otherTag.hashCode());
+        result = (result * PRIME) + (this.attribute == null ? 43 : this.attribute.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.accessPredicates == null ? 43 : this.accessPredicates.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterPredicates == null ? 43 : this.filterPredicates.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

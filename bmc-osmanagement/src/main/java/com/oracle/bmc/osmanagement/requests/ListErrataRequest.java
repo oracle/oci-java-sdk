@@ -9,14 +9,6 @@ import com.oracle.bmc.osmanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListErrataExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListErrataRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +16,17 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The OCID of the erratum.
      */
     private String erratumId;
 
+    public String getErratumId() {
+        return erratumId;
+    }
     /**
      * The assigned erratum name. It's unique and not changeable.
      * <p>
@@ -37,6 +35,9 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String advisoryName;
 
+    public String getAdvisoryName() {
+        return advisoryName;
+    }
     /**
      * The issue date after which to list all errata, in ISO 8601 format
      * <p>
@@ -45,6 +46,9 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date timeIssueDateStart;
 
+    public java.util.Date getTimeIssueDateStart() {
+        return timeIssueDateStart;
+    }
     /**
      * The issue date before which to list all errata, in ISO 8601 format
      * <p>
@@ -53,16 +57,25 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date timeIssueDateEnd;
 
+    public java.util.Date getTimeIssueDateEnd() {
+        return timeIssueDateEnd;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
@@ -103,6 +116,10 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE is descending. Default order for ADVISORYNAME is ascending. If no value is specified ISSUEDATE is default.
      *
@@ -145,10 +162,18 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -156,6 +181,126 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String erratumId = null;
+
+        /**
+         * The OCID of the erratum.
+         * @return this builder instance
+         */
+        public Builder erratumId(String erratumId) {
+            this.erratumId = erratumId;
+            return this;
+        }
+
+        private String advisoryName = null;
+
+        /**
+         * The assigned erratum name. It's unique and not changeable.
+         * <p>
+         * Example: {@code ELSA-2020-5804}
+         *
+         * @return this builder instance
+         */
+        public Builder advisoryName(String advisoryName) {
+            this.advisoryName = advisoryName;
+            return this;
+        }
+
+        private java.util.Date timeIssueDateStart = null;
+
+        /**
+         * The issue date after which to list all errata, in ISO 8601 format
+         * <p>
+         * Example: 2017-07-14T02:40:00.000Z
+         *
+         * @return this builder instance
+         */
+        public Builder timeIssueDateStart(java.util.Date timeIssueDateStart) {
+            this.timeIssueDateStart = timeIssueDateStart;
+            return this;
+        }
+
+        private java.util.Date timeIssueDateEnd = null;
+
+        /**
+         * The issue date before which to list all errata, in ISO 8601 format
+         * <p>
+         * Example: 2017-07-14T02:40:00.000Z
+         *
+         * @return this builder instance
+         */
+        public Builder timeIssueDateEnd(java.util.Date timeIssueDateEnd) {
+            this.timeIssueDateEnd = timeIssueDateEnd;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE is descending. Default order for ADVISORYNAME is ascending. If no value is specified ISSUEDATE is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -216,5 +361,117 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListErrataRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListErrataRequest
+         */
+        public ListErrataRequest buildWithoutInvocationCallback() {
+            ListErrataRequest request = new ListErrataRequest();
+            request.compartmentId = compartmentId;
+            request.erratumId = erratumId;
+            request.advisoryName = advisoryName;
+            request.timeIssueDateStart = timeIssueDateStart;
+            request.timeIssueDateEnd = timeIssueDateEnd;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new ListErrataRequest(compartmentId, erratumId, advisoryName, timeIssueDateStart, timeIssueDateEnd, limit, page, sortOrder, sortBy, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .erratumId(erratumId)
+                .advisoryName(advisoryName)
+                .timeIssueDateStart(timeIssueDateStart)
+                .timeIssueDateEnd(timeIssueDateEnd)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",erratumId=").append(String.valueOf(this.erratumId));
+        sb.append(",advisoryName=").append(String.valueOf(this.advisoryName));
+        sb.append(",timeIssueDateStart=").append(String.valueOf(this.timeIssueDateStart));
+        sb.append(",timeIssueDateEnd=").append(String.valueOf(this.timeIssueDateEnd));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListErrataRequest)) {
+            return false;
+        }
+
+        ListErrataRequest other = (ListErrataRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.erratumId, other.erratumId)
+                && java.util.Objects.equals(this.advisoryName, other.advisoryName)
+                && java.util.Objects.equals(this.timeIssueDateStart, other.timeIssueDateStart)
+                && java.util.Objects.equals(this.timeIssueDateEnd, other.timeIssueDateEnd)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.erratumId == null ? 43 : this.erratumId.hashCode());
+        result = (result * PRIME) + (this.advisoryName == null ? 43 : this.advisoryName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIssueDateStart == null
+                                ? 43
+                                : this.timeIssueDateStart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeIssueDateEnd == null ? 43 : this.timeIssueDateEnd.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

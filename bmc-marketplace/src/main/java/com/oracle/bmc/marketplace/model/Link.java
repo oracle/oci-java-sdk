@@ -15,14 +15,18 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Link.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Link {
+public final class Link {
+    @Deprecated
+    @java.beans.ConstructorProperties({"rel", "href"})
+    public Link(LinkEnum rel, String href) {
+        super();
+        this.rel = rel;
+        this.href = href;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("rel")
         private LinkEnum rel;
@@ -67,18 +71,72 @@ public class Link {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Reference links to the previous page, next page, and other pages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rel")
-    LinkEnum rel;
+    private final LinkEnum rel;
+
+    public LinkEnum getRel() {
+        return rel;
+    }
 
     /**
      * The anchor tag.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("href")
-    String href;
+    private final String href;
+
+    public String getHref() {
+        return href;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Link(");
+        sb.append("rel=").append(String.valueOf(this.rel));
+        sb.append(", href=").append(String.valueOf(this.href));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Link)) {
+            return false;
+        }
+
+        Link other = (Link) o;
+        return java.util.Objects.equals(this.rel, other.rel)
+                && java.util.Objects.equals(this.href, other.href)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.rel == null ? 43 : this.rel.hashCode());
+        result = (result * PRIME) + (this.href == null ? 43 : this.href.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

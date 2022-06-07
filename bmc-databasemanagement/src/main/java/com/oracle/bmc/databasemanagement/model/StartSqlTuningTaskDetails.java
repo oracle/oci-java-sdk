@@ -15,16 +15,46 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StartSqlTuningTaskDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StartSqlTuningTaskDetails {
+public final class StartSqlTuningTaskDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "taskName",
+        "taskDescription",
+        "credentialDetails",
+        "totalTimeLimitInMinutes",
+        "scope",
+        "statementTimeLimitInMinutes",
+        "sqlDetails",
+        "timeStarted",
+        "timeEnded"
+    })
+    public StartSqlTuningTaskDetails(
+            String taskName,
+            String taskDescription,
+            SqlTuningTaskCredentialDetails credentialDetails,
+            Integer totalTimeLimitInMinutes,
+            Scope scope,
+            Integer statementTimeLimitInMinutes,
+            java.util.List<SqlTuningTaskSqlDetail> sqlDetails,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded) {
+        super();
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+        this.credentialDetails = credentialDetails;
+        this.totalTimeLimitInMinutes = totalTimeLimitInMinutes;
+        this.scope = scope;
+        this.statementTimeLimitInMinutes = statementTimeLimitInMinutes;
+        this.sqlDetails = sqlDetails;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("taskName")
         private String taskName;
@@ -151,26 +181,47 @@ public class StartSqlTuningTaskDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
-    String taskName;
+    private final String taskName;
+
+    public String getTaskName() {
+        return taskName;
+    }
 
     /**
      * The description of the SQL tuning task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskDescription")
-    String taskDescription;
+    private final String taskDescription;
+
+    public String getTaskDescription() {
+        return taskDescription;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
-    SqlTuningTaskCredentialDetails credentialDetails;
+    private final SqlTuningTaskCredentialDetails credentialDetails;
+
+    public SqlTuningTaskCredentialDetails getCredentialDetails() {
+        return credentialDetails;
+    }
 
     /**
      * The time limit for running the SQL tuning task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalTimeLimitInMinutes")
-    Integer totalTimeLimitInMinutes;
+    private final Integer totalTimeLimitInMinutes;
+
+    public Integer getTotalTimeLimitInMinutes() {
+        return totalTimeLimitInMinutes;
+    }
+
     /**
      * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
      * is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
@@ -216,7 +267,11 @@ public class StartSqlTuningTaskDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
-    Scope scope;
+    private final Scope scope;
+
+    public Scope getScope() {
+        return scope;
+    }
 
     /**
      * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE scope.
@@ -224,26 +279,121 @@ public class StartSqlTuningTaskDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statementTimeLimitInMinutes")
-    Integer statementTimeLimitInMinutes;
+    private final Integer statementTimeLimitInMinutes;
+
+    public Integer getStatementTimeLimitInMinutes() {
+        return statementTimeLimitInMinutes;
+    }
 
     /**
      * The array of the details of SQL statement on which tuning is performed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlDetails")
-    java.util.List<SqlTuningTaskSqlDetail> sqlDetails;
+    private final java.util.List<SqlTuningTaskSqlDetail> sqlDetails;
+
+    public java.util.List<SqlTuningTaskSqlDetail> getSqlDetails() {
+        return sqlDetails;
+    }
 
     /**
      * The start time of the period in which SQL statements are running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * The end time of the period in which SQL statements are running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    private final java.util.Date timeEnded;
+
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StartSqlTuningTaskDetails(");
+        sb.append("taskName=").append(String.valueOf(this.taskName));
+        sb.append(", taskDescription=").append(String.valueOf(this.taskDescription));
+        sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", totalTimeLimitInMinutes=")
+                .append(String.valueOf(this.totalTimeLimitInMinutes));
+        sb.append(", scope=").append(String.valueOf(this.scope));
+        sb.append(", statementTimeLimitInMinutes=")
+                .append(String.valueOf(this.statementTimeLimitInMinutes));
+        sb.append(", sqlDetails=").append(String.valueOf(this.sqlDetails));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StartSqlTuningTaskDetails)) {
+            return false;
+        }
+
+        StartSqlTuningTaskDetails other = (StartSqlTuningTaskDetails) o;
+        return java.util.Objects.equals(this.taskName, other.taskName)
+                && java.util.Objects.equals(this.taskDescription, other.taskDescription)
+                && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(
+                        this.totalTimeLimitInMinutes, other.totalTimeLimitInMinutes)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(
+                        this.statementTimeLimitInMinutes, other.statementTimeLimitInMinutes)
+                && java.util.Objects.equals(this.sqlDetails, other.sqlDetails)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.taskName == null ? 43 : this.taskName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.taskDescription == null ? 43 : this.taskDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalTimeLimitInMinutes == null
+                                ? 43
+                                : this.totalTimeLimitInMinutes.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statementTimeLimitInMinutes == null
+                                ? 43
+                                : this.statementTimeLimitInMinutes.hashCode());
+        result = (result * PRIME) + (this.sqlDetails == null ? 43 : this.sqlDetails.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

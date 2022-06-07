@@ -9,14 +9,6 @@ import com.oracle.bmc.functions.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/CreateFunctionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateFunctionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateFunctionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.functions.model.CreateFunctionDetails> {
@@ -26,12 +18,19 @@ public class CreateFunctionRequest
      */
     private com.oracle.bmc.functions.model.CreateFunctionDetails createFunctionDetails;
 
+    public com.oracle.bmc.functions.model.CreateFunctionDetails getCreateFunctionDetails() {
+        return createFunctionDetails;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -49,6 +48,31 @@ public class CreateFunctionRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.functions.model.CreateFunctionDetails createFunctionDetails = null;
+
+        /**
+         * Specification of the function to create
+         * @return this builder instance
+         */
+        public Builder createFunctionDetails(
+                com.oracle.bmc.functions.model.CreateFunctionDetails createFunctionDetails) {
+            this.createFunctionDetails = createFunctionDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -112,5 +136,73 @@ public class CreateFunctionRequest
             createFunctionDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateFunctionRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateFunctionRequest
+         */
+        public CreateFunctionRequest buildWithoutInvocationCallback() {
+            CreateFunctionRequest request = new CreateFunctionRequest();
+            request.createFunctionDetails = createFunctionDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new CreateFunctionRequest(createFunctionDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createFunctionDetails(createFunctionDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createFunctionDetails=").append(String.valueOf(this.createFunctionDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateFunctionRequest)) {
+            return false;
+        }
+
+        CreateFunctionRequest other = (CreateFunctionRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.createFunctionDetails, other.createFunctionDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createFunctionDetails == null
+                                ? 43
+                                : this.createFunctionDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

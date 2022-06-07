@@ -9,14 +9,6 @@ import com.oracle.bmc.resourcemanager.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateTemplateExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTemplateRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateTemplateRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails> {
@@ -26,12 +18,18 @@ public class UpdateTemplateRequest
      */
     private String templateId;
 
+    public String getTemplateId() {
+        return templateId;
+    }
     /**
      * The details for updating a template.
      *
      */
     private com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails updateTemplateDetails;
 
+    public com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails getUpdateTemplateDetails() {
+        return updateTemplateDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -39,6 +37,9 @@ public class UpdateTemplateRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
@@ -46,6 +47,10 @@ public class UpdateTemplateRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,6 +69,58 @@ public class UpdateTemplateRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String templateId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the template.
+         * @return this builder instance
+         */
+        public Builder templateId(String templateId) {
+            this.templateId = templateId;
+            return this;
+        }
+
+        private com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails updateTemplateDetails =
+                null;
+
+        /**
+         * The details for updating a template.
+         *
+         * @return this builder instance
+         */
+        public Builder updateTemplateDetails(
+                com.oracle.bmc.resourcemanager.model.UpdateTemplateDetails updateTemplateDetails) {
+            this.updateTemplateDetails = updateTemplateDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -129,5 +186,83 @@ public class UpdateTemplateRequest
             updateTemplateDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateTemplateRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateTemplateRequest
+         */
+        public UpdateTemplateRequest buildWithoutInvocationCallback() {
+            UpdateTemplateRequest request = new UpdateTemplateRequest();
+            request.templateId = templateId;
+            request.updateTemplateDetails = updateTemplateDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateTemplateRequest(templateId, updateTemplateDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .templateId(templateId)
+                .updateTemplateDetails(updateTemplateDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",templateId=").append(String.valueOf(this.templateId));
+        sb.append(",updateTemplateDetails=").append(String.valueOf(this.updateTemplateDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTemplateRequest)) {
+            return false;
+        }
+
+        UpdateTemplateRequest other = (UpdateTemplateRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.templateId, other.templateId)
+                && java.util.Objects.equals(this.updateTemplateDetails, other.updateTemplateDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.templateId == null ? 43 : this.templateId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateTemplateDetails == null
+                                ? 43
+                                : this.updateTemplateDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

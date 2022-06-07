@@ -15,16 +15,34 @@ package com.oracle.bmc.analytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestResource {
+public final class WorkRequestResource {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "actionResult",
+        "resourceType",
+        "identifier",
+        "resourceUri",
+        "metadata"
+    })
+    public WorkRequestResource(
+            WorkRequestActionResult actionResult,
+            WorkRequestResourceType resourceType,
+            String identifier,
+            String resourceUri,
+            java.util.Map<String, String> metadata) {
+        super();
+        this.actionResult = actionResult;
+        this.resourceType = resourceType;
+        this.identifier = identifier;
+        this.resourceUri = resourceUri;
+        this.metadata = metadata;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("actionResult")
         private WorkRequestActionResult actionResult;
@@ -103,40 +121,115 @@ public class WorkRequestResource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The way in which this resource was affected by this work request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionResult")
-    WorkRequestActionResult actionResult;
+    private final WorkRequestActionResult actionResult;
+
+    public WorkRequestActionResult getActionResult() {
+        return actionResult;
+    }
 
     /**
      * The type of the resource the work request is affecting.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    WorkRequestResourceType resourceType;
+    private final WorkRequestResourceType resourceType;
+
+    public WorkRequestResourceType getResourceType() {
+        return resourceType;
+    }
 
     /**
      * The OCID of the resource the work request is affecting.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
-    String identifier;
+    private final String identifier;
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     /**
      * The URI of the affected resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
-    String resourceUri;
+    private final String resourceUri;
+
+    public String getResourceUri() {
+        return resourceUri;
+    }
 
     /**
      * Additional metadata of the resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    java.util.Map<String, String> metadata;
+    private final java.util.Map<String, String> metadata;
+
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestResource(");
+        sb.append("actionResult=").append(String.valueOf(this.actionResult));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", resourceUri=").append(String.valueOf(this.resourceUri));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestResource)) {
+            return false;
+        }
+
+        WorkRequestResource other = (WorkRequestResource) o;
+        return java.util.Objects.equals(this.actionResult, other.actionResult)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.resourceUri, other.resourceUri)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.actionResult == null ? 43 : this.actionResult.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.resourceUri == null ? 43 : this.resourceUri.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

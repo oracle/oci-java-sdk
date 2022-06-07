@@ -8,7 +8,6 @@ package com.oracle.bmc.ospgateway.model;
  * Credit card type.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-@lombok.extern.slf4j.Slf4j
 public enum CreditCardType {
     Visa("VISA"),
     Amex("AMEX"),
@@ -23,6 +22,9 @@ public enum CreditCardType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(CreditCardType.class);
 
     private final String value;
     private static java.util.Map<String, CreditCardType> map;

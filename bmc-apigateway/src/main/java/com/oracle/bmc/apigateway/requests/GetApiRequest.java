@@ -9,14 +9,6 @@ import com.oracle.bmc.apigateway.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetApiExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetApiRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetApiRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,16 +16,45 @@ public class GetApiRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String apiId;
 
+    public String getApiId() {
+        return apiId;
+    }
     /**
      * The client request id for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetApiRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String apiId = null;
+
+        /**
+         * The ocid of the API.
+         * @return this builder instance
+         */
+        public Builder apiId(String apiId) {
+            this.apiId = apiId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request id for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -86,5 +107,67 @@ public class GetApiRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetApiRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetApiRequest
+         */
+        public GetApiRequest buildWithoutInvocationCallback() {
+            GetApiRequest request = new GetApiRequest();
+            request.apiId = apiId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetApiRequest(apiId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().apiId(apiId).opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",apiId=").append(String.valueOf(this.apiId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetApiRequest)) {
+            return false;
+        }
+
+        GetApiRequest other = (GetApiRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.apiId, other.apiId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.apiId == null ? 43 : this.apiId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

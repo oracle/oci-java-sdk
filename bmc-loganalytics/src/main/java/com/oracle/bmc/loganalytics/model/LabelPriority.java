@@ -16,14 +16,17 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LabelPriority.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LabelPriority {
+public final class LabelPriority {
+    @Deprecated
+    @java.beans.ConstructorProperties({"priority"})
+    public LabelPriority(Priority priority) {
+        super();
+        this.priority = priority;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Priority priority;
@@ -59,10 +62,13 @@ public class LabelPriority {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The label priority. Default value is NONE.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Priority {
         None("NONE"),
         Low("LOW"),
@@ -74,6 +80,9 @@ public class LabelPriority {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Priority.class);
 
         private final String value;
         private static java.util.Map<String, Priority> map;
@@ -111,8 +120,51 @@ public class LabelPriority {
      * The label priority. Default value is NONE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
-    Priority priority;
+    private final Priority priority;
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LabelPriority(");
+        sb.append("priority=").append(String.valueOf(this.priority));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LabelPriority)) {
+            return false;
+        }
+
+        LabelPriority other = (LabelPriority) o;
+        return java.util.Objects.equals(this.priority, other.priority)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.priority == null ? 43 : this.priority.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

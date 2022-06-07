@@ -15,16 +15,19 @@ package com.oracle.bmc.dts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TransferApplianceEncryptionPassphrase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TransferApplianceEncryptionPassphrase {
+public final class TransferApplianceEncryptionPassphrase {
+    @Deprecated
+    @java.beans.ConstructorProperties({"encryptionPassphrase"})
+    public TransferApplianceEncryptionPassphrase(String encryptionPassphrase) {
+        super();
+        this.encryptionPassphrase = encryptionPassphrase;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionPassphrase")
         private String encryptionPassphrase;
@@ -61,9 +64,60 @@ public class TransferApplianceEncryptionPassphrase {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionPassphrase")
-    String encryptionPassphrase;
+    private final String encryptionPassphrase;
+
+    public String getEncryptionPassphrase() {
+        return encryptionPassphrase;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TransferApplianceEncryptionPassphrase(");
+        sb.append("encryptionPassphrase=").append(String.valueOf(this.encryptionPassphrase));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TransferApplianceEncryptionPassphrase)) {
+            return false;
+        }
+
+        TransferApplianceEncryptionPassphrase other = (TransferApplianceEncryptionPassphrase) o;
+        return java.util.Objects.equals(this.encryptionPassphrase, other.encryptionPassphrase)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.encryptionPassphrase == null
+                                ? 43
+                                : this.encryptionPassphrase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,20 @@ package com.oracle.bmc.artifacts.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ContainerRepositoryReadme.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ContainerRepositoryReadme {
+public final class ContainerRepositoryReadme {
+    @Deprecated
+    @java.beans.ConstructorProperties({"content", "format"})
+    public ContainerRepositoryReadme(String content, Format format) {
+        super();
+        this.content = content;
+        this.format = format;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
@@ -69,15 +73,23 @@ public class ContainerRepositoryReadme {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Readme content. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
-    String content;
+    private final String content;
+
+    public String getContent() {
+        return content;
+    }
+
     /**
      * Readme format. Supported formats are text/plain and text/markdown.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Format {
         TextMarkdown("TEXT_MARKDOWN"),
         TextPlain("TEXT_PLAIN"),
@@ -87,6 +99,8 @@ public class ContainerRepositoryReadme {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Format.class);
 
         private final String value;
         private static java.util.Map<String, Format> map;
@@ -124,8 +138,54 @@ public class ContainerRepositoryReadme {
      * Readme format. Supported formats are text/plain and text/markdown.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("format")
-    Format format;
+    private final Format format;
+
+    public Format getFormat() {
+        return format;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ContainerRepositoryReadme(");
+        sb.append("content=").append(String.valueOf(this.content));
+        sb.append(", format=").append(String.valueOf(this.format));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ContainerRepositoryReadme)) {
+            return false;
+        }
+
+        ContainerRepositoryReadme other = (ContainerRepositoryReadme) o;
+        return java.util.Objects.equals(this.content, other.content)
+                && java.util.Objects.equals(this.format, other.format)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
+        result = (result * PRIME) + (this.format == null ? 43 : this.format.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,18 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FailureDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FailureDetails {
+public final class FailureDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"code", "message"})
+    public FailureDetails(Code code, String message) {
+        super();
+        this.code = code;
+        this.message = message;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private Code code;
@@ -67,10 +71,13 @@ public class FailureDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Job failure reason.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Code {
         InternalServiceError("INTERNAL_SERVICE_ERROR"),
         TerraformExecutionError("TERRAFORM_EXECUTION_ERROR"),
@@ -86,12 +93,17 @@ public class FailureDetails {
                 "TERRAFORM_OBJECT_STORAGE_CONFIG_SOURCE_NO_TF_FILE_PRESENT"),
         TerraformObjectStorageConfigSourceUnsupportedObjectSize(
                 "TERRAFORM_OBJECT_STORAGE_CONFIG_SOURCE_UNSUPPORTED_OBJECT_SIZE"),
+        CustomTerraformProviderBucketNotFound("CUSTOM_TERRAFORM_PROVIDER_BUCKET_NOT_FOUND"),
+        CustomTerraformProviderUnsupportedObjectSize(
+                "CUSTOM_TERRAFORM_PROVIDER_UNSUPPORTED_OBJECT_SIZE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Code.class);
 
         private final String value;
         private static java.util.Map<String, Code> map;
@@ -128,14 +140,64 @@ public class FailureDetails {
      * Job failure reason.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
-    Code code;
+    private final Code code;
+
+    public Code getCode() {
+        return code;
+    }
 
     /**
      * A human-readable error string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FailureDetails(");
+        sb.append("code=").append(String.valueOf(this.code));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FailureDetails)) {
+            return false;
+        }
+
+        FailureDetails other = (FailureDetails) o;
+        return java.util.Objects.equals(this.code, other.code)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

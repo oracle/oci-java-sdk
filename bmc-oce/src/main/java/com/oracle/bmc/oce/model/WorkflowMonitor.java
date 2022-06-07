@@ -15,14 +15,20 @@ package com.oracle.bmc.oce.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkflowMonitor.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkflowMonitor {
+public final class WorkflowMonitor {
+    @Deprecated
+    @java.beans.ConstructorProperties({"workflowName", "resourceName", "workflowSteps"})
+    public WorkflowMonitor(
+            String workflowName, String resourceName, java.util.List<WorkflowStep> workflowSteps) {
+        super();
+        this.workflowName = workflowName;
+        this.resourceName = resourceName;
+        this.workflowSteps = workflowSteps;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("workflowName")
         private String workflowName;
@@ -80,24 +86,87 @@ public class WorkflowMonitor {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * workflow name for this work request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workflowName")
-    String workflowName;
+    private final String workflowName;
+
+    public String getWorkflowName() {
+        return workflowName;
+    }
 
     /**
      * resource name for this work request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * Workflow step of workflow monitor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workflowSteps")
-    java.util.List<WorkflowStep> workflowSteps;
+    private final java.util.List<WorkflowStep> workflowSteps;
+
+    public java.util.List<WorkflowStep> getWorkflowSteps() {
+        return workflowSteps;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkflowMonitor(");
+        sb.append("workflowName=").append(String.valueOf(this.workflowName));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", workflowSteps=").append(String.valueOf(this.workflowSteps));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkflowMonitor)) {
+            return false;
+        }
+
+        WorkflowMonitor other = (WorkflowMonitor) o;
+        return java.util.Objects.equals(this.workflowName, other.workflowName)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.workflowSteps, other.workflowSteps)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.workflowName == null ? 43 : this.workflowName.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workflowSteps == null ? 43 : this.workflowSteps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

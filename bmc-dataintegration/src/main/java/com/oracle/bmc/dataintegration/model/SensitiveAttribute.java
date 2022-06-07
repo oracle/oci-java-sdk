@@ -15,16 +15,20 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SensitiveAttribute.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SensitiveAttribute {
+public final class SensitiveAttribute {
+    @Deprecated
+    @java.beans.ConstructorProperties({"secretConfig", "value"})
+    public SensitiveAttribute(SecretConfig secretConfig, String value) {
+        super();
+        this.secretConfig = secretConfig;
+        this.value = value;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("secretConfig")
         private SecretConfig secretConfig;
@@ -69,15 +73,69 @@ public class SensitiveAttribute {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("secretConfig")
-    SecretConfig secretConfig;
+    private final SecretConfig secretConfig;
+
+    public SecretConfig getSecretConfig() {
+        return secretConfig;
+    }
 
     /**
      * Attribute to provide sensitive content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SensitiveAttribute(");
+        sb.append("secretConfig=").append(String.valueOf(this.secretConfig));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SensitiveAttribute)) {
+            return false;
+        }
+
+        SensitiveAttribute other = (SensitiveAttribute) o;
+        return java.util.Objects.equals(this.secretConfig, other.secretConfig)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.secretConfig == null ? 43 : this.secretConfig.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

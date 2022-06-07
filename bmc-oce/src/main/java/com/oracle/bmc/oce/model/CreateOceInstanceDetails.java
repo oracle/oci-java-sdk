@@ -15,16 +15,70 @@ package com.oracle.bmc.oce.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateOceInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateOceInstanceDetails {
+public final class CreateOceInstanceDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "description",
+        "compartmentId",
+        "name",
+        "tenancyId",
+        "idcsAccessToken",
+        "identityStripe",
+        "tenancyName",
+        "instanceUsageType",
+        "addOnFeatures",
+        "objectStorageNamespace",
+        "adminEmail",
+        "upgradeSchedule",
+        "wafPrimaryDomain",
+        "instanceAccessType",
+        "instanceLicenseType",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateOceInstanceDetails(
+            String description,
+            String compartmentId,
+            String name,
+            String tenancyId,
+            String idcsAccessToken,
+            IdentityStripeDetails identityStripe,
+            String tenancyName,
+            InstanceUsageType instanceUsageType,
+            java.util.List<String> addOnFeatures,
+            String objectStorageNamespace,
+            String adminEmail,
+            OceInstance.UpgradeSchedule upgradeSchedule,
+            String wafPrimaryDomain,
+            InstanceAccessType instanceAccessType,
+            LicenseType instanceLicenseType,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.tenancyId = tenancyId;
+        this.idcsAccessToken = idcsAccessToken;
+        this.identityStripe = identityStripe;
+        this.tenancyName = tenancyName;
+        this.instanceUsageType = instanceUsageType;
+        this.addOnFeatures = addOnFeatures;
+        this.objectStorageNamespace = objectStorageNamespace;
+        this.adminEmail = adminEmail;
+        this.upgradeSchedule = upgradeSchedule;
+        this.wafPrimaryDomain = wafPrimaryDomain;
+        this.instanceAccessType = instanceAccessType;
+        this.instanceLicenseType = instanceLicenseType;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -240,44 +294,77 @@ public class CreateOceInstanceDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OceInstance description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Compartment Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * OceInstance Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * Tenancy Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    String tenancyId;
+    private final String tenancyId;
+
+    public String getTenancyId() {
+        return tenancyId;
+    }
 
     /**
      * Identity Cloud Service access token identifying a stripe and service administrator user
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
-    String idcsAccessToken;
+    private final String idcsAccessToken;
+
+    public String getIdcsAccessToken() {
+        return idcsAccessToken;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("identityStripe")
-    IdentityStripeDetails identityStripe;
+    private final IdentityStripeDetails identityStripe;
+
+    public IdentityStripeDetails getIdentityStripe() {
+        return identityStripe;
+    }
 
     /**
      * Tenancy Name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
-    String tenancyName;
+    private final String tenancyName;
+
+    public String getTenancyName() {
+        return tenancyName;
+    }
+
     /**
      * Instance type based on its usage
      **/
@@ -317,25 +404,41 @@ public class CreateOceInstanceDetails {
      * Instance type based on its usage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
-    InstanceUsageType instanceUsageType;
+    private final InstanceUsageType instanceUsageType;
+
+    public InstanceUsageType getInstanceUsageType() {
+        return instanceUsageType;
+    }
 
     /**
      * a list of add-on features for the ocm instance
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
-    java.util.List<String> addOnFeatures;
+    private final java.util.List<String> addOnFeatures;
+
+    public java.util.List<String> getAddOnFeatures() {
+        return addOnFeatures;
+    }
 
     /**
      * Object Storage Namespace of Tenancy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
-    String objectStorageNamespace;
+    private final String objectStorageNamespace;
+
+    public String getObjectStorageNamespace() {
+        return objectStorageNamespace;
+    }
 
     /**
      * Admin Email for Notification
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
-    String adminEmail;
+    private final String adminEmail;
+
+    public String getAdminEmail() {
+        return adminEmail;
+    }
 
     /**
      * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
@@ -343,13 +446,22 @@ public class CreateOceInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("upgradeSchedule")
-    OceInstance.UpgradeSchedule upgradeSchedule;
+    private final OceInstance.UpgradeSchedule upgradeSchedule;
+
+    public OceInstance.UpgradeSchedule getUpgradeSchedule() {
+        return upgradeSchedule;
+    }
 
     /**
      * Web Application Firewall(WAF) primary domain
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
-    String wafPrimaryDomain;
+    private final String wafPrimaryDomain;
+
+    public String getWafPrimaryDomain() {
+        return wafPrimaryDomain;
+    }
+
     /**
      * Flag indicating whether the instance access is private or public
      **/
@@ -389,13 +501,21 @@ public class CreateOceInstanceDetails {
      * Flag indicating whether the instance access is private or public
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
-    InstanceAccessType instanceAccessType;
+    private final InstanceAccessType instanceAccessType;
+
+    public InstanceAccessType getInstanceAccessType() {
+        return instanceAccessType;
+    }
 
     /**
      * Flag indicating whether the instance license is new cloud or bring your own license
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
-    LicenseType instanceLicenseType;
+    private final LicenseType instanceLicenseType;
+
+    public LicenseType getInstanceLicenseType() {
+        return instanceLicenseType;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -403,7 +523,11 @@ public class CreateOceInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
@@ -411,8 +535,126 @@ public class CreateOceInstanceDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateOceInstanceDetails(");
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", idcsAccessToken=").append(String.valueOf(this.idcsAccessToken));
+        sb.append(", identityStripe=").append(String.valueOf(this.identityStripe));
+        sb.append(", tenancyName=").append(String.valueOf(this.tenancyName));
+        sb.append(", instanceUsageType=").append(String.valueOf(this.instanceUsageType));
+        sb.append(", addOnFeatures=").append(String.valueOf(this.addOnFeatures));
+        sb.append(", objectStorageNamespace=").append(String.valueOf(this.objectStorageNamespace));
+        sb.append(", adminEmail=").append(String.valueOf(this.adminEmail));
+        sb.append(", upgradeSchedule=").append(String.valueOf(this.upgradeSchedule));
+        sb.append(", wafPrimaryDomain=").append(String.valueOf(this.wafPrimaryDomain));
+        sb.append(", instanceAccessType=").append(String.valueOf(this.instanceAccessType));
+        sb.append(", instanceLicenseType=").append(String.valueOf(this.instanceLicenseType));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateOceInstanceDetails)) {
+            return false;
+        }
+
+        CreateOceInstanceDetails other = (CreateOceInstanceDetails) o;
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.idcsAccessToken, other.idcsAccessToken)
+                && java.util.Objects.equals(this.identityStripe, other.identityStripe)
+                && java.util.Objects.equals(this.tenancyName, other.tenancyName)
+                && java.util.Objects.equals(this.instanceUsageType, other.instanceUsageType)
+                && java.util.Objects.equals(this.addOnFeatures, other.addOnFeatures)
+                && java.util.Objects.equals(
+                        this.objectStorageNamespace, other.objectStorageNamespace)
+                && java.util.Objects.equals(this.adminEmail, other.adminEmail)
+                && java.util.Objects.equals(this.upgradeSchedule, other.upgradeSchedule)
+                && java.util.Objects.equals(this.wafPrimaryDomain, other.wafPrimaryDomain)
+                && java.util.Objects.equals(this.instanceAccessType, other.instanceAccessType)
+                && java.util.Objects.equals(this.instanceLicenseType, other.instanceLicenseType)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.idcsAccessToken == null ? 43 : this.idcsAccessToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identityStripe == null ? 43 : this.identityStripe.hashCode());
+        result = (result * PRIME) + (this.tenancyName == null ? 43 : this.tenancyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceUsageType == null ? 43 : this.instanceUsageType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.addOnFeatures == null ? 43 : this.addOnFeatures.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectStorageNamespace == null
+                                ? 43
+                                : this.objectStorageNamespace.hashCode());
+        result = (result * PRIME) + (this.adminEmail == null ? 43 : this.adminEmail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upgradeSchedule == null ? 43 : this.upgradeSchedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.wafPrimaryDomain == null ? 43 : this.wafPrimaryDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceAccessType == null
+                                ? 43
+                                : this.instanceAccessType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceLicenseType == null
+                                ? 43
+                                : this.instanceLicenseType.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

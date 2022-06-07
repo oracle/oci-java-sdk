@@ -9,14 +9,6 @@ import com.oracle.bmc.goldengate.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/UpdateDeploymentBackupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDeploymentBackupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateDeploymentBackupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails> {
@@ -27,6 +19,9 @@ public class UpdateDeploymentBackupRequest
      */
     private String deploymentBackupId;
 
+    public String getDeploymentBackupId() {
+        return deploymentBackupId;
+    }
     /**
      * The information to be updated.
      *
@@ -34,17 +29,28 @@ public class UpdateDeploymentBackupRequest
     private com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails
             updateDeploymentBackupDetails;
 
+    public com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails
+            getUpdateDeploymentBackupDetails() {
+        return updateDeploymentBackupDetails;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
      *
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +69,57 @@ public class UpdateDeploymentBackupRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String deploymentBackupId = null;
+
+        /**
+         * A unique DeploymentBackup identifier.
+         *
+         * @return this builder instance
+         */
+        public Builder deploymentBackupId(String deploymentBackupId) {
+            this.deploymentBackupId = deploymentBackupId;
+            return this;
+        }
+
+        private com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails
+                updateDeploymentBackupDetails = null;
+
+        /**
+         * The information to be updated.
+         *
+         * @return this builder instance
+         */
+        public Builder updateDeploymentBackupDetails(
+                com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails
+                        updateDeploymentBackupDetails) {
+            this.updateDeploymentBackupDetails = updateDeploymentBackupDetails;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -128,5 +185,89 @@ public class UpdateDeploymentBackupRequest
             updateDeploymentBackupDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateDeploymentBackupRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateDeploymentBackupRequest
+         */
+        public UpdateDeploymentBackupRequest buildWithoutInvocationCallback() {
+            UpdateDeploymentBackupRequest request = new UpdateDeploymentBackupRequest();
+            request.deploymentBackupId = deploymentBackupId;
+            request.updateDeploymentBackupDetails = updateDeploymentBackupDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new UpdateDeploymentBackupRequest(deploymentBackupId, updateDeploymentBackupDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .deploymentBackupId(deploymentBackupId)
+                .updateDeploymentBackupDetails(updateDeploymentBackupDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",deploymentBackupId=").append(String.valueOf(this.deploymentBackupId));
+        sb.append(",updateDeploymentBackupDetails=")
+                .append(String.valueOf(this.updateDeploymentBackupDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDeploymentBackupRequest)) {
+            return false;
+        }
+
+        UpdateDeploymentBackupRequest other = (UpdateDeploymentBackupRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.deploymentBackupId, other.deploymentBackupId)
+                && java.util.Objects.equals(
+                        this.updateDeploymentBackupDetails, other.updateDeploymentBackupDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.deploymentBackupId == null
+                                ? 43
+                                : this.deploymentBackupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateDeploymentBackupDetails == null
+                                ? 43
+                                : this.updateDeploymentBackupDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -15,16 +15,20 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestLogEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WorkRequestLogEntry {
+public final class WorkRequestLogEntry {
+    @Deprecated
+    @java.beans.ConstructorProperties({"message", "timeStamp"})
+    public WorkRequestLogEntry(String message, java.util.Date timeStamp) {
+        super();
+        this.message = message;
+        this.timeStamp = timeStamp;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
@@ -69,18 +73,72 @@ public class WorkRequestLogEntry {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Human-readable log message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * When the log message was written. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
-    java.util.Date timeStamp;
+    private final java.util.Date timeStamp;
+
+    public java.util.Date getTimeStamp() {
+        return timeStamp;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WorkRequestLogEntry(");
+        sb.append("message=").append(String.valueOf(this.message));
+        sb.append(", timeStamp=").append(String.valueOf(this.timeStamp));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WorkRequestLogEntry)) {
+            return false;
+        }
+
+        WorkRequestLogEntry other = (WorkRequestLogEntry) o;
+        return java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.timeStamp, other.timeStamp)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + (this.timeStamp == null ? 43 : this.timeStamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

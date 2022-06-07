@@ -16,16 +16,49 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningAdvisorTaskRecommendationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningAdvisorTaskRecommendationSummary {
+public final class SqlTuningAdvisorTaskRecommendationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sqlTuningAdvisorTaskId",
+        "sqlTuningAdvisorTaskObjectId",
+        "recommendationKey",
+        "recommendationType",
+        "finding",
+        "recommendation",
+        "rationale",
+        "benefit",
+        "implementActionSql",
+        "isParallelExecution"
+    })
+    public SqlTuningAdvisorTaskRecommendationSummary(
+            Long sqlTuningAdvisorTaskId,
+            Long sqlTuningAdvisorTaskObjectId,
+            Integer recommendationKey,
+            RecommendationType recommendationType,
+            String finding,
+            String recommendation,
+            String rationale,
+            Float benefit,
+            String implementActionSql,
+            Boolean isParallelExecution) {
+        super();
+        this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+        this.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
+        this.recommendationKey = recommendationKey;
+        this.recommendationType = recommendationType;
+        this.finding = finding;
+        this.recommendation = recommendation;
+        this.rationale = rationale;
+        this.benefit = benefit;
+        this.implementActionSql = implementActionSql;
+        this.isParallelExecution = isParallelExecution;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
         private Long sqlTuningAdvisorTaskId;
@@ -163,28 +196,44 @@ public class SqlTuningAdvisorTaskRecommendationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
-    Long sqlTuningAdvisorTaskId;
+    private final Long sqlTuningAdvisorTaskId;
+
+    public Long getSqlTuningAdvisorTaskId() {
+        return sqlTuningAdvisorTaskId;
+    }
 
     /**
      * The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectId")
-    Long sqlTuningAdvisorTaskObjectId;
+    private final Long sqlTuningAdvisorTaskObjectId;
+
+    public Long getSqlTuningAdvisorTaskObjectId() {
+        return sqlTuningAdvisorTaskObjectId;
+    }
 
     /**
      * The unique identifier of the recommendation in the scope of the task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
-    Integer recommendationKey;
+    private final Integer recommendationKey;
+
+    public Integer getRecommendationKey() {
+        return recommendationKey;
+    }
+
     /**
      * Type of recommendation.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RecommendationType {
         Statistics("STATISTICS"),
         Index("INDEX"),
@@ -199,6 +248,9 @@ public class SqlTuningAdvisorTaskRecommendationSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RecommendationType.class);
 
         private final String value;
         private static java.util.Map<String, RecommendationType> map;
@@ -236,44 +288,165 @@ public class SqlTuningAdvisorTaskRecommendationSummary {
      * Type of recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationType")
-    RecommendationType recommendationType;
+    private final RecommendationType recommendationType;
+
+    public RecommendationType getRecommendationType() {
+        return recommendationType;
+    }
 
     /**
      * Summary of the issue found in the SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("finding")
-    String finding;
+    private final String finding;
+
+    public String getFinding() {
+        return finding;
+    }
 
     /**
      * The recommendation for a specific finding.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
-    String recommendation;
+    private final String recommendation;
+
+    public String getRecommendation() {
+        return recommendation;
+    }
 
     /**
      * Describes the reasoning behind the recommendation and how it relates to the finding.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rationale")
-    String rationale;
+    private final String rationale;
+
+    public String getRationale() {
+        return rationale;
+    }
 
     /**
      * The percentage benefit of this implementation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("benefit")
-    Float benefit;
+    private final Float benefit;
+
+    public Float getBenefit() {
+        return benefit;
+    }
 
     /**
      * Action sql to be implemented based on the recommendation result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("implementActionSql")
-    String implementActionSql;
+    private final String implementActionSql;
+
+    public String getImplementActionSql() {
+        return implementActionSql;
+    }
 
     /**
      * Indicates whether a SQL Profile recommendation uses parallel execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isParallelExecution")
-    Boolean isParallelExecution;
+    private final Boolean isParallelExecution;
+
+    public Boolean getIsParallelExecution() {
+        return isParallelExecution;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningAdvisorTaskRecommendationSummary(");
+        sb.append("sqlTuningAdvisorTaskId=").append(String.valueOf(this.sqlTuningAdvisorTaskId));
+        sb.append(", sqlTuningAdvisorTaskObjectId=")
+                .append(String.valueOf(this.sqlTuningAdvisorTaskObjectId));
+        sb.append(", recommendationKey=").append(String.valueOf(this.recommendationKey));
+        sb.append(", recommendationType=").append(String.valueOf(this.recommendationType));
+        sb.append(", finding=").append(String.valueOf(this.finding));
+        sb.append(", recommendation=").append(String.valueOf(this.recommendation));
+        sb.append(", rationale=").append(String.valueOf(this.rationale));
+        sb.append(", benefit=").append(String.valueOf(this.benefit));
+        sb.append(", implementActionSql=").append(String.valueOf(this.implementActionSql));
+        sb.append(", isParallelExecution=").append(String.valueOf(this.isParallelExecution));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningAdvisorTaskRecommendationSummary)) {
+            return false;
+        }
+
+        SqlTuningAdvisorTaskRecommendationSummary other =
+                (SqlTuningAdvisorTaskRecommendationSummary) o;
+        return java.util.Objects.equals(this.sqlTuningAdvisorTaskId, other.sqlTuningAdvisorTaskId)
+                && java.util.Objects.equals(
+                        this.sqlTuningAdvisorTaskObjectId, other.sqlTuningAdvisorTaskObjectId)
+                && java.util.Objects.equals(this.recommendationKey, other.recommendationKey)
+                && java.util.Objects.equals(this.recommendationType, other.recommendationType)
+                && java.util.Objects.equals(this.finding, other.finding)
+                && java.util.Objects.equals(this.recommendation, other.recommendation)
+                && java.util.Objects.equals(this.rationale, other.rationale)
+                && java.util.Objects.equals(this.benefit, other.benefit)
+                && java.util.Objects.equals(this.implementActionSql, other.implementActionSql)
+                && java.util.Objects.equals(this.isParallelExecution, other.isParallelExecution)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sqlTuningAdvisorTaskId == null
+                                ? 43
+                                : this.sqlTuningAdvisorTaskId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sqlTuningAdvisorTaskObjectId == null
+                                ? 43
+                                : this.sqlTuningAdvisorTaskObjectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendationKey == null ? 43 : this.recommendationKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendationType == null
+                                ? 43
+                                : this.recommendationType.hashCode());
+        result = (result * PRIME) + (this.finding == null ? 43 : this.finding.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendation == null ? 43 : this.recommendation.hashCode());
+        result = (result * PRIME) + (this.rationale == null ? 43 : this.rationale.hashCode());
+        result = (result * PRIME) + (this.benefit == null ? 43 : this.benefit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.implementActionSql == null
+                                ? 43
+                                : this.implementActionSql.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isParallelExecution == null
+                                ? 43
+                                : this.isParallelExecution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

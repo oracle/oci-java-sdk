@@ -15,12 +15,6 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -35,12 +29,44 @@ package com.oracle.bmc.certificatesmanagement.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CertificateAuthorityRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({})
+    protected CertificateAuthorityRule() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CertificateAuthorityRule(");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CertificateAuthorityRule)) {
+            return false;
+        }
+
+        CertificateAuthorityRule other = (CertificateAuthorityRule) o;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        return result;
+    }
 
     /**
      * The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum RuleType {
         CertificateAuthorityIssuanceExpiryRule("CERTIFICATE_AUTHORITY_ISSUANCE_EXPIRY_RULE"),
 
@@ -49,6 +75,9 @@ public class CertificateAuthorityRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RuleType.class);
 
         private final String value;
         private static java.util.Map<String, RuleType> map;

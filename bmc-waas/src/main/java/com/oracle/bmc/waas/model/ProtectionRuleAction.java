@@ -15,16 +15,22 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProtectionRuleAction.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ProtectionRuleAction {
+public final class ProtectionRuleAction {
+    @Deprecated
+    @java.beans.ConstructorProperties({"key", "action", "exclusions"})
+    public ProtectionRuleAction(
+            String key, Action action, java.util.List<ProtectionRuleExclusion> exclusions) {
+        super();
+        this.key = key;
+        this.action = action;
+        this.exclusions = exclusions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -79,11 +85,20 @@ public class ProtectionRuleAction {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key of the protection rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
+
     /**
      * The action to apply to the protection rule. If unspecified, defaults to {@code OFF}.
      **/
@@ -124,14 +139,67 @@ public class ProtectionRuleAction {
      * The action to apply to the protection rule. If unspecified, defaults to {@code OFF}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * The types of requests excluded from the protection rule action. If the requests matches the criteria in the {@code exclusions}, the protection rule action will not be executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
-    java.util.List<ProtectionRuleExclusion> exclusions;
+    private final java.util.List<ProtectionRuleExclusion> exclusions;
+
+    public java.util.List<ProtectionRuleExclusion> getExclusions() {
+        return exclusions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ProtectionRuleAction(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", exclusions=").append(String.valueOf(this.exclusions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ProtectionRuleAction)) {
+            return false;
+        }
+
+        ProtectionRuleAction other = (ProtectionRuleAction) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.exclusions, other.exclusions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.exclusions == null ? 43 : this.exclusions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

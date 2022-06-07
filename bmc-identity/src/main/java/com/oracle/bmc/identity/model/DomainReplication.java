@@ -15,16 +15,24 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DomainReplication.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DomainReplication {
+public final class DomainReplication {
+    @Deprecated
+    @java.beans.ConstructorProperties({"opcWaterMark", "txnSeqNumber", "domainReplicationStates"})
+    public DomainReplication(
+            java.math.BigDecimal opcWaterMark,
+            java.math.BigDecimal txnSeqNumber,
+            java.util.List<DomainReplicationStates> domainReplicationStates) {
+        super();
+        this.opcWaterMark = opcWaterMark;
+        this.txnSeqNumber = txnSeqNumber;
+        this.domainReplicationStates = domainReplicationStates;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("opcWaterMark")
         private java.math.BigDecimal opcWaterMark;
@@ -83,24 +91,91 @@ public class DomainReplication {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("opcWaterMark")
-    java.math.BigDecimal opcWaterMark;
+    private final java.math.BigDecimal opcWaterMark;
+
+    public java.math.BigDecimal getOpcWaterMark() {
+        return opcWaterMark;
+    }
 
     /**
      * A custom value defining the order of records with the same kievTxnId.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("txnSeqNumber")
-    java.math.BigDecimal txnSeqNumber;
+    private final java.math.BigDecimal txnSeqNumber;
+
+    public java.math.BigDecimal getTxnSeqNumber() {
+        return txnSeqNumber;
+    }
 
     /**
      * The identity domain's replication state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainReplicationStates")
-    java.util.List<DomainReplicationStates> domainReplicationStates;
+    private final java.util.List<DomainReplicationStates> domainReplicationStates;
+
+    public java.util.List<DomainReplicationStates> getDomainReplicationStates() {
+        return domainReplicationStates;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DomainReplication(");
+        sb.append("opcWaterMark=").append(String.valueOf(this.opcWaterMark));
+        sb.append(", txnSeqNumber=").append(String.valueOf(this.txnSeqNumber));
+        sb.append(", domainReplicationStates=")
+                .append(String.valueOf(this.domainReplicationStates));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DomainReplication)) {
+            return false;
+        }
+
+        DomainReplication other = (DomainReplication) o;
+        return java.util.Objects.equals(this.opcWaterMark, other.opcWaterMark)
+                && java.util.Objects.equals(this.txnSeqNumber, other.txnSeqNumber)
+                && java.util.Objects.equals(
+                        this.domainReplicationStates, other.domainReplicationStates)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.opcWaterMark == null ? 43 : this.opcWaterMark.hashCode());
+        result = (result * PRIME) + (this.txnSeqNumber == null ? 43 : this.txnSeqNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainReplicationStates == null
+                                ? 43
+                                : this.domainReplicationStates.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

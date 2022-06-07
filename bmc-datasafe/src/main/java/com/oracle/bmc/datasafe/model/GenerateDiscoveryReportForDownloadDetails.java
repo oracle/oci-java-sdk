@@ -15,16 +15,21 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GenerateDiscoveryReportForDownloadDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class GenerateDiscoveryReportForDownloadDetails {
+public final class GenerateDiscoveryReportForDownloadDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"discoveryJobId", "reportFormat"})
+    public GenerateDiscoveryReportForDownloadDetails(
+            String discoveryJobId, ReportFormat reportFormat) {
+        super();
+        this.discoveryJobId = discoveryJobId;
+        this.reportFormat = reportFormat;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
         private String discoveryJobId;
@@ -71,11 +76,20 @@ public class GenerateDiscoveryReportForDownloadDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the discovery job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
-    String discoveryJobId;
+    private final String discoveryJobId;
+
+    public String getDiscoveryJobId() {
+        return discoveryJobId;
+    }
+
     /**
      * Format of the report.
      **/
@@ -115,8 +129,57 @@ public class GenerateDiscoveryReportForDownloadDetails {
      * Format of the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
-    ReportFormat reportFormat;
+    private final ReportFormat reportFormat;
+
+    public ReportFormat getReportFormat() {
+        return reportFormat;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("GenerateDiscoveryReportForDownloadDetails(");
+        sb.append("discoveryJobId=").append(String.valueOf(this.discoveryJobId));
+        sb.append(", reportFormat=").append(String.valueOf(this.reportFormat));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateDiscoveryReportForDownloadDetails)) {
+            return false;
+        }
+
+        GenerateDiscoveryReportForDownloadDetails other =
+                (GenerateDiscoveryReportForDownloadDetails) o;
+        return java.util.Objects.equals(this.discoveryJobId, other.discoveryJobId)
+                && java.util.Objects.equals(this.reportFormat, other.reportFormat)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.discoveryJobId == null ? 43 : this.discoveryJobId.hashCode());
+        result = (result * PRIME) + (this.reportFormat == null ? 43 : this.reportFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

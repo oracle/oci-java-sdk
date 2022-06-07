@@ -7,10 +7,6 @@ package com.oracle.bmc.keymanagement.responses;
 import com.oracle.bmc.keymanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -19,10 +15,18 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned GeneratedKey instance.
      */
     private com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey;
+
+    public com.oracle.bmc.keymanagement.model.GeneratedKey getGeneratedKey() {
+        return generatedKey;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "generatedKey"})
     private GenerateDataEncryptionKeyResponse(
@@ -42,6 +46,20 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey;
+
+        public Builder generatedKey(com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey) {
+            this.generatedKey = generatedKey;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -58,5 +76,44 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
             return new GenerateDataEncryptionKeyResponse(
                     __httpStatusCode__, opcRequestId, generatedKey);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",generatedKey=").append(String.valueOf(generatedKey));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenerateDataEncryptionKeyResponse)) {
+            return false;
+        }
+
+        GenerateDataEncryptionKeyResponse other = (GenerateDataEncryptionKeyResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.generatedKey, other.generatedKey);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.generatedKey == null ? 43 : this.generatedKey.hashCode());
+        return result;
     }
 }

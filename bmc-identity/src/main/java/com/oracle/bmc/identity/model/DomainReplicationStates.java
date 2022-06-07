@@ -15,16 +15,21 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DomainReplicationStates.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DomainReplicationStates {
+public final class DomainReplicationStates {
+    @Deprecated
+    @java.beans.ConstructorProperties({"domainId", "state", "replicaRegion"})
+    public DomainReplicationStates(String domainId, State state, String replicaRegion) {
+        super();
+        this.domainId = domainId;
+        this.state = state;
+        this.replicaRegion = replicaRegion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
@@ -82,11 +87,20 @@ public class DomainReplicationStates {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
-    String domainId;
+    private final String domainId;
+
+    public String getDomainId() {
+        return domainId;
+    }
+
     /**
      * The IDCS-replicated region state.
      *
@@ -131,14 +145,69 @@ public class DomainReplicationStates {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
-    State state;
+    private final State state;
+
+    public State getState() {
+        return state;
+    }
 
     /**
      * The replica region for the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
-    String replicaRegion;
+    private final String replicaRegion;
+
+    public String getReplicaRegion() {
+        return replicaRegion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DomainReplicationStates(");
+        sb.append("domainId=").append(String.valueOf(this.domainId));
+        sb.append(", state=").append(String.valueOf(this.state));
+        sb.append(", replicaRegion=").append(String.valueOf(this.replicaRegion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DomainReplicationStates)) {
+            return false;
+        }
+
+        DomainReplicationStates other = (DomainReplicationStates) o;
+        return java.util.Objects.equals(this.domainId, other.domainId)
+                && java.util.Objects.equals(this.state, other.state)
+                && java.util.Objects.equals(this.replicaRegion, other.replicaRegion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicaRegion == null ? 43 : this.replicaRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

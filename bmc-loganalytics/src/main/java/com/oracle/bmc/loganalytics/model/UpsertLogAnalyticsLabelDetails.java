@@ -15,16 +15,52 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpsertLogAnalyticsLabelDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpsertLogAnalyticsLabelDetails {
+public final class UpsertLogAnalyticsLabelDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "aliases",
+        "suggestType",
+        "description",
+        "displayName",
+        "editVersion",
+        "impact",
+        "isSystem",
+        "name",
+        "priority",
+        "recommendation",
+        "type"
+    })
+    public UpsertLogAnalyticsLabelDetails(
+            java.util.List<LogAnalyticsLabelAlias> aliases,
+            Long suggestType,
+            String description,
+            String displayName,
+            Long editVersion,
+            String impact,
+            Boolean isSystem,
+            String name,
+            Priority priority,
+            String recommendation,
+            Type type) {
+        super();
+        this.aliases = aliases;
+        this.suggestType = suggestType;
+        this.description = description;
+        this.displayName = displayName;
+        this.editVersion = editVersion;
+        this.impact = impact;
+        this.isSystem = isSystem;
+        this.name = name;
+        this.priority = priority;
+        this.recommendation = recommendation;
+        this.type = type;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("aliases")
         private java.util.List<LogAnalyticsLabelAlias> aliases;
@@ -173,41 +209,69 @@ public class UpsertLogAnalyticsLabelDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The alias list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliases")
-    java.util.List<LogAnalyticsLabelAlias> aliases;
+    private final java.util.List<LogAnalyticsLabelAlias> aliases;
+
+    public java.util.List<LogAnalyticsLabelAlias> getAliases() {
+        return aliases;
+    }
 
     /**
      * suggest type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("suggestType")
-    Long suggestType;
+    private final Long suggestType;
+
+    public Long getSuggestType() {
+        return suggestType;
+    }
 
     /**
      * The label description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The label display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
-    Long editVersion;
+    private final Long editVersion;
+
+    public Long getEditVersion() {
+        return editVersion;
+    }
 
     /**
      * The label impact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("impact")
-    String impact;
+    private final String impact;
+
+    public String getImpact() {
+        return impact;
+    }
 
     /**
      * The system flag.  A value of false denotes a custom, or user
@@ -215,13 +279,22 @@ public class UpsertLogAnalyticsLabelDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
      **/
@@ -263,13 +336,22 @@ public class UpsertLogAnalyticsLabelDetails {
      * The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
-    Priority priority;
+    private final Priority priority;
+
+    public Priority getPriority() {
+        return priority;
+    }
 
     /**
      * The label recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
-    String recommendation;
+    private final String recommendation;
+
+    public String getRecommendation() {
+        return recommendation;
+    }
+
     /**
      * The label type. Valid values are (INFO, PROBLEM). INFO is default.
      **/
@@ -309,8 +391,83 @@ public class UpsertLogAnalyticsLabelDetails {
      * The label type. Valid values are (INFO, PROBLEM). INFO is default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpsertLogAnalyticsLabelDetails(");
+        sb.append("aliases=").append(String.valueOf(this.aliases));
+        sb.append(", suggestType=").append(String.valueOf(this.suggestType));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", editVersion=").append(String.valueOf(this.editVersion));
+        sb.append(", impact=").append(String.valueOf(this.impact));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", priority=").append(String.valueOf(this.priority));
+        sb.append(", recommendation=").append(String.valueOf(this.recommendation));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpsertLogAnalyticsLabelDetails)) {
+            return false;
+        }
+
+        UpsertLogAnalyticsLabelDetails other = (UpsertLogAnalyticsLabelDetails) o;
+        return java.util.Objects.equals(this.aliases, other.aliases)
+                && java.util.Objects.equals(this.suggestType, other.suggestType)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.editVersion, other.editVersion)
+                && java.util.Objects.equals(this.impact, other.impact)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.priority, other.priority)
+                && java.util.Objects.equals(this.recommendation, other.recommendation)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.aliases == null ? 43 : this.aliases.hashCode());
+        result = (result * PRIME) + (this.suggestType == null ? 43 : this.suggestType.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.editVersion == null ? 43 : this.editVersion.hashCode());
+        result = (result * PRIME) + (this.impact == null ? 43 : this.impact.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.priority == null ? 43 : this.priority.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendation == null ? 43 : this.recommendation.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -7,6 +7,7 @@ package com.oracle.bmc.aivision;
 import com.oracle.bmc.aivision.internal.http.*;
 import com.oracle.bmc.aivision.requests.*;
 import com.oracle.bmc.aivision.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for AIServiceVision service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.aivision.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.extern.slf4j.Slf4j
 public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
     /**
      * Service instance for AIServiceVision.
@@ -35,7 +35,9 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                             "https://vision.aiservice.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AIServiceVisionAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -319,9 +321,13 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
          * @return the client
          */
         public AIServiceVisionAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new AIServiceVisionAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -331,6 +337,10 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

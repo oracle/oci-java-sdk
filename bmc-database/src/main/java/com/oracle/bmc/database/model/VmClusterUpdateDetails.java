@@ -16,16 +16,20 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = VmClusterUpdateDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class VmClusterUpdateDetails {
+public final class VmClusterUpdateDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"updateId", "updateAction"})
+    public VmClusterUpdateDetails(String updateId, UpdateAction updateAction) {
+        super();
+        this.updateId = updateId;
+        this.updateAction = updateAction;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("updateId")
         private String updateId;
@@ -71,11 +75,20 @@ public class VmClusterUpdateDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateId")
-    String updateId;
+    private final String updateId;
+
+    public String getUpdateId() {
+        return updateId;
+    }
+
     /**
      * The update action to perform.
      **/
@@ -116,8 +129,54 @@ public class VmClusterUpdateDetails {
      * The update action to perform.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
-    UpdateAction updateAction;
+    private final UpdateAction updateAction;
+
+    public UpdateAction getUpdateAction() {
+        return updateAction;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VmClusterUpdateDetails(");
+        sb.append("updateId=").append(String.valueOf(this.updateId));
+        sb.append(", updateAction=").append(String.valueOf(this.updateAction));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VmClusterUpdateDetails)) {
+            return false;
+        }
+
+        VmClusterUpdateDetails other = (VmClusterUpdateDetails) o;
+        return java.util.Objects.equals(this.updateId, other.updateId)
+                && java.util.Objects.equals(this.updateAction, other.updateAction)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.updateId == null ? 43 : this.updateId.hashCode());
+        result = (result * PRIME) + (this.updateAction == null ? 43 : this.updateAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

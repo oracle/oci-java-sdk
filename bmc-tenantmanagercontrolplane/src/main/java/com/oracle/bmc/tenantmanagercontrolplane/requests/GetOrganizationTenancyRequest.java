@@ -9,14 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetOrganizationTenancyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOrganizationTenancyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetOrganizationTenancyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,15 +17,25 @@ public class GetOrganizationTenancyRequest
      */
     private String organizationId;
 
+    public String getOrganizationId() {
+        return organizationId;
+    }
     /**
      * OCID of the tenancy to retrieve.
      */
     private String tenancyId;
 
+    public String getTenancyId() {
+        return tenancyId;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -41,6 +43,39 @@ public class GetOrganizationTenancyRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String organizationId = null;
+
+        /**
+         * OCID of the organization.
+         * @return this builder instance
+         */
+        public Builder organizationId(String organizationId) {
+            this.organizationId = organizationId;
+            return this;
+        }
+
+        private String tenancyId = null;
+
+        /**
+         * OCID of the tenancy to retrieve.
+         * @return this builder instance
+         */
+        public Builder tenancyId(String tenancyId) {
+            this.tenancyId = tenancyId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -94,5 +129,76 @@ public class GetOrganizationTenancyRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetOrganizationTenancyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetOrganizationTenancyRequest
+         */
+        public GetOrganizationTenancyRequest buildWithoutInvocationCallback() {
+            GetOrganizationTenancyRequest request = new GetOrganizationTenancyRequest();
+            request.organizationId = organizationId;
+            request.tenancyId = tenancyId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetOrganizationTenancyRequest(organizationId, tenancyId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .organizationId(organizationId)
+                .tenancyId(tenancyId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",organizationId=").append(String.valueOf(this.organizationId));
+        sb.append(",tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetOrganizationTenancyRequest)) {
+            return false;
+        }
+
+        GetOrganizationTenancyRequest other = (GetOrganizationTenancyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.organizationId, other.organizationId)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.organizationId == null ? 43 : this.organizationId.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

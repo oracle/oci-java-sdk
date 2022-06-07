@@ -8,7 +8,6 @@ package com.oracle.bmc.optimizer.model;
  * Possible recommendation statuses.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-@lombok.extern.slf4j.Slf4j
 public enum Status {
     Pending("PENDING"),
     Dismissed("DISMISSED"),
@@ -20,6 +19,8 @@ public enum Status {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
 
     private final String value;
     private static java.util.Map<String, Status> map;

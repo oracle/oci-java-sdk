@@ -16,16 +16,31 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsEntitySummaryReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsEntitySummaryReport {
+public final class LogAnalyticsEntitySummaryReport {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "activeEntitiesCount",
+        "entitiesWithHasLogsCollectedCount",
+        "entitiesWithManagementAgentCount",
+        "compartmentId"
+    })
+    public LogAnalyticsEntitySummaryReport(
+            Integer activeEntitiesCount,
+            Integer entitiesWithHasLogsCollectedCount,
+            Integer entitiesWithManagementAgentCount,
+            String compartmentId) {
+        super();
+        this.activeEntitiesCount = activeEntitiesCount;
+        this.entitiesWithHasLogsCollectedCount = entitiesWithHasLogsCollectedCount;
+        this.entitiesWithManagementAgentCount = entitiesWithManagementAgentCount;
+        this.compartmentId = compartmentId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("activeEntitiesCount")
         private Integer activeEntitiesCount;
@@ -100,33 +115,121 @@ public class LogAnalyticsEntitySummaryReport {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Total number of ACTIVE entities
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activeEntitiesCount")
-    Integer activeEntitiesCount;
+    private final Integer activeEntitiesCount;
+
+    public Integer getActiveEntitiesCount() {
+        return activeEntitiesCount;
+    }
 
     /**
      * Entities with log collection enabled
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entitiesWithHasLogsCollectedCount")
-    Integer entitiesWithHasLogsCollectedCount;
+    private final Integer entitiesWithHasLogsCollectedCount;
+
+    public Integer getEntitiesWithHasLogsCollectedCount() {
+        return entitiesWithHasLogsCollectedCount;
+    }
 
     /**
      * Entities with management agent
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entitiesWithManagementAgentCount")
-    Integer entitiesWithManagementAgentCount;
+    private final Integer entitiesWithManagementAgentCount;
+
+    public Integer getEntitiesWithManagementAgentCount() {
+        return entitiesWithManagementAgentCount;
+    }
 
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsEntitySummaryReport(");
+        sb.append("activeEntitiesCount=").append(String.valueOf(this.activeEntitiesCount));
+        sb.append(", entitiesWithHasLogsCollectedCount=")
+                .append(String.valueOf(this.entitiesWithHasLogsCollectedCount));
+        sb.append(", entitiesWithManagementAgentCount=")
+                .append(String.valueOf(this.entitiesWithManagementAgentCount));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsEntitySummaryReport)) {
+            return false;
+        }
+
+        LogAnalyticsEntitySummaryReport other = (LogAnalyticsEntitySummaryReport) o;
+        return java.util.Objects.equals(this.activeEntitiesCount, other.activeEntitiesCount)
+                && java.util.Objects.equals(
+                        this.entitiesWithHasLogsCollectedCount,
+                        other.entitiesWithHasLogsCollectedCount)
+                && java.util.Objects.equals(
+                        this.entitiesWithManagementAgentCount,
+                        other.entitiesWithManagementAgentCount)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.activeEntitiesCount == null
+                                ? 43
+                                : this.activeEntitiesCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entitiesWithHasLogsCollectedCount == null
+                                ? 43
+                                : this.entitiesWithHasLogsCollectedCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entitiesWithManagementAgentCount == null
+                                ? 43
+                                : this.entitiesWithManagementAgentCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

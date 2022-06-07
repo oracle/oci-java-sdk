@@ -15,16 +15,43 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateTargetDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateTargetDatabaseDetails {
+public final class UpdateTargetDatabaseDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "databaseDetails",
+        "credentials",
+        "tlsConfig",
+        "connectionOption",
+        "freeformTags",
+        "definedTags"
+    })
+    public UpdateTargetDatabaseDetails(
+            String displayName,
+            String description,
+            DatabaseDetails databaseDetails,
+            Credentials credentials,
+            TlsConfig tlsConfig,
+            ConnectionOption connectionOption,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.databaseDetails = databaseDetails;
+        this.credentials = credentials;
+        this.tlsConfig = tlsConfig;
+        this.connectionOption = connectionOption;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -141,29 +168,57 @@ public class UpdateTargetDatabaseDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The display name of the target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The description of the target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDetails")
-    DatabaseDetails databaseDetails;
+    private final DatabaseDetails databaseDetails;
+
+    public DatabaseDetails getDatabaseDetails() {
+        return databaseDetails;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("credentials")
-    Credentials credentials;
+    private final Credentials credentials;
+
+    public Credentials getCredentials() {
+        return credentials;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("tlsConfig")
-    TlsConfig tlsConfig;
+    private final TlsConfig tlsConfig;
+
+    public TlsConfig getTlsConfig() {
+        return tlsConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectionOption")
-    ConnectionOption connectionOption;
+    private final ConnectionOption connectionOption;
+
+    public ConnectionOption getConnectionOption() {
+        return connectionOption;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -172,7 +227,11 @@ public class UpdateTargetDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -181,8 +240,76 @@ public class UpdateTargetDatabaseDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateTargetDatabaseDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", databaseDetails=").append(String.valueOf(this.databaseDetails));
+        sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", tlsConfig=").append(String.valueOf(this.tlsConfig));
+        sb.append(", connectionOption=").append(String.valueOf(this.connectionOption));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateTargetDatabaseDetails)) {
+            return false;
+        }
+
+        UpdateTargetDatabaseDetails other = (UpdateTargetDatabaseDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.databaseDetails, other.databaseDetails)
+                && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.tlsConfig, other.tlsConfig)
+                && java.util.Objects.equals(this.connectionOption, other.connectionOption)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseDetails == null ? 43 : this.databaseDetails.hashCode());
+        result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result = (result * PRIME) + (this.tlsConfig == null ? 43 : this.tlsConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionOption == null ? 43 : this.connectionOption.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

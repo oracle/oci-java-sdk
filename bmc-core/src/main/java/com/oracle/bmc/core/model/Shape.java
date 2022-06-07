@@ -18,14 +18,104 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Shape.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Shape {
+public final class Shape {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "baselineOcpuUtilizations",
+        "minTotalBaselineOcpusRequired",
+        "shape",
+        "processorDescription",
+        "ocpus",
+        "memoryInGBs",
+        "networkPorts",
+        "networkingBandwidthInGbps",
+        "maxVnicAttachments",
+        "gpus",
+        "gpuDescription",
+        "localDisks",
+        "localDisksTotalSizeInGBs",
+        "localDiskDescription",
+        "rdmaPorts",
+        "rdmaBandwidthInGbps",
+        "isLiveMigrationSupported",
+        "ocpuOptions",
+        "memoryOptions",
+        "networkingBandwidthOptions",
+        "maxVnicAttachmentOptions",
+        "platformConfigOptions",
+        "isBilledForStoppedInstance",
+        "billingType",
+        "quotaNames",
+        "isSubcore",
+        "isFlexible",
+        "resizeCompatibleShapes",
+        "recommendedAlternatives"
+    })
+    public Shape(
+            java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations,
+            java.math.BigDecimal minTotalBaselineOcpusRequired,
+            String shape,
+            String processorDescription,
+            Float ocpus,
+            Float memoryInGBs,
+            Integer networkPorts,
+            Float networkingBandwidthInGbps,
+            Integer maxVnicAttachments,
+            Integer gpus,
+            String gpuDescription,
+            Integer localDisks,
+            Float localDisksTotalSizeInGBs,
+            String localDiskDescription,
+            Integer rdmaPorts,
+            Integer rdmaBandwidthInGbps,
+            Boolean isLiveMigrationSupported,
+            ShapeOcpuOptions ocpuOptions,
+            ShapeMemoryOptions memoryOptions,
+            ShapeNetworkingBandwidthOptions networkingBandwidthOptions,
+            ShapeMaxVnicAttachmentOptions maxVnicAttachmentOptions,
+            ShapePlatformConfigOptions platformConfigOptions,
+            Boolean isBilledForStoppedInstance,
+            BillingType billingType,
+            java.util.List<String> quotaNames,
+            Boolean isSubcore,
+            Boolean isFlexible,
+            java.util.List<String> resizeCompatibleShapes,
+            java.util.List<ShapeAlternativeObject> recommendedAlternatives) {
+        super();
+        this.baselineOcpuUtilizations = baselineOcpuUtilizations;
+        this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
+        this.shape = shape;
+        this.processorDescription = processorDescription;
+        this.ocpus = ocpus;
+        this.memoryInGBs = memoryInGBs;
+        this.networkPorts = networkPorts;
+        this.networkingBandwidthInGbps = networkingBandwidthInGbps;
+        this.maxVnicAttachments = maxVnicAttachments;
+        this.gpus = gpus;
+        this.gpuDescription = gpuDescription;
+        this.localDisks = localDisks;
+        this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
+        this.localDiskDescription = localDiskDescription;
+        this.rdmaPorts = rdmaPorts;
+        this.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
+        this.isLiveMigrationSupported = isLiveMigrationSupported;
+        this.ocpuOptions = ocpuOptions;
+        this.memoryOptions = memoryOptions;
+        this.networkingBandwidthOptions = networkingBandwidthOptions;
+        this.maxVnicAttachmentOptions = maxVnicAttachmentOptions;
+        this.platformConfigOptions = platformConfigOptions;
+        this.isBilledForStoppedInstance = isBilledForStoppedInstance;
+        this.billingType = billingType;
+        this.quotaNames = quotaNames;
+        this.isSubcore = isSubcore;
+        this.isFlexible = isFlexible;
+        this.resizeCompatibleShapes = resizeCompatibleShapes;
+        this.recommendedAlternatives = recommendedAlternatives;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilizations")
         private java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations;
@@ -377,9 +467,12 @@ public class Shape {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BaselineOcpuUtilizations {
         Baseline18("BASELINE_1_8"),
         Baseline12("BASELINE_1_2"),
@@ -390,6 +483,9 @@ public class Shape {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BaselineOcpuUtilizations.class);
 
         private final String value;
         private static java.util.Map<String, BaselineOcpuUtilizations> map;
@@ -428,7 +524,11 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilizations")
-    java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations;
+    private final java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations;
+
+    public java.util.List<BaselineOcpuUtilizations> getBaselineOcpuUtilizations() {
+        return baselineOcpuUtilizations;
+    }
 
     /**
      * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to
@@ -436,7 +536,11 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minTotalBaselineOcpusRequired")
-    java.math.BigDecimal minTotalBaselineOcpusRequired;
+    private final java.math.BigDecimal minTotalBaselineOcpusRequired;
+
+    public java.math.BigDecimal getMinTotalBaselineOcpusRequired() {
+        return minTotalBaselineOcpusRequired;
+    }
 
     /**
      * The name of the shape. You can enumerate all available shapes by calling
@@ -444,56 +548,88 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * A short description of the shape's processor (CPU).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
-    String processorDescription;
+    private final String processorDescription;
+
+    public String getProcessorDescription() {
+        return processorDescription;
+    }
 
     /**
      * The default number of OCPUs available for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
-    Float ocpus;
+    private final Float ocpus;
+
+    public Float getOcpus() {
+        return ocpus;
+    }
 
     /**
      * The default amount of memory available for this shape, in gigabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
-    Float memoryInGBs;
+    private final Float memoryInGBs;
+
+    public Float getMemoryInGBs() {
+        return memoryInGBs;
+    }
 
     /**
      * The number of physical network interface card (NIC) ports available for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkPorts")
-    Integer networkPorts;
+    private final Integer networkPorts;
+
+    public Integer getNetworkPorts() {
+        return networkPorts;
+    }
 
     /**
      * The networking bandwidth available for this shape, in gigabits per second.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
-    Float networkingBandwidthInGbps;
+    private final Float networkingBandwidthInGbps;
+
+    public Float getNetworkingBandwidthInGbps() {
+        return networkingBandwidthInGbps;
+    }
 
     /**
      * The maximum number of VNIC attachments available for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachments")
-    Integer maxVnicAttachments;
+    private final Integer maxVnicAttachments;
+
+    public Integer getMaxVnicAttachments() {
+        return maxVnicAttachments;
+    }
 
     /**
      * The number of GPUs available for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpus")
-    Integer gpus;
+    private final Integer gpus;
+
+    public Integer getGpus() {
+        return gpus;
+    }
 
     /**
      * A short description of the graphics processing unit (GPU) available for this shape.
@@ -502,14 +638,22 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
-    String gpuDescription;
+    private final String gpuDescription;
+
+    public String getGpuDescription() {
+        return gpuDescription;
+    }
 
     /**
      * The number of local disks available for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisks")
-    Integer localDisks;
+    private final Integer localDisks;
+
+    public Integer getLocalDisks() {
+        return localDisks;
+    }
 
     /**
      * The aggregate size of the local disks available for this shape, in gigabytes.
@@ -518,7 +662,11 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
-    Float localDisksTotalSizeInGBs;
+    private final Float localDisksTotalSizeInGBs;
+
+    public Float getLocalDisksTotalSizeInGBs() {
+        return localDisksTotalSizeInGBs;
+    }
 
     /**
      * A short description of the local disks available for this shape.
@@ -527,7 +675,11 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
-    String localDiskDescription;
+    private final String localDiskDescription;
+
+    public String getLocalDiskDescription() {
+        return localDiskDescription;
+    }
 
     /**
      * The number of networking ports available for the remote direct memory access (RDMA) network between nodes in
@@ -536,7 +688,11 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdmaPorts")
-    Integer rdmaPorts;
+    private final Integer rdmaPorts;
+
+    public Integer getRdmaPorts() {
+        return rdmaPorts;
+    }
 
     /**
      * The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in
@@ -544,41 +700,73 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdmaBandwidthInGbps")
-    Integer rdmaBandwidthInGbps;
+    private final Integer rdmaBandwidthInGbps;
+
+    public Integer getRdmaBandwidthInGbps() {
+        return rdmaBandwidthInGbps;
+    }
 
     /**
      * Whether live migration is supported for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationSupported")
-    Boolean isLiveMigrationSupported;
+    private final Boolean isLiveMigrationSupported;
+
+    public Boolean getIsLiveMigrationSupported() {
+        return isLiveMigrationSupported;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuOptions")
-    ShapeOcpuOptions ocpuOptions;
+    private final ShapeOcpuOptions ocpuOptions;
+
+    public ShapeOcpuOptions getOcpuOptions() {
+        return ocpuOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("memoryOptions")
-    ShapeMemoryOptions memoryOptions;
+    private final ShapeMemoryOptions memoryOptions;
+
+    public ShapeMemoryOptions getMemoryOptions() {
+        return memoryOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthOptions")
-    ShapeNetworkingBandwidthOptions networkingBandwidthOptions;
+    private final ShapeNetworkingBandwidthOptions networkingBandwidthOptions;
+
+    public ShapeNetworkingBandwidthOptions getNetworkingBandwidthOptions() {
+        return networkingBandwidthOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachmentOptions")
-    ShapeMaxVnicAttachmentOptions maxVnicAttachmentOptions;
+    private final ShapeMaxVnicAttachmentOptions maxVnicAttachmentOptions;
+
+    public ShapeMaxVnicAttachmentOptions getMaxVnicAttachmentOptions() {
+        return maxVnicAttachmentOptions;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("platformConfigOptions")
-    ShapePlatformConfigOptions platformConfigOptions;
+    private final ShapePlatformConfigOptions platformConfigOptions;
+
+    public ShapePlatformConfigOptions getPlatformConfigOptions() {
+        return platformConfigOptions;
+    }
 
     /**
      * Whether billing continues when the instances that use this shape are in the stopped state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBilledForStoppedInstance")
-    Boolean isBilledForStoppedInstance;
+    private final Boolean isBilledForStoppedInstance;
+
+    public Boolean getIsBilledForStoppedInstance() {
+        return isBilledForStoppedInstance;
+    }
+
     /**
      * How instances that use this shape are charged.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BillingType {
         AlwaysFree("ALWAYS_FREE"),
         LimitedFree("LIMITED_FREE"),
@@ -589,6 +777,9 @@ public class Shape {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BillingType.class);
 
         private final String value;
         private static java.util.Map<String, BillingType> map;
@@ -627,14 +818,22 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingType")
-    BillingType billingType;
+    private final BillingType billingType;
+
+    public BillingType getBillingType() {
+        return billingType;
+    }
 
     /**
      * The list of of compartment quotas for the shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quotaNames")
-    java.util.List<String> quotaNames;
+    private final java.util.List<String> quotaNames;
+
+    public java.util.List<String> getQuotaNames() {
+        return quotaNames;
+    }
 
     /**
      * Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
@@ -643,7 +842,11 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSubcore")
-    Boolean isSubcore;
+    private final Boolean isSubcore;
+
+    public Boolean getIsSubcore() {
+        return isSubcore;
+    }
 
     /**
      * Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
@@ -651,7 +854,11 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
-    Boolean isFlexible;
+    private final Boolean isFlexible;
+
+    public Boolean getIsFlexible() {
+        return isFlexible;
+    }
 
     /**
      * The list of compatible shapes that this shape can be changed to. For more information,
@@ -659,15 +866,229 @@ public class Shape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resizeCompatibleShapes")
-    java.util.List<String> resizeCompatibleShapes;
+    private final java.util.List<String> resizeCompatibleShapes;
+
+    public java.util.List<String> getResizeCompatibleShapes() {
+        return resizeCompatibleShapes;
+    }
 
     /**
      * The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedAlternatives")
-    java.util.List<ShapeAlternativeObject> recommendedAlternatives;
+    private final java.util.List<ShapeAlternativeObject> recommendedAlternatives;
+
+    public java.util.List<ShapeAlternativeObject> getRecommendedAlternatives() {
+        return recommendedAlternatives;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Shape(");
+        sb.append("baselineOcpuUtilizations=")
+                .append(String.valueOf(this.baselineOcpuUtilizations));
+        sb.append(", minTotalBaselineOcpusRequired=")
+                .append(String.valueOf(this.minTotalBaselineOcpusRequired));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", processorDescription=").append(String.valueOf(this.processorDescription));
+        sb.append(", ocpus=").append(String.valueOf(this.ocpus));
+        sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", networkPorts=").append(String.valueOf(this.networkPorts));
+        sb.append(", networkingBandwidthInGbps=")
+                .append(String.valueOf(this.networkingBandwidthInGbps));
+        sb.append(", maxVnicAttachments=").append(String.valueOf(this.maxVnicAttachments));
+        sb.append(", gpus=").append(String.valueOf(this.gpus));
+        sb.append(", gpuDescription=").append(String.valueOf(this.gpuDescription));
+        sb.append(", localDisks=").append(String.valueOf(this.localDisks));
+        sb.append(", localDisksTotalSizeInGBs=")
+                .append(String.valueOf(this.localDisksTotalSizeInGBs));
+        sb.append(", localDiskDescription=").append(String.valueOf(this.localDiskDescription));
+        sb.append(", rdmaPorts=").append(String.valueOf(this.rdmaPorts));
+        sb.append(", rdmaBandwidthInGbps=").append(String.valueOf(this.rdmaBandwidthInGbps));
+        sb.append(", isLiveMigrationSupported=")
+                .append(String.valueOf(this.isLiveMigrationSupported));
+        sb.append(", ocpuOptions=").append(String.valueOf(this.ocpuOptions));
+        sb.append(", memoryOptions=").append(String.valueOf(this.memoryOptions));
+        sb.append(", networkingBandwidthOptions=")
+                .append(String.valueOf(this.networkingBandwidthOptions));
+        sb.append(", maxVnicAttachmentOptions=")
+                .append(String.valueOf(this.maxVnicAttachmentOptions));
+        sb.append(", platformConfigOptions=").append(String.valueOf(this.platformConfigOptions));
+        sb.append(", isBilledForStoppedInstance=")
+                .append(String.valueOf(this.isBilledForStoppedInstance));
+        sb.append(", billingType=").append(String.valueOf(this.billingType));
+        sb.append(", quotaNames=").append(String.valueOf(this.quotaNames));
+        sb.append(", isSubcore=").append(String.valueOf(this.isSubcore));
+        sb.append(", isFlexible=").append(String.valueOf(this.isFlexible));
+        sb.append(", resizeCompatibleShapes=").append(String.valueOf(this.resizeCompatibleShapes));
+        sb.append(", recommendedAlternatives=")
+                .append(String.valueOf(this.recommendedAlternatives));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Shape)) {
+            return false;
+        }
+
+        Shape other = (Shape) o;
+        return java.util.Objects.equals(
+                        this.baselineOcpuUtilizations, other.baselineOcpuUtilizations)
+                && java.util.Objects.equals(
+                        this.minTotalBaselineOcpusRequired, other.minTotalBaselineOcpusRequired)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.processorDescription, other.processorDescription)
+                && java.util.Objects.equals(this.ocpus, other.ocpus)
+                && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.networkPorts, other.networkPorts)
+                && java.util.Objects.equals(
+                        this.networkingBandwidthInGbps, other.networkingBandwidthInGbps)
+                && java.util.Objects.equals(this.maxVnicAttachments, other.maxVnicAttachments)
+                && java.util.Objects.equals(this.gpus, other.gpus)
+                && java.util.Objects.equals(this.gpuDescription, other.gpuDescription)
+                && java.util.Objects.equals(this.localDisks, other.localDisks)
+                && java.util.Objects.equals(
+                        this.localDisksTotalSizeInGBs, other.localDisksTotalSizeInGBs)
+                && java.util.Objects.equals(this.localDiskDescription, other.localDiskDescription)
+                && java.util.Objects.equals(this.rdmaPorts, other.rdmaPorts)
+                && java.util.Objects.equals(this.rdmaBandwidthInGbps, other.rdmaBandwidthInGbps)
+                && java.util.Objects.equals(
+                        this.isLiveMigrationSupported, other.isLiveMigrationSupported)
+                && java.util.Objects.equals(this.ocpuOptions, other.ocpuOptions)
+                && java.util.Objects.equals(this.memoryOptions, other.memoryOptions)
+                && java.util.Objects.equals(
+                        this.networkingBandwidthOptions, other.networkingBandwidthOptions)
+                && java.util.Objects.equals(
+                        this.maxVnicAttachmentOptions, other.maxVnicAttachmentOptions)
+                && java.util.Objects.equals(this.platformConfigOptions, other.platformConfigOptions)
+                && java.util.Objects.equals(
+                        this.isBilledForStoppedInstance, other.isBilledForStoppedInstance)
+                && java.util.Objects.equals(this.billingType, other.billingType)
+                && java.util.Objects.equals(this.quotaNames, other.quotaNames)
+                && java.util.Objects.equals(this.isSubcore, other.isSubcore)
+                && java.util.Objects.equals(this.isFlexible, other.isFlexible)
+                && java.util.Objects.equals(
+                        this.resizeCompatibleShapes, other.resizeCompatibleShapes)
+                && java.util.Objects.equals(
+                        this.recommendedAlternatives, other.recommendedAlternatives)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.baselineOcpuUtilizations == null
+                                ? 43
+                                : this.baselineOcpuUtilizations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minTotalBaselineOcpusRequired == null
+                                ? 43
+                                : this.minTotalBaselineOcpusRequired.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.processorDescription == null
+                                ? 43
+                                : this.processorDescription.hashCode());
+        result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
+        result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result = (result * PRIME) + (this.networkPorts == null ? 43 : this.networkPorts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkingBandwidthInGbps == null
+                                ? 43
+                                : this.networkingBandwidthInGbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxVnicAttachments == null
+                                ? 43
+                                : this.maxVnicAttachments.hashCode());
+        result = (result * PRIME) + (this.gpus == null ? 43 : this.gpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.gpuDescription == null ? 43 : this.gpuDescription.hashCode());
+        result = (result * PRIME) + (this.localDisks == null ? 43 : this.localDisks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localDisksTotalSizeInGBs == null
+                                ? 43
+                                : this.localDisksTotalSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localDiskDescription == null
+                                ? 43
+                                : this.localDiskDescription.hashCode());
+        result = (result * PRIME) + (this.rdmaPorts == null ? 43 : this.rdmaPorts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rdmaBandwidthInGbps == null
+                                ? 43
+                                : this.rdmaBandwidthInGbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLiveMigrationSupported == null
+                                ? 43
+                                : this.isLiveMigrationSupported.hashCode());
+        result = (result * PRIME) + (this.ocpuOptions == null ? 43 : this.ocpuOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryOptions == null ? 43 : this.memoryOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkingBandwidthOptions == null
+                                ? 43
+                                : this.networkingBandwidthOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxVnicAttachmentOptions == null
+                                ? 43
+                                : this.maxVnicAttachmentOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformConfigOptions == null
+                                ? 43
+                                : this.platformConfigOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBilledForStoppedInstance == null
+                                ? 43
+                                : this.isBilledForStoppedInstance.hashCode());
+        result = (result * PRIME) + (this.billingType == null ? 43 : this.billingType.hashCode());
+        result = (result * PRIME) + (this.quotaNames == null ? 43 : this.quotaNames.hashCode());
+        result = (result * PRIME) + (this.isSubcore == null ? 43 : this.isSubcore.hashCode());
+        result = (result * PRIME) + (this.isFlexible == null ? 43 : this.isFlexible.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resizeCompatibleShapes == null
+                                ? 43
+                                : this.resizeCompatibleShapes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendedAlternatives == null
+                                ? 43
+                                : this.recommendedAlternatives.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

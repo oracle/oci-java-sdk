@@ -7,10 +7,6 @@ package com.oracle.bmc.aivision.responses;
 import com.oracle.bmc.aivision.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CancelDocumentJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact
@@ -18,6 +14,10 @@ public class CancelDocumentJobResponse extends com.oracle.bmc.responses.BmcRespo
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private CancelDocumentJobResponse(int __httpStatusCode__, String opcRequestId) {
@@ -30,6 +30,13 @@ public class CancelDocumentJobResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
             return this;
         }
 
@@ -47,5 +54,40 @@ public class CancelDocumentJobResponse extends com.oracle.bmc.responses.BmcRespo
         public CancelDocumentJobResponse build() {
             return new CancelDocumentJobResponse(__httpStatusCode__, opcRequestId);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CancelDocumentJobResponse)) {
+            return false;
+        }
+
+        CancelDocumentJobResponse other = (CancelDocumentJobResponse) o;
+        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

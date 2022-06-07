@@ -15,22 +15,17 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SecurityZoneTargetDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "targetResourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SecurityZoneTargetDetails extends TargetDetails {
+public final class SecurityZoneTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("securityZoneId")
         private String securityZoneId;
@@ -90,6 +85,10 @@ public class SecurityZoneTargetDetails extends TargetDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public SecurityZoneTargetDetails(
             String securityZoneId,
@@ -105,20 +104,93 @@ public class SecurityZoneTargetDetails extends TargetDetails {
      * The OCID of the security zone to associate this compartment with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneId")
-    String securityZoneId;
+    private final String securityZoneId;
+
+    public String getSecurityZoneId() {
+        return securityZoneId;
+    }
 
     /**
      * The name of the security zone to associate this compartment with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneDisplayName")
-    String securityZoneDisplayName;
+    private final String securityZoneDisplayName;
+
+    public String getSecurityZoneDisplayName() {
+        return securityZoneDisplayName;
+    }
 
     /**
      * The list of security zone recipes to associate this compartment with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetSecurityZoneRecipes")
-    java.util.List<SecurityRecipe> targetSecurityZoneRecipes;
+    private final java.util.List<SecurityRecipe> targetSecurityZoneRecipes;
+
+    public java.util.List<SecurityRecipe> getTargetSecurityZoneRecipes() {
+        return targetSecurityZoneRecipes;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SecurityZoneTargetDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", securityZoneId=").append(String.valueOf(this.securityZoneId));
+        sb.append(", securityZoneDisplayName=")
+                .append(String.valueOf(this.securityZoneDisplayName));
+        sb.append(", targetSecurityZoneRecipes=")
+                .append(String.valueOf(this.targetSecurityZoneRecipes));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SecurityZoneTargetDetails)) {
+            return false;
+        }
+
+        SecurityZoneTargetDetails other = (SecurityZoneTargetDetails) o;
+        return java.util.Objects.equals(this.securityZoneId, other.securityZoneId)
+                && java.util.Objects.equals(
+                        this.securityZoneDisplayName, other.securityZoneDisplayName)
+                && java.util.Objects.equals(
+                        this.targetSecurityZoneRecipes, other.targetSecurityZoneRecipes)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.securityZoneId == null ? 43 : this.securityZoneId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityZoneDisplayName == null
+                                ? 43
+                                : this.securityZoneDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetSecurityZoneRecipes == null
+                                ? 43
+                                : this.targetSecurityZoneRecipes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

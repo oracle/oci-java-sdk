@@ -16,16 +16,46 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SecurityAssessmentComparisonPerTarget.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SecurityAssessmentComparisonPerTarget {
+public final class SecurityAssessmentComparisonPerTarget {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "baselineTargetId",
+        "currentTargetId",
+        "auditing",
+        "authorizationControl",
+        "dataEncryption",
+        "dbConfiguration",
+        "fineGrainedAccessControl",
+        "privilegesAndRoles",
+        "userAccounts"
+    })
+    public SecurityAssessmentComparisonPerTarget(
+            String baselineTargetId,
+            String currentTargetId,
+            java.util.List<Diffs> auditing,
+            java.util.List<Diffs> authorizationControl,
+            java.util.List<Diffs> dataEncryption,
+            java.util.List<Diffs> dbConfiguration,
+            java.util.List<Diffs> fineGrainedAccessControl,
+            java.util.List<Diffs> privilegesAndRoles,
+            java.util.List<Diffs> userAccounts) {
+        super();
+        this.baselineTargetId = baselineTargetId;
+        this.currentTargetId = currentTargetId;
+        this.auditing = auditing;
+        this.authorizationControl = authorizationControl;
+        this.dataEncryption = dataEncryption;
+        this.dbConfiguration = dbConfiguration;
+        this.fineGrainedAccessControl = fineGrainedAccessControl;
+        this.privilegesAndRoles = privilegesAndRoles;
+        this.userAccounts = userAccounts;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("baselineTargetId")
         private String baselineTargetId;
@@ -152,60 +182,185 @@ public class SecurityAssessmentComparisonPerTarget {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the target that is used as a baseline in this comparison.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineTargetId")
-    String baselineTargetId;
+    private final String baselineTargetId;
+
+    public String getBaselineTargetId() {
+        return baselineTargetId;
+    }
 
     /**
      * The OCID of the target to be compared against the baseline target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentTargetId")
-    String currentTargetId;
+    private final String currentTargetId;
+
+    public String getCurrentTargetId() {
+        return currentTargetId;
+    }
 
     /**
      * A comparison between findings belonging to Auditing category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditing")
-    java.util.List<Diffs> auditing;
+    private final java.util.List<Diffs> auditing;
+
+    public java.util.List<Diffs> getAuditing() {
+        return auditing;
+    }
 
     /**
      * A comparison between findings belonging to Authorization Control category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationControl")
-    java.util.List<Diffs> authorizationControl;
+    private final java.util.List<Diffs> authorizationControl;
+
+    public java.util.List<Diffs> getAuthorizationControl() {
+        return authorizationControl;
+    }
 
     /**
      * Comparison between findings belonging to Data Encryption category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataEncryption")
-    java.util.List<Diffs> dataEncryption;
+    private final java.util.List<Diffs> dataEncryption;
+
+    public java.util.List<Diffs> getDataEncryption() {
+        return dataEncryption;
+    }
 
     /**
      * Comparison between findings belonging to Database Configuration category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbConfiguration")
-    java.util.List<Diffs> dbConfiguration;
+    private final java.util.List<Diffs> dbConfiguration;
+
+    public java.util.List<Diffs> getDbConfiguration() {
+        return dbConfiguration;
+    }
 
     /**
      * Comparison between findings belonging to Fine-Grained Access Control category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAccessControl")
-    java.util.List<Diffs> fineGrainedAccessControl;
+    private final java.util.List<Diffs> fineGrainedAccessControl;
+
+    public java.util.List<Diffs> getFineGrainedAccessControl() {
+        return fineGrainedAccessControl;
+    }
 
     /**
      * Comparison between findings belonging to Privileges and Roles category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilegesAndRoles")
-    java.util.List<Diffs> privilegesAndRoles;
+    private final java.util.List<Diffs> privilegesAndRoles;
+
+    public java.util.List<Diffs> getPrivilegesAndRoles() {
+        return privilegesAndRoles;
+    }
 
     /**
      * Comparison between findings belonging to User Accounts category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userAccounts")
-    java.util.List<Diffs> userAccounts;
+    private final java.util.List<Diffs> userAccounts;
+
+    public java.util.List<Diffs> getUserAccounts() {
+        return userAccounts;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SecurityAssessmentComparisonPerTarget(");
+        sb.append("baselineTargetId=").append(String.valueOf(this.baselineTargetId));
+        sb.append(", currentTargetId=").append(String.valueOf(this.currentTargetId));
+        sb.append(", auditing=").append(String.valueOf(this.auditing));
+        sb.append(", authorizationControl=").append(String.valueOf(this.authorizationControl));
+        sb.append(", dataEncryption=").append(String.valueOf(this.dataEncryption));
+        sb.append(", dbConfiguration=").append(String.valueOf(this.dbConfiguration));
+        sb.append(", fineGrainedAccessControl=")
+                .append(String.valueOf(this.fineGrainedAccessControl));
+        sb.append(", privilegesAndRoles=").append(String.valueOf(this.privilegesAndRoles));
+        sb.append(", userAccounts=").append(String.valueOf(this.userAccounts));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SecurityAssessmentComparisonPerTarget)) {
+            return false;
+        }
+
+        SecurityAssessmentComparisonPerTarget other = (SecurityAssessmentComparisonPerTarget) o;
+        return java.util.Objects.equals(this.baselineTargetId, other.baselineTargetId)
+                && java.util.Objects.equals(this.currentTargetId, other.currentTargetId)
+                && java.util.Objects.equals(this.auditing, other.auditing)
+                && java.util.Objects.equals(this.authorizationControl, other.authorizationControl)
+                && java.util.Objects.equals(this.dataEncryption, other.dataEncryption)
+                && java.util.Objects.equals(this.dbConfiguration, other.dbConfiguration)
+                && java.util.Objects.equals(
+                        this.fineGrainedAccessControl, other.fineGrainedAccessControl)
+                && java.util.Objects.equals(this.privilegesAndRoles, other.privilegesAndRoles)
+                && java.util.Objects.equals(this.userAccounts, other.userAccounts)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.baselineTargetId == null ? 43 : this.baselineTargetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentTargetId == null ? 43 : this.currentTargetId.hashCode());
+        result = (result * PRIME) + (this.auditing == null ? 43 : this.auditing.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authorizationControl == null
+                                ? 43
+                                : this.authorizationControl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataEncryption == null ? 43 : this.dataEncryption.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbConfiguration == null ? 43 : this.dbConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fineGrainedAccessControl == null
+                                ? 43
+                                : this.fineGrainedAccessControl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privilegesAndRoles == null
+                                ? 43
+                                : this.privilegesAndRoles.hashCode());
+        result = (result * PRIME) + (this.userAccounts == null ? 43 : this.userAccounts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

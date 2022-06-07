@@ -7,10 +7,6 @@ package com.oracle.bmc.loganalytics.responses;
 import com.oracle.bmc.loganalytics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
@@ -18,10 +14,18 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned UnprocessedDataBucket instance.
      */
     private com.oracle.bmc.loganalytics.model.UnprocessedDataBucket unprocessedDataBucket;
+
+    public com.oracle.bmc.loganalytics.model.UnprocessedDataBucket getUnprocessedDataBucket() {
+        return unprocessedDataBucket;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -45,6 +49,21 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.UnprocessedDataBucket unprocessedDataBucket;
+
+        public Builder unprocessedDataBucket(
+                com.oracle.bmc.loganalytics.model.UnprocessedDataBucket unprocessedDataBucket) {
+            this.unprocessedDataBucket = unprocessedDataBucket;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -61,5 +80,49 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
             return new SetUnprocessedDataBucketResponse(
                     __httpStatusCode__, opcRequestId, unprocessedDataBucket);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",unprocessedDataBucket=").append(String.valueOf(unprocessedDataBucket));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SetUnprocessedDataBucketResponse)) {
+            return false;
+        }
+
+        SetUnprocessedDataBucketResponse other = (SetUnprocessedDataBucketResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.unprocessedDataBucket, other.unprocessedDataBucket);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unprocessedDataBucket == null
+                                ? 43
+                                : this.unprocessedDataBucket.hashCode());
+        return result;
     }
 }

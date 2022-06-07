@@ -8,7 +8,6 @@ package com.oracle.bmc.marketplace.model;
  * The possible values for a listing package's pricing strategy.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.extern.slf4j.Slf4j
 public enum PricingStrategyEnum {
     PerOcpuLinear("PER_OCPU_LINEAR"),
     PerOcpuMinBilling("PER_OCPU_MIN_BILLING"),
@@ -20,6 +19,9 @@ public enum PricingStrategyEnum {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(PricingStrategyEnum.class);
 
     private final String value;
     private static java.util.Map<String, PricingStrategyEnum> map;

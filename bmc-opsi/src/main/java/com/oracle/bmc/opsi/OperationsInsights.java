@@ -560,6 +560,18 @@ public interface OperationsInsights extends AutoCloseable {
             GetOperationsInsightsWarehouseUserRequest request);
 
     /**
+     * Gets details of an OPSI data object.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetOpsiDataObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOpsiDataObject API.
+     */
+    GetOpsiDataObjectResponse getOpsiDataObject(GetOpsiDataObjectRequest request);
+
+    /**
      * Gets the status of the work request with the given ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -879,6 +891,19 @@ public interface OperationsInsights extends AutoCloseable {
             ListOperationsInsightsWarehousesRequest request);
 
     /**
+     * Gets a list of OPSI data objects based on the query parameters specified. CompartmentId id query parameter must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOpsiDataObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOpsiDataObjects API.
+     */
+    ListOpsiDataObjectsResponse listOpsiDataObjects(ListOpsiDataObjectsRequest request);
+
+    /**
      * Query SQL Warehouse to list the plan xml for a given SQL execution plan. This returns a SqlPlanCollection object, but is currently limited to a single plan.
      * Either databaseId or id must be specified.
      *
@@ -957,6 +982,20 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Queries an OPSI data object with the inputs provided and sends the result set back. Either analysisTimeInterval
+     * or timeIntervalStart and timeIntervalEnd parameters need to be passed as well.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/QueryOpsiDataObjectDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use QueryOpsiDataObjectData API.
+     */
+    QueryOpsiDataObjectDataResponse queryOpsiDataObjectData(QueryOpsiDataObjectDataRequest request);
 
     /**
      * Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.

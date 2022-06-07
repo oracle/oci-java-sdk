@@ -16,16 +16,31 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDrgRouteRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateDrgRouteRuleDetails {
+public final class UpdateDrgRouteRuleDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "destination",
+        "destinationType",
+        "nextHopDrgAttachmentId"
+    })
+    public UpdateDrgRouteRuleDetails(
+            String id,
+            String destination,
+            DestinationType destinationType,
+            String nextHopDrgAttachmentId) {
+        super();
+        this.id = id;
+        this.destination = destination;
+        this.destinationType = destinationType;
+        this.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -94,12 +109,20 @@ public class UpdateDrgRouteRuleDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The Oracle-assigned ID of each DRG route rule to update.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The range of IP addresses used for matching when routing traffic.
@@ -110,7 +133,12 @@ public class UpdateDrgRouteRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
-    String destination;
+    private final String destination;
+
+    public String getDestination() {
+        return destination;
+    }
+
     /**
      * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
      * Allowed values:
@@ -155,7 +183,11 @@ public class UpdateDrgRouteRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
-    DestinationType destinationType;
+    private final DestinationType destinationType;
+
+    public DestinationType getDestinationType() {
+        return destinationType;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible
@@ -163,8 +195,67 @@ public class UpdateDrgRouteRuleDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
-    String nextHopDrgAttachmentId;
+    private final String nextHopDrgAttachmentId;
+
+    public String getNextHopDrgAttachmentId() {
+        return nextHopDrgAttachmentId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateDrgRouteRuleDetails(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", destination=").append(String.valueOf(this.destination));
+        sb.append(", destinationType=").append(String.valueOf(this.destinationType));
+        sb.append(", nextHopDrgAttachmentId=").append(String.valueOf(this.nextHopDrgAttachmentId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateDrgRouteRuleDetails)) {
+            return false;
+        }
+
+        UpdateDrgRouteRuleDetails other = (UpdateDrgRouteRuleDetails) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.destination, other.destination)
+                && java.util.Objects.equals(this.destinationType, other.destinationType)
+                && java.util.Objects.equals(
+                        this.nextHopDrgAttachmentId, other.nextHopDrgAttachmentId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.destination == null ? 43 : this.destination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationType == null ? 43 : this.destinationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextHopDrgAttachmentId == null
+                                ? 43
+                                : this.nextHopDrgAttachmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

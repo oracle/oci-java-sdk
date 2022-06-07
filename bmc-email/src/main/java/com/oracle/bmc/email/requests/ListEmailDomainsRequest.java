@@ -9,14 +9,6 @@ import com.oracle.bmc.email.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailDomainsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEmailDomainsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,23 +16,35 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The request ID for tracing from the system
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A filter to only return resources that match the given id exactly.
      *
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * A filter to only return resources that match the given name exactly.
      *
      */
     private String name;
 
+    public String getName() {
+        return name;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
@@ -49,6 +53,9 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * For list pagination. The value of the opc-next-page response header from the previous "List" call.
      * For important details about how pagination works,
@@ -57,18 +64,27 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either ascending or descending order.
      *
      */
     private com.oracle.bmc.email.model.SortOrder sortOrder;
 
+    public com.oracle.bmc.email.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      *
      */
     private com.oracle.bmc.email.model.EmailDomain.LifecycleState lifecycleState;
 
+    public com.oracle.bmc.email.model.EmailDomain.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * Specifies the attribute with which to sort the email domains.
      * <p>
@@ -125,12 +141,133 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListEmailDomainsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID for the compartment.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The request ID for tracing from the system
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String id = null;
+
+        /**
+         * A filter to only return resources that match the given id exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private String name = null;
+
+        /**
+         * A filter to only return resources that match the given name exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+         * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private com.oracle.bmc.email.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending or descending order.
+         *
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.email.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private com.oracle.bmc.email.model.EmailDomain.LifecycleState lifecycleState = null;
+
+        /**
+         * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.email.model.EmailDomain.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * Specifies the attribute with which to sort the email domains.
+         * <p>
+         * Default: {@code TIMECREATED}
+         * <p>
+         * **TIMECREATED:** Sorts by timeCreated.
+         * * **NAME:** Sorts by name.
+         * * **ID:** Sorts by id.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -190,5 +327,108 @@ public class ListEmailDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListEmailDomainsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListEmailDomainsRequest
+         */
+        public ListEmailDomainsRequest buildWithoutInvocationCallback() {
+            ListEmailDomainsRequest request = new ListEmailDomainsRequest();
+            request.compartmentId = compartmentId;
+            request.opcRequestId = opcRequestId;
+            request.id = id;
+            request.name = name;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.lifecycleState = lifecycleState;
+            request.sortBy = sortBy;
+            return request;
+            // new ListEmailDomainsRequest(compartmentId, opcRequestId, id, name, limit, page, sortOrder, lifecycleState, sortBy);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .opcRequestId(opcRequestId)
+                .id(id)
+                .name(name)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .lifecycleState(lifecycleState)
+                .sortBy(sortBy);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListEmailDomainsRequest)) {
+            return false;
+        }
+
+        ListEmailDomainsRequest other = (ListEmailDomainsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.sortBy, other.sortBy);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        return result;
     }
 }

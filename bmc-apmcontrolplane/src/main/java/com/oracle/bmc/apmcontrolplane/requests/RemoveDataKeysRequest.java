@@ -9,14 +9,6 @@ import com.oracle.bmc.apmcontrolplane.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmcontrolplane/RemoveDataKeysExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RemoveDataKeysRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class RemoveDataKeysRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>> {
@@ -26,12 +18,19 @@ public class RemoveDataKeysRequest
      */
     private String apmDomainId;
 
+    public String getApmDomainId() {
+        return apmDomainId;
+    }
     /**
      * List of Data Keys to be removed.
      */
     private java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>
             removeDataKeysListDetails;
 
+    public java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>
+            getRemoveDataKeysListDetails() {
+        return removeDataKeysListDetails;
+    }
     /**
      * For optimistic concurrency control. Set the {@code if-match} parameter
      * to the value of the etag from a previous GET or POST response for that resource.
@@ -41,10 +40,17 @@ public class RemoveDataKeysRequest
      */
     private String ifMatch;
 
+    public String getIfMatch() {
+        return ifMatch;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -63,6 +69,17 @@ public class RemoveDataKeysRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String apmDomainId = null;
+
+        /**
+         * The OCID of the APM domain.
+         * @return this builder instance
+         */
+        public Builder apmDomainId(String apmDomainId) {
+            this.apmDomainId = apmDomainId;
+            return this;
+        }
 
         private java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>
                 removeDataKeysListDetails = null;
@@ -85,6 +102,32 @@ public class RemoveDataKeysRequest
         public Builder removeDataKeysListDetails(
                 com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails singularValue) {
             return this.removeDataKeysListDetails(java.util.Arrays.asList(singularValue));
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. Set the {@code if-match} parameter
+         * to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
         }
 
         /**
@@ -152,5 +195,85 @@ public class RemoveDataKeysRequest
             removeDataKeysListDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of RemoveDataKeysRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of RemoveDataKeysRequest
+         */
+        public RemoveDataKeysRequest buildWithoutInvocationCallback() {
+            RemoveDataKeysRequest request = new RemoveDataKeysRequest();
+            request.apmDomainId = apmDomainId;
+            request.removeDataKeysListDetails = removeDataKeysListDetails;
+            request.ifMatch = ifMatch;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new RemoveDataKeysRequest(apmDomainId, removeDataKeysListDetails, ifMatch, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .apmDomainId(apmDomainId)
+                .removeDataKeysListDetails(removeDataKeysListDetails)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",apmDomainId=").append(String.valueOf(this.apmDomainId));
+        sb.append(",removeDataKeysListDetails=")
+                .append(String.valueOf(this.removeDataKeysListDetails));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RemoveDataKeysRequest)) {
+            return false;
+        }
+
+        RemoveDataKeysRequest other = (RemoveDataKeysRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
+                && java.util.Objects.equals(
+                        this.removeDataKeysListDetails, other.removeDataKeysListDetails)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.apmDomainId == null ? 43 : this.apmDomainId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.removeDataKeysListDetails == null
+                                ? 43
+                                : this.removeDataKeysListDetails.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

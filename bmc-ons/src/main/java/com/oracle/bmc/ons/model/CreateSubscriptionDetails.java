@@ -16,16 +16,40 @@ package com.oracle.bmc.ons.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSubscriptionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateSubscriptionDetails {
+public final class CreateSubscriptionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "topicId",
+        "compartmentId",
+        "protocol",
+        "endpoint",
+        "metadata",
+        "freeformTags",
+        "definedTags"
+    })
+    public CreateSubscriptionDetails(
+            String topicId,
+            String compartmentId,
+            String protocol,
+            String endpoint,
+            String metadata,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.topicId = topicId;
+        this.compartmentId = compartmentId;
+        this.protocol = protocol;
+        this.endpoint = endpoint;
+        this.metadata = metadata;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
@@ -131,19 +155,31 @@ public class CreateSubscriptionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
-    String topicId;
+    private final String topicId;
+
+    public String getTopicId() {
+        return topicId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The protocol used for the subscription.
@@ -162,7 +198,11 @@ public class CreateSubscriptionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    String protocol;
+    private final String protocol;
+
+    public String getProtocol() {
+        return protocol;
+    }
 
     /**
      * A locator that corresponds to the subscription protocol.
@@ -176,13 +216,21 @@ public class CreateSubscriptionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
-    String endpoint;
+    private final String endpoint;
+
+    public String getEndpoint() {
+        return endpoint;
+    }
 
     /**
      * Metadata for the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    String metadata;
+    private final String metadata;
+
+    public String getMetadata() {
+        return metadata;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -191,7 +239,11 @@ public class CreateSubscriptionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -200,8 +252,71 @@ public class CreateSubscriptionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateSubscriptionDetails(");
+        sb.append("topicId=").append(String.valueOf(this.topicId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateSubscriptionDetails)) {
+            return false;
+        }
+
+        CreateSubscriptionDetails other = (CreateSubscriptionDetails) o;
+        return java.util.Objects.equals(this.topicId, other.topicId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.topicId == null ? 43 : this.topicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

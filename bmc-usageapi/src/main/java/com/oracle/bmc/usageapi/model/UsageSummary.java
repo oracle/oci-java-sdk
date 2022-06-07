@@ -15,14 +15,104 @@ package com.oracle.bmc.usageapi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UsageSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UsageSummary {
+public final class UsageSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "tenantId",
+        "tenantName",
+        "compartmentId",
+        "compartmentPath",
+        "compartmentName",
+        "service",
+        "resourceName",
+        "resourceId",
+        "region",
+        "ad",
+        "weight",
+        "shape",
+        "skuPartNumber",
+        "skuName",
+        "unit",
+        "discount",
+        "listRate",
+        "platform",
+        "timeUsageStarted",
+        "timeUsageEnded",
+        "computedAmount",
+        "computedQuantity",
+        "overagesFlag",
+        "unitPrice",
+        "currency",
+        "subscriptionId",
+        "overage",
+        "isForecast",
+        "tags"
+    })
+    public UsageSummary(
+            String tenantId,
+            String tenantName,
+            String compartmentId,
+            String compartmentPath,
+            String compartmentName,
+            String service,
+            String resourceName,
+            String resourceId,
+            String region,
+            String ad,
+            java.math.BigDecimal weight,
+            String shape,
+            String skuPartNumber,
+            String skuName,
+            String unit,
+            java.math.BigDecimal discount,
+            java.math.BigDecimal listRate,
+            String platform,
+            java.util.Date timeUsageStarted,
+            java.util.Date timeUsageEnded,
+            java.math.BigDecimal computedAmount,
+            java.math.BigDecimal computedQuantity,
+            String overagesFlag,
+            java.math.BigDecimal unitPrice,
+            String currency,
+            String subscriptionId,
+            String overage,
+            Boolean isForecast,
+            java.util.List<Tag> tags) {
+        super();
+        this.tenantId = tenantId;
+        this.tenantName = tenantName;
+        this.compartmentId = compartmentId;
+        this.compartmentPath = compartmentPath;
+        this.compartmentName = compartmentName;
+        this.service = service;
+        this.resourceName = resourceName;
+        this.resourceId = resourceId;
+        this.region = region;
+        this.ad = ad;
+        this.weight = weight;
+        this.shape = shape;
+        this.skuPartNumber = skuPartNumber;
+        this.skuName = skuName;
+        this.unit = unit;
+        this.discount = discount;
+        this.listRate = listRate;
+        this.platform = platform;
+        this.timeUsageStarted = timeUsageStarted;
+        this.timeUsageEnded = timeUsageEnded;
+        this.computedAmount = computedAmount;
+        this.computedQuantity = computedQuantity;
+        this.overagesFlag = overagesFlag;
+        this.unitPrice = unitPrice;
+        this.currency = currency;
+        this.subscriptionId = subscriptionId;
+        this.overage = overage;
+        this.isForecast = isForecast;
+        this.tags = tags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
@@ -369,180 +459,441 @@ public class UsageSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The tenancy OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    private final String tenantId;
+
+    public String getTenantId() {
+        return tenantId;
+    }
 
     /**
      * The tenancy name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
-    String tenantName;
+    private final String tenantName;
+
+    public String getTenantName() {
+        return tenantName;
+    }
 
     /**
      * The compartment OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The compartment path, starting from root.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentPath")
-    String compartmentPath;
+    private final String compartmentPath;
+
+    public String getCompartmentPath() {
+        return compartmentPath;
+    }
 
     /**
      * The compartment name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
-    String compartmentName;
+    private final String compartmentName;
+
+    public String getCompartmentName() {
+        return compartmentName;
+    }
 
     /**
      * The service name that is incurring the cost.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
-    String service;
+    private final String service;
+
+    public String getService() {
+        return service;
+    }
 
     /**
      * The resource name that is incurring the cost.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * The resource OCID that is incurring the cost.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * The region of the usage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * The availability domain of the usage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
-    String ad;
+    private final String ad;
+
+    public String getAd() {
+        return ad;
+    }
 
     /**
      * The resource size being metered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    java.math.BigDecimal weight;
+    private final java.math.BigDecimal weight;
+
+    public java.math.BigDecimal getWeight() {
+        return weight;
+    }
 
     /**
      * The resource shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    private final String shape;
+
+    public String getShape() {
+        return shape;
+    }
 
     /**
      * The SKU part number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuPartNumber")
-    String skuPartNumber;
+    private final String skuPartNumber;
+
+    public String getSkuPartNumber() {
+        return skuPartNumber;
+    }
 
     /**
      * The SKU friendly name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuName")
-    String skuName;
+    private final String skuName;
+
+    public String getSkuName() {
+        return skuName;
+    }
 
     /**
      * The usage unit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
-    String unit;
+    private final String unit;
+
+    public String getUnit() {
+        return unit;
+    }
 
     /**
      * The discretionary discount applied to the SKU.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("discount")
-    java.math.BigDecimal discount;
+    private final java.math.BigDecimal discount;
+
+    public java.math.BigDecimal getDiscount() {
+        return discount;
+    }
 
     /**
      * The SKU list rate (not discount).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listRate")
-    java.math.BigDecimal listRate;
+    private final java.math.BigDecimal listRate;
+
+    public java.math.BigDecimal getListRate() {
+        return listRate;
+    }
 
     /**
      * Platform for the cost.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platform")
-    String platform;
+    private final String platform;
+
+    public String getPlatform() {
+        return platform;
+    }
 
     /**
      * The usage start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
-    java.util.Date timeUsageStarted;
+    private final java.util.Date timeUsageStarted;
+
+    public java.util.Date getTimeUsageStarted() {
+        return timeUsageStarted;
+    }
 
     /**
      * The usage end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
-    java.util.Date timeUsageEnded;
+    private final java.util.Date timeUsageEnded;
+
+    public java.util.Date getTimeUsageEnded() {
+        return timeUsageEnded;
+    }
 
     /**
      * The computed cost.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computedAmount")
-    java.math.BigDecimal computedAmount;
+    private final java.math.BigDecimal computedAmount;
+
+    public java.math.BigDecimal getComputedAmount() {
+        return computedAmount;
+    }
 
     /**
      * The usage number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computedQuantity")
-    java.math.BigDecimal computedQuantity;
+    private final java.math.BigDecimal computedQuantity;
+
+    public java.math.BigDecimal getComputedQuantity() {
+        return computedQuantity;
+    }
 
     /**
      * The SPM OverageFlag.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overagesFlag")
-    String overagesFlag;
+    private final String overagesFlag;
+
+    public String getOveragesFlag() {
+        return overagesFlag;
+    }
 
     /**
      * The price per unit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitPrice")
-    java.math.BigDecimal unitPrice;
+    private final java.math.BigDecimal unitPrice;
+
+    public java.math.BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
 
     /**
      * The price currency.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
-    String currency;
+    private final String currency;
+
+    public String getCurrency() {
+        return currency;
+    }
 
     /**
      * The subscription ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
-    String subscriptionId;
+    private final String subscriptionId;
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
 
     /**
      * The overage usage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overage")
-    String overage;
+    private final String overage;
+
+    public String getOverage() {
+        return overage;
+    }
 
     /**
      * The forecasted data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForecast")
-    Boolean isForecast;
+    private final Boolean isForecast;
+
+    public Boolean getIsForecast() {
+        return isForecast;
+    }
 
     /**
      * For grouping, a tag definition. For filtering, a definition and key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
-    java.util.List<Tag> tags;
+    private final java.util.List<Tag> tags;
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UsageSummary(");
+        sb.append("tenantId=").append(String.valueOf(this.tenantId));
+        sb.append(", tenantName=").append(String.valueOf(this.tenantName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", compartmentPath=").append(String.valueOf(this.compartmentPath));
+        sb.append(", compartmentName=").append(String.valueOf(this.compartmentName));
+        sb.append(", service=").append(String.valueOf(this.service));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", ad=").append(String.valueOf(this.ad));
+        sb.append(", weight=").append(String.valueOf(this.weight));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", skuPartNumber=").append(String.valueOf(this.skuPartNumber));
+        sb.append(", skuName=").append(String.valueOf(this.skuName));
+        sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append(", discount=").append(String.valueOf(this.discount));
+        sb.append(", listRate=").append(String.valueOf(this.listRate));
+        sb.append(", platform=").append(String.valueOf(this.platform));
+        sb.append(", timeUsageStarted=").append(String.valueOf(this.timeUsageStarted));
+        sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
+        sb.append(", computedAmount=").append(String.valueOf(this.computedAmount));
+        sb.append(", computedQuantity=").append(String.valueOf(this.computedQuantity));
+        sb.append(", overagesFlag=").append(String.valueOf(this.overagesFlag));
+        sb.append(", unitPrice=").append(String.valueOf(this.unitPrice));
+        sb.append(", currency=").append(String.valueOf(this.currency));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", overage=").append(String.valueOf(this.overage));
+        sb.append(", isForecast=").append(String.valueOf(this.isForecast));
+        sb.append(", tags=").append(String.valueOf(this.tags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UsageSummary)) {
+            return false;
+        }
+
+        UsageSummary other = (UsageSummary) o;
+        return java.util.Objects.equals(this.tenantId, other.tenantId)
+                && java.util.Objects.equals(this.tenantName, other.tenantName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.compartmentPath, other.compartmentPath)
+                && java.util.Objects.equals(this.compartmentName, other.compartmentName)
+                && java.util.Objects.equals(this.service, other.service)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.ad, other.ad)
+                && java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.skuPartNumber, other.skuPartNumber)
+                && java.util.Objects.equals(this.skuName, other.skuName)
+                && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.discount, other.discount)
+                && java.util.Objects.equals(this.listRate, other.listRate)
+                && java.util.Objects.equals(this.platform, other.platform)
+                && java.util.Objects.equals(this.timeUsageStarted, other.timeUsageStarted)
+                && java.util.Objects.equals(this.timeUsageEnded, other.timeUsageEnded)
+                && java.util.Objects.equals(this.computedAmount, other.computedAmount)
+                && java.util.Objects.equals(this.computedQuantity, other.computedQuantity)
+                && java.util.Objects.equals(this.overagesFlag, other.overagesFlag)
+                && java.util.Objects.equals(this.unitPrice, other.unitPrice)
+                && java.util.Objects.equals(this.currency, other.currency)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.overage, other.overage)
+                && java.util.Objects.equals(this.isForecast, other.isForecast)
+                && java.util.Objects.equals(this.tags, other.tags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
+        result = (result * PRIME) + (this.tenantName == null ? 43 : this.tenantName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentPath == null ? 43 : this.compartmentPath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentName == null ? 43 : this.compartmentName.hashCode());
+        result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.ad == null ? 43 : this.ad.hashCode());
+        result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.skuPartNumber == null ? 43 : this.skuPartNumber.hashCode());
+        result = (result * PRIME) + (this.skuName == null ? 43 : this.skuName.hashCode());
+        result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result = (result * PRIME) + (this.discount == null ? 43 : this.discount.hashCode());
+        result = (result * PRIME) + (this.listRate == null ? 43 : this.listRate.hashCode());
+        result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUsageStarted == null ? 43 : this.timeUsageStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUsageEnded == null ? 43 : this.timeUsageEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computedAmount == null ? 43 : this.computedAmount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computedQuantity == null ? 43 : this.computedQuantity.hashCode());
+        result = (result * PRIME) + (this.overagesFlag == null ? 43 : this.overagesFlag.hashCode());
+        result = (result * PRIME) + (this.unitPrice == null ? 43 : this.unitPrice.hashCode());
+        result = (result * PRIME) + (this.currency == null ? 43 : this.currency.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result = (result * PRIME) + (this.overage == null ? 43 : this.overage.hashCode());
+        result = (result * PRIME) + (this.isForecast == null ? 43 : this.isForecast.hashCode());
+        result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

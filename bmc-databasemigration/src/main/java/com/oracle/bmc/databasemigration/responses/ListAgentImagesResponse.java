@@ -7,10 +7,6 @@ package com.oracle.bmc.databasemigration.responses;
 import com.oracle.bmc.databasemigration.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAgentImagesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -18,6 +14,10 @@ public class ListAgentImagesResponse extends com.oracle.bmc.responses.BmcRespons
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -27,10 +27,18 @@ public class ListAgentImagesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned AgentImageCollection instance.
      */
     private com.oracle.bmc.databasemigration.model.AgentImageCollection agentImageCollection;
+
+    public com.oracle.bmc.databasemigration.model.AgentImageCollection getAgentImageCollection() {
+        return agentImageCollection;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -57,6 +65,28 @@ public class ListAgentImagesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemigration.model.AgentImageCollection agentImageCollection;
+
+        public Builder agentImageCollection(
+                com.oracle.bmc.databasemigration.model.AgentImageCollection agentImageCollection) {
+            this.agentImageCollection = agentImageCollection;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -74,5 +104,51 @@ public class ListAgentImagesResponse extends com.oracle.bmc.responses.BmcRespons
             return new ListAgentImagesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, agentImageCollection);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",agentImageCollection=").append(String.valueOf(agentImageCollection));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAgentImagesResponse)) {
+            return false;
+        }
+
+        ListAgentImagesResponse other = (ListAgentImagesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.agentImageCollection, other.agentImageCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.agentImageCollection == null
+                                ? 43
+                                : this.agentImageCollection.hashCode());
+        return result;
     }
 }

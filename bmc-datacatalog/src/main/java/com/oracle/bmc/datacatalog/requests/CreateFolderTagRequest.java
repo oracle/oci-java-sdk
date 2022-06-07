@@ -9,14 +9,6 @@ import com.oracle.bmc.datacatalog.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateFolderTagExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateFolderTagRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateFolderTagRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.CreateTagDetails> {
@@ -26,26 +18,41 @@ public class CreateFolderTagRequest
      */
     private String catalogId;
 
+    public String getCatalogId() {
+        return catalogId;
+    }
     /**
      * Unique data asset key.
      */
     private String dataAssetKey;
 
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
     /**
      * Unique folder key.
      */
     private String folderKey;
 
+    public String getFolderKey() {
+        return folderKey;
+    }
     /**
      * The information used to create the folder tag.
      */
     private com.oracle.bmc.datacatalog.model.CreateTagDetails createFolderTagDetails;
 
+    public com.oracle.bmc.datacatalog.model.CreateTagDetails getCreateFolderTagDetails() {
+        return createFolderTagDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -55,6 +62,10 @@ public class CreateFolderTagRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -72,6 +83,78 @@ public class CreateFolderTagRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String catalogId = null;
+
+        /**
+         * Unique catalog identifier.
+         * @return this builder instance
+         */
+        public Builder catalogId(String catalogId) {
+            this.catalogId = catalogId;
+            return this;
+        }
+
+        private String dataAssetKey = null;
+
+        /**
+         * Unique data asset key.
+         * @return this builder instance
+         */
+        public Builder dataAssetKey(String dataAssetKey) {
+            this.dataAssetKey = dataAssetKey;
+            return this;
+        }
+
+        private String folderKey = null;
+
+        /**
+         * Unique folder key.
+         * @return this builder instance
+         */
+        public Builder folderKey(String folderKey) {
+            this.folderKey = folderKey;
+            return this;
+        }
+
+        private com.oracle.bmc.datacatalog.model.CreateTagDetails createFolderTagDetails = null;
+
+        /**
+         * The information used to create the folder tag.
+         * @return this builder instance
+         */
+        public Builder createFolderTagDetails(
+                com.oracle.bmc.datacatalog.model.CreateTagDetails createFolderTagDetails) {
+            this.createFolderTagDetails = createFolderTagDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -139,5 +222,96 @@ public class CreateFolderTagRequest
             createFolderTagDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateFolderTagRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateFolderTagRequest
+         */
+        public CreateFolderTagRequest buildWithoutInvocationCallback() {
+            CreateFolderTagRequest request = new CreateFolderTagRequest();
+            request.catalogId = catalogId;
+            request.dataAssetKey = dataAssetKey;
+            request.folderKey = folderKey;
+            request.createFolderTagDetails = createFolderTagDetails;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new CreateFolderTagRequest(catalogId, dataAssetKey, folderKey, createFolderTagDetails, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .catalogId(catalogId)
+                .dataAssetKey(dataAssetKey)
+                .folderKey(folderKey)
+                .createFolderTagDetails(createFolderTagDetails)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",catalogId=").append(String.valueOf(this.catalogId));
+        sb.append(",dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(",folderKey=").append(String.valueOf(this.folderKey));
+        sb.append(",createFolderTagDetails=").append(String.valueOf(this.createFolderTagDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateFolderTagRequest)) {
+            return false;
+        }
+
+        CreateFolderTagRequest other = (CreateFolderTagRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.catalogId, other.catalogId)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.folderKey, other.folderKey)
+                && java.util.Objects.equals(
+                        this.createFolderTagDetails, other.createFolderTagDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.folderKey == null ? 43 : this.folderKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createFolderTagDetails == null
+                                ? 43
+                                : this.createFolderTagDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

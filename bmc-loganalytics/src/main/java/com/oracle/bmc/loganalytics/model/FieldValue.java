@@ -16,14 +16,19 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FieldValue.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FieldValue {
+public final class FieldValue {
+    @Deprecated
+    @java.beans.ConstructorProperties({"displayValue", "internalValue", "isDeleted"})
+    public FieldValue(String displayValue, Object internalValue, Boolean isDeleted) {
+        super();
+        this.displayValue = displayValue;
+        this.internalValue = internalValue;
+        this.isDeleted = isDeleted;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayValue")
         private String displayValue;
@@ -80,27 +85,90 @@ public class FieldValue {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Display representation of the field value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayValue")
-    String displayValue;
+    private final String displayValue;
+
+    public String getDisplayValue() {
+        return displayValue;
+    }
 
     /**
      * Internal representation of the field value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalValue")
-    Object internalValue;
+    private final Object internalValue;
+
+    public Object getInternalValue() {
+        return internalValue;
+    }
 
     /**
      * Denotes if this list-of-values value has been marked as deleted.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleted")
-    Boolean isDeleted;
+    private final Boolean isDeleted;
+
+    public Boolean getIsDeleted() {
+        return isDeleted;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FieldValue(");
+        sb.append("displayValue=").append(String.valueOf(this.displayValue));
+        sb.append(", internalValue=").append(String.valueOf(this.internalValue));
+        sb.append(", isDeleted=").append(String.valueOf(this.isDeleted));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FieldValue)) {
+            return false;
+        }
+
+        FieldValue other = (FieldValue) o;
+        return java.util.Objects.equals(this.displayValue, other.displayValue)
+                && java.util.Objects.equals(this.internalValue, other.internalValue)
+                && java.util.Objects.equals(this.isDeleted, other.isDeleted)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayValue == null ? 43 : this.displayValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.internalValue == null ? 43 : this.internalValue.hashCode());
+        result = (result * PRIME) + (this.isDeleted == null ? 43 : this.isDeleted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,20 +16,15 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostTopProcesses.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "metricName"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HostTopProcesses extends HostPerformanceMetricGroup {
+public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
@@ -178,6 +173,10 @@ public class HostTopProcesses extends HostPerformanceMetricGroup {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public HostTopProcesses(
             java.util.Date timeCollected,
@@ -208,49 +207,81 @@ public class HostTopProcesses extends HostPerformanceMetricGroup {
      * process id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pid")
-    java.math.BigDecimal pid;
+    private final java.math.BigDecimal pid;
+
+    public java.math.BigDecimal getPid() {
+        return pid;
+    }
 
     /**
      * User that started the process
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     /**
      * Memory utilization percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUtilizationPercent")
-    Double memoryUtilizationPercent;
+    private final Double memoryUtilizationPercent;
+
+    public Double getMemoryUtilizationPercent() {
+        return memoryUtilizationPercent;
+    }
 
     /**
      * CPU utilization percentage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationPercent")
-    Double cpuUtilizationPercent;
+    private final Double cpuUtilizationPercent;
+
+    public Double getCpuUtilizationPercent() {
+        return cpuUtilizationPercent;
+    }
 
     /**
      * CPU usage in seconds
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUsageInSeconds")
-    Double cpuUsageInSeconds;
+    private final Double cpuUsageInSeconds;
+
+    public Double getCpuUsageInSeconds() {
+        return cpuUsageInSeconds;
+    }
 
     /**
      * Command line executed for the process
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("command")
-    String command;
+    private final String command;
+
+    public String getCommand() {
+        return command;
+    }
 
     /**
      * Virtual memory in megabytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualMemoryInMBs")
-    Double virtualMemoryInMBs;
+    private final Double virtualMemoryInMBs;
+
+    public Double getVirtualMemoryInMBs() {
+        return virtualMemoryInMBs;
+    }
 
     /**
      * Physical memory in megabytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("physicalMemoryInMBs")
-    Double physicalMemoryInMBs;
+    private final Double physicalMemoryInMBs;
+
+    public Double getPhysicalMemoryInMBs() {
+        return physicalMemoryInMBs;
+    }
 
     /**
      * Process Start Time
@@ -258,14 +289,112 @@ public class HostTopProcesses extends HostPerformanceMetricGroup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
-    java.util.Date startTime;
+    private final java.util.Date startTime;
+
+    public java.util.Date getStartTime() {
+        return startTime;
+    }
 
     /**
      * Number of processes running at the time of collection
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalProcesses")
-    java.math.BigDecimal totalProcesses;
+    private final java.math.BigDecimal totalProcesses;
+
+    public java.math.BigDecimal getTotalProcesses() {
+        return totalProcesses;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HostTopProcesses(");
+        sb.append("super=").append(super.toString());
+        sb.append(", pid=").append(String.valueOf(this.pid));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", memoryUtilizationPercent=")
+                .append(String.valueOf(this.memoryUtilizationPercent));
+        sb.append(", cpuUtilizationPercent=").append(String.valueOf(this.cpuUtilizationPercent));
+        sb.append(", cpuUsageInSeconds=").append(String.valueOf(this.cpuUsageInSeconds));
+        sb.append(", command=").append(String.valueOf(this.command));
+        sb.append(", virtualMemoryInMBs=").append(String.valueOf(this.virtualMemoryInMBs));
+        sb.append(", physicalMemoryInMBs=").append(String.valueOf(this.physicalMemoryInMBs));
+        sb.append(", startTime=").append(String.valueOf(this.startTime));
+        sb.append(", totalProcesses=").append(String.valueOf(this.totalProcesses));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HostTopProcesses)) {
+            return false;
+        }
+
+        HostTopProcesses other = (HostTopProcesses) o;
+        return java.util.Objects.equals(this.pid, other.pid)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(
+                        this.memoryUtilizationPercent, other.memoryUtilizationPercent)
+                && java.util.Objects.equals(this.cpuUtilizationPercent, other.cpuUtilizationPercent)
+                && java.util.Objects.equals(this.cpuUsageInSeconds, other.cpuUsageInSeconds)
+                && java.util.Objects.equals(this.command, other.command)
+                && java.util.Objects.equals(this.virtualMemoryInMBs, other.virtualMemoryInMBs)
+                && java.util.Objects.equals(this.physicalMemoryInMBs, other.physicalMemoryInMBs)
+                && java.util.Objects.equals(this.startTime, other.startTime)
+                && java.util.Objects.equals(this.totalProcesses, other.totalProcesses)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.pid == null ? 43 : this.pid.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryUtilizationPercent == null
+                                ? 43
+                                : this.memoryUtilizationPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuUtilizationPercent == null
+                                ? 43
+                                : this.cpuUtilizationPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuUsageInSeconds == null ? 43 : this.cpuUsageInSeconds.hashCode());
+        result = (result * PRIME) + (this.command == null ? 43 : this.command.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualMemoryInMBs == null
+                                ? 43
+                                : this.virtualMemoryInMBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.physicalMemoryInMBs == null
+                                ? 43
+                                : this.physicalMemoryInMBs.hashCode());
+        result = (result * PRIME) + (this.startTime == null ? 43 : this.startTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalProcesses == null ? 43 : this.totalProcesses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

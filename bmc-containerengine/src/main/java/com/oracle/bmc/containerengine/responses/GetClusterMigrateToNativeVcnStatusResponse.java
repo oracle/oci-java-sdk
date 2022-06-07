@@ -7,16 +7,16 @@ package com.oracle.bmc.containerengine.responses;
 import com.oracle.bmc.containerengine.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetClusterMigrateToNativeVcnStatusResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      */
     private String etag;
+
+    public String getEtag() {
+        return etag;
+    }
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -25,11 +25,20 @@ public class GetClusterMigrateToNativeVcnStatusResponse
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned ClusterMigrateToNativeVcnStatus instance.
      */
     private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
             clusterMigrateToNativeVcnStatus;
+
+    public com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
+            getClusterMigrateToNativeVcnStatus() {
+        return clusterMigrateToNativeVcnStatus;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -57,6 +66,30 @@ public class GetClusterMigrateToNativeVcnStatusResponse
             return this;
         }
 
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
+                clusterMigrateToNativeVcnStatus;
+
+        public Builder clusterMigrateToNativeVcnStatus(
+                com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
+                        clusterMigrateToNativeVcnStatus) {
+            this.clusterMigrateToNativeVcnStatus = clusterMigrateToNativeVcnStatus;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -74,5 +107,55 @@ public class GetClusterMigrateToNativeVcnStatusResponse
             return new GetClusterMigrateToNativeVcnStatusResponse(
                     __httpStatusCode__, etag, opcRequestId, clusterMigrateToNativeVcnStatus);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",clusterMigrateToNativeVcnStatus=")
+                .append(String.valueOf(clusterMigrateToNativeVcnStatus));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetClusterMigrateToNativeVcnStatusResponse)) {
+            return false;
+        }
+
+        GetClusterMigrateToNativeVcnStatusResponse other =
+                (GetClusterMigrateToNativeVcnStatusResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.clusterMigrateToNativeVcnStatus,
+                        other.clusterMigrateToNativeVcnStatus);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterMigrateToNativeVcnStatus == null
+                                ? 43
+                                : this.clusterMigrateToNativeVcnStatus.hashCode());
+        return result;
     }
 }

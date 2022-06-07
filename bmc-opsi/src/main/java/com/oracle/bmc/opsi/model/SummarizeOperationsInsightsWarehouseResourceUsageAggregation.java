@@ -15,16 +15,26 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SummarizeOperationsInsightsWarehouseResourceUsageAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SummarizeOperationsInsightsWarehouseResourceUsageAggregation {
+public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "cpuUsed", "storageUsedInGBs", "lifecycleState"})
+    public SummarizeOperationsInsightsWarehouseResourceUsageAggregation(
+            String id,
+            Double cpuUsed,
+            Double storageUsedInGBs,
+            OperationsInsightsWarehouseLifecycleState lifecycleState) {
+        super();
+        this.id = id;
+        this.cpuUsed = cpuUsed;
+        this.storageUsedInGBs = storageUsedInGBs;
+        this.lifecycleState = lifecycleState;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -93,32 +103,105 @@ public class SummarizeOperationsInsightsWarehouseResourceUsageAggregation {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OPSI Warehouse OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUsed")
-    Double cpuUsed;
+    private final Double cpuUsed;
+
+    public Double getCpuUsed() {
+        return cpuUsed;
+    }
 
     /**
      * Storage by OPSI Warehouse ADW in GB.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInGBs")
-    Double storageUsedInGBs;
+    private final Double storageUsedInGBs;
+
+    public Double getStorageUsedInGBs() {
+        return storageUsedInGBs;
+    }
 
     /**
      * Possible lifecycle states
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    OperationsInsightsWarehouseLifecycleState lifecycleState;
+    private final OperationsInsightsWarehouseLifecycleState lifecycleState;
+
+    public OperationsInsightsWarehouseLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SummarizeOperationsInsightsWarehouseResourceUsageAggregation(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", cpuUsed=").append(String.valueOf(this.cpuUsed));
+        sb.append(", storageUsedInGBs=").append(String.valueOf(this.storageUsedInGBs));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SummarizeOperationsInsightsWarehouseResourceUsageAggregation)) {
+            return false;
+        }
+
+        SummarizeOperationsInsightsWarehouseResourceUsageAggregation other =
+                (SummarizeOperationsInsightsWarehouseResourceUsageAggregation) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.cpuUsed, other.cpuUsed)
+                && java.util.Objects.equals(this.storageUsedInGBs, other.storageUsedInGBs)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.cpuUsed == null ? 43 : this.cpuUsed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageUsedInGBs == null ? 43 : this.storageUsedInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

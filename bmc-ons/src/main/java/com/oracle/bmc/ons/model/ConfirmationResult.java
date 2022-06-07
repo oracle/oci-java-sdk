@@ -18,16 +18,37 @@ package com.oracle.bmc.ons.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConfirmationResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConfirmationResult {
+public final class ConfirmationResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "topicName",
+        "topicId",
+        "endpoint",
+        "unsubscribeUrl",
+        "message",
+        "subscriptionId"
+    })
+    public ConfirmationResult(
+            String topicName,
+            String topicId,
+            String endpoint,
+            String unsubscribeUrl,
+            String message,
+            String subscriptionId) {
+        super();
+        this.topicName = topicName;
+        this.topicId = topicId;
+        this.endpoint = endpoint;
+        this.unsubscribeUrl = unsubscribeUrl;
+        this.message = message;
+        this.subscriptionId = subscriptionId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("topicName")
         private String topicName;
@@ -116,19 +137,31 @@ public class ConfirmationResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the subscribed topic.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicName")
-    String topicName;
+    private final String topicName;
+
+    public String getTopicName() {
+        return topicName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic associated with the specified subscription.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
-    String topicId;
+    private final String topicId;
+
+    public String getTopicId() {
+        return topicId;
+    }
 
     /**
      * A locator that corresponds to the subscription protocol.
@@ -136,26 +169,100 @@ public class ConfirmationResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
-    String endpoint;
+    private final String endpoint;
+
+    public String getEndpoint() {
+        return endpoint;
+    }
 
     /**
      * The URL for unsubscribing from the topic.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unsubscribeUrl")
-    String unsubscribeUrl;
+    private final String unsubscribeUrl;
+
+    public String getUnsubscribeUrl() {
+        return unsubscribeUrl;
+    }
 
     /**
      * A human-readable string indicating the status of the subscription confirmation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    String message;
+    private final String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription specified in the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
-    String subscriptionId;
+    private final String subscriptionId;
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConfirmationResult(");
+        sb.append("topicName=").append(String.valueOf(this.topicName));
+        sb.append(", topicId=").append(String.valueOf(this.topicId));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", unsubscribeUrl=").append(String.valueOf(this.unsubscribeUrl));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConfirmationResult)) {
+            return false;
+        }
+
+        ConfirmationResult other = (ConfirmationResult) o;
+        return java.util.Objects.equals(this.topicName, other.topicName)
+                && java.util.Objects.equals(this.topicId, other.topicId)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.unsubscribeUrl, other.unsubscribeUrl)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.topicName == null ? 43 : this.topicName.hashCode());
+        result = (result * PRIME) + (this.topicId == null ? 43 : this.topicId.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unsubscribeUrl == null ? 43 : this.unsubscribeUrl.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

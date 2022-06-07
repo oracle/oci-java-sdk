@@ -15,16 +15,130 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsSource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsSource {
+public final class LogAnalyticsSource {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "labelConditions",
+        "associationCount",
+        "associationEntity",
+        "dataFilterDefinitions",
+        "databaseCredential",
+        "extendedFieldDefinitions",
+        "isForCloud",
+        "labels",
+        "metricDefinitions",
+        "metrics",
+        "oobParsers",
+        "parameters",
+        "patternCount",
+        "patterns",
+        "description",
+        "displayName",
+        "editVersion",
+        "functions",
+        "sourceId",
+        "name",
+        "isSecureContent",
+        "isSystem",
+        "parsers",
+        "isAutoAssociationEnabled",
+        "isAutoAssociationOverride",
+        "ruleId",
+        "typeName",
+        "typeDisplayName",
+        "warningConfig",
+        "metadataFields",
+        "labelDefinitions",
+        "entityTypes",
+        "isTimezoneOverride",
+        "userParsers",
+        "timeUpdated",
+        "eventTypes",
+        "categories"
+    })
+    public LogAnalyticsSource(
+            java.util.List<LogAnalyticsSourceLabelCondition> labelConditions,
+            Integer associationCount,
+            java.util.List<LogAnalyticsAssociation> associationEntity,
+            java.util.List<LogAnalyticsSourceDataFilter> dataFilterDefinitions,
+            String databaseCredential,
+            java.util.List<LogAnalyticsSourceExtendedFieldDefinition> extendedFieldDefinitions,
+            Boolean isForCloud,
+            java.util.List<LogAnalyticsLabelView> labels,
+            java.util.List<LogAnalyticsMetric> metricDefinitions,
+            java.util.List<LogAnalyticsSourceMetric> metrics,
+            java.util.List<LogAnalyticsParser> oobParsers,
+            java.util.List<LogAnalyticsParameter> parameters,
+            Integer patternCount,
+            java.util.List<LogAnalyticsSourcePattern> patterns,
+            String description,
+            String displayName,
+            Long editVersion,
+            java.util.List<LogAnalyticsSourceFunction> functions,
+            Long sourceId,
+            String name,
+            Boolean isSecureContent,
+            Boolean isSystem,
+            java.util.List<LogAnalyticsParser> parsers,
+            Boolean isAutoAssociationEnabled,
+            Boolean isAutoAssociationOverride,
+            Long ruleId,
+            String typeName,
+            String typeDisplayName,
+            Long warningConfig,
+            java.util.List<LogAnalyticsSourceMetadataField> metadataFields,
+            java.util.List<LogAnalyticsLabelDefinition> labelDefinitions,
+            java.util.List<LogAnalyticsSourceEntityType> entityTypes,
+            Boolean isTimezoneOverride,
+            java.util.List<LogAnalyticsParser> userParsers,
+            java.util.Date timeUpdated,
+            java.util.List<EventType> eventTypes,
+            java.util.List<LogAnalyticsCategory> categories) {
+        super();
+        this.labelConditions = labelConditions;
+        this.associationCount = associationCount;
+        this.associationEntity = associationEntity;
+        this.dataFilterDefinitions = dataFilterDefinitions;
+        this.databaseCredential = databaseCredential;
+        this.extendedFieldDefinitions = extendedFieldDefinitions;
+        this.isForCloud = isForCloud;
+        this.labels = labels;
+        this.metricDefinitions = metricDefinitions;
+        this.metrics = metrics;
+        this.oobParsers = oobParsers;
+        this.parameters = parameters;
+        this.patternCount = patternCount;
+        this.patterns = patterns;
+        this.description = description;
+        this.displayName = displayName;
+        this.editVersion = editVersion;
+        this.functions = functions;
+        this.sourceId = sourceId;
+        this.name = name;
+        this.isSecureContent = isSecureContent;
+        this.isSystem = isSystem;
+        this.parsers = parsers;
+        this.isAutoAssociationEnabled = isAutoAssociationEnabled;
+        this.isAutoAssociationOverride = isAutoAssociationOverride;
+        this.ruleId = ruleId;
+        this.typeName = typeName;
+        this.typeDisplayName = typeDisplayName;
+        this.warningConfig = warningConfig;
+        this.metadataFields = metadataFields;
+        this.labelDefinitions = labelDefinitions;
+        this.entityTypes = entityTypes;
+        this.isTimezoneOverride = isTimezoneOverride;
+        this.userParsers = userParsers;
+        this.timeUpdated = timeUpdated;
+        this.eventTypes = eventTypes;
+        this.categories = categories;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("labelConditions")
         private java.util.List<LogAnalyticsSourceLabelCondition> labelConditions;
@@ -466,133 +580,222 @@ public class LogAnalyticsSource {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The label alert conditions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelConditions")
-    java.util.List<LogAnalyticsSourceLabelCondition> labelConditions;
+    private final java.util.List<LogAnalyticsSourceLabelCondition> labelConditions;
+
+    public java.util.List<LogAnalyticsSourceLabelCondition> getLabelConditions() {
+        return labelConditions;
+    }
 
     /**
      * The association count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
-    Integer associationCount;
+    private final Integer associationCount;
+
+    public Integer getAssociationCount() {
+        return associationCount;
+    }
 
     /**
      * The association entities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationEntity")
-    java.util.List<LogAnalyticsAssociation> associationEntity;
+    private final java.util.List<LogAnalyticsAssociation> associationEntity;
+
+    public java.util.List<LogAnalyticsAssociation> getAssociationEntity() {
+        return associationEntity;
+    }
 
     /**
      * The data filter definitions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataFilterDefinitions")
-    java.util.List<LogAnalyticsSourceDataFilter> dataFilterDefinitions;
+    private final java.util.List<LogAnalyticsSourceDataFilter> dataFilterDefinitions;
+
+    public java.util.List<LogAnalyticsSourceDataFilter> getDataFilterDefinitions() {
+        return dataFilterDefinitions;
+    }
 
     /**
      * The database credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
-    String databaseCredential;
+    private final String databaseCredential;
+
+    public String getDatabaseCredential() {
+        return databaseCredential;
+    }
 
     /**
      * The extended field definitions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitions")
-    java.util.List<LogAnalyticsSourceExtendedFieldDefinition> extendedFieldDefinitions;
+    private final java.util.List<LogAnalyticsSourceExtendedFieldDefinition>
+            extendedFieldDefinitions;
+
+    public java.util.List<LogAnalyticsSourceExtendedFieldDefinition> getExtendedFieldDefinitions() {
+        return extendedFieldDefinitions;
+    }
 
     /**
      * A flag indicating whether or not this is a cloud source.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForCloud")
-    Boolean isForCloud;
+    private final Boolean isForCloud;
+
+    public Boolean getIsForCloud() {
+        return isForCloud;
+    }
 
     /**
      * The labels associated with the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
-    java.util.List<LogAnalyticsLabelView> labels;
+    private final java.util.List<LogAnalyticsLabelView> labels;
+
+    public java.util.List<LogAnalyticsLabelView> getLabels() {
+        return labels;
+    }
 
     /**
      * The metric definitions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricDefinitions")
-    java.util.List<LogAnalyticsMetric> metricDefinitions;
+    private final java.util.List<LogAnalyticsMetric> metricDefinitions;
+
+    public java.util.List<LogAnalyticsMetric> getMetricDefinitions() {
+        return metricDefinitions;
+    }
 
     /**
      * The metric source map.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
-    java.util.List<LogAnalyticsSourceMetric> metrics;
+    private final java.util.List<LogAnalyticsSourceMetric> metrics;
+
+    public java.util.List<LogAnalyticsSourceMetric> getMetrics() {
+        return metrics;
+    }
 
     /**
      * The built in parsers associated with source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oobParsers")
-    java.util.List<LogAnalyticsParser> oobParsers;
+    private final java.util.List<LogAnalyticsParser> oobParsers;
+
+    public java.util.List<LogAnalyticsParser> getOobParsers() {
+        return oobParsers;
+    }
 
     /**
      * The source parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.List<LogAnalyticsParameter> parameters;
+    private final java.util.List<LogAnalyticsParameter> parameters;
+
+    public java.util.List<LogAnalyticsParameter> getParameters() {
+        return parameters;
+    }
 
     /**
      * The pattern count.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternCount")
-    Integer patternCount;
+    private final Integer patternCount;
+
+    public Integer getPatternCount() {
+        return patternCount;
+    }
 
     /**
      * The source patterns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patterns")
-    java.util.List<LogAnalyticsSourcePattern> patterns;
+    private final java.util.List<LogAnalyticsSourcePattern> patterns;
+
+    public java.util.List<LogAnalyticsSourcePattern> getPatterns() {
+        return patterns;
+    }
 
     /**
      * The source description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The source display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The source edit version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
-    Long editVersion;
+    private final Long editVersion;
+
+    public Long getEditVersion() {
+        return editVersion;
+    }
 
     /**
      * The source functions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
-    java.util.List<LogAnalyticsSourceFunction> functions;
+    private final java.util.List<LogAnalyticsSourceFunction> functions;
+
+    public java.util.List<LogAnalyticsSourceFunction> getFunctions() {
+        return functions;
+    }
 
     /**
      * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    Long sourceId;
+    private final Long sourceId;
+
+    public Long getSourceId() {
+        return sourceId;
+    }
 
     /**
      * The source internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * A flag indicating whether or not the source content is secure.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecureContent")
-    Boolean isSecureContent;
+    private final Boolean isSecureContent;
+
+    public Boolean getIsSecureContent() {
+        return isSecureContent;
+    }
 
     /**
      * The system flag.  A value of false denotes a custom, or user
@@ -600,94 +803,154 @@ public class LogAnalyticsSource {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
-    Boolean isSystem;
+    private final Boolean isSystem;
+
+    public Boolean getIsSystem() {
+        return isSystem;
+    }
 
     /**
      * The list of parsers used by the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsers")
-    java.util.List<LogAnalyticsParser> parsers;
+    private final java.util.List<LogAnalyticsParser> parsers;
+
+    public java.util.List<LogAnalyticsParser> getParsers() {
+        return parsers;
+    }
 
     /**
      * A flag indicating whether or not the source is marked for auto-association.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationEnabled")
-    Boolean isAutoAssociationEnabled;
+    private final Boolean isAutoAssociationEnabled;
+
+    public Boolean getIsAutoAssociationEnabled() {
+        return isAutoAssociationEnabled;
+    }
 
     /**
      * A flag indicating whether or not the auto-association state should be overriden.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationOverride")
-    Boolean isAutoAssociationOverride;
+    private final Boolean isAutoAssociationOverride;
+
+    public Boolean getIsAutoAssociationOverride() {
+        return isAutoAssociationOverride;
+    }
 
     /**
      * The rule unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleId")
-    Long ruleId;
+    private final Long ruleId;
+
+    public Long getRuleId() {
+        return ruleId;
+    }
 
     /**
      * The source type internal name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
-    String typeName;
+    private final String typeName;
+
+    public String getTypeName() {
+        return typeName;
+    }
 
     /**
      * The source type name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeDisplayName")
-    String typeDisplayName;
+    private final String typeDisplayName;
+
+    public String getTypeDisplayName() {
+        return typeDisplayName;
+    }
 
     /**
      * The source warning configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningConfig")
-    Long warningConfig;
+    private final Long warningConfig;
+
+    public Long getWarningConfig() {
+        return warningConfig;
+    }
 
     /**
      * The source metadata fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataFields")
-    java.util.List<LogAnalyticsSourceMetadataField> metadataFields;
+    private final java.util.List<LogAnalyticsSourceMetadataField> metadataFields;
+
+    public java.util.List<LogAnalyticsSourceMetadataField> getMetadataFields() {
+        return metadataFields;
+    }
 
     /**
      * The labls used by the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelDefinitions")
-    java.util.List<LogAnalyticsLabelDefinition> labelDefinitions;
+    private final java.util.List<LogAnalyticsLabelDefinition> labelDefinitions;
+
+    public java.util.List<LogAnalyticsLabelDefinition> getLabelDefinitions() {
+        return labelDefinitions;
+    }
 
     /**
      * The entity types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypes")
-    java.util.List<LogAnalyticsSourceEntityType> entityTypes;
+    private final java.util.List<LogAnalyticsSourceEntityType> entityTypes;
+
+    public java.util.List<LogAnalyticsSourceEntityType> getEntityTypes() {
+        return entityTypes;
+    }
 
     /**
      * A flag indicating whether or not the source has a time zone override.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTimezoneOverride")
-    Boolean isTimezoneOverride;
+    private final Boolean isTimezoneOverride;
+
+    public Boolean getIsTimezoneOverride() {
+        return isTimezoneOverride;
+    }
 
     /**
      * An array of custom parsers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userParsers")
-    java.util.List<LogAnalyticsParser> userParsers;
+    private final java.util.List<LogAnalyticsParser> userParsers;
+
+    public java.util.List<LogAnalyticsParser> getUserParsers() {
+        return userParsers;
+    }
 
     /**
      * The last updated date.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * An array of event types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTypes")
-    java.util.List<EventType> eventTypes;
+    private final java.util.List<EventType> eventTypes;
+
+    public java.util.List<EventType> getEventTypes() {
+        return eventTypes;
+    }
 
     /**
      * An array of categories assigned to this source.
@@ -695,8 +958,207 @@ public class LogAnalyticsSource {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
-    java.util.List<LogAnalyticsCategory> categories;
+    private final java.util.List<LogAnalyticsCategory> categories;
+
+    public java.util.List<LogAnalyticsCategory> getCategories() {
+        return categories;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsSource(");
+        sb.append("labelConditions=").append(String.valueOf(this.labelConditions));
+        sb.append(", associationCount=").append(String.valueOf(this.associationCount));
+        sb.append(", associationEntity=").append(String.valueOf(this.associationEntity));
+        sb.append(", dataFilterDefinitions=").append(String.valueOf(this.dataFilterDefinitions));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
+        sb.append(", extendedFieldDefinitions=")
+                .append(String.valueOf(this.extendedFieldDefinitions));
+        sb.append(", isForCloud=").append(String.valueOf(this.isForCloud));
+        sb.append(", labels=").append(String.valueOf(this.labels));
+        sb.append(", metricDefinitions=").append(String.valueOf(this.metricDefinitions));
+        sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append(", oobParsers=").append(String.valueOf(this.oobParsers));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", patternCount=").append(String.valueOf(this.patternCount));
+        sb.append(", patterns=").append(String.valueOf(this.patterns));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", editVersion=").append(String.valueOf(this.editVersion));
+        sb.append(", functions=").append(String.valueOf(this.functions));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", isSecureContent=").append(String.valueOf(this.isSecureContent));
+        sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", parsers=").append(String.valueOf(this.parsers));
+        sb.append(", isAutoAssociationEnabled=")
+                .append(String.valueOf(this.isAutoAssociationEnabled));
+        sb.append(", isAutoAssociationOverride=")
+                .append(String.valueOf(this.isAutoAssociationOverride));
+        sb.append(", ruleId=").append(String.valueOf(this.ruleId));
+        sb.append(", typeName=").append(String.valueOf(this.typeName));
+        sb.append(", typeDisplayName=").append(String.valueOf(this.typeDisplayName));
+        sb.append(", warningConfig=").append(String.valueOf(this.warningConfig));
+        sb.append(", metadataFields=").append(String.valueOf(this.metadataFields));
+        sb.append(", labelDefinitions=").append(String.valueOf(this.labelDefinitions));
+        sb.append(", entityTypes=").append(String.valueOf(this.entityTypes));
+        sb.append(", isTimezoneOverride=").append(String.valueOf(this.isTimezoneOverride));
+        sb.append(", userParsers=").append(String.valueOf(this.userParsers));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", eventTypes=").append(String.valueOf(this.eventTypes));
+        sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsSource)) {
+            return false;
+        }
+
+        LogAnalyticsSource other = (LogAnalyticsSource) o;
+        return java.util.Objects.equals(this.labelConditions, other.labelConditions)
+                && java.util.Objects.equals(this.associationCount, other.associationCount)
+                && java.util.Objects.equals(this.associationEntity, other.associationEntity)
+                && java.util.Objects.equals(this.dataFilterDefinitions, other.dataFilterDefinitions)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
+                && java.util.Objects.equals(
+                        this.extendedFieldDefinitions, other.extendedFieldDefinitions)
+                && java.util.Objects.equals(this.isForCloud, other.isForCloud)
+                && java.util.Objects.equals(this.labels, other.labels)
+                && java.util.Objects.equals(this.metricDefinitions, other.metricDefinitions)
+                && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.oobParsers, other.oobParsers)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.patternCount, other.patternCount)
+                && java.util.Objects.equals(this.patterns, other.patterns)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.editVersion, other.editVersion)
+                && java.util.Objects.equals(this.functions, other.functions)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.isSecureContent, other.isSecureContent)
+                && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.parsers, other.parsers)
+                && java.util.Objects.equals(
+                        this.isAutoAssociationEnabled, other.isAutoAssociationEnabled)
+                && java.util.Objects.equals(
+                        this.isAutoAssociationOverride, other.isAutoAssociationOverride)
+                && java.util.Objects.equals(this.ruleId, other.ruleId)
+                && java.util.Objects.equals(this.typeName, other.typeName)
+                && java.util.Objects.equals(this.typeDisplayName, other.typeDisplayName)
+                && java.util.Objects.equals(this.warningConfig, other.warningConfig)
+                && java.util.Objects.equals(this.metadataFields, other.metadataFields)
+                && java.util.Objects.equals(this.labelDefinitions, other.labelDefinitions)
+                && java.util.Objects.equals(this.entityTypes, other.entityTypes)
+                && java.util.Objects.equals(this.isTimezoneOverride, other.isTimezoneOverride)
+                && java.util.Objects.equals(this.userParsers, other.userParsers)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.eventTypes, other.eventTypes)
+                && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.labelConditions == null ? 43 : this.labelConditions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associationCount == null ? 43 : this.associationCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associationEntity == null ? 43 : this.associationEntity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataFilterDefinitions == null
+                                ? 43
+                                : this.dataFilterDefinitions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedFieldDefinitions == null
+                                ? 43
+                                : this.extendedFieldDefinitions.hashCode());
+        result = (result * PRIME) + (this.isForCloud == null ? 43 : this.isForCloud.hashCode());
+        result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metricDefinitions == null ? 43 : this.metricDefinitions.hashCode());
+        result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result = (result * PRIME) + (this.oobParsers == null ? 43 : this.oobParsers.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.patternCount == null ? 43 : this.patternCount.hashCode());
+        result = (result * PRIME) + (this.patterns == null ? 43 : this.patterns.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.editVersion == null ? 43 : this.editVersion.hashCode());
+        result = (result * PRIME) + (this.functions == null ? 43 : this.functions.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSecureContent == null ? 43 : this.isSecureContent.hashCode());
+        result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result = (result * PRIME) + (this.parsers == null ? 43 : this.parsers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoAssociationEnabled == null
+                                ? 43
+                                : this.isAutoAssociationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoAssociationOverride == null
+                                ? 43
+                                : this.isAutoAssociationOverride.hashCode());
+        result = (result * PRIME) + (this.ruleId == null ? 43 : this.ruleId.hashCode());
+        result = (result * PRIME) + (this.typeName == null ? 43 : this.typeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.typeDisplayName == null ? 43 : this.typeDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.warningConfig == null ? 43 : this.warningConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metadataFields == null ? 43 : this.metadataFields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.labelDefinitions == null ? 43 : this.labelDefinitions.hashCode());
+        result = (result * PRIME) + (this.entityTypes == null ? 43 : this.entityTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isTimezoneOverride == null
+                                ? 43
+                                : this.isTimezoneOverride.hashCode());
+        result = (result * PRIME) + (this.userParsers == null ? 43 : this.userParsers.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.eventTypes == null ? 43 : this.eventTypes.hashCode());
+        result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

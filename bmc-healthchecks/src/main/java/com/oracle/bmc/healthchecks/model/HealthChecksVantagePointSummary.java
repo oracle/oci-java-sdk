@@ -15,16 +15,28 @@ package com.oracle.bmc.healthchecks.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HealthChecksVantagePointSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HealthChecksVantagePointSummary {
+public final class HealthChecksVantagePointSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"displayName", "providerName", "name", "geo", "routing"})
+    public HealthChecksVantagePointSummary(
+            String displayName,
+            String providerName,
+            String name,
+            Geolocation geo,
+            java.util.List<Routing> routing) {
+        super();
+        this.displayName = displayName;
+        this.providerName = providerName;
+        this.name = name;
+        this.geo = geo;
+        this.routing = routing;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -103,13 +115,21 @@ public class HealthChecksVantagePointSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The display name for the vantage point. Display names are determined by
      * the best information available and may change over time.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The organization on whose infrastructure this vantage point resides.
@@ -118,16 +138,28 @@ public class HealthChecksVantagePointSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
-    String providerName;
+    private final String providerName;
+
+    public String getProviderName() {
+        return providerName;
+    }
 
     /**
      * The unique, permanent name for the vantage point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("geo")
-    Geolocation geo;
+    private final Geolocation geo;
+
+    public Geolocation getGeo() {
+        return geo;
+    }
 
     /**
      * An array of objects that describe how traffic to this vantage point is
@@ -143,8 +175,63 @@ public class HealthChecksVantagePointSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
-    java.util.List<Routing> routing;
+    private final java.util.List<Routing> routing;
+
+    public java.util.List<Routing> getRouting() {
+        return routing;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HealthChecksVantagePointSummary(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", providerName=").append(String.valueOf(this.providerName));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", geo=").append(String.valueOf(this.geo));
+        sb.append(", routing=").append(String.valueOf(this.routing));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HealthChecksVantagePointSummary)) {
+            return false;
+        }
+
+        HealthChecksVantagePointSummary other = (HealthChecksVantagePointSummary) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.providerName, other.providerName)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.geo, other.geo)
+                && java.util.Objects.equals(this.routing, other.routing)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.providerName == null ? 43 : this.providerName.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.geo == null ? 43 : this.geo.hashCode());
+        result = (result * PRIME) + (this.routing == null ? 43 : this.routing.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

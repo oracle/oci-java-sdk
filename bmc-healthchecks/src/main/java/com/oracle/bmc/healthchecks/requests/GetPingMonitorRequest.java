@@ -9,14 +9,6 @@ import com.oracle.bmc.healthchecks.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/GetPingMonitorExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPingMonitorRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,6 +16,9 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String monitorId;
 
+    public String getMonitorId() {
+        return monitorId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -31,6 +26,9 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The {@code If-None-Match} header field makes the request method conditional on
      * the absence of any current representation of the target resource, when
@@ -40,12 +38,55 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String ifNoneMatch;
 
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetPingMonitorRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String monitorId = null;
+
+        /**
+         * The OCID of a monitor.
+         * @return this builder instance
+         */
+        public Builder monitorId(String monitorId) {
+            this.monitorId = monitorId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifNoneMatch = null;
+
+        /**
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -99,5 +140,74 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetPingMonitorRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetPingMonitorRequest
+         */
+        public GetPingMonitorRequest buildWithoutInvocationCallback() {
+            GetPingMonitorRequest request = new GetPingMonitorRequest();
+            request.monitorId = monitorId;
+            request.opcRequestId = opcRequestId;
+            request.ifNoneMatch = ifNoneMatch;
+            return request;
+            // new GetPingMonitorRequest(monitorId, opcRequestId, ifNoneMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .monitorId(monitorId)
+                .opcRequestId(opcRequestId)
+                .ifNoneMatch(ifNoneMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",monitorId=").append(String.valueOf(this.monitorId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetPingMonitorRequest)) {
+            return false;
+        }
+
+        GetPingMonitorRequest other = (GetPingMonitorRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.monitorId, other.monitorId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.monitorId == null ? 43 : this.monitorId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
+        return result;
     }
 }

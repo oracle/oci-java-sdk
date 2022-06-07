@@ -9,14 +9,6 @@ import com.oracle.bmc.resourcemanager.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateConfigurationSourceProviderExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConfigurationSourceProviderRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateConfigurationSourceProviderRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails> {
@@ -27,6 +19,9 @@ public class UpdateConfigurationSourceProviderRequest
      */
     private String configurationSourceProviderId;
 
+    public String getConfigurationSourceProviderId() {
+        return configurationSourceProviderId;
+    }
     /**
      * Updated information provided for the ConfigurationSourceProvider.
      *
@@ -34,6 +29,10 @@ public class UpdateConfigurationSourceProviderRequest
     private com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
             updateConfigurationSourceProviderDetails;
 
+    public com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
+            getUpdateConfigurationSourceProviderDetails() {
+        return updateConfigurationSourceProviderDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -41,6 +40,9 @@ public class UpdateConfigurationSourceProviderRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
      * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
@@ -48,6 +50,10 @@ public class UpdateConfigurationSourceProviderRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -67,6 +73,61 @@ public class UpdateConfigurationSourceProviderRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String configurationSourceProviderId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
+         *
+         * @return this builder instance
+         */
+        public Builder configurationSourceProviderId(String configurationSourceProviderId) {
+            this.configurationSourceProviderId = configurationSourceProviderId;
+            return this;
+        }
+
+        private com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
+                updateConfigurationSourceProviderDetails = null;
+
+        /**
+         * Updated information provided for the ConfigurationSourceProvider.
+         *
+         * @return this builder instance
+         */
+        public Builder updateConfigurationSourceProviderDetails(
+                com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
+                        updateConfigurationSourceProviderDetails) {
+            this.updateConfigurationSourceProviderDetails =
+                    updateConfigurationSourceProviderDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -135,5 +196,95 @@ public class UpdateConfigurationSourceProviderRequest
             updateConfigurationSourceProviderDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateConfigurationSourceProviderRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateConfigurationSourceProviderRequest
+         */
+        public UpdateConfigurationSourceProviderRequest buildWithoutInvocationCallback() {
+            UpdateConfigurationSourceProviderRequest request =
+                    new UpdateConfigurationSourceProviderRequest();
+            request.configurationSourceProviderId = configurationSourceProviderId;
+            request.updateConfigurationSourceProviderDetails =
+                    updateConfigurationSourceProviderDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new UpdateConfigurationSourceProviderRequest(configurationSourceProviderId, updateConfigurationSourceProviderDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .configurationSourceProviderId(configurationSourceProviderId)
+                .updateConfigurationSourceProviderDetails(updateConfigurationSourceProviderDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",configurationSourceProviderId=")
+                .append(String.valueOf(this.configurationSourceProviderId));
+        sb.append(",updateConfigurationSourceProviderDetails=")
+                .append(String.valueOf(this.updateConfigurationSourceProviderDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateConfigurationSourceProviderRequest)) {
+            return false;
+        }
+
+        UpdateConfigurationSourceProviderRequest other =
+                (UpdateConfigurationSourceProviderRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.configurationSourceProviderId, other.configurationSourceProviderId)
+                && java.util.Objects.equals(
+                        this.updateConfigurationSourceProviderDetails,
+                        other.updateConfigurationSourceProviderDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.configurationSourceProviderId == null
+                                ? 43
+                                : this.configurationSourceProviderId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateConfigurationSourceProviderDetails == null
+                                ? 43
+                                : this.updateConfigurationSourceProviderDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

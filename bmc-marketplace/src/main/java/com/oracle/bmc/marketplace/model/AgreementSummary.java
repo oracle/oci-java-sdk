@@ -15,14 +15,20 @@ package com.oracle.bmc.marketplace.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AgreementSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AgreementSummary {
+public final class AgreementSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "contentUrl", "author", "prompt"})
+    public AgreementSummary(String id, String contentUrl, Author author, String prompt) {
+        super();
+        this.id = id;
+        this.contentUrl = contentUrl;
+        this.author = author;
+        this.prompt = prompt;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -89,21 +95,33 @@ public class AgreementSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique identifier for the agreement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The content URL of the agreement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
-    String contentUrl;
+    private final String contentUrl;
+
+    public String getContentUrl() {
+        return contentUrl;
+    }
+
     /**
      * Who authored the agreement.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Author {
         Oracle("ORACLE"),
         Partner("PARTNER"),
@@ -114,6 +132,8 @@ public class AgreementSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Author.class);
 
         private final String value;
         private static java.util.Map<String, Author> map;
@@ -151,14 +171,70 @@ public class AgreementSummary {
      * Who authored the agreement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("author")
-    Author author;
+    private final Author author;
+
+    public Author getAuthor() {
+        return author;
+    }
 
     /**
      * Textual prompt to read and accept the agreement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prompt")
-    String prompt;
+    private final String prompt;
+
+    public String getPrompt() {
+        return prompt;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AgreementSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", contentUrl=").append(String.valueOf(this.contentUrl));
+        sb.append(", author=").append(String.valueOf(this.author));
+        sb.append(", prompt=").append(String.valueOf(this.prompt));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AgreementSummary)) {
+            return false;
+        }
+
+        AgreementSummary other = (AgreementSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.contentUrl, other.contentUrl)
+                && java.util.Objects.equals(this.author, other.author)
+                && java.util.Objects.equals(this.prompt, other.prompt)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.contentUrl == null ? 43 : this.contentUrl.hashCode());
+        result = (result * PRIME) + (this.author == null ? 43 : this.author.hashCode());
+        result = (result * PRIME) + (this.prompt == null ? 43 : this.prompt.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

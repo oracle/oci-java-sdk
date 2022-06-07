@@ -15,14 +15,101 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AttributeSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AttributeSummary {
+public final class AttributeSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "displayName",
+        "businessName",
+        "description",
+        "entityKey",
+        "externalKey",
+        "length",
+        "position",
+        "precision",
+        "scale",
+        "isNullable",
+        "uri",
+        "lifecycleState",
+        "timeCreated",
+        "externalDataType",
+        "typeKey",
+        "minCollectionCount",
+        "maxCollectionCount",
+        "datatypeEntityKey",
+        "externalDatatypeEntityKey",
+        "parentAttributeKey",
+        "externalParentAttributeKey",
+        "path",
+        "customPropertyMembers",
+        "associatedRuleTypes",
+        "isDerivedAttribute",
+        "timeUpdated",
+        "properties"
+    })
+    public AttributeSummary(
+            String key,
+            String displayName,
+            String businessName,
+            String description,
+            String entityKey,
+            String externalKey,
+            Long length,
+            Integer position,
+            Integer precision,
+            Integer scale,
+            Boolean isNullable,
+            String uri,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            String externalDataType,
+            String typeKey,
+            Integer minCollectionCount,
+            Integer maxCollectionCount,
+            String datatypeEntityKey,
+            String externalDatatypeEntityKey,
+            String parentAttributeKey,
+            String externalParentAttributeKey,
+            String path,
+            java.util.List<CustomPropertyGetUsage> customPropertyMembers,
+            java.util.List<RuleType> associatedRuleTypes,
+            Boolean isDerivedAttribute,
+            java.util.Date timeUpdated,
+            java.util.Map<String, java.util.Map<String, String>> properties) {
+        super();
+        this.key = key;
+        this.displayName = displayName;
+        this.businessName = businessName;
+        this.description = description;
+        this.entityKey = entityKey;
+        this.externalKey = externalKey;
+        this.length = length;
+        this.position = position;
+        this.precision = precision;
+        this.scale = scale;
+        this.isNullable = isNullable;
+        this.uri = uri;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.externalDataType = externalDataType;
+        this.typeKey = typeKey;
+        this.minCollectionCount = minCollectionCount;
+        this.maxCollectionCount = maxCollectionCount;
+        this.datatypeEntityKey = datatypeEntityKey;
+        this.externalDatatypeEntityKey = externalDatatypeEntityKey;
+        this.parentAttributeKey = parentAttributeKey;
+        this.externalParentAttributeKey = externalParentAttributeKey;
+        this.path = path;
+        this.customPropertyMembers = customPropertyMembers;
+        this.associatedRuleTypes = associatedRuleTypes;
+        this.isDerivedAttribute = isDerivedAttribute;
+        this.timeUpdated = timeUpdated;
+        this.properties = properties;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -359,11 +446,19 @@ public class AttributeSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique attribute key that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
@@ -371,73 +466,121 @@ public class AttributeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Optional user friendly business name of the attribute. If set, this supplements the harvested display name of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("businessName")
-    String businessName;
+    private final String businessName;
+
+    public String getBusinessName() {
+        return businessName;
+    }
 
     /**
      * Detailed description of the attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The unique key of the parent entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityKey")
-    String entityKey;
+    private final String entityKey;
+
+    public String getEntityKey() {
+        return entityKey;
+    }
 
     /**
      * Unique external key of this attribute in the external source system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
-    String externalKey;
+    private final String externalKey;
+
+    public String getExternalKey() {
+        return externalKey;
+    }
 
     /**
      * Max allowed length of the attribute value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
-    Long length;
+    private final Long length;
+
+    public Long getLength() {
+        return length;
+    }
 
     /**
      * Position of the attribute in the record definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
-    Integer position;
+    private final Integer position;
+
+    public Integer getPosition() {
+        return position;
+    }
 
     /**
      * Precision of the attribute value usually applies to float data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("precision")
-    Integer precision;
+    private final Integer precision;
+
+    public Integer getPrecision() {
+        return precision;
+    }
 
     /**
      * Scale of the attribute value usually applies to float data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scale")
-    Integer scale;
+    private final Integer scale;
+
+    public Integer getScale() {
+        return scale;
+    }
 
     /**
      * Property that identifies if this attribute can be assigned null values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNullable")
-    Boolean isNullable;
+    private final Boolean isNullable;
+
+    public Boolean getIsNullable() {
+        return isNullable;
+    }
 
     /**
      * URI to the attribute instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
 
     /**
      * State of the attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the attribute was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -445,25 +588,41 @@ public class AttributeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * Data type of the attribute as defined in the external source system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDataType")
-    String externalDataType;
+    private final String externalDataType;
+
+    public String getExternalDataType() {
+        return externalDataType;
+    }
 
     /**
      * The type of the attribute. Type keys can be found via the '/types' endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
-    String typeKey;
+    private final String typeKey;
+
+    public String getTypeKey() {
+        return typeKey;
+    }
 
     /**
      * The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minCollectionCount")
-    Integer minCollectionCount;
+    private final Integer minCollectionCount;
+
+    public Integer getMinCollectionCount() {
+        return minCollectionCount;
+    }
 
     /**
      * The maximum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
@@ -472,62 +631,102 @@ public class AttributeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxCollectionCount")
-    Integer maxCollectionCount;
+    private final Integer maxCollectionCount;
+
+    public Integer getMaxCollectionCount() {
+        return maxCollectionCount;
+    }
 
     /**
      * Entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datatypeEntityKey")
-    String datatypeEntityKey;
+    private final String datatypeEntityKey;
+
+    public String getDatatypeEntityKey() {
+        return datatypeEntityKey;
+    }
 
     /**
      * External entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDatatypeEntityKey")
-    String externalDatatypeEntityKey;
+    private final String externalDatatypeEntityKey;
+
+    public String getExternalDatatypeEntityKey() {
+        return externalDatatypeEntityKey;
+    }
 
     /**
      * Attribute key that represents the parent attribute of this attribute , applicable if the parent attribute is of complex datatype.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentAttributeKey")
-    String parentAttributeKey;
+    private final String parentAttributeKey;
+
+    public String getParentAttributeKey() {
+        return parentAttributeKey;
+    }
 
     /**
      * External attribute key that represents the parent attribute  of this attribute , applicable if the parent attribute is of complex type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalParentAttributeKey")
-    String externalParentAttributeKey;
+    private final String externalParentAttributeKey;
+
+    public String getExternalParentAttributeKey() {
+        return externalParentAttributeKey;
+    }
 
     /**
      * Full path of the attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * The list of customized properties along with the values for this object
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
-    java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+    private final java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+    public java.util.List<CustomPropertyGetUsage> getCustomPropertyMembers() {
+        return customPropertyMembers;
+    }
 
     /**
      * Rule types associated with attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedRuleTypes")
-    java.util.List<RuleType> associatedRuleTypes;
+    private final java.util.List<RuleType> associatedRuleTypes;
+
+    public java.util.List<RuleType> getAssociatedRuleTypes() {
+        return associatedRuleTypes;
+    }
 
     /**
      * Whether a column is derived or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDerivedAttribute")
-    Boolean isDerivedAttribute;
+    private final Boolean isDerivedAttribute;
+
+    public Boolean getIsDerivedAttribute() {
+        return isDerivedAttribute;
+    }
 
     /**
      * The last time that any change was made to the attribute. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * A map of maps that contains the properties which are specific to the attribute type. Each attribute type
@@ -538,8 +737,174 @@ public class AttributeSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.Map<String, java.util.Map<String, String>> properties;
+    private final java.util.Map<String, java.util.Map<String, String>> properties;
+
+    public java.util.Map<String, java.util.Map<String, String>> getProperties() {
+        return properties;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AttributeSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", businessName=").append(String.valueOf(this.businessName));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", entityKey=").append(String.valueOf(this.entityKey));
+        sb.append(", externalKey=").append(String.valueOf(this.externalKey));
+        sb.append(", length=").append(String.valueOf(this.length));
+        sb.append(", position=").append(String.valueOf(this.position));
+        sb.append(", precision=").append(String.valueOf(this.precision));
+        sb.append(", scale=").append(String.valueOf(this.scale));
+        sb.append(", isNullable=").append(String.valueOf(this.isNullable));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", externalDataType=").append(String.valueOf(this.externalDataType));
+        sb.append(", typeKey=").append(String.valueOf(this.typeKey));
+        sb.append(", minCollectionCount=").append(String.valueOf(this.minCollectionCount));
+        sb.append(", maxCollectionCount=").append(String.valueOf(this.maxCollectionCount));
+        sb.append(", datatypeEntityKey=").append(String.valueOf(this.datatypeEntityKey));
+        sb.append(", externalDatatypeEntityKey=")
+                .append(String.valueOf(this.externalDatatypeEntityKey));
+        sb.append(", parentAttributeKey=").append(String.valueOf(this.parentAttributeKey));
+        sb.append(", externalParentAttributeKey=")
+                .append(String.valueOf(this.externalParentAttributeKey));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", customPropertyMembers=").append(String.valueOf(this.customPropertyMembers));
+        sb.append(", associatedRuleTypes=").append(String.valueOf(this.associatedRuleTypes));
+        sb.append(", isDerivedAttribute=").append(String.valueOf(this.isDerivedAttribute));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AttributeSummary)) {
+            return false;
+        }
+
+        AttributeSummary other = (AttributeSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.businessName, other.businessName)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.entityKey, other.entityKey)
+                && java.util.Objects.equals(this.externalKey, other.externalKey)
+                && java.util.Objects.equals(this.length, other.length)
+                && java.util.Objects.equals(this.position, other.position)
+                && java.util.Objects.equals(this.precision, other.precision)
+                && java.util.Objects.equals(this.scale, other.scale)
+                && java.util.Objects.equals(this.isNullable, other.isNullable)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.externalDataType, other.externalDataType)
+                && java.util.Objects.equals(this.typeKey, other.typeKey)
+                && java.util.Objects.equals(this.minCollectionCount, other.minCollectionCount)
+                && java.util.Objects.equals(this.maxCollectionCount, other.maxCollectionCount)
+                && java.util.Objects.equals(this.datatypeEntityKey, other.datatypeEntityKey)
+                && java.util.Objects.equals(
+                        this.externalDatatypeEntityKey, other.externalDatatypeEntityKey)
+                && java.util.Objects.equals(this.parentAttributeKey, other.parentAttributeKey)
+                && java.util.Objects.equals(
+                        this.externalParentAttributeKey, other.externalParentAttributeKey)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.customPropertyMembers, other.customPropertyMembers)
+                && java.util.Objects.equals(this.associatedRuleTypes, other.associatedRuleTypes)
+                && java.util.Objects.equals(this.isDerivedAttribute, other.isDerivedAttribute)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.businessName == null ? 43 : this.businessName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.entityKey == null ? 43 : this.entityKey.hashCode());
+        result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
+        result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
+        result = (result * PRIME) + (this.position == null ? 43 : this.position.hashCode());
+        result = (result * PRIME) + (this.precision == null ? 43 : this.precision.hashCode());
+        result = (result * PRIME) + (this.scale == null ? 43 : this.scale.hashCode());
+        result = (result * PRIME) + (this.isNullable == null ? 43 : this.isNullable.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalDataType == null ? 43 : this.externalDataType.hashCode());
+        result = (result * PRIME) + (this.typeKey == null ? 43 : this.typeKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minCollectionCount == null
+                                ? 43
+                                : this.minCollectionCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxCollectionCount == null
+                                ? 43
+                                : this.maxCollectionCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.datatypeEntityKey == null ? 43 : this.datatypeEntityKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalDatatypeEntityKey == null
+                                ? 43
+                                : this.externalDatatypeEntityKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentAttributeKey == null
+                                ? 43
+                                : this.parentAttributeKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalParentAttributeKey == null
+                                ? 43
+                                : this.externalParentAttributeKey.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customPropertyMembers == null
+                                ? 43
+                                : this.customPropertyMembers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedRuleTypes == null
+                                ? 43
+                                : this.associatedRuleTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDerivedAttribute == null
+                                ? 43
+                                : this.isDerivedAttribute.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

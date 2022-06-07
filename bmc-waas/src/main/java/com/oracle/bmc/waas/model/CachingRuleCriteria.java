@@ -15,16 +15,20 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CachingRuleCriteria.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CachingRuleCriteria {
+public final class CachingRuleCriteria {
+    @Deprecated
+    @java.beans.ConstructorProperties({"condition", "value"})
+    public CachingRuleCriteria(Condition condition, String value) {
+        super();
+        this.condition = condition;
+        this.value = value;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private Condition condition;
@@ -69,6 +73,10 @@ public class CachingRuleCriteria {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The condition of the caching rule criteria.
      * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the {@code value} field.
@@ -81,7 +89,6 @@ public class CachingRuleCriteria {
      * <p>
      * URLs must start with a {@code /}. URLs can't contain restricted double slashes {@code //}. URLs can't contain the restricted {@code '} {@code &} {@code ?} symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Condition {
         UrlIs("URL_IS"),
         UrlStartsWith("URL_STARTS_WITH"),
@@ -93,6 +100,9 @@ public class CachingRuleCriteria {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Condition.class);
 
         private final String value;
         private static java.util.Map<String, Condition> map;
@@ -139,14 +149,64 @@ public class CachingRuleCriteria {
      * URLs must start with a {@code /}. URLs can't contain restricted double slashes {@code //}. URLs can't contain the restricted {@code '} {@code &} {@code ?} symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
-    Condition condition;
+    private final Condition condition;
+
+    public Condition getCondition() {
+        return condition;
+    }
 
     /**
      * The value of the caching rule criteria.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CachingRuleCriteria(");
+        sb.append("condition=").append(String.valueOf(this.condition));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CachingRuleCriteria)) {
+            return false;
+        }
+
+        CachingRuleCriteria other = (CachingRuleCriteria) o;
+        return java.util.Objects.equals(this.condition, other.condition)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

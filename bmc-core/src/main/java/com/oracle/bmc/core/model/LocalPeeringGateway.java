@@ -24,16 +24,64 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LocalPeeringGateway.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LocalPeeringGateway {
+public final class LocalPeeringGateway {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "id",
+        "isCrossTenancyPeering",
+        "lifecycleState",
+        "peerAdvertisedCidr",
+        "peerAdvertisedCidrDetails",
+        "peeringStatus",
+        "peeringStatusDetails",
+        "peerId",
+        "routeTableId",
+        "timeCreated",
+        "vcnId"
+    })
+    public LocalPeeringGateway(
+            String compartmentId,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            java.util.Map<String, String> freeformTags,
+            String id,
+            Boolean isCrossTenancyPeering,
+            LifecycleState lifecycleState,
+            String peerAdvertisedCidr,
+            java.util.List<String> peerAdvertisedCidrDetails,
+            PeeringStatus peeringStatus,
+            String peeringStatusDetails,
+            String peerId,
+            String routeTableId,
+            java.util.Date timeCreated,
+            String vcnId) {
+        super();
+        this.compartmentId = compartmentId;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.freeformTags = freeformTags;
+        this.id = id;
+        this.isCrossTenancyPeering = isCrossTenancyPeering;
+        this.lifecycleState = lifecycleState;
+        this.peerAdvertisedCidr = peerAdvertisedCidr;
+        this.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
+        this.peeringStatus = peeringStatus;
+        this.peeringStatusDetails = peeringStatusDetails;
+        this.peerId = peerId;
+        this.routeTableId = routeTableId;
+        this.timeCreated = timeCreated;
+        this.vcnId = vcnId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -227,11 +275,19 @@ public class LocalPeeringGateway {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the LPG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -241,7 +297,11 @@ public class LocalPeeringGateway {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -249,7 +309,11 @@ public class LocalPeeringGateway {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -259,13 +323,21 @@ public class LocalPeeringGateway {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Whether the VCN at the other end of the peering is in a different tenancy.
@@ -274,11 +346,15 @@ public class LocalPeeringGateway {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCrossTenancyPeering")
-    Boolean isCrossTenancyPeering;
+    private final Boolean isCrossTenancyPeering;
+
+    public Boolean getIsCrossTenancyPeering() {
+        return isCrossTenancyPeering;
+    }
+
     /**
      * The LPG's current lifecycle state.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -290,6 +366,9 @@ public class LocalPeeringGateway {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -327,7 +406,11 @@ public class LocalPeeringGateway {
      * The LPG's current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN
@@ -338,7 +421,11 @@ public class LocalPeeringGateway {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidr")
-    String peerAdvertisedCidr;
+    private final String peerAdvertisedCidr;
+
+    public String getPeerAdvertisedCidr() {
+        return peerAdvertisedCidr;
+    }
 
     /**
      * The specific ranges of IP addresses available on or via the VCN at the other
@@ -350,14 +437,18 @@ public class LocalPeeringGateway {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidrDetails")
-    java.util.List<String> peerAdvertisedCidrDetails;
+    private final java.util.List<String> peerAdvertisedCidrDetails;
+
+    public java.util.List<String> getPeerAdvertisedCidrDetails() {
+        return peerAdvertisedCidrDetails;
+    }
+
     /**
      * Whether the LPG is peered with another LPG. {@code NEW} means the LPG has not yet been
      * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the
      * LPG at the other end of the peering has been deleted.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PeeringStatus {
         Invalid("INVALID"),
         New("NEW"),
@@ -370,6 +461,9 @@ public class LocalPeeringGateway {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PeeringStatus.class);
 
         private final String value;
         private static java.util.Map<String, PeeringStatus> map;
@@ -410,19 +504,31 @@ public class LocalPeeringGateway {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peeringStatus")
-    PeeringStatus peeringStatus;
+    private final PeeringStatus peeringStatus;
+
+    public PeeringStatus getPeeringStatus() {
+        return peeringStatus;
+    }
 
     /**
      * Additional information regarding the peering status, if applicable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peeringStatusDetails")
-    String peeringStatusDetails;
+    private final String peeringStatusDetails;
+
+    public String getPeeringStatusDetails() {
+        return peeringStatusDetails;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peered LPG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
-    String peerId;
+    private final String peerId;
+
+    public String getPeerId() {
+        return peerId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
@@ -432,7 +538,11 @@ public class LocalPeeringGateway {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    String routeTableId;
+    private final String routeTableId;
+
+    public String getRouteTableId() {
+        return routeTableId;
+    }
 
     /**
      * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -441,14 +551,127 @@ public class LocalPeeringGateway {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that uses the LPG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    String vcnId;
+    private final String vcnId;
+
+    public String getVcnId() {
+        return vcnId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LocalPeeringGateway(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", isCrossTenancyPeering=").append(String.valueOf(this.isCrossTenancyPeering));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", peerAdvertisedCidr=").append(String.valueOf(this.peerAdvertisedCidr));
+        sb.append(", peerAdvertisedCidrDetails=")
+                .append(String.valueOf(this.peerAdvertisedCidrDetails));
+        sb.append(", peeringStatus=").append(String.valueOf(this.peeringStatus));
+        sb.append(", peeringStatusDetails=").append(String.valueOf(this.peeringStatusDetails));
+        sb.append(", peerId=").append(String.valueOf(this.peerId));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LocalPeeringGateway)) {
+            return false;
+        }
+
+        LocalPeeringGateway other = (LocalPeeringGateway) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.isCrossTenancyPeering, other.isCrossTenancyPeering)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.peerAdvertisedCidr, other.peerAdvertisedCidr)
+                && java.util.Objects.equals(
+                        this.peerAdvertisedCidrDetails, other.peerAdvertisedCidrDetails)
+                && java.util.Objects.equals(this.peeringStatus, other.peeringStatus)
+                && java.util.Objects.equals(this.peeringStatusDetails, other.peeringStatusDetails)
+                && java.util.Objects.equals(this.peerId, other.peerId)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCrossTenancyPeering == null
+                                ? 43
+                                : this.isCrossTenancyPeering.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAdvertisedCidr == null
+                                ? 43
+                                : this.peerAdvertisedCidr.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAdvertisedCidrDetails == null
+                                ? 43
+                                : this.peerAdvertisedCidrDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peeringStatus == null ? 43 : this.peeringStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peeringStatusDetails == null
+                                ? 43
+                                : this.peeringStatusDetails.hashCode());
+        result = (result * PRIME) + (this.peerId == null ? 43 : this.peerId.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

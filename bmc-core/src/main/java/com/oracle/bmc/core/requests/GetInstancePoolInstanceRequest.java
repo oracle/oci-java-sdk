@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetInstancePoolInstanceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetInstancePoolInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,10 +17,17 @@ public class GetInstancePoolInstanceRequest
      */
     private String instancePoolId;
 
+    public String getInstancePoolId() {
+        return instancePoolId;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
     private String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -36,6 +35,28 @@ public class GetInstancePoolInstanceRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String instancePoolId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         * @return this builder instance
+         */
+        public Builder instancePoolId(String instancePoolId) {
+            this.instancePoolId = instancePoolId;
+            return this;
+        }
+
+        private String instanceId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         * @return this builder instance
+         */
+        public Builder instanceId(String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -88,5 +109,69 @@ public class GetInstancePoolInstanceRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetInstancePoolInstanceRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetInstancePoolInstanceRequest
+         */
+        public GetInstancePoolInstanceRequest buildWithoutInvocationCallback() {
+            GetInstancePoolInstanceRequest request = new GetInstancePoolInstanceRequest();
+            request.instancePoolId = instancePoolId;
+            request.instanceId = instanceId;
+            return request;
+            // new GetInstancePoolInstanceRequest(instancePoolId, instanceId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().instancePoolId(instancePoolId).instanceId(instanceId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",instancePoolId=").append(String.valueOf(this.instancePoolId));
+        sb.append(",instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetInstancePoolInstanceRequest)) {
+            return false;
+        }
+
+        GetInstancePoolInstanceRequest other = (GetInstancePoolInstanceRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.instancePoolId, other.instancePoolId)
+                && java.util.Objects.equals(this.instanceId, other.instanceId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.instancePoolId == null ? 43 : this.instancePoolId.hashCode());
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        return result;
     }
 }

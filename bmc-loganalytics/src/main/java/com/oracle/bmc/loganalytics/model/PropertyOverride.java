@@ -18,14 +18,21 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PropertyOverride.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PropertyOverride {
+public final class PropertyOverride {
+    @Deprecated
+    @java.beans.ConstructorProperties({"matchType", "matchValue", "propertyName", "propertyValue"})
+    public PropertyOverride(
+            String matchType, String matchValue, String propertyName, String propertyValue) {
+        super();
+        this.matchType = matchType;
+        this.matchValue = matchValue;
+        this.propertyName = propertyName;
+        this.propertyValue = propertyValue;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("matchType")
         private String matchType;
@@ -93,32 +100,102 @@ public class PropertyOverride {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Match Type. Accepted values are: contains.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchType")
-    String matchType;
+    private final String matchType;
+
+    public String getMatchType() {
+        return matchType;
+    }
 
     /**
      * Match Value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchValue")
-    String matchValue;
+    private final String matchValue;
+
+    public String getMatchValue() {
+        return matchValue;
+    }
 
     /**
      * Property to override. Accepted values are: logSourceName, charEncoding.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("propertyName")
-    String propertyName;
+    private final String propertyName;
+
+    public String getPropertyName() {
+        return propertyName;
+    }
 
     /**
      * Value of the property.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("propertyValue")
-    String propertyValue;
+    private final String propertyValue;
+
+    public String getPropertyValue() {
+        return propertyValue;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PropertyOverride(");
+        sb.append("matchType=").append(String.valueOf(this.matchType));
+        sb.append(", matchValue=").append(String.valueOf(this.matchValue));
+        sb.append(", propertyName=").append(String.valueOf(this.propertyName));
+        sb.append(", propertyValue=").append(String.valueOf(this.propertyValue));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PropertyOverride)) {
+            return false;
+        }
+
+        PropertyOverride other = (PropertyOverride) o;
+        return java.util.Objects.equals(this.matchType, other.matchType)
+                && java.util.Objects.equals(this.matchValue, other.matchValue)
+                && java.util.Objects.equals(this.propertyName, other.propertyName)
+                && java.util.Objects.equals(this.propertyValue, other.propertyValue)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.matchType == null ? 43 : this.matchType.hashCode());
+        result = (result * PRIME) + (this.matchValue == null ? 43 : this.matchValue.hashCode());
+        result = (result * PRIME) + (this.propertyName == null ? 43 : this.propertyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.propertyValue == null ? 43 : this.propertyValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

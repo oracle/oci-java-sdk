@@ -7,6 +7,7 @@ package com.oracle.bmc.monitoring;
 import com.oracle.bmc.monitoring.internal.http.*;
 import com.oracle.bmc.monitoring.requests.*;
 import com.oracle.bmc.monitoring.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Monitoring service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.monitoring.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
-@lombok.extern.slf4j.Slf4j
 public class MonitoringAsyncClient implements MonitoringAsync {
     /**
      * Service instance for Monitoring.
@@ -34,7 +34,9 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                     .serviceEndpointTemplate("https://telemetry.{region}.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MonitoringAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -317,9 +319,13 @@ public class MonitoringAsyncClient implements MonitoringAsync {
          * @return the client
          */
         public MonitoringAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new MonitoringAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -329,6 +335,10 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

@@ -9,14 +9,6 @@ import com.oracle.bmc.databasemigration.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/AddMigrationObjectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddMigrationObjectsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class AddMigrationObjectsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemigration.model.MigrationObjectCollection> {
@@ -27,6 +19,9 @@ public class AddMigrationObjectsRequest
      */
     private String migrationId;
 
+    public String getMigrationId() {
+        return migrationId;
+    }
     /**
      * Arrays of object.
      *
@@ -34,6 +29,10 @@ public class AddMigrationObjectsRequest
     private com.oracle.bmc.databasemigration.model.MigrationObjectCollection
             addMigrationObjectsDetails;
 
+    public com.oracle.bmc.databasemigration.model.MigrationObjectCollection
+            getAddMigrationObjectsDetails() {
+        return addMigrationObjectsDetails;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -41,6 +40,9 @@ public class AddMigrationObjectsRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
@@ -50,6 +52,10 @@ public class AddMigrationObjectsRequest
      *
      */
     private String ifMatch;
+
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -68,6 +74,62 @@ public class AddMigrationObjectsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String migrationId = null;
+
+        /**
+         * The OCID of the migration
+         *
+         * @return this builder instance
+         */
+        public Builder migrationId(String migrationId) {
+            this.migrationId = migrationId;
+            return this;
+        }
+
+        private com.oracle.bmc.databasemigration.model.MigrationObjectCollection
+                addMigrationObjectsDetails = null;
+
+        /**
+         * Arrays of object.
+         *
+         * @return this builder instance
+         */
+        public Builder addMigrationObjectsDetails(
+                com.oracle.bmc.databasemigration.model.MigrationObjectCollection
+                        addMigrationObjectsDetails) {
+            this.addMigrationObjectsDetails = addMigrationObjectsDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -134,5 +196,85 @@ public class AddMigrationObjectsRequest
             addMigrationObjectsDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of AddMigrationObjectsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of AddMigrationObjectsRequest
+         */
+        public AddMigrationObjectsRequest buildWithoutInvocationCallback() {
+            AddMigrationObjectsRequest request = new AddMigrationObjectsRequest();
+            request.migrationId = migrationId;
+            request.addMigrationObjectsDetails = addMigrationObjectsDetails;
+            request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
+            return request;
+            // new AddMigrationObjectsRequest(migrationId, addMigrationObjectsDetails, opcRequestId, ifMatch);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .migrationId(migrationId)
+                .addMigrationObjectsDetails(addMigrationObjectsDetails)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",migrationId=").append(String.valueOf(this.migrationId));
+        sb.append(",addMigrationObjectsDetails=")
+                .append(String.valueOf(this.addMigrationObjectsDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AddMigrationObjectsRequest)) {
+            return false;
+        }
+
+        AddMigrationObjectsRequest other = (AddMigrationObjectsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.migrationId, other.migrationId)
+                && java.util.Objects.equals(
+                        this.addMigrationObjectsDetails, other.addMigrationObjectsDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.migrationId == null ? 43 : this.migrationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.addMigrationObjectsDetails == null
+                                ? 43
+                                : this.addMigrationObjectsDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        return result;
     }
 }

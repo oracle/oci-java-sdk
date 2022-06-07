@@ -7,10 +7,6 @@ package com.oracle.bmc.usageapi.responses;
 import com.oracle.bmc.usageapi.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class RequestSummarizedUsagesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -18,6 +14,10 @@ public class RequestSummarizedUsagesResponse extends com.oracle.bmc.responses.Bm
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -27,10 +27,18 @@ public class RequestSummarizedUsagesResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcNextPage;
 
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
     /**
      * The returned UsageAggregation instance.
      */
     private com.oracle.bmc.usageapi.model.UsageAggregation usageAggregation;
+
+    public com.oracle.bmc.usageapi.model.UsageAggregation getUsageAggregation() {
+        return usageAggregation;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -57,6 +65,28 @@ public class RequestSummarizedUsagesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcNextPage;
+
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        private com.oracle.bmc.usageapi.model.UsageAggregation usageAggregation;
+
+        public Builder usageAggregation(
+                com.oracle.bmc.usageapi.model.UsageAggregation usageAggregation) {
+            this.usageAggregation = usageAggregation;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -74,5 +104,49 @@ public class RequestSummarizedUsagesResponse extends com.oracle.bmc.responses.Bm
             return new RequestSummarizedUsagesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, usageAggregation);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",usageAggregation=").append(String.valueOf(usageAggregation));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RequestSummarizedUsagesResponse)) {
+            return false;
+        }
+
+        RequestSummarizedUsagesResponse other = (RequestSummarizedUsagesResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.usageAggregation, other.usageAggregation);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usageAggregation == null ? 43 : this.usageAggregation.hashCode());
+        return result;
     }
 }

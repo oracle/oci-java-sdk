@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListOAuthClientCredentialsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOAuthClientCredentialsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListOAuthClientCredentialsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,18 +17,27 @@ public class ListOAuthClientCredentialsRequest
      */
     private String userId;
 
+    public String getUserId() {
+        return userId;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous "List" call.
      *
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
@@ -44,12 +45,67 @@ public class ListOAuthClientCredentialsRequest
     private com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary.LifecycleState
             lifecycleState;
 
+    public com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary.LifecycleState
+            getLifecycleState() {
+        return lifecycleState;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListOAuthClientCredentialsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String userId = null;
+
+        /**
+         * The OCID of the user.
+         * @return this builder instance
+         */
+        public Builder userId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary.LifecycleState
+                lifecycleState = null;
+
+        /**
+         * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary.LifecycleState
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -104,5 +160,77 @@ public class ListOAuthClientCredentialsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListOAuthClientCredentialsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListOAuthClientCredentialsRequest
+         */
+        public ListOAuthClientCredentialsRequest buildWithoutInvocationCallback() {
+            ListOAuthClientCredentialsRequest request = new ListOAuthClientCredentialsRequest();
+            request.userId = userId;
+            request.page = page;
+            request.limit = limit;
+            request.lifecycleState = lifecycleState;
+            return request;
+            // new ListOAuthClientCredentialsRequest(userId, page, limit, lifecycleState);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().userId(userId).page(page).limit(limit).lifecycleState(lifecycleState);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",userId=").append(String.valueOf(this.userId));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListOAuthClientCredentialsRequest)) {
+            return false;
+        }
+
+        ListOAuthClientCredentialsRequest other = (ListOAuthClientCredentialsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        return result;
     }
 }

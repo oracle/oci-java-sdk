@@ -16,16 +16,37 @@ package com.oracle.bmc.licensemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TopUtilizedResourceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class TopUtilizedResourceSummary {
+public final class TopUtilizedResourceSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "resourceId",
+        "resourceName",
+        "resourceCompartmentId",
+        "resourceCompartmentName",
+        "totalUnits",
+        "unitType"
+    })
+    public TopUtilizedResourceSummary(
+            String resourceId,
+            String resourceName,
+            String resourceCompartmentId,
+            String resourceCompartmentName,
+            Double totalUnits,
+            ResourceUnit unitType) {
+        super();
+        this.resourceId = resourceId;
+        this.resourceName = resourceName;
+        this.resourceCompartmentId = resourceCompartmentId;
+        this.resourceCompartmentName = resourceCompartmentName;
+        this.totalUnits = totalUnits;
+        this.unitType = unitType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
@@ -119,42 +140,134 @@ public class TopUtilizedResourceSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * Resource canonical name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
-    String resourceCompartmentId;
+    private final String resourceCompartmentId;
+
+    public String getResourceCompartmentId() {
+        return resourceCompartmentId;
+    }
 
     /**
      * The display name of the compartment that contains the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentName")
-    String resourceCompartmentName;
+    private final String resourceCompartmentName;
+
+    public String getResourceCompartmentName() {
+        return resourceCompartmentName;
+    }
 
     /**
      * Number of license units consumed by the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalUnits")
-    Double totalUnits;
+    private final Double totalUnits;
+
+    public Double getTotalUnits() {
+        return totalUnits;
+    }
 
     /**
      * The resource unit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
-    ResourceUnit unitType;
+    private final ResourceUnit unitType;
+
+    public ResourceUnit getUnitType() {
+        return unitType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("TopUtilizedResourceSummary(");
+        sb.append("resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", resourceCompartmentId=").append(String.valueOf(this.resourceCompartmentId));
+        sb.append(", resourceCompartmentName=")
+                .append(String.valueOf(this.resourceCompartmentName));
+        sb.append(", totalUnits=").append(String.valueOf(this.totalUnits));
+        sb.append(", unitType=").append(String.valueOf(this.unitType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TopUtilizedResourceSummary)) {
+            return false;
+        }
+
+        TopUtilizedResourceSummary other = (TopUtilizedResourceSummary) o;
+        return java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.resourceCompartmentId, other.resourceCompartmentId)
+                && java.util.Objects.equals(
+                        this.resourceCompartmentName, other.resourceCompartmentName)
+                && java.util.Objects.equals(this.totalUnits, other.totalUnits)
+                && java.util.Objects.equals(this.unitType, other.unitType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCompartmentId == null
+                                ? 43
+                                : this.resourceCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCompartmentName == null
+                                ? 43
+                                : this.resourceCompartmentName.hashCode());
+        result = (result * PRIME) + (this.totalUnits == null ? 43 : this.totalUnits.hashCode());
+        result = (result * PRIME) + (this.unitType == null ? 43 : this.unitType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

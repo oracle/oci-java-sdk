@@ -15,14 +15,32 @@ package com.oracle.bmc.devops.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiffChunk.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DiffChunk {
+public final class DiffChunk {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "baseLine",
+        "baseSpan",
+        "targetLine",
+        "targetSpan",
+        "diffSections"
+    })
+    public DiffChunk(
+            Integer baseLine,
+            Integer baseSpan,
+            Integer targetLine,
+            Integer targetSpan,
+            java.util.List<DiffSection> diffSections) {
+        super();
+        this.baseLine = baseLine;
+        this.baseSpan = baseSpan;
+        this.targetLine = targetLine;
+        this.targetSpan = targetSpan;
+        this.diffSections = diffSections;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
         private Integer baseLine;
@@ -100,36 +118,111 @@ public class DiffChunk {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Line number in base version where changes begin.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
-    Integer baseLine;
+    private final Integer baseLine;
+
+    public Integer getBaseLine() {
+        return baseLine;
+    }
 
     /**
      * Number of lines chunk spans in base version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseSpan")
-    Integer baseSpan;
+    private final Integer baseSpan;
+
+    public Integer getBaseSpan() {
+        return baseSpan;
+    }
 
     /**
      * Line number in target version where changes begin.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetLine")
-    Integer targetLine;
+    private final Integer targetLine;
+
+    public Integer getTargetLine() {
+        return targetLine;
+    }
 
     /**
      * Number of lines chunk spans in target version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetSpan")
-    Integer targetSpan;
+    private final Integer targetSpan;
+
+    public Integer getTargetSpan() {
+        return targetSpan;
+    }
 
     /**
      * List of difference section.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diffSections")
-    java.util.List<DiffSection> diffSections;
+    private final java.util.List<DiffSection> diffSections;
+
+    public java.util.List<DiffSection> getDiffSections() {
+        return diffSections;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DiffChunk(");
+        sb.append("baseLine=").append(String.valueOf(this.baseLine));
+        sb.append(", baseSpan=").append(String.valueOf(this.baseSpan));
+        sb.append(", targetLine=").append(String.valueOf(this.targetLine));
+        sb.append(", targetSpan=").append(String.valueOf(this.targetSpan));
+        sb.append(", diffSections=").append(String.valueOf(this.diffSections));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DiffChunk)) {
+            return false;
+        }
+
+        DiffChunk other = (DiffChunk) o;
+        return java.util.Objects.equals(this.baseLine, other.baseLine)
+                && java.util.Objects.equals(this.baseSpan, other.baseSpan)
+                && java.util.Objects.equals(this.targetLine, other.targetLine)
+                && java.util.Objects.equals(this.targetSpan, other.targetSpan)
+                && java.util.Objects.equals(this.diffSections, other.diffSections)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.baseLine == null ? 43 : this.baseLine.hashCode());
+        result = (result * PRIME) + (this.baseSpan == null ? 43 : this.baseSpan.hashCode());
+        result = (result * PRIME) + (this.targetLine == null ? 43 : this.targetLine.hashCode());
+        result = (result * PRIME) + (this.targetSpan == null ? 43 : this.targetSpan.hashCode());
+        result = (result * PRIME) + (this.diffSections == null ? 43 : this.diffSections.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

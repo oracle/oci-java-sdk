@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpByPrivateIpIdExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPublicIpByPrivateIpIdRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetPublicIpByPrivateIpIdRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails> {
@@ -26,6 +18,11 @@ public class GetPublicIpByPrivateIpIdRequest
      */
     private com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails
             getPublicIpByPrivateIpIdDetails;
+
+    public com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails
+            getGetPublicIpByPrivateIpIdDetails() {
+        return getPublicIpByPrivateIpIdDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -44,6 +41,20 @@ public class GetPublicIpByPrivateIpIdRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails
+                getPublicIpByPrivateIpIdDetails = null;
+
+        /**
+         * Private IP details for fetching the public IP.
+         * @return this builder instance
+         */
+        public Builder getPublicIpByPrivateIpIdDetails(
+                com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails
+                        getPublicIpByPrivateIpIdDetails) {
+            this.getPublicIpByPrivateIpIdDetails = getPublicIpByPrivateIpIdDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -106,5 +117,70 @@ public class GetPublicIpByPrivateIpIdRequest
             getPublicIpByPrivateIpIdDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of GetPublicIpByPrivateIpIdRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetPublicIpByPrivateIpIdRequest
+         */
+        public GetPublicIpByPrivateIpIdRequest buildWithoutInvocationCallback() {
+            GetPublicIpByPrivateIpIdRequest request = new GetPublicIpByPrivateIpIdRequest();
+            request.getPublicIpByPrivateIpIdDetails = getPublicIpByPrivateIpIdDetails;
+            return request;
+            // new GetPublicIpByPrivateIpIdRequest(getPublicIpByPrivateIpIdDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().getPublicIpByPrivateIpIdDetails(getPublicIpByPrivateIpIdDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",getPublicIpByPrivateIpIdDetails=")
+                .append(String.valueOf(this.getPublicIpByPrivateIpIdDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetPublicIpByPrivateIpIdRequest)) {
+            return false;
+        }
+
+        GetPublicIpByPrivateIpIdRequest other = (GetPublicIpByPrivateIpIdRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.getPublicIpByPrivateIpIdDetails,
+                        other.getPublicIpByPrivateIpIdDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.getPublicIpByPrivateIpIdDetails == null
+                                ? 43
+                                : this.getPublicIpByPrivateIpIdDetails.hashCode());
+        return result;
     }
 }

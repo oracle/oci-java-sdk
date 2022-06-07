@@ -15,14 +15,35 @@ package com.oracle.bmc.logging.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateLogDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateLogDetails {
+public final class UpdateLogDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "isEnabled",
+        "definedTags",
+        "freeformTags",
+        "retentionDuration",
+        "configuration"
+    })
+    public UpdateLogDetails(
+            String displayName,
+            Boolean isEnabled,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags,
+            Integer retentionDuration,
+            UpdateConfigurationDetails configuration) {
+        super();
+        this.displayName = displayName;
+        this.isEnabled = isEnabled;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+        this.retentionDuration = retentionDuration;
+        this.configuration = configuration;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -117,19 +138,31 @@ public class UpdateLogDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The user-friendly display name. This must be unique within the enclosing resource,
      * and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Whether or not this resource is currently enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -139,7 +172,11 @@ public class UpdateLogDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -148,17 +185,87 @@ public class UpdateLogDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Log retention duration in 30-day increments (30, 60, 90 and so on).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionDuration")
-    Integer retentionDuration;
+    private final Integer retentionDuration;
+
+    public Integer getRetentionDuration() {
+        return retentionDuration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
-    UpdateConfigurationDetails configuration;
+    private final UpdateConfigurationDetails configuration;
+
+    public UpdateConfigurationDetails getConfiguration() {
+        return configuration;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateLogDetails(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", retentionDuration=").append(String.valueOf(this.retentionDuration));
+        sb.append(", configuration=").append(String.valueOf(this.configuration));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateLogDetails)) {
+            return false;
+        }
+
+        UpdateLogDetails other = (UpdateLogDetails) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.retentionDuration, other.retentionDuration)
+                && java.util.Objects.equals(this.configuration, other.configuration)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionDuration == null ? 43 : this.retentionDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configuration == null ? 43 : this.configuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

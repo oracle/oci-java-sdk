@@ -8,7 +8,6 @@ package com.oracle.bmc.logging.model;
  * Type of Unified Agent service configuration.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-@lombok.extern.slf4j.Slf4j
 public enum UnifiedAgentServiceConfigurationTypes {
     Logging("LOGGING"),
 
@@ -17,6 +16,9 @@ public enum UnifiedAgentServiceConfigurationTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(UnifiedAgentServiceConfigurationTypes.class);
 
     private final String value;
     private static java.util.Map<String, UnifiedAgentServiceConfigurationTypes> map;

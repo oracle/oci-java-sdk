@@ -15,16 +15,49 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MaskedColumnSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MaskedColumnSummary {
+public final class MaskedColumnSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "parentColumnKey",
+        "sensitiveTypeId",
+        "schemaName",
+        "objectName",
+        "objectType",
+        "columnName",
+        "maskingColumnGroup",
+        "maskingFormatUsed",
+        "totalMaskedValues"
+    })
+    public MaskedColumnSummary(
+            String key,
+            String parentColumnKey,
+            String sensitiveTypeId,
+            String schemaName,
+            String objectName,
+            ObjectType objectType,
+            String columnName,
+            String maskingColumnGroup,
+            String maskingFormatUsed,
+            Long totalMaskedValues) {
+        super();
+        this.key = key;
+        this.parentColumnKey = parentColumnKey;
+        this.sensitiveTypeId = sensitiveTypeId;
+        this.schemaName = schemaName;
+        this.objectName = objectName;
+        this.objectType = objectType;
+        this.columnName = columnName;
+        this.maskingColumnGroup = maskingColumnGroup;
+        this.maskingFormatUsed = maskingFormatUsed;
+        this.totalMaskedValues = totalMaskedValues;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -162,66 +195,188 @@ public class MaskedColumnSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique key that identifies the masked column. It's numeric and unique within a masking policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The unique key that identifies the parent column of the masked column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentColumnKey")
-    String parentColumnKey;
+    private final String parentColumnKey;
+
+    public String getParentColumnKey() {
+        return parentColumnKey;
+    }
 
     /**
      * The OCID of the sensitive type associated with the masked column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
-    String sensitiveTypeId;
+    private final String sensitiveTypeId;
+
+    public String getSensitiveTypeId() {
+        return sensitiveTypeId;
+    }
 
     /**
      * The name of the schema that contains the masked column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
-    String schemaName;
+    private final String schemaName;
+
+    public String getSchemaName() {
+        return schemaName;
+    }
 
     /**
      * The name of the object (table or editioning view) that contains the masked column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
-    String objectName;
+    private final String objectName;
+
+    public String getObjectName() {
+        return objectName;
+    }
 
     /**
      * The type of the object (table or editioning view) that contains the masked column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
-    ObjectType objectType;
+    private final ObjectType objectType;
+
+    public ObjectType getObjectType() {
+        return objectType;
+    }
 
     /**
      * The name of the masked column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
-    String columnName;
+    private final String columnName;
+
+    public String getColumnName() {
+        return columnName;
+    }
 
     /**
      * The masking group of the masked column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingColumnGroup")
-    String maskingColumnGroup;
+    private final String maskingColumnGroup;
+
+    public String getMaskingColumnGroup() {
+        return maskingColumnGroup;
+    }
 
     /**
      * The masking format used for masking the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingFormatUsed")
-    String maskingFormatUsed;
+    private final String maskingFormatUsed;
+
+    public String getMaskingFormatUsed() {
+        return maskingFormatUsed;
+    }
 
     /**
      * The total number of values masked in the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedValues")
-    Long totalMaskedValues;
+    private final Long totalMaskedValues;
+
+    public Long getTotalMaskedValues() {
+        return totalMaskedValues;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MaskedColumnSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", parentColumnKey=").append(String.valueOf(this.parentColumnKey));
+        sb.append(", sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
+        sb.append(", schemaName=").append(String.valueOf(this.schemaName));
+        sb.append(", objectName=").append(String.valueOf(this.objectName));
+        sb.append(", objectType=").append(String.valueOf(this.objectType));
+        sb.append(", columnName=").append(String.valueOf(this.columnName));
+        sb.append(", maskingColumnGroup=").append(String.valueOf(this.maskingColumnGroup));
+        sb.append(", maskingFormatUsed=").append(String.valueOf(this.maskingFormatUsed));
+        sb.append(", totalMaskedValues=").append(String.valueOf(this.totalMaskedValues));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MaskedColumnSummary)) {
+            return false;
+        }
+
+        MaskedColumnSummary other = (MaskedColumnSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.parentColumnKey, other.parentColumnKey)
+                && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
+                && java.util.Objects.equals(this.schemaName, other.schemaName)
+                && java.util.Objects.equals(this.objectName, other.objectName)
+                && java.util.Objects.equals(this.objectType, other.objectType)
+                && java.util.Objects.equals(this.columnName, other.columnName)
+                && java.util.Objects.equals(this.maskingColumnGroup, other.maskingColumnGroup)
+                && java.util.Objects.equals(this.maskingFormatUsed, other.maskingFormatUsed)
+                && java.util.Objects.equals(this.totalMaskedValues, other.totalMaskedValues)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentColumnKey == null ? 43 : this.parentColumnKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeId == null ? 43 : this.sensitiveTypeId.hashCode());
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
+        result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
+        result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
+        result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingColumnGroup == null
+                                ? 43
+                                : this.maskingColumnGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingFormatUsed == null ? 43 : this.maskingFormatUsed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalMaskedValues == null ? 43 : this.totalMaskedValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

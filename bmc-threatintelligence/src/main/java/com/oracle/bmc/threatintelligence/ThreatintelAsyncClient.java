@@ -7,6 +7,7 @@ package com.oracle.bmc.threatintelligence;
 import com.oracle.bmc.threatintelligence.internal.http.*;
 import com.oracle.bmc.threatintelligence.requests.*;
 import com.oracle.bmc.threatintelligence.responses.*;
+import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Threatintel service. <br/>
@@ -22,7 +23,6 @@ import com.oracle.bmc.threatintelligence.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
-@lombok.extern.slf4j.Slf4j
 public class ThreatintelAsyncClient implements ThreatintelAsync {
     /**
      * Service instance for Threatintel.
@@ -35,7 +35,9 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                             "https://api-threatintel.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ThreatintelAsyncClient.class);
+
     private final com.oracle.bmc.http.internal.RestClient client;
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -318,9 +320,13 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
          * @return the client
          */
         public ThreatintelAsyncClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new ThreatintelAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -330,6 +336,10 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                     additionalClientConfigurators,
                     endpoint);
         }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
     @Override

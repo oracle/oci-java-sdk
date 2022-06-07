@@ -15,12 +15,6 @@ package com.oracle.bmc.certificatesmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -39,11 +33,51 @@ package com.oracle.bmc.certificatesmanagement.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateCertificateAuthorityConfigDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"versionName"})
+    protected CreateCertificateAuthorityConfigDetails(String versionName) {
+        super();
+        this.versionName = versionName;
+    }
 
     /**
      * The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
-    String versionName;
+    private final String versionName;
+
+    public String getVersionName() {
+        return versionName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateCertificateAuthorityConfigDetails(");
+        sb.append("versionName=").append(String.valueOf(this.versionName));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateCertificateAuthorityConfigDetails)) {
+            return false;
+        }
+
+        CreateCertificateAuthorityConfigDetails other = (CreateCertificateAuthorityConfigDetails) o;
+        return java.util.Objects.equals(this.versionName, other.versionName);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.versionName == null ? 43 : this.versionName.hashCode());
+        return result;
+    }
 }

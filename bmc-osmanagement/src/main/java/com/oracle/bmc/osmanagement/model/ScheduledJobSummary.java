@@ -15,16 +15,61 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScheduledJobSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScheduledJobSummary {
+public final class ScheduledJobSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "compartmentId",
+        "scheduleType",
+        "timeNextExecution",
+        "timeLastExecution",
+        "managedInstances",
+        "managedInstanceGroups",
+        "operationType",
+        "lifecycleState",
+        "freeformTags",
+        "definedTags",
+        "osFamily",
+        "isRestricted"
+    })
+    public ScheduledJobSummary(
+            String id,
+            String displayName,
+            String compartmentId,
+            ScheduleTypes scheduleType,
+            java.util.Date timeNextExecution,
+            java.util.Date timeLastExecution,
+            java.util.List<Id> managedInstances,
+            java.util.List<Id> managedInstanceGroups,
+            OperationTypes operationType,
+            LifecycleStates lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            OsFamilies osFamily,
+            Boolean isRestricted) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.compartmentId = compartmentId;
+        this.scheduleType = scheduleType;
+        this.timeNextExecution = timeNextExecution;
+        this.timeLastExecution = timeLastExecution;
+        this.managedInstances = managedInstances;
+        this.managedInstanceGroups = managedInstanceGroups;
+        this.operationType = operationType;
+        this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.osFamily = osFamily;
+        this.isRestricted = isRestricted;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -207,65 +252,109 @@ public class ScheduledJobSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * OCID for the Scheduled Job
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Scheduled Job name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * OCID for the Compartment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * the type of scheduling this Scheduled Job follows
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
-    ScheduleTypes scheduleType;
+    private final ScheduleTypes scheduleType;
+
+    public ScheduleTypes getScheduleType() {
+        return scheduleType;
+    }
 
     /**
      * the time/date of the next scheduled execution of this Scheduled Job
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
-    java.util.Date timeNextExecution;
+    private final java.util.Date timeNextExecution;
+
+    public java.util.Date getTimeNextExecution() {
+        return timeNextExecution;
+    }
 
     /**
      * the time/date of the last execution of this Scheduled Job
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecution")
-    java.util.Date timeLastExecution;
+    private final java.util.Date timeLastExecution;
+
+    public java.util.Date getTimeLastExecution() {
+        return timeLastExecution;
+    }
 
     /**
      * the list of managed instances this scheduled job operates on (mutually exclusive with managedInstanceGroups)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
-    java.util.List<Id> managedInstances;
+    private final java.util.List<Id> managedInstances;
+
+    public java.util.List<Id> getManagedInstances() {
+        return managedInstances;
+    }
 
     /**
      * the list of managed instance groups this scheduled job operates on (mutually exclusive with managedInstances)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroups")
-    java.util.List<Id> managedInstanceGroups;
+    private final java.util.List<Id> managedInstanceGroups;
+
+    public java.util.List<Id> getManagedInstanceGroups() {
+        return managedInstanceGroups;
+    }
 
     /**
      * the type of operation this Scheduled Job performs
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
-    OperationTypes operationType;
+    private final OperationTypes operationType;
+
+    public OperationTypes getOperationType() {
+        return operationType;
+    }
 
     /**
      * The current state of the Scheduled Job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    private final LifecycleStates lifecycleState;
+
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -273,7 +362,11 @@ public class ScheduledJobSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -281,20 +374,126 @@ public class ScheduledJobSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The Operating System type of the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
-    OsFamilies osFamily;
+    private final OsFamilies osFamily;
+
+    public OsFamilies getOsFamily() {
+        return osFamily;
+    }
 
     /**
      * true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
-    Boolean isRestricted;
+    private final Boolean isRestricted;
+
+    public Boolean getIsRestricted() {
+        return isRestricted;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScheduledJobSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", scheduleType=").append(String.valueOf(this.scheduleType));
+        sb.append(", timeNextExecution=").append(String.valueOf(this.timeNextExecution));
+        sb.append(", timeLastExecution=").append(String.valueOf(this.timeLastExecution));
+        sb.append(", managedInstances=").append(String.valueOf(this.managedInstances));
+        sb.append(", managedInstanceGroups=").append(String.valueOf(this.managedInstanceGroups));
+        sb.append(", operationType=").append(String.valueOf(this.operationType));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(", isRestricted=").append(String.valueOf(this.isRestricted));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScheduledJobSummary)) {
+            return false;
+        }
+
+        ScheduledJobSummary other = (ScheduledJobSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.scheduleType, other.scheduleType)
+                && java.util.Objects.equals(this.timeNextExecution, other.timeNextExecution)
+                && java.util.Objects.equals(this.timeLastExecution, other.timeLastExecution)
+                && java.util.Objects.equals(this.managedInstances, other.managedInstances)
+                && java.util.Objects.equals(this.managedInstanceGroups, other.managedInstanceGroups)
+                && java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(this.isRestricted, other.isRestricted)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.scheduleType == null ? 43 : this.scheduleType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeNextExecution == null ? 43 : this.timeNextExecution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastExecution == null ? 43 : this.timeLastExecution.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstances == null ? 43 : this.managedInstances.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceGroups == null
+                                ? 43
+                                : this.managedInstanceGroups.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result = (result * PRIME) + (this.isRestricted == null ? 43 : this.isRestricted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

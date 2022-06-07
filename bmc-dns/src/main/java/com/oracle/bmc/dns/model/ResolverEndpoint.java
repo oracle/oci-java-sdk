@@ -18,12 +18,6 @@ package com.oracle.bmc.dns.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -38,13 +32,53 @@ package com.oracle.bmc.dns.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ResolverEndpoint {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "forwardingAddress",
+        "isForwarding",
+        "isListening",
+        "listeningAddress",
+        "compartmentId",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "self"
+    })
+    protected ResolverEndpoint(
+            String name,
+            String forwardingAddress,
+            Boolean isForwarding,
+            Boolean isListening,
+            String listeningAddress,
+            String compartmentId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            LifecycleState lifecycleState,
+            String self) {
+        super();
+        this.name = name;
+        this.forwardingAddress = forwardingAddress;
+        this.isForwarding = isForwarding;
+        this.isListening = isListening;
+        this.listeningAddress = listeningAddress;
+        this.compartmentId = compartmentId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.self = self;
+    }
 
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part
@@ -52,21 +86,33 @@ public class ResolverEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forwardingAddress")
-    String forwardingAddress;
+    private final String forwardingAddress;
+
+    public String getForwardingAddress() {
+        return forwardingAddress;
+    }
 
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForwarding")
-    Boolean isForwarding;
+    private final Boolean isForwarding;
+
+    public Boolean getIsForwarding() {
+        return isForwarding;
+    }
 
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for listening.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isListening")
-    Boolean isListening;
+    private final Boolean isListening;
+
+    public Boolean getIsListening() {
+        return isListening;
+    }
 
     /**
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the
@@ -74,7 +120,11 @@ public class ResolverEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listeningAddress")
-    String listeningAddress;
+    private final String listeningAddress;
+
+    public String getListeningAddress() {
+        return listeningAddress;
+    }
 
     /**
      * The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under
@@ -82,7 +132,11 @@ public class ResolverEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
@@ -92,7 +146,11 @@ public class ResolverEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ"
@@ -102,11 +160,15 @@ public class ResolverEndpoint {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
     /**
      * The current state of the resource.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
@@ -120,6 +182,9 @@ public class ResolverEndpoint {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -157,19 +222,91 @@ public class ResolverEndpoint {
      * The current state of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The canonical absolute URL of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("self")
-    String self;
+    private final String self;
+
+    public String getSelf() {
+        return self;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResolverEndpoint(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", forwardingAddress=").append(String.valueOf(this.forwardingAddress));
+        sb.append(", isForwarding=").append(String.valueOf(this.isForwarding));
+        sb.append(", isListening=").append(String.valueOf(this.isListening));
+        sb.append(", listeningAddress=").append(String.valueOf(this.listeningAddress));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", self=").append(String.valueOf(this.self));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResolverEndpoint)) {
+            return false;
+        }
+
+        ResolverEndpoint other = (ResolverEndpoint) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.forwardingAddress, other.forwardingAddress)
+                && java.util.Objects.equals(this.isForwarding, other.isForwarding)
+                && java.util.Objects.equals(this.isListening, other.isListening)
+                && java.util.Objects.equals(this.listeningAddress, other.listeningAddress)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.self, other.self);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.forwardingAddress == null ? 43 : this.forwardingAddress.hashCode());
+        result = (result * PRIME) + (this.isForwarding == null ? 43 : this.isForwarding.hashCode());
+        result = (result * PRIME) + (this.isListening == null ? 43 : this.isListening.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listeningAddress == null ? 43 : this.listeningAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.self == null ? 43 : this.self.hashCode());
+        return result;
+    }
 
     /**
      * The type of resolver endpoint. VNIC is currently the only supported type.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EndpointType {
         Vnic("VNIC"),
 
@@ -178,6 +315,9 @@ public class ResolverEndpoint {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EndpointType.class);
 
         private final String value;
         private static java.util.Map<String, EndpointType> map;

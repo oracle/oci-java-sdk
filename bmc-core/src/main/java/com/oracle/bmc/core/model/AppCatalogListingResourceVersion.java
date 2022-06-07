@@ -15,16 +15,43 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AppCatalogListingResourceVersion.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AppCatalogListingResourceVersion {
+public final class AppCatalogListingResourceVersion {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "listingId",
+        "timePublished",
+        "listingResourceId",
+        "listingResourceVersion",
+        "availableRegions",
+        "compatibleShapes",
+        "accessiblePorts",
+        "allowedActions"
+    })
+    public AppCatalogListingResourceVersion(
+            String listingId,
+            java.util.Date timePublished,
+            String listingResourceId,
+            String listingResourceVersion,
+            java.util.List<String> availableRegions,
+            java.util.List<String> compatibleShapes,
+            java.util.List<Integer> accessiblePorts,
+            java.util.List<AllowedActions> allowedActions) {
+        super();
+        this.listingId = listingId;
+        this.timePublished = timePublished;
+        this.listingResourceId = listingResourceId;
+        this.listingResourceVersion = listingResourceVersion;
+        this.availableRegions = availableRegions;
+        this.compatibleShapes = compatibleShapes;
+        this.accessiblePorts = accessiblePorts;
+        this.allowedActions = allowedActions;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
@@ -140,11 +167,19 @@ public class AppCatalogListingResourceVersion {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the listing this resource version belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
@@ -152,19 +187,31 @@ public class AppCatalogListingResourceVersion {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
-    java.util.Date timePublished;
+    private final java.util.Date timePublished;
+
+    public java.util.Date getTimePublished() {
+        return timePublished;
+    }
 
     /**
      * OCID of the listing resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
-    String listingResourceId;
+    private final String listingResourceId;
+
+    public String getListingResourceId() {
+        return listingResourceId;
+    }
 
     /**
      * Resource Version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
-    String listingResourceVersion;
+    private final String listingResourceVersion;
+
+    public String getListingResourceVersion() {
+        return listingResourceVersion;
+    }
 
     /**
      * List of regions that this listing resource version is available.
@@ -176,7 +223,11 @@ public class AppCatalogListingResourceVersion {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableRegions")
-    java.util.List<String> availableRegions;
+    private final java.util.List<String> availableRegions;
+
+    public java.util.List<String> getAvailableRegions() {
+        return availableRegions;
+    }
 
     /**
      * Array of shapes compatible with this resource.
@@ -187,16 +238,24 @@ public class AppCatalogListingResourceVersion {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
-    java.util.List<String> compatibleShapes;
+    private final java.util.List<String> compatibleShapes;
+
+    public java.util.List<String> getCompatibleShapes() {
+        return compatibleShapes;
+    }
 
     /**
      * List of accessible ports for instances launched with this listing resource version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessiblePorts")
-    java.util.List<Integer> accessiblePorts;
+    private final java.util.List<Integer> accessiblePorts;
+
+    public java.util.List<Integer> getAccessiblePorts() {
+        return accessiblePorts;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AllowedActions {
         Snapshot("SNAPSHOT"),
         BootVolumeDetach("BOOT_VOLUME_DETACH"),
@@ -211,6 +270,9 @@ public class AppCatalogListingResourceVersion {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AllowedActions.class);
 
         private final String value;
         private static java.util.Map<String, AllowedActions> map;
@@ -248,8 +310,89 @@ public class AppCatalogListingResourceVersion {
      * Allowed actions for the listing resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedActions")
-    java.util.List<AllowedActions> allowedActions;
+    private final java.util.List<AllowedActions> allowedActions;
+
+    public java.util.List<AllowedActions> getAllowedActions() {
+        return allowedActions;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AppCatalogListingResourceVersion(");
+        sb.append("listingId=").append(String.valueOf(this.listingId));
+        sb.append(", timePublished=").append(String.valueOf(this.timePublished));
+        sb.append(", listingResourceId=").append(String.valueOf(this.listingResourceId));
+        sb.append(", listingResourceVersion=").append(String.valueOf(this.listingResourceVersion));
+        sb.append(", availableRegions=").append(String.valueOf(this.availableRegions));
+        sb.append(", compatibleShapes=").append(String.valueOf(this.compatibleShapes));
+        sb.append(", accessiblePorts=").append(String.valueOf(this.accessiblePorts));
+        sb.append(", allowedActions=").append(String.valueOf(this.allowedActions));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AppCatalogListingResourceVersion)) {
+            return false;
+        }
+
+        AppCatalogListingResourceVersion other = (AppCatalogListingResourceVersion) o;
+        return java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.timePublished, other.timePublished)
+                && java.util.Objects.equals(this.listingResourceId, other.listingResourceId)
+                && java.util.Objects.equals(
+                        this.listingResourceVersion, other.listingResourceVersion)
+                && java.util.Objects.equals(this.availableRegions, other.availableRegions)
+                && java.util.Objects.equals(this.compatibleShapes, other.compatibleShapes)
+                && java.util.Objects.equals(this.accessiblePorts, other.accessiblePorts)
+                && java.util.Objects.equals(this.allowedActions, other.allowedActions)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePublished == null ? 43 : this.timePublished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listingResourceId == null ? 43 : this.listingResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listingResourceVersion == null
+                                ? 43
+                                : this.listingResourceVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableRegions == null ? 43 : this.availableRegions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compatibleShapes == null ? 43 : this.compatibleShapes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.accessiblePorts == null ? 43 : this.accessiblePorts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedActions == null ? 43 : this.allowedActions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

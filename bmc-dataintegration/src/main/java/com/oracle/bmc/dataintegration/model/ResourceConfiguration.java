@@ -15,16 +15,28 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ResourceConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResourceConfiguration {
+public final class ResourceConfiguration {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "sparkVersion",
+        "driverShape",
+        "executorShape",
+        "totalExecutors"
+    })
+    public ResourceConfiguration(
+            String sparkVersion, String driverShape, String executorShape, Integer totalExecutors) {
+        super();
+        this.sparkVersion = sparkVersion;
+        this.driverShape = driverShape;
+        this.executorShape = executorShape;
+        this.totalExecutors = totalExecutors;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
         private String sparkVersion;
@@ -93,30 +105,102 @@ public class ResourceConfiguration {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The version of the spark used while creating an Oracle Cloud Infrastructure Data Flow application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
-    String sparkVersion;
+    private final String sparkVersion;
+
+    public String getSparkVersion() {
+        return sparkVersion;
+    }
 
     /**
      * The VM shape of the driver used while creating an Oracle Cloud Infrastructure Data Flow application. It sets the driver cores and memory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
-    String driverShape;
+    private final String driverShape;
+
+    public String getDriverShape() {
+        return driverShape;
+    }
 
     /**
      * The shape of the executor used while creating an Oracle Cloud Infrastructure Data Flow application. It sets the executor cores and memory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
-    String executorShape;
+    private final String executorShape;
+
+    public String getExecutorShape() {
+        return executorShape;
+    }
 
     /**
      * Number of executor VMs requested while creating an Oracle Cloud Infrastructure Data Flow application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalExecutors")
-    Integer totalExecutors;
+    private final Integer totalExecutors;
+
+    public Integer getTotalExecutors() {
+        return totalExecutors;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResourceConfiguration(");
+        sb.append("sparkVersion=").append(String.valueOf(this.sparkVersion));
+        sb.append(", driverShape=").append(String.valueOf(this.driverShape));
+        sb.append(", executorShape=").append(String.valueOf(this.executorShape));
+        sb.append(", totalExecutors=").append(String.valueOf(this.totalExecutors));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResourceConfiguration)) {
+            return false;
+        }
+
+        ResourceConfiguration other = (ResourceConfiguration) o;
+        return java.util.Objects.equals(this.sparkVersion, other.sparkVersion)
+                && java.util.Objects.equals(this.driverShape, other.driverShape)
+                && java.util.Objects.equals(this.executorShape, other.executorShape)
+                && java.util.Objects.equals(this.totalExecutors, other.totalExecutors)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.sparkVersion == null ? 43 : this.sparkVersion.hashCode());
+        result = (result * PRIME) + (this.driverShape == null ? 43 : this.driverShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executorShape == null ? 43 : this.executorShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalExecutors == null ? 43 : this.totalExecutors.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

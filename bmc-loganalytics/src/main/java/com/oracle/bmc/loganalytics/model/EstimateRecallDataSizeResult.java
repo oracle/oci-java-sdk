@@ -15,16 +15,31 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = EstimateRecallDataSizeResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EstimateRecallDataSizeResult {
+public final class EstimateRecallDataSizeResult {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeDataEnded",
+        "timeDataStarted",
+        "sizeInBytes",
+        "isOverlappingWithExistingRecalls"
+    })
+    public EstimateRecallDataSizeResult(
+            java.util.Date timeDataEnded,
+            java.util.Date timeDataStarted,
+            Long sizeInBytes,
+            Boolean isOverlappingWithExistingRecalls) {
+        super();
+        this.timeDataEnded = timeDataEnded;
+        this.timeDataStarted = timeDataStarted;
+        this.sizeInBytes = sizeInBytes;
+        this.isOverlappingWithExistingRecalls = isOverlappingWithExistingRecalls;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
@@ -97,6 +112,10 @@ public class EstimateRecallDataSizeResult {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This is the end of the time range of data to be recalled.  timeDataStarted and timeDataEnded delineate
      * the time range of the archived data to be recalled.  They may not be exact the same as the
@@ -104,26 +123,101 @@ public class EstimateRecallDataSizeResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
-    java.util.Date timeDataEnded;
+    private final java.util.Date timeDataEnded;
+
+    public java.util.Date getTimeDataEnded() {
+        return timeDataEnded;
+    }
 
     /**
      * This is the start of the time range of data to be recalled
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
-    java.util.Date timeDataStarted;
+    private final java.util.Date timeDataStarted;
+
+    public java.util.Date getTimeDataStarted() {
+        return timeDataStarted;
+    }
 
     /**
      * This is the size in bytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-    Long sizeInBytes;
+    private final Long sizeInBytes;
+
+    public Long getSizeInBytes() {
+        return sizeInBytes;
+    }
 
     /**
      * This indicates if the time range of data to be recalled overlaps with existing recalled data
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOverlappingWithExistingRecalls")
-    Boolean isOverlappingWithExistingRecalls;
+    private final Boolean isOverlappingWithExistingRecalls;
+
+    public Boolean getIsOverlappingWithExistingRecalls() {
+        return isOverlappingWithExistingRecalls;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EstimateRecallDataSizeResult(");
+        sb.append("timeDataEnded=").append(String.valueOf(this.timeDataEnded));
+        sb.append(", timeDataStarted=").append(String.valueOf(this.timeDataStarted));
+        sb.append(", sizeInBytes=").append(String.valueOf(this.sizeInBytes));
+        sb.append(", isOverlappingWithExistingRecalls=")
+                .append(String.valueOf(this.isOverlappingWithExistingRecalls));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EstimateRecallDataSizeResult)) {
+            return false;
+        }
+
+        EstimateRecallDataSizeResult other = (EstimateRecallDataSizeResult) o;
+        return java.util.Objects.equals(this.timeDataEnded, other.timeDataEnded)
+                && java.util.Objects.equals(this.timeDataStarted, other.timeDataStarted)
+                && java.util.Objects.equals(this.sizeInBytes, other.sizeInBytes)
+                && java.util.Objects.equals(
+                        this.isOverlappingWithExistingRecalls,
+                        other.isOverlappingWithExistingRecalls)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeDataEnded == null ? 43 : this.timeDataEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataStarted == null ? 43 : this.timeDataStarted.hashCode());
+        result = (result * PRIME) + (this.sizeInBytes == null ? 43 : this.sizeInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOverlappingWithExistingRecalls == null
+                                ? 43
+                                : this.isOverlappingWithExistingRecalls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

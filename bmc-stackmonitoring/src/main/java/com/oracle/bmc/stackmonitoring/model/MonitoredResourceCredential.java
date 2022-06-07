@@ -15,12 +15,6 @@ package com.oracle.bmc.stackmonitoring.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -43,35 +37,99 @@ package com.oracle.bmc.stackmonitoring.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class MonitoredResourceCredential {
+    @Deprecated
+    @java.beans.ConstructorProperties({"source", "name", "type", "description"})
+    protected MonitoredResourceCredential(
+            String source, String name, String type, String description) {
+        super();
+        this.source = source;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+    }
 
     /**
      * The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    String source;
+    private final String source;
+
+    public String getSource() {
+        return source;
+    }
 
     /**
      * The name of the credential, within the context of the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The type of the credential ( ex. JMXCreds,DBCreds).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     /**
      * The user-specified textual description of the credential.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MonitoredResourceCredential(");
+        sb.append("source=").append(String.valueOf(this.source));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MonitoredResourceCredential)) {
+            return false;
+        }
+
+        MonitoredResourceCredential other = (MonitoredResourceCredential) o;
+        return java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.description, other.description);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        return result;
+    }
 
     /**
      * Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum CredentialType {
         Existing("EXISTING"),
         Plaintext("PLAINTEXT"),
@@ -82,6 +140,9 @@ public class MonitoredResourceCredential {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CredentialType.class);
 
         private final String value;
         private static java.util.Map<String, CredentialType> map;

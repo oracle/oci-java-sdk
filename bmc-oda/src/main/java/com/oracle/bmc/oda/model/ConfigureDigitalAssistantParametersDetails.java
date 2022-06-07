@@ -15,16 +15,20 @@ package com.oracle.bmc.oda.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConfigureDigitalAssistantParametersDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConfigureDigitalAssistantParametersDetails {
+public final class ConfigureDigitalAssistantParametersDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"parameters"})
+    public ConfigureDigitalAssistantParametersDetails(
+            java.util.List<DigitalAssistantParameterValue> parameters) {
+        super();
+        this.parameters = parameters;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<DigitalAssistantParameterValue> parameters;
@@ -61,12 +65,60 @@ public class ConfigureDigitalAssistantParametersDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The values to use to configure the Digital Assistant Parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    java.util.List<DigitalAssistantParameterValue> parameters;
+    private final java.util.List<DigitalAssistantParameterValue> parameters;
+
+    public java.util.List<DigitalAssistantParameterValue> getParameters() {
+        return parameters;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConfigureDigitalAssistantParametersDetails(");
+        sb.append("parameters=").append(String.valueOf(this.parameters));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConfigureDigitalAssistantParametersDetails)) {
+            return false;
+        }
+
+        ConfigureDigitalAssistantParametersDetails other =
+                (ConfigureDigitalAssistantParametersDetails) o;
+        return java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

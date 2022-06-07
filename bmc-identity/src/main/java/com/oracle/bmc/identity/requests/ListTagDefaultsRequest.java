@@ -9,14 +9,6 @@ import com.oracle.bmc.identity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTagDefaultsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTagDefaultsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -25,35 +17,54 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The maximum number of items to return in a paginated "List" call.
      *
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * A filter to only return resources that match the specified OCID exactly.
      *
      */
     private String id;
 
+    public String getId() {
+        return id;
+    }
     /**
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      *
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The OCID of the tag definition.
      *
      */
     private String tagDefinitionId;
 
+    public String getTagDefinitionId() {
+        return tagDefinitionId;
+    }
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
      */
     private com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState lifecycleState;
+
+    public com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -61,6 +72,80 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String id = null;
+
+        /**
+         * A filter to only return resources that match the specified OCID exactly.
+         *
+         * @return this builder instance
+         */
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String tagDefinitionId = null;
+
+        /**
+         * The OCID of the tag definition.
+         *
+         * @return this builder instance
+         */
+        public Builder tagDefinitionId(String tagDefinitionId) {
+            this.tagDefinitionId = tagDefinitionId;
+            return this;
+        }
+
+        private com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState lifecycleState =
+                null;
+
+        /**
+         * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+         *
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -117,5 +202,95 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListTagDefaultsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListTagDefaultsRequest
+         */
+        public ListTagDefaultsRequest buildWithoutInvocationCallback() {
+            ListTagDefaultsRequest request = new ListTagDefaultsRequest();
+            request.page = page;
+            request.limit = limit;
+            request.id = id;
+            request.compartmentId = compartmentId;
+            request.tagDefinitionId = tagDefinitionId;
+            request.lifecycleState = lifecycleState;
+            return request;
+            // new ListTagDefaultsRequest(page, limit, id, compartmentId, tagDefinitionId, lifecycleState);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .page(page)
+                .limit(limit)
+                .id(id)
+                .compartmentId(compartmentId)
+                .tagDefinitionId(tagDefinitionId)
+                .lifecycleState(lifecycleState);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",tagDefinitionId=").append(String.valueOf(this.tagDefinitionId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListTagDefaultsRequest)) {
+            return false;
+        }
+
+        ListTagDefaultsRequest other = (ListTagDefaultsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.tagDefinitionId, other.tagDefinitionId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tagDefinitionId == null ? 43 : this.tagDefinitionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        return result;
     }
 }

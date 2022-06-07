@@ -15,16 +15,31 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstancePoolInstanceLoadBalancerBackend.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class InstancePoolInstanceLoadBalancerBackend {
+public final class InstancePoolInstanceLoadBalancerBackend {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "loadBalancerId",
+        "backendSetName",
+        "backendName",
+        "backendHealthStatus"
+    })
+    public InstancePoolInstanceLoadBalancerBackend(
+            String loadBalancerId,
+            String backendSetName,
+            String backendName,
+            BackendHealthStatus backendHealthStatus) {
+        super();
+        this.loadBalancerId = loadBalancerId;
+        this.backendSetName = backendSetName;
+        this.backendName = backendName;
+        this.backendHealthStatus = backendHealthStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
@@ -93,27 +108,43 @@ public class InstancePoolInstanceLoadBalancerBackend {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the load balancer attached to the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
-    String loadBalancerId;
+    private final String loadBalancerId;
+
+    public String getLoadBalancerId() {
+        return loadBalancerId;
+    }
 
     /**
      * The name of the backend set on the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
-    String backendSetName;
+    private final String backendSetName;
+
+    public String getBackendSetName() {
+        return backendSetName;
+    }
 
     /**
      * The name of the backend in the backend set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendName")
-    String backendName;
+    private final String backendName;
+
+    public String getBackendName() {
+        return backendName;
+    }
+
     /**
      * The health of the backend as observed by the load balancer.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum BackendHealthStatus {
         Ok("OK"),
         Warning("WARNING"),
@@ -125,6 +156,9 @@ public class InstancePoolInstanceLoadBalancerBackend {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BackendHealthStatus.class);
 
         private final String value;
         private static java.util.Map<String, BackendHealthStatus> map;
@@ -162,8 +196,68 @@ public class InstancePoolInstanceLoadBalancerBackend {
      * The health of the backend as observed by the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendHealthStatus")
-    BackendHealthStatus backendHealthStatus;
+    private final BackendHealthStatus backendHealthStatus;
+
+    public BackendHealthStatus getBackendHealthStatus() {
+        return backendHealthStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("InstancePoolInstanceLoadBalancerBackend(");
+        sb.append("loadBalancerId=").append(String.valueOf(this.loadBalancerId));
+        sb.append(", backendSetName=").append(String.valueOf(this.backendSetName));
+        sb.append(", backendName=").append(String.valueOf(this.backendName));
+        sb.append(", backendHealthStatus=").append(String.valueOf(this.backendHealthStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof InstancePoolInstanceLoadBalancerBackend)) {
+            return false;
+        }
+
+        InstancePoolInstanceLoadBalancerBackend other = (InstancePoolInstanceLoadBalancerBackend) o;
+        return java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
+                && java.util.Objects.equals(this.backendSetName, other.backendSetName)
+                && java.util.Objects.equals(this.backendName, other.backendName)
+                && java.util.Objects.equals(this.backendHealthStatus, other.backendHealthStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
+        result = (result * PRIME) + (this.backendName == null ? 43 : this.backendName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendHealthStatus == null
+                                ? 43
+                                : this.backendHealthStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

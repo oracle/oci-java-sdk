@@ -9,14 +9,6 @@ import com.oracle.bmc.nosql.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/QueryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use QueryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class QueryRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.nosql.model.QueryDetails> {
 
@@ -25,11 +17,17 @@ public class QueryRequest
      */
     private com.oracle.bmc.nosql.model.QueryDetails queryDetails;
 
+    public com.oracle.bmc.nosql.model.QueryDetails getQueryDetails() {
+        return queryDetails;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start
      * retrieving results. This is usually retrieved from a previous
@@ -38,10 +36,17 @@ public class QueryRequest
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -59,6 +64,53 @@ public class QueryRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.nosql.model.QueryDetails queryDetails = null;
+
+        /**
+         * SQL query statement and ancillary information.
+         * @return this builder instance
+         */
+        public Builder queryDetails(com.oracle.bmc.nosql.model.QueryDetails queryDetails) {
+            this.queryDetails = queryDetails;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start
+         * retrieving results. This is usually retrieved from a previous
+         * list call.
+         *
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -124,5 +176,79 @@ public class QueryRequest
             queryDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of QueryRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of QueryRequest
+         */
+        public QueryRequest buildWithoutInvocationCallback() {
+            QueryRequest request = new QueryRequest();
+            request.queryDetails = queryDetails;
+            request.limit = limit;
+            request.page = page;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new QueryRequest(queryDetails, limit, page, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .queryDetails(queryDetails)
+                .limit(limit)
+                .page(page)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",queryDetails=").append(String.valueOf(this.queryDetails));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof QueryRequest)) {
+            return false;
+        }
+
+        QueryRequest other = (QueryRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.queryDetails, other.queryDetails)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.queryDetails == null ? 43 : this.queryDetails.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

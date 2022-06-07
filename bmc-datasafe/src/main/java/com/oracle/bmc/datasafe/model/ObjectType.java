@@ -8,7 +8,6 @@ package com.oracle.bmc.datasafe.model;
  * The type of the object to which a masking column belongs.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public enum ObjectType {
     Table("TABLE"),
     EditioningView("EDITIONING_VIEW"),
@@ -18,6 +17,8 @@ public enum ObjectType {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(ObjectType.class);
 
     private final String value;
     private static java.util.Map<String, ObjectType> map;

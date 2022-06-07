@@ -15,14 +15,38 @@ package com.oracle.bmc.aivision.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Table.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Table {
+public final class Table {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "rowCount",
+        "columnCount",
+        "headerRows",
+        "bodyRows",
+        "footerRows",
+        "confidence",
+        "boundingPolygon"
+    })
+    public Table(
+            Integer rowCount,
+            Integer columnCount,
+            java.util.List<TableRow> headerRows,
+            java.util.List<TableRow> bodyRows,
+            java.util.List<TableRow> footerRows,
+            Float confidence,
+            BoundingPolygon boundingPolygon) {
+        super();
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        this.headerRows = headerRows;
+        this.bodyRows = bodyRows;
+        this.footerRows = footerRows;
+        this.confidence = confidence;
+        this.boundingPolygon = boundingPolygon;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
         private Integer rowCount;
@@ -127,45 +151,136 @@ public class Table {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The number of rows.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
-    Integer rowCount;
+    private final Integer rowCount;
+
+    public Integer getRowCount() {
+        return rowCount;
+    }
 
     /**
      * The number of columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnCount")
-    Integer columnCount;
+    private final Integer columnCount;
+
+    public Integer getColumnCount() {
+        return columnCount;
+    }
 
     /**
      * The header rows.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerRows")
-    java.util.List<TableRow> headerRows;
+    private final java.util.List<TableRow> headerRows;
+
+    public java.util.List<TableRow> getHeaderRows() {
+        return headerRows;
+    }
 
     /**
      * The body rows.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bodyRows")
-    java.util.List<TableRow> bodyRows;
+    private final java.util.List<TableRow> bodyRows;
+
+    public java.util.List<TableRow> getBodyRows() {
+        return bodyRows;
+    }
 
     /**
      * the footer rows.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("footerRows")
-    java.util.List<TableRow> footerRows;
+    private final java.util.List<TableRow> footerRows;
+
+    public java.util.List<TableRow> getFooterRows() {
+        return footerRows;
+    }
 
     /**
      * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
-    Float confidence;
+    private final Float confidence;
+
+    public Float getConfidence() {
+        return confidence;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("boundingPolygon")
-    BoundingPolygon boundingPolygon;
+    private final BoundingPolygon boundingPolygon;
+
+    public BoundingPolygon getBoundingPolygon() {
+        return boundingPolygon;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Table(");
+        sb.append("rowCount=").append(String.valueOf(this.rowCount));
+        sb.append(", columnCount=").append(String.valueOf(this.columnCount));
+        sb.append(", headerRows=").append(String.valueOf(this.headerRows));
+        sb.append(", bodyRows=").append(String.valueOf(this.bodyRows));
+        sb.append(", footerRows=").append(String.valueOf(this.footerRows));
+        sb.append(", confidence=").append(String.valueOf(this.confidence));
+        sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Table)) {
+            return false;
+        }
+
+        Table other = (Table) o;
+        return java.util.Objects.equals(this.rowCount, other.rowCount)
+                && java.util.Objects.equals(this.columnCount, other.columnCount)
+                && java.util.Objects.equals(this.headerRows, other.headerRows)
+                && java.util.Objects.equals(this.bodyRows, other.bodyRows)
+                && java.util.Objects.equals(this.footerRows, other.footerRows)
+                && java.util.Objects.equals(this.confidence, other.confidence)
+                && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.rowCount == null ? 43 : this.rowCount.hashCode());
+        result = (result * PRIME) + (this.columnCount == null ? 43 : this.columnCount.hashCode());
+        result = (result * PRIME) + (this.headerRows == null ? 43 : this.headerRows.hashCode());
+        result = (result * PRIME) + (this.bodyRows == null ? 43 : this.bodyRows.hashCode());
+        result = (result * PRIME) + (this.footerRows == null ? 43 : this.footerRows.hashCode());
+        result = (result * PRIME) + (this.confidence == null ? 43 : this.confidence.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.boundingPolygon == null ? 43 : this.boundingPolygon.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

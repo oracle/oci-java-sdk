@@ -15,16 +15,88 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseParameterSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseParameterSummary {
+public final class DatabaseParameterSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "type",
+        "value",
+        "displayValue",
+        "number",
+        "isDefault",
+        "isSessionModifiable",
+        "isSystemModifiable",
+        "isPdbModifiable",
+        "isInstanceModifiable",
+        "isModified",
+        "isAdjusted",
+        "isDeprecated",
+        "isBasic",
+        "description",
+        "ordinal",
+        "updateComment",
+        "containerId",
+        "category",
+        "constraint",
+        "sid",
+        "isSpecified",
+        "allowedValues"
+    })
+    public DatabaseParameterSummary(
+            String name,
+            Type type,
+            String value,
+            String displayValue,
+            java.math.BigDecimal number,
+            Boolean isDefault,
+            Boolean isSessionModifiable,
+            IsSystemModifiable isSystemModifiable,
+            Boolean isPdbModifiable,
+            Boolean isInstanceModifiable,
+            IsModified isModified,
+            Boolean isAdjusted,
+            Boolean isDeprecated,
+            Boolean isBasic,
+            String description,
+            java.math.BigDecimal ordinal,
+            String updateComment,
+            java.math.BigDecimal containerId,
+            String category,
+            Constraint constraint,
+            String sid,
+            Boolean isSpecified,
+            java.util.List<AllowedParameterValue> allowedValues) {
+        super();
+        this.name = name;
+        this.type = type;
+        this.value = value;
+        this.displayValue = displayValue;
+        this.number = number;
+        this.isDefault = isDefault;
+        this.isSessionModifiable = isSessionModifiable;
+        this.isSystemModifiable = isSystemModifiable;
+        this.isPdbModifiable = isPdbModifiable;
+        this.isInstanceModifiable = isInstanceModifiable;
+        this.isModified = isModified;
+        this.isAdjusted = isAdjusted;
+        this.isDeprecated = isDeprecated;
+        this.isBasic = isBasic;
+        this.description = description;
+        this.ordinal = ordinal;
+        this.updateComment = updateComment;
+        this.containerId = containerId;
+        this.category = category;
+        this.constraint = constraint;
+        this.sid = sid;
+        this.isSpecified = isSpecified;
+        this.allowedValues = allowedValues;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -305,15 +377,23 @@ public class DatabaseParameterSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The parameter name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * The parameter type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Boolean("BOOLEAN"),
         String("STRING"),
@@ -327,6 +407,8 @@ public class DatabaseParameterSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -363,40 +445,65 @@ public class DatabaseParameterSummary {
      * The parameter type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
+    private final Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     /**
      * The parameter value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    String value;
+    private final String value;
+
+    public String getValue() {
+        return value;
+    }
 
     /**
      * The parameter value in a user-friendly format. For example, if the {@code value} property shows the value 262144 for a big integer parameter, then the {@code displayValue} property will show the value 256K.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayValue")
-    String displayValue;
+    private final String displayValue;
+
+    public String getDisplayValue() {
+        return displayValue;
+    }
 
     /**
      * The parameter number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("number")
-    java.math.BigDecimal number;
+    private final java.math.BigDecimal number;
+
+    public java.math.BigDecimal getNumber() {
+        return number;
+    }
 
     /**
      * Indicates whether the parameter is set to the default value ({@code TRUE}) or the parameter value was specified in the parameter file ({@code FALSE}).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
 
     /**
      * Indicates whether the parameter can be changed with {@code ALTER SESSION} ({@code TRUE}) or not ({@code FALSE})
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSessionModifiable")
-    Boolean isSessionModifiable;
+    private final Boolean isSessionModifiable;
+
+    public Boolean getIsSessionModifiable() {
+        return isSessionModifiable;
+    }
+
     /**
      * Indicates whether the parameter can be changed with {@code ALTER SYSTEM} and when the change takes effect:
      * - IMMEDIATE: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect immediately.
@@ -404,7 +511,6 @@ public class DatabaseParameterSummary {
      * - FALSE: Parameter cannot be changed with {@code ALTER SYSTEM} unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum IsSystemModifiable {
         Immediate("IMMEDIATE"),
         Deferred("DEFERRED"),
@@ -415,6 +521,9 @@ public class DatabaseParameterSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IsSystemModifiable.class);
 
         private final String value;
         private static java.util.Map<String, IsSystemModifiable> map;
@@ -456,26 +565,38 @@ public class DatabaseParameterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystemModifiable")
-    IsSystemModifiable isSystemModifiable;
+    private final IsSystemModifiable isSystemModifiable;
+
+    public IsSystemModifiable getIsSystemModifiable() {
+        return isSystemModifiable;
+    }
 
     /**
      * Indicates whether the parameter can be modified on a per-PDB basis ({@code TRUE}) or not ({@code FALSE}). In a non-CDB, the value of this property is {@code null}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPdbModifiable")
-    Boolean isPdbModifiable;
+    private final Boolean isPdbModifiable;
+
+    public Boolean getIsPdbModifiable() {
+        return isPdbModifiable;
+    }
 
     /**
      * For parameters that can be changed with {@code ALTER SYSTEM}, indicates whether the value of the parameter can be different for every instance ({@code TRUE}) or whether the parameter must have the same value for all Real Application Clusters instances ({@code FALSE}). For other parameters, this is always {@code FALSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInstanceModifiable")
-    Boolean isInstanceModifiable;
+    private final Boolean isInstanceModifiable;
+
+    public Boolean getIsInstanceModifiable() {
+        return isInstanceModifiable;
+    }
+
     /**
      * Indicates how the parameter was modified. If an {@code ALTER SYSTEM} was performed, the value will be {@code MODIFIED}.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum IsModified {
         Modified("MODIFIED"),
         False("FALSE"),
@@ -485,6 +606,9 @@ public class DatabaseParameterSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IsModified.class);
 
         private final String value;
         private static java.util.Map<String, IsModified> map;
@@ -523,44 +647,72 @@ public class DatabaseParameterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isModified")
-    IsModified isModified;
+    private final IsModified isModified;
+
+    public IsModified getIsModified() {
+        return isModified;
+    }
 
     /**
      * Indicates whether Oracle adjusted the input value to a more suitable value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAdjusted")
-    Boolean isAdjusted;
+    private final Boolean isAdjusted;
+
+    public Boolean getIsAdjusted() {
+        return isAdjusted;
+    }
 
     /**
      * Indicates whether the parameter has been deprecated ({@code TRUE}) or not ({@code FALSE}).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeprecated")
-    Boolean isDeprecated;
+    private final Boolean isDeprecated;
+
+    public Boolean getIsDeprecated() {
+        return isDeprecated;
+    }
 
     /**
      * Indicates whether the parameter is a basic parameter ({@code TRUE}) or not ({@code FALSE}).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBasic")
-    Boolean isBasic;
+    private final Boolean isBasic;
+
+    public Boolean getIsBasic() {
+        return isBasic;
+    }
 
     /**
      * The description of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ordinal")
-    java.math.BigDecimal ordinal;
+    private final java.math.BigDecimal ordinal;
+
+    public java.math.BigDecimal getOrdinal() {
+        return ordinal;
+    }
 
     /**
      * The comments associated with the most recent update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateComment")
-    String updateComment;
+    private final String updateComment;
+
+    public String getUpdateComment() {
+        return updateComment;
+    }
 
     /**
      * The ID of the database container to which the data pertains.
@@ -571,13 +723,22 @@ public class DatabaseParameterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerId")
-    java.math.BigDecimal containerId;
+    private final java.math.BigDecimal containerId;
+
+    public java.math.BigDecimal getContainerId() {
+        return containerId;
+    }
 
     /**
      * The parameter category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    String category;
+    private final String category;
+
+    public String getCategory() {
+        return category;
+    }
+
     /**
      * Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases.
      * A {@code UNIQUE} parameter is one which is unique to each Oracle Real Application
@@ -587,7 +748,6 @@ public class DatabaseParameterSummary {
      * {@code DB_BLOCK_SIZE} must have the same value in all instances.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Constraint {
         Unique("UNIQUE"),
         Identical("IDENTICAL"),
@@ -598,6 +758,9 @@ public class DatabaseParameterSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Constraint.class);
 
         private final String value;
         private static java.util.Map<String, Constraint> map;
@@ -641,27 +804,166 @@ public class DatabaseParameterSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("constraint")
-    Constraint constraint;
+    private final Constraint constraint;
+
+    public Constraint getConstraint() {
+        return constraint;
+    }
 
     /**
      * The database instance SID for which the parameter is defined.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sid")
-    String sid;
+    private final String sid;
+
+    public String getSid() {
+        return sid;
+    }
 
     /**
      * Indicates whether the parameter was specified in the server parameter file ({@code TRUE}) or not ({@code FALSE}). Applicable only when the parameter source is {@code SPFILE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSpecified")
-    Boolean isSpecified;
+    private final Boolean isSpecified;
+
+    public Boolean getIsSpecified() {
+        return isSpecified;
+    }
 
     /**
      * A list of allowed values for this parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
-    java.util.List<AllowedParameterValue> allowedValues;
+    private final java.util.List<AllowedParameterValue> allowedValues;
+
+    public java.util.List<AllowedParameterValue> getAllowedValues() {
+        return allowedValues;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseParameterSummary(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", displayValue=").append(String.valueOf(this.displayValue));
+        sb.append(", number=").append(String.valueOf(this.number));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", isSessionModifiable=").append(String.valueOf(this.isSessionModifiable));
+        sb.append(", isSystemModifiable=").append(String.valueOf(this.isSystemModifiable));
+        sb.append(", isPdbModifiable=").append(String.valueOf(this.isPdbModifiable));
+        sb.append(", isInstanceModifiable=").append(String.valueOf(this.isInstanceModifiable));
+        sb.append(", isModified=").append(String.valueOf(this.isModified));
+        sb.append(", isAdjusted=").append(String.valueOf(this.isAdjusted));
+        sb.append(", isDeprecated=").append(String.valueOf(this.isDeprecated));
+        sb.append(", isBasic=").append(String.valueOf(this.isBasic));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", ordinal=").append(String.valueOf(this.ordinal));
+        sb.append(", updateComment=").append(String.valueOf(this.updateComment));
+        sb.append(", containerId=").append(String.valueOf(this.containerId));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", constraint=").append(String.valueOf(this.constraint));
+        sb.append(", sid=").append(String.valueOf(this.sid));
+        sb.append(", isSpecified=").append(String.valueOf(this.isSpecified));
+        sb.append(", allowedValues=").append(String.valueOf(this.allowedValues));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseParameterSummary)) {
+            return false;
+        }
+
+        DatabaseParameterSummary other = (DatabaseParameterSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Objects.equals(this.displayValue, other.displayValue)
+                && java.util.Objects.equals(this.number, other.number)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.isSessionModifiable, other.isSessionModifiable)
+                && java.util.Objects.equals(this.isSystemModifiable, other.isSystemModifiable)
+                && java.util.Objects.equals(this.isPdbModifiable, other.isPdbModifiable)
+                && java.util.Objects.equals(this.isInstanceModifiable, other.isInstanceModifiable)
+                && java.util.Objects.equals(this.isModified, other.isModified)
+                && java.util.Objects.equals(this.isAdjusted, other.isAdjusted)
+                && java.util.Objects.equals(this.isDeprecated, other.isDeprecated)
+                && java.util.Objects.equals(this.isBasic, other.isBasic)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.ordinal, other.ordinal)
+                && java.util.Objects.equals(this.updateComment, other.updateComment)
+                && java.util.Objects.equals(this.containerId, other.containerId)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.constraint, other.constraint)
+                && java.util.Objects.equals(this.sid, other.sid)
+                && java.util.Objects.equals(this.isSpecified, other.isSpecified)
+                && java.util.Objects.equals(this.allowedValues, other.allowedValues)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + (this.displayValue == null ? 43 : this.displayValue.hashCode());
+        result = (result * PRIME) + (this.number == null ? 43 : this.number.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSessionModifiable == null
+                                ? 43
+                                : this.isSessionModifiable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSystemModifiable == null
+                                ? 43
+                                : this.isSystemModifiable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPdbModifiable == null ? 43 : this.isPdbModifiable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInstanceModifiable == null
+                                ? 43
+                                : this.isInstanceModifiable.hashCode());
+        result = (result * PRIME) + (this.isModified == null ? 43 : this.isModified.hashCode());
+        result = (result * PRIME) + (this.isAdjusted == null ? 43 : this.isAdjusted.hashCode());
+        result = (result * PRIME) + (this.isDeprecated == null ? 43 : this.isDeprecated.hashCode());
+        result = (result * PRIME) + (this.isBasic == null ? 43 : this.isBasic.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.ordinal == null ? 43 : this.ordinal.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateComment == null ? 43 : this.updateComment.hashCode());
+        result = (result * PRIME) + (this.containerId == null ? 43 : this.containerId.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.constraint == null ? 43 : this.constraint.hashCode());
+        result = (result * PRIME) + (this.sid == null ? 43 : this.sid.hashCode());
+        result = (result * PRIME) + (this.isSpecified == null ? 43 : this.isSpecified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

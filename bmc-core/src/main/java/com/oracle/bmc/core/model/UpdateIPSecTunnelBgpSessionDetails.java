@@ -15,16 +15,34 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateIPSecTunnelBgpSessionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateIPSecTunnelBgpSessionDetails {
+public final class UpdateIPSecTunnelBgpSessionDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "oracleInterfaceIp",
+        "customerInterfaceIp",
+        "oracleInterfaceIpv6",
+        "customerInterfaceIpv6",
+        "customerBgpAsn"
+    })
+    public UpdateIPSecTunnelBgpSessionDetails(
+            String oracleInterfaceIp,
+            String customerInterfaceIp,
+            String oracleInterfaceIpv6,
+            String customerInterfaceIpv6,
+            String customerBgpAsn) {
+        super();
+        this.oracleInterfaceIp = oracleInterfaceIp;
+        this.customerInterfaceIp = customerInterfaceIp;
+        this.oracleInterfaceIpv6 = oracleInterfaceIpv6;
+        this.customerInterfaceIpv6 = customerInterfaceIpv6;
+        this.customerBgpAsn = customerBgpAsn;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIp")
         private String oracleInterfaceIp;
@@ -107,6 +125,10 @@ public class UpdateIPSecTunnelBgpSessionDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The IP address for the Oracle end of the inside tunnel interface.
      * <p>
@@ -126,7 +148,11 @@ public class UpdateIPSecTunnelBgpSessionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIp")
-    String oracleInterfaceIp;
+    private final String oracleInterfaceIp;
+
+    public String getOracleInterfaceIp() {
+        return oracleInterfaceIp;
+    }
 
     /**
      * The IP address for the CPE end of the inside tunnel interface.
@@ -147,7 +173,11 @@ public class UpdateIPSecTunnelBgpSessionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIp")
-    String customerInterfaceIp;
+    private final String customerInterfaceIp;
+
+    public String getCustomerInterfaceIp() {
+        return customerInterfaceIp;
+    }
 
     /**
      * The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
@@ -165,7 +195,11 @@ public class UpdateIPSecTunnelBgpSessionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIpv6")
-    String oracleInterfaceIpv6;
+    private final String oracleInterfaceIpv6;
+
+    public String getOracleInterfaceIpv6() {
+        return oracleInterfaceIpv6;
+    }
 
     /**
      * The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
@@ -183,7 +217,11 @@ public class UpdateIPSecTunnelBgpSessionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIpv6")
-    String customerInterfaceIpv6;
+    private final String customerInterfaceIpv6;
+
+    public String getCustomerInterfaceIpv6() {
+        return customerInterfaceIpv6;
+    }
 
     /**
      * The BGP ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN.
@@ -196,8 +234,79 @@ public class UpdateIPSecTunnelBgpSessionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
-    String customerBgpAsn;
+    private final String customerBgpAsn;
+
+    public String getCustomerBgpAsn() {
+        return customerBgpAsn;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateIPSecTunnelBgpSessionDetails(");
+        sb.append("oracleInterfaceIp=").append(String.valueOf(this.oracleInterfaceIp));
+        sb.append(", customerInterfaceIp=").append(String.valueOf(this.customerInterfaceIp));
+        sb.append(", oracleInterfaceIpv6=").append(String.valueOf(this.oracleInterfaceIpv6));
+        sb.append(", customerInterfaceIpv6=").append(String.valueOf(this.customerInterfaceIpv6));
+        sb.append(", customerBgpAsn=").append(String.valueOf(this.customerBgpAsn));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateIPSecTunnelBgpSessionDetails)) {
+            return false;
+        }
+
+        UpdateIPSecTunnelBgpSessionDetails other = (UpdateIPSecTunnelBgpSessionDetails) o;
+        return java.util.Objects.equals(this.oracleInterfaceIp, other.oracleInterfaceIp)
+                && java.util.Objects.equals(this.customerInterfaceIp, other.customerInterfaceIp)
+                && java.util.Objects.equals(this.oracleInterfaceIpv6, other.oracleInterfaceIpv6)
+                && java.util.Objects.equals(this.customerInterfaceIpv6, other.customerInterfaceIpv6)
+                && java.util.Objects.equals(this.customerBgpAsn, other.customerBgpAsn)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.oracleInterfaceIp == null ? 43 : this.oracleInterfaceIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerInterfaceIp == null
+                                ? 43
+                                : this.customerInterfaceIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleInterfaceIpv6 == null
+                                ? 43
+                                : this.oracleInterfaceIpv6.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerInterfaceIpv6 == null
+                                ? 43
+                                : this.customerInterfaceIpv6.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerBgpAsn == null ? 43 : this.customerBgpAsn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,14 +15,92 @@ package com.oracle.bmc.cloudguard.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Problem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Problem {
+public final class Problem {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "detectorRuleId",
+        "region",
+        "regions",
+        "riskLevel",
+        "riskScore",
+        "peakRiskScoreDate",
+        "peakRiskScore",
+        "autoResolveDate",
+        "peakRiskScoreLookupPeriodInDays",
+        "resourceId",
+        "resourceName",
+        "resourceType",
+        "labels",
+        "timeLastDetected",
+        "timeFirstDetected",
+        "lifecycleState",
+        "lifecycleDetail",
+        "detectorId",
+        "targetId",
+        "additionalDetails",
+        "description",
+        "recommendation",
+        "comment"
+    })
+    public Problem(
+            String id,
+            String compartmentId,
+            String detectorRuleId,
+            String region,
+            java.util.List<String> regions,
+            RiskLevel riskLevel,
+            Double riskScore,
+            String peakRiskScoreDate,
+            Double peakRiskScore,
+            String autoResolveDate,
+            Integer peakRiskScoreLookupPeriodInDays,
+            String resourceId,
+            String resourceName,
+            String resourceType,
+            java.util.List<String> labels,
+            java.util.Date timeLastDetected,
+            java.util.Date timeFirstDetected,
+            ProblemLifecycleState lifecycleState,
+            ProblemLifecycleDetail lifecycleDetail,
+            DetectorEnum detectorId,
+            String targetId,
+            java.util.Map<String, String> additionalDetails,
+            String description,
+            String recommendation,
+            String comment) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.detectorRuleId = detectorRuleId;
+        this.region = region;
+        this.regions = regions;
+        this.riskLevel = riskLevel;
+        this.riskScore = riskScore;
+        this.peakRiskScoreDate = peakRiskScoreDate;
+        this.peakRiskScore = peakRiskScore;
+        this.autoResolveDate = autoResolveDate;
+        this.peakRiskScoreLookupPeriodInDays = peakRiskScoreLookupPeriodInDays;
+        this.resourceId = resourceId;
+        this.resourceName = resourceName;
+        this.resourceType = resourceType;
+        this.labels = labels;
+        this.timeLastDetected = timeLastDetected;
+        this.timeFirstDetected = timeFirstDetected;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetail = lifecycleDetail;
+        this.detectorId = detectorId;
+        this.targetId = targetId;
+        this.additionalDetails = additionalDetails;
+        this.description = description;
+        this.recommendation = recommendation;
+        this.comment = comment;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -325,156 +403,399 @@ public class Problem {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique identifier that is immutable on creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Compartment Identifier where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Identifier of the rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
-    String detectorRuleId;
+    private final String detectorRuleId;
+
+    public String getDetectorRuleId() {
+        return detectorRuleId;
+    }
 
     /**
      * DEPRECATED
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    String region;
+    private final String region;
+
+    public String getRegion() {
+        return region;
+    }
 
     /**
      * Regions where the problem is found
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
-    java.util.List<String> regions;
+    private final java.util.List<String> regions;
+
+    public java.util.List<String> getRegions() {
+        return regions;
+    }
 
     /**
      * The Risk Level
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
-    RiskLevel riskLevel;
+    private final RiskLevel riskLevel;
+
+    public RiskLevel getRiskLevel() {
+        return riskLevel;
+    }
 
     /**
      * Risk Score for the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
-    Double riskScore;
+    private final Double riskScore;
+
+    public Double getRiskScore() {
+        return riskScore;
+    }
 
     /**
      * The date and time for the peak risk score that is observed. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScoreDate")
-    String peakRiskScoreDate;
+    private final String peakRiskScoreDate;
+
+    public String getPeakRiskScoreDate() {
+        return peakRiskScoreDate;
+    }
 
     /**
      * Peak risk score for the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScore")
-    Double peakRiskScore;
+    private final Double peakRiskScore;
+
+    public Double getPeakRiskScore() {
+        return peakRiskScore;
+    }
 
     /**
      * The date and time when the problem will be auto resolved. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoResolveDate")
-    String autoResolveDate;
+    private final String autoResolveDate;
+
+    public String getAutoResolveDate() {
+        return autoResolveDate;
+    }
 
     /**
      * Number of days for which peak score is calculated for the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScoreLookupPeriodInDays")
-    Integer peakRiskScoreLookupPeriodInDays;
+    private final Integer peakRiskScoreLookupPeriodInDays;
+
+    public Integer getPeakRiskScoreLookupPeriodInDays() {
+        return peakRiskScoreLookupPeriodInDays;
+    }
 
     /**
      * Identifier of the Resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * DisplayName of the Resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
-    String resourceName;
+    private final String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
 
     /**
      * Type of the Resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     /**
      * user defined labels on the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
-    java.util.List<String> labels;
+    private final java.util.List<String> labels;
+
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
 
     /**
      * The date and time the problem was last detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
-    java.util.Date timeLastDetected;
+    private final java.util.Date timeLastDetected;
+
+    public java.util.Date getTimeLastDetected() {
+        return timeLastDetected;
+    }
 
     /**
      * The date and time the problem was first detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
-    java.util.Date timeFirstDetected;
+    private final java.util.Date timeFirstDetected;
+
+    public java.util.Date getTimeFirstDetected() {
+        return timeFirstDetected;
+    }
 
     /**
      * The current state of the Problem.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ProblemLifecycleState lifecycleState;
+    private final ProblemLifecycleState lifecycleState;
+
+    public ProblemLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The lifecycleDetail will give more detail on the substate of the lifecycleState.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
-    ProblemLifecycleDetail lifecycleDetail;
+    private final ProblemLifecycleDetail lifecycleDetail;
+
+    public ProblemLifecycleDetail getLifecycleDetail() {
+        return lifecycleDetail;
+    }
 
     /**
      * Id of the detector associated with the Problem.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorId")
-    DetectorEnum detectorId;
+    private final DetectorEnum detectorId;
+
+    public DetectorEnum getDetectorId() {
+        return detectorId;
+    }
 
     /**
      * targetId of the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The additional details of the Problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
-    java.util.Map<String, String> additionalDetails;
+    private final java.util.Map<String, String> additionalDetails;
+
+    public java.util.Map<String, String> getAdditionalDetails() {
+        return additionalDetails;
+    }
 
     /**
      * Description of the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * Recommendation for the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
-    String recommendation;
+    private final String recommendation;
+
+    public String getRecommendation() {
+        return recommendation;
+    }
 
     /**
      * User Comments
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
-    String comment;
+    private final String comment;
+
+    public String getComment() {
+        return comment;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Problem(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", detectorRuleId=").append(String.valueOf(this.detectorRuleId));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", regions=").append(String.valueOf(this.regions));
+        sb.append(", riskLevel=").append(String.valueOf(this.riskLevel));
+        sb.append(", riskScore=").append(String.valueOf(this.riskScore));
+        sb.append(", peakRiskScoreDate=").append(String.valueOf(this.peakRiskScoreDate));
+        sb.append(", peakRiskScore=").append(String.valueOf(this.peakRiskScore));
+        sb.append(", autoResolveDate=").append(String.valueOf(this.autoResolveDate));
+        sb.append(", peakRiskScoreLookupPeriodInDays=")
+                .append(String.valueOf(this.peakRiskScoreLookupPeriodInDays));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", labels=").append(String.valueOf(this.labels));
+        sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
+        sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetail=").append(String.valueOf(this.lifecycleDetail));
+        sb.append(", detectorId=").append(String.valueOf(this.detectorId));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", recommendation=").append(String.valueOf(this.recommendation));
+        sb.append(", comment=").append(String.valueOf(this.comment));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Problem)) {
+            return false;
+        }
+
+        Problem other = (Problem) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.detectorRuleId, other.detectorRuleId)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.regions, other.regions)
+                && java.util.Objects.equals(this.riskLevel, other.riskLevel)
+                && java.util.Objects.equals(this.riskScore, other.riskScore)
+                && java.util.Objects.equals(this.peakRiskScoreDate, other.peakRiskScoreDate)
+                && java.util.Objects.equals(this.peakRiskScore, other.peakRiskScore)
+                && java.util.Objects.equals(this.autoResolveDate, other.autoResolveDate)
+                && java.util.Objects.equals(
+                        this.peakRiskScoreLookupPeriodInDays, other.peakRiskScoreLookupPeriodInDays)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.labels, other.labels)
+                && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
+                && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetail, other.lifecycleDetail)
+                && java.util.Objects.equals(this.detectorId, other.detectorId)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.recommendation, other.recommendation)
+                && java.util.Objects.equals(this.comment, other.comment)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRuleId == null ? 43 : this.detectorRuleId.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
+        result = (result * PRIME) + (this.riskLevel == null ? 43 : this.riskLevel.hashCode());
+        result = (result * PRIME) + (this.riskScore == null ? 43 : this.riskScore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peakRiskScoreDate == null ? 43 : this.peakRiskScoreDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peakRiskScore == null ? 43 : this.peakRiskScore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoResolveDate == null ? 43 : this.autoResolveDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peakRiskScoreLookupPeriodInDays == null
+                                ? 43
+                                : this.peakRiskScoreLookupPeriodInDays.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstDetected == null ? 43 : this.timeFirstDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetail == null ? 43 : this.lifecycleDetail.hashCode());
+        result = (result * PRIME) + (this.detectorId == null ? 43 : this.detectorId.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendation == null ? 43 : this.recommendation.hashCode());
+        result = (result * PRIME) + (this.comment == null ? 43 : this.comment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

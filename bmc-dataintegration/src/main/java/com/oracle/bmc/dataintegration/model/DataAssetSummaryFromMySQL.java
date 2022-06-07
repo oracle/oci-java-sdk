@@ -15,22 +15,17 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DataAssetSummaryFromMySQL.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DataAssetSummaryFromMySQL extends DataAssetSummary {
+public final class DataAssetSummaryFromMySQL extends DataAssetSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -234,6 +229,10 @@ public class DataAssetSummaryFromMySQL extends DataAssetSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public DataAssetSummaryFromMySQL(
             String key,
@@ -275,23 +274,91 @@ public class DataAssetSummaryFromMySQL extends DataAssetSummary {
      * The generic JDBC host name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
-    String host;
+    private final String host;
+
+    public String getHost() {
+        return host;
+    }
 
     /**
      * The generic JDBC port number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    String port;
+    private final String port;
+
+    public String getPort() {
+        return port;
+    }
 
     /**
      * The generic JDBC service name for the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
-    String serviceName;
+    private final String serviceName;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
-    ConnectionSummaryFromMySQL defaultConnection;
+    private final ConnectionSummaryFromMySQL defaultConnection;
+
+    public ConnectionSummaryFromMySQL getDefaultConnection() {
+        return defaultConnection;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DataAssetSummaryFromMySQL(");
+        sb.append("super=").append(super.toString());
+        sb.append(", host=").append(String.valueOf(this.host));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DataAssetSummaryFromMySQL)) {
+            return false;
+        }
+
+        DataAssetSummaryFromMySQL other = (DataAssetSummaryFromMySQL) o;
+        return java.util.Objects.equals(this.host, other.host)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

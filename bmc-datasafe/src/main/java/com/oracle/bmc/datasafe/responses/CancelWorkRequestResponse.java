@@ -7,10 +7,6 @@ package com.oracle.bmc.datasafe.responses;
 import com.oracle.bmc.datasafe.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CancelWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -18,10 +14,18 @@ public class CancelWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * A non-negative integer representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Integer retryAfter;
+
+    public Integer getRetryAfter() {
+        return retryAfter;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "retryAfter"})
     private CancelWorkRequestResponse(
@@ -36,6 +40,20 @@ public class CancelWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer retryAfter;
+
+        public Builder retryAfter(Integer retryAfter) {
+            this.retryAfter = retryAfter;
             return this;
         }
 
@@ -54,5 +72,44 @@ public class CancelWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
         public CancelWorkRequestResponse build() {
             return new CancelWorkRequestResponse(__httpStatusCode__, opcRequestId, retryAfter);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",retryAfter=").append(String.valueOf(retryAfter));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CancelWorkRequestResponse)) {
+            return false;
+        }
+
+        CancelWorkRequestResponse other = (CancelWorkRequestResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.retryAfter, other.retryAfter);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.retryAfter == null ? 43 : this.retryAfter.hashCode());
+        return result;
     }
 }

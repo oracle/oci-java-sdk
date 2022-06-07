@@ -9,14 +9,6 @@ import com.oracle.bmc.loadbalancer.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateBackendExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBackendRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UpdateBackendRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loadbalancer.model.UpdateBackendDetails> {
@@ -26,11 +18,17 @@ public class UpdateBackendRequest
      */
     private com.oracle.bmc.loadbalancer.model.UpdateBackendDetails updateBackendDetails;
 
+    public com.oracle.bmc.loadbalancer.model.UpdateBackendDetails getUpdateBackendDetails() {
+        return updateBackendDetails;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and server.
      */
     private String loadBalancerId;
 
+    public String getLoadBalancerId() {
+        return loadBalancerId;
+    }
     /**
      * The name of the backend set associated with the backend server.
      * <p>
@@ -39,6 +37,9 @@ public class UpdateBackendRequest
      */
     private String backendSetName;
 
+    public String getBackendSetName() {
+        return backendSetName;
+    }
     /**
      * The IP address and port of the backend server to update.
      * <p>
@@ -47,6 +48,9 @@ public class UpdateBackendRequest
      */
     private String backendName;
 
+    public String getBackendName() {
+        return backendName;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -54,6 +58,9 @@ public class UpdateBackendRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -63,6 +70,10 @@ public class UpdateBackendRequest
      *
      */
     private String opcRetryToken;
+
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -80,6 +91,86 @@ public class UpdateBackendRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.loadbalancer.model.UpdateBackendDetails updateBackendDetails = null;
+
+        /**
+         * Details for updating a backend server.
+         * @return this builder instance
+         */
+        public Builder updateBackendDetails(
+                com.oracle.bmc.loadbalancer.model.UpdateBackendDetails updateBackendDetails) {
+            this.updateBackendDetails = updateBackendDetails;
+            return this;
+        }
+
+        private String loadBalancerId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and server.
+         * @return this builder instance
+         */
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        private String backendSetName = null;
+
+        /**
+         * The name of the backend set associated with the backend server.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         * @return this builder instance
+         */
+        public Builder backendSetName(String backendSetName) {
+            this.backendSetName = backendSetName;
+            return this;
+        }
+
+        private String backendName = null;
+
+        /**
+         * The IP address and port of the backend server to update.
+         * <p>
+         * Example: {@code 10.0.0.3:8080}
+         *
+         * @return this builder instance
+         */
+        public Builder backendName(String backendName) {
+            this.backendName = backendName;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -147,5 +238,99 @@ public class UpdateBackendRequest
             updateBackendDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UpdateBackendRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UpdateBackendRequest
+         */
+        public UpdateBackendRequest buildWithoutInvocationCallback() {
+            UpdateBackendRequest request = new UpdateBackendRequest();
+            request.updateBackendDetails = updateBackendDetails;
+            request.loadBalancerId = loadBalancerId;
+            request.backendSetName = backendSetName;
+            request.backendName = backendName;
+            request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
+            return request;
+            // new UpdateBackendRequest(updateBackendDetails, loadBalancerId, backendSetName, backendName, opcRequestId, opcRetryToken);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .updateBackendDetails(updateBackendDetails)
+                .loadBalancerId(loadBalancerId)
+                .backendSetName(backendSetName)
+                .backendName(backendName)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",updateBackendDetails=").append(String.valueOf(this.updateBackendDetails));
+        sb.append(",loadBalancerId=").append(String.valueOf(this.loadBalancerId));
+        sb.append(",backendSetName=").append(String.valueOf(this.backendSetName));
+        sb.append(",backendName=").append(String.valueOf(this.backendName));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateBackendRequest)) {
+            return false;
+        }
+
+        UpdateBackendRequest other = (UpdateBackendRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.updateBackendDetails, other.updateBackendDetails)
+                && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
+                && java.util.Objects.equals(this.backendSetName, other.backendSetName)
+                && java.util.Objects.equals(this.backendName, other.backendName)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.updateBackendDetails == null
+                                ? 43
+                                : this.updateBackendDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
+        result = (result * PRIME) + (this.backendName == null ? 43 : this.backendName.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        return result;
     }
 }

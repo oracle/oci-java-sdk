@@ -16,16 +16,43 @@ package com.oracle.bmc.servicecatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PrivateApplicationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class PrivateApplicationSummary {
+public final class PrivateApplicationSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "lifecycleState",
+        "compartmentId",
+        "id",
+        "displayName",
+        "shortDescription",
+        "logo",
+        "packageType",
+        "timeCreated"
+    })
+    public PrivateApplicationSummary(
+            PrivateApplication.LifecycleState lifecycleState,
+            String compartmentId,
+            String id,
+            String displayName,
+            String shortDescription,
+            UploadData logo,
+            PackageTypeEnum packageType,
+            java.util.Date timeCreated) {
+        super();
+        this.lifecycleState = lifecycleState;
+        this.compartmentId = compartmentId;
+        this.id = id;
+        this.displayName = displayName;
+        this.shortDescription = shortDescription;
+        this.logo = logo;
+        this.packageType = packageType;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private PrivateApplication.LifecycleState lifecycleState;
@@ -141,45 +168,77 @@ public class PrivateApplicationSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The lifecycle state of the private application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    PrivateApplication.LifecycleState lifecycleState;
+    private final PrivateApplication.LifecycleState lifecycleState;
+
+    public PrivateApplication.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The name of the private application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A short description of the private application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
-    String shortDescription;
+    private final String shortDescription;
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("logo")
-    UploadData logo;
+    private final UploadData logo;
+
+    public UploadData getLogo() {
+        return logo;
+    }
 
     /**
      * Type of the packages, which are hosted by the private application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
-    PackageTypeEnum packageType;
+    private final PackageTypeEnum packageType;
+
+    public PackageTypeEnum getPackageType() {
+        return packageType;
+    }
 
     /**
      * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
@@ -189,8 +248,78 @@ public class PrivateApplicationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PrivateApplicationSummary(");
+        sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", shortDescription=").append(String.valueOf(this.shortDescription));
+        sb.append(", logo=").append(String.valueOf(this.logo));
+        sb.append(", packageType=").append(String.valueOf(this.packageType));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PrivateApplicationSummary)) {
+            return false;
+        }
+
+        PrivateApplicationSummary other = (PrivateApplicationSummary) o;
+        return java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.shortDescription, other.shortDescription)
+                && java.util.Objects.equals(this.logo, other.logo)
+                && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shortDescription == null ? 43 : this.shortDescription.hashCode());
+        result = (result * PRIME) + (this.logo == null ? 43 : this.logo.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

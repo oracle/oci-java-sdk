@@ -15,16 +15,43 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AppCatalogSubscription.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AppCatalogSubscription {
+public final class AppCatalogSubscription {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "publisherName",
+        "listingId",
+        "listingResourceVersion",
+        "listingResourceId",
+        "displayName",
+        "summary",
+        "compartmentId",
+        "timeCreated"
+    })
+    public AppCatalogSubscription(
+            String publisherName,
+            String listingId,
+            String listingResourceVersion,
+            String listingResourceId,
+            String displayName,
+            String summary,
+            String compartmentId,
+            java.util.Date timeCreated) {
+        super();
+        this.publisherName = publisherName;
+        this.listingId = listingId;
+        this.listingResourceVersion = listingResourceVersion;
+        this.listingResourceId = listingResourceId;
+        this.displayName = displayName;
+        this.summary = summary;
+        this.compartmentId = compartmentId;
+        this.timeCreated = timeCreated;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
         private String publisherName;
@@ -140,29 +167,49 @@ public class AppCatalogSubscription {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the publisher who published this listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
-    String publisherName;
+    private final String publisherName;
+
+    public String getPublisherName() {
+        return publisherName;
+    }
 
     /**
      * The ocid of the listing resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
-    String listingId;
+    private final String listingId;
+
+    public String getListingId() {
+        return listingId;
+    }
 
     /**
      * Listing resource version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
-    String listingResourceVersion;
+    private final String listingResourceVersion;
+
+    public String getListingResourceVersion() {
+        return listingResourceVersion;
+    }
 
     /**
      * Listing resource id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
-    String listingResourceId;
+    private final String listingResourceId;
+
+    public String getListingResourceId() {
+        return listingResourceId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -170,19 +217,31 @@ public class AppCatalogSubscription {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The short summary to the listing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
-    String summary;
+    private final String summary;
+
+    public String getSummary() {
+        return summary;
+    }
 
     /**
      * The compartmentID of the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
@@ -190,8 +249,83 @@ public class AppCatalogSubscription {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AppCatalogSubscription(");
+        sb.append("publisherName=").append(String.valueOf(this.publisherName));
+        sb.append(", listingId=").append(String.valueOf(this.listingId));
+        sb.append(", listingResourceVersion=").append(String.valueOf(this.listingResourceVersion));
+        sb.append(", listingResourceId=").append(String.valueOf(this.listingResourceId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", summary=").append(String.valueOf(this.summary));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AppCatalogSubscription)) {
+            return false;
+        }
+
+        AppCatalogSubscription other = (AppCatalogSubscription) o;
+        return java.util.Objects.equals(this.publisherName, other.publisherName)
+                && java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(
+                        this.listingResourceVersion, other.listingResourceVersion)
+                && java.util.Objects.equals(this.listingResourceId, other.listingResourceId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.summary, other.summary)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.publisherName == null ? 43 : this.publisherName.hashCode());
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listingResourceVersion == null
+                                ? 43
+                                : this.listingResourceVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listingResourceId == null ? 43 : this.listingResourceId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

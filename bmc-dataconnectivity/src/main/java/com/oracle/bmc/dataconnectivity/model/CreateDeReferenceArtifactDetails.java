@@ -15,16 +15,19 @@ package com.oracle.bmc.dataconnectivity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDeReferenceArtifactDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateDeReferenceArtifactDetails {
+public final class CreateDeReferenceArtifactDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"serviceArtifactId"})
+    public CreateDeReferenceArtifactDetails(String serviceArtifactId) {
+        super();
+        this.serviceArtifactId = serviceArtifactId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("serviceArtifactId")
         private String serviceArtifactId;
@@ -61,12 +64,61 @@ public class CreateDeReferenceArtifactDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * unique id of service which is referencing data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceArtifactId")
-    String serviceArtifactId;
+    private final String serviceArtifactId;
+
+    public String getServiceArtifactId() {
+        return serviceArtifactId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDeReferenceArtifactDetails(");
+        sb.append("serviceArtifactId=").append(String.valueOf(this.serviceArtifactId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDeReferenceArtifactDetails)) {
+            return false;
+        }
+
+        CreateDeReferenceArtifactDetails other = (CreateDeReferenceArtifactDetails) o;
+        return java.util.Objects.equals(this.serviceArtifactId, other.serviceArtifactId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.serviceArtifactId == null ? 43 : this.serviceArtifactId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

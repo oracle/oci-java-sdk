@@ -8,7 +8,6 @@ package com.oracle.bmc.waas.model;
  * An enum value indicating the operation being performed by the work request.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.extern.slf4j.Slf4j
 public enum WorkRequestOperationTypes {
     CreateWaasPolicy("CREATE_WAAS_POLICY"),
     UpdateWaasPolicy("UPDATE_WAAS_POLICY"),
@@ -26,6 +25,9 @@ public enum WorkRequestOperationTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WorkRequestOperationTypes.class);
 
     private final String value;
     private static java.util.Map<String, WorkRequestOperationTypes> map;

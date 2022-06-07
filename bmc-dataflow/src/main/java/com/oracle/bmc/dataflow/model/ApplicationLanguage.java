@@ -9,7 +9,6 @@ package com.oracle.bmc.dataflow.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-@lombok.extern.slf4j.Slf4j
 public enum ApplicationLanguage {
     Scala("SCALA"),
     Java("JAVA"),
@@ -21,6 +20,9 @@ public enum ApplicationLanguage {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ApplicationLanguage.class);
 
     private final String value;
     private static java.util.Map<String, ApplicationLanguage> map;

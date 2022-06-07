@@ -15,16 +15,31 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AttachBootVolumeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class AttachBootVolumeDetails {
+public final class AttachBootVolumeDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "bootVolumeId",
+        "displayName",
+        "instanceId",
+        "encryptionInTransitType"
+    })
+    public AttachBootVolumeDetails(
+            String bootVolumeId,
+            String displayName,
+            String instanceId,
+            EncryptionInTransitType encryptionInTransitType) {
+        super();
+        this.bootVolumeId = bootVolumeId;
+        this.displayName = displayName;
+        this.instanceId = instanceId;
+        this.encryptionInTransitType = encryptionInTransitType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
         private String bootVolumeId;
@@ -93,11 +108,19 @@ public class AttachBootVolumeDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the  boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
-    String bootVolumeId;
+    private final String bootVolumeId;
+
+    public String getBootVolumeId() {
+        return bootVolumeId;
+    }
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
@@ -105,13 +128,21 @@ public class AttachBootVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    String instanceId;
+    private final String instanceId;
+
+    public String getInstanceId() {
+        return instanceId;
+    }
 
     /**
      * Refer the top-level definition of encryptionInTransitType.
@@ -119,8 +150,66 @@ public class AttachBootVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
-    EncryptionInTransitType encryptionInTransitType;
+    private final EncryptionInTransitType encryptionInTransitType;
+
+    public EncryptionInTransitType getEncryptionInTransitType() {
+        return encryptionInTransitType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("AttachBootVolumeDetails(");
+        sb.append("bootVolumeId=").append(String.valueOf(this.bootVolumeId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", instanceId=").append(String.valueOf(this.instanceId));
+        sb.append(", encryptionInTransitType=")
+                .append(String.valueOf(this.encryptionInTransitType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AttachBootVolumeDetails)) {
+            return false;
+        }
+
+        AttachBootVolumeDetails other = (AttachBootVolumeDetails) o;
+        return java.util.Objects.equals(this.bootVolumeId, other.bootVolumeId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.instanceId, other.instanceId)
+                && java.util.Objects.equals(
+                        this.encryptionInTransitType, other.encryptionInTransitType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.bootVolumeId == null ? 43 : this.bootVolumeId.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionInTransitType == null
+                                ? 43
+                                : this.encryptionInTransitType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.database.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCloudAutonomousVmClusterRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetCloudAutonomousVmClusterRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,11 +17,18 @@ public class GetCloudAutonomousVmClusterRequest
      */
     private String cloudAutonomousVmClusterId;
 
+    public String getCloudAutonomousVmClusterId() {
+        return cloudAutonomousVmClusterId;
+    }
     /**
      * Unique identifier for the request.
      *
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -37,6 +36,29 @@ public class GetCloudAutonomousVmClusterRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String cloudAutonomousVmClusterId = null;
+
+        /**
+         * The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @return this builder instance
+         */
+        public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
+            this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -89,5 +111,75 @@ public class GetCloudAutonomousVmClusterRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetCloudAutonomousVmClusterRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetCloudAutonomousVmClusterRequest
+         */
+        public GetCloudAutonomousVmClusterRequest buildWithoutInvocationCallback() {
+            GetCloudAutonomousVmClusterRequest request = new GetCloudAutonomousVmClusterRequest();
+            request.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetCloudAutonomousVmClusterRequest(cloudAutonomousVmClusterId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .cloudAutonomousVmClusterId(cloudAutonomousVmClusterId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",cloudAutonomousVmClusterId=")
+                .append(String.valueOf(this.cloudAutonomousVmClusterId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetCloudAutonomousVmClusterRequest)) {
+            return false;
+        }
+
+        GetCloudAutonomousVmClusterRequest other = (GetCloudAutonomousVmClusterRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.cloudAutonomousVmClusterId, other.cloudAutonomousVmClusterId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.cloudAutonomousVmClusterId == null
+                                ? 43
+                                : this.cloudAutonomousVmClusterId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

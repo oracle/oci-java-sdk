@@ -17,16 +17,20 @@ package com.oracle.bmc.apmsynthetics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScriptParameterInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ScriptParameterInfo {
+public final class ScriptParameterInfo {
+    @Deprecated
+    @java.beans.ConstructorProperties({"scriptParameter", "isOverwritten"})
+    public ScriptParameterInfo(ScriptParameter scriptParameter, Boolean isOverwritten) {
+        super();
+        this.scriptParameter = scriptParameter;
+        this.isOverwritten = isOverwritten;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("scriptParameter")
         private ScriptParameter scriptParameter;
@@ -73,16 +77,74 @@ public class ScriptParameterInfo {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("scriptParameter")
-    ScriptParameter scriptParameter;
+    private final ScriptParameter scriptParameter;
+
+    public ScriptParameter getScriptParameter() {
+        return scriptParameter;
+    }
 
     /**
      * If parameter value is default or overwritten.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOverwritten")
-    Boolean isOverwritten;
+    private final Boolean isOverwritten;
+
+    public Boolean getIsOverwritten() {
+        return isOverwritten;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ScriptParameterInfo(");
+        sb.append("scriptParameter=").append(String.valueOf(this.scriptParameter));
+        sb.append(", isOverwritten=").append(String.valueOf(this.isOverwritten));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ScriptParameterInfo)) {
+            return false;
+        }
+
+        ScriptParameterInfo other = (ScriptParameterInfo) o;
+        return java.util.Objects.equals(this.scriptParameter, other.scriptParameter)
+                && java.util.Objects.equals(this.isOverwritten, other.isOverwritten)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.scriptParameter == null ? 43 : this.scriptParameter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOverwritten == null ? 43 : this.isOverwritten.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

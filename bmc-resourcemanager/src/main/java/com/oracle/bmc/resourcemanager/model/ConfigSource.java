@@ -16,12 +16,6 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.AllArgsConstructor(
-    onConstructor = @__({@Deprecated}),
-    access = lombok.AccessLevel.PROTECTED
-)
-@lombok.Value
-@lombok.experimental.NonFinal
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -48,6 +42,12 @@ package com.oracle.bmc.resourcemanager.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ConfigSource {
+    @Deprecated
+    @java.beans.ConstructorProperties({"workingDirectory"})
+    protected ConfigSource(String workingDirectory) {
+        super();
+        this.workingDirectory = workingDirectory;
+    }
 
     /**
      * File path to the directory to use for running Terraform.
@@ -59,13 +59,48 @@ public class ConfigSource {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
-    String workingDirectory;
+    private final String workingDirectory;
+
+    public String getWorkingDirectory() {
+        return workingDirectory;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConfigSource(");
+        sb.append("workingDirectory=").append(String.valueOf(this.workingDirectory));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConfigSource)) {
+            return false;
+        }
+
+        ConfigSource other = (ConfigSource) o;
+        return java.util.Objects.equals(this.workingDirectory, other.workingDirectory);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.workingDirectory == null ? 43 : this.workingDirectory.hashCode());
+        return result;
+    }
 
     /**
      * The type of configuration source to use for the Terraform configuration.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ConfigSourceType {
         ZipUpload("ZIP_UPLOAD"),
         GitConfigSource("GIT_CONFIG_SOURCE"),
@@ -77,6 +112,9 @@ public class ConfigSource {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ConfigSourceType.class);
 
         private final String value;
         private static java.util.Map<String, ConfigSourceType> map;

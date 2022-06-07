@@ -9,14 +9,6 @@ import com.oracle.bmc.containerengine.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateKubeconfigExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateKubeconfigRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateKubeconfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails> {
@@ -26,6 +18,9 @@ public class CreateKubeconfigRequest
      */
     private String clusterId;
 
+    public String getClusterId() {
+        return clusterId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -33,11 +28,19 @@ public class CreateKubeconfigRequest
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The details of the cluster kubeconfig to create.
      */
     private com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails
             createClusterKubeconfigContentDetails;
+
+    public com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails
+            getCreateClusterKubeconfigContentDetails() {
+        return createClusterKubeconfigContentDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -56,6 +59,44 @@ public class CreateKubeconfigRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String clusterId = null;
+
+        /**
+         * The OCID of the cluster.
+         * @return this builder instance
+         */
+        public Builder clusterId(String clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails
+                createClusterKubeconfigContentDetails = null;
+
+        /**
+         * The details of the cluster kubeconfig to create.
+         * @return this builder instance
+         */
+        public Builder createClusterKubeconfigContentDetails(
+                com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails
+                        createClusterKubeconfigContentDetails) {
+            this.createClusterKubeconfigContentDetails = createClusterKubeconfigContentDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -121,5 +162,81 @@ public class CreateKubeconfigRequest
             createClusterKubeconfigContentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateKubeconfigRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateKubeconfigRequest
+         */
+        public CreateKubeconfigRequest buildWithoutInvocationCallback() {
+            CreateKubeconfigRequest request = new CreateKubeconfigRequest();
+            request.clusterId = clusterId;
+            request.opcRequestId = opcRequestId;
+            request.createClusterKubeconfigContentDetails = createClusterKubeconfigContentDetails;
+            return request;
+            // new CreateKubeconfigRequest(clusterId, opcRequestId, createClusterKubeconfigContentDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .clusterId(clusterId)
+                .opcRequestId(opcRequestId)
+                .createClusterKubeconfigContentDetails(createClusterKubeconfigContentDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",clusterId=").append(String.valueOf(this.clusterId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",createClusterKubeconfigContentDetails=")
+                .append(String.valueOf(this.createClusterKubeconfigContentDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateKubeconfigRequest)) {
+            return false;
+        }
+
+        CreateKubeconfigRequest other = (CreateKubeconfigRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.clusterId, other.clusterId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.createClusterKubeconfigContentDetails,
+                        other.createClusterKubeconfigContentDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.clusterId == null ? 43 : this.clusterId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createClusterKubeconfigContentDetails == null
+                                ? 43
+                                : this.createClusterKubeconfigContentDetails.hashCode());
+        return result;
     }
 }

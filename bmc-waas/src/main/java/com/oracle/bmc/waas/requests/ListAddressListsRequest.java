@@ -9,14 +9,6 @@ import com.oracle.bmc.waas.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListAddressListsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAddressListsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListAddressListsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,21 +16,33 @@ public class ListAddressListsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The value of the {@code opc-next-page} response header from the previous paginated call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The value by which address lists are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeCreated}.
      */
@@ -80,6 +84,10 @@ public class ListAddressListsRequest extends com.oracle.bmc.requests.BmcRequest<
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
      */
@@ -120,30 +128,50 @@ public class ListAddressListsRequest extends com.oracle.bmc.requests.BmcRequest<
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * Filter address lists using a list of address lists OCIDs.
      */
     private java.util.List<String> id;
 
+    public java.util.List<String> getId() {
+        return id;
+    }
     /**
      * Filter address lists using a list of names.
      */
     private java.util.List<String> name;
 
+    public java.util.List<String> getName() {
+        return name;
+    }
     /**
      * Filter address lists using a list of lifecycle states.
      */
     private java.util.List<com.oracle.bmc.waas.model.LifecycleStates> lifecycleState;
 
+    public java.util.List<com.oracle.bmc.waas.model.LifecycleStates> getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * A filter that matches address lists created on or after the specified date-time.
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
+        return timeCreatedGreaterThanOrEqualTo;
+    }
     /**
      * A filter that matches address lists created before the specified date-time.
      */
     private java.util.Date timeCreatedLessThan;
+
+    public java.util.Date getTimeCreatedLessThan() {
+        return timeCreatedLessThan;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -151,6 +179,72 @@ public class ListAddressListsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The value of the {@code opc-next-page} response header from the previous paginated call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The value by which address lists are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeCreated}.
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
 
         private java.util.List<String> id = null;
 
@@ -208,6 +302,29 @@ public class ListAddressListsRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder lifecycleState(LifecycleStates singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
+
+        /**
+         * A filter that matches address lists created on or after the specified date-time.
+         * @return this builder instance
+         */
+        public Builder timeCreatedGreaterThanOrEqualTo(
+                java.util.Date timeCreatedGreaterThanOrEqualTo) {
+            this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        private java.util.Date timeCreatedLessThan = null;
+
+        /**
+         * A filter that matches address lists created before the specified date-time.
+         * @return this builder instance
+         */
+        public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
+            this.timeCreatedLessThan = timeCreatedLessThan;
+            return this;
         }
 
         /**
@@ -270,5 +387,128 @@ public class ListAddressListsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListAddressListsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListAddressListsRequest
+         */
+        public ListAddressListsRequest buildWithoutInvocationCallback() {
+            ListAddressListsRequest request = new ListAddressListsRequest();
+            request.compartmentId = compartmentId;
+            request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.id = id;
+            request.name = name;
+            request.lifecycleState = lifecycleState;
+            request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            request.timeCreatedLessThan = timeCreatedLessThan;
+            return request;
+            // new ListAddressListsRequest(compartmentId, opcRequestId, limit, page, sortBy, sortOrder, id, name, lifecycleState, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .id(id)
+                .name(name)
+                .lifecycleState(lifecycleState)
+                .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
+                .timeCreatedLessThan(timeCreatedLessThan);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",timeCreatedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
+        sb.append(",timeCreatedLessThan=").append(String.valueOf(this.timeCreatedLessThan));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListAddressListsRequest)) {
+            return false;
+        }
+
+        ListAddressListsRequest other = (ListAddressListsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.timeCreatedLessThan, other.timeCreatedLessThan);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeCreatedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedLessThan == null
+                                ? 43
+                                : this.timeCreatedLessThan.hashCode());
+        return result;
     }
 }

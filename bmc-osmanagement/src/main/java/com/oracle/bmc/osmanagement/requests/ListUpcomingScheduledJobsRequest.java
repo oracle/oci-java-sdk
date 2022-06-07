@@ -9,14 +9,6 @@ import com.oracle.bmc.osmanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListUpcomingScheduledJobsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUpcomingScheduledJobsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ListUpcomingScheduledJobsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,6 +17,9 @@ public class ListUpcomingScheduledJobsRequest
      */
     private String compartmentId;
 
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The cut-off time before which to list all upcoming schedules, in ISO 8601 format
      * <p>
@@ -33,6 +28,9 @@ public class ListUpcomingScheduledJobsRequest
      */
     private java.util.Date timeEnd;
 
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
@@ -41,16 +39,25 @@ public class ListUpcomingScheduledJobsRequest
      */
     private String displayName;
 
+    public String getDisplayName() {
+        return displayName;
+    }
     /**
      * The maximum number of items to return.
      */
     private Integer limit;
 
+    public Integer getLimit() {
+        return limit;
+    }
     /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
+    public String getPage() {
+        return page;
+    }
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
@@ -91,6 +98,10 @@ public class ListUpcomingScheduledJobsRequest
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+
+    public SortOrder getSortOrder() {
+        return sortOrder;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
      *
@@ -133,30 +144,50 @@ public class ListUpcomingScheduledJobsRequest
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
+
+    public SortBy getSortBy() {
+        return sortBy;
+    }
     /**
      * The name of the tag.
      */
     private String tagName;
 
+    public String getTagName() {
+        return tagName;
+    }
     /**
      * The value for the tag.
      */
     private String tagValue;
 
+    public String getTagValue() {
+        return tagValue;
+    }
     /**
      * The current lifecycle state for the object.
      */
     private com.oracle.bmc.osmanagement.model.LifecycleStates lifecycleState;
 
+    public com.oracle.bmc.osmanagement.model.LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The OS family for which to list resources.
      */
     private com.oracle.bmc.osmanagement.model.OsFamilies osFamily;
+
+    public com.oracle.bmc.osmanagement.model.OsFamilies getOsFamily() {
+        return osFamily;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -164,6 +195,146 @@ public class ListUpcomingScheduledJobsRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        private java.util.Date timeEnd = null;
+
+        /**
+         * The cut-off time before which to list all upcoming schedules, in ISO 8601 format
+         * <p>
+         * Example: 2017-07-14T02:40:00.000Z
+         *
+         * @return this builder instance
+         */
+        public Builder timeEnd(java.util.Date timeEnd) {
+            this.timeEnd = timeEnd;
+            return this;
+        }
+
+        private String displayName = null;
+
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
+         *
+         * @return this builder instance
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        private Integer limit = null;
+
+        /**
+         * The maximum number of items to return.
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        private String page = null;
+
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        private SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         * @return this builder instance
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        private String tagName = null;
+
+        /**
+         * The name of the tag.
+         * @return this builder instance
+         */
+        public Builder tagName(String tagName) {
+            this.tagName = tagName;
+            return this;
+        }
+
+        private String tagValue = null;
+
+        /**
+         * The value for the tag.
+         * @return this builder instance
+         */
+        public Builder tagValue(String tagValue) {
+            this.tagValue = tagValue;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.LifecycleStates lifecycleState = null;
+
+        /**
+         * The current lifecycle state for the object.
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.osmanagement.model.LifecycleStates lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.osmanagement.model.OsFamilies osFamily = null;
+
+        /**
+         * The OS family for which to list resources.
+         * @return this builder instance
+         */
+        public Builder osFamily(com.oracle.bmc.osmanagement.model.OsFamilies osFamily) {
+            this.osFamily = osFamily;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -226,5 +397,123 @@ public class ListUpcomingScheduledJobsRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of ListUpcomingScheduledJobsRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ListUpcomingScheduledJobsRequest
+         */
+        public ListUpcomingScheduledJobsRequest buildWithoutInvocationCallback() {
+            ListUpcomingScheduledJobsRequest request = new ListUpcomingScheduledJobsRequest();
+            request.compartmentId = compartmentId;
+            request.timeEnd = timeEnd;
+            request.displayName = displayName;
+            request.limit = limit;
+            request.page = page;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
+            request.tagName = tagName;
+            request.tagValue = tagValue;
+            request.lifecycleState = lifecycleState;
+            request.opcRequestId = opcRequestId;
+            request.osFamily = osFamily;
+            return request;
+            // new ListUpcomingScheduledJobsRequest(compartmentId, timeEnd, displayName, limit, page, sortOrder, sortBy, tagName, tagValue, lifecycleState, opcRequestId, osFamily);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .compartmentId(compartmentId)
+                .timeEnd(timeEnd)
+                .displayName(displayName)
+                .limit(limit)
+                .page(page)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy)
+                .tagName(tagName)
+                .tagValue(tagValue)
+                .lifecycleState(lifecycleState)
+                .opcRequestId(opcRequestId)
+                .osFamily(osFamily);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",tagName=").append(String.valueOf(this.tagName));
+        sb.append(",tagValue=").append(String.valueOf(this.tagValue));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ListUpcomingScheduledJobsRequest)) {
+            return false;
+        }
+
+        ListUpcomingScheduledJobsRequest other = (ListUpcomingScheduledJobsRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.tagName, other.tagName)
+                && java.util.Objects.equals(this.tagValue, other.tagValue)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.osFamily, other.osFamily);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.tagName == null ? 43 : this.tagName.hashCode());
+        result = (result * PRIME) + (this.tagValue == null ? 43 : this.tagValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        return result;
     }
 }

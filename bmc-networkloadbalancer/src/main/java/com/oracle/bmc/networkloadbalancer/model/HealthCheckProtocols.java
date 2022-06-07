@@ -8,7 +8,6 @@ package com.oracle.bmc.networkloadbalancer.model;
  * Protocols supported for the health checks of the network load balancer.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.extern.slf4j.Slf4j
 public enum HealthCheckProtocols {
     Http("HTTP"),
     Https("HTTPS"),
@@ -20,6 +19,9 @@ public enum HealthCheckProtocols {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(HealthCheckProtocols.class);
 
     private final String value;
     private static java.util.Map<String, HealthCheckProtocols> map;

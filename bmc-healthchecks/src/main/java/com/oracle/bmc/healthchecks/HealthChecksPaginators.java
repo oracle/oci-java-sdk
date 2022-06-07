@@ -26,9 +26,12 @@ import com.oracle.bmc.healthchecks.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-@lombok.RequiredArgsConstructor
 public class HealthChecksPaginators {
     private final HealthChecks client;
+
+    public HealthChecksPaginators(HealthChecks client) {
+        this.client = client;
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listHealthChecksVantagePoints operation. This iterable

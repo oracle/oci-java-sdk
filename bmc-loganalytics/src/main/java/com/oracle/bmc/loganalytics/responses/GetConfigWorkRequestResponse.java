@@ -7,10 +7,6 @@ package com.oracle.bmc.loganalytics.responses;
 import com.oracle.bmc.loganalytics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
@@ -18,11 +14,20 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned LogAnalyticsConfigWorkRequest instance.
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
             logAnalyticsConfigWorkRequest;
+
+    public com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
+            getLogAnalyticsConfigWorkRequest() {
+        return logAnalyticsConfigWorkRequest;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -47,6 +52,23 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
+                logAnalyticsConfigWorkRequest;
+
+        public Builder logAnalyticsConfigWorkRequest(
+                com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
+                        logAnalyticsConfigWorkRequest) {
+            this.logAnalyticsConfigWorkRequest = logAnalyticsConfigWorkRequest;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -63,5 +85,50 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
             return new GetConfigWorkRequestResponse(
                     __httpStatusCode__, opcRequestId, logAnalyticsConfigWorkRequest);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",logAnalyticsConfigWorkRequest=")
+                .append(String.valueOf(logAnalyticsConfigWorkRequest));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetConfigWorkRequestResponse)) {
+            return false;
+        }
+
+        GetConfigWorkRequestResponse other = (GetConfigWorkRequestResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.logAnalyticsConfigWorkRequest, other.logAnalyticsConfigWorkRequest);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logAnalyticsConfigWorkRequest == null
+                                ? 43
+                                : this.logAnalyticsConfigWorkRequest.hashCode());
+        return result;
     }
 }

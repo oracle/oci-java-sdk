@@ -15,16 +15,24 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApiValidationDetail.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApiValidationDetail {
+public final class ApiValidationDetail {
+    @Deprecated
+    @java.beans.ConstructorProperties({"msg", "severity", "src"})
+    public ApiValidationDetail(
+            String msg,
+            Severity severity,
+            java.util.List<java.util.List<java.math.BigDecimal>> src) {
+        super();
+        this.msg = msg;
+        this.severity = severity;
+        this.src = src;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("msg")
         private String msg;
@@ -78,15 +86,23 @@ public class ApiValidationDetail {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Description of the warning/error.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("msg")
-    String msg;
+    private final String msg;
+
+    public String getMsg() {
+        return msg;
+    }
+
     /**
      * Severity of the issue.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Severity {
         Info("INFO"),
         Warning("WARNING"),
@@ -97,6 +113,9 @@ public class ApiValidationDetail {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Severity.class);
 
         private final String value;
         private static java.util.Map<String, Severity> map;
@@ -134,14 +153,67 @@ public class ApiValidationDetail {
      * Severity of the issue.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
-    Severity severity;
+    private final Severity severity;
+
+    public Severity getSeverity() {
+        return severity;
+    }
 
     /**
      * Position of the issue in the specification file (line, column).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("src")
-    java.util.List<java.util.List<java.math.BigDecimal>> src;
+    private final java.util.List<java.util.List<java.math.BigDecimal>> src;
+
+    public java.util.List<java.util.List<java.math.BigDecimal>> getSrc() {
+        return src;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApiValidationDetail(");
+        sb.append("msg=").append(String.valueOf(this.msg));
+        sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", src=").append(String.valueOf(this.src));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApiValidationDetail)) {
+            return false;
+        }
+
+        ApiValidationDetail other = (ApiValidationDetail) o;
+        return java.util.Objects.equals(this.msg, other.msg)
+                && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.src, other.src)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.msg == null ? 43 : this.msg.hashCode());
+        result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.src == null ? 43 : this.src.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

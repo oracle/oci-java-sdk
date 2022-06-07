@@ -15,16 +15,20 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConnectionAliasSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ConnectionAliasSummary {
+public final class ConnectionAliasSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"aliasName", "aliasDetails"})
+    public ConnectionAliasSummary(String aliasName, String aliasDetails) {
+        super();
+        this.aliasName = aliasName;
+        this.aliasDetails = aliasDetails;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
         private String aliasName;
@@ -70,21 +74,75 @@ public class ConnectionAliasSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
-    String aliasName;
+    private final String aliasName;
+
+    public String getAliasName() {
+        return aliasName;
+    }
 
     /**
      * The description about the database alias parsed from the file metadata.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliasDetails")
-    String aliasDetails;
+    private final String aliasDetails;
+
+    public String getAliasDetails() {
+        return aliasDetails;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ConnectionAliasSummary(");
+        sb.append("aliasName=").append(String.valueOf(this.aliasName));
+        sb.append(", aliasDetails=").append(String.valueOf(this.aliasDetails));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ConnectionAliasSummary)) {
+            return false;
+        }
+
+        ConnectionAliasSummary other = (ConnectionAliasSummary) o;
+        return java.util.Objects.equals(this.aliasName, other.aliasName)
+                && java.util.Objects.equals(this.aliasDetails, other.aliasDetails)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.aliasName == null ? 43 : this.aliasName.hashCode());
+        result = (result * PRIME) + (this.aliasDetails == null ? 43 : this.aliasDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

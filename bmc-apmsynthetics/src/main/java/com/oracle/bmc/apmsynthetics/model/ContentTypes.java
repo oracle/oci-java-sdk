@@ -8,7 +8,6 @@ package com.oracle.bmc.apmsynthetics.model;
  * Content type of script.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.extern.slf4j.Slf4j
 public enum ContentTypes {
     Side("SIDE"),
     Js("JS"),
@@ -18,6 +17,9 @@ public enum ContentTypes {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ContentTypes.class);
 
     private final String value;
     private static java.util.Map<String, ContentTypes> map;

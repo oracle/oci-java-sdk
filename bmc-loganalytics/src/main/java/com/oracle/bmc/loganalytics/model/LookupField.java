@@ -15,14 +15,38 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LookupField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LookupField {
+public final class LookupField {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "commonFieldName",
+        "defaultMatchValue",
+        "displayName",
+        "isCommonField",
+        "matchOperator",
+        "name",
+        "position"
+    })
+    public LookupField(
+            String commonFieldName,
+            String defaultMatchValue,
+            String displayName,
+            Boolean isCommonField,
+            String matchOperator,
+            String name,
+            Long position) {
+        super();
+        this.commonFieldName = commonFieldName;
+        this.defaultMatchValue = defaultMatchValue;
+        this.displayName = displayName;
+        this.isCommonField = isCommonField;
+        this.matchOperator = matchOperator;
+        this.name = name;
+        this.position = position;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("commonFieldName")
         private String commonFieldName;
@@ -127,49 +151,146 @@ public class LookupField {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The common field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commonFieldName")
-    String commonFieldName;
+    private final String commonFieldName;
+
+    public String getCommonFieldName() {
+        return commonFieldName;
+    }
 
     /**
      * The default match value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
-    String defaultMatchValue;
+    private final String defaultMatchValue;
+
+    public String getDefaultMatchValue() {
+        return defaultMatchValue;
+    }
 
     /**
      * The field display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * A flag indicating whether or not the lookup field is a common field.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCommonField")
-    Boolean isCommonField;
+    private final Boolean isCommonField;
+
+    public Boolean getIsCommonField() {
+        return isCommonField;
+    }
 
     /**
      * The match operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchOperator")
-    String matchOperator;
+    private final String matchOperator;
+
+    public String getMatchOperator() {
+        return matchOperator;
+    }
 
     /**
      * The field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * THe field position.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
-    Long position;
+    private final Long position;
+
+    public Long getPosition() {
+        return position;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LookupField(");
+        sb.append("commonFieldName=").append(String.valueOf(this.commonFieldName));
+        sb.append(", defaultMatchValue=").append(String.valueOf(this.defaultMatchValue));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isCommonField=").append(String.valueOf(this.isCommonField));
+        sb.append(", matchOperator=").append(String.valueOf(this.matchOperator));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", position=").append(String.valueOf(this.position));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LookupField)) {
+            return false;
+        }
+
+        LookupField other = (LookupField) o;
+        return java.util.Objects.equals(this.commonFieldName, other.commonFieldName)
+                && java.util.Objects.equals(this.defaultMatchValue, other.defaultMatchValue)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isCommonField, other.isCommonField)
+                && java.util.Objects.equals(this.matchOperator, other.matchOperator)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.position, other.position)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.commonFieldName == null ? 43 : this.commonFieldName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultMatchValue == null ? 43 : this.defaultMatchValue.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCommonField == null ? 43 : this.isCommonField.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.matchOperator == null ? 43 : this.matchOperator.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.position == null ? 43 : this.position.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

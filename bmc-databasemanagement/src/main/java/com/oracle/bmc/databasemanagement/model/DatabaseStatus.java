@@ -8,7 +8,6 @@ package com.oracle.bmc.databasemanagement.model;
  * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.extern.slf4j.Slf4j
 public enum DatabaseStatus {
     Up("UP"),
     Down("DOWN"),
@@ -19,6 +18,9 @@ public enum DatabaseStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DatabaseStatus.class);
 
     private final String value;
     private static java.util.Map<String, DatabaseStatus> map;

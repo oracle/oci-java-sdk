@@ -18,14 +18,35 @@ package com.oracle.bmc.cims.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateIncident.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateIncident {
+public final class CreateIncident {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "ticket",
+        "csi",
+        "problemType",
+        "contacts",
+        "referrer"
+    })
+    public CreateIncident(
+            String compartmentId,
+            CreateTicketDetails ticket,
+            String csi,
+            ProblemType problemType,
+            java.util.List<Contact> contacts,
+            String referrer) {
+        super();
+        this.compartmentId = compartmentId;
+        this.ticket = ticket;
+        this.csi = csi;
+        this.problemType = problemType;
+        this.contacts = contacts;
+        this.referrer = referrer;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -113,39 +134,123 @@ public class CreateIncident {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The OCID of the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ticket")
-    CreateTicketDetails ticket;
+    private final CreateTicketDetails ticket;
+
+    public CreateTicketDetails getTicket() {
+        return ticket;
+    }
 
     /**
      * The Customer Support Identifier number for the support account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
-    String csi;
+    private final String csi;
+
+    public String getCsi() {
+        return csi;
+    }
 
     /**
      * The kind of support ticket, such as a technical issue request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
-    ProblemType problemType;
+    private final ProblemType problemType;
+
+    public ProblemType getProblemType() {
+        return problemType;
+    }
 
     /**
      * The list of contacts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
-    java.util.List<Contact> contacts;
+    private final java.util.List<Contact> contacts;
+
+    public java.util.List<Contact> getContacts() {
+        return contacts;
+    }
 
     /**
      * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referrer")
-    String referrer;
+    private final String referrer;
+
+    public String getReferrer() {
+        return referrer;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateIncident(");
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", ticket=").append(String.valueOf(this.ticket));
+        sb.append(", csi=").append(String.valueOf(this.csi));
+        sb.append(", problemType=").append(String.valueOf(this.problemType));
+        sb.append(", contacts=").append(String.valueOf(this.contacts));
+        sb.append(", referrer=").append(String.valueOf(this.referrer));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateIncident)) {
+            return false;
+        }
+
+        CreateIncident other = (CreateIncident) o;
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.ticket, other.ticket)
+                && java.util.Objects.equals(this.csi, other.csi)
+                && java.util.Objects.equals(this.problemType, other.problemType)
+                && java.util.Objects.equals(this.contacts, other.contacts)
+                && java.util.Objects.equals(this.referrer, other.referrer)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.ticket == null ? 43 : this.ticket.hashCode());
+        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
+        result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
+        result = (result * PRIME) + (this.contacts == null ? 43 : this.contacts.hashCode());
+        result = (result * PRIME) + (this.referrer == null ? 43 : this.referrer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

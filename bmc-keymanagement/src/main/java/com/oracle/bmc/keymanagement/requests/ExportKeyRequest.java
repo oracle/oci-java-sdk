@@ -9,14 +9,6 @@ import com.oracle.bmc.keymanagement.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ExportKeyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ExportKeyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class ExportKeyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.keymanagement.model.ExportKeyDetails> {
@@ -25,6 +17,10 @@ public class ExportKeyRequest
      * ExportKeyDetails
      */
     private com.oracle.bmc.keymanagement.model.ExportKeyDetails exportKeyDetails;
+
+    public com.oracle.bmc.keymanagement.model.ExportKeyDetails getExportKeyDetails() {
+        return exportKeyDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -42,6 +38,18 @@ public class ExportKeyRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.keymanagement.model.ExportKeyDetails exportKeyDetails = null;
+
+        /**
+         * ExportKeyDetails
+         * @return this builder instance
+         */
+        public Builder exportKeyDetails(
+                com.oracle.bmc.keymanagement.model.ExportKeyDetails exportKeyDetails) {
+            this.exportKeyDetails = exportKeyDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -104,5 +112,65 @@ public class ExportKeyRequest
             exportKeyDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of ExportKeyRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of ExportKeyRequest
+         */
+        public ExportKeyRequest buildWithoutInvocationCallback() {
+            ExportKeyRequest request = new ExportKeyRequest();
+            request.exportKeyDetails = exportKeyDetails;
+            return request;
+            // new ExportKeyRequest(exportKeyDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder().exportKeyDetails(exportKeyDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",exportKeyDetails=").append(String.valueOf(this.exportKeyDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExportKeyRequest)) {
+            return false;
+        }
+
+        ExportKeyRequest other = (ExportKeyRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.exportKeyDetails, other.exportKeyDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.exportKeyDetails == null ? 43 : this.exportKeyDetails.hashCode());
+        return result;
     }
 }

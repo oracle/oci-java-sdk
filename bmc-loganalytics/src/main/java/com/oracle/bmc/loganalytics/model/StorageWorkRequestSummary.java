@@ -16,16 +16,76 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = StorageWorkRequestSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class StorageWorkRequestSummary {
+public final class StorageWorkRequestSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "timeStarted",
+        "timeAccepted",
+        "timeFinished",
+        "timeExpires",
+        "percentComplete",
+        "status",
+        "timeDataStarted",
+        "timeDataEnded",
+        "purgeQueryString",
+        "dataType",
+        "statusDetails",
+        "operationDetails",
+        "policyName",
+        "policyId",
+        "storageUsageInBytes",
+        "compartmentIdInSubtree",
+        "operationType"
+    })
+    public StorageWorkRequestSummary(
+            String id,
+            String compartmentId,
+            java.util.Date timeStarted,
+            java.util.Date timeAccepted,
+            java.util.Date timeFinished,
+            java.util.Date timeExpires,
+            Integer percentComplete,
+            WorkRequestStatus status,
+            java.util.Date timeDataStarted,
+            java.util.Date timeDataEnded,
+            String purgeQueryString,
+            StorageDataType dataType,
+            String statusDetails,
+            String operationDetails,
+            String policyName,
+            String policyId,
+            Long storageUsageInBytes,
+            Boolean compartmentIdInSubtree,
+            StorageOperationType operationType) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.timeStarted = timeStarted;
+        this.timeAccepted = timeAccepted;
+        this.timeFinished = timeFinished;
+        this.timeExpires = timeExpires;
+        this.percentComplete = percentComplete;
+        this.status = status;
+        this.timeDataStarted = timeDataStarted;
+        this.timeDataEnded = timeDataEnded;
+        this.purgeQueryString = purgeQueryString;
+        this.dataType = dataType;
+        this.statusDetails = statusDetails;
+        this.operationDetails = operationDetails;
+        this.policyName = policyName;
+        this.policyId = policyId;
+        this.storageUsageInBytes = storageUsageInBytes;
+        this.compartmentIdInSubtree = compartmentIdInSubtree;
+        this.operationType = operationType;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -262,125 +322,323 @@ public class StorageWorkRequestSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * This is the OCID of the storage work Request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * When the work request started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
+    private final java.util.Date timeStarted;
+
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
 
     /**
      * When the work request was accepted. Should match timeStarted in all cases.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
-    java.util.Date timeAccepted;
+    private final java.util.Date timeAccepted;
+
+    public java.util.Date getTimeAccepted() {
+        return timeAccepted;
+    }
 
     /**
      * When the work request finished execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
-    java.util.Date timeFinished;
+    private final java.util.Date timeFinished;
+
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
 
     /**
      * When the work request will expire.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
-    java.util.Date timeExpires;
+    private final java.util.Date timeExpires;
+
+    public java.util.Date getTimeExpires() {
+        return timeExpires;
+    }
 
     /**
      * Percentage progress completion of the work request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
-    Integer percentComplete;
+    private final Integer percentComplete;
+
+    public Integer getPercentComplete() {
+        return percentComplete;
+    }
 
     /**
      * This is the work request status.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    WorkRequestStatus status;
+    private final WorkRequestStatus status;
+
+    public WorkRequestStatus getStatus() {
+        return status;
+    }
 
     /**
      * This is the start of the time interval
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
-    java.util.Date timeDataStarted;
+    private final java.util.Date timeDataStarted;
+
+    public java.util.Date getTimeDataStarted() {
+        return timeDataStarted;
+    }
 
     /**
      * This is the end of the time interval
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
-    java.util.Date timeDataEnded;
+    private final java.util.Date timeDataEnded;
+
+    public java.util.Date getTimeDataEnded() {
+        return timeDataEnded;
+    }
 
     /**
      * This is the solr query used to filter data for purge, '*' means all
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
-    String purgeQueryString;
+    private final String purgeQueryString;
+
+    public String getPurgeQueryString() {
+        return purgeQueryString;
+    }
 
     /**
      * Thie is the type of data to be purged
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
-    StorageDataType dataType;
+    private final StorageDataType dataType;
+
+    public StorageDataType getDataType() {
+        return dataType;
+    }
 
     /**
      * This provides more detailed status if applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
-    String statusDetails;
+    private final String statusDetails;
+
+    public String getStatusDetails() {
+        return statusDetails;
+    }
 
     /**
      * This provides more detailed info about the work request if applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationDetails")
-    String operationDetails;
+    private final String operationDetails;
+
+    public String getOperationDetails() {
+        return operationDetails;
+    }
 
     /**
      * This is the policy name if applicable (e.g. purge policy)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyName")
-    String policyName;
+    private final String policyName;
+
+    public String getPolicyName() {
+        return policyName;
+    }
 
     /**
      * This is the purge policy ID if applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
-    String policyId;
+    private final String policyId;
+
+    public String getPolicyId() {
+        return policyId;
+    }
 
     /**
      * This is the data usage in bytes if applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsageInBytes")
-    Long storageUsageInBytes;
+    private final Long storageUsageInBytes;
+
+    public Long getStorageUsageInBytes() {
+        return storageUsageInBytes;
+    }
 
     /**
      * If true, purge child compartments data, only applicable to purge request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
-    Boolean compartmentIdInSubtree;
+    private final Boolean compartmentIdInSubtree;
+
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
 
     /**
      * This is the type of the work request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
-    StorageOperationType operationType;
+    private final StorageOperationType operationType;
+
+    public StorageOperationType getOperationType() {
+        return operationType;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StorageWorkRequestSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
+        sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", timeDataStarted=").append(String.valueOf(this.timeDataStarted));
+        sb.append(", timeDataEnded=").append(String.valueOf(this.timeDataEnded));
+        sb.append(", purgeQueryString=").append(String.valueOf(this.purgeQueryString));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", statusDetails=").append(String.valueOf(this.statusDetails));
+        sb.append(", operationDetails=").append(String.valueOf(this.operationDetails));
+        sb.append(", policyName=").append(String.valueOf(this.policyName));
+        sb.append(", policyId=").append(String.valueOf(this.policyId));
+        sb.append(", storageUsageInBytes=").append(String.valueOf(this.storageUsageInBytes));
+        sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(", operationType=").append(String.valueOf(this.operationType));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StorageWorkRequestSummary)) {
+            return false;
+        }
+
+        StorageWorkRequestSummary other = (StorageWorkRequestSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.timeExpires, other.timeExpires)
+                && java.util.Objects.equals(this.percentComplete, other.percentComplete)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.timeDataStarted, other.timeDataStarted)
+                && java.util.Objects.equals(this.timeDataEnded, other.timeDataEnded)
+                && java.util.Objects.equals(this.purgeQueryString, other.purgeQueryString)
+                && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.statusDetails, other.statusDetails)
+                && java.util.Objects.equals(this.operationDetails, other.operationDetails)
+                && java.util.Objects.equals(this.policyName, other.policyName)
+                && java.util.Objects.equals(this.policyId, other.policyId)
+                && java.util.Objects.equals(this.storageUsageInBytes, other.storageUsageInBytes)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataStarted == null ? 43 : this.timeDataStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataEnded == null ? 43 : this.timeDataEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.purgeQueryString == null ? 43 : this.purgeQueryString.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statusDetails == null ? 43 : this.statusDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationDetails == null ? 43 : this.operationDetails.hashCode());
+        result = (result * PRIME) + (this.policyName == null ? 43 : this.policyName.hashCode());
+        result = (result * PRIME) + (this.policyId == null ? 43 : this.policyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageUsageInBytes == null
+                                ? 43
+                                : this.storageUsageInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

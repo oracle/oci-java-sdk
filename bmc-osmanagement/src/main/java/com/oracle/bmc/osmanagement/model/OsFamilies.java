@@ -8,7 +8,6 @@ package com.oracle.bmc.osmanagement.model;
  * Operating System types
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.extern.slf4j.Slf4j
 public enum OsFamilies {
     Linux("LINUX"),
     Windows("WINDOWS"),
@@ -19,6 +18,8 @@ public enum OsFamilies {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(OsFamilies.class);
 
     private final String value;
     private static java.util.Map<String, OsFamilies> map;

@@ -9,9 +9,9 @@ import com.oracle.bmc.loganalytics.requests.*;
 import com.oracle.bmc.loganalytics.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.extern.slf4j.Slf4j
 public class LogAnalyticsClient implements LogAnalytics {
     /**
      * Service instance for LogAnalytics.
@@ -26,13 +26,17 @@ public class LogAnalyticsClient implements LogAnalytics {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LogAnalyticsAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final LogAnalyticsWaiters waiters;
 
     private final LogAnalyticsPaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -401,9 +405,13 @@ public class LogAnalyticsClient implements LogAnalytics {
          * @return the client
          */
         public LogAnalyticsClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new LogAnalyticsClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -543,8 +551,12 @@ public class LogAnalyticsClient implements LogAnalytics {
     public AppendLookupDataResponse appendLookupData(AppendLookupDataRequest request) {
         LOG.trace("Called appendLookupData");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -557,10 +569,6 @@ public class LogAnalyticsClient implements LogAnalytics {
                     AppendLookupDataConverter.fromRequest(client, interceptedRequest);
             com.google.common.base.Function<javax.ws.rs.core.Response, AppendLookupDataResponse>
                     transformer = AppendLookupDataConverter.fromResponse();
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -587,6 +595,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -3496,8 +3505,12 @@ public class LogAnalyticsClient implements LogAnalytics {
     public ImportCustomContentResponse importCustomContent(ImportCustomContentRequest request) {
         LOG.trace("Called importCustomContent");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -3510,10 +3523,6 @@ public class LogAnalyticsClient implements LogAnalytics {
                     ImportCustomContentConverter.fromRequest(client, interceptedRequest);
             com.google.common.base.Function<javax.ws.rs.core.Response, ImportCustomContentResponse>
                     transformer = ImportCustomContentConverter.fromResponse();
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -3541,6 +3550,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -5458,8 +5468,12 @@ public class LogAnalyticsClient implements LogAnalytics {
     public RegisterLookupResponse registerLookup(RegisterLookupRequest request) {
         LOG.trace("Called registerLookup");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -5472,10 +5486,6 @@ public class LogAnalyticsClient implements LogAnalytics {
                     RegisterLookupConverter.fromRequest(client, interceptedRequest);
             com.google.common.base.Function<javax.ws.rs.core.Response, RegisterLookupResponse>
                     transformer = RegisterLookupConverter.fromResponse();
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -5503,6 +5513,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -6228,8 +6239,12 @@ public class LogAnalyticsClient implements LogAnalytics {
     public UpdateLookupDataResponse updateLookupData(UpdateLookupDataRequest request) {
         LOG.trace("Called updateLookupData");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -6242,10 +6257,6 @@ public class LogAnalyticsClient implements LogAnalytics {
                     UpdateLookupDataConverter.fromRequest(client, interceptedRequest);
             com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLookupDataResponse>
                     transformer = UpdateLookupDataConverter.fromResponse();
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -6272,6 +6283,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -6451,8 +6463,12 @@ public class LogAnalyticsClient implements LogAnalytics {
     public UploadLogEventsFileResponse uploadLogEventsFile(UploadLogEventsFileRequest request) {
         LOG.trace("Called uploadLogEventsFile");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -6469,10 +6485,6 @@ public class LogAnalyticsClient implements LogAnalytics {
             ib.property(
                     com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                     com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -6500,6 +6512,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -6526,8 +6539,12 @@ public class LogAnalyticsClient implements LogAnalytics {
     public UploadLogFileResponse uploadLogFile(UploadLogFileRequest request) {
         LOG.trace("Called uploadLogFile");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -6544,10 +6561,6 @@ public class LogAnalyticsClient implements LogAnalytics {
             ib.property(
                     com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                     com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -6574,6 +6587,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -7027,5 +7041,31 @@ public class LogAnalyticsClient implements LogAnalytics {
     @Override
     public LogAnalyticsPaginators getPaginators() {
         return paginators;
+    }
+
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

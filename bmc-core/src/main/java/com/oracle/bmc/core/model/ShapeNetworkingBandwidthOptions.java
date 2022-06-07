@@ -18,16 +18,22 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ShapeNetworkingBandwidthOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ShapeNetworkingBandwidthOptions {
+public final class ShapeNetworkingBandwidthOptions {
+    @Deprecated
+    @java.beans.ConstructorProperties({"minInGbps", "maxInGbps", "defaultPerOcpuInGbps"})
+    public ShapeNetworkingBandwidthOptions(
+            Float minInGbps, Float maxInGbps, Float defaultPerOcpuInGbps) {
+        super();
+        this.minInGbps = minInGbps;
+        this.maxInGbps = maxInGbps;
+        this.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("minInGbps")
         private Float minInGbps;
@@ -85,27 +91,92 @@ public class ShapeNetworkingBandwidthOptions {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The minimum amount of networking bandwidth, in gigabits per second.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minInGbps")
-    Float minInGbps;
+    private final Float minInGbps;
+
+    public Float getMinInGbps() {
+        return minInGbps;
+    }
 
     /**
      * The maximum amount of networking bandwidth, in gigabits per second.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxInGbps")
-    Float maxInGbps;
+    private final Float maxInGbps;
+
+    public Float getMaxInGbps() {
+        return maxInGbps;
+    }
 
     /**
      * The default amount of networking bandwidth per OCPU, in gigabits per second.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGbps")
-    Float defaultPerOcpuInGbps;
+    private final Float defaultPerOcpuInGbps;
+
+    public Float getDefaultPerOcpuInGbps() {
+        return defaultPerOcpuInGbps;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ShapeNetworkingBandwidthOptions(");
+        sb.append("minInGbps=").append(String.valueOf(this.minInGbps));
+        sb.append(", maxInGbps=").append(String.valueOf(this.maxInGbps));
+        sb.append(", defaultPerOcpuInGbps=").append(String.valueOf(this.defaultPerOcpuInGbps));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ShapeNetworkingBandwidthOptions)) {
+            return false;
+        }
+
+        ShapeNetworkingBandwidthOptions other = (ShapeNetworkingBandwidthOptions) o;
+        return java.util.Objects.equals(this.minInGbps, other.minInGbps)
+                && java.util.Objects.equals(this.maxInGbps, other.maxInGbps)
+                && java.util.Objects.equals(this.defaultPerOcpuInGbps, other.defaultPerOcpuInGbps)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.minInGbps == null ? 43 : this.minInGbps.hashCode());
+        result = (result * PRIME) + (this.maxInGbps == null ? 43 : this.maxInGbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultPerOcpuInGbps == null
+                                ? 43
+                                : this.defaultPerOcpuInGbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -15,16 +15,37 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExadataMemberCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExadataMemberCollection {
+public final class ExadataMemberCollection {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "exadataInsightId",
+        "exadataName",
+        "exadataDisplayName",
+        "exadataType",
+        "exadataRackType",
+        "items"
+    })
+    public ExadataMemberCollection(
+            String exadataInsightId,
+            String exadataName,
+            String exadataDisplayName,
+            ExadataType exadataType,
+            ExadataRackType exadataRackType,
+            java.util.List<ExadataMemberSummary> items) {
+        super();
+        this.exadataInsightId = exadataInsightId;
+        this.exadataName = exadataName;
+        this.exadataDisplayName = exadataDisplayName;
+        this.exadataType = exadataType;
+        this.exadataRackType = exadataRackType;
+        this.items = items;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
@@ -118,42 +139,132 @@ public class ExadataMemberCollection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
-    String exadataInsightId;
+    private final String exadataInsightId;
+
+    public String getExadataInsightId() {
+        return exadataInsightId;
+    }
 
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataName")
-    String exadataName;
+    private final String exadataName;
+
+    public String getExadataName() {
+        return exadataName;
+    }
 
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
-    String exadataDisplayName;
+    private final String exadataDisplayName;
+
+    public String getExadataDisplayName() {
+        return exadataDisplayName;
+    }
 
     /**
      * Operations Insights internal representation of the the Exadata system type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataType")
-    ExadataType exadataType;
+    private final ExadataType exadataType;
+
+    public ExadataType getExadataType() {
+        return exadataType;
+    }
 
     /**
      * Exadata rack type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataRackType")
-    ExadataRackType exadataRackType;
+    private final ExadataRackType exadataRackType;
+
+    public ExadataRackType getExadataRackType() {
+        return exadataRackType;
+    }
 
     /**
      * Collection of Exadata members
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
-    java.util.List<ExadataMemberSummary> items;
+    private final java.util.List<ExadataMemberSummary> items;
+
+    public java.util.List<ExadataMemberSummary> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExadataMemberCollection(");
+        sb.append("exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append(", exadataName=").append(String.valueOf(this.exadataName));
+        sb.append(", exadataDisplayName=").append(String.valueOf(this.exadataDisplayName));
+        sb.append(", exadataType=").append(String.valueOf(this.exadataType));
+        sb.append(", exadataRackType=").append(String.valueOf(this.exadataRackType));
+        sb.append(", items=").append(String.valueOf(this.items));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExadataMemberCollection)) {
+            return false;
+        }
+
+        ExadataMemberCollection other = (ExadataMemberCollection) o;
+        return java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(this.exadataName, other.exadataName)
+                && java.util.Objects.equals(this.exadataDisplayName, other.exadataDisplayName)
+                && java.util.Objects.equals(this.exadataType, other.exadataType)
+                && java.util.Objects.equals(this.exadataRackType, other.exadataRackType)
+                && java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result = (result * PRIME) + (this.exadataName == null ? 43 : this.exadataName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataDisplayName == null
+                                ? 43
+                                : this.exadataDisplayName.hashCode());
+        result = (result * PRIME) + (this.exadataType == null ? 43 : this.exadataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataRackType == null ? 43 : this.exadataRackType.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.dataconnectivity.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetEndpointExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetEndpointRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +16,17 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String endpointId;
 
+    public String getEndpointId() {
+        return endpointId;
+    }
     /**
      * DCMS registry id
      */
     private String registryId;
 
+    public String getRegistryId() {
+        return registryId;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
@@ -37,12 +35,52 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetEndpointRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String endpointId = null;
+
+        /**
+         * DCMS Endpoint id
+         * @return this builder instance
+         */
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            return this;
+        }
+
+        private String registryId = null;
+
+        /**
+         * DCMS registry id
+         * @return this builder instance
+         */
+        public Builder registryId(String registryId) {
+            this.registryId = registryId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -96,5 +134,74 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetEndpointRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetEndpointRequest
+         */
+        public GetEndpointRequest buildWithoutInvocationCallback() {
+            GetEndpointRequest request = new GetEndpointRequest();
+            request.endpointId = endpointId;
+            request.registryId = registryId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetEndpointRequest(endpointId, registryId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .endpointId(endpointId)
+                .registryId(registryId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(",registryId=").append(String.valueOf(this.registryId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetEndpointRequest)) {
+            return false;
+        }
+
+        GetEndpointRequest other = (GetEndpointRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.registryId, other.registryId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
+        result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

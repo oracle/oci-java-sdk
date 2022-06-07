@@ -16,16 +16,31 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DbServerPatchingDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DbServerPatchingDetails {
+public final class DbServerPatchingDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "estimatedPatchDuration",
+        "patchingStatus",
+        "timePatchingStarted",
+        "timePatchingEnded"
+    })
+    public DbServerPatchingDetails(
+            Integer estimatedPatchDuration,
+            PatchingStatus patchingStatus,
+            java.util.Date timePatchingStarted,
+            java.util.Date timePatchingEnded) {
+        super();
+        this.estimatedPatchDuration = estimatedPatchDuration;
+        this.patchingStatus = patchingStatus;
+        this.timePatchingStarted = timePatchingStarted;
+        this.timePatchingEnded = timePatchingEnded;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedPatchDuration")
         private Integer estimatedPatchDuration;
@@ -97,15 +112,23 @@ public class DbServerPatchingDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Estimated time, in minutes, to patch one database server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedPatchDuration")
-    Integer estimatedPatchDuration;
+    private final Integer estimatedPatchDuration;
+
+    public Integer getEstimatedPatchDuration() {
+        return estimatedPatchDuration;
+    }
+
     /**
      * The status of the patching operation.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum PatchingStatus {
         Scheduled("SCHEDULED"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
@@ -117,6 +140,9 @@ public class DbServerPatchingDetails {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchingStatus.class);
 
         private final String value;
         private static java.util.Map<String, PatchingStatus> map;
@@ -154,20 +180,92 @@ public class DbServerPatchingDetails {
      * The status of the patching operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
-    PatchingStatus patchingStatus;
+    private final PatchingStatus patchingStatus;
+
+    public PatchingStatus getPatchingStatus() {
+        return patchingStatus;
+    }
 
     /**
      * The time when the patching operation started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePatchingStarted")
-    java.util.Date timePatchingStarted;
+    private final java.util.Date timePatchingStarted;
+
+    public java.util.Date getTimePatchingStarted() {
+        return timePatchingStarted;
+    }
 
     /**
      * The time when the patching operation ended.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePatchingEnded")
-    java.util.Date timePatchingEnded;
+    private final java.util.Date timePatchingEnded;
+
+    public java.util.Date getTimePatchingEnded() {
+        return timePatchingEnded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DbServerPatchingDetails(");
+        sb.append("estimatedPatchDuration=").append(String.valueOf(this.estimatedPatchDuration));
+        sb.append(", patchingStatus=").append(String.valueOf(this.patchingStatus));
+        sb.append(", timePatchingStarted=").append(String.valueOf(this.timePatchingStarted));
+        sb.append(", timePatchingEnded=").append(String.valueOf(this.timePatchingEnded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DbServerPatchingDetails)) {
+            return false;
+        }
+
+        DbServerPatchingDetails other = (DbServerPatchingDetails) o;
+        return java.util.Objects.equals(this.estimatedPatchDuration, other.estimatedPatchDuration)
+                && java.util.Objects.equals(this.patchingStatus, other.patchingStatus)
+                && java.util.Objects.equals(this.timePatchingStarted, other.timePatchingStarted)
+                && java.util.Objects.equals(this.timePatchingEnded, other.timePatchingEnded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.estimatedPatchDuration == null
+                                ? 43
+                                : this.estimatedPatchDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchingStatus == null ? 43 : this.patchingStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePatchingStarted == null
+                                ? 43
+                                : this.timePatchingStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePatchingEnded == null ? 43 : this.timePatchingEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

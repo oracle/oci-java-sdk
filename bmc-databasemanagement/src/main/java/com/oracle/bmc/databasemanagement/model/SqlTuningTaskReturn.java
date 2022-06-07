@@ -15,16 +15,19 @@ package com.oracle.bmc.databasemanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SqlTuningTaskReturn.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class SqlTuningTaskReturn {
+public final class SqlTuningTaskReturn {
+    @Deprecated
+    @java.beans.ConstructorProperties({"sqlTuningTaskId"})
+    public SqlTuningTaskReturn(Long sqlTuningTaskId) {
+        super();
+        this.sqlTuningTaskId = sqlTuningTaskId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningTaskId")
         private Long sqlTuningTaskId;
@@ -60,6 +63,10 @@ public class SqlTuningTaskReturn {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The identifier of the task being started or cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * It can be retrieved from the following endpoint
@@ -67,8 +74,53 @@ public class SqlTuningTaskReturn {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningTaskId")
-    Long sqlTuningTaskId;
+    private final Long sqlTuningTaskId;
+
+    public Long getSqlTuningTaskId() {
+        return sqlTuningTaskId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SqlTuningTaskReturn(");
+        sb.append("sqlTuningTaskId=").append(String.valueOf(this.sqlTuningTaskId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SqlTuningTaskReturn)) {
+            return false;
+        }
+
+        SqlTuningTaskReturn other = (SqlTuningTaskReturn) o;
+        return java.util.Objects.equals(this.sqlTuningTaskId, other.sqlTuningTaskId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.sqlTuningTaskId == null ? 43 : this.sqlTuningTaskId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

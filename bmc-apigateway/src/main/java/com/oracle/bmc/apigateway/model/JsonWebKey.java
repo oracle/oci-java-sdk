@@ -15,20 +15,15 @@ package com.oracle.bmc.apigateway.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JsonWebKey.Builder.class)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "format"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class JsonWebKey extends StaticPublicKey {
+public final class JsonWebKey extends StaticPublicKey {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("kid")
         private String kid;
@@ -125,6 +120,10 @@ public class JsonWebKey extends StaticPublicKey {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public JsonWebKey(
             String kid,
@@ -146,7 +145,6 @@ public class JsonWebKey extends StaticPublicKey {
     /**
      * The key type.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Kty {
         Rsa("RSA"),
 
@@ -155,6 +153,8 @@ public class JsonWebKey extends StaticPublicKey {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Kty.class);
 
         private final String value;
         private static java.util.Map<String, Kty> map;
@@ -190,11 +190,15 @@ public class JsonWebKey extends StaticPublicKey {
      * The key type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kty")
-    Kty kty;
+    private final Kty kty;
+
+    public Kty getKty() {
+        return kty;
+    }
+
     /**
      * The intended use of the public key.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Use {
         Sig("sig"),
 
@@ -203,6 +207,8 @@ public class JsonWebKey extends StaticPublicKey {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Use.class);
 
         private final String value;
         private static java.util.Map<String, Use> map;
@@ -238,10 +244,14 @@ public class JsonWebKey extends StaticPublicKey {
      * The intended use of the public key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("use")
-    Use use;
+    private final Use use;
+
+    public Use getUse() {
+        return use;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum KeyOps {
         Verify("verify"),
 
@@ -250,6 +260,8 @@ public class JsonWebKey extends StaticPublicKey {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(KeyOps.class);
 
         private final String value;
         private static java.util.Map<String, KeyOps> map;
@@ -287,13 +299,21 @@ public class JsonWebKey extends StaticPublicKey {
      * The operations for which this key is to be used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key_ops")
-    java.util.List<KeyOps> keyOps;
+    private final java.util.List<KeyOps> keyOps;
+
+    public java.util.List<KeyOps> getKeyOps() {
+        return keyOps;
+    }
 
     /**
      * The algorithm intended for use with this key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alg")
-    String alg;
+    private final String alg;
+
+    public String getAlg() {
+        return alg;
+    }
 
     /**
      * The base64 url encoded modulus of the RSA public key represented
@@ -301,7 +321,11 @@ public class JsonWebKey extends StaticPublicKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("n")
-    String n;
+    private final String n;
+
+    public String getN() {
+        return n;
+    }
 
     /**
      * The base64 url encoded exponent of the RSA public key represented
@@ -309,8 +333,68 @@ public class JsonWebKey extends StaticPublicKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("e")
-    String e;
+    private final String e;
+
+    public String getE() {
+        return e;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("JsonWebKey(");
+        sb.append("super=").append(super.toString());
+        sb.append(", kty=").append(String.valueOf(this.kty));
+        sb.append(", use=").append(String.valueOf(this.use));
+        sb.append(", keyOps=").append(String.valueOf(this.keyOps));
+        sb.append(", alg=").append(String.valueOf(this.alg));
+        sb.append(", n=").append(String.valueOf(this.n));
+        sb.append(", e=").append(String.valueOf(this.e));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof JsonWebKey)) {
+            return false;
+        }
+
+        JsonWebKey other = (JsonWebKey) o;
+        return java.util.Objects.equals(this.kty, other.kty)
+                && java.util.Objects.equals(this.use, other.use)
+                && java.util.Objects.equals(this.keyOps, other.keyOps)
+                && java.util.Objects.equals(this.alg, other.alg)
+                && java.util.Objects.equals(this.n, other.n)
+                && java.util.Objects.equals(this.e, other.e)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.kty == null ? 43 : this.kty.hashCode());
+        result = (result * PRIME) + (this.use == null ? 43 : this.use.hashCode());
+        result = (result * PRIME) + (this.keyOps == null ? 43 : this.keyOps.hashCode());
+        result = (result * PRIME) + (this.alg == null ? 43 : this.alg.hashCode());
+        result = (result * PRIME) + (this.n == null ? 43 : this.n.hashCode());
+        result = (result * PRIME) + (this.e == null ? 43 : this.e.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

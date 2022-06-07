@@ -16,16 +16,22 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = NetworkSecurityGroupVnic.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class NetworkSecurityGroupVnic {
+public final class NetworkSecurityGroupVnic {
+    @Deprecated
+    @java.beans.ConstructorProperties({"resourceId", "timeAssociated", "vnicId"})
+    public NetworkSecurityGroupVnic(
+            String resourceId, java.util.Date timeAssociated, String vnicId) {
+        super();
+        this.resourceId = resourceId;
+        this.timeAssociated = timeAssociated;
+        this.vnicId = vnicId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
@@ -83,13 +89,21 @@ public class NetworkSecurityGroupVnic {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC
      * is attached to (for example, a Compute instance).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    String resourceId;
+    private final String resourceId;
+
+    public String getResourceId() {
+        return resourceId;
+    }
 
     /**
      * The date and time the VNIC was added to the network security group, in the format
@@ -99,14 +113,69 @@ public class NetworkSecurityGroupVnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssociated")
-    java.util.Date timeAssociated;
+    private final java.util.Date timeAssociated;
+
+    public java.util.Date getTimeAssociated() {
+        return timeAssociated;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
-    String vnicId;
+    private final String vnicId;
+
+    public String getVnicId() {
+        return vnicId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("NetworkSecurityGroupVnic(");
+        sb.append("resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", timeAssociated=").append(String.valueOf(this.timeAssociated));
+        sb.append(", vnicId=").append(String.valueOf(this.vnicId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof NetworkSecurityGroupVnic)) {
+            return false;
+        }
+
+        NetworkSecurityGroupVnic other = (NetworkSecurityGroupVnic) o;
+        return java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.timeAssociated, other.timeAssociated)
+                && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeAssociated == null ? 43 : this.timeAssociated.hashCode());
+        result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,22 +16,17 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FieldsAddRemoveField.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "name"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class FieldsAddRemoveField extends AbstractField {
+public final class FieldsAddRemoveField extends AbstractField {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -180,6 +175,10 @@ public class FieldsAddRemoveField extends AbstractField {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public FieldsAddRemoveField(
             String displayName,
@@ -211,7 +210,6 @@ public class FieldsAddRemoveField extends AbstractField {
      * Denotes if field entry in FIELDS command is to show / hide field in results.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Operation {
         Add("ADD"),
         Remove("REMOVE"),
@@ -221,6 +219,9 @@ public class FieldsAddRemoveField extends AbstractField {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Operation.class);
 
         private final String value;
         private static java.util.Map<String, Operation> map;
@@ -259,8 +260,53 @@ public class FieldsAddRemoveField extends AbstractField {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
-    Operation operation;
+    private final Operation operation;
+
+    public Operation getOperation() {
+        return operation;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FieldsAddRemoveField(");
+        sb.append("super=").append(super.toString());
+        sb.append(", operation=").append(String.valueOf(this.operation));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FieldsAddRemoveField)) {
+            return false;
+        }
+
+        FieldsAddRemoveField other = (FieldsAddRemoveField) o;
+        return java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

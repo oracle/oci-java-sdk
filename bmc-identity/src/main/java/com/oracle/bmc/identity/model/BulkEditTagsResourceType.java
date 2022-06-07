@@ -15,16 +15,20 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = BulkEditTagsResourceType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class BulkEditTagsResourceType {
+public final class BulkEditTagsResourceType {
+    @Deprecated
+    @java.beans.ConstructorProperties({"resourceType", "metadataKeys"})
+    public BulkEditTagsResourceType(String resourceType, java.util.List<String> metadataKeys) {
+        super();
+        this.resourceType = resourceType;
+        this.metadataKeys = metadataKeys;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
@@ -71,12 +75,20 @@ public class BulkEditTagsResourceType {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique name of the resource type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    String resourceType;
+    private final String resourceType;
+
+    public String getResourceType() {
+        return resourceType;
+    }
 
     /**
      * The metadata keys required to identify the resource.
@@ -88,8 +100,54 @@ public class BulkEditTagsResourceType {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
-    java.util.List<String> metadataKeys;
+    private final java.util.List<String> metadataKeys;
+
+    public java.util.List<String> getMetadataKeys() {
+        return metadataKeys;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("BulkEditTagsResourceType(");
+        sb.append("resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", metadataKeys=").append(String.valueOf(this.metadataKeys));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BulkEditTagsResourceType)) {
+            return false;
+        }
+
+        BulkEditTagsResourceType other = (BulkEditTagsResourceType) o;
+        return java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.metadataKeys, other.metadataKeys)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.metadataKeys == null ? 43 : this.metadataKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

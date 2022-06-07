@@ -15,22 +15,17 @@ package com.oracle.bmc.opsi.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateEmManagedExternalHostInsightDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "entitySource"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateEmManagedExternalHostInsightDetails extends CreateHostInsightDetails {
+public final class CreateEmManagedExternalHostInsightDetails extends CreateHostInsightDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -137,6 +132,10 @@ public class CreateEmManagedExternalHostInsightDetails extends CreateHostInsight
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateEmManagedExternalHostInsightDetails(
             String compartmentId,
@@ -157,26 +156,114 @@ public class CreateEmManagedExternalHostInsightDetails extends CreateHostInsight
      * Enterprise Manager Unique Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
-    String enterpriseManagerIdentifier;
+    private final String enterpriseManagerIdentifier;
+
+    public String getEnterpriseManagerIdentifier() {
+        return enterpriseManagerIdentifier;
+    }
 
     /**
      * OPSI Enterprise Manager Bridge OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
-    String enterpriseManagerBridgeId;
+    private final String enterpriseManagerBridgeId;
+
+    public String getEnterpriseManagerBridgeId() {
+        return enterpriseManagerBridgeId;
+    }
 
     /**
      * Enterprise Manager Entity Unique Identifier
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
-    String enterpriseManagerEntityIdentifier;
+    private final String enterpriseManagerEntityIdentifier;
+
+    public String getEnterpriseManagerEntityIdentifier() {
+        return enterpriseManagerEntityIdentifier;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
-    String exadataInsightId;
+    private final String exadataInsightId;
+
+    public String getExadataInsightId() {
+        return exadataInsightId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateEmManagedExternalHostInsightDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", enterpriseManagerIdentifier=")
+                .append(String.valueOf(this.enterpriseManagerIdentifier));
+        sb.append(", enterpriseManagerBridgeId=")
+                .append(String.valueOf(this.enterpriseManagerBridgeId));
+        sb.append(", enterpriseManagerEntityIdentifier=")
+                .append(String.valueOf(this.enterpriseManagerEntityIdentifier));
+        sb.append(", exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateEmManagedExternalHostInsightDetails)) {
+            return false;
+        }
+
+        CreateEmManagedExternalHostInsightDetails other =
+                (CreateEmManagedExternalHostInsightDetails) o;
+        return java.util.Objects.equals(
+                        this.enterpriseManagerIdentifier, other.enterpriseManagerIdentifier)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerBridgeId, other.enterpriseManagerBridgeId)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerEntityIdentifier,
+                        other.enterpriseManagerEntityIdentifier)
+                && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerIdentifier == null
+                                ? 43
+                                : this.enterpriseManagerIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerBridgeId == null
+                                ? 43
+                                : this.enterpriseManagerBridgeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerEntityIdentifier == null
+                                ? 43
+                                : this.enterpriseManagerEntityIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

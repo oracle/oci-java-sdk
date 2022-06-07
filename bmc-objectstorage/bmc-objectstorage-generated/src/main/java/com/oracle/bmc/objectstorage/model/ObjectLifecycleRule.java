@@ -18,16 +18,40 @@ package com.oracle.bmc.objectstorage.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectLifecycleRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ObjectLifecycleRule {
+public final class ObjectLifecycleRule {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "target",
+        "action",
+        "timeAmount",
+        "timeUnit",
+        "isEnabled",
+        "objectNameFilter"
+    })
+    public ObjectLifecycleRule(
+            String name,
+            String target,
+            String action,
+            Long timeAmount,
+            TimeUnit timeUnit,
+            Boolean isEnabled,
+            ObjectNameFilter objectNameFilter) {
+        super();
+        this.name = name;
+        this.target = target;
+        this.action = action;
+        this.timeAmount = timeAmount;
+        this.timeUnit = timeUnit;
+        this.isEnabled = isEnabled;
+        this.objectNameFilter = objectNameFilter;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -132,11 +156,19 @@ public class ObjectLifecycleRule {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the lifecycle rule to be applied.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The target of the object lifecycle policy rule. The values of target can be either "objects",
@@ -150,7 +182,11 @@ public class ObjectLifecycleRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
-    String target;
+    private final String target;
+
+    public String getTarget() {
+        return target;
+    }
 
     /**
      * The action of the object lifecycle policy rule.
@@ -164,7 +200,11 @@ public class ObjectLifecycleRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    String action;
+    private final String action;
+
+    public String getAction() {
+        return action;
+    }
 
     /**
      * Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the
@@ -172,13 +212,17 @@ public class ObjectLifecycleRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAmount")
-    Long timeAmount;
+    private final Long timeAmount;
+
+    public Long getTimeAmount() {
+        return timeAmount;
+    }
+
     /**
      * The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC.
      * Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum TimeUnit {
         Days("DAYS"),
         Years("YEARS"),
@@ -188,6 +232,9 @@ public class ObjectLifecycleRule {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TimeUnit.class);
 
         private final String value;
         private static java.util.Map<String, TimeUnit> map;
@@ -227,17 +274,88 @@ public class ObjectLifecycleRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUnit")
-    TimeUnit timeUnit;
+    private final TimeUnit timeUnit;
+
+    public TimeUnit getTimeUnit() {
+        return timeUnit;
+    }
 
     /**
      * A Boolean that determines whether this rule is currently enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilter")
-    ObjectNameFilter objectNameFilter;
+    private final ObjectNameFilter objectNameFilter;
+
+    public ObjectNameFilter getObjectNameFilter() {
+        return objectNameFilter;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ObjectLifecycleRule(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", timeAmount=").append(String.valueOf(this.timeAmount));
+        sb.append(", timeUnit=").append(String.valueOf(this.timeUnit));
+        sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", objectNameFilter=").append(String.valueOf(this.objectNameFilter));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ObjectLifecycleRule)) {
+            return false;
+        }
+
+        ObjectLifecycleRule other = (ObjectLifecycleRule) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.timeAmount, other.timeAmount)
+                && java.util.Objects.equals(this.timeUnit, other.timeUnit)
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.objectNameFilter, other.objectNameFilter)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.timeAmount == null ? 43 : this.timeAmount.hashCode());
+        result = (result * PRIME) + (this.timeUnit == null ? 43 : this.timeUnit.hashCode());
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectNameFilter == null ? 43 : this.objectNameFilter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

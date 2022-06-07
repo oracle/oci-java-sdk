@@ -7,10 +7,6 @@ package com.oracle.bmc.loganalytics.responses;
 import com.oracle.bmc.loganalytics.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
@@ -18,21 +14,37 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
 
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Float retryAfter;
 
+    public Float getRetryAfter() {
+        return retryAfter;
+    }
+
     /**
      * The returned StorageWorkRequest instance.
      */
     private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
+
+    public com.oracle.bmc.loganalytics.model.StorageWorkRequest getStorageWorkRequest() {
+        return storageWorkRequest;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -62,6 +74,35 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        private Float retryAfter;
+
+        public Builder retryAfter(Float retryAfter) {
+            this.retryAfter = retryAfter;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
+
+        public Builder storageWorkRequest(
+                com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest) {
+            this.storageWorkRequest = storageWorkRequest;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -80,5 +121,54 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return new GetStorageWorkRequestResponse(
                     __httpStatusCode__, opcRequestId, etag, retryAfter, storageWorkRequest);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",retryAfter=").append(String.valueOf(retryAfter));
+        sb.append(",storageWorkRequest=").append(String.valueOf(storageWorkRequest));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetStorageWorkRequestResponse)) {
+            return false;
+        }
+
+        GetStorageWorkRequestResponse other = (GetStorageWorkRequestResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.retryAfter, other.retryAfter)
+                && java.util.Objects.equals(this.storageWorkRequest, other.storageWorkRequest);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.retryAfter == null ? 43 : this.retryAfter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageWorkRequest == null
+                                ? 43
+                                : this.storageWorkRequest.hashCode());
+        return result;
     }
 }

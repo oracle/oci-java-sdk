@@ -15,14 +15,32 @@ package com.oracle.bmc.dataintegration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MacroPivotField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class MacroPivotField {
+public final class MacroPivotField {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isUseSourceType",
+        "expr",
+        "useType",
+        "type",
+        "columnNamePattern"
+    })
+    public MacroPivotField(
+            Boolean isUseSourceType,
+            Expression expr,
+            ConfiguredType useType,
+            BaseType type,
+            String columnNamePattern) {
+        super();
+        this.isUseSourceType = isUseSourceType;
+        this.expr = expr;
+        this.useType = useType;
+        this.type = type;
+        this.columnNamePattern = columnNamePattern;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
         private Boolean isUseSourceType;
@@ -100,27 +118,106 @@ public class MacroPivotField {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
-    Boolean isUseSourceType;
+    private final Boolean isUseSourceType;
+
+    public Boolean getIsUseSourceType() {
+        return isUseSourceType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("expr")
-    Expression expr;
+    private final Expression expr;
+
+    public Expression getExpr() {
+        return expr;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("useType")
-    ConfiguredType useType;
+    private final ConfiguredType useType;
+
+    public ConfiguredType getUseType() {
+        return useType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    BaseType type;
+    private final BaseType type;
+
+    public BaseType getType() {
+        return type;
+    }
 
     /**
      * column name pattern can be used to generate the name structure of the generated columns. By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to the column name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnNamePattern")
-    String columnNamePattern;
+    private final String columnNamePattern;
+
+    public String getColumnNamePattern() {
+        return columnNamePattern;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("MacroPivotField(");
+        sb.append("isUseSourceType=").append(String.valueOf(this.isUseSourceType));
+        sb.append(", expr=").append(String.valueOf(this.expr));
+        sb.append(", useType=").append(String.valueOf(this.useType));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", columnNamePattern=").append(String.valueOf(this.columnNamePattern));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MacroPivotField)) {
+            return false;
+        }
+
+        MacroPivotField other = (MacroPivotField) o;
+        return java.util.Objects.equals(this.isUseSourceType, other.isUseSourceType)
+                && java.util.Objects.equals(this.expr, other.expr)
+                && java.util.Objects.equals(this.useType, other.useType)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.columnNamePattern, other.columnNamePattern)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isUseSourceType == null ? 43 : this.isUseSourceType.hashCode());
+        result = (result * PRIME) + (this.expr == null ? 43 : this.expr.hashCode());
+        result = (result * PRIME) + (this.useType == null ? 43 : this.useType.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.columnNamePattern == null ? 43 : this.columnNamePattern.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

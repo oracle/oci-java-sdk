@@ -15,16 +15,37 @@ package com.oracle.bmc.core.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CrossConnectStatus.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CrossConnectStatus {
+public final class CrossConnectStatus {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "crossConnectId",
+        "interfaceState",
+        "lightLevelIndBm",
+        "lightLevelIndicator",
+        "encryptionStatus",
+        "lightLevelsInDBm"
+    })
+    public CrossConnectStatus(
+            String crossConnectId,
+            InterfaceState interfaceState,
+            Float lightLevelIndBm,
+            LightLevelIndicator lightLevelIndicator,
+            EncryptionStatus encryptionStatus,
+            java.util.List<Float> lightLevelsInDBm) {
+        super();
+        this.crossConnectId = crossConnectId;
+        this.interfaceState = interfaceState;
+        this.lightLevelIndBm = lightLevelIndBm;
+        this.lightLevelIndicator = lightLevelIndicator;
+        this.encryptionStatus = encryptionStatus;
+        this.lightLevelsInDBm = lightLevelsInDBm;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
         private String crossConnectId;
@@ -118,15 +139,23 @@ public class CrossConnectStatus {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
-    String crossConnectId;
+    private final String crossConnectId;
+
+    public String getCrossConnectId() {
+        return crossConnectId;
+    }
+
     /**
      * Indicates whether Oracle's side of the interface is up or down.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum InterfaceState {
         Up("UP"),
         Down("DOWN"),
@@ -136,6 +165,9 @@ public class CrossConnectStatus {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(InterfaceState.class);
 
         private final String value;
         private static java.util.Map<String, InterfaceState> map;
@@ -173,7 +205,11 @@ public class CrossConnectStatus {
      * Indicates whether Oracle's side of the interface is up or down.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("interfaceState")
-    InterfaceState interfaceState;
+    private final InterfaceState interfaceState;
+
+    public InterfaceState getInterfaceState() {
+        return interfaceState;
+    }
 
     /**
      * The light level of the cross-connect (in dBm).
@@ -182,7 +218,12 @@ public class CrossConnectStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndBm")
-    Float lightLevelIndBm;
+    private final Float lightLevelIndBm;
+
+    public Float getLightLevelIndBm() {
+        return lightLevelIndBm;
+    }
+
     /**
      * Status indicator corresponding to the light level.
      * <p>
@@ -193,7 +234,6 @@ public class CrossConnectStatus {
      *   * **GOOD:** Good light level
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LightLevelIndicator {
         NoLight("NO_LIGHT"),
         LowWarn("LOW_WARN"),
@@ -206,6 +246,9 @@ public class CrossConnectStatus {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LightLevelIndicator.class);
 
         private final String value;
         private static java.util.Map<String, LightLevelIndicator> map;
@@ -250,7 +293,12 @@ public class CrossConnectStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndicator")
-    LightLevelIndicator lightLevelIndicator;
+    private final LightLevelIndicator lightLevelIndicator;
+
+    public LightLevelIndicator getLightLevelIndicator() {
+        return lightLevelIndicator;
+    }
+
     /**
      * Encryption status of this cross connect.
      * <p>
@@ -262,7 +310,6 @@ public class CrossConnectStatus {
      * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum EncryptionStatus {
         Up("UP"),
         Down("DOWN"),
@@ -275,6 +322,9 @@ public class CrossConnectStatus {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EncryptionStatus.class);
 
         private final String value;
         private static java.util.Map<String, EncryptionStatus> map;
@@ -320,7 +370,11 @@ public class CrossConnectStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionStatus")
-    EncryptionStatus encryptionStatus;
+    private final EncryptionStatus encryptionStatus;
+
+    public EncryptionStatus getEncryptionStatus() {
+        return encryptionStatus;
+    }
 
     /**
      * The light levels of the cross-connect (in dBm).
@@ -329,8 +383,80 @@ public class CrossConnectStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lightLevelsInDBm")
-    java.util.List<Float> lightLevelsInDBm;
+    private final java.util.List<Float> lightLevelsInDBm;
+
+    public java.util.List<Float> getLightLevelsInDBm() {
+        return lightLevelsInDBm;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CrossConnectStatus(");
+        sb.append("crossConnectId=").append(String.valueOf(this.crossConnectId));
+        sb.append(", interfaceState=").append(String.valueOf(this.interfaceState));
+        sb.append(", lightLevelIndBm=").append(String.valueOf(this.lightLevelIndBm));
+        sb.append(", lightLevelIndicator=").append(String.valueOf(this.lightLevelIndicator));
+        sb.append(", encryptionStatus=").append(String.valueOf(this.encryptionStatus));
+        sb.append(", lightLevelsInDBm=").append(String.valueOf(this.lightLevelsInDBm));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CrossConnectStatus)) {
+            return false;
+        }
+
+        CrossConnectStatus other = (CrossConnectStatus) o;
+        return java.util.Objects.equals(this.crossConnectId, other.crossConnectId)
+                && java.util.Objects.equals(this.interfaceState, other.interfaceState)
+                && java.util.Objects.equals(this.lightLevelIndBm, other.lightLevelIndBm)
+                && java.util.Objects.equals(this.lightLevelIndicator, other.lightLevelIndicator)
+                && java.util.Objects.equals(this.encryptionStatus, other.encryptionStatus)
+                && java.util.Objects.equals(this.lightLevelsInDBm, other.lightLevelsInDBm)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.crossConnectId == null ? 43 : this.crossConnectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.interfaceState == null ? 43 : this.interfaceState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lightLevelIndBm == null ? 43 : this.lightLevelIndBm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lightLevelIndicator == null
+                                ? 43
+                                : this.lightLevelIndicator.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionStatus == null ? 43 : this.encryptionStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lightLevelsInDBm == null ? 43 : this.lightLevelsInDBm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

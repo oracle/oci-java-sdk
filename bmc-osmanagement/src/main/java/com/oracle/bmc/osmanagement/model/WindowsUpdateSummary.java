@@ -15,16 +15,34 @@ package com.oracle.bmc.osmanagement.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WindowsUpdateSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class WindowsUpdateSummary {
+public final class WindowsUpdateSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "name",
+        "updateType",
+        "installable",
+        "isRebootRequiredForInstallation"
+    })
+    public WindowsUpdateSummary(
+            String displayName,
+            String name,
+            UpdateTypes updateType,
+            IsEligibleForInstallation installable,
+            Boolean isRebootRequiredForInstallation) {
+        super();
+        this.displayName = displayName;
+        this.name = name;
+        this.updateType = updateType;
+        this.installable = installable;
+        this.isRebootRequiredForInstallation = isRebootRequiredForInstallation;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -108,11 +126,19 @@ public class WindowsUpdateSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Windows Update name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * Unique identifier for the Windows update. NOTE - This is not an OCID,
@@ -121,26 +147,99 @@ public class WindowsUpdateSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The purpose of this update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
-    UpdateTypes updateType;
+    private final UpdateTypes updateType;
+
+    public UpdateTypes getUpdateType() {
+        return updateType;
+    }
 
     /**
      * Indicates whether the update can be installed using OSMS.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installable")
-    IsEligibleForInstallation installable;
+    private final IsEligibleForInstallation installable;
+
+    public IsEligibleForInstallation getInstallable() {
+        return installable;
+    }
 
     /**
      * Indicates whether a reboot may be required to complete installation of this update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequiredForInstallation")
-    Boolean isRebootRequiredForInstallation;
+    private final Boolean isRebootRequiredForInstallation;
+
+    public Boolean getIsRebootRequiredForInstallation() {
+        return isRebootRequiredForInstallation;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("WindowsUpdateSummary(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", updateType=").append(String.valueOf(this.updateType));
+        sb.append(", installable=").append(String.valueOf(this.installable));
+        sb.append(", isRebootRequiredForInstallation=")
+                .append(String.valueOf(this.isRebootRequiredForInstallation));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WindowsUpdateSummary)) {
+            return false;
+        }
+
+        WindowsUpdateSummary other = (WindowsUpdateSummary) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.updateType, other.updateType)
+                && java.util.Objects.equals(this.installable, other.installable)
+                && java.util.Objects.equals(
+                        this.isRebootRequiredForInstallation, other.isRebootRequiredForInstallation)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.updateType == null ? 43 : this.updateType.hashCode());
+        result = (result * PRIME) + (this.installable == null ? 43 : this.installable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRebootRequiredForInstallation == null
+                                ? 43
+                                : this.isRebootRequiredForInstallation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

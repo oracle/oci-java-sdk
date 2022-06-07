@@ -15,16 +15,43 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LogAnalyticsPatternFilter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LogAnalyticsPatternFilter {
+public final class LogAnalyticsPatternFilter {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "pattern",
+        "agentVersion",
+        "isInUse",
+        "operatingSystem",
+        "patternId",
+        "sourceId",
+        "version",
+        "source"
+    })
+    public LogAnalyticsPatternFilter(
+            LogAnalyticsSourcePattern pattern,
+            String agentVersion,
+            Boolean isInUse,
+            String operatingSystem,
+            Long patternId,
+            Long sourceId,
+            String version,
+            LogAnalyticsSource source) {
+        super();
+        this.pattern = pattern;
+        this.agentVersion = agentVersion;
+        this.isInUse = isInUse;
+        this.operatingSystem = operatingSystem;
+        this.patternId = patternId;
+        this.sourceId = sourceId;
+        this.version = version;
+        this.source = source;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private LogAnalyticsSourcePattern pattern;
@@ -140,14 +167,26 @@ public class LogAnalyticsPatternFilter {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
-    LogAnalyticsSourcePattern pattern;
+    private final LogAnalyticsSourcePattern pattern;
+
+    public LogAnalyticsSourcePattern getPattern() {
+        return pattern;
+    }
 
     /**
      * The agent version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
-    String agentVersion;
+    private final String agentVersion;
+
+    public String getAgentVersion() {
+        return agentVersion;
+    }
 
     /**
      * A flag indicating whether or not the pattern filter is currently
@@ -155,35 +194,121 @@ public class LogAnalyticsPatternFilter {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInUse")
-    Boolean isInUse;
+    private final Boolean isInUse;
+
+    public Boolean getIsInUse() {
+        return isInUse;
+    }
 
     /**
      * The operating system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
-    String operatingSystem;
+    private final String operatingSystem;
+
+    public String getOperatingSystem() {
+        return operatingSystem;
+    }
 
     /**
      * The pattern unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternId")
-    Long patternId;
+    private final Long patternId;
+
+    public Long getPatternId() {
+        return patternId;
+    }
 
     /**
      * The source unique identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
-    Long sourceId;
+    private final Long sourceId;
+
+    public Long getSourceId() {
+        return sourceId;
+    }
 
     /**
      * The pattern filter version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
+    private final String version;
+
+    public String getVersion() {
+        return version;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    LogAnalyticsSource source;
+    private final LogAnalyticsSource source;
+
+    public LogAnalyticsSource getSource() {
+        return source;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LogAnalyticsPatternFilter(");
+        sb.append("pattern=").append(String.valueOf(this.pattern));
+        sb.append(", agentVersion=").append(String.valueOf(this.agentVersion));
+        sb.append(", isInUse=").append(String.valueOf(this.isInUse));
+        sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", patternId=").append(String.valueOf(this.patternId));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LogAnalyticsPatternFilter)) {
+            return false;
+        }
+
+        LogAnalyticsPatternFilter other = (LogAnalyticsPatternFilter) o;
+        return java.util.Objects.equals(this.pattern, other.pattern)
+                && java.util.Objects.equals(this.agentVersion, other.agentVersion)
+                && java.util.Objects.equals(this.isInUse, other.isInUse)
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(this.patternId, other.patternId)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
+        result = (result * PRIME) + (this.agentVersion == null ? 43 : this.agentVersion.hashCode());
+        result = (result * PRIME) + (this.isInUse == null ? 43 : this.isInUse.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result = (result * PRIME) + (this.patternId == null ? 43 : this.patternId.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

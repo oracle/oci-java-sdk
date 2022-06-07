@@ -15,16 +15,20 @@ package com.oracle.bmc.managementagent.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateManagementAgentInstallKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UpdateManagementAgentInstallKeyDetails {
+public final class UpdateManagementAgentInstallKeyDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"isKeyActive", "displayName"})
+    public UpdateManagementAgentInstallKeyDetails(Boolean isKeyActive, String displayName) {
+        super();
+        this.isKeyActive = isKeyActive;
+        this.displayName = displayName;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isKeyActive")
         private Boolean isKeyActive;
@@ -70,18 +74,72 @@ public class UpdateManagementAgentInstallKeyDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * if set to true the install key state would be set to Active and if false to Inactive
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isKeyActive")
-    Boolean isKeyActive;
+    private final Boolean isKeyActive;
+
+    public Boolean getIsKeyActive() {
+        return isKeyActive;
+    }
 
     /**
      * New displayName of Agent install key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UpdateManagementAgentInstallKeyDetails(");
+        sb.append("isKeyActive=").append(String.valueOf(this.isKeyActive));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UpdateManagementAgentInstallKeyDetails)) {
+            return false;
+        }
+
+        UpdateManagementAgentInstallKeyDetails other = (UpdateManagementAgentInstallKeyDetails) o;
+        return java.util.Objects.equals(this.isKeyActive, other.isKeyActive)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isKeyActive == null ? 43 : this.isKeyActive.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

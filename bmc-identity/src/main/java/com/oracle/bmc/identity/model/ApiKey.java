@@ -25,14 +25,38 @@ package com.oracle.bmc.identity.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApiKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApiKey {
+public final class ApiKey {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "keyId",
+        "keyValue",
+        "fingerprint",
+        "userId",
+        "timeCreated",
+        "lifecycleState",
+        "inactiveStatus"
+    })
+    public ApiKey(
+            String keyId,
+            String keyValue,
+            String fingerprint,
+            String userId,
+            java.util.Date timeCreated,
+            LifecycleState lifecycleState,
+            Long inactiveStatus) {
+        super();
+        this.keyId = keyId;
+        this.keyValue = keyValue;
+        this.fingerprint = fingerprint;
+        this.userId = userId;
+        this.timeCreated = timeCreated;
+        this.lifecycleState = lifecycleState;
+        this.inactiveStatus = inactiveStatus;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
@@ -137,31 +161,51 @@ public class ApiKey {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * An Oracle-assigned identifier for the key, in this format:
      * TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
-    String keyId;
+    private final String keyId;
+
+    public String getKeyId() {
+        return keyId;
+    }
 
     /**
      * The key's value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyValue")
-    String keyValue;
+    private final String keyValue;
+
+    public String getKeyValue() {
+        return keyValue;
+    }
 
     /**
      * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
-    String fingerprint;
+    private final String fingerprint;
+
+    public String getFingerprint() {
+        return fingerprint;
+    }
 
     /**
      * The OCID of the user the key belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    String userId;
+    private final String userId;
+
+    public String getUserId() {
+        return userId;
+    }
 
     /**
      * Date and time the {@code ApiKey} object was created, in the format defined by RFC3339.
@@ -170,13 +214,17 @@ public class ApiKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     /**
      * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code lifecycleState} changes from
      * CREATING to ACTIVE before using it.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -189,6 +237,9 @@ public class ApiKey {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -228,14 +279,83 @@ public class ApiKey {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
-    Long inactiveStatus;
+    private final Long inactiveStatus;
+
+    public Long getInactiveStatus() {
+        return inactiveStatus;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ApiKey(");
+        sb.append("keyId=").append(String.valueOf(this.keyId));
+        sb.append(", keyValue=").append(String.valueOf(this.keyValue));
+        sb.append(", fingerprint=").append(String.valueOf(this.fingerprint));
+        sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", inactiveStatus=").append(String.valueOf(this.inactiveStatus));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ApiKey)) {
+            return false;
+        }
+
+        ApiKey other = (ApiKey) o;
+        return java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.keyValue, other.keyValue)
+                && java.util.Objects.equals(this.fingerprint, other.fingerprint)
+                && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.inactiveStatus, other.inactiveStatus)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.keyValue == null ? 43 : this.keyValue.hashCode());
+        result = (result * PRIME) + (this.fingerprint == null ? 43 : this.fingerprint.hashCode());
+        result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inactiveStatus == null ? 43 : this.inactiveStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

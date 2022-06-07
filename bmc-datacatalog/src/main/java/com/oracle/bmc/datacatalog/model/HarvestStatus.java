@@ -16,7 +16,6 @@ package com.oracle.bmc.datacatalog.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.extern.slf4j.Slf4j
 public enum HarvestStatus {
     Complete("COMPLETE"),
     Error("ERROR"),
@@ -28,6 +27,9 @@ public enum HarvestStatus {
      * version of the SDK.
      */
     UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(HarvestStatus.class);
 
     private final String value;
     private static java.util.Map<String, HarvestStatus> map;

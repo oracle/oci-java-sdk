@@ -18,14 +18,32 @@ package com.oracle.bmc.networkloadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Listener.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Listener {
+public final class Listener {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "defaultBackendSetName",
+        "port",
+        "protocol",
+        "ipVersion"
+    })
+    public Listener(
+            String name,
+            String defaultBackendSetName,
+            Integer port,
+            ListenerProtocols protocol,
+            IpVersion ipVersion) {
+        super();
+        this.name = name;
+        this.defaultBackendSetName = defaultBackendSetName;
+        this.port = port;
+        this.protocol = protocol;
+        this.ipVersion = ipVersion;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -103,6 +121,10 @@ public class Listener {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.
      * <p>
@@ -110,7 +132,11 @@ public class Listener {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The name of the associated backend set.
@@ -119,7 +145,11 @@ public class Listener {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
-    String defaultBackendSetName;
+    private final String defaultBackendSetName;
+
+    public String getDefaultBackendSetName() {
+        return defaultBackendSetName;
+    }
 
     /**
      * The communication port for the listener.
@@ -128,7 +158,11 @@ public class Listener {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The protocol on which the listener accepts connection requests.
@@ -141,14 +175,77 @@ public class Listener {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    ListenerProtocols protocol;
+    private final ListenerProtocols protocol;
+
+    public ListenerProtocols getProtocol() {
+        return protocol;
+    }
 
     /**
      * IP version associated with the listener.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
-    IpVersion ipVersion;
+    private final IpVersion ipVersion;
+
+    public IpVersion getIpVersion() {
+        return ipVersion;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Listener(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", defaultBackendSetName=").append(String.valueOf(this.defaultBackendSetName));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", ipVersion=").append(String.valueOf(this.ipVersion));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Listener)) {
+            return false;
+        }
+
+        Listener other = (Listener) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.defaultBackendSetName, other.defaultBackendSetName)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.ipVersion, other.ipVersion)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultBackendSetName == null
+                                ? 43
+                                : this.defaultBackendSetName.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.ipVersion == null ? 43 : this.ipVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

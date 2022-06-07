@@ -9,14 +9,6 @@ import com.oracle.bmc.core.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupPolicyAssignmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateVolumeBackupPolicyAssignmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class CreateVolumeBackupPolicyAssignmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails> {
@@ -26,6 +18,11 @@ public class CreateVolumeBackupPolicyAssignmentRequest
      */
     private com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails
             createVolumeBackupPolicyAssignmentDetails;
+
+    public com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails
+            getCreateVolumeBackupPolicyAssignmentDetails() {
+        return createVolumeBackupPolicyAssignmentDetails;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -44,6 +41,21 @@ public class CreateVolumeBackupPolicyAssignmentRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails
+                createVolumeBackupPolicyAssignmentDetails = null;
+
+        /**
+         * Request to assign a specified policy to a particular volume.
+         * @return this builder instance
+         */
+        public Builder createVolumeBackupPolicyAssignmentDetails(
+                com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails
+                        createVolumeBackupPolicyAssignmentDetails) {
+            this.createVolumeBackupPolicyAssignmentDetails =
+                    createVolumeBackupPolicyAssignmentDetails;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -108,5 +120,75 @@ public class CreateVolumeBackupPolicyAssignmentRequest
             createVolumeBackupPolicyAssignmentDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of CreateVolumeBackupPolicyAssignmentRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of CreateVolumeBackupPolicyAssignmentRequest
+         */
+        public CreateVolumeBackupPolicyAssignmentRequest buildWithoutInvocationCallback() {
+            CreateVolumeBackupPolicyAssignmentRequest request =
+                    new CreateVolumeBackupPolicyAssignmentRequest();
+            request.createVolumeBackupPolicyAssignmentDetails =
+                    createVolumeBackupPolicyAssignmentDetails;
+            return request;
+            // new CreateVolumeBackupPolicyAssignmentRequest(createVolumeBackupPolicyAssignmentDetails);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .createVolumeBackupPolicyAssignmentDetails(
+                        createVolumeBackupPolicyAssignmentDetails);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",createVolumeBackupPolicyAssignmentDetails=")
+                .append(String.valueOf(this.createVolumeBackupPolicyAssignmentDetails));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateVolumeBackupPolicyAssignmentRequest)) {
+            return false;
+        }
+
+        CreateVolumeBackupPolicyAssignmentRequest other =
+                (CreateVolumeBackupPolicyAssignmentRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(
+                        this.createVolumeBackupPolicyAssignmentDetails,
+                        other.createVolumeBackupPolicyAssignmentDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.createVolumeBackupPolicyAssignmentDetails == null
+                                ? 43
+                                : this.createVolumeBackupPolicyAssignmentDetails.hashCode());
+        return result;
     }
 }

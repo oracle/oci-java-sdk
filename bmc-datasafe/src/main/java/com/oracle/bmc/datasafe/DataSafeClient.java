@@ -9,9 +9,9 @@ import com.oracle.bmc.datasafe.requests.*;
 import com.oracle.bmc.datasafe.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.extern.slf4j.Slf4j
 public class DataSafeClient implements DataSafe {
     /**
      * Service instance for DataSafe.
@@ -25,13 +25,17 @@ public class DataSafeClient implements DataSafe {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DataSafeAsyncClient.class);
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final DataSafeWaiters waiters;
 
     private final DataSafePaginators paginators;
-
-    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -400,9 +404,13 @@ public class DataSafeClient implements DataSafe {
          * @return the client
          */
         public DataSafeClient build(
-                @lombok.NonNull
+                @Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DataSafeClient(
                     authenticationDetailsProvider,
                     configuration,
@@ -7659,8 +7667,12 @@ public class DataSafeClient implements DataSafe {
     public UploadMaskingPolicyResponse uploadMaskingPolicy(UploadMaskingPolicyRequest request) {
         LOG.trace("Called uploadMaskingPolicy");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -7673,10 +7685,6 @@ public class DataSafeClient implements DataSafe {
                     UploadMaskingPolicyConverter.fromRequest(client, interceptedRequest);
             com.google.common.base.Function<javax.ws.rs.core.Response, UploadMaskingPolicyResponse>
                     transformer = UploadMaskingPolicyConverter.fromResponse();
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
                     "DataSafe",
@@ -7703,6 +7711,7 @@ public class DataSafeClient implements DataSafe {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -7730,8 +7739,12 @@ public class DataSafeClient implements DataSafe {
             UploadSensitiveDataModelRequest request) {
         LOG.trace("Called uploadSensitiveDataModel");
         try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
                     || authenticationDetailsProvider
                             instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
@@ -7745,10 +7758,6 @@ public class DataSafeClient implements DataSafe {
             com.google.common.base.Function<
                             javax.ws.rs.core.Response, UploadSensitiveDataModelResponse>
                     transformer = UploadSensitiveDataModelConverter.fromResponse();
-
-            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             com.oracle.bmc.ServiceDetails.setServiceDetails(
                     "DataSafe",
@@ -7775,6 +7784,7 @@ public class DataSafeClient implements DataSafe {
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
                                                 || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
                                                 || (e instanceof com.oracle.bmc.model.BmcException
                                                         && tokenRefreshRetrier
                                                                 .getRetryCondition()
@@ -7805,5 +7815,31 @@ public class DataSafeClient implements DataSafe {
     @Override
     public DataSafePaginators getPaginators() {
         return paginators;
+    }
+
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

@@ -16,16 +16,21 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = EnableExternalContainerDatabaseDatabaseManagementDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class EnableExternalContainerDatabaseDatabaseManagementDetails {
+public final class EnableExternalContainerDatabaseDatabaseManagementDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"licenseModel", "externalDatabaseConnectorId"})
+    public EnableExternalContainerDatabaseDatabaseManagementDetails(
+            LicenseModel licenseModel, String externalDatabaseConnectorId) {
+        super();
+        this.licenseModel = licenseModel;
+        this.externalDatabaseConnectorId = externalDatabaseConnectorId;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
@@ -74,6 +79,10 @@ public class EnableExternalContainerDatabaseDatabaseManagementDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The Oracle license model that applies to the external database.
      *
@@ -115,7 +124,11 @@ public class EnableExternalContainerDatabaseDatabaseManagementDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-    LicenseModel licenseModel;
+    private final LicenseModel licenseModel;
+
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
@@ -123,8 +136,61 @@ public class EnableExternalContainerDatabaseDatabaseManagementDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseConnectorId")
-    String externalDatabaseConnectorId;
+    private final String externalDatabaseConnectorId;
+
+    public String getExternalDatabaseConnectorId() {
+        return externalDatabaseConnectorId;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("EnableExternalContainerDatabaseDatabaseManagementDetails(");
+        sb.append("licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", externalDatabaseConnectorId=")
+                .append(String.valueOf(this.externalDatabaseConnectorId));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EnableExternalContainerDatabaseDatabaseManagementDetails)) {
+            return false;
+        }
+
+        EnableExternalContainerDatabaseDatabaseManagementDetails other =
+                (EnableExternalContainerDatabaseDatabaseManagementDetails) o;
+        return java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.externalDatabaseConnectorId, other.externalDatabaseConnectorId)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalDatabaseConnectorId == null
+                                ? 43
+                                : this.externalDatabaseConnectorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

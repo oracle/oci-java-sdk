@@ -15,14 +15,47 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReportSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ReportSummary {
+public final class ReportSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "id",
+        "reportDefinitionId",
+        "description",
+        "mimeType",
+        "timeGenerated",
+        "compartmentId",
+        "lifecycleState",
+        "freeformTags",
+        "definedTags"
+    })
+    public ReportSummary(
+            String displayName,
+            String id,
+            String reportDefinitionId,
+            String description,
+            MimeType mimeType,
+            java.util.Date timeGenerated,
+            String compartmentId,
+            ReportLifecycleState lifecycleState,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.displayName = displayName;
+        this.id = id;
+        this.reportDefinitionId = reportDefinitionId;
+        this.description = description;
+        this.mimeType = mimeType;
+        this.timeGenerated = timeGenerated;
+        this.compartmentId = compartmentId;
+        this.lifecycleState = lifecycleState;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -161,33 +194,53 @@ public class ReportSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The OCID of the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The OCID of the report definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reportDefinitionId")
-    String reportDefinitionId;
+    private final String reportDefinitionId;
+
+    public String getReportDefinitionId() {
+        return reportDefinitionId;
+    }
 
     /**
      * Description of the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
+
     /**
      * Specifies the format of report to be excel or pdf
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum MimeType {
         Pdf("PDF"),
         Xls("XLS"),
@@ -197,6 +250,9 @@ public class ReportSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MimeType.class);
 
         private final String value;
         private static java.util.Map<String, MimeType> map;
@@ -234,25 +290,41 @@ public class ReportSummary {
      * Specifies the format of report to be excel or pdf
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
-    MimeType mimeType;
+    private final MimeType mimeType;
+
+    public MimeType getMimeType() {
+        return mimeType;
+    }
 
     /**
      * Specifies the time at which the report was generated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
-    java.util.Date timeGenerated;
+    private final java.util.Date timeGenerated;
+
+    public java.util.Date getTimeGenerated() {
+        return timeGenerated;
+    }
 
     /**
      * The OCID of the compartment containing the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The current state of the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ReportLifecycleState lifecycleState;
+    private final ReportLifecycleState lifecycleState;
+
+    public ReportLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -261,7 +333,11 @@ public class ReportSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -270,8 +346,88 @@ public class ReportSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ReportSummary(");
+        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", reportDefinitionId=").append(String.valueOf(this.reportDefinitionId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", mimeType=").append(String.valueOf(this.mimeType));
+        sb.append(", timeGenerated=").append(String.valueOf(this.timeGenerated));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ReportSummary)) {
+            return false;
+        }
+
+        ReportSummary other = (ReportSummary) o;
+        return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.reportDefinitionId, other.reportDefinitionId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.mimeType, other.mimeType)
+                && java.util.Objects.equals(this.timeGenerated, other.timeGenerated)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reportDefinitionId == null
+                                ? 43
+                                : this.reportDefinitionId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeGenerated == null ? 43 : this.timeGenerated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -16,22 +16,17 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateImportTfStateJobOperationDetails.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "operation"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateImportTfStateJobOperationDetails extends CreateJobOperationDetails {
+public final class CreateImportTfStateJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("tfStateBase64Encoded")
         private byte[] tfStateBase64Encoded;
@@ -68,6 +63,10 @@ public class CreateImportTfStateJobOperationDetails extends CreateJobOperationDe
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public CreateImportTfStateJobOperationDetails(byte[] tfStateBase64Encoded) {
         super();
@@ -79,8 +78,57 @@ public class CreateImportTfStateJobOperationDetails extends CreateJobOperationDe
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tfStateBase64Encoded")
-    byte[] tfStateBase64Encoded;
+    private final byte[] tfStateBase64Encoded;
+
+    public byte[] getTfStateBase64Encoded() {
+        return tfStateBase64Encoded;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateImportTfStateJobOperationDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append(", tfStateBase64Encoded=").append(String.valueOf(this.tfStateBase64Encoded));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateImportTfStateJobOperationDetails)) {
+            return false;
+        }
+
+        CreateImportTfStateJobOperationDetails other = (CreateImportTfStateJobOperationDetails) o;
+        return java.util.Objects.equals(this.tfStateBase64Encoded, other.tfStateBase64Encoded)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.tfStateBase64Encoded == null
+                                ? 43
+                                : this.tfStateBase64Encoded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

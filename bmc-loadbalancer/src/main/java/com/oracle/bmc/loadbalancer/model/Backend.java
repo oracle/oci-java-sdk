@@ -17,14 +17,38 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Backend.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Backend {
+public final class Backend {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "name",
+        "ipAddress",
+        "port",
+        "weight",
+        "drain",
+        "backup",
+        "offline"
+    })
+    public Backend(
+            String name,
+            String ipAddress,
+            Integer port,
+            Integer weight,
+            Boolean drain,
+            Boolean backup,
+            Boolean offline) {
+        super();
+        this.name = name;
+        this.ipAddress = ipAddress;
+        this.port = port;
+        this.weight = weight;
+        this.drain = drain;
+        this.backup = backup;
+        this.offline = offline;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -122,6 +146,10 @@ public class Backend {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.
      * <p>
@@ -129,7 +157,11 @@ public class Backend {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The IP address of the backend server.
@@ -138,7 +170,11 @@ public class Backend {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    String ipAddress;
+    private final String ipAddress;
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
 
     /**
      * The communication port for the backend server.
@@ -147,7 +183,11 @@ public class Backend {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    Integer port;
+    private final Integer port;
+
+    public Integer getPort() {
+        return port;
+    }
 
     /**
      * The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
@@ -160,7 +200,11 @@ public class Backend {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    Integer weight;
+    private final Integer weight;
+
+    public Integer getWeight() {
+        return weight;
+    }
 
     /**
      * Whether the load balancer should drain this server. Servers marked "drain" receive no new
@@ -170,7 +214,11 @@ public class Backend {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drain")
-    Boolean drain;
+    private final Boolean drain;
+
+    public Boolean getDrain() {
+        return drain;
+    }
 
     /**
      * Whether the load balancer should treat this server as a backup unit. If {@code true}, the load balancer forwards no ingress
@@ -182,7 +230,11 @@ public class Backend {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backup")
-    Boolean backup;
+    private final Boolean backup;
+
+    public Boolean getBackup() {
+        return backup;
+    }
 
     /**
      * Whether the load balancer should treat this server as offline. Offline servers receive no incoming
@@ -192,8 +244,69 @@ public class Backend {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offline")
-    Boolean offline;
+    private final Boolean offline;
+
+    public Boolean getOffline() {
+        return offline;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Backend(");
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", weight=").append(String.valueOf(this.weight));
+        sb.append(", drain=").append(String.valueOf(this.drain));
+        sb.append(", backup=").append(String.valueOf(this.backup));
+        sb.append(", offline=").append(String.valueOf(this.offline));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Backend)) {
+            return false;
+        }
+
+        Backend other = (Backend) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.drain, other.drain)
+                && java.util.Objects.equals(this.backup, other.backup)
+                && java.util.Objects.equals(this.offline, other.offline)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result = (result * PRIME) + (this.drain == null ? 43 : this.drain.hashCode());
+        result = (result * PRIME) + (this.backup == null ? 43 : this.backup.hashCode());
+        result = (result * PRIME) + (this.offline == null ? 43 : this.offline.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

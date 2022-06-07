@@ -18,14 +18,53 @@ package com.oracle.bmc.datasafe.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class UserSummary {
+public final class UserSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "userName",
+        "userCategory",
+        "accountStatus",
+        "targetId",
+        "timeLastLogin",
+        "timeUserCreated",
+        "authenticationType",
+        "userProfile",
+        "timePasswordChanged",
+        "userTypes",
+        "adminRoles"
+    })
+    public UserSummary(
+            String key,
+            String userName,
+            UserCategory userCategory,
+            AccountStatus accountStatus,
+            String targetId,
+            java.util.Date timeLastLogin,
+            java.util.Date timeUserCreated,
+            AuthenticationType authenticationType,
+            String userProfile,
+            java.util.Date timePasswordChanged,
+            java.util.List<UserTypes> userTypes,
+            java.util.List<AdminRoles> adminRoles) {
+        super();
+        this.key = key;
+        this.userName = userName;
+        this.userCategory = userCategory;
+        this.accountStatus = accountStatus;
+        this.targetId = targetId;
+        this.timeLastLogin = timeLastLogin;
+        this.timeUserCreated = timeUserCreated;
+        this.authenticationType = authenticationType;
+        this.userProfile = userProfile;
+        this.timePasswordChanged = timePasswordChanged;
+        this.userTypes = userTypes;
+        this.adminRoles = adminRoles;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -185,21 +224,33 @@ public class UserSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * The database user name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    private final String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
     /**
      * The user category based on the privileges and other details of the user.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum UserCategory {
         Critical("CRITICAL"),
         High("HIGH"),
@@ -211,6 +262,9 @@ public class UserSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UserCategory.class);
 
         private final String value;
         private static java.util.Map<String, UserCategory> map;
@@ -248,11 +302,15 @@ public class UserSummary {
      * The user category based on the privileges and other details of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userCategory")
-    UserCategory userCategory;
+    private final UserCategory userCategory;
+
+    public UserCategory getUserCategory() {
+        return userCategory;
+    }
+
     /**
      * The user account status.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AccountStatus {
         Open("OPEN"),
         Locked("LOCKED"),
@@ -265,6 +323,9 @@ public class UserSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AccountStatus.class);
 
         private final String value;
         private static java.util.Map<String, AccountStatus> map;
@@ -302,29 +363,45 @@ public class UserSummary {
      * The user account status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountStatus")
-    AccountStatus accountStatus;
+    private final AccountStatus accountStatus;
+
+    public AccountStatus getAccountStatus() {
+        return accountStatus;
+    }
 
     /**
      * The OCID of the target database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    String targetId;
+    private final String targetId;
+
+    public String getTargetId() {
+        return targetId;
+    }
 
     /**
      * The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
-    java.util.Date timeLastLogin;
+    private final java.util.Date timeLastLogin;
+
+    public java.util.Date getTimeLastLogin() {
+        return timeLastLogin;
+    }
 
     /**
      * The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUserCreated")
-    java.util.Date timeUserCreated;
+    private final java.util.Date timeUserCreated;
+
+    public java.util.Date getTimeUserCreated() {
+        return timeUserCreated;
+    }
+
     /**
      * The user authentication method.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AuthenticationType {
         Password("PASSWORD"),
         None("NONE"),
@@ -334,6 +411,9 @@ public class UserSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AuthenticationType.class);
 
         private final String value;
         private static java.util.Map<String, AuthenticationType> map;
@@ -371,22 +451,34 @@ public class UserSummary {
      * The user authentication method.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
-    AuthenticationType authenticationType;
+    private final AuthenticationType authenticationType;
+
+    public AuthenticationType getAuthenticationType() {
+        return authenticationType;
+    }
 
     /**
      * The user profile name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userProfile")
-    String userProfile;
+    private final String userProfile;
+
+    public String getUserProfile() {
+        return userProfile;
+    }
 
     /**
      * The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
-    java.util.Date timePasswordChanged;
+    private final java.util.Date timePasswordChanged;
+
+    public java.util.Date getTimePasswordChanged() {
+        return timePasswordChanged;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum UserTypes {
         AdminPrivileged("ADMIN_PRIVILEGED"),
         Application("APPLICATION"),
@@ -399,6 +491,9 @@ public class UserSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UserTypes.class);
 
         private final String value;
         private static java.util.Map<String, UserTypes> map;
@@ -443,10 +538,14 @@ public class UserSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userTypes")
-    java.util.List<UserTypes> userTypes;
+    private final java.util.List<UserTypes> userTypes;
+
+    public java.util.List<UserTypes> getUserTypes() {
+        return userTypes;
+    }
+
     /**
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum AdminRoles {
         PdbDba("PDB_DBA"),
         Dba("DBA"),
@@ -458,6 +557,9 @@ public class UserSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AdminRoles.class);
 
         private final String value;
         private static java.util.Map<String, AdminRoles> map;
@@ -495,8 +597,98 @@ public class UserSummary {
      * The admin roles granted to the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminRoles")
-    java.util.List<AdminRoles> adminRoles;
+    private final java.util.List<AdminRoles> adminRoles;
+
+    public java.util.List<AdminRoles> getAdminRoles() {
+        return adminRoles;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("UserSummary(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", userCategory=").append(String.valueOf(this.userCategory));
+        sb.append(", accountStatus=").append(String.valueOf(this.accountStatus));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", timeLastLogin=").append(String.valueOf(this.timeLastLogin));
+        sb.append(", timeUserCreated=").append(String.valueOf(this.timeUserCreated));
+        sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
+        sb.append(", userProfile=").append(String.valueOf(this.userProfile));
+        sb.append(", timePasswordChanged=").append(String.valueOf(this.timePasswordChanged));
+        sb.append(", userTypes=").append(String.valueOf(this.userTypes));
+        sb.append(", adminRoles=").append(String.valueOf(this.adminRoles));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UserSummary)) {
+            return false;
+        }
+
+        UserSummary other = (UserSummary) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.userCategory, other.userCategory)
+                && java.util.Objects.equals(this.accountStatus, other.accountStatus)
+                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.timeLastLogin, other.timeLastLogin)
+                && java.util.Objects.equals(this.timeUserCreated, other.timeUserCreated)
+                && java.util.Objects.equals(this.authenticationType, other.authenticationType)
+                && java.util.Objects.equals(this.userProfile, other.userProfile)
+                && java.util.Objects.equals(this.timePasswordChanged, other.timePasswordChanged)
+                && java.util.Objects.equals(this.userTypes, other.userTypes)
+                && java.util.Objects.equals(this.adminRoles, other.adminRoles)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result = (result * PRIME) + (this.userCategory == null ? 43 : this.userCategory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.accountStatus == null ? 43 : this.accountStatus.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastLogin == null ? 43 : this.timeLastLogin.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUserCreated == null ? 43 : this.timeUserCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationType == null
+                                ? 43
+                                : this.authenticationType.hashCode());
+        result = (result * PRIME) + (this.userProfile == null ? 43 : this.userProfile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePasswordChanged == null
+                                ? 43
+                                : this.timePasswordChanged.hashCode());
+        result = (result * PRIME) + (this.userTypes == null ? 43 : this.userTypes.hashCode());
+        result = (result * PRIME) + (this.adminRoles == null ? 43 : this.adminRoles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

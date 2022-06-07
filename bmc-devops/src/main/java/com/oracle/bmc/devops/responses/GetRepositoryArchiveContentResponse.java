@@ -7,30 +7,42 @@ package com.oracle.bmc.devops.responses;
 import com.oracle.bmc.devops.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * Content type refers to content of a file which is transferred via HTTP
      */
     private String contentType;
+
+    public String getContentType() {
+        return contentType;
+    }
 
     /**
      * The Content-Disposition response-header field has been proposed as a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.
      */
     private String contentDisposition;
 
+    public String getContentDisposition() {
+        return contentDisposition;
+    }
+
     /**
      * The returned java.io.InputStream instance.
      */
     private java.io.InputStream inputStream;
+
+    public java.io.InputStream getInputStream() {
+        return inputStream;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
@@ -60,6 +72,34 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String contentType;
+
+        public Builder contentType(String contentType) {
+            this.contentType = contentType;
+            return this;
+        }
+
+        private String contentDisposition;
+
+        public Builder contentDisposition(String contentDisposition) {
+            this.contentDisposition = contentDisposition;
+            return this;
+        }
+
+        private java.io.InputStream inputStream;
+
+        public Builder inputStream(java.io.InputStream inputStream) {
+            this.inputStream = inputStream;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -78,5 +118,54 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
             return new GetRepositoryArchiveContentResponse(
                     __httpStatusCode__, opcRequestId, contentType, contentDisposition, inputStream);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",contentType=").append(String.valueOf(contentType));
+        sb.append(",contentDisposition=").append(String.valueOf(contentDisposition));
+        sb.append(",inputStream=").append(String.valueOf(inputStream));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetRepositoryArchiveContentResponse)) {
+            return false;
+        }
+
+        GetRepositoryArchiveContentResponse other = (GetRepositoryArchiveContentResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.contentType, other.contentType)
+                && java.util.Objects.equals(this.contentDisposition, other.contentDisposition)
+                && java.util.Objects.equals(this.inputStream, other.inputStream);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contentDisposition == null
+                                ? 43
+                                : this.contentDisposition.hashCode());
+        result = (result * PRIME) + (this.inputStream == null ? 43 : this.inputStream.hashCode());
+        return result;
     }
 }

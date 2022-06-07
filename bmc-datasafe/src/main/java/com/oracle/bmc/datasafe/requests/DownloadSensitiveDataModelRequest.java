@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadSensitiveDataModelExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DownloadSensitiveDataModelRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class DownloadSensitiveDataModelRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails> {
@@ -26,16 +18,27 @@ public class DownloadSensitiveDataModelRequest
      */
     private String sensitiveDataModelId;
 
+    public String getSensitiveDataModelId() {
+        return sensitiveDataModelId;
+    }
     /**
      * Details to download a sensitive data model file.
      */
     private com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
             downloadSensitiveDataModelDetails;
 
+    public com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
+            getDownloadSensitiveDataModelDetails() {
+        return downloadSensitiveDataModelDetails;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -54,6 +57,42 @@ public class DownloadSensitiveDataModelRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String sensitiveDataModelId = null;
+
+        /**
+         * The OCID of the sensitive data model.
+         * @return this builder instance
+         */
+        public Builder sensitiveDataModelId(String sensitiveDataModelId) {
+            this.sensitiveDataModelId = sensitiveDataModelId;
+            return this;
+        }
+
+        private com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
+                downloadSensitiveDataModelDetails = null;
+
+        /**
+         * Details to download a sensitive data model file.
+         * @return this builder instance
+         */
+        public Builder downloadSensitiveDataModelDetails(
+                com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
+                        downloadSensitiveDataModelDetails) {
+            this.downloadSensitiveDataModelDetails = downloadSensitiveDataModelDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -118,5 +157,85 @@ public class DownloadSensitiveDataModelRequest
             downloadSensitiveDataModelDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of DownloadSensitiveDataModelRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of DownloadSensitiveDataModelRequest
+         */
+        public DownloadSensitiveDataModelRequest buildWithoutInvocationCallback() {
+            DownloadSensitiveDataModelRequest request = new DownloadSensitiveDataModelRequest();
+            request.sensitiveDataModelId = sensitiveDataModelId;
+            request.downloadSensitiveDataModelDetails = downloadSensitiveDataModelDetails;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new DownloadSensitiveDataModelRequest(sensitiveDataModelId, downloadSensitiveDataModelDetails, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .sensitiveDataModelId(sensitiveDataModelId)
+                .downloadSensitiveDataModelDetails(downloadSensitiveDataModelDetails)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
+        sb.append(",downloadSensitiveDataModelDetails=")
+                .append(String.valueOf(this.downloadSensitiveDataModelDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DownloadSensitiveDataModelRequest)) {
+            return false;
+        }
+
+        DownloadSensitiveDataModelRequest other = (DownloadSensitiveDataModelRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.sensitiveDataModelId, other.sensitiveDataModelId)
+                && java.util.Objects.equals(
+                        this.downloadSensitiveDataModelDetails,
+                        other.downloadSensitiveDataModelDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.sensitiveDataModelId == null
+                                ? 43
+                                : this.sensitiveDataModelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.downloadSensitiveDataModelDetails == null
+                                ? 43
+                                : this.downloadSensitiveDataModelDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

@@ -20,14 +20,99 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DatabaseSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseSummary {
+public final class DatabaseSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "characterSet",
+        "ncharacterSet",
+        "dbHomeId",
+        "dbSystemId",
+        "vmClusterId",
+        "dbName",
+        "pdbName",
+        "dbWorkload",
+        "dbUniqueName",
+        "lifecycleDetails",
+        "lifecycleState",
+        "timeCreated",
+        "lastBackupTimestamp",
+        "dbBackupConfig",
+        "freeformTags",
+        "definedTags",
+        "connectionStrings",
+        "kmsKeyId",
+        "kmsKeyVersionId",
+        "vaultId",
+        "sourceDatabasePointInTimeRecoveryTimestamp",
+        "databaseSoftwareImageId",
+        "isCdb",
+        "databaseManagementConfig",
+        "sidPrefix"
+    })
+    public DatabaseSummary(
+            String id,
+            String compartmentId,
+            String characterSet,
+            String ncharacterSet,
+            String dbHomeId,
+            String dbSystemId,
+            String vmClusterId,
+            String dbName,
+            String pdbName,
+            String dbWorkload,
+            String dbUniqueName,
+            String lifecycleDetails,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date lastBackupTimestamp,
+            DbBackupConfig dbBackupConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            DatabaseConnectionStrings connectionStrings,
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            String vaultId,
+            java.util.Date sourceDatabasePointInTimeRecoveryTimestamp,
+            String databaseSoftwareImageId,
+            Boolean isCdb,
+            CloudDatabaseManagementConfig databaseManagementConfig,
+            String sidPrefix) {
+        super();
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.characterSet = characterSet;
+        this.ncharacterSet = ncharacterSet;
+        this.dbHomeId = dbHomeId;
+        this.dbSystemId = dbSystemId;
+        this.vmClusterId = vmClusterId;
+        this.dbName = dbName;
+        this.pdbName = pdbName;
+        this.dbWorkload = dbWorkload;
+        this.dbUniqueName = dbUniqueName;
+        this.lifecycleDetails = lifecycleDetails;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.lastBackupTimestamp = lastBackupTimestamp;
+        this.dbBackupConfig = dbBackupConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.connectionStrings = connectionStrings;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.vaultId = vaultId;
+        this.sourceDatabasePointInTimeRecoveryTimestamp =
+                sourceDatabasePointInTimeRecoveryTimestamp;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.isCdb = isCdb;
+        this.databaseManagementConfig = databaseManagementConfig;
+        this.sidPrefix = sidPrefix;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -357,82 +442,134 @@ public class DatabaseSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * The character set for the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
-    String characterSet;
+    private final String characterSet;
+
+    public String getCharacterSet() {
+        return characterSet;
+    }
 
     /**
      * The national character set for the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-    String ncharacterSet;
+    private final String ncharacterSet;
+
+    public String getNcharacterSet() {
+        return ncharacterSet;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
-    String dbHomeId;
+    private final String dbHomeId;
+
+    public String getDbHomeId() {
+        return dbHomeId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
+    private final String dbSystemId;
+
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
-    String vmClusterId;
+    private final String vmClusterId;
+
+    public String getVmClusterId() {
+        return vmClusterId;
+    }
 
     /**
      * The database name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    private final String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
 
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
-    String pdbName;
+    private final String pdbName;
+
+    public String getPdbName() {
+        return pdbName;
+    }
 
     /**
      * The database workload type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
-    String dbWorkload;
+    private final String dbWorkload;
+
+    public String getDbWorkload() {
+        return dbWorkload;
+    }
 
     /**
      * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-    String dbUniqueName;
+    private final String dbUniqueName;
+
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /**
      * The current state of the database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -450,6 +587,9 @@ public class DatabaseSummary {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -487,22 +627,38 @@ public class DatabaseSummary {
      * The current state of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The date and time when the latest database backup was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastBackupTimestamp")
-    java.util.Date lastBackupTimestamp;
+    private final java.util.Date lastBackupTimestamp;
+
+    public java.util.Date getLastBackupTimestamp() {
+        return lastBackupTimestamp;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
-    DbBackupConfig dbBackupConfig;
+    private final DbBackupConfig dbBackupConfig;
+
+    public DbBackupConfig getDbBackupConfig() {
+        return dbBackupConfig;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -512,7 +668,11 @@ public class DatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -520,61 +680,255 @@ public class DatabaseSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The Connection strings used to connect to the Oracle Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
-    DatabaseConnectionStrings connectionStrings;
+    private final DatabaseConnectionStrings connectionStrings;
+
+    public DatabaseConnectionStrings getConnectionStrings() {
+        return connectionStrings;
+    }
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
-    String kmsKeyId;
+    private final String kmsKeyId;
+
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
 
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
-    String kmsKeyVersionId;
+    private final String kmsKeyVersionId;
+
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
-    String vaultId;
+    private final String vaultId;
+
+    public String getVaultId() {
+        return vaultId;
+    }
 
     /**
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabasePointInTimeRecoveryTimestamp")
-    java.util.Date sourceDatabasePointInTimeRecoveryTimestamp;
+    private final java.util.Date sourceDatabasePointInTimeRecoveryTimestamp;
+
+    public java.util.Date getSourceDatabasePointInTimeRecoveryTimestamp() {
+        return sourceDatabasePointInTimeRecoveryTimestamp;
+    }
 
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
-    String databaseSoftwareImageId;
+    private final String databaseSoftwareImageId;
+
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
+    }
 
     /**
      * True if the database is a container database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCdb")
-    Boolean isCdb;
+    private final Boolean isCdb;
+
+    public Boolean getIsCdb() {
+        return isCdb;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConfig")
-    CloudDatabaseManagementConfig databaseManagementConfig;
+    private final CloudDatabaseManagementConfig databaseManagementConfig;
+
+    public CloudDatabaseManagementConfig getDatabaseManagementConfig() {
+        return databaseManagementConfig;
+    }
 
     /**
      * Specifies a prefix for the {@code Oracle SID} of the database to be created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
-    String sidPrefix;
+    private final String sidPrefix;
+
+    public String getSidPrefix() {
+        return sidPrefix;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseSummary(");
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", characterSet=").append(String.valueOf(this.characterSet));
+        sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
+        sb.append(", dbHomeId=").append(String.valueOf(this.dbHomeId));
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
+        sb.append(", dbName=").append(String.valueOf(this.dbName));
+        sb.append(", pdbName=").append(String.valueOf(this.pdbName));
+        sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", lastBackupTimestamp=").append(String.valueOf(this.lastBackupTimestamp));
+        sb.append(", dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", sourceDatabasePointInTimeRecoveryTimestamp=")
+                .append(String.valueOf(this.sourceDatabasePointInTimeRecoveryTimestamp));
+        sb.append(", databaseSoftwareImageId=")
+                .append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", isCdb=").append(String.valueOf(this.isCdb));
+        sb.append(", databaseManagementConfig=")
+                .append(String.valueOf(this.databaseManagementConfig));
+        sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseSummary)) {
+            return false;
+        }
+
+        DatabaseSummary other = (DatabaseSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.characterSet, other.characterSet)
+                && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
+                && java.util.Objects.equals(this.dbHomeId, other.dbHomeId)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
+                && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.pdbName, other.pdbName)
+                && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.lastBackupTimestamp, other.lastBackupTimestamp)
+                && java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(
+                        this.sourceDatabasePointInTimeRecoveryTimestamp,
+                        other.sourceDatabasePointInTimeRecoveryTimestamp)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageId, other.databaseSoftwareImageId)
+                && java.util.Objects.equals(this.isCdb, other.isCdb)
+                && java.util.Objects.equals(
+                        this.databaseManagementConfig, other.databaseManagementConfig)
+                && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
+        result = (result * PRIME) + (this.dbHomeId == null ? 43 : this.dbHomeId.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.pdbName == null ? 43 : this.pdbName.hashCode());
+        result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastBackupTimestamp == null
+                                ? 43
+                                : this.lastBackupTimestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionStrings == null ? 43 : this.connectionStrings.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDatabasePointInTimeRecoveryTimestamp == null
+                                ? 43
+                                : this.sourceDatabasePointInTimeRecoveryTimestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
+        result = (result * PRIME) + (this.isCdb == null ? 43 : this.isCdb.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagementConfig == null
+                                ? 43
+                                : this.databaseManagementConfig.hashCode());
+        result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

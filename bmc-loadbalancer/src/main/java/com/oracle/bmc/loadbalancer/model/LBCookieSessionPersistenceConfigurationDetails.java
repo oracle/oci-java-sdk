@@ -39,16 +39,40 @@ package com.oracle.bmc.loadbalancer.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LBCookieSessionPersistenceConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class LBCookieSessionPersistenceConfigurationDetails {
+public final class LBCookieSessionPersistenceConfigurationDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "cookieName",
+        "disableFallback",
+        "domain",
+        "path",
+        "maxAgeInSeconds",
+        "isSecure",
+        "isHttpOnly"
+    })
+    public LBCookieSessionPersistenceConfigurationDetails(
+            String cookieName,
+            Boolean disableFallback,
+            String domain,
+            String path,
+            Integer maxAgeInSeconds,
+            Boolean isSecure,
+            Boolean isHttpOnly) {
+        super();
+        this.cookieName = cookieName;
+        this.disableFallback = disableFallback;
+        this.domain = domain;
+        this.path = path;
+        this.maxAgeInSeconds = maxAgeInSeconds;
+        this.isSecure = isSecure;
+        this.isHttpOnly = isHttpOnly;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
         private String cookieName;
@@ -153,6 +177,10 @@ public class LBCookieSessionPersistenceConfigurationDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults
      * to "X-Oracle-BMC-LBS-Route".
@@ -174,7 +202,11 @@ public class LBCookieSessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
-    String cookieName;
+    private final String cookieName;
+
+    public String getCookieName() {
+        return cookieName;
+    }
 
     /**
      * Whether the load balancer is prevented from directing traffic from a persistent session client to
@@ -184,7 +216,11 @@ public class LBCookieSessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")
-    Boolean disableFallback;
+    private final Boolean disableFallback;
+
+    public Boolean getDisableFallback() {
+        return disableFallback;
+    }
 
     /**
      * The domain in which the cookie is valid. The {@code Set-cookie} header inserted by the load balancer contains a
@@ -213,7 +249,11 @@ public class LBCookieSessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    String domain;
+    private final String domain;
+
+    public String getDomain() {
+        return domain;
+    }
 
     /**
      * The path in which the cookie is valid. The {@code Set-cookie header} inserted by the load balancer contains a {@code Path}
@@ -228,7 +268,11 @@ public class LBCookieSessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
-    String path;
+    private final String path;
+
+    public String getPath() {
+        return path;
+    }
 
     /**
      * The amount of time the cookie remains valid. The {@code Set-cookie} header inserted by the load balancer contains
@@ -242,7 +286,11 @@ public class LBCookieSessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxAgeInSeconds")
-    Integer maxAgeInSeconds;
+    private final Integer maxAgeInSeconds;
+
+    public Integer getMaxAgeInSeconds() {
+        return maxAgeInSeconds;
+    }
 
     /**
      * Whether the {@code Set-cookie} header should contain the {@code Secure} attribute. If {@code true}, the {@code Set-cookie} header
@@ -256,7 +304,11 @@ public class LBCookieSessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecure")
-    Boolean isSecure;
+    private final Boolean isSecure;
+
+    public Boolean getIsSecure() {
+        return isSecure;
+    }
 
     /**
      * Whether the {@code Set-cookie} header should contain the {@code HttpOnly} attribute. If {@code true}, the {@code Set-cookie} header
@@ -268,8 +320,74 @@ public class LBCookieSessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHttpOnly")
-    Boolean isHttpOnly;
+    private final Boolean isHttpOnly;
+
+    public Boolean getIsHttpOnly() {
+        return isHttpOnly;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("LBCookieSessionPersistenceConfigurationDetails(");
+        sb.append("cookieName=").append(String.valueOf(this.cookieName));
+        sb.append(", disableFallback=").append(String.valueOf(this.disableFallback));
+        sb.append(", domain=").append(String.valueOf(this.domain));
+        sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", maxAgeInSeconds=").append(String.valueOf(this.maxAgeInSeconds));
+        sb.append(", isSecure=").append(String.valueOf(this.isSecure));
+        sb.append(", isHttpOnly=").append(String.valueOf(this.isHttpOnly));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LBCookieSessionPersistenceConfigurationDetails)) {
+            return false;
+        }
+
+        LBCookieSessionPersistenceConfigurationDetails other =
+                (LBCookieSessionPersistenceConfigurationDetails) o;
+        return java.util.Objects.equals(this.cookieName, other.cookieName)
+                && java.util.Objects.equals(this.disableFallback, other.disableFallback)
+                && java.util.Objects.equals(this.domain, other.domain)
+                && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.maxAgeInSeconds, other.maxAgeInSeconds)
+                && java.util.Objects.equals(this.isSecure, other.isSecure)
+                && java.util.Objects.equals(this.isHttpOnly, other.isHttpOnly)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.cookieName == null ? 43 : this.cookieName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.disableFallback == null ? 43 : this.disableFallback.hashCode());
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
+        result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxAgeInSeconds == null ? 43 : this.maxAgeInSeconds.hashCode());
+        result = (result * PRIME) + (this.isSecure == null ? 43 : this.isSecure.hashCode());
+        result = (result * PRIME) + (this.isHttpOnly == null ? 43 : this.isHttpOnly.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

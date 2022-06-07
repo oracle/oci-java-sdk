@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadLogEventsFileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UploadLogEventsFileRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class UploadLogEventsFileRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
@@ -26,12 +18,18 @@ public class UploadLogEventsFileRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * The log group OCID that gets mapped to the uploaded logs.
      *
      */
     private String logGroupId;
 
+    public String getLogGroupId() {
+        return logGroupId;
+    }
     /**
      * Log events data to be uploaded. The data could be uploaded with or without logSet information depending on whether logSet is enabled for the tenancy or not. Supported formats include
      * 1. json file : logSet (if needed) should be sent as "logSet" query parameter
@@ -42,28 +40,43 @@ public class UploadLogEventsFileRequest
      */
     private java.io.InputStream uploadLogEventsFileDetails;
 
+    public java.io.InputStream getUploadLogEventsFileDetails() {
+        return uploadLogEventsFileDetails;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
     /**
      * The log set that gets associated with the uploaded logs.
      *
      */
     private String logSet;
 
+    public String getLogSet() {
+        return logSet;
+    }
     /**
      * Identifies the type of request payload.
      *
      */
     private com.oracle.bmc.loganalytics.model.PayloadType payloadType;
 
+    public com.oracle.bmc.loganalytics.model.PayloadType getPayloadType() {
+        return payloadType;
+    }
     /**
      * The content type of the log data.
      */
     private String contentType;
 
+    public String getContentType() {
+        return contentType;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -74,6 +87,9 @@ public class UploadLogEventsFileRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
      * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
@@ -81,6 +97,10 @@ public class UploadLogEventsFileRequest
      *
      */
     private String expect;
+
+    public String getExpect() {
+        return expect;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -103,6 +123,122 @@ public class UploadLogEventsFileRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private String logGroupId = null;
+
+        /**
+         * The log group OCID that gets mapped to the uploaded logs.
+         *
+         * @return this builder instance
+         */
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            return this;
+        }
+
+        private java.io.InputStream uploadLogEventsFileDetails = null;
+
+        /**
+         * Log events data to be uploaded. The data could be uploaded with or without logSet information depending on whether logSet is enabled for the tenancy or not. Supported formats include
+         * 1. json file : logSet (if needed) should be sent as "logSet" query parameter
+         * 2. gzip file : logSet (if needed) should be sent as "logSet" query parameter
+         * 3. zip file : containing multiple json files. LogSet information (if needed) should be appended to every filename in the zip.
+         *    Supported filename format with logSet detail is &lt;filename&gt;_logSet=&lt;logset&gt;.json
+         *
+         * @return this builder instance
+         */
+        public Builder uploadLogEventsFileDetails(java.io.InputStream uploadLogEventsFileDetails) {
+            this.uploadLogEventsFileDetails = uploadLogEventsFileDetails;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private String logSet = null;
+
+        /**
+         * The log set that gets associated with the uploaded logs.
+         *
+         * @return this builder instance
+         */
+        public Builder logSet(String logSet) {
+            this.logSet = logSet;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.PayloadType payloadType = null;
+
+        /**
+         * Identifies the type of request payload.
+         *
+         * @return this builder instance
+         */
+        public Builder payloadType(com.oracle.bmc.loganalytics.model.PayloadType payloadType) {
+            this.payloadType = payloadType;
+            return this;
+        }
+
+        private String contentType = null;
+
+        /**
+         * The content type of the log data.
+         * @return this builder instance
+         */
+        public Builder contentType(String contentType) {
+            this.contentType = contentType;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String expect = null;
+
+        /**
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+         *
+         * @return this builder instance
+         */
+        public Builder expect(String expect) {
+            this.expect = expect;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -173,5 +309,114 @@ public class UploadLogEventsFileRequest
             uploadLogEventsFileDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of UploadLogEventsFileRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of UploadLogEventsFileRequest
+         */
+        public UploadLogEventsFileRequest buildWithoutInvocationCallback() {
+            UploadLogEventsFileRequest request = new UploadLogEventsFileRequest();
+            request.namespaceName = namespaceName;
+            request.logGroupId = logGroupId;
+            request.uploadLogEventsFileDetails = uploadLogEventsFileDetails;
+            request.opcRequestId = opcRequestId;
+            request.logSet = logSet;
+            request.payloadType = payloadType;
+            request.contentType = contentType;
+            request.opcRetryToken = opcRetryToken;
+            request.expect = expect;
+            return request;
+            // new UploadLogEventsFileRequest(namespaceName, logGroupId, uploadLogEventsFileDetails, opcRequestId, logSet, payloadType, contentType, opcRetryToken, expect);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .logGroupId(logGroupId)
+                .uploadLogEventsFileDetails(uploadLogEventsFileDetails)
+                .opcRequestId(opcRequestId)
+                .logSet(logSet)
+                .payloadType(payloadType)
+                .contentType(contentType)
+                .opcRetryToken(opcRetryToken)
+                .expect(expect);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(",uploadLogEventsFileDetails=")
+                .append(String.valueOf(this.uploadLogEventsFileDetails));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",logSet=").append(String.valueOf(this.logSet));
+        sb.append(",payloadType=").append(String.valueOf(this.payloadType));
+        sb.append(",contentType=").append(String.valueOf(this.contentType));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",expect=").append(String.valueOf(this.expect));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof UploadLogEventsFileRequest)) {
+            return false;
+        }
+
+        UploadLogEventsFileRequest other = (UploadLogEventsFileRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(
+                        this.uploadLogEventsFileDetails, other.uploadLogEventsFileDetails)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.logSet, other.logSet)
+                && java.util.Objects.equals(this.payloadType, other.payloadType)
+                && java.util.Objects.equals(this.contentType, other.contentType)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.expect, other.expect);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.uploadLogEventsFileDetails == null
+                                ? 43
+                                : this.uploadLogEventsFileDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.logSet == null ? 43 : this.logSet.hashCode());
+        result = (result * PRIME) + (this.payloadType == null ? 43 : this.payloadType.hashCode());
+        result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.expect == null ? 43 : this.expect.hashCode());
+        return result;
     }
 }

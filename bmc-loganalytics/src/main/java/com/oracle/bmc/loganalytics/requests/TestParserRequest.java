@@ -9,14 +9,6 @@ import com.oracle.bmc.loganalytics.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/TestParserExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use TestParserRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class TestParserRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.TestParserPayloadDetails> {
@@ -27,11 +19,18 @@ public class TestParserRequest
      */
     private String namespaceName;
 
+    public String getNamespaceName() {
+        return namespaceName;
+    }
     /**
      * Details for test payload
      */
     private com.oracle.bmc.loganalytics.model.TestParserPayloadDetails testParserPayloadDetails;
 
+    public com.oracle.bmc.loganalytics.model.TestParserPayloadDetails
+            getTestParserPayloadDetails() {
+        return testParserPayloadDetails;
+    }
     /**
      * The scope used when testing a parser.
      */
@@ -73,6 +72,10 @@ public class TestParserRequest
             throw new IllegalArgumentException("Invalid Scope: " + key);
         }
     };
+
+    public Scope getScope() {
+        return scope;
+    }
     /**
      * The module to test.  A value of 'ParserFunctionTest' will result in testing of
      * the parser functions.
@@ -80,6 +83,9 @@ public class TestParserRequest
      */
     private String reqOriginModule;
 
+    public String getReqOriginModule() {
+        return reqOriginModule;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
@@ -90,10 +96,17 @@ public class TestParserRequest
      */
     private String opcRetryToken;
 
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -116,6 +129,83 @@ public class TestParserRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String namespaceName = null;
+
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         * @return this builder instance
+         */
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        private com.oracle.bmc.loganalytics.model.TestParserPayloadDetails
+                testParserPayloadDetails = null;
+
+        /**
+         * Details for test payload
+         * @return this builder instance
+         */
+        public Builder testParserPayloadDetails(
+                com.oracle.bmc.loganalytics.model.TestParserPayloadDetails
+                        testParserPayloadDetails) {
+            this.testParserPayloadDetails = testParserPayloadDetails;
+            return this;
+        }
+
+        private Scope scope = null;
+
+        /**
+         * The scope used when testing a parser.
+         * @return this builder instance
+         */
+        public Builder scope(Scope scope) {
+            this.scope = scope;
+            return this;
+        }
+
+        private String reqOriginModule = null;
+
+        /**
+         * The module to test.  A value of 'ParserFunctionTest' will result in testing of
+         * the parser functions.
+         *
+         * @return this builder instance
+         */
+        public Builder reqOriginModule(String reqOriginModule) {
+            this.reqOriginModule = reqOriginModule;
+            return this;
+        }
+
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * The client request ID for tracing.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -183,5 +273,101 @@ public class TestParserRequest
             testParserPayloadDetails(body);
             return this;
         }
+
+        /**
+         * Build the instance of TestParserRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of TestParserRequest
+         */
+        public TestParserRequest buildWithoutInvocationCallback() {
+            TestParserRequest request = new TestParserRequest();
+            request.namespaceName = namespaceName;
+            request.testParserPayloadDetails = testParserPayloadDetails;
+            request.scope = scope;
+            request.reqOriginModule = reqOriginModule;
+            request.opcRetryToken = opcRetryToken;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new TestParserRequest(namespaceName, testParserPayloadDetails, scope, reqOriginModule, opcRetryToken, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .namespaceName(namespaceName)
+                .testParserPayloadDetails(testParserPayloadDetails)
+                .scope(scope)
+                .reqOriginModule(reqOriginModule)
+                .opcRetryToken(opcRetryToken)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
+        sb.append(",testParserPayloadDetails=")
+                .append(String.valueOf(this.testParserPayloadDetails));
+        sb.append(",scope=").append(String.valueOf(this.scope));
+        sb.append(",reqOriginModule=").append(String.valueOf(this.reqOriginModule));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TestParserRequest)) {
+            return false;
+        }
+
+        TestParserRequest other = (TestParserRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.namespaceName, other.namespaceName)
+                && java.util.Objects.equals(
+                        this.testParserPayloadDetails, other.testParserPayloadDetails)
+                && java.util.Objects.equals(this.scope, other.scope)
+                && java.util.Objects.equals(this.reqOriginModule, other.reqOriginModule)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.testParserPayloadDetails == null
+                                ? 43
+                                : this.testParserPayloadDetails.hashCode());
+        result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reqOriginModule == null ? 43 : this.reqOriginModule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

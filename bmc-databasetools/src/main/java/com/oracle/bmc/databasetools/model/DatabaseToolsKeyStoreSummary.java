@@ -15,16 +15,24 @@ package com.oracle.bmc.databasetools.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DatabaseToolsKeyStoreSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class DatabaseToolsKeyStoreSummary {
+public final class DatabaseToolsKeyStoreSummary {
+    @Deprecated
+    @java.beans.ConstructorProperties({"keyStoreType", "keyStoreContent", "keyStorePassword"})
+    public DatabaseToolsKeyStoreSummary(
+            KeyStoreType keyStoreType,
+            DatabaseToolsKeyStoreContentSummary keyStoreContent,
+            DatabaseToolsKeyStorePasswordSummary keyStorePassword) {
+        super();
+        this.keyStoreType = keyStoreType;
+        this.keyStoreContent = keyStoreContent;
+        this.keyStorePassword = keyStorePassword;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreType")
         private KeyStoreType keyStoreType;
@@ -83,18 +91,83 @@ public class DatabaseToolsKeyStoreSummary {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * The key store type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreType")
-    KeyStoreType keyStoreType;
+    private final KeyStoreType keyStoreType;
+
+    public KeyStoreType getKeyStoreType() {
+        return keyStoreType;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreContent")
-    DatabaseToolsKeyStoreContentSummary keyStoreContent;
+    private final DatabaseToolsKeyStoreContentSummary keyStoreContent;
+
+    public DatabaseToolsKeyStoreContentSummary getKeyStoreContent() {
+        return keyStoreContent;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
-    DatabaseToolsKeyStorePasswordSummary keyStorePassword;
+    private final DatabaseToolsKeyStorePasswordSummary keyStorePassword;
+
+    public DatabaseToolsKeyStorePasswordSummary getKeyStorePassword() {
+        return keyStorePassword;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DatabaseToolsKeyStoreSummary(");
+        sb.append("keyStoreType=").append(String.valueOf(this.keyStoreType));
+        sb.append(", keyStoreContent=").append(String.valueOf(this.keyStoreContent));
+        sb.append(", keyStorePassword=").append(String.valueOf(this.keyStorePassword));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DatabaseToolsKeyStoreSummary)) {
+            return false;
+        }
+
+        DatabaseToolsKeyStoreSummary other = (DatabaseToolsKeyStoreSummary) o;
+        return java.util.Objects.equals(this.keyStoreType, other.keyStoreType)
+                && java.util.Objects.equals(this.keyStoreContent, other.keyStoreContent)
+                && java.util.Objects.equals(this.keyStorePassword, other.keyStorePassword)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.keyStoreType == null ? 43 : this.keyStoreType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreContent == null ? 43 : this.keyStoreContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStorePassword == null ? 43 : this.keyStorePassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

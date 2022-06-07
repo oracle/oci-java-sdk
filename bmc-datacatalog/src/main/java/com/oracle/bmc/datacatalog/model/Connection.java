@@ -15,14 +15,65 @@ package com.oracle.bmc.datacatalog.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Connection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Connection {
+public final class Connection {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "key",
+        "description",
+        "displayName",
+        "timeCreated",
+        "timeUpdated",
+        "createdById",
+        "updatedById",
+        "customPropertyMembers",
+        "properties",
+        "externalKey",
+        "timeStatusUpdated",
+        "lifecycleState",
+        "isDefault",
+        "dataAssetKey",
+        "typeKey",
+        "uri"
+    })
+    public Connection(
+            String key,
+            String description,
+            String displayName,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String createdById,
+            String updatedById,
+            java.util.List<CustomPropertyGetUsage> customPropertyMembers,
+            java.util.Map<String, java.util.Map<String, String>> properties,
+            String externalKey,
+            java.util.Date timeStatusUpdated,
+            LifecycleState lifecycleState,
+            Boolean isDefault,
+            String dataAssetKey,
+            String typeKey,
+            String uri) {
+        super();
+        this.key = key;
+        this.description = description;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.createdById = createdById;
+        this.updatedById = updatedById;
+        this.customPropertyMembers = customPropertyMembers;
+        this.properties = properties;
+        this.externalKey = externalKey;
+        this.timeStatusUpdated = timeStatusUpdated;
+        this.lifecycleState = lifecycleState;
+        this.isDefault = isDefault;
+        this.dataAssetKey = dataAssetKey;
+        this.typeKey = typeKey;
+        this.uri = uri;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -227,17 +278,29 @@ public class Connection {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Unique connection key that is immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    String key;
+    private final String key;
+
+    public String getKey() {
+        return key;
+    }
 
     /**
      * A description of the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    String description;
+    private final String description;
+
+    public String getDescription() {
+        return description;
+    }
 
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable.
@@ -245,7 +308,11 @@ public class Connection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -253,32 +320,52 @@ public class Connection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    java.util.Date timeUpdated;
+    private final java.util.Date timeUpdated;
+
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
 
     /**
      * OCID of the user who created the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
-    String createdById;
+    private final String createdById;
+
+    public String getCreatedById() {
+        return createdById;
+    }
 
     /**
      * OCID of the user who modified the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
-    String updatedById;
+    private final String updatedById;
+
+    public String getUpdatedById() {
+        return updatedById;
+    }
 
     /**
      * The list of customized properties along with the values for this object
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
-    java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+    private final java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+    public java.util.List<CustomPropertyGetUsage> getCustomPropertyMembers() {
+        return customPropertyMembers;
+    }
 
     /**
      * A map of maps that contains the properties which are specific to the connection type. Each connection type
@@ -289,50 +376,174 @@ public class Connection {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    java.util.Map<String, java.util.Map<String, String>> properties;
+    private final java.util.Map<String, java.util.Map<String, String>> properties;
+
+    public java.util.Map<String, java.util.Map<String, String>> getProperties() {
+        return properties;
+    }
 
     /**
      * Unique external key of this object from the source system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
-    String externalKey;
+    private final String externalKey;
+
+    public String getExternalKey() {
+        return externalKey;
+    }
 
     /**
      * Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
-    java.util.Date timeStatusUpdated;
+    private final java.util.Date timeStatusUpdated;
+
+    public java.util.Date getTimeStatusUpdated() {
+        return timeStatusUpdated;
+    }
 
     /**
      * The current state of the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * Indicates whether this connection is the default connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
-    Boolean isDefault;
+    private final Boolean isDefault;
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
 
     /**
      * Unique key of the parent data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
-    String dataAssetKey;
+    private final String dataAssetKey;
+
+    public String getDataAssetKey() {
+        return dataAssetKey;
+    }
 
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
-    String typeKey;
+    private final String typeKey;
+
+    public String getTypeKey() {
+        return typeKey;
+    }
 
     /**
      * URI to the connection instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
-    String uri;
+    private final String uri;
+
+    public String getUri() {
+        return uri;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Connection(");
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", createdById=").append(String.valueOf(this.createdById));
+        sb.append(", updatedById=").append(String.valueOf(this.updatedById));
+        sb.append(", customPropertyMembers=").append(String.valueOf(this.customPropertyMembers));
+        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", externalKey=").append(String.valueOf(this.externalKey));
+        sb.append(", timeStatusUpdated=").append(String.valueOf(this.timeStatusUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(", typeKey=").append(String.valueOf(this.typeKey));
+        sb.append(", uri=").append(String.valueOf(this.uri));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Connection)) {
+            return false;
+        }
+
+        Connection other = (Connection) o;
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.createdById, other.createdById)
+                && java.util.Objects.equals(this.updatedById, other.updatedById)
+                && java.util.Objects.equals(this.customPropertyMembers, other.customPropertyMembers)
+                && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.externalKey, other.externalKey)
+                && java.util.Objects.equals(this.timeStatusUpdated, other.timeStatusUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.typeKey, other.typeKey)
+                && java.util.Objects.equals(this.uri, other.uri)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.createdById == null ? 43 : this.createdById.hashCode());
+        result = (result * PRIME) + (this.updatedById == null ? 43 : this.updatedById.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customPropertyMembers == null
+                                ? 43
+                                : this.customPropertyMembers.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeStatusUpdated == null ? 43 : this.timeStatusUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
+        result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.typeKey == null ? 43 : this.typeKey.hashCode());
+        result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

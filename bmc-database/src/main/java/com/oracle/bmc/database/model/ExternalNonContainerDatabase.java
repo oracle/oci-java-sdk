@@ -15,16 +15,79 @@ package com.oracle.bmc.database.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ExternalNonContainerDatabase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ExternalNonContainerDatabase {
+public final class ExternalNonContainerDatabase {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "operationsInsightsConfig",
+        "compartmentId",
+        "freeformTags",
+        "definedTags",
+        "displayName",
+        "id",
+        "lifecycleDetails",
+        "lifecycleState",
+        "timeCreated",
+        "dbUniqueName",
+        "dbId",
+        "databaseVersion",
+        "databaseEdition",
+        "timeZone",
+        "characterSet",
+        "ncharacterSet",
+        "dbPacks",
+        "databaseConfiguration",
+        "databaseManagementConfig",
+        "stackMonitoringConfig"
+    })
+    public ExternalNonContainerDatabase(
+            OperationsInsightsConfig operationsInsightsConfig,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            String id,
+            String lifecycleDetails,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            String dbUniqueName,
+            String dbId,
+            String databaseVersion,
+            DatabaseEdition databaseEdition,
+            String timeZone,
+            String characterSet,
+            String ncharacterSet,
+            String dbPacks,
+            DatabaseConfiguration databaseConfiguration,
+            DatabaseManagementConfig databaseManagementConfig,
+            StackMonitoringConfig stackMonitoringConfig) {
+        super();
+        this.operationsInsightsConfig = operationsInsightsConfig;
+        this.compartmentId = compartmentId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.displayName = displayName;
+        this.id = id;
+        this.lifecycleDetails = lifecycleDetails;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
+        this.dbUniqueName = dbUniqueName;
+        this.dbId = dbId;
+        this.databaseVersion = databaseVersion;
+        this.databaseEdition = databaseEdition;
+        this.timeZone = timeZone;
+        this.characterSet = characterSet;
+        this.ncharacterSet = ncharacterSet;
+        this.dbPacks = dbPacks;
+        this.databaseConfiguration = databaseConfiguration;
+        this.databaseManagementConfig = databaseManagementConfig;
+        this.stackMonitoringConfig = stackMonitoringConfig;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
         private OperationsInsightsConfig operationsInsightsConfig;
@@ -273,14 +336,26 @@ public class ExternalNonContainerDatabase {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConfig")
-    OperationsInsightsConfig operationsInsightsConfig;
+    private final OperationsInsightsConfig operationsInsightsConfig;
+
+    public OperationsInsightsConfig getOperationsInsightsConfig() {
+        return operationsInsightsConfig;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    private final String compartmentId;
+
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -290,7 +365,11 @@ public class ExternalNonContainerDatabase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -298,30 +377,46 @@ public class ExternalNonContainerDatabase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
 
     /**
      * The user-friendly name for the external database. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    private final String displayName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    private final String id;
+
+    public String getId() {
+        return id;
+    }
 
     /**
      * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    private final String lifecycleDetails;
+
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         NotConnected("NOT_CONNECTED"),
@@ -336,6 +431,9 @@ public class ExternalNonContainerDatabase {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -373,37 +471,57 @@ public class ExternalNonContainerDatabase {
      * The current state of the Oracle Cloud Infrastructure external database resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    private final LifecycleState lifecycleState;
+
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
 
     /**
      * The date and time the database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
+    private final java.util.Date timeCreated;
+
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
 
     /**
      * The {@code DB_UNIQUE_NAME} of the external database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-    String dbUniqueName;
+    private final String dbUniqueName;
+
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
 
     /**
      * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
-    String dbId;
+    private final String dbId;
+
+    public String getDbId() {
+        return dbId;
+    }
 
     /**
      * The Oracle Database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
-    String databaseVersion;
+    private final String databaseVersion;
+
+    public String getDatabaseVersion() {
+        return databaseVersion;
+    }
+
     /**
      * The Oracle Database edition.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DatabaseEdition {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
@@ -415,6 +533,9 @@ public class ExternalNonContainerDatabase {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseEdition.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseEdition> map;
@@ -453,7 +574,11 @@ public class ExternalNonContainerDatabase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-    DatabaseEdition databaseEdition;
+    private final DatabaseEdition databaseEdition;
+
+    public DatabaseEdition getDatabaseEdition() {
+        return databaseEdition;
+    }
 
     /**
      * The time zone of the external database.
@@ -462,29 +587,45 @@ public class ExternalNonContainerDatabase {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
-    String timeZone;
+    private final String timeZone;
+
+    public String getTimeZone() {
+        return timeZone;
+    }
 
     /**
      * The character set of the external database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
-    String characterSet;
+    private final String characterSet;
+
+    public String getCharacterSet() {
+        return characterSet;
+    }
 
     /**
      * The national character of the external database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-    String ncharacterSet;
+    private final String ncharacterSet;
+
+    public String getNcharacterSet() {
+        return ncharacterSet;
+    }
 
     /**
      * The database packs licensed for the external Oracle Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPacks")
-    String dbPacks;
+    private final String dbPacks;
+
+    public String getDbPacks() {
+        return dbPacks;
+    }
+
     /**
      * The Oracle Database configuration
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum DatabaseConfiguration {
         Rac("RAC"),
         SingleInstance("SINGLE_INSTANCE"),
@@ -494,6 +635,9 @@ public class ExternalNonContainerDatabase {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseConfiguration.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseConfiguration> map;
@@ -531,14 +675,154 @@ public class ExternalNonContainerDatabase {
      * The Oracle Database configuration
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConfiguration")
-    DatabaseConfiguration databaseConfiguration;
+    private final DatabaseConfiguration databaseConfiguration;
+
+    public DatabaseConfiguration getDatabaseConfiguration() {
+        return databaseConfiguration;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConfig")
-    DatabaseManagementConfig databaseManagementConfig;
+    private final DatabaseManagementConfig databaseManagementConfig;
+
+    public DatabaseManagementConfig getDatabaseManagementConfig() {
+        return databaseManagementConfig;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConfig")
-    StackMonitoringConfig stackMonitoringConfig;
+    private final StackMonitoringConfig stackMonitoringConfig;
+
+    public StackMonitoringConfig getStackMonitoringConfig() {
+        return stackMonitoringConfig;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExternalNonContainerDatabase(");
+        sb.append("operationsInsightsConfig=")
+                .append(String.valueOf(this.operationsInsightsConfig));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", dbId=").append(String.valueOf(this.dbId));
+        sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
+        sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", characterSet=").append(String.valueOf(this.characterSet));
+        sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
+        sb.append(", dbPacks=").append(String.valueOf(this.dbPacks));
+        sb.append(", databaseConfiguration=").append(String.valueOf(this.databaseConfiguration));
+        sb.append(", databaseManagementConfig=")
+                .append(String.valueOf(this.databaseManagementConfig));
+        sb.append(", stackMonitoringConfig=").append(String.valueOf(this.stackMonitoringConfig));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExternalNonContainerDatabase)) {
+            return false;
+        }
+
+        ExternalNonContainerDatabase other = (ExternalNonContainerDatabase) o;
+        return java.util.Objects.equals(
+                        this.operationsInsightsConfig, other.operationsInsightsConfig)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(this.dbId, other.dbId)
+                && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
+                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.characterSet, other.characterSet)
+                && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
+                && java.util.Objects.equals(this.dbPacks, other.dbPacks)
+                && java.util.Objects.equals(this.databaseConfiguration, other.databaseConfiguration)
+                && java.util.Objects.equals(
+                        this.databaseManagementConfig, other.databaseManagementConfig)
+                && java.util.Objects.equals(this.stackMonitoringConfig, other.stackMonitoringConfig)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.operationsInsightsConfig == null
+                                ? 43
+                                : this.operationsInsightsConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result = (result * PRIME) + (this.dbId == null ? 43 : this.dbId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
+        result = (result * PRIME) + (this.dbPacks == null ? 43 : this.dbPacks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseConfiguration == null
+                                ? 43
+                                : this.databaseConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagementConfig == null
+                                ? 43
+                                : this.databaseManagementConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stackMonitoringConfig == null
+                                ? 43
+                                : this.stackMonitoringConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

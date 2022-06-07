@@ -7,10 +7,6 @@ package com.oracle.bmc.threatintelligence.responses;
 import com.oracle.bmc.threatintelligence.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
-@lombok.Builder(builderClassName = "Builder")
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19,10 +15,18 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
     /**
      * The returned Indicator instance.
      */
     private com.oracle.bmc.threatintelligence.model.Indicator indicator;
+
+    public com.oracle.bmc.threatintelligence.model.Indicator getIndicator() {
+        return indicator;
+    }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "indicator"})
     private GetIndicatorResponse(
@@ -42,6 +46,20 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private String opcRequestId;
+
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        private com.oracle.bmc.threatintelligence.model.Indicator indicator;
+
+        public Builder indicator(com.oracle.bmc.threatintelligence.model.Indicator indicator) {
+            this.indicator = indicator;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
@@ -57,5 +75,44 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
         public GetIndicatorResponse build() {
             return new GetIndicatorResponse(__httpStatusCode__, opcRequestId, indicator);
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",indicator=").append(String.valueOf(indicator));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetIndicatorResponse)) {
+            return false;
+        }
+
+        GetIndicatorResponse other = (GetIndicatorResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.indicator, other.indicator);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.indicator == null ? 43 : this.indicator.hashCode());
+        return result;
     }
 }

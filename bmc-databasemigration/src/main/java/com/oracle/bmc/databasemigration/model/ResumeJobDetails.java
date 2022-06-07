@@ -16,14 +16,17 @@ package com.oracle.bmc.databasemigration.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResumeJobDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ResumeJobDetails {
+public final class ResumeJobDetails {
+    @Deprecated
+    @java.beans.ConstructorProperties({"waitAfter"})
+    public ResumeJobDetails(OdmsJobPhases waitAfter) {
+        super();
+        this.waitAfter = waitAfter;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("waitAfter")
         private OdmsJobPhases waitAfter;
@@ -59,14 +62,61 @@ public class ResumeJobDetails {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Name of a migration phase. The Job will wait after executing this
      * phase until Resume Job endpoint is called again.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("waitAfter")
-    OdmsJobPhases waitAfter;
+    private final OdmsJobPhases waitAfter;
+
+    public OdmsJobPhases getWaitAfter() {
+        return waitAfter;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ResumeJobDetails(");
+        sb.append("waitAfter=").append(String.valueOf(this.waitAfter));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ResumeJobDetails)) {
+            return false;
+        }
+
+        ResumeJobDetails other = (ResumeJobDetails) o;
+        return java.util.Objects.equals(this.waitAfter, other.waitAfter)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.waitAfter == null ? 43 : this.waitAfter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

@@ -9,14 +9,6 @@ import com.oracle.bmc.datasafe.model.*;
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSecurityAssessmentComparisonExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSecurityAssessmentComparisonRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-@lombok.Builder(
-    builderClassName = "Builder",
-    buildMethodName = "buildWithoutInvocationCallback",
-    toBuilder = true
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@lombok.Getter
 public class GetSecurityAssessmentComparisonRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -25,15 +17,25 @@ public class GetSecurityAssessmentComparisonRequest
      */
     private String securityAssessmentId;
 
+    public String getSecurityAssessmentId() {
+        return securityAssessmentId;
+    }
     /**
      * The OCID of the baseline security assessment.
      */
     private String comparisonSecurityAssessmentId;
 
+    public String getComparisonSecurityAssessmentId() {
+        return comparisonSecurityAssessmentId;
+    }
     /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
+
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -41,6 +43,39 @@ public class GetSecurityAssessmentComparisonRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private String securityAssessmentId = null;
+
+        /**
+         * The OCID of the security assessment.
+         * @return this builder instance
+         */
+        public Builder securityAssessmentId(String securityAssessmentId) {
+            this.securityAssessmentId = securityAssessmentId;
+            return this;
+        }
+
+        private String comparisonSecurityAssessmentId = null;
+
+        /**
+         * The OCID of the baseline security assessment.
+         * @return this builder instance
+         */
+        public Builder comparisonSecurityAssessmentId(String comparisonSecurityAssessmentId) {
+            this.comparisonSecurityAssessmentId = comparisonSecurityAssessmentId;
+            return this;
+        }
+
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request.
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -94,5 +129,85 @@ public class GetSecurityAssessmentComparisonRequest
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
+
+        /**
+         * Build the instance of GetSecurityAssessmentComparisonRequest as configured by this builder
+         *
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * while the method {@link Builder#build} does
+         *
+         * @return instance of GetSecurityAssessmentComparisonRequest
+         */
+        public GetSecurityAssessmentComparisonRequest buildWithoutInvocationCallback() {
+            GetSecurityAssessmentComparisonRequest request =
+                    new GetSecurityAssessmentComparisonRequest();
+            request.securityAssessmentId = securityAssessmentId;
+            request.comparisonSecurityAssessmentId = comparisonSecurityAssessmentId;
+            request.opcRequestId = opcRequestId;
+            return request;
+            // new GetSecurityAssessmentComparisonRequest(securityAssessmentId, comparisonSecurityAssessmentId, opcRequestId);
+        }
+    }
+
+    /**
+     * @return instance of {@link Builder} that allows you to modify request properties
+     */
+    public Builder toBuilder() {
+        return new Builder()
+                .securityAssessmentId(securityAssessmentId)
+                .comparisonSecurityAssessmentId(comparisonSecurityAssessmentId)
+                .opcRequestId(opcRequestId);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",securityAssessmentId=").append(String.valueOf(this.securityAssessmentId));
+        sb.append(",comparisonSecurityAssessmentId=")
+                .append(String.valueOf(this.comparisonSecurityAssessmentId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GetSecurityAssessmentComparisonRequest)) {
+            return false;
+        }
+
+        GetSecurityAssessmentComparisonRequest other = (GetSecurityAssessmentComparisonRequest) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.securityAssessmentId, other.securityAssessmentId)
+                && java.util.Objects.equals(
+                        this.comparisonSecurityAssessmentId, other.comparisonSecurityAssessmentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.securityAssessmentId == null
+                                ? 43
+                                : this.securityAssessmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.comparisonSecurityAssessmentId == null
+                                ? 43
+                                : this.comparisonSecurityAssessmentId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        return result;
     }
 }

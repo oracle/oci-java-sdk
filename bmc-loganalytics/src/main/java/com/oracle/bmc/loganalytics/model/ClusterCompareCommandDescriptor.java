@@ -16,22 +16,17 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ClusterCompareCommandDescriptor.Builder.class
 )
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "name"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ClusterCompareCommandDescriptor extends AbstractCommandDescriptor {
+public final class ClusterCompareCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
@@ -180,6 +175,10 @@ public class ClusterCompareCommandDescriptor extends AbstractCommandDescriptor {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     @Deprecated
     public ClusterCompareCommandDescriptor(
             String displayQueryString,
@@ -207,43 +206,129 @@ public class ClusterCompareCommandDescriptor extends AbstractCommandDescriptor {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeShift")
-    String timeShift;
+    private final String timeShift;
+
+    public String getTimeShift() {
+        return timeShift;
+    }
 
     /**
      * Start time to apply to base line query if specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
-    Long timeStart;
+    private final Long timeStart;
+
+    public Long getTimeStart() {
+        return timeStart;
+    }
 
     /**
      * End time to apply to base line query if specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
-    Long timeEnd;
+    private final Long timeEnd;
+
+    public Long getTimeEnd() {
+        return timeEnd;
+    }
 
     /**
      * Option to calculate trends of each cluster if specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeTrends")
-    Boolean shouldIncludeTrends;
+    private final Boolean shouldIncludeTrends;
+
+    public Boolean getShouldIncludeTrends() {
+        return shouldIncludeTrends;
+    }
 
     /**
      * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("span")
-    String span;
+    private final String span;
+
+    public String getSpan() {
+        return span;
+    }
 
     /**
      * Query to use to compute base line to compare top level query results against to identify differences if specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineQuery")
-    String baselineQuery;
+    private final String baselineQuery;
+
+    public String getBaselineQuery() {
+        return baselineQuery;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ClusterCompareCommandDescriptor(");
+        sb.append("super=").append(super.toString());
+        sb.append(", timeShift=").append(String.valueOf(this.timeShift));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", shouldIncludeTrends=").append(String.valueOf(this.shouldIncludeTrends));
+        sb.append(", span=").append(String.valueOf(this.span));
+        sb.append(", baselineQuery=").append(String.valueOf(this.baselineQuery));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ClusterCompareCommandDescriptor)) {
+            return false;
+        }
+
+        ClusterCompareCommandDescriptor other = (ClusterCompareCommandDescriptor) o;
+        return java.util.Objects.equals(this.timeShift, other.timeShift)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.shouldIncludeTrends, other.shouldIncludeTrends)
+                && java.util.Objects.equals(this.span, other.span)
+                && java.util.Objects.equals(this.baselineQuery, other.baselineQuery)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+                && super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.timeShift == null ? 43 : this.timeShift.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldIncludeTrends == null
+                                ? 43
+                                : this.shouldIncludeTrends.hashCode());
+        result = (result * PRIME) + (this.span == null ? 43 : this.span.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baselineQuery == null ? 43 : this.baselineQuery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }

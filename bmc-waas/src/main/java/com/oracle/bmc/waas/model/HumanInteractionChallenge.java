@@ -15,16 +15,49 @@ package com.oracle.bmc.waas.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HumanInteractionChallenge.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class HumanInteractionChallenge {
+public final class HumanInteractionChallenge {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "isEnabled",
+        "action",
+        "failureThreshold",
+        "actionExpirationInSeconds",
+        "failureThresholdExpirationInSeconds",
+        "interactionThreshold",
+        "recordingPeriodInSeconds",
+        "setHttpHeader",
+        "challengeSettings",
+        "isNatEnabled"
+    })
+    public HumanInteractionChallenge(
+            Boolean isEnabled,
+            Action action,
+            Integer failureThreshold,
+            Integer actionExpirationInSeconds,
+            Integer failureThresholdExpirationInSeconds,
+            Integer interactionThreshold,
+            Integer recordingPeriodInSeconds,
+            Header setHttpHeader,
+            BlockChallengeSettings challengeSettings,
+            Boolean isNatEnabled) {
+        super();
+        this.isEnabled = isEnabled;
+        this.action = action;
+        this.failureThreshold = failureThreshold;
+        this.actionExpirationInSeconds = actionExpirationInSeconds;
+        this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
+        this.interactionThreshold = interactionThreshold;
+        this.recordingPeriodInSeconds = recordingPeriodInSeconds;
+        this.setHttpHeader = setHttpHeader;
+        this.challengeSettings = challengeSettings;
+        this.isNatEnabled = isNatEnabled;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
@@ -164,15 +197,23 @@ public class HumanInteractionChallenge {
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
     /**
      * Enables or disables the human interaction challenge Web Application Firewall feature.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
-    Boolean isEnabled;
+    private final Boolean isEnabled;
+
+    public Boolean getIsEnabled() {
+        return isEnabled;
+    }
+
     /**
      * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum Action {
         Detect("DETECT"),
         Block("BLOCK"),
@@ -182,6 +223,8 @@ public class HumanInteractionChallenge {
          * version of the SDK.
          */
         UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
 
         private final String value;
         private static java.util.Map<String, Action> map;
@@ -219,53 +262,184 @@ public class HumanInteractionChallenge {
      * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
-    Action action;
+    private final Action action;
+
+    public Action getAction() {
+        return action;
+    }
 
     /**
      * The number of failed requests before taking action. If unspecified, defaults to {@code 10}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
-    Integer failureThreshold;
+    private final Integer failureThreshold;
+
+    public Integer getFailureThreshold() {
+        return failureThreshold;
+    }
 
     /**
      * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
-    Integer actionExpirationInSeconds;
+    private final Integer actionExpirationInSeconds;
+
+    public Integer getActionExpirationInSeconds() {
+        return actionExpirationInSeconds;
+    }
 
     /**
      * The number of seconds before the failure threshold resets. If unspecified, defaults to  {@code 60}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThresholdExpirationInSeconds")
-    Integer failureThresholdExpirationInSeconds;
+    private final Integer failureThresholdExpirationInSeconds;
+
+    public Integer getFailureThresholdExpirationInSeconds() {
+        return failureThresholdExpirationInSeconds;
+    }
 
     /**
      * The number of interactions required to pass the challenge. If unspecified, defaults to {@code 3}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("interactionThreshold")
-    Integer interactionThreshold;
+    private final Integer interactionThreshold;
+
+    public Integer getInteractionThreshold() {
+        return interactionThreshold;
+    }
 
     /**
      * The number of seconds to record the interactions from the user. If unspecified, defaults to {@code 15}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordingPeriodInSeconds")
-    Integer recordingPeriodInSeconds;
+    private final Integer recordingPeriodInSeconds;
+
+    public Integer getRecordingPeriodInSeconds() {
+        return recordingPeriodInSeconds;
+    }
 
     /**
      * Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the {@code action} is set to {@code DETECT}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("setHttpHeader")
-    Header setHttpHeader;
+    private final Header setHttpHeader;
+
+    public Header getSetHttpHeader() {
+        return setHttpHeader;
+    }
 
     @com.fasterxml.jackson.annotation.JsonProperty("challengeSettings")
-    BlockChallengeSettings challengeSettings;
+    private final BlockChallengeSettings challengeSettings;
+
+    public BlockChallengeSettings getChallengeSettings() {
+        return challengeSettings;
+    }
 
     /**
      * When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNatEnabled")
-    Boolean isNatEnabled;
+    private final Boolean isNatEnabled;
+
+    public Boolean getIsNatEnabled() {
+        return isNatEnabled;
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("HumanInteractionChallenge(");
+        sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", failureThreshold=").append(String.valueOf(this.failureThreshold));
+        sb.append(", actionExpirationInSeconds=")
+                .append(String.valueOf(this.actionExpirationInSeconds));
+        sb.append(", failureThresholdExpirationInSeconds=")
+                .append(String.valueOf(this.failureThresholdExpirationInSeconds));
+        sb.append(", interactionThreshold=").append(String.valueOf(this.interactionThreshold));
+        sb.append(", recordingPeriodInSeconds=")
+                .append(String.valueOf(this.recordingPeriodInSeconds));
+        sb.append(", setHttpHeader=").append(String.valueOf(this.setHttpHeader));
+        sb.append(", challengeSettings=").append(String.valueOf(this.challengeSettings));
+        sb.append(", isNatEnabled=").append(String.valueOf(this.isNatEnabled));
+        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof HumanInteractionChallenge)) {
+            return false;
+        }
+
+        HumanInteractionChallenge other = (HumanInteractionChallenge) o;
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.failureThreshold, other.failureThreshold)
+                && java.util.Objects.equals(
+                        this.actionExpirationInSeconds, other.actionExpirationInSeconds)
+                && java.util.Objects.equals(
+                        this.failureThresholdExpirationInSeconds,
+                        other.failureThresholdExpirationInSeconds)
+                && java.util.Objects.equals(this.interactionThreshold, other.interactionThreshold)
+                && java.util.Objects.equals(
+                        this.recordingPeriodInSeconds, other.recordingPeriodInSeconds)
+                && java.util.Objects.equals(this.setHttpHeader, other.setHttpHeader)
+                && java.util.Objects.equals(this.challengeSettings, other.challengeSettings)
+                && java.util.Objects.equals(this.isNatEnabled, other.isNatEnabled)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureThreshold == null ? 43 : this.failureThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actionExpirationInSeconds == null
+                                ? 43
+                                : this.actionExpirationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failureThresholdExpirationInSeconds == null
+                                ? 43
+                                : this.failureThresholdExpirationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.interactionThreshold == null
+                                ? 43
+                                : this.interactionThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recordingPeriodInSeconds == null
+                                ? 43
+                                : this.recordingPeriodInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.setHttpHeader == null ? 43 : this.setHttpHeader.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.challengeSettings == null ? 43 : this.challengeSettings.hashCode());
+        result = (result * PRIME) + (this.isNatEnabled == null ? 43 : this.isNatEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        return result;
+    }
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+    public java.util.Set<String> get__explicitlySet__() {
+        return this.__explicitlySet__;
+    }
 }
