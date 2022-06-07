@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Network security groups (NSGs) are now optional for autonomous databases on private endpoints in the Database service
 
 ### Fixed
-- Fixed a potential data curruption problem for binary data upload with default retries. We recommend that you update to this version `2.31.0` or later. For details, see https://github.com/oracle/oci-java-sdk/issues/304
+- Fixed a potential data corruption problem for binary data upload with default retries. We recommend that you update to this version `2.31.0` or later. For details, see https://github.com/oracle/oci-java-sdk/issues/402
 
 ## 2.30.0 - 2022-05-31
 ### Added
